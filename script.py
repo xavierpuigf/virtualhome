@@ -4,7 +4,7 @@ import re
 
 class Action(Enum):
     """
-    All supported actions, value of each enum is pair (humanized name, required_number of parameters)
+    All supported actions, value of each enum is a pair (humanized name, required_number of parameters)
     """
     CLOSE = ("Close", 1)
     DRINK = ("Drink", 1)
