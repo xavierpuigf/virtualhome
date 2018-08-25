@@ -23,6 +23,13 @@ class Relation(Enum):
     BETWEEN = 2
 
 
+class Property(Enum):
+    SITTABLE = 0,
+    GRABBABLE = 1,
+    OPENABLE = 2,
+    SWITCHABLE = 3
+
+
 class Bounds(object):
     def __init__(self, center, size):
         self.center = center
@@ -90,6 +97,7 @@ class EnvironmentGraph(object):
         edges = [GraphEdge.from_dict(e) for e in d['edges']]
         return EnvironmentGraph(nodes, edges)
 
+
 #
 #  <character> [close] <object>
 #  and  <object> [sittable]
@@ -126,15 +134,6 @@ class RelationFrom(NodeEnumerator):
             yield n
 
 
-class State(NodeEnumerator):
-
-    def __init__(self, state):
-        self.state = state
-
-    def enumerate(self, graph):
-        node
-
-
 # execute
 #   goto chair
 #   sit chair
@@ -162,8 +161,17 @@ class State(NodeEnumerator):
 class LogicalValue(object):
 
     @abstractmethod
-    def evaluate(self, graph):
+    def evaluate(self, state):
         pass
+
+
+class Not(LogicalValue):
+
+    def __init__(self, value1):
+        self.value1 = value1
+
+    def evaluate(self, state):
+        return not self.value1.evaluate(state)
 
 
 class And(LogicalValue):
@@ -172,8 +180,52 @@ class And(LogicalValue):
         self.value1 = value1
         self.value2 = value2
 
-    def evaluate(self, graph):
-        return self.value1.evaluate(graph) and self.value2.evaluate(graph)
+    def evaluate(self, state):
+        return self.value1.evaluate(state) and self.value2.evaluate(state)
 
 
-class A
+class NodeState(LogicalValue):
+
+    def __init__(self, node, node_state):
+        self.node = node
+        self.node_state = node_state
+
+    def evaluate(self, state):
+        return self.node_state in self.node.states
+
+
+class NodeProperty(LogicalValue):
+
+    def __init__(self, node, node_property):
+        self.node = node
+        self.node_property = node_property
+
+    def evaluate(self, state):
+        return state.check_node_property(self.node, self.node_property)
+
+
+class ExistsRelation(LogicalValue):
+
+    def __init__(self, from_node_enum, relation, to_node_enum):
+        self.from_node_enum = from_node_enum
+        self.relation = relation
+        self.to_node_enum = to_node_enum
+
+    def evaluate(self, state):
+        for fn in self.from_node_enum.enumerate(state.graph):
+            for tn in self.to_node_enum.enumerate(state.graph):
+                if state.graph.has_edge(fn, self.relation, tn):
+                    return True
+        return False
+
+
+class EnvironmentState(object):
+
+    def __init__(self, graph):
+        self.graph = graph
+        self.script_objects = {}
+
+    def evaluate(self, lvalue: LogicalValue):
+        return lvalue(self)
+
+

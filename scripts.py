@@ -1,5 +1,6 @@
 from enum import Enum
 import re
+import common
 
 
 class Action(Enum):
@@ -55,12 +56,23 @@ class ScriptLine(object):
         return self._parameters[1]
 
 
-class ScriptParseException(Exception):
-    def __init__(self, message, *args):
-        self.message = message.format(*args)
+class Script(object):
 
-    def __str__(self):
-        return self.message
+    def __init__(self, script_lines):
+        self._script_lines = script_lines
+
+    def __len__(self):
+        return len(self._script_lines)
+
+    def __getitem__(self, item):
+        return self._script_lines[item]
+
+    def from_index(self, index):
+        return Script(self._script_lines[index:])
+
+
+class ScriptParseException(common.Error):
+    pass
 
 
 def parse_script_line(string):
