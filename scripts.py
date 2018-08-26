@@ -1,5 +1,7 @@
 from enum import Enum
 import re
+from typing import List
+
 import common
 
 
@@ -45,7 +47,7 @@ class ScriptObject(object):
 
 class ScriptLine(object):
 
-    def __init__(self, action, parameters):
+    def __init__(self, action: Action, parameters: List[ScriptObject]):
         self.action = action
         self._parameters = parameters
 
@@ -58,7 +60,7 @@ class ScriptLine(object):
 
 class Script(object):
 
-    def __init__(self, script_lines):
+    def __init__(self, script_lines: List[ScriptLine]):
         self._script_lines = script_lines
 
     def __len__(self):
@@ -102,8 +104,5 @@ def parse_script_line(string):
                                    action.name, len(params), action.value[1])
 
     return ScriptLine(action, params)
-
-
-
 
 
