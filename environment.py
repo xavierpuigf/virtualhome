@@ -45,59 +45,75 @@ class Node(object):
 
 
 class GraphNode(Node):
-    def __init__(self, id, class_name, category, states, prefab_name, bounding_box):
+    def __init__(self, id, class_name, category, properties, states, prefab_name, bounding_box):
         super().__init__(id)
         self.class_name = class_name
         self.category = category
+        self.properties = properties
         self.states = states
         self.prefab_name = prefab_name
         self.bounding_box = bounding_box
 
     @staticmethod
     def from_dict(d):
-        return GraphNode(d['id'], d['class_name'], d['category'], [State[s.upper()] for s in d['states']],
+        return GraphNode(d['id'], d['class_name'], d['category'],
+                         [Property[s.upper()] for s in d['properties']],
+                         [State[s.upper()] for s in d['states']],
                          d['prefab_name'], Bounds(**d['bounding_box']))
 
 
 class GraphEdge(object):
-    def __init__(self, from_node: GraphNode, to_node: GraphNode, relation: GraphNode):
+    def __init__(self, from_node: GraphNode, relation: GraphNode, to_node: GraphNode):
         self.from_node = from_node
-        self.to_node = to_node
         self.relation = relation
+        self.to_node = to_node
 
     @staticmethod
     def from_dict(d):
-        return GraphEdge(d['from_id'], d['to_id'], Relation[d['relation'].upper()])
+        return GraphEdge(d['from_id'], Relation[d['relation'].upper()], d['to_id'])
 
 
 class EnvironmentGraph(object):
     def __init__(self, nodes: Collection[GraphNode], edges: Collection[GraphEdge]):
-        """
-        :param nodes: list of GraphNode objects
-        :param edges: list of GraphEdge
-        """
         self._nodes = nodes
         self._edges = edges
+        self._edge_map = {}
+        self._node_map = {}
+        self._class_name_map = {}
+        self._init_maps()
 
-    def from_node(self, node: GraphNode):
-        """
-        :param node: graph node
-        :return: list of pairs (node2, relation) where (node, relation, node2) is an edge
-        """
-        pass # TODO: implement from_node
+    def _init_maps(self):
+        for e in self._edges:
+            es = self._edge_map.setdefault((e.from_node.id, e.relation), {})
+            es[e.to_node.id] = e
+        for n in self._nodes:
+            self._node_map[n.id] = n
+            self._class_name_map.setdefault(n.class_name, []).append(n)
 
-    def to_node(self, node: GraphNode):
-        """
-        :param node: graph node
-        :return: list of pairs (node2, relation) where (node2, relation, node) is an edge
-        """
-        pass # TODO: implement to_node
+    def get_nodes(self):
+        return self._nodes
 
-    def find_edges(self, from_class, from_id, relation, to_class, to_id):
-        pass
+    def get_nodes_by_attr(self, attr: str, value):
+        if attr == 'class_name':
+            return self._class_name_map.get(value, [])
+        else:
+            for node in self._nodes:
+                if getattr(node, attr) == value:
+                    yield node
 
-    def find_nodes(self, condition):
-        pass
+    def get_node(self, node):
+        return self._node_map.get(node.id, None)
+
+    def get_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        to_map = self._edge_map.get((from_node.id, relation), {})
+        return to_map.get(to_node.id, None)
+
+    def get_edges_from(self, from_node: Node, relation: Relation):
+        to_map = self._edge_map.get((from_node.id, relation), {})
+        return to_map.values()
+
+    def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        return self.get_edge(from_node, relation, to_node) is not None
 
     @staticmethod
     def from_dict(d):
@@ -106,26 +122,134 @@ class EnvironmentGraph(object):
         return EnvironmentGraph(nodes, edges)
 
 
+class ChangeType(Enum):
+    ADD_NODE = 0,
+    DELETE_NODE = 1,
+    ADD_EDGE = 2,
+    DELETE_EDGE = 3
+
+
 class EnvironmentState(object):
+
+    class Change(object):
+
+        def __init__(self, change_type: ChangeType, change_object):
+            self.type = change_type
+            self.object = change_object
+
+        def is_add_node(self, node: Node):
+            return self.type == ChangeType.ADD_NODE and self.object.id == node.id
+
+        def of_add_node(self):
+            return self.object if self.type == ChangeType.ADD_NODE else None
+
+        def is_delete_node(self, node: Node):
+            return self.type == ChangeType.DELETE_NODE and self.object.id == node.id
+
+        def of_delete_node(self):
+            return self.object if self.type == ChangeType.DELETE_NODE else None
+
+        def is_add_edge(self, from_node: Node, relation: Relation, to_node: Node):
+            return (self.type == ChangeType.ADD_EDGE and self.object.from_node.id == from_node.id and
+                    self.object.relation == relation and self.object.to_node.id == to_node.id)
+
+        def of_add_edge_from(self, from_node: Node, relation: Relation):
+            if (self.type == ChangeType.ADD_EDGE and self.object.from_node.id == from_node.id and
+                    self.object.relation == relation):
+                return self.object.to_node
+            else:
+                return None
+
+        def is_delete_edge(self, from_node: Node, relation: Relation, to_node: Node):
+            return (self.type == ChangeType.DELETE_EDGE and self.object.from_node.id == from_node.id and
+                    self.object.relation == relation and self.object.to_node.id == to_node.id)
+
+        def of_delete_edge_from(self, from_node: Node, relation: Relation):
+            if (self.type == ChangeType.DELETE_EDGE and self.object.from_node.id == from_node.id and
+                    self.object.relation == relation):
+                return self.object.to_node
+            else:
+                return None
 
     def __init__(self, graph: EnvironmentGraph):
         self._graph = graph
         self._script_objects = {}  # (name, instance) -> node id
+        self._changes = []
 
     def evaluate(self, lvalue: 'LogicalValue'):
         return lvalue.evaluate(self)
 
     def select_nodes(self, obj: ScriptObject):
-        """Enumerate nodes satisfying a script object. If object was already
+        """Enumerate nodes satisfying script object condition. If object was already
         discovered, return node
-        :param obj:
-        :return:
         """
-        node_id = self._script_objects.get((obj.name, obj.instance), None)
-        if node_id is not None:
-            return self.get_node_by_id(node_id)
+        node = self._script_objects.get((obj.name, obj.instance), None)
+        if node is not None:
+            yield node
         else:
-            self.get_node()
+            return self.get_nodes_by_attr('class_name', obj.name)
+
+    def get_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        for change in reversed(self._changes):
+            if change.is_delete_edge(from_node, relation, to_node):
+                return None
+            elif change.is_add_edge(from_node, relation, to_node):
+                return change.object()
+        return self._graph.get_edge(from_node, relation, to_node)
+
+    def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        return self.get_edge(from_node, relation, to_node) is not None
+
+    def get_node(self, node: Node):
+        for change in reversed(self._changes):
+            if change.is_delete_node(node):
+                return None
+            elif change.is_add_node(node):
+                return change.object()
+        return self._graph.get_node(node)
+
+    def nodes_from(self, from_node: Node, relation: Relation):
+        deleted = set()  # deleted node ids
+        for change in reversed(self._changes):
+            to_node = change.of_delete_edge_from(from_node, relation)
+            if to_node:
+                deleted.add(to_node.id)
+                continue
+            to_node = change.of_add_edge_from(from_node, relation)
+            if to_node and to_node.id not in deleted:
+                yield to_node
+        for edge in self._graph.get_edges_from(from_node, relation):
+            if edge.to_node.id not in deleted:
+                yield edge.to_node
+
+    def get_nodes(self):
+        deleted = set()  # deleted
+        for change in reversed(self._changes):
+            n = change.of_delete_node()
+            if n:
+                deleted.add(n.id)
+                continue
+            n = change.of_add_node()
+            if n and n.id not in deleted:
+                yield n
+        for n in self._graph.get_nodes():
+            if n.id not in deleted:
+                yield n
+
+    def get_nodes_by_attr(self, attr: str, value):
+        deleted = set()  # deleted
+        for change in reversed(self._changes):
+            n = change.of_delete_node()
+            if n:
+                deleted.add(n.id)
+                continue
+            n = change.of_add_node()
+            if n and n.id not in deleted and getattr(n, attr) == value:
+                yield n
+        for n in self._graph.get_nodes_by_attr(attr, value):
+            if n.id not in deleted:
+                yield n
+
 
 #
 #  <character> [close] <object>
@@ -154,9 +278,7 @@ class NodeEnumerator(object):
 class AnyNode(NodeEnumerator):
 
     def enumerate(self, state: EnvironmentState):
-        nodes = state.all_nodes()
-        for n in nodes:
-            yield n
+        return state.get_nodes()
 
 
 class NodeInstance(NodeEnumerator):
@@ -175,9 +297,7 @@ class RelationFrom(NodeEnumerator):
         self.relation = relation
 
     def enumerate(self, state: EnvironmentState):
-        nodes = state.nodes_from(self.from_node, self.relation)
-        for n in nodes:
-            yield n
+        return state.nodes_from(self.from_node, self.relation)
 
 
 # execute
@@ -237,7 +357,8 @@ class NodeState(LogicalValue):
         self.node_state = node_state
 
     def evaluate(self, state: EnvironmentState):
-        return self.node_state in self.node.states
+        gn = state.get_node(self.node)
+        return False if gn is None else self.node_state in gn.state
 
 
 class NodeProperty(LogicalValue):
@@ -247,7 +368,8 @@ class NodeProperty(LogicalValue):
         self.node_property = node_property
 
     def evaluate(self, state: EnvironmentState):
-        return state.check_node_property(self.node, self.node_property)
+        gn = state.get_node(self.node)
+        return False if gn is None else self.node_property in gn.properties
 
 
 class ExistsRelation(LogicalValue):
@@ -263,5 +385,3 @@ class ExistsRelation(LogicalValue):
                 if state.has_edge(fn, self.relation, tn):
                     return True
         return False
-
-
