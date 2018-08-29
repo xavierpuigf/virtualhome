@@ -1,3 +1,4 @@
+from enum import Enum
 import scripts
 import json
 
@@ -50,6 +51,13 @@ def enumerator(par):
             yield i
 
 
+class TestEnum(Enum):
+    AA = 0
+    BB = 1
+    DD = 2
+    CC = 3
+
+
 if __name__ == '__main__':
     run_test('[PUT] <bottle> (1) <table> (1)', object='a', subject='b')
     s = '{"second": "one", "first": 1}'
@@ -67,3 +75,5 @@ if __name__ == '__main__':
         print('enumed {0}'.format(j))
     if next(enumerator(-2), None) is None:
         print('Empty')
+
+    print(list(TestEnum))

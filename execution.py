@@ -1,11 +1,9 @@
 import time
-from typing import Collection
 
 import common
 from environment import *
 from scripts import Action
 from scripts import Script
-from scripts import ScriptLine
 
 
 class ScriptExecutor(object):
@@ -35,14 +33,19 @@ class ScriptExecutor(object):
     # Each function should have the following properties
     # format: execute_action(self, future_script, state, ...)
     # parameters:
-    #   future_script: future script, scripts.Scrip, object, containing script lines
+    #   future_script: future script, scripts.Script object containing script lines
     #     yet to be executed, has at least one item
     #   state: current state, environment.EnvironmentState object
     # return value: enumerates possible states after execution of script_line
     #
 
     def execute_sit(self, script: Script, state: EnvironmentState):
-        pass
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_sittable(state, node):
+                yield state.change_state([AddEdges(CharacterNode(), Relation.ON, NodeInstance(node))])
+        # else: report error
 
     def execute_goto(self, script: Script, state: EnvironmentState):
         current_line = script[0]
@@ -51,7 +54,9 @@ class ScriptExecutor(object):
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             if self.check_goto(state, node, next_action):
-                yield state.move_character(node)
+                yield state.change_state([DeleteEdges(CharacterNode(), Relation.all(), AnyNode()),
+                                          AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                                          AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))])
 
     def check_goto(self, state: EnvironmentState, node: Node, next_action: Action):
         if next_action == Action.SIT:

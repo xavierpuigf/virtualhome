@@ -1,6 +1,6 @@
 from enum import Enum
 from abc import abstractmethod
-from typing import Collection
+from typing import Collection, List
 
 from scripts import ScriptObject
 
@@ -12,25 +12,38 @@ from scripts import ScriptObject
 #  'prefab_name': 'Notes_1',
 #  'states': []}
 
+# Enums
+###############################################################################
+
 
 class State(Enum):
-    CLOSED = 0,
-    OPEN = 1,
-    ON = 2
-    OFF = 3
+    CLOSED = 1
+    OPEN = 2
+    ON = 3
+    OFF = 4
 
 
 class Relation(Enum):
-    ON = 0,
-    INSIDE = 1,
-    BETWEEN = 2
+    ON = 1
+    INSIDE = 2
+    BETWEEN = 3
+    CLOSE = 4
+    FACING = 5
+
+    @classmethod
+    def all(cls):
+        return list(Relation)
 
 
 class Property(Enum):
-    SITTABLE = 0,
-    GRABBABLE = 1,
-    OPENABLE = 2,
-    SWITCHABLE = 3
+    SITTABLE = 1
+    GRABBABLE = 2
+    OPENABLE = 3
+    SWITCHABLE = 4
+
+
+# EnvironmentGraph, nodes, edges and related structures
+###############################################################################
 
 
 class Bounds(object):
@@ -63,7 +76,7 @@ class GraphNode(Node):
 
 
 class GraphEdge(object):
-    def __init__(self, from_node: GraphNode, relation: GraphNode, to_node: GraphNode):
+    def __init__(self, from_node: GraphNode, relation: Relation, to_node: GraphNode):
         self.from_node = from_node
         self.relation = relation
         self.to_node = to_node
@@ -122,59 +135,64 @@ class EnvironmentGraph(object):
         return EnvironmentGraph(nodes, edges)
 
 
+# EnvironmentState, state changes
+###############################################################################
+
+
 class ChangeType(Enum):
-    ADD_NODE = 0,
-    DELETE_NODE = 1,
-    ADD_EDGE = 2,
+    ADD_NODE = 0
+    DELETE_NODE = 1
+    ADD_EDGE = 2
     DELETE_EDGE = 3
+
+
+class StateChange(object):
+
+    def __init__(self, change_type: ChangeType, change_object):
+        self.type = change_type
+        self.object = change_object
+
+    def is_add_node(self, node: Node):
+        return self.type == ChangeType.ADD_NODE and self.object.id == node.id
+
+    def of_add_node(self):
+        return self.object if self.type == ChangeType.ADD_NODE else None
+
+    def is_delete_node(self, node: Node):
+        return self.type == ChangeType.DELETE_NODE and self.object.id == node.id
+
+    def of_delete_node(self):
+        return self.object if self.type == ChangeType.DELETE_NODE else None
+
+    def is_add_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        return (self.type == ChangeType.ADD_EDGE and self.object.from_node.id == from_node.id and
+                self.object.relation == relation and self.object.to_node.id == to_node.id)
+
+    def of_add_edge_from(self, from_node: Node, relation: Relation):
+        if (self.type == ChangeType.ADD_EDGE and self.object.from_node.id == from_node.id and
+                self.object.relation == relation):
+            return self.object.to_node
+        else:
+            return None
+
+    def is_delete_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        return (self.type == ChangeType.DELETE_EDGE and self.object.from_node.id == from_node.id and
+                self.object.relation == relation and self.object.to_node.id == to_node.id)
+
+    def of_delete_edge_from(self, from_node: Node, relation: Relation):
+        if (self.type == ChangeType.DELETE_EDGE and self.object.from_node.id == from_node.id and
+                self.object.relation == relation):
+            return self.object.to_node
+        else:
+            return None
 
 
 class EnvironmentState(object):
 
-    class Change(object):
-
-        def __init__(self, change_type: ChangeType, change_object):
-            self.type = change_type
-            self.object = change_object
-
-        def is_add_node(self, node: Node):
-            return self.type == ChangeType.ADD_NODE and self.object.id == node.id
-
-        def of_add_node(self):
-            return self.object if self.type == ChangeType.ADD_NODE else None
-
-        def is_delete_node(self, node: Node):
-            return self.type == ChangeType.DELETE_NODE and self.object.id == node.id
-
-        def of_delete_node(self):
-            return self.object if self.type == ChangeType.DELETE_NODE else None
-
-        def is_add_edge(self, from_node: Node, relation: Relation, to_node: Node):
-            return (self.type == ChangeType.ADD_EDGE and self.object.from_node.id == from_node.id and
-                    self.object.relation == relation and self.object.to_node.id == to_node.id)
-
-        def of_add_edge_from(self, from_node: Node, relation: Relation):
-            if (self.type == ChangeType.ADD_EDGE and self.object.from_node.id == from_node.id and
-                    self.object.relation == relation):
-                return self.object.to_node
-            else:
-                return None
-
-        def is_delete_edge(self, from_node: Node, relation: Relation, to_node: Node):
-            return (self.type == ChangeType.DELETE_EDGE and self.object.from_node.id == from_node.id and
-                    self.object.relation == relation and self.object.to_node.id == to_node.id)
-
-        def of_delete_edge_from(self, from_node: Node, relation: Relation):
-            if (self.type == ChangeType.DELETE_EDGE and self.object.from_node.id == from_node.id and
-                    self.object.relation == relation):
-                return self.object.to_node
-            else:
-                return None
-
     def __init__(self, graph: EnvironmentGraph):
         self._graph = graph
         self._script_objects = {}  # (name, instance) -> node id
-        self._changes = []
+        self._changes = []  # type: List[StateChange]
 
     def evaluate(self, lvalue: 'LogicalValue'):
         return lvalue.evaluate(self)
@@ -188,6 +206,9 @@ class EnvironmentState(object):
             yield node
         else:
             return self.get_nodes_by_attr('class_name', obj.name)
+
+    def get_state_node(self, obj: ScriptObject):
+        return self._script_objects.get((obj.name, obj.instance), None)
 
     def get_edge(self, from_node: Node, relation: Relation, to_node: Node):
         for change in reversed(self._changes):
@@ -250,22 +271,18 @@ class EnvironmentState(object):
             if n.id not in deleted:
                 yield n
 
+    def change_state(self, changers: Collection['StateChanger']):
+        new_state = EnvironmentState(self._graph)
+        new_state._changes = self._changes.copy()
+        new_state._script_objects = self._script_objects.copy()
+        for changer in changers:
+            for change in changer.enumerate_changes(self):
+                new_state._changes.append(change)
+        return new_state
 
-#
-#  <character> [close] <object>
-#  and  <object> [sittable]
-#
-#  CHAR = character node
-#  find_node(RELATION_FROM(CHAR, Relation.CLOSE)) -> [nodes close to CHAR]
-#  find_node(AND(RELATION_FROM(CHAR, Relation.CLOSE), STATE(State.SITTABLE))
-#
-#  <character> [close] <object>
-#  and  <object> [sittable]
-#  and  not Exists <object2>: <object2> [on] <object>
-#
-#  CHAR = character node
-#  find_node(AND(RELATION_FROM(CHAR, Relation.CLOSE), STATE(State.SITTABLE), )
-#
+
+# NodeEnumerator-s
+###############################################################################
 
 
 class NodeEnumerator(object):
@@ -300,29 +317,26 @@ class RelationFrom(NodeEnumerator):
         return state.nodes_from(self.from_node, self.relation)
 
 
-# execute
-#   goto chair
-#   sit chair
-#
-#   state = State(graph)
-#   action1 = GOTO('chair')
-#
-#   for n in graph.get_nodes(ClassNameNode('chair')):
-#       graph.remove_edges(Node(char_node), 'close', AnyNode())
-#       graph.remove_edges_u(Node(char_node), 'inside', RoomNode())
-#       graph.add_edge(char_node, 'close', n)
-#       graph.add_edge(char_node, 'inside', RoomNode(n))
-#       state = State(graph, {'chair': n})
-#       yield state
-#
-#   state
-#   action2 = SIT('chair')
-#
-#   graph.check_condition(And(NodeState(NodeId(StateObject('chair', 1)), 'sittable'),
-#       NotExistRelation(AnyNode(), 'on', NodeId(StateObject('chair', 1)))))
-#
-#
-#
+class CharacterNode(NodeEnumerator):
+
+    def enumerate(self, state: EnvironmentState):
+        state.get_nodes_by_attr('class_name', 'character')
+
+
+class RoomNode(NodeEnumerator):
+
+    def __init__(self, node: Node):
+        self.node = node
+
+    def enumerate(self, state: EnvironmentState):
+        for n in state.nodes_from(self.node, Relation.INSIDE):
+            if n.category == 'Rooms':
+                yield  n
+
+
+# LogicalValue-s
+###############################################################################
+
 
 class LogicalValue(object):
 
@@ -385,3 +399,45 @@ class ExistsRelation(LogicalValue):
                 if state.has_edge(fn, self.relation, tn):
                     return True
         return False
+
+
+# StateChanger-s
+###############################################################################
+
+
+class StateChanger(object):
+
+    @abstractmethod
+    def enumerate_changes(self, state: EnvironmentState):
+        pass
+
+
+class AddEdges(StateChanger):
+
+    def __init__(self, from_node: NodeEnumerator, relation: Relation, to_node: NodeEnumerator):
+        self.from_node = from_node
+        self.relation = relation
+        self.to_node = to_node
+
+    def enumerate_changes(self, state: EnvironmentState):
+        for n1 in self.from_node.enumerate(state):
+            for n2 in self.to_node.enumerate(state):
+                yield StateChange(ChangeType.ADD_EDGE, GraphEdge(n1, self.relation, n2))
+
+
+class DeleteEdges(StateChanger):
+
+    def __init__(self, from_node: NodeEnumerator, relations, to_node: NodeEnumerator):
+        self.from_node = from_node
+        self.relations = relations
+        self.to_node = to_node
+
+    def enumerate_changes(self, state: EnvironmentState):
+        for n1 in self.from_node.enumerate(state):
+            for e in self.relations:
+                for n2 in self.to_node.enumerate(state):
+                    yield StateChange(ChangeType.DELETE_EDGE, GraphEdge(n1, e, n2))
+
+
+
+
