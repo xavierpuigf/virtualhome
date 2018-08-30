@@ -44,7 +44,10 @@ class ScriptExecutor(object):
         node = state.get_state_node(current_line.object())
         if node is not None:
             if self.check_sittable(state, node):
-                yield state.change_state([AddEdges(CharacterNode(), Relation.ON, NodeInstance(node))])
+                yield state.change_state(
+                    [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node))],
+                    node
+                )
         # else: report error
 
     def execute_goto(self, script: Script, state: EnvironmentState):
@@ -54,18 +57,22 @@ class ScriptExecutor(object):
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             if self.check_goto(state, node, next_action):
-                yield state.change_state([DeleteEdges(CharacterNode(), Relation.all(), AnyNode()),
-                                          AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
-                                          AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))])
+                yield state.change_state(
+                    [DeleteEdges(CharacterNode(), Relation.all(), AnyNode()),
+                     AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))],
+                    node,
+                    current_obj
+                )
 
     def check_goto(self, state: EnvironmentState, node: Node, next_action: Action):
         if next_action == Action.SIT:
-            state.evaluate(NodeProperty(node, Property.SITTABLE))
+            return state.evaluate(NodeProperty(node, Property.SITTABLE))
         else:
             return True
 
     def check_sittable(self, state: EnvironmentState, node: Node):
-        state.evaluate(Not(ExistsRelation(AnyNode(), Relation.ON, NodeInstance(node))))
+        return state.evaluate(Not(ExistsRelation(AnyNode(), Relation.ON, NodeInstance(node))))
 
     def execute_unknown(self, script: Script, state: EnvironmentState):
         raise ExecutionException("Execution of {0} is not supported", script[0].action)
