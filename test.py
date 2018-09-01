@@ -1,5 +1,6 @@
 import json
 import time
+from common import TimeMeasurement
 from environment import EnvironmentGraph
 from scripts import Script, parse_script_line
 from execution import ScriptExecutor
@@ -22,9 +23,9 @@ if __name__ == '__main__':
     graph = load_graph('c:/Work/Python/TestScene6_graph.json')
     script = get_script()
     executor = ScriptExecutor(graph)
-    start_time = time.time()
+    tm = TimeMeasurement.start('Execution')
     state_enum = executor.execute(script)
     state = next(state_enum, None)
-    end_time = time.time()
+    TimeMeasurement.stop(tm)
     print(state)
-    print('Execution time: {}'.format(end_time - start_time))
+    print('Measurements:\n' + TimeMeasurement.result_string())

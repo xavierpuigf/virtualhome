@@ -1,7 +1,8 @@
 from enum import Enum
 import scripts
 import json
-
+import uuid
+from common import TimeMeasurement
 
 class TestClass(object):
     def __init__(self, first, second):
@@ -59,6 +60,7 @@ class TestEnum(Enum):
 
 
 if __name__ == '__main__':
+    tm = TimeMeasurement.start("all")
     run_test('[PUT] <bottle> (1) <table> (1)', object='a', subject='b')
     s = '{"second": "one", "first": 1}'
     d = json.loads(s, object_hook=lambda d: TestClass(**d))
@@ -76,4 +78,15 @@ if __name__ == '__main__':
     if next(enumerator(-2), None) is None:
         print('Empty')
 
+    TimeMeasurement.stop(tm)
+    tm = TimeMeasurement.start("all")
+    res = TimeMeasurement.measure_function('Add', lambda: 1 + 1)
+    print(res)
     print(list(TestEnum))
+    print(uuid.uuid4())
+    TimeMeasurement.stop(tm)
+    print(TimeMeasurement.result_string())
+    x = (1, 2)
+    x += (3, 4)
+    print(x)
+

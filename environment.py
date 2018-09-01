@@ -2,6 +2,7 @@ from enum import Enum
 from abc import abstractmethod
 from typing import List
 
+from common import TimeMeasurement
 from scripts import ScriptObject
 
 # {'bounding_box': {'center': [-3.629491, 0.9062717, -9.543596],
@@ -84,15 +85,10 @@ class GraphEdge(object):
         self.relation = relation
         self.to_node = to_node
 
-    @staticmethod
-    def from_dict(d, node_d):
-        return GraphEdge(node_d[d['from_id']], Relation[d['relation_type'].upper()], node_d[d['to_id']])
-
 
 class EnvironmentGraph(object):
     def __init__(self, dictionary):
         self._nodes = []  # type: List[GraphNode]
-        self._edges = []  # type: List[GraphEdge]
         self._edge_map = {}
         self._node_map = {}
         self._class_name_map = {}
@@ -103,10 +99,11 @@ class EnvironmentGraph(object):
         for n in self._nodes:
             self._node_map[n.id] = n
             self._class_name_map.setdefault(n.class_name, []).append(n)
-        edges = [GraphEdge.from_dict(e, self._node_map) for e in d['edges']]
-        for e in self._edges:
-            es = self._edge_map.setdefault((e.from_node.id, e.relation), {})
-            es[e.to_node.id] = e
+        edges = [(ed['from_id'], Relation[ed['relation_type'].upper()], ed['to_id'])
+                 for ed in d['edges']]
+        for from_id, relation, to_id in edges:
+            es = self._edge_map.setdefault((from_id, relation), {})
+            es[to_id] = self._node_map[to_id]
 
     def get_nodes(self):
         return self._nodes
@@ -123,16 +120,14 @@ class EnvironmentGraph(object):
     def get_node(self, node):
         return self._node_map.get(node.id, None)
 
-    def get_edge(self, from_node: Node, relation: Relation, to_node: Node):
-        to_map = self._edge_map.get((from_node.id, relation), {})
-        return to_map.get(to_node.id, None)
+    def get_nodes_from(self, from_node: Node, relation: Relation):
+        return self._get_node_maps_from(from_node, relation).values()
 
-    def get_edges_from(self, from_node: Node, relation: Relation):
-        to_map = self._edge_map.get((from_node.id, relation), {})
-        return to_map.values()
+    def _get_node_maps_from(self, from_node: Node, relation: Relation):
+        return self._edge_map.get((from_node.id, relation), {})
 
     def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
-        return self.get_edge(from_node, relation, to_node) is not None
+        return to_node.id in self._get_node_maps_from(from_node, relation)
 
 
 # EnvironmentState, state changes
@@ -211,16 +206,15 @@ class EnvironmentState(object):
         node_id = self._script_objects.get((obj.name, obj.instance), -1)
         return None if node_id < 0 else self.get_node(Node(node_id))
 
-    def get_edge(self, from_node: Node, relation: Relation, to_node: Node):
+    def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
+        tm = TimeMeasurement.start('get_edge - changes')
         for change in reversed(self._changes):
             if change.is_delete_edge(from_node, relation, to_node):
-                return None
+                return False
             elif change.is_add_edge(from_node, relation, to_node):
-                return change.object()
-        return self._graph.get_edge(from_node, relation, to_node)
-
-    def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
-        return self.get_edge(from_node, relation, to_node) is not None
+                return True
+        TimeMeasurement.stop(tm)
+        return self._graph.has_edge(from_node, relation, to_node)
 
     def get_node(self, node: Node):
         for change in reversed(self._changes):
@@ -240,9 +234,9 @@ class EnvironmentState(object):
             to_node = change.of_add_edge_from(from_node, relation)
             if to_node and to_node.id not in deleted:
                 yield to_node
-        for edge in self._graph.get_edges_from(from_node, relation):
-            if edge.to_node.id not in deleted:
-                yield edge.to_node
+        for to_node in self._graph.get_nodes_from(from_node, relation):
+            if to_node.id not in deleted:
+                yield to_node
 
     def get_nodes(self):
         deleted = set()  # deleted
@@ -273,6 +267,7 @@ class EnvironmentState(object):
                 yield n
 
     def change_state(self, changers: List['StateChanger'], node: Node, obj: ScriptObject = None):
+        tm = TimeMeasurement.start('change_state')
         new_state = EnvironmentState(self._graph)
         new_state._changes = self._changes.copy()
         new_state._script_objects = self._script_objects.copy()
@@ -281,6 +276,7 @@ class EnvironmentState(object):
         for changer in changers:
             for change in changer.enumerate_changes(self):
                 new_state._changes.append(change)
+        TimeMeasurement.stop(tm)
         return new_state
 
 
@@ -423,9 +419,11 @@ class AddEdges(StateChanger):
         self.to_node = to_node
 
     def enumerate_changes(self, state: EnvironmentState):
+        tm = TimeMeasurement.start('AddEdges')
         for n1 in self.from_node.enumerate(state):
             for n2 in self.to_node.enumerate(state):
                 yield StateChange(ChangeType.ADD_EDGE, GraphEdge(n1, self.relation, n2))
+        TimeMeasurement.stop(tm)
 
 
 class DeleteEdges(StateChanger):
@@ -436,11 +434,9 @@ class DeleteEdges(StateChanger):
         self.to_node = to_node
 
     def enumerate_changes(self, state: EnvironmentState):
+        tm = TimeMeasurement.start('DeleteEdges')
         for n1 in self.from_node.enumerate(state):
             for e in self.relations:
                 for n2 in self.to_node.enumerate(state):
                     yield StateChange(ChangeType.DELETE_EDGE, GraphEdge(n1, e, n2))
-
-
-
-
+        TimeMeasurement.stop(tm)

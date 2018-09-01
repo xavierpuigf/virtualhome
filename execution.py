@@ -72,7 +72,10 @@ class ScriptExecutor(object):
             return True
 
     def check_sittable(self, state: EnvironmentState, node: Node):
-        return state.evaluate(Not(ExistsRelation(AnyNode(), Relation.ON, NodeInstance(node))))
+        tm = TimeMeasurement.start('check_sittable')
+        result = state.evaluate(Not(ExistsRelation(AnyNode(), Relation.ON, NodeInstance(node))))
+        TimeMeasurement.stop(tm)
+        return result
 
     def execute_unknown(self, script: Script, state: EnvironmentState):
         raise ExecutionException("Execution of {0} is not supported", script[0].action)
