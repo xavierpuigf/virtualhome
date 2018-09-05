@@ -260,7 +260,7 @@ class EnvironmentState(object):
         if obj is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
         for changer in changers:
-            changer.apply_changes(self)
+            changer.apply_changes(new_state)
         TimeMeasurement.stop(tm)
         return new_state
 
@@ -317,6 +317,34 @@ class RoomNode(NodeEnumerator):
             if n.category == 'Rooms':
                 yield n
 
+# NodeFilter-s
+###############################################################################
+
+
+class NodeFilter(object):
+
+    @abstractmethod
+    def filter(self, node: Node):
+        pass
+
+
+class NodeInstanceFilter(NodeFilter):
+
+    def __init__(self, node: Node):
+        self.node = node
+
+    def filter(self, node: Node):
+        return node.id == self.node.id
+
+
+class NodeConditionFilter(NodeFilter):
+
+    def __init__(self, value: 'LogicalValue'):
+        self.value = value
+
+    def filter(self, node: Node):
+        return self.value.evaluate(node)
+
 
 # LogicalValue-s
 ###############################################################################
@@ -325,7 +353,7 @@ class RoomNode(NodeEnumerator):
 class LogicalValue(object):
 
     @abstractmethod
-    def evaluate(self, state: EnvironmentState):
+    def evaluate(self, param):
         pass
 
 
@@ -334,55 +362,70 @@ class Not(LogicalValue):
     def __init__(self, value1: LogicalValue):
         self.value1 = value1
 
-    def evaluate(self, state: EnvironmentState):
-        return not self.value1.evaluate(state)
+    def evaluate(self, param):
+        return not self.value1.evaluate(param)
 
 
 class And(LogicalValue):
 
-    def __init__(self, value1: LogicalValue, value2: LogicalValue):
-        self.value1 = value1
-        self.value2 = value2
+    def __init__(self, *args: LogicalValue):
+        self.values = args
 
-    def evaluate(self, state: EnvironmentState):
-        return self.value1.evaluate(state) and self.value2.evaluate(state)
-
-
-class NodeState(LogicalValue):
-
-    def __init__(self, node: Node, node_state: State):
-        self.node = node
-        self.node_state = node_state
-
-    def evaluate(self, state: EnvironmentState):
-        gn = state.get_node(self.node.id)
-        return False if gn is None else self.node_state in gn.state
+    def evaluate(self, param):
+        for value in self.values:
+            if not value.evaluate(param):
+                return False
+        return True
 
 
-class NodeProperty(LogicalValue):
+class Constant(LogicalValue):
 
-    def __init__(self, node: Node, node_property: Property):
-        self.node = node
-        self.node_property = node_property
+    def __init__(self, value: bool):
+        self.value = value
 
-    def evaluate(self, state: EnvironmentState):
-        gn = state.get_node(self.node.id)
-        return False if gn is None else self.node_property in gn.properties
+    def evaluate(self, param):
+        return self.value
 
 
 class ExistsRelation(LogicalValue):
 
-    def __init__(self, from_nodes: NodeEnumerator, relation: Relation, to_nodes: NodeEnumerator):
+    def __init__(self, from_nodes: NodeEnumerator, relation: Relation, to_nodes: NodeFilter):
         self.from_nodes = from_nodes
         self.relation = relation
         self.to_nodes = to_nodes
 
     def evaluate(self, state: EnvironmentState):
         for fn in self.from_nodes.enumerate(state):
-            for tn in self.to_nodes.enumerate(state):
-                if state.has_edge(fn, self.relation, tn):
+            for tn in state.get_nodes_from(fn, self.relation):
+                if self.to_nodes.filter(tn):
                     return True
         return False
+
+
+class IsRoomNode(LogicalValue):
+
+    def evaluate(self, node: GraphNode):
+        return node.category == 'Rooms'
+
+
+class NodeAttrEq(LogicalValue):
+
+    def __init__(self, attr, value):
+        self.attr = attr
+        self.value = value
+
+    def evaluate(self, node: GraphNode):
+        return self.value == getattr(node, self.attr)
+
+
+class NodeAttrIn(LogicalValue):
+
+    def __init__(self, attr, value):
+        self.attr = attr
+        self.value = value
+
+    def evaluate(self, node: GraphNode):
+        return self.value in getattr(node, self.attr)
 
 
 # StateChanger-s
