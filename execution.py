@@ -84,7 +84,7 @@ class GrabExecutor(ActionExecutor):
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode):
         return state.evaluate(
-            And(   #  Constant(Property.GRABBABLE in node.properties),
+            And(Constant(Property.GRABBABLE in node.properties),
                 ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node)),
                 Not(ExistsRelation(NodeInstance(node), Relation.INSIDE,
                                    NodeConditionFilter(And(

@@ -37,10 +37,29 @@ class Relation(Enum):
 
 
 class Property(Enum):
-    SITTABLE = 1
+    SURFACES = 1
     GRABBABLE = 2
-    OPENABLE = 3
-    SWITCHABLE = 4
+    SITTABLE = 3
+    LIEABLE = 4
+    HANGABLE = 5
+    DRINKABLE = 6
+    EATABLE = 7
+    RECIPIENT = 8
+    CUTTABLE = 9
+    POURABLE = 10
+    CAN_OPEN = 11
+    HAS_SWITCH = 12
+    READABLE = 13
+    LOOKABLE = 14
+    CONTAINERS = 15
+    CLOTHES = 16
+    PERSON = 17
+    BODY_PART = 18
+    COVER_OBJECT = 19
+    HAS_PLUG = 20
+    HAS_PAPER = 21
+    MOVABLE = 22
+    CREAM = 23
 
 
 # EnvironmentGraph, nodes, edges and related structures
@@ -239,7 +258,8 @@ class EnvironmentState(object):
             to_node_ids = self._removed_edges_from[(from_node.id, relation)]
             if to_node.id in to_node_ids:
                 to_node_ids.remove(to_node.id)
-        elif not self._graph.has_edge(from_node, relation, to_node):
+                return
+        if not self._graph.has_edge(from_node, relation, to_node):
             self._new_edges_from.setdefault((from_node.id, relation), set()).add(to_node.id)
 
     def delete_edge(self, from_node: Node, relation: Relation, to_node: Node):
