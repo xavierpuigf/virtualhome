@@ -14,14 +14,18 @@ def load_graph(file_name):
 def get_script():
     script0_strings = ['[walk] <chair> (1)',
                        '[sit] <chair> (1)']
-    script_strings = ['[walk] <waterglass> (1)',
-                      '[grab] <waterglass> (1)',
-                      #'[find] <plate> (1)',
-                      #'[grab] <plate> (1)',
-                      '[walk] <fridge> (1)',
-                      '[open] <fridge> (1)',
-                      '[putin] <waterglass> (1) <fridge> (1)',
-                      '[close] <fridge> (1)']
+    script1_strings = ['[walk] <waterglass> (1)',
+                       '[grab] <waterglass> (1)',
+                       #'[find] <plate> (1)',
+                       #'[grab] <plate> (1)',
+                       '[walk] <fridge> (1)',
+                       '[open] <fridge> (1)',
+                       '[putin] <waterglass> (1) <fridge> (1)',
+                       '[close] <fridge> (1)']
+    script_strings = ['[walk] <kitchen_table> (1)',
+                      '[find] <bench> (1)',
+                      '[sit] <bench> (1)',
+                      ]
 
     script_lines = [parse_script_line(sl) for sl in script_strings]
     return Script(script_lines)

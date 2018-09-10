@@ -41,11 +41,10 @@ class SitExecutor(ActionExecutor):
                     node
                 )
 
-    def check_sittable(self, state: EnvironmentState, node: Node):
-        tm = TimeMeasurement.start('check_sittable')
-        result = state.evaluate(Not(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))))
-        TimeMeasurement.stop(tm)
-        return result
+    def check_sittable(self, state: EnvironmentState, node: GraphNode):
+        if Property.SITTABLE not in node.properties:
+            return False
+        return not state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node)))
 
 
 class GotoExecutor(ActionExecutor):
@@ -169,6 +168,7 @@ class PutExecutor(ActionExecutor):
 
 # General checks and helpers
 
+
 def _is_character_close_to(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
         return True
@@ -197,6 +197,7 @@ def _find_free_hand(state: EnvironmentState):
     if not state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_LH, AnyNodeFilter())):
         return Relation.HOLDS_LH
     return None
+
 
 def _find_holding_hand(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, NodeInstanceFilter(node))):
