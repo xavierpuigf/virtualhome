@@ -1,9 +1,9 @@
 import time
+from typing import Optional
 
 import common
 from environment import *
-from scripts import Action
-from scripts import Script
+from scripts import Action, Script
 
 
 # ActionExecutor-s
@@ -50,6 +50,9 @@ class SitExecutor(ActionExecutor):
 
 class GotoExecutor(ActionExecutor):
 
+    def __init__(self, find: bool):
+        self.find = find
+
     def execute(self, script: Script, state: EnvironmentState):
         current_line = script[0]
         next_action = script[1].action if len(script) > 1 else None
@@ -57,20 +60,31 @@ class GotoExecutor(ActionExecutor):
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             if self.check_goto(state, node, next_action):
-                yield state.change_state(
-                    [DeleteEdges(CharacterNode(), Relation.all(), AnyNode()),
-                     AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
-                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))],
-                    node,
-                    current_obj
-                )
+                if self.find:
+                    yield state.change_state(
+                        [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))],
+                        node,
+                        current_obj
+                    )
+
+                else:
+                    yield state.change_state(
+                        [DeleteEdges(CharacterNode(),
+                                     [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
+                                     AnyNode()),
+                         AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                         AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))],
+                        node,
+                        current_obj
+                    )
 
     def check_goto(self, state: EnvironmentState, node: GraphNode, next_action: Action):
-        char = get_character_node(state)
         if next_action == Action.SIT:
-            return Property.SITTABLE in node.properties
-        else:
+            if Property.SITTABLE not in node.properties:
+                return False
+        if not self.find:
             return True
+        return _is_character_close_to(state, node)
 
 
 class GrabExecutor(ActionExecutor):
@@ -79,19 +93,81 @@ class GrabExecutor(ActionExecutor):
         current_line = script[0]
         node = state.get_state_node(current_line.object())
         if node is not None:
-            if self.check_grabbable(state, node):
-                yield state.change_state([], node)
+            new_relation = self.check_grabbable(state, node)
+            if new_relation is not None:
+                changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode()),
+                           AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
+                new_close = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
+                if new_close is not None:
+                    changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close)))
+                yield state.change_state(changes)
 
-    def check_grabbable(self, state: EnvironmentState, node: GraphNode):
-        return state.evaluate(
-            And(Constant(Property.GRABBABLE in node.properties),
-                ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node)),
-                Not(ExistsRelation(NodeInstance(node), Relation.INSIDE,
-                                   NodeConditionFilter(And(
-                                       NodeAttrIn('states', State.OPEN),
-                                       Not(IsRoomNode())))))
-            )
-        )
+    def check_grabbable(self, state: EnvironmentState, node: GraphNode) -> Optional[Relation]:
+        if Property.GRABBABLE not in node.properties:
+            return None
+        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
+            return None
+        if state.evaluate(ExistsRelation(NodeInstance(node), Relation.INSIDE,
+                                         NodeConditionFilter(And(NodeAttrIn('states', State.OPEN),
+                                                                 Not(IsRoomNode()))))):
+            return None
+        return _find_free_hand(state)
+
+
+class OpenExecutor(ActionExecutor):
+
+    def __init__(self, close: bool):
+        self.close = close
+
+    def execute(self, script: Script, state: EnvironmentState):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_openable(state, node):
+                new_node = node.copy()
+                new_node.states.discard(State.OPEN if self.close else State.CLOSED)
+                new_node.states.add(State.CLOSED if self.close else State.OPEN)
+                yield state.change_state([AddNode(new_node)])
+
+    def check_openable(self, state: EnvironmentState, node: GraphNode):
+        if not _is_character_close_to(state, node):
+            return False
+        if _find_free_hand(state) is None:
+            return False
+        s = State.OPEN if self.close else State.CLOSED
+        return s in node.states
+
+
+# General checks and helpers
+
+def _is_character_close_to(state: EnvironmentState, node: Node):
+    if state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
+        return True
+    for close_node in state.get_nodes_from(_get_character_node(state), Relation.CLOSE):
+        if state.evaluate(ExistsRelation(NodeInstance(close_node), Relation.CLOSE, NodeInstanceFilter(node))):
+            return True
+    return False
+
+
+def _get_character_node(state: EnvironmentState):
+    chars = state.get_nodes_by_attr('class_name', 'character')
+    return None if len(chars) == 0 else chars[0]
+
+
+def _find_first_node_from(state: EnvironmentState, node: Node, relations: List[Relation]):
+    for r in relations:
+        nl = state.get_nodes_from(node, r)
+        if len(nl) > 0:
+            return nl[0]
+    return None
+
+
+def _find_free_hand(state: EnvironmentState):
+    if not state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, AnyNodeFilter())):
+        return Relation.HOLDS_RH
+    if not state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_LH, AnyNodeFilter())):
+        return Relation.HOLDS_LH
+    return None
 
 
 # ScriptExecutor
@@ -101,9 +177,12 @@ class GrabExecutor(ActionExecutor):
 class ScriptExecutor(object):
 
     _action_executors = {
-        Action.GOTO: GotoExecutor(),
+        Action.GOTO: GotoExecutor(False),
+        Action.FIND: GotoExecutor(True),
         Action.SIT: SitExecutor(),
-        Action.GRAB: GrabExecutor()
+        Action.GRAB: GrabExecutor(),
+        Action.OPEN: OpenExecutor(False),
+        Action.CLOSE: OpenExecutor(True)
     }
 
     def __init__(self, graph: EnvironmentGraph):
@@ -112,7 +191,7 @@ class ScriptExecutor(object):
         self.processing_limit = 0
 
     def execute(self, script: Script):
-        self.processing_limit = time.time() + self.processing_limit
+        self.processing_limit = time.time() + self.processing_time_limit
         init_state = EnvironmentState(self.graph)
         return self.execute_rec(script, 0, init_state)
 
@@ -135,10 +214,3 @@ class ExecutionException(common.Error):
     pass
 
 
-# Helpers
-###############################################################################
-
-
-def get_character_node(state: EnvironmentState):
-    chars = state.get_nodes_by_attr('class_name', 'character')
-    return None if len(chars) == 0 else chars[0]

@@ -30,6 +30,8 @@ class Relation(Enum):
     BETWEEN = 3
     CLOSE = 4
     FACING = 5
+    HOLDS_RH = 6
+    HOLDS_LH = 7
 
     @classmethod
     def all(cls):
@@ -78,6 +80,7 @@ class Node(object):
 
 
 class GraphNode(Node):
+
     def __init__(self, id, class_name, category, properties, states, prefab_name, bounding_box):
         super().__init__(id)
         self.class_name = class_name
@@ -87,14 +90,20 @@ class GraphNode(Node):
         self.prefab_name = prefab_name
         self.bounding_box = bounding_box
 
+    def copy(self):
+        return GraphNode(self.id, self.class_name, self.category,
+                         self.properties.copy(), self.states.copy(), self.prefab_name,
+                         self.bounding_box)
+
+
     def __str__(self):
         return '<{}> ({})'.format(self.class_name, self.prefab_name)
 
     @staticmethod
     def from_dict(d):
         return GraphNode(d['id'], d['class_name'], d['category'],
-                         [Property[s.upper()] for s in d['properties']],
-                         [State[s.upper()] for s in d['states']],
+                         set([Property[s.upper()] for s in d['properties']]),
+                         set([State[s.upper()] for s in d['states']]),
                          d['prefab_name'], Bounds(**d['bounding_box']))
 
 
@@ -267,21 +276,21 @@ class EnvironmentState(object):
             self._removed_edges_from.setdefault((from_node.id, relation), set()).add(to_node.id)
         elif (from_node.id, relation) in self._new_edges_from:
             to_node_ids = self._new_edges_from[(from_node.id, relation)]
-            if to_node.id in to_node_ids:
-                to_node_ids.remove(to_node.id)
+            to_node_ids.discard(to_node.id)
 
-    def change_state(self, changers: List['StateChanger'], node: Node, obj: ScriptObject = None):
-        tm = TimeMeasurement.start('change_state')
+    def add_node(self, node: Node):
+        self._new_nodes[node.id] = node
+
+    def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
         new_state = EnvironmentState(self._graph)
         new_state._new_nodes = self._new_nodes.copy()
         new_state._removed_edges_from = self._removed_edges_from.copy()
         new_state._new_edges_from = self._new_edges_from.copy()
         new_state._script_objects = self._script_objects.copy()
-        if obj is not None:
+        if obj is not None and node is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
         for changer in changers:
             changer.apply_changes(new_state)
-        TimeMeasurement.stop(tm)
         return new_state
 
 
@@ -364,6 +373,12 @@ class NodeConditionFilter(NodeFilter):
 
     def filter(self, node: Node):
         return self.value.evaluate(node)
+
+
+class AnyNodeFilter(NodeFilter):
+
+    def filter(self, node: Node):
+        return True
 
 
 # LogicalValue-s
@@ -488,3 +503,16 @@ class DeleteEdges(StateChanger):
                 for n2 in self.to_node.enumerate(state):
                     state.delete_edge(n1, e, n2)
         TimeMeasurement.stop(tm)
+
+
+class AddNode(StateChanger):
+
+    def __init__(self, node: GraphNode):
+        self.node = node
+
+    def apply_changes(self, state: EnvironmentState):
+        state.add_node(self.node)
+
+
+
+
