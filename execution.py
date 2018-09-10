@@ -108,7 +108,7 @@ class GrabExecutor(ActionExecutor):
         if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
             return None
         if state.evaluate(ExistsRelation(NodeInstance(node), Relation.INSIDE,
-                                         NodeConditionFilter(And(NodeAttrIn('states', State.OPEN),
+                                         NodeConditionFilter(And(NodeAttrIn(State.OPEN, 'states'),
                                                                  Not(IsRoomNode()))))):
             return None
         return _find_free_hand(state)
@@ -137,6 +137,35 @@ class OpenExecutor(ActionExecutor):
         s = State.OPEN if self.close else State.CLOSED
         return s in node.states
 
+
+class PutExecutor(ActionExecutor):
+
+    def __init__(self, inside):
+        self.inside = inside
+
+    def execute(self, script: Script, state: EnvironmentState):
+        current_line = script[0]
+        src_node = state.get_state_node(current_line.object())
+        dest_node = state.get_state_node(current_line.subject())
+        if src_node is not None and dest_node is not None:
+            if self.check_puttable(state, src_node, dest_node):
+                new_rel = Relation.INSIDE if self.inside else Relation.ON
+                yield state.change_state(
+                    [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(src_node)),
+                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(dest_node)),
+                     AddEdges(NodeInstance(src_node), new_rel, NodeInstance(dest_node))]
+                )
+
+    def check_puttable(self, state: EnvironmentState, src_node: GraphNode, dest_node: GraphNode):
+        hand_rel = _find_holding_hand(state, src_node)
+        if hand_rel is None:
+            return False
+        if not _is_character_close_to(state, dest_node):
+            return False
+        if self.inside:
+            return Property.CAN_OPEN not in dest_node.properties or \
+                   State.OPEN in dest_node.states
+        return True
 
 # General checks and helpers
 
@@ -169,6 +198,12 @@ def _find_free_hand(state: EnvironmentState):
         return Relation.HOLDS_LH
     return None
 
+def _find_holding_hand(state: EnvironmentState, node: Node):
+    if state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, NodeInstanceFilter(node))):
+        return Relation.HOLDS_RH
+    if state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_LH, NodeInstanceFilter(node))):
+        return Relation.HOLDS_LH
+    return None
 
 # ScriptExecutor
 ###############################################################################
@@ -182,7 +217,9 @@ class ScriptExecutor(object):
         Action.SIT: SitExecutor(),
         Action.GRAB: GrabExecutor(),
         Action.OPEN: OpenExecutor(False),
-        Action.CLOSE: OpenExecutor(True)
+        Action.CLOSE: OpenExecutor(True),
+        Action.PUT: PutExecutor(False),
+        Action.PUTIN: PutExecutor(True),
     }
 
     def __init__(self, graph: EnvironmentGraph):

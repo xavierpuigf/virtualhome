@@ -1,5 +1,4 @@
 import json
-import time
 from common import TimeMeasurement
 from environment import EnvironmentGraph
 from scripts import Script, parse_script_line
@@ -20,7 +19,9 @@ def get_script():
                       #'[find] <plate> (1)',
                       #'[grab] <plate> (1)',
                       '[walk] <fridge> (1)',
-                      '[open] <fridge> (1)']
+                      '[open] <fridge> (1)',
+                      '[putin] <waterglass> (1) <fridge> (1)',
+                      '[close] <fridge> (1)']
 
     script_lines = [parse_script_line(sl) for sl in script_strings]
     return Script(script_lines)

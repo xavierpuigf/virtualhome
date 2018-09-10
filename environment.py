@@ -455,9 +455,9 @@ class NodeAttrEq(LogicalValue):
 
 class NodeAttrIn(LogicalValue):
 
-    def __init__(self, attr, value):
-        self.attr = attr
+    def __init__(self, value, attr):
         self.value = value
+        self.attr = attr
 
     def evaluate(self, node: GraphNode):
         return self.value in getattr(node, self.attr)
