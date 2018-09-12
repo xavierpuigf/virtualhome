@@ -11,29 +11,19 @@ def load_graph(file_name):
     return EnvironmentGraph(data)
 
 
-def get_script():
-    script0_strings = ['[walk] <chair> (1)',
-                       '[sit] <chair> (1)']
-    script1_strings = ['[walk] <waterglass> (1)',
-                       '[grab] <waterglass> (1)',
-                       #'[find] <plate> (1)',
-                       #'[grab] <plate> (1)',
-                       '[walk] <fridge> (1)',
-                       '[open] <fridge> (1)',
-                       '[putin] <waterglass> (1) <fridge> (1)',
-                       '[close] <fridge> (1)']
-    script_strings = ['[walk] <kitchen_table> (1)',
-                      '[find] <bench> (1)',
-                      '[sit] <bench> (1)',
-                      ]
-
-    script_lines = [parse_script_line(sl) for sl in script_strings]
+def read_script(file_name):
+    script_lines = []
+    with open(file_name) as f:
+        for line in f:
+            line = line.strip()
+            if len(line) > 0 and not line.startswith('#'):
+                script_lines.append(parse_script_line(line))
     return Script(script_lines)
 
 
 if __name__ == '__main__':
     graph = load_graph('c:/Work/Python/TestScene6_graph.json')
-    script = get_script()
+    script = read_script('test_scripts/script_test_000003.txt')
     executor = ScriptExecutor(graph)
     tm = TimeMeasurement.start('Execution')
     state_enum = executor.execute(script)

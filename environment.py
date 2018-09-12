@@ -95,7 +95,6 @@ class GraphNode(Node):
                          self.properties.copy(), self.states.copy(), self.prefab_name,
                          self.bounding_box)
 
-
     def __str__(self):
         return '<{}> ({})'.format(self.class_name, self.prefab_name)
 
@@ -200,9 +199,9 @@ class EnvironmentState(object):
         """Enumerate nodes satisfying script object condition. If object was already
         discovered, return node
         """
-        node = self._script_objects.get((obj.name, obj.instance), None)
-        if node is not None:
-            return [node]
+        node_id = self._script_objects.get((obj.name, obj.instance), None)
+        if node_id is not None:
+            return [self.get_node(node_id)]
         else:
             return self.get_nodes_by_attr('class_name', obj.name)
 
