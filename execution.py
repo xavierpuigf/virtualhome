@@ -36,15 +36,31 @@ class SitExecutor(ActionExecutor):
         node = state.get_state_node(current_line.object())
         if node is not None:
             if self.check_sittable(state, node):
+                char_node = _get_character_node(state)
+                new_char_node = char_node.copy()
+                new_char_node.states.add(State.SITTING)
                 yield state.change_state(
-                    [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node))],
-                    node
+                    [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
+                     AddNode(new_char_node)]
                 )
 
     def check_sittable(self, state: EnvironmentState, node: GraphNode):
+        char_node = _get_character_node(state)
+        if State.SITTING in char_node.states:
+            return False
         if Property.SITTABLE not in node.properties:
             return False
         return not state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node)))
+
+
+class StandUpExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState):
+        char_node = _get_character_node(state)
+        if State.SITTING in char_node.states:
+            new_char_node = char_node.copy()
+            new_char_node.states.remove(State.SITTING)
+            yield state.change_state([AddNode(new_char_node)])
 
 
 class FindExecutor(ActionExecutor):
@@ -86,7 +102,9 @@ class WalkExecutor(ActionExecutor):
                 )
 
     def check_walk(self, state: EnvironmentState, node: GraphNode):
-        # TODO: check if doors are closed between rooms, ...
+        char_node = _get_character_node(state)
+        if State.SITTING in char_node.states:
+            return False
         return True
 
 
@@ -210,6 +228,24 @@ class SwitchExecutor(ActionExecutor):
         return s in node.states
 
 
+class DrinkExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_drinkable(state, node):
+                yield state.change_state([])
+
+    def check_drinkable(self, state: EnvironmentState, node: GraphNode):
+        if Property.DRINKABLE not in node.properties:
+            return False
+        hand_rel = _find_holding_hand(state, node)
+        if hand_rel is None:
+            return False
+        return True
+
+
 # General checks and helpers
 
 def _is_character_close_to(state: EnvironmentState, node: Node):
@@ -259,13 +295,15 @@ class ScriptExecutor(object):
         Action.GOTO: WalkExecutor(),
         Action.FIND: JoinedExecutor(FindExecutor(), WalkExecutor()),
         Action.SIT: SitExecutor(),
+        Action.STANDUP: StandUpExecutor(),
         Action.GRAB: GrabExecutor(),
         Action.OPEN: OpenExecutor(False),
         Action.CLOSE: OpenExecutor(True),
         Action.PUT: PutExecutor(False),
         Action.PUTIN: PutExecutor(True),
         Action.SWITCHON: SwitchExecutor(True),
-        Action.SWITCHOFF: SwitchExecutor(False)
+        Action.SWITCHOFF: SwitchExecutor(False),
+        Action.DRINK: DrinkExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph):

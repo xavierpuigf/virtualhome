@@ -22,6 +22,7 @@ class State(Enum):
     OPEN = 2
     ON = 3
     OFF = 4
+    SITTING = 5
 
 
 class Relation(Enum):
@@ -444,7 +445,7 @@ class IsRoomNode(LogicalValue):
 
 class NodeAttrEq(LogicalValue):
 
-    def __init__(self, attr, value):
+    def __init__(self, attr: str, value):
         self.attr = attr
         self.value = value
 
@@ -454,7 +455,7 @@ class NodeAttrEq(LogicalValue):
 
 class NodeAttrIn(LogicalValue):
 
-    def __init__(self, value, attr):
+    def __init__(self, value, attr: str):
         self.value = value
         self.attr = attr
 
