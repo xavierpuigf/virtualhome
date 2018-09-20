@@ -11,6 +11,11 @@ def load_graph(file_name):
     return EnvironmentGraph(data)
 
 
+def load_name_equivalence(file_name):
+    with open(file_name) as f:
+        return json.load(f)
+
+
 def read_script(file_name):
     script_lines = []
     with open(file_name) as f:
@@ -23,8 +28,9 @@ def read_script(file_name):
 
 if __name__ == '__main__':
     graph = load_graph('test_graphs/TestScene6_graph.json')
+    name_equivalence = load_name_equivalence('resources/class_name_equivalence.json')
     script = read_script('test_scripts/script_test_000003.txt')
-    executor = ScriptExecutor(graph)
+    executor = ScriptExecutor(graph, name_equivalence)
     tm = TimeMeasurement.start('Execution')
     state_enum = executor.execute(script)
     state = next(state_enum, None)

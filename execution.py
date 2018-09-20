@@ -308,14 +308,15 @@ class ScriptExecutor(object):
         Action.DRINK: DrinkExecutor()
     }
 
-    def __init__(self, graph: EnvironmentGraph):
+    def __init__(self, graph: EnvironmentGraph, name_equivalence):
         self.graph = graph
+        self.name_equivalence = name_equivalence
         self.processing_time_limit = 10  # 10 seconds
         self.processing_limit = 0
 
     def execute(self, script: Script):
         self.processing_limit = time.time() + self.processing_time_limit
-        init_state = EnvironmentState(self.graph)
+        init_state = EnvironmentState(self.graph, self.name_equivalence)
         return self.execute_rec(script, 0, init_state)
 
     def execute_rec(self, script: Script, script_index: int, state: EnvironmentState):

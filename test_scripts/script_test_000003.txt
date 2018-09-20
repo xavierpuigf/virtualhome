@@ -16,9 +16,12 @@
 # [StandUp]
 # [Walk] <toilet> (1)
 
-[Walk] <chair> (1)
-[Walk] <fridge> (1)
-[Open] <fridge> (1)
-[Walk] <chair> (1)
-[Sit] <chair> (1)
-	
+#[Walk] <chair> (1)
+#[Walk] <fridge> (1)
+#[Open] <fridge> (1)
+#[Walk] <chair> (1)
+#[Sit] <chair> (1)
+
+[Walk] <television> (1)
+[SwitchOn] <television> (1)
+

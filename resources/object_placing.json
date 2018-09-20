@@ -1,0 +1,1182 @@
+[{
+	"class_name": "Amplifier",
+	"destination": []
+},
+{
+	"class_name": "Apple",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "SportsBall",
+	"destination": ["Sofa",
+	"Floor",
+	"BookShelf"]
+},
+{
+	"class_name": "Banana",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "Bananas",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "BarSoap",
+	"destination": ["Kitchen_counter",
+	"Bathroom_counter"]
+},
+{
+	"class_name": "Bathroom",
+	"destination": []
+},
+{
+	"class_name": "Bathroom_cabinet",
+	"destination": []
+},
+{
+	"class_name": "Bathroom_counter",
+	"destination": []
+},
+{
+	"class_name": "Bathtub",
+	"destination": []
+},
+{
+	"class_name": "Bed",
+	"destination": []
+},
+{
+	"class_name": "Bedroom",
+	"destination": []
+},
+{
+	"class_name": "BellPepper",
+	"destination": ["Coffee_table",
+	"Kitchen_table",
+	"Kitchen_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "Bench",
+	"destination": []
+},
+{
+	"class_name": "Board",
+	"destination": ["Wall [Kitchen]",
+	"Wall [Livingroom]",
+	"Wall [Bedroom]"]
+},
+{
+	"class_name": "Boardgame",
+	"destination": ["Coffee_table",
+	"DiningTable",
+	"Kitchen_table"]
+},
+{
+	"class_name": "Book",
+	"destination": ["Table",
+	"Desk",
+	"Bed",
+	"Nightstand",
+	"Kitchen_table",
+	"DiningTable",
+	"BookShelf",
+	"Bed",
+	"Chair",
+	"TV_stand",
+	"Shelf",
+	"Cabinet"]
+},
+{
+	"class_name": "BookShelf",
+	"destination": []
+},
+{
+	"class_name": "BowlOf_apples",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "BowlOf_bananas",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "BowlOf_bellPeppers",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "BowlOf_fruits",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"TV_stand",
+	"DiningTable"]
+},
+{
+	"class_name": "BowlOf_limes",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "BowlOf_oranges",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "BowlOf_peaches",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "BowlOf_pears",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "BowlOf_plums",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "BowlOf_tomatoes",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Box",
+	"destination": ["Floor",
+	"Chair"]
+},
+{
+	"class_name": "Bread",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Bread_slice",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Broom",
+	"destination": ["Floor",
+	"Shower"]
+},
+{
+	"class_name": "Bucket",
+	"destination": ["Floor",
+	"Bathroom_counter",
+	"Shower"]
+},
+{
+	"class_name": "Cat",
+	"destination": ["Floor",
+	"Sofa",
+	"Bed"]
+},
+{
+	"class_name": "Cards",
+	"destination": ["Coffee_table",
+	"DiningTable",
+	"Desk",
+	"TV_stand"]
+},
+{
+	"class_name": "Cellphone",
+	"destination": ["Coffee_table",
+	"DiningTable",
+	"Bathroom_counter",
+	"Kitchen_counter",
+	"Desk",
+	"TV_stand",
+	"Shelf",
+	"Cabinet"]
+},
+{
+	"class_name": "Carrot",
+	"destination": ["Kitchen_table",
+	"Kitchen_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "Chinesefood",
+	"destination": ["Coffee_table",
+	"Kitchen_table",
+	"Kitchen_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "Desk",
+	"destination": []
+},
+{
+	"class_name": "Cabinet",
+	"destination": []
+},
+{
+	"class_name": "Candle",
+	"destination": ["Coffee_table",
+	"Kitchen_table",
+	"DiningTable",
+	"Bookshelf",
+	"TV_stand"]
+},
+{
+	"class_name": "CandyBar",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "CeilingFan",
+	"destination": []
+},
+{
+	"class_name": "Ceiling_lamp",
+	"destination": []
+},
+{
+	"class_name": "Cereal",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Chair",
+	"destination": ["Floor [Bedroom]",
+	"Floor [Livingroom]",
+	"Floor [Kitchen]"]
+},
+{
+	"class_name": "ChefKnife",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Chicken",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Chips",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Desk",
+	"Shelf [Kitchen]"]
+},
+{
+	"class_name": "ChocolateSyrup",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Shelf [Kitchen]"]
+},
+{
+	"class_name": "Chocolate_syrup",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Shelf [Kitchen]"]
+},
+{
+	"class_name": "Clock",
+	"destination": ["Nightstand",
+	"Bookshelf",
+	"DiningTable",
+	"Desk"]
+},
+{
+	"class_name": "Closet",
+	"destination": []
+},
+{
+	"class_name": "Closet_Drawer",
+	"destination": []
+},
+{
+	"class_name": "Clothes_pants",
+	"destination": ["Closet"]
+},
+{
+	"class_name": "Clothes_pile",
+	"destination": ["Bed",
+	"Floor [Bedroom]"]
+},
+{
+	"class_name": "Clothes_shirt",
+	"destination": ["Closet"]
+},
+{
+	"class_name": "Coffee_table",
+	"destination": []
+},
+{
+	"class_name": "Coffeemaker",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Coffee_pot",
+	"destination": ["Kitchen_counter",
+	"DiningTable",
+	"Kitchen_table"]
+},
+{
+	"class_name": "Condiment_bottle",
+	"destination": ["Kitchen_table",
+	"Kitchen_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "Condiment_shaker",
+	"destination": ["Kitchen_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "CookingPot",
+	"destination": ["Stove",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Crackers",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Desk",
+	"TV_stand"]
+},
+{
+	"class_name": "Crayons",
+	"destination": ["DiningTable",
+	"Coffee_table",
+	"Kitchen_table",
+	"Desk",
+	"TV_stand"]
+},
+{
+	"class_name": "CreamyBuns",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Creamy_buns",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "Cucumber",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Cupcake",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"TV_stand"]
+},
+{
+	"class_name": "Curtains",
+	"destination": []
+},
+{
+	"class_name": "Cutlery_Knife",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Cutlery_fork",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Cutlets",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Cutting_board",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Deodorant",
+	"destination": ["Bathroom_counter"]
+},
+{
+	"class_name": "Desk",
+	"destination": []
+},
+{
+	"class_name": "DiningTable",
+	"destination": []
+},
+{
+	"class_name": "DishWashingLiquid",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Dish_bowl",
+	"destination": ["Kitchen_table",
+	"DiningTable",
+	"Kitchen_counter",
+	"TV_stand",
+	"Desk"]
+},
+{
+	"class_name": "Plate",
+	"destination": ["Kitchen_table",
+	"DiningTable",
+	"Kitchen_counter",
+	"TV_stand",
+	"Desk"]
+},
+{
+	"class_name": "Dishwasher",
+	"destination": []
+},
+{
+	"class_name": "Door",
+	"destination": []
+},
+{
+	"class_name": "Doorjamb",
+	"destination": []
+},
+{
+	"class_name": "Dustpan",
+	"destination": ["Floor",
+	"Bathroom_counter",
+	"BookShelf"]
+},
+{
+	"class_name": "Donut",
+	"destination": ["Kitchen_table",
+	"DiningTable",
+	"Kitchen_counter",
+	"Coffee_table"]
+},
+{
+	"class_name": "FaceCream",
+	"destination": ["Bathroom_counter",
+	"Shelf"]
+},
+{
+	"class_name": "Face_cream",
+	"destination": ["Bathroom_counter",
+	"Shelf"]
+},
+{
+	"class_name": "Fridge",
+	"destination": []
+},
+{
+	"class_name": "Folder",
+	"destination": ["Desk",
+	"Coffee_table",
+	"BookShelf"]
+},
+{
+	"class_name": "FryingPan",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Garbage_can",
+	"destination": ["Floor"]
+},
+{
+	"class_name": "Game",
+	"destination": ["Floor [Livingroom]",
+	"Coffee_table",
+	"Sofa",
+	"BookShelf"]
+},
+{
+	"class_name": "Globe",
+	"destination": ["Coffee_table",
+	"Floor [Livingroom]",
+	"Sofa"]
+},
+{
+	"class_name": "Glasses",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Nightstand",
+	"BookShelf",
+	"Bed",
+	"Sofa",
+	"Chair",
+	"TV_stand"]
+},
+{
+	"class_name": "Guitar",
+	"destination": []
+},
+{
+	"class_name": "HairProduct",
+	"destination": ["Bathroom_counter"]
+},
+{
+	"class_name": "Hanger",
+	"destination": []
+},
+{
+	"class_name": "Home",
+	"destination": []
+},
+{
+	"class_name": "Jacuzzi",
+	"destination": []
+},
+{
+	"class_name": "Journal",
+	"destination": ["Table",
+	"Desk",
+	"Bed",
+	"Nightstand",
+	"BookShelf",
+	"Bed",
+	"Sofa"]
+},
+{
+	"class_name": "Juice",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "Keyboard",
+	"destination": ["Desk"]
+},
+{
+	"class_name": "Kettle",
+	"destination": ["Stove",
+	"Kitchen_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "Kitchen",
+	"destination": []
+},
+{
+	"class_name": "Kitchen_cabinets",
+	"destination": []
+},
+{
+	"class_name": "Kitchen_chair",
+	"destination": ["Floor [Kitchen]"]
+},
+{
+	"class_name": "Kitchen_counter",
+	"destination": []
+},
+{
+	"class_name": "Kitchen_table",
+	"destination": []
+},
+{
+	"class_name": "KnifeBlock",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Lemon",
+	"destination": []
+},
+{
+	"class_name": "LightSwitch",
+	"destination": ["Wall"]
+},
+{
+	"class_name": "Lime",
+	"destination": []
+},
+{
+	"class_name": "Livingroom",
+	"destination": []
+},
+{
+	"class_name": "LotionBottle",
+	"destination": ["Table",
+	"Desk",
+	"Nightstand",
+	"BookShelf",
+	"Bathroom_counter",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "MOD_FUR_Kitchen_counter_corner",
+	"destination": []
+},
+{
+	"class_name": "Magazine",
+	"destination": ["Coffee_table",
+	"Nightstand",
+	"DiningTable",
+	"Desk",
+	"BookShelf",
+	"TV_stand"]
+},
+{
+	"class_name": "MainDoor",
+	"destination": []
+},
+{
+	"class_name": "Microwave",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Milk",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Milkshake",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "MincedMeat",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Mouse",
+	"destination": ["Mousemat",
+	"Desk"]
+},
+{
+	"class_name": "Mousemat",
+	"destination": ["Desk"]
+},
+{
+	"class_name": "Mug",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Desk",
+	"TV_stand"]
+},
+{
+	"class_name": "Napkin",
+	"destination": ["Coffee_table",
+	"DiningTable",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Newspaper",
+	"destination": ["Coffee_table",
+	"Nightstand",
+	"DiningTable",
+	"Desk",
+	"Bathroom_counter",
+	"Kitchen_counter",
+	"TV_stand",
+	"BookShelf",
+	"TV_stand"]
+},
+{
+	"class_name": "Nightstand",
+	"destination": []
+},
+{
+	"class_name": "Notes",
+	"destination": ["Coffee_table",
+	"DiningTable",
+	"Desk",
+	"Cabinet",
+	"Nightstand",
+	"Sofa",
+	"BookShelf",
+	"TV_stand"]
+},
+{
+	"class_name": "Orange",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Coffee_table",
+	"TV_stand"]
+},
+{
+	"class_name": "Orchid",
+	"destination": ["Kitchen_table",
+	"Coffee_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "Orchid_piece",
+	"destination": []
+},
+{
+	"class_name": "PC",
+	"destination": []
+},
+{
+	"class_name": "Painkillers",
+	"destination": ["BookShelf",
+	"Bathroom_counter"]
+},
+{
+	"class_name": "Pancake",
+	"destination": ["DiningTable",
+	"Kitchen_table"]
+},
+{
+	"class_name": "Paper",
+	"destination": ["Coffee_table",
+	"Desk",
+	"DiningTable",
+	"TV_stand",
+	"TV_stand"]
+},
+{
+	"class_name": "PaperTowel",
+	"destination": ["Coffee_table",
+	"DiningTable",
+	"BookShelf",
+	"Bathroom_counter",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Paper_tray",
+	"destination": ["Desk"]
+},
+{
+	"class_name": "Peach",
+	"destination": ["DiningTable",
+	"Kitchen_table",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Pear",
+	"destination": ["DiningTable",
+	"Kitchen_table",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Pen",
+	"destination": ["Coffee_table",
+	"Kitchen_table",
+	"DiningTable",
+	"Nightstand",
+	"BookShelf",
+	"Desk",
+	"TV_stand"]
+},
+{
+	"class_name": "Perfume",
+	"destination": ["Bathroom_counter",
+	"Nightstand",
+	"BookShelf"]
+},
+{
+	"class_name": "PhotoFrame",
+	"destination": ["Nightstand",
+	"Desk",
+	"Coffee_table",
+	"BookShelf",
+	"TV_stand"]
+},
+{
+	"class_name": "Pie",
+	"destination": ["DiningTable",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Pillow",
+	"destination": ["Bed",
+	"Sofa",
+	"Chair"]
+},
+{
+	"class_name": "Plum",
+	"destination": ["DiningTable",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand"]
+},
+{
+	"class_name": "PotLid",
+	"destination": ["CookingPot"]
+},
+{
+	"class_name": "Potato",
+	"destination": ["Coffee_table",
+	"Kitchen_table",
+	"DiningTable",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "PoundCake",
+	"destination": ["Kitchen_table",
+	"DiningTable",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Power_socket",
+	"destination": ["Wall"]
+},
+{
+	"class_name": "Printer",
+	"destination": ["Desk"]
+},
+{
+	"class_name": "Projector",
+	"destination": ["Ceiling [Bedroom]"]
+},
+{
+	"class_name": "Pudding",
+	"destination": ["DiningTable",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Radio",
+	"destination": ["Floor [Livingroom]"]
+},
+{
+	"class_name": "Remote_control",
+	"destination": ["Desk",
+	"Cabinet",
+	"Nightstand",
+	"Coffee_table",
+	"Sofa",
+	"DiningTable",
+	"Bed",
+	"TV_stand",
+	"Floor [Livingroom]"]
+},
+{
+	"class_name": "Rug",
+	"destination": ["Floor [Livingroom]"]
+},
+{
+	"class_name": "Salad",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Salmon",
+	"destination": ["Kitchen_table",
+	"DiningTable",
+	"Kitchen_counter"]
+},
+{
+	"class_name": "Salt_crackers",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"DiningTable",
+	"Desk",
+	"TV_stand",
+	"Shelf [Kitchen]"]
+},
+{
+	"class_name": "Shelf",
+	"destination": []
+},
+{
+	"class_name": "Shelf_SoapSet",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Shower_stall",
+	"destination": []
+},
+{
+	"class_name": "Sink",
+	"destination": []
+},
+{
+	"class_name": "Size",
+	"destination": []
+},
+{
+	"class_name": "Slippers",
+	"destination": ["Floor",
+	"BookShelf",
+	"Chair",
+	"Nightstand"]
+},
+{
+	"class_name": "SoapSet",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Sofa",
+	"destination": []
+},
+{
+	"class_name": "Speaker",
+	"destination": ["Desk",
+	"Shelf",
+	"BookShelf"]
+},
+{
+	"class_name": "Washing_sponge",
+	"destination": ["Kitchen_counter",
+	"Bathroom_counter",
+	"DiningTable"]
+},
+{
+	"class_name": "Spoon",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Stove",
+	"destination": []
+},
+{
+	"class_name": "StoveFan",
+	"destination": []
+},
+{
+	"class_name": "Sundae",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "TV",
+	"destination": ["TV_stand"]
+},
+{
+	"class_name": "TV_stand",
+	"destination": []
+},
+{
+	"class_name": "Table_lamp",
+	"destination": ["Nightstand"]
+},
+{
+	"class_name": "TeddyBear",
+	"destination": ["Floor",
+	"Bed",
+	"BookShelf",
+	"Sofa",
+	"TV_stand"]
+},
+{
+	"class_name": "Toaster",
+	"destination": ["Kitchen_counter"]
+},
+{
+	"class_name": "Toilet",
+	"destination": []
+},
+{
+	"class_name": "ToiletPaper",
+	"destination": ["Bathroom_counter"]
+},
+{
+	"class_name": "Tomato",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "Toothbrush",
+	"destination": ["Bathroom_counter",
+	"Shelf"]
+},
+{
+	"class_name": "Toothpaste",
+	"destination": ["Bathroom_counter",
+	"Shelf"]
+},
+{
+	"class_name": "Toy",
+	"destination": ["Coffee_table",
+	"Bed"]
+},
+{
+	"class_name": "Towel",
+	"destination": ["Bed",
+	"Shelf"]
+},
+{
+	"class_name": "Towel_hanged",
+	"destination": []
+},
+{
+	"class_name": "Towel_rack",
+	"destination": []
+},
+{
+	"class_name": "Towel_rolled",
+	"destination": []
+},
+{
+	"class_name": "WallPictureFrame",
+	"destination": ["Wall"]
+},
+{
+	"class_name": "WallTV",
+	"destination": ["Wall"]
+},
+{
+	"class_name": "Wall_lamp",
+	"destination": []
+},
+{
+	"class_name": "Wall_phone",
+	"destination": ["Wall"]
+},
+{
+	"class_name": "WaterGlass",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"TV_stand",
+	"Desk"]
+},
+{
+	"class_name": "Watermelon",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "WhippedCream",
+	"destination": ["Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable"]
+},
+{
+	"class_name": "WineGlass",
+	"destination": ["Coffee_table",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"DiningTable",
+	"Desk",
+	"TV_stand"]
+},
+{
+	"class_name": "CPU_case",
+	"destination": []
+},
+{
+	"class_name": "CPU_screen",
+	"destination": ["Desk"]
+},
+{
+	"class_name": "Alcohol",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"TV_stand",
+	"Desk",
+	"Coffee_table"]
+},
+{
+	"class_name": "Beer",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"TV_stand",
+	"Desk",
+	"Coffee_table"]
+},
+{
+	"class_name": "Bottle_water",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"TV_stand",
+	"Desk",
+	"Coffee_table"]
+},
+{
+	"class_name": "Wine",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Kitchen_table",
+	"TV_stand",
+	"Desk",
+	"Coffee_table"]
+},
+{
+	"class_name": "Wall_shelf",
+	"destination": []
+},
+{
+	"class_name": "Standing_mirror",
+	"destination": []
+},
+{
+	"class_name": "Vase",
+	"destination": ["Coffee_table",
+	"TV_stand",
+	"Wall_shelf"]
+},
+{
+	"class_name": "Balance_ball",
+	"destination": ["Floor"]
+},
+{
+	"class_name": "Long_board",
+	"destination": ["Floor"]
+},
+{
+	"class_name": "OvenTray",
+	"destination": ["DiningTable",
+	"Kitchen_counter",
+	"Stove"]
+}]

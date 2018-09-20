@@ -186,8 +186,9 @@ class EnvironmentGraph(object):
 
 class EnvironmentState(object):
 
-    def __init__(self, graph: EnvironmentGraph):
+    def __init__(self, graph: EnvironmentGraph, name_equivalence):
         self._graph = graph
+        self._name_equivalence = name_equivalence
         self._script_objects = {}  # (name, instance) -> node id
         self._new_nodes = {}  # map: node id -> GraphNode
         self._removed_edges_from = {}  # map: (from_node id, relation) -> to_node id set
@@ -204,7 +205,10 @@ class EnvironmentState(object):
         if node_id is not None:
             return [self.get_node(node_id)]
         else:
-            return self.get_nodes_by_attr('class_name', obj.name)
+            nodes = []
+            for name in [obj.name] + self._name_equivalence.get(obj.name, []):
+                nodes.extend(self.get_nodes_by_attr('class_name', name))
+            return nodes
 
     def get_state_node(self, obj: ScriptObject):
         node_id = self._script_objects.get((obj.name, obj.instance), -1)
@@ -282,7 +286,7 @@ class EnvironmentState(object):
         self._new_nodes[node.id] = node
 
     def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
-        new_state = EnvironmentState(self._graph)
+        new_state = EnvironmentState(self._graph, self._name_equivalence)
         new_state._new_nodes = self._new_nodes.copy()
         new_state._removed_edges_from = self._removed_edges_from.copy()
         new_state._new_edges_from = self._new_edges_from.copy()
