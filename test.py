@@ -22,7 +22,7 @@ def read_script(file_name):
 
 
 if __name__ == '__main__':
-    graph = load_graph('c:/Work/Python/TestScene6_graph.json')
+    graph = load_graph('test_graphs/TestScene6_graph.json')
     script = read_script('test_scripts/script_test_000003.txt')
     executor = ScriptExecutor(graph)
     tm = TimeMeasurement.start('Execution')

@@ -45,6 +45,8 @@ class SitExecutor(ActionExecutor):
                 )
 
     def check_sittable(self, state: EnvironmentState, node: GraphNode):
+        if not _is_character_close_to(state, node):
+            return False
         char_node = _get_character_node(state)
         if State.SITTING in char_node.states:
             return False
