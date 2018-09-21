@@ -163,3 +163,7 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# Project-specific stuff
+test_scripts/
+test.py

@@ -22,6 +22,8 @@
 #[Walk] <chair> (1)
 #[Sit] <chair> (1)
 
-[Walk] <television> (1)
-[SwitchOn] <television> (1)
+#[Walk] <television> (1)
+#[SwitchOn] <television> (1)
 
+[Walk] <glass> (1)
+[Grab] <glass> (1)

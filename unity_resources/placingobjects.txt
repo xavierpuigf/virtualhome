@@ -1,0 +1,942 @@
+BEGIN<Amplifier>
+END<Amplifier>
+BEGIN<Apple>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<Apple>
+BEGIN<SportsBall>
+   Sofa
+   Floor
+   BookShelf
+END<SportsBall>
+BEGIN<Banana>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<Banana>
+BEGIN<Bananas>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<Bananas>
+BEGIN<BarSoap>
+   Kitchen_counter
+   Bathroom_counter
+END<BarSoap>
+BEGIN<Bathroom>
+END<Bathroom>
+BEGIN<Bathroom_cabinet>
+END<Bathroom_cabinet>
+BEGIN<Bathroom_counter>
+END<Bathroom_counter>
+BEGIN<Bathtub>
+END<Bathtub>
+BEGIN<Bed>
+END<Bed>
+BEGIN<Bedroom>
+END<Bedroom>
+BEGIN<BellPepper>
+   Coffee_table
+   Kitchen_table
+   Kitchen_counter
+   DiningTable
+END<BellPepper>
+BEGIN<Bench>
+END<Bench>
+BEGIN<Board>
+   Wall [Kitchen]
+   Wall [Livingroom]
+   Wall [Bedroom]
+END<Board>
+BEGIN<Boardgame>
+   Coffee_table
+   DiningTable
+   Kitchen_table
+END<Boardgame>
+BEGIN<Book>
+   Table
+   Desk
+   Bed
+   Nightstand
+   Kitchen_table
+   DiningTable
+   BookShelf
+   Bed
+   Chair
+   TV_stand
+   Shelf
+   Cabinet
+END<Book>
+BEGIN<BookShelf>
+END<BookShelf>
+BEGIN<BowlOf_apples>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<BowlOf_apples>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+BEGIN<BowlOf_bananas>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<BowlOf_bananas>
+BEGIN<BowlOf_bellPeppers>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<BowlOf_bellPeppers>
+BEGIN<BowlOf_fruits>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   TV_stand
+   DiningTable
+END<BowlOf_fruits>
+BEGIN<BowlOf_limes>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<BowlOf_limes>
+BEGIN<BowlOf_oranges>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<BowlOf_oranges>
+BEGIN<BowlOf_peaches>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<BowlOf_peaches>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+BEGIN<BowlOf_pears>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<BowlOf_pears>
+BEGIN<BowlOf_plums>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<BowlOf_plums>
+BEGIN<BowlOf_tomatoes>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<BowlOf_tomatoes>
+BEGIN<Box>
+   Floor
+   Chair
+END<Box>
+BEGIN<Bread>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Bread>
+BEGIN<Bread_slice>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Bread_slice>
+BEGIN<Broom>
+   Floor
+   Shower
+END<Broom>
+BEGIN<Bucket>
+   Floor
+   Bathroom_counter
+   Shower
+END<Bucket>
+BEGIN<Cat>
+   Floor
+   Sofa
+   Bed
+END<Cat>
+BEGIN<Cards>
+   Coffee_table
+   DiningTable
+   Desk
+   TV_stand
+END<Cards>
+BEGIN<Cellphone>
+   Coffee_table
+   DiningTable
+   Bathroom_counter
+   Kitchen_counter
+   Desk
+   TV_stand
+   Shelf
+   Cabinet
+END<Cellphone>
+BEGIN<Carrot>
+   Kitchen_table
+   Kitchen_counter
+   DiningTable
+END<Carrot>
+BEGIN<Chinesefood>
+   Coffee_table
+   Kitchen_table
+   Kitchen_counter
+   DiningTable
+END<Chinesefood>
+BEGIN<Desk>
+END<Desk>
+BEGIN<Cabinet>
+END<Cabinet>
+BEGIN<Candle>
+   Coffee_table
+   Kitchen_table
+   DiningTable
+   Bookshelf
+   TV_stand
+END<Candle>
+BEGIN<CandyBar>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<CandyBar>
+BEGIN<CeilingFan>
+END<CeilingFan>
+BEGIN<Ceiling_lamp>
+END<Ceiling_lamp>
+BEGIN<Cereal>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Cereal>
+BEGIN<Chair>
+   Floor [Bedroom]
+   Floor [Livingroom]
+   Floor [Kitchen]
+END<Chair>
+BEGIN<ChefKnife>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<ChefKnife>
+BEGIN<Chicken>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Chicken>
+BEGIN<Chips>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Desk
+   Shelf [Kitchen]
+END<Chips>
+BEGIN<ChocolateSyrup>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Shelf [Kitchen]
+END<ChocolateSyrup>
+BEGIN<Chocolate_syrup>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Shelf [Kitchen]
+END<Chocolate_syrup>
+BEGIN<Clock>
+   Nightstand
+   Bookshelf
+   DiningTable
+   Desk
+END<Clock>
+BEGIN<Closet>
+END<Closet>
+BEGIN<Closet_Drawer>
+END<Closet_Drawer>
+BEGIN<Clothes_pants>
+   Closet
+END<Clothes_pants>
+BEGIN<Clothes_pile>
+   Bed
+   Floor [Bedroom]
+END<Clothes_pile>
+BEGIN<Clothes_shirt>
+   Closet
+END<Clothes_shirt>
+BEGIN<Coffee_table>
+END<Coffee_table>
+BEGIN<Coffeemaker>
+   Kitchen_counter
+END<Coffeemaker>
+BEGIN<Coffee_pot>
+   Kitchen_counter
+   DiningTable
+   Kitchen_table
+END<Coffee_pot>
+BEGIN<Condiment_bottle>
+   Kitchen_table
+   Kitchen_counter
+   DiningTable
+END<Condiment_bottle>
+BEGIN<Condiment_shaker>
+   Kitchen_counter
+   DiningTable
+END<Condiment_shaker>
+BEGIN<CookingPot>
+   Stove
+   Kitchen_counter
+END<CookingPot>
+BEGIN<Crackers>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Desk
+   TV_stand
+END<Crackers>
+BEGIN<Crayons>
+   DiningTable
+   Coffee_table
+   Kitchen_table
+   Desk
+   TV_stand
+END<Crayons>
+BEGIN<CreamyBuns>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<CreamyBuns>
+BEGIN<Creamy_buns>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<Creamy_buns>
+BEGIN<Cucumber>
+   Kitchen_counter
+END<Cucumber>
+BEGIN<Cupcake>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   TV_stand
+END<Cupcake>
+BEGIN<Curtains>
+END<Curtains>
+BEGIN<Cutlery_Knife>
+   Kitchen_counter
+END<Cutlery_Knife>
+BEGIN<Cutlery_fork>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Cutlery_fork>
+BEGIN<Cutlets>
+   Kitchen_counter
+END<Cutlets>
+BEGIN<Cutting_board>
+   Kitchen_counter
+END<Cutting_board>
+BEGIN<Deodorant>
+   Bathroom_counter
+END<Deodorant>
+BEGIN<Desk>
+END<Desk>
+BEGIN<DiningTable>
+END<DiningTable>
+BEGIN<DishWashingLiquid>
+   Kitchen_counter
+END<DishWashingLiquid>
+BEGIN<Dish_bowl>
+   Kitchen_table
+   DiningTable
+   Kitchen_counter
+   TV_stand
+   Desk
+END<Dish_bowl>
+BEGIN<Plate>
+   Kitchen_table
+   DiningTable
+   Kitchen_counter
+   TV_stand
+   Desk
+END<Plate>
+BEGIN<Dishwasher>
+END<Dishwasher>
+BEGIN<Door>
+END<Door>
+BEGIN<Doorjamb>
+END<Doorjamb>
+BEGIN<Dustpan>
+   Floor
+   Bathroom_counter
+   BookShelf
+END<Dustpan>
+BEGIN<Donut>
+   Kitchen_table
+   DiningTable
+   Kitchen_counter
+   Coffee_table
+END<Donut>
+BEGIN<FaceCream>
+   Bathroom_counter
+   Shelf
+END<FaceCream>
+BEGIN<Face_cream>
+   Bathroom_counter
+   Shelf
+END<Face_cream>
+BEGIN<Fridge>
+END<Fridge>
+BEGIN<Folder>
+   Desk
+   Coffee_table
+   BookShelf
+END<Folder>
+BEGIN<FryingPan>
+   Kitchen_counter
+END<FryingPan>
+BEGIN<Garbage_can>
+   Floor
+END<Garbage_can>
+BEGIN<Game>
+   Floor [Livingroom]
+   Coffee_table
+   Sofa
+   BookShelf
+END<Game>
+BEGIN<Globe>
+   Coffee_table
+   Floor [Livingroom]
+   Sofa
+END<Globe>
+BEGIN<Glasses>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Nightstand
+   BookShelf
+   Bed
+   Sofa
+   Chair
+   TV_stand
+END<Glasses>
+BEGIN<Guitar>
+END<Guitar>
+BEGIN<HairProduct>
+   Bathroom_counter
+END<HairProduct>
+BEGIN<Hanger>
+END<Hanger>
+BEGIN<Home>
+END<Home>
+BEGIN<Jacuzzi>
+END<Jacuzzi>
+BEGIN<Journal>
+   Table
+   Desk
+   Bed
+   Nightstand
+   BookShelf
+   Bed
+   Sofa
+END<Journal>
+BEGIN<Juice>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<Juice>
+BEGIN<Keyboard>
+   Desk
+END<Keyboard>
+BEGIN<Kettle>
+   Stove
+   Kitchen_counter
+   DiningTable
+END<Kettle>
+BEGIN<Kitchen>
+END<Kitchen>
+BEGIN<Kitchen_cabinets>
+END<Kitchen_cabinets>
+BEGIN<Kitchen_chair>
+   Floor [Kitchen]
+END<Kitchen_chair>
+BEGIN<Kitchen_counter>
+END<Kitchen_counter>
+BEGIN<Kitchen_table>
+END<Kitchen_table>
+BEGIN<KnifeBlock>
+   Kitchen_counter
+END<KnifeBlock>
+BEGIN<Lemon>
+END<Lemon>
+BEGIN<LightSwitch>
+   Wall
+END<LightSwitch>
+BEGIN<Lime>
+END<Lime>
+BEGIN<Livingroom>
+END<Livingroom>
+BEGIN<LotionBottle>
+   Table
+   Desk
+   Nightstand
+   BookShelf
+   Bathroom_counter
+   Kitchen_counter
+END<LotionBottle>
+BEGIN<MOD_FUR_Kitchen_counter_corner>
+END<MOD_FUR_Kitchen_counter_corner>
+BEGIN<Magazine>
+   Coffee_table
+   Nightstand
+   DiningTable
+   Desk
+   BookShelf
+   TV_stand
+END<Magazine>
+BEGIN<MainDoor>
+END<MainDoor>
+BEGIN<Microwave>
+   Kitchen_counter
+END<Microwave>
+BEGIN<Milk>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Milk>
+BEGIN<Milkshake>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Milkshake>
+BEGIN<MincedMeat>
+   Kitchen_counter
+END<MincedMeat>
+BEGIN<Mouse>
+   Mousemat
+   Desk
+END<Mouse>
+BEGIN<Mousemat>
+   Desk
+END<Mousemat>
+BEGIN<Mug>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Desk
+   TV_stand
+END<Mug>
+BEGIN<Napkin>
+   Coffee_table
+   DiningTable
+   Kitchen_counter
+END<Napkin>
+BEGIN<Newspaper>
+   Coffee_table
+   Nightstand
+   DiningTable
+   Desk
+   Bathroom_counter
+   Kitchen_counter
+   TV_stand
+   BookShelf
+   TV_stand
+END<Newspaper>
+BEGIN<Nightstand>
+END<Nightstand>
+BEGIN<Notes>
+   Coffee_table
+   DiningTable
+   Desk
+   Cabinet
+   Nightstand
+   Sofa
+   BookShelf
+   TV_stand
+END<Notes>
+BEGIN<Orange>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Coffee_table
+   TV_stand
+END<Orange>
+BEGIN<Orchid>
+   Kitchen_table
+   Coffee_table
+   DiningTable
+   TV_stand
+END<Orchid>
+BEGIN<Orchid_01_Flower>
+END<Orchid_01_Flower>
+BEGIN<Orchid_01_Leaf>
+END<Orchid_01_Leaf>
+BEGIN<Orchid_01_Pot>
+   Desk
+   Coffee_table
+END<Orchid_01_Pot>
+BEGIN<Orchid_piece>
+END<Orchid_piece>
+BEGIN<PC>
+END<PC>
+BEGIN<Painkillers>
+   BookShelf
+   Bathroom_counter
+END<Painkillers>
+BEGIN<Pancake>
+   DiningTable
+   Kitchen_table
+END<Pancake>
+BEGIN<Paper>
+   Coffee_table
+   Desk
+   DiningTable
+   TV_stand
+   TV_stand
+END<Paper>
+BEGIN<PaperTowel>
+   Coffee_table
+   DiningTable
+   BookShelf
+   Bathroom_counter
+   Kitchen_counter
+END<PaperTowel>
+BEGIN<Paper_tray>
+   Desk
+END<Paper_tray>
+BEGIN<Peach>
+   DiningTable
+   Kitchen_table
+   Kitchen_counter
+END<Peach>
+   DiningTable
+   Kitchen_table
+   Kitchen_counter
+BEGIN<Pear>
+END<Pear>
+BEGIN<Pen>
+   Coffee_table
+   Kitchen_table
+   DiningTable
+   Nightstand
+   BookShelf
+   Desk
+   TV_stand
+END<Pen>
+BEGIN<Perfume>
+   Bathroom_counter
+   Nightstand
+   BookShelf
+END<Perfume>
+BEGIN<PhotoFrame>
+   Nightstand
+   Desk
+   Coffee_table
+   BookShelf
+   TV_stand
+END<PhotoFrame>
+BEGIN<Pie>
+   DiningTable
+   Kitchen_table
+   DiningTable
+END<Pie>
+BEGIN<Pillow>
+   Bed
+   Sofa
+   Chair
+END<Pillow>
+BEGIN<Plum>
+   DiningTable
+   Kitchen_table
+   DiningTable
+   TV_stand
+END<Plum>
+BEGIN<PositionSpawn_Pot&Pan>
+END<PositionSpawn_Pot&Pan>
+BEGIN<PositionSpawn_StoveFan>
+END<PositionSpawn_StoveFan>
+BEGIN<PotLid>
+   CookingPot
+END<PotLid>
+BEGIN<Potato>
+   Coffee_table
+   Kitchen_table
+   DiningTable
+   Kitchen_counter
+END<Potato>
+BEGIN<PoundCake>
+   Kitchen_table
+   DiningTable
+   Kitchen_counter
+END<PoundCake>
+BEGIN<Power_socket>
+   Wall
+END<Power_socket>
+BEGIN<Printer>
+   Desk
+END<Printer>
+BEGIN<Projector>
+   Ceiling [Bedroom]
+END<Projector>
+BEGIN<Pudding>
+   DiningTable
+   Kitchen_table
+   DiningTable
+END<Pudding>
+BEGIN<Radio>
+   Floor [Livingroom]
+END<Radio>
+BEGIN<Remote_control>
+   Desk
+   Cabinet
+   Nightstand
+   Coffee_table
+   Sofa
+   DiningTable
+   Bed
+   TV_stand
+   Floor [Livingroom]
+END<Remote_control>
+BEGIN<Rug>
+   Floor [Livingroom]
+END<Rug>
+BEGIN<Salad>
+   Kitchen_counter
+END<Salad>
+BEGIN<Salmon>
+   Kitchen_table
+   DiningTable
+   Kitchen_counter
+END<Salmon>
+BEGIN<Salt_crackers>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   DiningTable
+   Desk
+   TV_stand
+   Shelf [Kitchen]
+END<Salt_crackers>
+BEGIN<Shelf>
+END<Shelf>
+BEGIN<Shelf_SoapSet>
+   Kitchen_counter
+END<Shelf_SoapSet>
+BEGIN<Shower_stall>
+END<Shower_stall>
+BEGIN<Sink>
+END<Sink>
+BEGIN<Size>
+END<Size>
+BEGIN<Slippers>
+   Floor
+   BookShelf
+   Chair
+   Nightstand
+END<Slippers>
+BEGIN<SoapSet>
+   Kitchen_counter
+END<SoapSet>
+BEGIN<Sofa>
+END<Sofa>
+BEGIN<Speaker>
+   Desk
+   Shelf
+   BookShelf
+END<Speaker>
+BEGIN<Washing_sponge>
+   Kitchen_counter
+   Bathroom_counter
+   DiningTable
+END<Washing_sponge>
+BEGIN<Spoon>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Spoon>
+BEGIN<Stove>
+END<Stove>
+BEGIN<StoveFan>
+END<StoveFan>
+BEGIN<Sundae>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Sundae>
+BEGIN<TV>
+  TV_stand
+END<TV>
+BEGIN<TV_stand>
+END<TV_stand>
+BEGIN<Table_lamp>
+  Nightstand
+END<Table_lamp>
+BEGIN<TeddyBear>
+   Floor
+   Bed
+   BookShelf
+   Sofa
+   TV_stand
+END<TeddyBear>
+BEGIN<Toaster>
+   Kitchen_counter
+END<Toaster>
+BEGIN<Toilet>
+END<Toilet>
+BEGIN<ToiletPaper>
+   Bathroom_counter
+END<ToiletPaper>
+BEGIN<Tomato>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Tomato>
+BEGIN<Toothbrush>
+   Bathroom_counter
+   Shelf
+END<Toothbrush>
+BEGIN<Toothpaste>
+   Bathroom_counter
+   Shelf
+END<Toothpaste>
+BEGIN<Toy>
+   Coffee_table
+   Bed
+END<Toy>
+BEGIN<Towel>
+   Bed
+   Shelf
+END<Towel>
+BEGIN<Towel_hanged>
+END<Towel_hanged>
+BEGIN<Towel_rack>
+END<Towel_rack>
+BEGIN<Towel_rolled>
+END<Towel_rolled>
+BEGIN<WallPictureFrame>
+   Wall
+END<WallPictureFrame>
+BEGIN<WallTV>
+   Wall
+END<WallTV>
+BEGIN<Wall_lamp>
+END<Wall_lamp>
+BEGIN<Wall_phone>
+   Wall
+END<Wall_phone>
+BEGIN<WaterGlass>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   TV_stand
+   Desk
+END<WaterGlass>
+BEGIN<Watermelon>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<Watermelon>
+BEGIN<WhippedCream>
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+END<WhippedCream>
+BEGIN<WineGlass>
+   Coffee_table
+   Kitchen_counter
+   Kitchen_table
+   DiningTable
+   Desk
+   TV_stand
+END<WineGlass>
+BEGIN<CPU_case>
+END<CPU_case>
+BEGIN<CPU_screen>
+   Desk
+END<CPU_screen>
+BEGIN<Alcohol>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   TV_stand
+   Desk
+   Coffee_table
+END<Alcohol>
+BEGIN<Beer>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   TV_stand
+   Desk
+   Coffee_table
+END<Beer>
+BEGIN<Bottle_water>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   TV_stand
+   Desk
+   Coffee_table
+END<Bottle_water>
+BEGIN<Wine>
+   DiningTable
+   Kitchen_counter
+   Kitchen_table
+   TV_stand
+   Desk
+   Coffee_table
+END<Wine>
+BEGIN<Wall_shelf>
+END<Wall_shelf>
+BEGIN<Standing_mirror>
+END<Standing_mirror>
+BEGIN<Vase>
+   Coffee_table
+   TV_stand
+   Wall_shelf
+END<Vase>
+BEGIN<Balance_ball>
+   Floor
+END<Balance_ball>
+BEGIN<Long_board>
+   Floor
+END<Long_board>
+BEGIN<OvenTray>
+   DiningTable
+   Kitchen_counter
+   Stove
+END<OvenTray>

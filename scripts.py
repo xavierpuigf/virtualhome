@@ -106,3 +106,11 @@ def parse_script_line(string):
     return ScriptLine(action, params)
 
 
+def read_script(file_name):
+    script_lines = []
+    with open(file_name) as f:
+        for line in f:
+            line = line.strip()
+            if len(line) > 0 and not line.startswith('#'):
+                script_lines.append(parse_script_line(line))
+    return Script(script_lines)

@@ -1,0 +1,314 @@
+ADDRESS BOOK -> Notes
+AFTER SHAVE -> FaceCream, Face_cream
+ALARM CLOCK -> Clock
+ALCOHOL -> Alcohol
+ARMS_BOTH
+ARMS_LEFT
+ARMS_RIGHT
+BAG
+BAND-AIDS
+BASKET FOR CLOTHES -> Clothes_pile
+BATHROOM -> Bathroom
+BATHROOM_CABINET -> Bathroom_cabinet
+BATHROOM CABINET -> Bathroom_cabinet
+BATHROOM_COUNTER -> Bathroom_counter
+BATHROOM COUNTER -> Bathroom_counter
+BATHTUB -> Bathtub
+BED -> Bed, !Bedroom
+BEDROOM -> Bedroom
+BEER -> Beer
+BENCH -> Bench
+BILLS
+BLANKET -> Blanket
+BLENDER
+BLOW DRYER
+BOARD GAME -> Boardgame
+BOOK -> Book, !BookShelf
+BOOKMARK
+BOOKSHELF -> BookShelf
+BOWL -> Dish_bowl
+BOX -> Box
+BROOM -> Broom
+BRUSH
+BUTTON
+CABINET -> Cabinet
+CANDLE -> Candle
+CARDS -> Cards
+CARPET -> Rug
+CAT -> Cat
+CD
+CD PLAYER -> Radio
+CEILING -> Ceiling
+CELLPHONE -> Cellphone
+CENTERPIECE
+CHAIR -> Chair
+CHECK -> Paper
+CHEF KNIFE -> ChefKnife
+CHESSBOARD
+CHILD
+CLEANING BOTTLE -> DishWashingLiquid
+CLEANING SOLUTION -> DishWashingLiquid
+CLOSET -> Closet
+CLOTH NAPKIN -> Napkin, PaperTowel
+CLOTHES_DRESS
+CLOTHES_GLOVES
+CLOTHES_HAT
+CLOTHES_JACKET
+CLOTHES_PANTS -> pants
+CLOTHES_SCARF
+CLOTHES_SHIRT -> shirt
+CLOTHES_SKIRT
+CLOTHES_SOCKS
+CLOTHES_UNDERWEAR
+COFFE MAKER -> Coffeemaker
+COFFEE
+COFFEE CUP -> Mug
+COFFEE FILTER
+COFFEE POT -> Coffee_pot
+COFFEE TABLE -> Coffee_table, CoffeeTable, TVStand, TV_stand
+COIN
+COLANDER
+COMB
+COMFORTER -> Blanket
+COMPUTER -> CPU_case, PC
+CONDITIONER -> Conditioner
+CONSOLE
+CONTROLLER -> Remote_control
+COOKING POT -> CookingPot
+COUCH -> Sofa
+CRACKERS -> Crackers
+CRAYON -> Crayons
+CREDITCARD
+CUP -> Mug, WaterGlass, WineGlass
+CUPBOARD -> Kitchen_cabinets
+CURTAIN -> Curtains
+CUTTING BOARD -> Cutting_board
+DECK OF CARDS
+DESK -> Desk, CPU_table
+DETERGENT -> DishWashingLiquid
+DIARY -> Journal
+DINING ROOM -> Kitchen
+DIRT
+DISH SOAP -> DishWashingLiquid
+DISHRACK
+DISHWASHER -> Dishwasher
+DOCUMENT -> Notes, Paper
+DOG
+DOOR -> Door
+DOUGH
+DRAWING -> WallPictureFrame
+DRESSER -> Closet
+DRINKING GLASS -> WaterGlass, Water_glass
+DRY PASTA
+DRYING RACK
+DUSTER
+DUSTPAN -> Dustpan
+DVD PLAYER
+ELECTRIC SHAVER
+ELECTRICAL OUTLET
+ENTRANCE HALL -> LivingRoom
+ENVELOPE
+EYES_BOTH
+FACE
+FACE SOAP -> BarSoap, Face_cream
+FACIAL CLEANSER -> BarSoap, Face_cream
+FAUCET -> Faucet
+FAX MACHINE -> Printer
+FEET_BOOTH
+FILING CABINET -> CABINET
+FLOOR -> Floor
+FLOOR LAMP -> Lamp
+FLY
+FOLDER -> Folder
+FOOD_APPLE -> Apple
+FOOD_BACON
+FOOD_BANANA -> Banana
+FOOD_BREAD -> Bread, Bread_slice
+FOOD_BUTTER
+FOOD_CARROT -> Carrot
+FOOD_CARROTS -> Carrot
+FOOD_CEREAL -> Cereal
+FOOD_CHEESE
+FOOD_CHICKEN -> Chicken
+FOOD_DESSERT -> Cupcake, Milkshake, Pancake, Pie, PoundCake, Pudding, Sundae, Watermelon, CreamyBuns
+FOOD_DONUT
+FOOD_EGG
+FOOD_FISH -> Salmon
+FOOD_FOOD -> Cereal, Potato, BellPepper, Bell_pepper, ChocolateSyrup, CreamyBuns, Crackers, Salmon, WhippedCream, Banana, Bananas, Chicken, Cutlets, Chinesefood
+FOOD_FRUIT -> Watermelon, Apple, Banana
+FOOD_HAMBURGER -> MincedMeat
+FOOD_ICE CREAM
+FOOD_JAM
+FOOD_KIWI
+FOOD_LEMON -> Lemon
+FOOD_LIME -> Lime
+FOOD_NOODLES
+FOOD_OATMEAL -> Cereal
+FOOD_ONION
+FOOD_PEANUT BUTTER
+FOOD_PIZZA
+FOOD_POTATO -> Potato
+FOOD_RICE
+FOOD_SALT -> Condiment_shaker
+FOOD_SNACK -> CandyBar, Crackers, Salt_crackers, Apple, Banana, PoundCake, Cupcake, Chips
+FOOD_STEAK
+FOOD_SUGAR -> Condiment_shaker
+FOOD_TURKEY -> Chicken
+FOOD_VEGETABLE -> Salad, Carrot, Potato, Tomato, Cucumber
+FORK -> Cutlery_fork
+FOUNDATION
+FREEZER -> Fridge
+FRIDGE -> Fridge
+FRYINGPAN -> FryingPan
+GARBAGE CAN -> Garbage_can
+GLASS -> WaterGlass, Water_glass, WineGlass
+GLUE
+GROCERIES -> Banana, Bananas, BellPepper, Bell_pepper, Potato, Crackers, Salt_crackers, Apple, Orange, Chips, Chicken, Cutlets, MincedMeat, Salmon, Lime, Cucumber, Watermelon, Plum, Pear, Tomato, Potato, Lemon
+GROUND COFFEE
+HAIR
+HAIRBRUSH
+HAIRDRYER
+HANDS_BOTH
+HANDS_LEFT
+HANDS_RIGHT
+HANGER -> CoatRack
+HEADSET
+HIGHLIGHTER -> Pen
+HOME OFFICE -> LivingRoom
+HOMEWORK
+ICE
+INSTRUMENT_GUITAR
+INSTRUMENT_PIANO
+INSTRUMENT_VIOLIN
+IRON
+IRONING BOARD
+JELLY
+JUICE -> Juice
+KETTLE -> Kettle
+KEYBOARD -> Keyboard
+KEYS
+KIDS BEDROOM
+KITCHEN
+KITCHEN CABINET -> Kitchen_cabinets
+KITCHEN COUNTER -> Kitchen_counter
+KNIFE -> Cutlery_Knife, ChefKnife
+LAMP -> LightSwitch, light_switch
+LAPTOP -> CPU_case
+LASER POINTER
+LAUNDRY DETERGENT
+LEGS_BOTH
+LIGHT -> LightSwitch, light_switch
+LIGHTER
+LIGHTING -> LightSwitch, light_switch
+LIGHT_BULB
+LIVING ROOM -> LivingRoom
+LOVE SEAT -> Sofa
+MAGAZINE -> Magazine
+MAIL
+MAN
+MAT -> Rug
+MATTRESS
+MEASURING CUP
+MECHANICAL PENCIL -> Pen
+MICROPHONE
+MICROWAVE -> Microwave
+MILK -> Milk
+MIRROR -> Mirror
+MOP
+MOP BUCKET -> Bucket
+MOUSE -> Mouse, !Mousemat
+MOUSEPAD -> Mousemat, Mouse_mat
+MOUTHWASH
+MUG -> Mug, WaterGlass, WineGlass
+MUSIC STAND
+NAIL POLISH
+NAPKIN -> Napkin
+NEEDLE
+NEWSPAPER -> Magazine
+NIGHTSTAND -> Nightstand
+NOTE PAD -> Notes
+NOTEBOOK -> Notes
+NOTES -> Paper, Notes
+NOVEL -> Book, !BookShelf
+OIL -> Condiment_bottle
+OVEN -> Stove
+OVEN MITTS
+PAINTING -> WallPictureFrame
+PAJAMAS
+PANTRY
+PAPER -> Paper, Notes
+PAPER TOWEL -> PaperTowel
+PASTA
+PEN -> Pen
+PENCIL -> Pen
+PHONE -> Wall_phone, Cellphone
+PIANO BENCH
+PICTURE
+PILLOW -> Pillow
+PLACEMAT -> Placemat
+PLATE -> Plate
+POT -> CookingPot, FryingPan
+PRINTER -> Printer
+PRINTING PAPER -> Paper, !PaperTowel, !ToiletPaper
+PURSE
+RADIO -> Radio
+RAG
+RAZOR
+RECEIPT -> Paper, Notes, !PaperTowel, !ToiletPaper
+REMOTE CONTROL -> Remote_control
+SAUCE -> Condiment_bottle, Condiment
+SAUCE PAN -> FryingPan
+SCISSORS
+SCRABBLE
+SHAMPOO -> LotionBottle, HairProduct
+SHAVING CREAM
+SHEETS -> Blanket
+SHOE RACK
+SHOE-SHINE KIT
+SHOES -> Slippers
+SHOWER -> Stall
+SHREDDER
+SINK -> Sink
+SLIPPERS -> Slippers
+SOAP -> BarSoap
+SOFA -> Sofa
+SPECTACLES -> Glasses
+SPONGE -> Washing_sponge
+SPOON -> Spoon
+STAMP
+STEREO -> Radio
+STOVE -> Stove, !Stove_fan
+TABLE -> DiningTable, Kitchen_table, Coffee_table, !Table_lamp
+TABLE CLOTH -> Placemat
+TAPE
+TEA
+TEA BAG
+TEETH
+TELEPHONE -> Wall_phone
+TELEVISION -> TV, WallTV, !TV_stand, !TVStand
+TEXTBOOK -> Book, !BookShelf
+THREAD
+TOASTER -> Toaster
+TOILET -> Toilet, !ToiletPaper
+TOILET PAPER -> ToiletPaper
+TOOTH PASTE -> Toothpaste
+TOOTHBRUSH -> Toothbrush
+TOOTHBRUSH HOLDER
+TOWEL -> Towel, !Towel_rack
+TOWEL RACK -> Towel_rack
+TOY -> SportsBall, TeddyBear, Toy, Globe
+TRASHCAN -> Garbage_can
+TRAY -> OvenTray
+VACUUM CLEANER
+VIDEO GAME CONSOLE
+VIDEO GAME CONTROLLER
+WALL -> Wall
+WALL CLOCK -> Clock
+WASHING MACHINE
+WATER -> Bottle_water
+WINDOW -> Window
+WINE -> Wine
+WATER GLASS -> WaterGlass
+WINE GLASS -> WineGlass
+WOMAN
+WOODEN SPOON
