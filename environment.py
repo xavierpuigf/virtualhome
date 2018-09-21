@@ -210,6 +210,9 @@ class EnvironmentState(object):
                 nodes.extend(self.get_nodes_by_attr('class_name', name))
             return nodes
 
+    def get_script_node(self, name: str, instance: int):
+        return self._script_objects.get((name, instance), None)
+
     def get_state_node(self, obj: ScriptObject):
         node_id = self._script_objects.get((obj.name, obj.instance), -1)
         return None if node_id < 0 else self.get_node(node_id)
