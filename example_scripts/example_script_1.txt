@@ -1,0 +1,12 @@
+
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[Find] <microwave> (1)
+[Open] <microwave> (1)
+[PutIn] <plate> (1) <microwave> (1)
+[SwitchOn] <microwave> (1)
+[Find] <milk> (1)
+[Grab] <milk> (1)
+[Drink] <milk> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
