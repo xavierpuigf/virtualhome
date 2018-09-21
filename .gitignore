@@ -165,5 +165,5 @@ fabric.properties
 .idea/httpRequests
 
 # Project-specific stuff
-test_scripts/
-test.py
+test*/
+test*.py
