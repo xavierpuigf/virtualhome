@@ -75,7 +75,7 @@ class FindExecutor(ActionExecutor):
         for node in state.select_nodes(current_obj):
             if self.check_find(state, node):
                 yield state.change_state(
-                    [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))],
+                    [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
                     node,
                     current_obj
                 )
@@ -98,7 +98,7 @@ class WalkExecutor(ActionExecutor):
                                  [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                  AnyNode()),
                      AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
-                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node))],
+                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
                     node,
                     current_obj
                 )
@@ -133,7 +133,7 @@ class GrabExecutor(ActionExecutor):
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
                 new_close = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
-                    changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close)))
+                    changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close), add_reverse=True))
                 yield state.change_state(changes)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode) -> Optional[Relation]:
@@ -188,7 +188,7 @@ class PutExecutor(ActionExecutor):
                 new_rel = Relation.INSIDE if self.inside else Relation.ON
                 yield state.change_state(
                     [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(src_node)),
-                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(dest_node)),
+                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
                      AddEdges(NodeInstance(src_node), new_rel, NodeInstance(dest_node))]
                 )
 
@@ -264,6 +264,13 @@ def _get_character_node(state: EnvironmentState):
     return None if len(chars) == 0 else chars[0]
 
 
+def _get_room_node(state: EnvironmentState, node: Node):
+    for n in state.get_nodes_from(node, Relation.INSIDE):
+        if n.category == 'Rooms':
+            return n
+    return None
+
+
 def _find_first_node_from(state: EnvironmentState, node: Node, relations: List[Relation]):
     for r in relations:
         nl = state.get_nodes_from(node, r)
@@ -308,15 +315,22 @@ class ScriptExecutor(object):
         Action.DRINK: DrinkExecutor()
     }
 
-    def __init__(self, graph: EnvironmentGraph, name_equivalence):
+    def __init__(self, graph: EnvironmentGraph, name_equivalence, object_placing=None, properties_data=None):
         self.graph = graph
         self.name_equivalence = name_equivalence
+        self.object_placing = object_placing
+        self.properties_data = properties_data
         self.processing_time_limit = 10  # 10 seconds
         self.processing_limit = 0
 
-    def execute(self, script: Script):
+    def execute(self, script: Script, prepare=False):
         self.processing_limit = time.time() + self.processing_time_limit
         init_state = EnvironmentState(self.graph, self.name_equivalence)
+        if prepare:
+            if self.object_placing is None or self.properties_data is None:
+                raise ExecutionException('Can not prepare script, "object_placing" or '
+                                         '"properties_data" are not set')
+            _prepare_state(init_state, script, self.name_equivalence, self.object_placing, self.properties_data)
         return self.execute_rec(script, 0, init_state)
 
     def execute_rec(self, script: Script, script_index: int, state: EnvironmentState):
@@ -333,6 +347,67 @@ class ScriptExecutor(object):
         executor = ScriptExecutor._action_executors.get(script[0].action, UnknownExecutor())
         return executor.execute(script, state)
 
+
+# state preparation
+
+_DEFAULT_PROPERTY_STATES = {Property.HAS_SWITCH: State.OFF,
+                            Property.CAN_OPEN: State.CLOSED}
+
+
+def _prepare_state(state: EnvironmentState, script: Script, name_equivalence, object_placing, properties_data):
+    state_classes = {n.class_name for n in state.get_nodes()}
+    script_classes = {so.name for sl in script for so in sl.parameters}
+    missing_classes = set()
+    for sc in script_classes:
+        if sc not in state_classes and len(set(name_equivalence.get(sc, [])) & state_classes) == 0:
+            missing_classes.add(sc)
+    if len(missing_classes) > 0:
+        for mc in missing_classes:
+            if mc not in object_placing:
+                raise ExecutionException('No placing information for "{0}"', mc)
+            if mc not in properties_data:
+                raise ExecutionException('No properties data for "{0}"', mc)
+            new_node_id = state.get_max_node_id() + 1
+            for pi in object_placing[mc]:
+                dest = pi['destination']
+                room_name = pi['room']
+                properties = properties_data.get(mc, [])
+                placed = False
+                for dest_node in state.get_nodes_by_attr('class_name', dest):
+                    if room_name is None:
+                        new_node = _create_node(new_node_id, mc, properties)
+                        _change_state(state, new_node, dest_node, [])
+                        new_node_id += 1
+                        placed = True
+                        break
+                    else:
+                        room_node = _get_room_node(state, dest_node)
+                        if room_node is not None and room_node.class_name == room_name:
+                            new_node = _create_node(new_node_id, mc, properties)
+                            _change_state(state, new_node, dest_node,
+                                          [AddEdges(NodeInstance(new_node), Relation.INSIDE, NodeInstance(room_node))])
+                            new_node_id += 1
+                            placed = True
+                            break
+                if placed:
+                    break
+
+
+def _create_node(node_id: int, class_name: str, properties):
+    states = [_DEFAULT_PROPERTY_STATES[p] for p in properties if p in _DEFAULT_PROPERTY_STATES]
+    return GraphNode(node_id, class_name, None, properties, states, None, None)
+
+
+def _change_state(state: EnvironmentState, new_node: GraphNode, dest_node: Node, add_changers: List[StateChanger]):
+    changers = [AddNode(new_node),
+                AddEdges(NodeInstance(new_node), Relation.ON, NodeInstance(dest_node)),
+                AddEdges(NodeInstance(new_node), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True)]
+    changers.extend(add_changers)
+    state.apply_changes(changers)
+
+
+# Exception
+###############################################################################
 
 class ExecutionException(common.Error):
     pass

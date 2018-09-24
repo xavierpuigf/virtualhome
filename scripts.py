@@ -49,13 +49,13 @@ class ScriptLine(object):
 
     def __init__(self, action: Action, parameters: List[ScriptObject]):
         self.action = action
-        self._parameters = parameters
+        self.parameters = parameters
 
     def object(self):
-        return self._parameters[0]
+        return self.parameters[0] if len(self.parameters) > 0 else None
 
     def subject(self):
-        return self._parameters[1]
+        return self.parameters[1] if len(self.parameters) > 1 else None
 
 
 class Script(object):

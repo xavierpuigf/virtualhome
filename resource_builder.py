@@ -59,6 +59,23 @@ def transform_object_placing():
         f.write(json.dumps(result))
 
 
+def transform_properties_data():
+    result = {}
+    with open('unity_resources/properties_data.json') as f:
+        u_dict = json.load(f)
+    objects = [o.lower().replace(' ', '') for o in u_dict['objects']]
+    properties = [p.upper() for p in u_dict['properties']]
+    property_matrix = u_dict['property_matrix']
+    for i, o in enumerate(objects):
+        for j, p in enumerate(properties):
+            if property_matrix[i][j] == 1:
+                result.setdefault(o, []).append(p)
+    with open('resources/properties_data.json', 'w') as f:
+        f.write(json.dumps(result))
+
+
+
 if __name__ == '__main__':
     # transform_name_equivalence()
-    transform_object_placing()
+    # transform_object_placing()
+    transform_properties_data()

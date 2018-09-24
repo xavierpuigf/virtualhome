@@ -142,6 +142,9 @@ class EnvironmentGraph(object):
     def get_nodes(self):
         return self._node_map.values()
 
+    def get_node_ids(self):
+        return  self._node_map.keys()
+
     def get_node_map(self):
         return self._node_map
 
@@ -245,13 +248,15 @@ class EnvironmentState(object):
         return result
 
     def get_nodes(self):
-        result = []
+        result = list(self._new_nodes.values())
         for node in self._graph.get_nodes():
-            if node.id in self._new_nodes:
-                result.append(self._new_nodes[node.id])
-            else:
+            if node.id not in self._new_nodes:
                 result.append(node)
         return result
+
+    def get_max_node_id(self):
+        m = max(self._new_nodes.keys(), default=0)
+        return max(m, max(self._graph.get_node_ids(), default=0))
 
     def get_nodes_by_attr(self, attr: str, value):
         result = []
@@ -296,9 +301,14 @@ class EnvironmentState(object):
         new_state._script_objects = self._script_objects.copy()
         if obj is not None and node is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
-        for changer in changers:
-            changer.apply_changes(new_state)
+        new_state.apply_changes(changers)
         return new_state
+
+    def apply_changes(self, changers: List['StateChanger']):
+        for changer in changers:
+            changer.apply_changes(self)
+
+
 
 
 # NodeEnumerator-s
@@ -483,25 +493,29 @@ class StateChanger(object):
 
 class AddEdges(StateChanger):
 
-    def __init__(self, from_node: NodeEnumerator, relation: Relation, to_node: NodeEnumerator):
+    def __init__(self, from_node: NodeEnumerator, relation: Relation, to_node: NodeEnumerator, add_reverse=False):
         self.from_node = from_node
         self.relation = relation
         self.to_node = to_node
+        self.add_reverse = add_reverse
 
     def apply_changes(self, state: EnvironmentState):
         tm = TimeMeasurement.start('AddEdges')
         for n1 in self.from_node.enumerate(state):
             for n2 in self.to_node.enumerate(state):
                 state.add_edge(n1, self.relation, n2)
+                if self.add_reverse:
+                    state.add_edge(n2, self.relation, n1)
         TimeMeasurement.stop(tm)
 
 
 class DeleteEdges(StateChanger):
 
-    def __init__(self, from_node: NodeEnumerator, relations, to_node: NodeEnumerator):
+    def __init__(self, from_node: NodeEnumerator, relations, to_node: NodeEnumerator, delete_reverse=False):
         self.from_node = from_node
         self.relations = relations
         self.to_node = to_node
+        self.delete_reverse = delete_reverse
 
     def apply_changes(self, state: EnvironmentState):
         tm = TimeMeasurement.start('DeleteEdges')
@@ -509,6 +523,8 @@ class DeleteEdges(StateChanger):
             for e in self.relations:
                 for n2 in self.to_node.enumerate(state):
                     state.delete_edge(n1, e, n2)
+                    if self.delete_reverse:
+                        state.delete_edge(n2, e, n1)
         TimeMeasurement.stop(tm)
 
 
