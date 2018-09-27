@@ -3,6 +3,7 @@ from typing import Optional
 
 import common
 from environment import *
+from preparation import StatePrepare
 from scripts import Action, Script
 
 
@@ -41,7 +42,7 @@ class SitExecutor(ActionExecutor):
                 new_char_node.states.add(State.SITTING)
                 yield state.change_state(
                     [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
-                     AddNode(new_char_node)]
+                     ChangeNode(new_char_node)]
                 )
 
     def check_sittable(self, state: EnvironmentState, node: GraphNode):
@@ -62,7 +63,7 @@ class StandUpExecutor(ActionExecutor):
         if State.SITTING in char_node.states:
             new_char_node = char_node.copy()
             new_char_node.states.remove(State.SITTING)
-            yield state.change_state([AddNode(new_char_node)])
+            yield state.change_state([ChangeNode(new_char_node)])
 
 
 class FindExecutor(ActionExecutor):
@@ -161,7 +162,7 @@ class OpenExecutor(ActionExecutor):
                 new_node = node.copy()
                 new_node.states.discard(State.OPEN if self.close else State.CLOSED)
                 new_node.states.add(State.CLOSED if self.close else State.OPEN)
-                yield state.change_state([AddNode(new_node)])
+                yield state.change_state([ChangeNode(new_node)])
 
     def check_openable(self, state: EnvironmentState, node: GraphNode):
         if Property.CAN_OPEN not in node.properties:
@@ -217,7 +218,7 @@ class SwitchExecutor(ActionExecutor):
                 new_node = node.copy()
                 new_node.states.discard(State.OFF if self.switch_on else State.ON)
                 new_node.states.add(State.ON if self.switch_on else State.OFF)
-                yield state.change_state([AddNode(new_node)])
+                yield state.change_state([ChangeNode(new_node)])
 
     def check_switchable(self, state: EnvironmentState, node: GraphNode):
         if Property.HAS_SWITCH not in node.properties:
@@ -323,14 +324,15 @@ class ScriptExecutor(object):
         self.processing_time_limit = 10  # 10 seconds
         self.processing_limit = 0
 
-    def execute(self, script: Script, prepare=False):
+    def execute(self, script: Script, prepare: StatePrepare=None):
         self.processing_limit = time.time() + self.processing_time_limit
         init_state = EnvironmentState(self.graph, self.name_equivalence)
-        if prepare:
-            if self.object_placing is None or self.properties_data is None:
-                raise ExecutionException('Can not prepare script, "object_placing" or '
-                                         '"properties_data" are not set')
-            _prepare_state(init_state, script, self.name_equivalence, self.object_placing, self.properties_data)
+        if prepare is not None:
+                prepare.apply_changes(init_state, script=script)
+            # if self.object_placing is None or self.properties_data is None:
+            #     raise ExecutionException('Can not prepare script, "object_placing" or '
+            #                              '"properties_data" are not set')
+            # _prepare_state(init_state, script, self.name_equivalence, self.object_placing, self.properties_data)
         return self.execute_rec(script, 0, init_state)
 
     def execute_rec(self, script: Script, script_index: int, state: EnvironmentState):

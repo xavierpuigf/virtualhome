@@ -121,7 +121,9 @@ class NodeQueryType(Enum):
 
 
 class EnvironmentGraph(object):
+
     def __init__(self, dictionary=None):
+        self._max_node_id = 0
         self._edge_map = {}
         self._node_map = {}
         self._class_name_map = {}
@@ -133,6 +135,8 @@ class EnvironmentGraph(object):
         for n in nodes:
             self._node_map[n.id] = n
             self._class_name_map.setdefault(n.class_name, []).append(n)
+            if n.id > self._max_node_id:
+                self._max_node_id = n.id
         edges = [(ed['from_id'], Relation[ed['relation_type'].upper()], ed['to_id'])
                  for ed in d['edges']]
         for from_id, relation, to_id in edges:
@@ -169,6 +173,9 @@ class EnvironmentGraph(object):
     def _get_node_maps_from(self, from_node: Node, relation: Relation):
         return self._edge_map.get((from_node.id, relation), {})
 
+    def get_max_node_id(self):
+        return self._max_node_id
+
     def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
         return to_node.id in self._get_node_maps_from(from_node, relation)
 
@@ -176,6 +183,8 @@ class EnvironmentGraph(object):
         assert node.id not in self._node_map
         self._node_map[node.id] = node
         self._class_name_map.setdefault(node.class_name, []).append(node)
+        if node.id > self._max_node_id:
+            self._max_node_id = node.id
 
     def add_edge(self, from_node: Node, r: Relation, to_node: Node):
         assert from_node.id in self._node_map and to_node.id in self._node_map
@@ -194,6 +203,7 @@ class EnvironmentState(object):
         self._name_equivalence = name_equivalence
         self._script_objects = {}  # (name, instance) -> node id
         self._new_nodes = {}  # map: node id -> GraphNode
+        self._max_node_id = graph.get_max_node_id()
         self._removed_edges_from = {}  # map: (from_node id, relation) -> to_node id set
         self._new_edges_from = {}  # map: (from_node id, relation) -> to_node id set
 
@@ -255,8 +265,7 @@ class EnvironmentState(object):
         return result
 
     def get_max_node_id(self):
-        m = max(self._new_nodes.keys(), default=0)
-        return max(m, max(self._graph.get_node_ids(), default=0))
+        return self._max_node_id
 
     def get_nodes_by_attr(self, attr: str, value):
         result = []
@@ -290,7 +299,13 @@ class EnvironmentState(object):
             to_node_ids = self._new_edges_from[(from_node.id, relation)]
             to_node_ids.discard(to_node.id)
 
+    def change_node(self, node: Node):
+        assert node.id in self._new_nodes or self._graph.get_node(node.id) is not None
+        self._new_nodes[node.id] = node
+
     def add_node(self, node: Node):
+        self._max_node_id += 1
+        node.id = self._max_node_id
         self._new_nodes[node.id] = node
 
     def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
@@ -309,8 +324,6 @@ class EnvironmentState(object):
             changer.apply_changes(self)
 
 
-
-
 # NodeEnumerator-s
 ###############################################################################
 
@@ -318,13 +331,13 @@ class EnvironmentState(object):
 class NodeEnumerator(object):
 
     @abstractmethod
-    def enumerate(self, state: EnvironmentState):
+    def enumerate(self, state: EnvironmentState, **kwargs):
         pass
 
 
 class AnyNode(NodeEnumerator):
 
-    def enumerate(self, state: EnvironmentState):
+    def enumerate(self, state: EnvironmentState, **kwargs):
         return state.get_nodes()
 
 
@@ -333,8 +346,16 @@ class NodeInstance(NodeEnumerator):
     def __init__(self, node: Node):
         self.node = node
 
-    def enumerate(self, state: EnvironmentState):
+    def enumerate(self, state: EnvironmentState, **kwargs):
         yield state.get_node(self.node.id)
+
+
+class NodeParam(NodeEnumerator):
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        if 'node' not in kwargs:
+            raise Exception('"node" param not set')
+        yield kwargs['node']
 
 
 class RelationFrom(NodeEnumerator):
@@ -343,14 +364,23 @@ class RelationFrom(NodeEnumerator):
         self.from_node = from_node
         self.relation = relation
 
-    def enumerate(self, state: EnvironmentState):
+    def enumerate(self, state: EnvironmentState, **kwargs):
         return state.get_nodes_from(self.from_node, self.relation)
 
 
 class CharacterNode(NodeEnumerator):
 
-    def enumerate(self, state: EnvironmentState):
+    def enumerate(self, state: EnvironmentState, **kwargs):
         return state.get_nodes_by_attr('class_name', 'character')
+
+
+class ClassNameNode(NodeEnumerator):
+
+    def __init__(self, class_name: str):
+        self.class_name = class_name
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        return state.get_nodes_by_attr('class_name', self.class_name)
 
 
 class RoomNode(NodeEnumerator):
@@ -358,7 +388,7 @@ class RoomNode(NodeEnumerator):
     def __init__(self, node: Node):
         self.node = node
 
-    def enumerate(self, state: EnvironmentState):
+    def enumerate(self, state: EnvironmentState, **kwargs):
         for n in state.get_nodes_from(self.node, Relation.INSIDE):
             if n.category == 'Rooms':
                 yield n
@@ -405,7 +435,7 @@ class AnyNodeFilter(NodeFilter):
 class LogicalValue(object):
 
     @abstractmethod
-    def evaluate(self, param):
+    def evaluate(self, param, **kwargs):
         pass
 
 
@@ -414,8 +444,8 @@ class Not(LogicalValue):
     def __init__(self, value1: LogicalValue):
         self.value1 = value1
 
-    def evaluate(self, param):
-        return not self.value1.evaluate(param)
+    def evaluate(self, param, **kwargs):
+        return not self.value1.evaluate(param, **kwargs)
 
 
 class And(LogicalValue):
@@ -423,9 +453,9 @@ class And(LogicalValue):
     def __init__(self, *args: LogicalValue):
         self.values = args
 
-    def evaluate(self, param):
+    def evaluate(self, param, **kwargs):
         for value in self.values:
-            if not value.evaluate(param):
+            if not value.evaluate(param, **kwargs):
                 return False
         return True
 
@@ -435,7 +465,7 @@ class Constant(LogicalValue):
     def __init__(self, value: bool):
         self.value = value
 
-    def evaluate(self, param):
+    def evaluate(self, param, **kwargs):
         return self.value
 
 
@@ -446,8 +476,8 @@ class ExistsRelation(LogicalValue):
         self.relation = relation
         self.to_nodes = to_nodes
 
-    def evaluate(self, state: EnvironmentState):
-        for fn in self.from_nodes.enumerate(state):
+    def evaluate(self, state: EnvironmentState, **kwargs):
+        for fn in self.from_nodes.enumerate(state, **kwargs):
             for tn in state.get_nodes_from(fn, self.relation):
                 if self.to_nodes.filter(tn):
                     return True
@@ -456,7 +486,7 @@ class ExistsRelation(LogicalValue):
 
 class IsRoomNode(LogicalValue):
 
-    def evaluate(self, node: GraphNode):
+    def evaluate(self, node: GraphNode, **kwargs):
         return node.category == 'Rooms'
 
 
@@ -466,7 +496,7 @@ class NodeAttrEq(LogicalValue):
         self.attr = attr
         self.value = value
 
-    def evaluate(self, node: GraphNode):
+    def evaluate(self, node: GraphNode, **kwargs):
         return self.value == getattr(node, self.attr)
 
 
@@ -476,8 +506,17 @@ class NodeAttrIn(LogicalValue):
         self.value = value
         self.attr = attr
 
-    def evaluate(self, node: GraphNode):
+    def evaluate(self, node: GraphNode, **kwargs):
         return self.value in getattr(node, self.attr)
+
+
+class NodeClassNameEq(LogicalValue):
+
+    def __init__(self, class_name: str):
+        self.class_name = class_name
+
+    def evaluate(self, node: GraphNode, **kwargs):
+        return self.class_name == node.class_name
 
 
 # StateChanger-s
@@ -487,7 +526,7 @@ class NodeAttrIn(LogicalValue):
 class StateChanger(object):
 
     @abstractmethod
-    def apply_changes(self, state: EnvironmentState):
+    def apply_changes(self, state: EnvironmentState, **kwargs):
         pass
 
 
@@ -499,7 +538,7 @@ class AddEdges(StateChanger):
         self.to_node = to_node
         self.add_reverse = add_reverse
 
-    def apply_changes(self, state: EnvironmentState):
+    def apply_changes(self, state: EnvironmentState, **kwargs):
         tm = TimeMeasurement.start('AddEdges')
         for n1 in self.from_node.enumerate(state):
             for n2 in self.to_node.enumerate(state):
@@ -517,7 +556,7 @@ class DeleteEdges(StateChanger):
         self.to_node = to_node
         self.delete_reverse = delete_reverse
 
-    def apply_changes(self, state: EnvironmentState):
+    def apply_changes(self, state: EnvironmentState, **kwargs):
         tm = TimeMeasurement.start('DeleteEdges')
         for n1 in self.from_node.enumerate(state):
             for e in self.relations:
@@ -528,14 +567,19 @@ class DeleteEdges(StateChanger):
         TimeMeasurement.stop(tm)
 
 
+class ChangeNode(StateChanger):
+
+    def __init__(self, node: GraphNode):
+        self.node = node
+
+    def apply_changes(self, state: EnvironmentState, **kwargs):
+        state.change_node(self.node)
+
+
 class AddNode(StateChanger):
 
     def __init__(self, node: GraphNode):
         self.node = node
 
-    def apply_changes(self, state: EnvironmentState):
+    def apply_changes(self, state: EnvironmentState, **kwargs):
         state.add_node(self.node)
-
-
-
-
