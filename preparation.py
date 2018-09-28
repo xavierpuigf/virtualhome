@@ -1,7 +1,7 @@
 import random
 from environment import *
-from common import Error
-from scripts import Action, Script
+from common import Error, TimeMeasurement
+from typing import Iterable
 
 
 class StatePrepare(StateChanger):
@@ -18,46 +18,74 @@ class StatePrepare(StateChanger):
             changer.apply_changes(state, properties_data=self.properties_data)
 
 
-class RandomObjectPrepare(StateChanger):
+class AddMissingScriptObjects(StateChanger):
 
-    def __init__(self, name_equivalence, properties_data, object_placing,
-                 random_seed=None, missing_choices=1, other_choices=0):
+    def __init__(self, name_equivalence, properties_data, object_placing, choices=1):
         # Each missing object from the script is selected randomly
         # missing_choices-times
         # Objects from the object_placing are selected other_choices-times
         self.name_equivalence = name_equivalence
         self.properties_data = properties_data
         self.object_placing = object_placing
-        self.missing_choices = missing_choices
-        self.other_choices = other_choices
-        random.seed(random_seed)
+        self.choices = choices
 
     def apply_changes(self, state: EnvironmentState, **kwargs):
         assert 'script' in kwargs
         script = kwargs['script']
-        self._add_missing_classes(state, script)
-
-    def _add_missing_classes(self, state: EnvironmentState, script: Script):
         state_classes = {n.class_name for n in state.get_nodes()}
         script_classes = {so.name for sl in script for so in sl.parameters}
         missing_classes = set()
         for sc in script_classes:
             if sc not in state_classes and len(set(self.name_equivalence.get(sc, [])) & state_classes) == 0:
                 missing_classes.add(sc)
-        for mc in missing_classes:
-            if mc not in self.object_placing:
-                raise Error('No placing information for "{0}"', mc)
-            if mc not in self.properties_data:
-                raise Error('No properties data for "{0}"', mc)
-            placings = [random.choice(self.object_placing[mc]) for i in range(0, self.missing_choices)]
-            properties = self.properties_data.get(mc, [])
+        for cn in missing_classes:
+            if cn not in self.object_placing:
+                raise Error('No placing information for "{0}"', cn)
+            placings = self.object_placing[cn]
+            random.shuffle(placings)
+            properties = self.properties_data.get(cn, [])
             for placing in placings:
                 dest = placing['destination']
                 states = _random_property_states(properties)
-                changer = AddObject(mc, Destination(Relation.ON, ClassNameNode(dest)), states,
+                changer = AddObject(cn, Destination(Relation.ON, ClassNameNode(dest)), states,
                                     randomize=True, choices=1)
                 changer.apply_changes(state, properties_data=self.properties_data)
-        
+
+
+class AddRandomObjects(StateChanger):
+
+    def __init__(self, properties_data, object_placing, choices: int):
+        self.properties_data = properties_data
+        self.object_placing = object_placing
+        self.choices = choices
+
+    def apply_changes(self, state: EnvironmentState, **kwargs):
+        available = list(self.object_placing.keys())
+        random.shuffle(available)
+        placed_objects = 0
+        for cn in available:
+            if placed_objects >= self.choices:
+                break
+            properties = self.properties_data.get(cn, [])
+            placing = random.choice(self.object_placing[cn])
+            dest = placing['destination']
+            states = _random_property_states(properties)
+            changer = AddObject(cn, Destination(Relation.ON, ClassNameNode(dest)), states,
+                                randomize=True, choices=1)
+            placed_objects += changer.apply_changes(state, properties_data=self.properties_data)
+
+
+class ChangeObjectStates(StateChanger):
+
+    def __init__(self, properties_data):
+        self.properties_data = properties_data
+
+    def apply_changes(self, state: EnvironmentState, **kwargs):
+        for node in state.get_nodes():
+            for p in node.properties & _PROPERTY_STATES.keys():
+                possible_states = _PROPERTY_STATES[p]
+                node.states -= set(possible_states)
+                node.states.add(random.choice(possible_states))
 
 
 class AddObject(StateChanger):
@@ -72,17 +100,21 @@ class AddObject(StateChanger):
 
     def apply_changes(self, state: EnvironmentState, **kwargs):
         assert 'properties_data' in kwargs
+        tm = TimeMeasurement.start('AddObject-Preparation')
         properties_data = kwargs['properties_data']
         properties = properties_data.get(self.class_name, [])
         destinations = list(self.destination.nodes.enumerate(state))
-        if self.randomize and len(destinations) > 0:
-            destinations = [random.choice(destinations) for i in range(0, self.choices)]
-        else:
-            destinations = destinations[0:self.choices + 1]
+        random.shuffle(destinations)
+        placed_objects = 0
         for dest_node in destinations:
+            if placed_objects >= self.choices:
+                break
             if self.destination.node_filter.evaluate(state, node=dest_node):
                 new_node = _create_node(self.class_name, properties, self.states)
                 _change_state(state, new_node, dest_node, [])
+                placed_objects += 1
+        TimeMeasurement.stop(tm)
+        return placed_objects
 
 
 class Destination(object):
@@ -101,14 +133,14 @@ _PROPERTY_STATES = {Property.HAS_SWITCH: [State.ON, State.OFF],
                     Property.CAN_OPEN: [State.CLOSED, State.OPEN]}
 
 
-def _random_property_states(properties: List[Property]):
+def _random_property_states(properties: Iterable[Property]):
     return [random.choice(_PROPERTY_STATES[p]) for p in properties if p in _PROPERTY_STATES]
 
 
 def _create_node(class_name: str, properties, states=None):
     if states is None:
         states = [_DEFAULT_PROPERTY_STATES[p] for p in properties if p in _DEFAULT_PROPERTY_STATES]
-    return GraphNode(0, class_name, None, properties, states, None, None)
+    return GraphNode(0, class_name, None, set(properties), set(states), None, None)
 
 
 def _change_state(state: EnvironmentState, new_node: GraphNode, dest_node: Node,

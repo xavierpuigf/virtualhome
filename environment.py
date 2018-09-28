@@ -102,8 +102,8 @@ class GraphNode(Node):
     @staticmethod
     def from_dict(d):
         return GraphNode(d['id'], d['class_name'], d['category'],
-                         set([Property[s.upper()] for s in d['properties']]),
-                         set([State[s.upper()] for s in d['states']]),
+                         {Property[s.upper()] for s in d['properties']},
+                         {State[s.upper()] for s in d['states']},
                          d['prefab_name'], Bounds(**d['bounding_box']))
 
 

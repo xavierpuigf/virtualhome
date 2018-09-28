@@ -316,23 +316,18 @@ class ScriptExecutor(object):
         Action.DRINK: DrinkExecutor()
     }
 
-    def __init__(self, graph: EnvironmentGraph, name_equivalence, object_placing=None, properties_data=None):
+    def __init__(self, graph: EnvironmentGraph, name_equivalence):
         self.graph = graph
         self.name_equivalence = name_equivalence
-        self.object_placing = object_placing
-        self.properties_data = properties_data
         self.processing_time_limit = 10  # 10 seconds
         self.processing_limit = 0
 
-    def execute(self, script: Script, prepare: StatePrepare=None):
+    def execute(self, script: Script, init_changers: List[StateChanger]=None):
         self.processing_limit = time.time() + self.processing_time_limit
         init_state = EnvironmentState(self.graph, self.name_equivalence)
-        if prepare is not None:
-                prepare.apply_changes(init_state, script=script)
-            # if self.object_placing is None or self.properties_data is None:
-            #     raise ExecutionException('Can not prepare script, "object_placing" or '
-            #                              '"properties_data" are not set')
-            # _prepare_state(init_state, script, self.name_equivalence, self.object_placing, self.properties_data)
+        if init_changers is not None:
+            for changer in init_changers:
+                changer.apply_changes(init_state, script=script)
         return self.execute_rec(script, 0, init_state)
 
     def execute_rec(self, script: Script, script_index: int, state: EnvironmentState):
