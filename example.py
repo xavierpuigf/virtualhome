@@ -1,8 +1,9 @@
 import utils
-from execution import Relation
+from execution import Relation, State
 from scripts import read_script
 from execution import ScriptExecutor
-from preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates
+from preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates, \
+    StatePrepare, AddObject, ChangeState, Destination
 
 
 def print_node_names(n_list):
@@ -70,6 +71,30 @@ def example_2():
     print('Script is {0}executable'.format('not ' if state is None else ''))
 
 
+def example_3():
+    print()
+    print('Example 3')
+    print('---------')
+    graph = utils.load_graph('example_graphs/TestScene6_graph.json')
+    script = read_script('example_scripts/example_script_2.txt')
+    name_equivalence = utils.load_name_equivalence()
+    properties_data = utils.load_properties_data()
+    executor = ScriptExecutor(graph, name_equivalence)
+
+    # "Manual" changes:
+    # * add object named kettle to a stove
+    # * add a vacummcleaner on the floor in the livingroom and turn it on
+    # * turn on all lights (lightswitches)
+    prepare_1 = StatePrepare(properties_data,
+                             [AddObject('kettle', Destination.on('stove')),
+                              AddObject('vacuumcleaner', Destination.on('floor', 'livingroom'), [State.ON]),
+                              ChangeState('lightswitch', [State.ON])])
+    state_enum = executor.execute(script, [prepare_1])
+    state = next(state_enum, None)
+    print('Script is {0}executable'.format('not ' if state is None else ''))
+
+
 if __name__ == '__main__':
     example_1()
     example_2()
+    example_3()

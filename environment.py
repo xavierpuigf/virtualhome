@@ -486,8 +486,11 @@ class ExistsRelation(LogicalValue):
 
 class IsRoomNode(LogicalValue):
 
+    def __init__(self, room_name: str=None):
+        self.room_name = room_name
+
     def evaluate(self, node: GraphNode, **kwargs):
-        return node.category == 'Rooms'
+        return node.category == 'Rooms' and (self.room_name is None or node.class_name == self.room_name)
 
 
 class NodeAttrEq(LogicalValue):

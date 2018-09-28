@@ -6,9 +6,9 @@ from typing import Iterable
 
 class StatePrepare(StateChanger):
 
-    def __init__(self, properties_data):
+    def __init__(self, properties_data, changers: Iterable[StateChanger]=None):
         self.properties_data = properties_data
-        self.changers = []
+        self.changers = [] if changers is None else changers
 
     def add_changer(self, changer: StateChanger):
         self.changers.append(changer)
@@ -88,9 +88,22 @@ class ChangeObjectStates(StateChanger):
                 node.states.add(random.choice(possible_states))
 
 
+class ChangeState(StateChanger):
+
+    def __init__(self, class_name: str, states: Iterable[State], node_filter: LogicalValue=Constant(True)):
+        self.class_name = class_name
+        self.states = set(states)
+        self.node_filter = node_filter
+
+    def apply_changes(self, state: EnvironmentState, **kwargs):
+        for node in ClassNameNode(self.class_name).enumerate(state):
+            if self.node_filter.evaluate(state, node=node):
+                node.states = self.states
+
+
 class AddObject(StateChanger):
 
-    def __init__(self, class_name: str, destination: 'Destination', states: List[State]=None,
+    def __init__(self, class_name: str, destination: 'Destination', states: Iterable[State]=None,
                  randomize=False, choices=1):
         self.class_name = class_name
         self.destination = destination
@@ -104,7 +117,8 @@ class AddObject(StateChanger):
         properties_data = kwargs['properties_data']
         properties = properties_data.get(self.class_name, [])
         destinations = list(self.destination.nodes.enumerate(state))
-        random.shuffle(destinations)
+        if self.randomize:
+            random.shuffle(destinations)
         placed_objects = 0
         for dest_node in destinations:
             if placed_objects >= self.choices:
@@ -123,6 +137,24 @@ class Destination(object):
         self.relation = relation
         self.nodes = nodes
         self.node_filter = node_filter
+
+    @classmethod
+    def of(cls, class_name: str, relation: Relation, room_name: str=None):
+        if room_name is None:
+            return Destination(relation, ClassNameNode(class_name))
+        else:
+            return Destination(relation, ClassNameNode(class_name),
+                               ExistsRelation(NodeParam(), Relation.INSIDE, NodeConditionFilter(IsRoomNode(room_name))) )
+
+    @classmethod
+    def on(cls, class_name: str, room_name: str=None):
+        return cls.of(class_name, Relation.ON, room_name)
+
+    @classmethod
+    def inside(cls, class_name: str, room_name: str=None):
+        return cls.of(class_name, Relation.INSIDE, room_name)
+
+
 
 
 _DEFAULT_PROPERTY_STATES = {Property.HAS_SWITCH: State.OFF,
