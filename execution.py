@@ -143,7 +143,7 @@ class GrabExecutor(ActionExecutor):
         if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
             return None
         if state.evaluate(ExistsRelation(NodeInstance(node), Relation.INSIDE,
-                                         NodeConditionFilter(And(NodeAttrIn(State.OPEN, 'states'),
+                                         NodeConditionFilter(And(NodeAttrIn(State.CLOSED, 'states'),
                                                                  Not(IsRoomNode()))))):
             return None
         return _find_free_hand(state)

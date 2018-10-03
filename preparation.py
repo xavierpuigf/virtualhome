@@ -125,7 +125,7 @@ class AddObject(StateChanger):
                 break
             if self.destination.node_filter.evaluate(state, node=dest_node):
                 new_node = _create_node(self.class_name, properties, self.states)
-                _change_state(state, new_node, dest_node, [])
+                _add_edges(state, new_node, self.destination.relation, dest_node, [])
                 placed_objects += 1
         TimeMeasurement.stop(tm)
         return placed_objects
@@ -155,8 +155,6 @@ class Destination(object):
         return cls.of(class_name, Relation.INSIDE, room_name)
 
 
-
-
 _DEFAULT_PROPERTY_STATES = {Property.HAS_SWITCH: State.OFF,
                             Property.CAN_OPEN: State.CLOSED}
 
@@ -175,10 +173,10 @@ def _create_node(class_name: str, properties, states=None):
     return GraphNode(0, class_name, None, set(properties), set(states), None, None)
 
 
-def _change_state(state: EnvironmentState, new_node: GraphNode, dest_node: Node,
-                  add_changers: List[StateChanger]):
+def _add_edges(state: EnvironmentState, new_node: GraphNode, relation: Relation, dest_node: Node,
+               add_changers: List[StateChanger]):
     changers = [AddNode(new_node),
-                AddEdges(NodeInstance(new_node), Relation.ON, NodeInstance(dest_node)),
+                AddEdges(NodeInstance(new_node), relation, NodeInstance(dest_node)),
                 AddEdges(NodeInstance(new_node), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
                 AddEdges(NodeInstance(new_node), Relation.INSIDE, RoomNode(dest_node))]
     changers.extend(add_changers)
