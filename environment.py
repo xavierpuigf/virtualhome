@@ -198,7 +198,8 @@ class EnvironmentGraph(object):
 
 class EnvironmentState(object):
 
-    def __init__(self, graph: EnvironmentGraph, name_equivalence):
+    def __init__(self, graph: EnvironmentGraph, name_equivalence, instance_selection: bool=False):
+        self.instance_selection = instance_selection
         self._graph = graph
         self._name_equivalence = name_equivalence
         self._script_objects = {}  # (name, instance) -> node id
@@ -211,17 +212,20 @@ class EnvironmentState(object):
         return lvalue.evaluate(self)
 
     def select_nodes(self, obj: ScriptObject):
-        """Enumerate nodes satisfying script object condition. If object was already
-        discovered, return node
-        """
-        node_id = self._script_objects.get((obj.name, obj.instance), None)
-        if node_id is not None:
-            return [self.get_node(node_id)]
+        if self.instance_selection:
+            return [self.get_node(obj.instance)]
         else:
-            nodes = []
-            for name in [obj.name] + self._name_equivalence.get(obj.name, []):
-                nodes.extend(self.get_nodes_by_attr('class_name', name))
-            return nodes
+            """Enumerate nodes satisfying script object condition. If object was already
+            discovered, return node
+            """
+            node_id = self._script_objects.get((obj.name, obj.instance), None)
+            if node_id is not None:
+                return [self.get_node(node_id)]
+            else:
+                nodes = []
+                for name in [obj.name] + self._name_equivalence.get(obj.name, []):
+                    nodes.extend(self.get_nodes_by_attr('class_name', name))
+                return nodes
 
     def get_script_node(self, name: str, instance: int):
         return self._script_objects.get((name, instance), None)
@@ -393,6 +397,19 @@ class RoomNode(NodeEnumerator):
             if n.category == 'Rooms':
                 yield n
 
+
+class FilteredNodes(NodeEnumerator):
+
+    def __init__(self, enumerator: NodeEnumerator, condition: 'LogicalValue'):
+        self.enumerator = enumerator
+        self.condition = condition
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        for n in self.enumerator.enumerate(state):
+            if self.condition.evaluate(n):
+                yield n
+
+
 # NodeFilter-s
 ###############################################################################
 
@@ -481,6 +498,29 @@ class ExistsRelation(LogicalValue):
             for tn in state.get_nodes_from(fn, self.relation):
                 if self.to_nodes.filter(tn):
                     return True
+        return False
+
+
+class ExistRelations(LogicalValue):
+
+    def __init__(self, from_nodes: NodeEnumerator, rf_pairs):
+        self.from_nodes = from_nodes
+        self.rf_pairs = rf_pairs
+
+    def evaluate(self, state: EnvironmentState, **kwargs):
+        for fn in self.from_nodes.enumerate(state, **kwargs):
+            node_ok = True
+            for (relation, node_filter) in self.rf_pairs:
+                filter_ok = False
+                for tn in state.get_nodes_from(fn, relation):
+                    if node_filter.filter(tn):
+                        filter_ok = True
+                        break
+                if not filter_ok:
+                    node_ok = False
+                    break
+            if node_ok:
+                return True
         return False
 
 

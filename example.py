@@ -18,7 +18,7 @@ def example_1():
     name_equivalence = utils.load_name_equivalence()
     script = read_script('example_scripts/example_script_1.txt')
     executor = ScriptExecutor(graph, name_equivalence)
-    state_enum = executor.execute(script)
+    state_enum = executor.find_solutions(script)
     state = next(state_enum, None)
     if state is None:
         print('Script is not executable.')
@@ -52,7 +52,7 @@ def example_2():
     executor = ScriptExecutor(graph, name_equivalence)
 
     # Execute script; fails due to a missing object
-    state_enum = executor.execute(script)
+    state_enum = executor.find_solutions(script)
     state = next(state_enum, None)
     print('Script is {0}executable'.format('not ' if state is None else ''))
 
@@ -66,7 +66,7 @@ def example_2():
     # open/closed, on/off)
     prepare_3 = ChangeObjectStates(properties_data)
 
-    state_enum = executor.execute(script, [prepare_1, prepare_2, prepare_3])
+    state_enum = executor.find_solutions(script, [prepare_1, prepare_2, prepare_3])
     state = next(state_enum, None)
     print('Script is {0}executable'.format('not ' if state is None else ''))
 
@@ -89,8 +89,20 @@ def example_3():
                              [AddObject('kettle', Destination.on('stove')),
                               AddObject('vacuumcleaner', Destination.on('floor', 'livingroom'), [State.ON]),
                               ChangeState('lightswitch', [State.ON])])
-    state_enum = executor.execute(script, [prepare_1])
+    state_enum = executor.find_solutions(script, [prepare_1])
     state = next(state_enum, None)
+    print('Script is {0}executable'.format('not ' if state is None else ''))
+
+
+def example_4():
+    print()
+    print('Example 4')
+    print('---------')
+    graph = utils.load_graph('example_graphs/TestScene6_graph.json')
+    script = read_script('example_scripts/example_script_3.txt')
+    name_equivalence = utils.load_name_equivalence()
+    executor = ScriptExecutor(graph, name_equivalence)
+    state = executor.execute(script)
     print('Script is {0}executable'.format('not ' if state is None else ''))
 
 
@@ -98,3 +110,4 @@ if __name__ == '__main__':
     example_1()
     example_2()
     example_3()
+    example_4()

@@ -3,7 +3,6 @@ from typing import Optional
 
 import common
 from environment import *
-from preparation import StatePrepare
 from scripts import Action, Script
 
 
@@ -108,6 +107,14 @@ class WalkExecutor(ActionExecutor):
         char_node = _get_character_node(state)
         if State.SITTING in char_node.states:
             return False
+        # char_room = _get_room_node(state, char_node)
+        # node_room = _get_room_node(state, node)
+        # if char_room.id != node_room.id:
+        #     return not state.evaluate(
+        #         ExistRelations(FilteredNodes(ClassNameNode('door'), NodeAttrIn(State.CLOSED, 'states')),
+        #                        [(Relation.BETWEEN, NodeInstanceFilter(char_room)),
+        #                         (Relation.BETWEEN, NodeInstanceFilter(node_room))])
+        #     )
         return True
 
 
@@ -322,27 +329,42 @@ class ScriptExecutor(object):
         self.processing_time_limit = 10  # 10 seconds
         self.processing_limit = 0
 
-    def execute(self, script: Script, init_changers: List[StateChanger]=None):
+    def find_solutions(self, script: Script, init_changers: List[StateChanger]=None):
         self.processing_limit = time.time() + self.processing_time_limit
         init_state = EnvironmentState(self.graph, self.name_equivalence)
-        if init_changers is not None:
-            for changer in init_changers:
-                changer.apply_changes(init_state, script=script)
-        return self.execute_rec(script, 0, init_state)
+        _apply_initial_changers(init_state, script, init_changers)
+        return self.find_solutions_rec(script, 0, init_state)
 
-    def execute_rec(self, script: Script, script_index: int, state: EnvironmentState):
+    def find_solutions_rec(self, script: Script, script_index: int, state: EnvironmentState):
         if script_index >= len(script):
             yield state
         future_script = script.from_index(script_index)
         for next_state in self.call_action_method(future_script, state):
-            for rec_state_list in self.execute_rec(script, script_index + 1, next_state):
+            for rec_state_list in self.find_solutions_rec(script, script_index + 1, next_state):
                 yield rec_state_list
             if time.time() > self.processing_limit:
                 break
 
-    def call_action_method(self, script: Script, state: EnvironmentState):
-        executor = ScriptExecutor._action_executors.get(script[0].action, UnknownExecutor())
+    def execute(self, script: Script, init_changers: List[StateChanger]=None):
+        state = EnvironmentState(self.graph, self.name_equivalence, instance_selection=True)
+        _apply_initial_changers(state, script, init_changers)
+        for i in range(len(script)):
+            future_script = script.from_index(i)
+            state = next(self.call_action_method(future_script, state), None)
+            if state is None:
+                return None
+        return state
+
+    @classmethod
+    def call_action_method(cls, script: Script, state: EnvironmentState):
+        executor = cls._action_executors.get(script[0].action, UnknownExecutor())
         return executor.execute(script, state)
+
+
+def _apply_initial_changers(state: EnvironmentState, script: Script, changers: List[StateChanger]=None):
+    if changers is not None:
+        for changer in changers:
+            changer.apply_changes(state, script=script)
 
 
 # state preparation
