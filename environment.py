@@ -313,7 +313,8 @@ class EnvironmentState(object):
         self._new_nodes[node.id] = node
 
     def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
-        new_state = EnvironmentState(self._graph, self._name_equivalence)
+
+        new_state = EnvironmentState(self._graph, self._name_equivalence, self.instance_selection)
         new_state._new_nodes = self._new_nodes.copy()
         new_state._removed_edges_from = self._removed_edges_from.copy()
         new_state._new_edges_from = self._new_edges_from.copy()
@@ -396,6 +397,19 @@ class RoomNode(NodeEnumerator):
         for n in state.get_nodes_from(self.node, Relation.INSIDE):
             if n.category == 'Rooms':
                 yield n
+
+
+class BoxObjectNode(NodeEnumerator):
+    """Find the objects that contain `node`
+    """
+    def __init__(self, node: Node):
+        self.node = node
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        for n in state.get_nodes_from(self.node, Relation.INSIDE):
+            if n.category != 'Rooms':
+                yield n
+
 
 
 class FilteredNodes(NodeEnumerator):

@@ -21,7 +21,8 @@
 - script: Walk `object`
 - Pre-condition: `character` is not `sitting`
 - Post-condition:
-    - remove directed edges: `character` inside `any_node`, `character` close to `any_nodes`, `character` face `any_nodes`
+    - remove undirected edges: `character` inside `any_node`, `character` close to `any_nodes`, `character` face `any_nodes`
+    - add undirected edges: `character` close to object_contain(`object`) [Need to be verified]
     - add directed edges: `character` inside room_of(`object`)
     - add undirected edges: `character` close to `object`
 

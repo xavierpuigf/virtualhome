@@ -103,11 +103,14 @@ def example_4():
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
     state = executor.execute(script)
-    print('Script is {0}executable'.format('not ' if state is None else ''))
+    if state is None:
+        print('Script is not executable, since {}'.format(executor.info['error_message']))
+    else:
+        print('Script is executable')
 
 
 if __name__ == '__main__':
-    example_1()
-    example_2()
-    example_3()
+    #example_1()
+    #example_2()
+    #example_3()
     example_4()
