@@ -1,4 +1,4 @@
-# document for the rules of the transition
+# Document for the rules of the transition
 
 
 ## Template
@@ -11,13 +11,13 @@
     - remove/add directed edges:
     - state changes:
 
-### `FindExecutor`
+### FindExecutor
 - script: Find `object`
 - Pre-condition: `character` is close to `object`
 - Post-condition:
     - add undirected edges: `character`, close to, `object`
 
-### `WalkExecutor`
+### WalkExecutor
 - script: Walk `object`
 - Pre-condition: `character` is not `sitting`
 - Post-condition:
