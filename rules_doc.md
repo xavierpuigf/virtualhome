@@ -1,5 +1,18 @@
 # Document for the rules of the transition
 
+## Preliminaries
+
+### Possible relations
+
+Possible relations (edge labels) are:
+- on
+- inside
+- between  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
+- close 
+- facing
+- holds_rh  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
+- holds_lh  _analogue of holds_rh for left hand_
+
 
 ## Template
 
@@ -12,7 +25,7 @@
     - state changes:
 
 ### FindExecutor
-- script: Find `object`
+- script: find `object`
 - Pre-condition: 
 	- exists edge `character` close `object` or for each edge `character` close `object2` exists edge `object2` close `object`  # i.e., either character must be 
 		close to `object` or `object` must be close to every object the character is currenty close to
@@ -65,7 +78,7 @@
     - state changes: `object` state is open
 
 ### CloseExecutor (shared with OpenExecutor)
-- script: open `object`
+- script: close `object`
 - Pre-condition: 
 	- `object` property is openable and `object` state is open
 	- exists edge `character` close `object`
@@ -74,7 +87,7 @@
     - state changes: `object` state is closed
 
 ### PutExecutor
-- script: put on `object1` `object2`
+- script: putback `object1` `object2`
 - Pre-condition: 
 	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
 	- exists edge `character` close `object2`
@@ -84,7 +97,7 @@
     - add directed edges: `object1` on `object2`
 
 ### PutInExecutor
-- script: put in `object1` `object2`
+- script: putin `object1` `object2`
 - Pre-condition:
 	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
 	- exists edge `character` close `object2`
@@ -95,7 +108,7 @@
     - add directed edges: `object1` inside `object2`
 
 ### SwitchOnExecutor
-- script: switch on `object`
+- script: switchon `object`
 - Pre-condition: 
 	- `object` property is has_switch
 	- `object` state is off
@@ -105,7 +118,7 @@
     - state changes: `object` state is on
 
 ### SwitchOffExecutor
-- script: switch off `object`
+- script: switchoff `object`
 - Pre-condition: 
 	- `object` property is has_switch
 	- `object` state is on
