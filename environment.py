@@ -23,6 +23,8 @@ class State(Enum):
     ON = 3
     OFF = 4
     SITTING = 5
+    DIRTY = 6
+    CLEAN = 7
 
 
 class Relation(Enum):
@@ -508,6 +510,7 @@ class ExistsRelation(LogicalValue):
         self.to_nodes = to_nodes
 
     def evaluate(self, state: EnvironmentState, **kwargs):
+
         for fn in self.from_nodes.enumerate(state, **kwargs):
             for tn in state.get_nodes_from(fn, self.relation):
                 if self.to_nodes.filter(tn):

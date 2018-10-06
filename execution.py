@@ -436,7 +436,10 @@ class WipeExecutor(ActionExecutor):
         node = state.get_state_node(current_line.object())
         if node is not None:
             if self.check_wipe(state, node, info):
-                yield state.change_state([])
+                new_node = node.copy()
+                new_node.states.discard(State.DIRTY)
+                new_node.states.add(State.CLEAN)
+                yield state.change_state([ChangeNode(new_node)])
         else:
             info['error_message'] = '<{}> ({}) can not be found when executing "[Wipe] <{}> ({})"'.format( \
                                             current_line.object().name, current_line.object().instance, 
