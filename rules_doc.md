@@ -173,20 +173,36 @@ Possible relations (edge labels) are:
 ### TurnToExecutor
 - script: TurnTo `object`
 - Pre-condition:
-	- `character` close `object`
+	- exists edge `character` close `object`
 - Post-condition:
-	- `character` faces `object`
+	- add directed edges: `character` faces `object`
 
 ### LookAtExecutor
 - script: LookAt `object`
 - Pre-condition:
-	- `character` faces `object`
+	- exists edge `character` facing `object`
 
 ### WipeExecutor
 - script: Wipe `object`
 - Pre-condition: 
 	- `character` close `object`
 	- `object` property is `surface`
-	- `character` holds_rh or holds_lh `any_node`
+	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
 - Post-condition:
 	- state changes: `object` state is clean
+
+### PutOnExecutor
+- script: PutOn `object`
+- Pre-condition
+	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
+	- `object` preperty is clothes
+- Post-condition
+	- add directed edges: `object` on `character`
+
+### PutOffExecutor
+- script: PutOff `object`
+- Pre-condition
+	- exists edge `object` on `character`
+	- `object` preperty is clothes
+- Post-condition
+	- remove directed edges: `object` on `character`

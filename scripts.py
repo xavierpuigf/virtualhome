@@ -34,6 +34,8 @@ class Action(Enum):
     WALK = GOTO
     WATCH = ("Watch", 1)
     WIPE = ("Wipe", 1)
+    PUTON = ("PutOn", 1)
+    PUTOFF = ("PutOff", 1)
 
 
 class ScriptObject(object):

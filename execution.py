@@ -226,6 +226,7 @@ class OpenExecutor(ActionExecutor):
             info['error_message'] = '<{}> ({}) can not be found when executing "[Open] <{}> ({})"'.format( \
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
+
     def check_openable(self, state: EnvironmentState, node: GraphNode, info: dict):
 
         if Property.CAN_OPEN not in node.properties:
@@ -467,6 +468,70 @@ class WipeExecutor(ActionExecutor):
         return True
 
 
+class PutOnExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_puton(state, node, info):
+                yield state.change_state([
+                    AddEdges(NodeInstance(node), Relation.ON, CharacterNode())
+                ])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[PutOn] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    
+    def check_puton(self, state: EnvironmentState, node: GraphNode, info: dict):
+        
+        char_node = _get_character_node(state)
+        nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
+        
+        if True not in [n.id == node.id for n in nodes_in_hands]:
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[PutOn] <{}> ({})"'.format( \
+                                            char_node.class_name, char_node.id, node.class_name, node.id, 
+                                            node.class_name, node.id)
+            return False
+        if Property.CLOTHES not in node.properties:
+            info['error_message'] = '{}(id:{}) is clothes when executing "[PutOn] <{}> ({})"'.format( \
+                                            node.class_name, node.id, node.class_name, node.id)
+            return False
+        return True
+
+
+class PutOffExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_putoff(state, node, info):
+                yield state.change_state([
+                    DeleteEdges(NodeInstance(node), [Relation.ON], CharacterNode())
+                ])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[PutOff] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    
+    def check_putoff(self, state: EnvironmentState, node: GraphNode, info: dict):
+        
+        char_node = _get_character_node(state)
+        if not state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
+            info['error_message'] = '{}(id:{}) is not on {}(id:{}) when executing "[PutOff] <{}> ({})"'.format( \
+                                            node.class_name, node.id, char_node.class_name, char_node.id, 
+                                            node.class_name, node.id)
+            return False
+        if Property.CLOTHES not in node.properties:
+            info['error_message'] = '{}(id:{}) is clothes when executing "[PutOff] <{}> ({})"'.format( \
+                                            node.class_name, node.id, node.class_name, node.id)
+            return False
+        return True
+
+
 # General checks and helpers
 
 def _is_character_close_to(state: EnvironmentState, node: Node):
@@ -544,7 +609,10 @@ class ScriptExecutor(object):
         Action.DRINK: DrinkExecutor(), 
         Action.LOOKAT: LookAtExecutor(), 
         Action.TURNTO: TurnToExecutor(), 
-        Action.WIPE: WipeExecutor()
+        Action.WIPE: WipeExecutor(), 
+        Action.RUN: WalkExecutor(),
+        Action.PUTON: PutOnExecutor(), 
+        Action.PUTOFF: PutOffExecutor(), 
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):
