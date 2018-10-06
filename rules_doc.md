@@ -4,7 +4,7 @@
 ## Template
 
 ### ExampleExecutor
-- scrip: action object1 object2
+- script: action object1 object2
 - Pre-condition: 
 - Post-condition:
     - remove/add undirected edges:
@@ -13,79 +13,107 @@
 
 ### FindExecutor
 - script: Find `object`
-- Pre-condition: `character` is close to `object`
+- Pre-condition: exists edge `character` close `object`
 - Post-condition:
-    - add undirected edges: `character`, close to, `object`
+    - add undirected edges: `character` close `object`
 
 ### WalkExecutor
 - script: Walk `object`
-- Pre-condition: `character` is not `sitting`
+- Pre-condition: `character` state is not `sitting`
 - Post-condition:
-    - remove undirected edges: `character` inside `any_node`, `character` close to `any_nodes`, `character` face `any_nodes`
+    - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` face `any_node`
     - add undirected edges: `character` close to object_contain(`object`) [Need to be verified]
     - add directed edges: `character` inside room_of(`object`)
-    - add undirected edges: `character` close to `object`
+    - add undirected edges: `character` close `object`
 
 ### SitExecutor
 - script: sit `object`
-- Pre-condition: `character` close to `object`, `character` is not sitting, `object` is `sittable`
+- Pre-condition: 
+	- exists edge `character` close `object`
+	- `character` state is not sitting
+	- `object` property is sittable
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
 
 ### StandUpExecutor
 - script: standup
-- Pre-condition: `character` is sitting
-- Post-condition: `character` not sitting
+- Pre-condition: `character` state is sitting
+- Post-condition: `character` remove state sitting
 
 ### GrabExecutor
 - script: grab `object`
-- Pre-condition: `object` is grabbable, `character` close to object, `object` in another `object2` except room _and_ `object2` is not close, `one_of_hand` is free
+- Pre-condition: 
+	- `object` property is grabbable
+	- exists edge `character` close `object`
+	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
 - Post-condition: 
-    - remove directed and undirected edges: `object` all_relation `any_node`
-    - add directed edges: `character` hold `object`
-    - add undirected edges: `character` close to one_of_node(`object`, relation=on/inside/close to)object *(not sure)*
+    - remove directed and undirected edges: `object` any_relation `any_node`
+    - add directed edges: `character` holds_rh `object` or `character` holds_lh `object`
+    - add undirected edges: `character` close `object2` if there was edge `object` on `object2` (or `object` inside `object2`)  # do not know if this is necessary
 
 ### OpenExecutor
 - script: open `object`
-- Pre-condition: `object` is openable, `character` close to `object`, `one_of_hand` is free, `object` is closed
+- Pre-condition: 
+	- `object` property is openable and `object` state is closed
+	- exists edge `character` close `object`
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
 - Post-condition:
-    - state changes: `object` not closed, `object` open
+    - state changes: `object` state is open
 
 ### CloseExecutor (shared with OpenExecutor)
 - script: open `object`
-- Pre-condition: `object` is openable, `character` close to `object`, `one_of_hand` is free, `object` is open
+- Pre-condition: 
+	- `object` property is openable and `object` state is open
+	- exists edge `character` close `object`
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
 - Post-condition:
-    - state changes: `object` not open, `object` closed
+    - state changes: `object` state is closed
 
 ### PutExecutor
 - script: put on `object1` `object2`
-- Pre-condition: `one_of_hand` hold `object1`, `character` close to `object2`
+- Pre-condition: 
+	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
+	- exists edge `character` close `object2`
 - Post-condition:
-    - remove directed edges: `character` holds `object1`
-    - add undirected edges: `character` close to `object2`
+    - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
+    - add undirected edges: `character` close `object2`
     - add directed edges: `object1` on `object2`
 
 ### PutInExecutor
 - script: put in `object1` `object2`
-- Pre-condition: `one_of_hand` hold `object1`, `character` close to `object2`, (`object2` is not opennable or `object2` is open)
+- Pre-condition:
+	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
+	- exists edge `character` close `object2`
+	- `object2` property is not openable or `object2` state is open  # needs adjustment, now one can put something into any object (for openable we check open state); consider possibility of putting sugar in a cup
 - Post-condition:
-    - remove directed edges: `character` holds `object1`
-    - add undirected edges: `character` close to `object2`
+    - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
+    - add undirected edges: `character` close `object2`
     - add directed edges: `object1` inside `object2`
 
 ### SwitchOnExecutor
 - script: switch on `object`
-- Pre-condition: `object` has_switch, `character` close to `object`, `one_of_hand` is free, `object` is off
+- Pre-condition: 
+	- `object` property is has_switch
+	- `object` state is off
+	- exists edge `character` close `object`
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
 - Post-condition: 
-    - state changes: `object` not off, `object` is on
+    - state changes: `object` state is on
 
 ### SwitchOffExecutor
 - script: switch off `object`
-- Pre-condition: `object` has_switch, `character` close to `object`, `one_of_hand` is free, `object` is on
+- Pre-condition: 
+	- `object` property is has_switch
+	- `object` state is on
+	- exists edge `character` close `object`
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
 - Post-condition: 
-    - state changes: `object` not on, `object` is off
+    - state changes: `object` state is off
 
 ### DrinkExecutor
 - script: drink `object`
-- Pre-condition: `object` is drinkable, `one_of_hand` hold `object`
+- Pre-condition:
+    - `object` property is drinkable
+    - exists edge `character` holds_rh `object` or `character` holds_lh `object`
