@@ -5,6 +5,7 @@
 ### Possible relations
 
 Possible relations (edge labels) are:
+
 - on
 - inside
 - between  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
@@ -13,6 +14,39 @@ Possible relations (edge labels) are:
 - holds_rh  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
 - holds_lh  _analogue of holds_rh for left hand_
 
+### Properties
+
+- surfaces
+- grabbable
+- sittable
+- lieable
+- hangable
+- drinkable
+- eatable
+- recipient
+- cuttable
+- pourable
+- can_open
+- has_switch
+- readable
+- lookable
+- containers
+- clothes
+- person
+- body_part
+- cover_object
+- has_plug
+- has_paper
+- movable
+- cream
+
+### States
+
+- closed
+- open
+- on
+- off
+- sitting
 
 ## Template
 
@@ -62,18 +96,18 @@ Possible relations (edge labels) are:
 	- `object` property is grabbable
 	- exists edge `character` close `object`
 	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - remove directed and undirected edges: `object` any_relation `any_node`
     - add directed edges: `character` holds_rh `object` or `character` holds_lh `object`
-    - add undirected edges: `character` close `object2` if there was edge `object` on `object2` (or `object` inside `object2`)  # do not know if this is necessary
+    - add undirected edges: `character` close `object2` if there was edge `object` on `object2` (or `object` inside `object2`)  // do not know if this is necessary
 
 ### OpenExecutor
 - script: open `object`
 - Pre-condition: 
 	- `object` property is openable and `object` state is closed
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition:
     - state changes: `object` state is open
 
@@ -82,12 +116,12 @@ Possible relations (edge labels) are:
 - Pre-condition: 
 	- `object` property is openable and `object` state is open
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition:
     - state changes: `object` state is closed
 
 ### PutExecutor
-- script: putback `object1` `object2`
+- script: putback `object1` `object2` // means put object on
 - Pre-condition: 
 	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
 	- exists edge `character` close `object2`
@@ -101,7 +135,7 @@ Possible relations (edge labels) are:
 - Pre-condition:
 	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
 	- exists edge `character` close `object2`
-	- `object2` property is not openable or `object2` state is open  # needs adjustment, now one can put something into any object (for openable we check open state); consider possibility of putting sugar in a cup
+	- `object2` property is not openable or `object2` state is open  // needs adjustment, now one can put something into any object (for openable we check open state); consider possibility of putting sugar in a cup
 - Post-condition:
     - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
     - add undirected edges: `character` close `object2`
@@ -113,7 +147,7 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is off
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - state changes: `object` state is on
 
@@ -123,7 +157,7 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is on
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  # character has at least one free hand 
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - state changes: `object` state is off
 
