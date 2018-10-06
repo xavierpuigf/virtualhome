@@ -47,6 +47,8 @@ Possible relations (edge labels) are:
 - on
 - off
 - sitting
+- dirty
+- clean
 
 ## Template
 
