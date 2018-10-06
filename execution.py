@@ -139,7 +139,7 @@ class SitExecutor(ActionExecutor):
                                     node.class_name, node.id, node.class_name, node.id)
             return False
         if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
-            info['error_message'] = '{}(id:{}) is occupied when executing [Sit] <{}> ({})'.format( \
+            info['error_message'] = 'something on the {}(id:{}) when executing [Sit] <{}> ({})'.format( \
                                     node.class_name, node.id, node.class_name, node.id)
             return False
 

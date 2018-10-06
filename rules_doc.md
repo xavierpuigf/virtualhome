@@ -81,6 +81,7 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object`
 	- `character` state is not sitting
 	- `object` property is sittable
+	- `any_node` on `object`
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
