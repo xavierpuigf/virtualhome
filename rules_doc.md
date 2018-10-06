@@ -13,15 +13,17 @@
 
 ### FindExecutor
 - script: Find `object`
-- Pre-condition: exists edge `character` close `object`
+- Pre-condition: 
+	- exists edge `character` close `object` or for each edge `character` close `object2` exists edge `object2` close `object`  # i.e., either character must be 
+		close to `object` or `object` must be close to every object the character is currenty close to
 - Post-condition:
     - add undirected edges: `character` close `object`
 
 ### WalkExecutor
-- script: Walk `object`
-- Pre-condition: `character` state is not `sitting`
+- script: walk `object`
+- Pre-condition: `character` state is not sitting
 - Post-condition:
-    - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` face `any_node`
+    - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` faces `any_node`
     - add undirected edges: `character` close to object_contain(`object`) [Need to be verified]
     - add directed edges: `character` inside room_of(`object`)
     - add undirected edges: `character` close `object`
