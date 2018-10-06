@@ -33,6 +33,7 @@ class Action(Enum):
     TURNTO = ("Turn to", 1)
     WALK = GOTO
     WATCH = ("Watch", 1)
+    WIPE = ("Wipe", 1)
 
 
 class ScriptObject(object):

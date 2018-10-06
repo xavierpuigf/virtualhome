@@ -166,3 +166,21 @@ Possible relations (edge labels) are:
 - Pre-condition:
     - `object` property is drinkable
     - exists edge `character` holds_rh `object` or `character` holds_lh `object`
+
+### TurnToExecutor
+- script: TurnTo `object`
+- Pre-condition:
+	- `character` close `object`
+- Post-condition:
+	- `character` faces `object`
+
+### LookAtExecutor
+- script: LookAt `object`
+- Pre-condition:
+	- `character` faces `object`
+
+### WipeExecutor
+- script: Wipe `object`
+- Pre-condition: 
+	- `character` close `object`
+	- `object` property is `surface`

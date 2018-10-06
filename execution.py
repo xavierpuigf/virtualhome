@@ -30,58 +30,15 @@ class UnknownExecutor(ActionExecutor):
         raise ExecutionException("Execution of {0} is not supported", script[0].action)
 
 
-class SitExecutor(ActionExecutor):
+class JoinedExecutor(ActionExecutor):
+
+    def __init__(self, *args):
+        self.executors = args
 
     def execute(self, script: Script, state: EnvironmentState, info: dict):
-        current_line = script[0]
-        node = state.get_state_node(current_line.object())
-        if node is not None:
-            if self.check_sittable(state, node, info):
-                char_node = _get_character_node(state)
-                new_char_node = char_node.copy()
-                new_char_node.states.add(State.SITTING)
-                yield state.change_state(
-                    [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
-                     ChangeNode(new_char_node)]
-                )
-        else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format( \
-                                            current_line.object().name, current_line.object().instance, 
-                                            current_line.object().name, current_line.object().instance)
-
-    def check_sittable(self, state: EnvironmentState, node: GraphNode, info: dict):
-        char_node = _get_character_node(state)
-
-        if not _is_character_close_to(state, node):
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}), when executing [Sit] <{}> ({})'.format( \
-                                    char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
-            return False
-        if State.SITTING in char_node.states:
-            info['error_message'] = '{}(id:{}) is not sitting, when executing [Sit] <{}> ({})'.format( \
-                                    char_node.class_name, char_node.id, node.class_name, node.id)
-            return False
-        if Property.SITTABLE not in node.properties:
-            info['error_message'] = '{}(id:{}) is not sittable, when executing [Sit] <{}> ({})'.format( \
-                                    node.class_name, node.id, node.class_name, node.id)
-            return False
-        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
-            info['error_message'] = '{}(id:{}) is occupied, when executing [Sit] <{}> ({})'.format( \
-                                    node.class_name, node.id, node.class_name, node.id)
-            return False
-
-        return True
-
-
-class StandUpExecutor(ActionExecutor):
-
-    def execute(self, script: Script, state: EnvironmentState, info: dict):
-        char_node = _get_character_node(state)
-        if State.SITTING in char_node.states:
-            new_char_node = char_node.copy()
-            new_char_node.states.remove(State.SITTING)
-            yield state.change_state([ChangeNode(new_char_node)])
-        else:
-            info['error_message'] = '{}(id:{}) is not sitting when executing "Standup"'.format(char_node.class_name, char_node.id)
+        for e in self.executors:
+            for s in e.execute(script, state, info):
+                yield s
 
 
 class FindExecutor(ActionExecutor):
@@ -147,15 +104,58 @@ class WalkExecutor(ActionExecutor):
         return True
 
 
-class JoinedExecutor(ActionExecutor):
-
-    def __init__(self, *args):
-        self.executors = args
+class SitExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: dict):
-        for e in self.executors:
-            for s in e.execute(script, state, info):
-                yield s
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_sittable(state, node, info):
+                char_node = _get_character_node(state)
+                new_char_node = char_node.copy()
+                new_char_node.states.add(State.SITTING)
+                yield state.change_state(
+                    [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
+                     ChangeNode(new_char_node)]
+                )
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_sittable(self, state: EnvironmentState, node: GraphNode, info: dict):
+        char_node = _get_character_node(state)
+
+        if not _is_character_close_to(state, node):
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Sit] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
+            return False
+        if State.SITTING in char_node.states:
+            info['error_message'] = '{}(id:{}) is not sitting when executing [Sit] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id)
+            return False
+        if Property.SITTABLE not in node.properties:
+            info['error_message'] = '{}(id:{}) is not sittable when executing [Sit] <{}> ({})'.format( \
+                                    node.class_name, node.id, node.class_name, node.id)
+            return False
+        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
+            info['error_message'] = '{}(id:{}) is occupied when executing [Sit] <{}> ({})'.format( \
+                                    node.class_name, node.id, node.class_name, node.id)
+            return False
+
+        return True
+
+
+class StandUpExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        char_node = _get_character_node(state)
+        if State.SITTING in char_node.states:
+            new_char_node = char_node.copy()
+            new_char_node.states.remove(State.SITTING)
+            yield state.change_state([ChangeNode(new_char_node)])
+        else:
+            info['error_message'] = '{}(id:{}) is not sitting when executing "Standup"'.format(char_node.class_name, char_node.id)
 
 
 class GrabExecutor(ActionExecutor):
@@ -381,6 +381,83 @@ class DrinkExecutor(ActionExecutor):
         return True
 
 
+class TurnToExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node =  state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_turn_to(state, node, info):
+                yield state.change_state(
+                    [AddEdges(CharacterNode(), Relation.FACING, NodeInstance(node))]
+                )
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[TurnTo] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_turn_to(self, state: EnvironmentState, node: GraphNode, info: dict):
+        char_node = _get_character_node(state)
+        if not _is_character_close_to(state, node):
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [TurnTo] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
+            return False
+        
+        return True
+
+
+class LookAtExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node =  state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_lookat(state, node, info):
+                yield state.change_state([])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[TurnTo] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_lookat(self, state: EnvironmentState, node: GraphNode, info: dict):
+        char_node = _get_character_node(state)
+        if not _is_character_face_to(state, node):
+            info['error_message'] = '{}(id:{}) does not face {}(id:{}) when executing [TurnTo] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id,  node.class_name, node.id)
+            return False
+
+        return True
+
+
+class WipeExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_wipe(state, node, info):
+                yield state.change_state([])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Wipe] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_wipe(self, state: EnvironmentState, node: GraphNode, info: dict):
+        char_node = _get_character_node(state)
+
+        if not _is_character_close_to(state, node):
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Wipe] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
+            return False
+
+        if Property.SURFACES not in node.properties:
+            info['error_message'] = '{}(id:{}) does not have surface when executing [Wipe] <{}> ({})'.format( \
+                                    node.class_name, node.id, node.class_name, node.id)
+            return False
+
+        return True
+
+
 # General checks and helpers
 
 def _is_character_close_to(state: EnvironmentState, node: Node):
@@ -391,6 +468,13 @@ def _is_character_close_to(state: EnvironmentState, node: Node):
             return True
     return False
 
+def _is_character_face_to(state: EnvironmentState, node: Node):
+    if state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+        return True
+    for face_node in state.get_nodes_from(_get_character_node(state), Relation.FACING):
+        if state.evaluate(ExistsRelation(NodeInstance(face_node), Relation.FACING, NodeInstanceFilter(node))):
+            return True
+    return False
 
 def _get_character_node(state: EnvironmentState):
     chars = state.get_nodes_by_attr('class_name', 'character')
@@ -445,7 +529,10 @@ class ScriptExecutor(object):
         Action.PUTIN: PutExecutor(True),
         Action.SWITCHON: SwitchExecutor(True),
         Action.SWITCHOFF: SwitchExecutor(False),
-        Action.DRINK: DrinkExecutor()
+        Action.DRINK: DrinkExecutor(), 
+        Action.LOOKAT: LookAtExecutor(), 
+        Action.TURNTO: TurnToExecutor(), 
+        Action.WIPE: WipeExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):
