@@ -184,3 +184,4 @@ Possible relations (edge labels) are:
 - Pre-condition: 
 	- `character` close `object`
 	- `object` property is `surface`
+	- `character` holds_rh or holds_lh `any_node`

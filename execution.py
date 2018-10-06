@@ -455,6 +455,12 @@ class WipeExecutor(ActionExecutor):
                                     node.class_name, node.id, node.class_name, node.id)
             return False
 
+        nodes_in_hands = _find_nodes_from(state, char_node, [Relation.HOLDS_RH, Relation.HOLDS_LH])
+        if len(nodes_in_hands) == 0:
+            info['error_message'] = '{}(id:{}) does not hold anything in hands when executing [Wipe] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id)
+            return 
+
         return True
 
 
@@ -480,13 +486,18 @@ def _get_character_node(state: EnvironmentState):
     chars = state.get_nodes_by_attr('class_name', 'character')
     return None if len(chars) == 0 else chars[0]
 
-
 def _get_room_node(state: EnvironmentState, node: Node):
     for n in state.get_nodes_from(node, Relation.INSIDE):
         if n.category == 'Rooms':
             return n
     return None
 
+def _find_nodes_from(state: EnvironmentState, node: Node, relations: List[Relation]):
+    nodes = []
+    for r in relations:
+        nl = state.get_nodes_from(node, r)
+        nodes += nl
+    return nodes
 
 def _find_first_node_from(state: EnvironmentState, node: Node, relations: List[Relation]):
     for r in relations:
@@ -495,14 +506,12 @@ def _find_first_node_from(state: EnvironmentState, node: Node, relations: List[R
             return nl[0]
     return None
 
-
 def _find_free_hand(state: EnvironmentState):
     if not state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, AnyNodeFilter())):
         return Relation.HOLDS_RH
     if not state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_LH, AnyNodeFilter())):
         return Relation.HOLDS_LH
     return None
-
 
 def _find_holding_hand(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, NodeInstanceFilter(node))):
