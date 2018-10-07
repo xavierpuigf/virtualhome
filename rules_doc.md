@@ -49,6 +49,7 @@ Possible relations (edge labels) are:
 - sitting
 - dirty
 - clean
+- lying
 
 ## Template
 
