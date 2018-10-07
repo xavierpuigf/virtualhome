@@ -203,6 +203,7 @@ class EnvironmentState(object):
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence, instance_selection: bool=False):
         self.instance_selection = instance_selection
+        self.executor_data = {}
         self._graph = graph
         self._name_equivalence = name_equivalence
         self._script_objects = {}  # (name, instance) -> node id
@@ -316,12 +317,12 @@ class EnvironmentState(object):
         self._new_nodes[node.id] = node
 
     def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
-
         new_state = EnvironmentState(self._graph, self._name_equivalence, self.instance_selection)
         new_state._new_nodes = self._new_nodes.copy()
         new_state._removed_edges_from = self._removed_edges_from.copy()
         new_state._new_edges_from = self._new_edges_from.copy()
         new_state._script_objects = self._script_objects.copy()
+        new_state.executor_data = self.executor_data.copy()
         if obj is not None and node is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
         new_state.apply_changes(changers)
@@ -644,3 +645,22 @@ class AddNode(StateChanger):
 
     def apply_changes(self, state: EnvironmentState, **kwargs):
         state.add_node(self.node)
+
+
+class ClearExecDataKey(StateChanger):
+
+    def __init__(self, key):
+        self.key = key
+
+    def apply_changes(self, state: EnvironmentState, **kwargs):
+        state.executor_data.pop(self.key, None)
+
+
+class AddExecDataValue(StateChanger):
+
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+
+    def apply_changes(self, state: EnvironmentState, **kwargs):
+        state.executor_data[self.key] = self.value

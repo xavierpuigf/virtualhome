@@ -56,11 +56,10 @@ class FindExecutor(ActionExecutor):
                 )
 
     def check_find(self, state: EnvironmentState, node: GraphNode, info: dict):
-        
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info['error_message'] = '{}(id:{}) is not closed to {}(id:{}) when executing "[Find] <{}> ({})"'.format(
-                                        char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
+                                    char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         else:
             return 
@@ -189,9 +188,10 @@ class GrabExecutor(ActionExecutor):
             if new_relation is not None:
                 changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode()),
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
-                new_close = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
+                new_close, relation = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
-                    changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close), add_reverse=True))
+                    changes += [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close), add_reverse=True),
+                                AddExecDataValue((Action.GRAB, node.id), (new_close, relation))]
                 yield state.change_state(changes)
         else:
             info['error_message'] = '<{}> ({}) can not be found when executing "[Grab] <{}> ({})"'.format(
@@ -273,25 +273,25 @@ class OpenExecutor(ActionExecutor):
 
 class PutExecutor(ActionExecutor):
 
-    def __init__(self, inside):
+    def __init__(self, relation: Relation):
         """
-            PutExecutor: False
-            PutInExecutor: True
+        PutExecutor: Relation.ON
+        PutInExecutor: Relation.INSIDE
         """
-        self.inside = inside
+        self.relation = relation
 
     def execute(self, script: Script, state: EnvironmentState, info: dict):
         current_line = script[0]
         src_node = state.get_state_node(current_line.object())
         dest_node = state.get_state_node(current_line.subject())
         if src_node is not None and dest_node is not None:
-            if self.check_puttable(state, src_node, dest_node, info):
-                new_rel = Relation.INSIDE if self.inside else Relation.ON
+            if _check_puttable(state, src_node, dest_node, self.relation, info):
                 yield state.change_state(
                     [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(src_node)),
                      AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
                      AddEdges(NodeInstance(src_node), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True), 
-                     AddEdges(NodeInstance(src_node), new_rel, NodeInstance(dest_node))]
+                     AddEdges(NodeInstance(src_node), self.relation, NodeInstance(dest_node)),
+                     ClearExecDataKey((Action.GRAB, src_node.id))]
                 )
         else:
             missing_object = current_line.object() if src_node is None else current_line.subject()
@@ -299,30 +299,57 @@ class PutExecutor(ActionExecutor):
                                             missing_object.name, missing_object.instance, 
                                             missing_object.name, missing_object.instance)
 
-    def check_puttable(self, state: EnvironmentState, src_node: GraphNode, dest_node: GraphNode, info: dict):
-        hand_rel = _find_holding_hand(state, src_node)
-        if hand_rel is None:
-            char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format(
-                                            char_node.class_name, char_node.id, src_node.class_name, src_node.id, 
-                                            src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
-            return False
-        if not _is_character_close_to(state, dest_node):
-            char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format(
-                                            char_node.class_name, char_node.id, dest_node.class_name, dest_node.id, 
-                                            src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
-            return False
-        if self.inside:
-            if Property.CAN_OPEN not in dest_node.properties or \
-                   State.OPEN in dest_node.states:
-                return True
+
+class PutBackExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        src_node = state.get_state_node(current_line.object())
+        if src_node is not None:
+            (dest_node, relation) = state.executor_data.get((Action.GRAB, src_node.id), (None, None))
+            if dest_node is not None:
+                dest_node = state.get_node(dest_node.id)
+                if _check_puttable(state, src_node, dest_node, relation, info):
+                    yield state.change_state(
+                        [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(src_node)),
+                         AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
+                         AddEdges(NodeInstance(src_node), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
+                         AddEdges(NodeInstance(src_node), relation, NodeInstance(dest_node)),
+                         ClearExecDataKey((Action.GRAB, src_node.id))]
+                    )
             else:
-                info['error_message'] = '{}(id:{}) is not open or is not openable when executing "[Put] <{}> ({}) <{}> ({})"'.format(
-                                            dest_node.class_name, dest_node.id, 
-                                            src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
-                return False
-        return True
+                info['error_message'] = '<{0}> ({1}) not grabbed when executing "[PutObjBack] <{0}> ({1})"'.format(
+                                            src_node.name, src_node.instance)
+
+        else:
+            info['error_message'] = '<{0}> ({1}) can not be found when executing "[PutObjBack] <{0}> ({1})"'.format(
+                                            src_node.name, src_node.instance)
+
+
+def _check_puttable(state: EnvironmentState, src_node: GraphNode, dest_node: GraphNode, relation: Relation, info: dict):
+    hand_rel = _find_holding_hand(state, src_node)
+    if hand_rel is None:
+        char_node = _get_character_node(state)
+        info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format(
+                                        char_node.class_name, char_node.id, src_node.class_name, src_node.id,
+                                        src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
+        return False
+    if not _is_character_close_to(state, dest_node):
+        char_node = _get_character_node(state)
+        info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format(
+                                        char_node.class_name, char_node.id, dest_node.class_name, dest_node.id,
+                                        src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
+        return False
+    if relation == Relation.INSIDE:
+        if Property.CAN_OPEN not in dest_node.properties or \
+               State.OPEN in dest_node.states:
+            return True
+        else:
+            info['error_message'] = '{}(id:{}) is not open or is not openable when executing "[Put] <{}> ({}) <{}> ({})"'.format(
+                                        dest_node.class_name, dest_node.id,
+                                        src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
+            return False
+    return True
 
 
 class SwitchExecutor(ActionExecutor):
@@ -503,9 +530,7 @@ class PutOnExecutor(ActionExecutor):
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
-    
     def check_puton(self, state: EnvironmentState, node: GraphNode, info: dict):
-        
         char_node = _get_character_node(state)
         nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
         
@@ -561,7 +586,8 @@ class DropExecutor(ActionExecutor):
                 char_node = _get_character_node(state)
                 yield state.change_state(
                     [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(node)),
-                    AddEdges(NodeInstance(node), Relation.INSIDE, RoomNode(char_node))]
+                     AddEdges(NodeInstance(node), Relation.INSIDE, RoomNode(char_node)),
+                     ClearExecDataKey((Action.GRAB, node.id))]
                 )
         else:
             info['error_message'] = '<{}> ({}) can not be found when executing "[Drop] <{}> ({})"'.format(
@@ -721,10 +747,10 @@ def _find_nodes_from(state: EnvironmentState, node: Node, relations: List[Relati
 
 def _find_first_node_from(state: EnvironmentState, node: Node, relations: List[Relation]):
     for r in relations:
-        nl = state.get_nodes_from(node, r)
-        if len(nl) > 0:
-            return nl[0]
-    return None
+        for n in state.get_nodes_from(node, r):
+            if n.category != 'Rooms':
+                return n, r
+    return None, None
 
 
 def _find_free_hand(state: EnvironmentState):
@@ -779,7 +805,8 @@ class ScriptExecutor(object):
         Action.READ: ReadExecutor(), 
         Action.POINTAT: PointAtExecutor(), 
         Action.TOUCH: TouchExecutor(), 
-        Action.LIE: LieExecutor()
+        Action.LIE: LieExecutor(),
+        Action.PUTOBJBACK: PutBackExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):
