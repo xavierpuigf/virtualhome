@@ -102,7 +102,7 @@ Possible relations (edge labels) are:
 - Pre-condition: 
 	- `object` property is grabbable
 	- exists edge `character` close `object`
-	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open
+	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot grab an object inside other one, unless it is open
 	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - remove directed and undirected edges: `object` any_relation `any_node`
@@ -235,6 +235,8 @@ Possible relations (edge labels) are:
 - script: touch `object`
 - Pre-condition:
 	- exist edge `character` close `object`
+	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot touch an object inside other one, unless it is open
+	
 
 ### LieExecutor
 - script: lie `object`

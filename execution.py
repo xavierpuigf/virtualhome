@@ -4,7 +4,6 @@ from typing import Optional
 import common
 from environment import *
 from scripts import Action, Script
-import ipdb
 
 
 # ActionExecutor-s
@@ -60,7 +59,7 @@ class FindExecutor(ActionExecutor):
         
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not closed to {}(id:{}) when executing "[Find] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not closed to {}(id:{}) when executing "[Find] <{}> ({})"'.format(
                                         char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         else:
@@ -90,8 +89,8 @@ class WalkExecutor(ActionExecutor):
     def check_walk(self, state: EnvironmentState, node: GraphNode, info: dict):
         char_node = _get_character_node(state)
         if State.SITTING in char_node.states:
-            info['error_message'] = '{}(id:{}) is sitting when executing "[Walk] <{}> ({})"'.format(char_node.class_name, char_node.id, 
-                                                                            node.class_name, node.id)
+            info['error_message'] = '{}(id:{}) is sitting when executing "[Walk] <{}> ({})"'.format(
+                                    char_node.class_name, char_node.id, node.class_name, node.id)
             return False
         # char_room = _get_room_node(state, char_node)
         # node_room = _get_room_node(state, node)
@@ -110,17 +109,16 @@ class GreetExecutor(ActionExecutor):
         current_line = script[0]
         node = state.get_state_node(current_line.object())
         if node is not None:
-            if self.check_is_person(state, node, info):
+            if self.check_if_person(state, node, info):
                 yield state.change_state([])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Greet] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Greet] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
-    def check_is_person(self, state: EnvironmentState, node: GraphNode, info: dict):
-
+    def check_if_person(self, state: EnvironmentState, node: GraphNode, info: dict):
         if Property.PERSON not in node.properties:
-            info['error_message'] = '{}(id:{}) is not person when executing [Greet] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not person when executing [Greet] <{}> ({})'.format(
                                     node.class_name, node.id, node.class_name, node.id)
             return False
 
@@ -142,7 +140,7 @@ class SitExecutor(ActionExecutor):
                      ChangeNode(new_char_node)]
                 )
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
@@ -150,19 +148,19 @@ class SitExecutor(ActionExecutor):
         char_node = _get_character_node(state)
 
         if not _is_character_close_to(state, node):
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Sit] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Sit] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         if State.SITTING in char_node.states:
-            info['error_message'] = '{}(id:{}) is sitting when executing [Sit] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is sitting when executing [Sit] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id)
             return False
         if Property.SITTABLE not in node.properties:
-            info['error_message'] = '{}(id:{}) is not sittable when executing [Sit] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not sittable when executing [Sit] <{}> ({})'.format(
                                     node.class_name, node.id, node.class_name, node.id)
             return False
         if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
-            info['error_message'] = 'something on the {}(id:{}) when executing [Sit] <{}> ({})'.format( \
+            info['error_message'] = 'something on the {}(id:{}) when executing [Sit] <{}> ({})'.format(
                                     node.class_name, node.id, node.class_name, node.id)
             return False
 
@@ -196,31 +194,28 @@ class GrabExecutor(ActionExecutor):
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close), add_reverse=True))
                 yield state.change_state(changes)
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Grab] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Grab] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode, info: dict) -> Optional[Relation]:
         if Property.GRABBABLE not in node.properties:
-            info['error_message'] = '{}(id:{}) is not grabbable when executing "[Grab] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not grabbable when executing "[Grab] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return None
         if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Grab] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Grab] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return None
-        if state.evaluate(ExistsRelation(NodeInstance(node), Relation.INSIDE,
-                                         NodeConditionFilter(And(NodeAttrIn(State.CLOSED, 'states'),
-                                                                 Not(IsRoomNode()))))):
-            info['error_message'] = '{}(id:{}) is inside other closed thing when executing "[Grab] <{}> ({})"'.format( \
+        if _is_inside(state, node):
+            info['error_message'] = '{}(id:{}) is inside other closed thing when executing "[Grab] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return None
-
         new_relation = _find_free_hand(state)
         if new_relation is None:
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) does not have free hand when executing "[Grab] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) does not have free hand when executing "[Grab] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id)
             return None
 
@@ -246,31 +241,31 @@ class OpenExecutor(ActionExecutor):
                 new_node.states.add(State.CLOSED if self.close else State.OPEN)
                 yield state.change_state([ChangeNode(new_node)])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Open] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Open] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_openable(self, state: EnvironmentState, node: GraphNode, info: dict):
 
         if Property.CAN_OPEN not in node.properties:
-            info['error_message'] = '{}(id:{}) can not be opened when executing "[Open] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) can not be opened when executing "[Open] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return False
 
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not close to {}()id:{} when executing "[Open] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}()id:{} when executing "[Open] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         if _find_free_hand(state) is None:
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) does have any free hand when executing "[Open] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) does have any free hand when executing "[Open] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id)
             return False
 
         s = State.OPEN if self.close else State.CLOSED
         if s not in node.states:
-            info['error_message'] = '{}(id:{}) is not {} when executing "[Open] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not {} when executing "[Open] <{}> ({})'.format(
                                             node.class_name, node.id, s.name.lower(), node.class_name, node.id)
             return False
         return True
@@ -300,7 +295,7 @@ class PutExecutor(ActionExecutor):
                 )
         else:
             missing_object = current_line.object() if src_node is None else current_line.subject()
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Put] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Put] <{}> ({})"'.format(
                                             missing_object.name, missing_object.instance, 
                                             missing_object.name, missing_object.instance)
 
@@ -308,13 +303,13 @@ class PutExecutor(ActionExecutor):
         hand_rel = _find_holding_hand(state, src_node)
         if hand_rel is None:
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, src_node.class_name, src_node.id, 
                                             src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
             return False
         if not _is_character_close_to(state, dest_node):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Put] <{}> ({}) <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, dest_node.class_name, dest_node.id, 
                                             src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
             return False
@@ -323,7 +318,7 @@ class PutExecutor(ActionExecutor):
                    State.OPEN in dest_node.states:
                 return True
             else:
-                info['error_message'] = '{}(id:{}) is not open or is not openable when executing "[Put] <{}> ({}) <{}> ({})"'.format( \
+                info['error_message'] = '{}(id:{}) is not open or is not openable when executing "[Put] <{}> ({}) <{}> ({})"'.format(
                                             dest_node.class_name, dest_node.id, 
                                             src_node.class_name, src_node.id, dest_node.class_name, dest_node.id)
                 return False
@@ -349,7 +344,7 @@ class SwitchExecutor(ActionExecutor):
                 new_node.states.add(State.ON if self.switch_on else State.OFF)
                 yield state.change_state([ChangeNode(new_node)])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Switch] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Switch] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
@@ -357,22 +352,22 @@ class SwitchExecutor(ActionExecutor):
 
         s = State.OFF if self.switch_on else State.ON
         if Property.HAS_SWITCH not in node.properties:
-            info['error_message'] = '{}(id:{}) does not have switch when executing "[Switch{}] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) does not have switch when executing "[Switch{}] <{}> ({})"'.format(
                                             node.class_name, node.id, s.name.capitalize(), node.class_name, node.id)
             return False
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Switch{}] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Switch{}] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, s.name.capitalize(), node.class_name, node.id)
             return False
         if _find_free_hand(state) is None:
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) does not have free hand when executing "[Switch{}] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) does not have free hand when executing "[Switch{}] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, s.name.capitalize(), node.class_name, node.id)
             return False
 
         if s not in node.states:
-            info['error_message'] = '{}(id:{}) is not {} when executing "[Switch{}] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not {} when executing "[Switch{}] <{}> ({})"'.format(
                                             node.class_name, node.id, s.name.lower(), s.name.capitalize(), node.class_name, node.id)
             return False
 
@@ -388,19 +383,19 @@ class DrinkExecutor(ActionExecutor):
             if self.check_drinkable(state, node, info):
                 yield state.change_state([])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Drink] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Drink] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_drinkable(self, state: EnvironmentState, node: GraphNode, info: dict):
         if Property.DRINKABLE not in node.properties:
-            info['error_message'] = '{}(id:{}) is not drinkable when executing "[Drink] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not drinkable when executing "[Drink] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return False
         hand_rel = _find_holding_hand(state, node)
         if hand_rel is None:
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Drink] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Drink] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         return True
@@ -417,14 +412,14 @@ class TurnToExecutor(ActionExecutor):
                     [AddEdges(CharacterNode(), Relation.FACING, NodeInstance(node))]
                 )
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[TurnTo] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[TurnTo] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_turn_to(self, state: EnvironmentState, node: GraphNode, info: dict):
         char_node = _get_character_node(state)
         if not _is_character_close_to(state, node):
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [TurnTo] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [TurnTo] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         
@@ -440,14 +435,14 @@ class LookAtExecutor(ActionExecutor):
             if self.check_lookat(state, node, info):
                 yield state.change_state([])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[LookAt] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[LookAt] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_lookat(self, state: EnvironmentState, node: GraphNode, info: dict):
         char_node = _get_character_node(state)
         if not _is_character_face_to(state, node):
-            info['error_message'] = '{}(id:{}) does not face {}(id:{}) when executing [LookAt] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) does not face {}(id:{}) when executing [LookAt] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id,  node.class_name, node.id)
             return False
 
@@ -466,7 +461,7 @@ class WipeExecutor(ActionExecutor):
                 new_node.states.add(State.CLEAN)
                 yield state.change_state([ChangeNode(new_node)])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Wipe] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Wipe] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
@@ -474,18 +469,18 @@ class WipeExecutor(ActionExecutor):
         char_node = _get_character_node(state)
 
         if not _is_character_close_to(state, node):
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Wipe] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Wipe] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
 
         if Property.SURFACES not in node.properties:
-            info['error_message'] = '{}(id:{}) does not have surface when executing [Wipe] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) does not have surface when executing [Wipe] <{}> ({})'.format(
                                     node.class_name, node.id, node.class_name, node.id)
             return False
 
         nodes_in_hands = _find_nodes_from(state, char_node, [Relation.HOLDS_RH, Relation.HOLDS_LH])
         if len(nodes_in_hands) == 0:
-            info['error_message'] = '{}(id:{}) does not hold anything in hands when executing [Wipe] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) does not hold anything in hands when executing [Wipe] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id)
             return 
 
@@ -504,7 +499,7 @@ class PutOnExecutor(ActionExecutor):
                     DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(node)), 
                 ])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[PutOn] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[PutOn] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
@@ -515,12 +510,12 @@ class PutOnExecutor(ActionExecutor):
         nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
         
         if True not in [n.id == node.id for n in nodes_in_hands]:
-            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[PutOn] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[PutOn] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, 
                                             node.class_name, node.id)
             return False
         if Property.CLOTHES not in node.properties:
-            info['error_message'] = '{}(id:{}) is clothes when executing "[PutOn] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is clothes when executing "[PutOn] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return False
 
@@ -538,20 +533,19 @@ class PutOffExecutor(ActionExecutor):
                     DeleteEdges(NodeInstance(node), [Relation.ON, Relation.CLOSE], CharacterNode(), delete_reverse=True)
                 ])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[PutOff] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[PutOff] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
     
     def check_putoff(self, state: EnvironmentState, node: GraphNode, info: dict):
-        
         char_node = _get_character_node(state)
         if not state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
-            info['error_message'] = '{}(id:{}) is not on {}(id:{}) when executing "[PutOff] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not on {}(id:{}) when executing "[PutOff] <{}> ({})"'.format(
                                             node.class_name, node.id, char_node.class_name, char_node.id, 
                                             node.class_name, node.id)
             return False
         if Property.CLOTHES not in node.properties:
-            info['error_message'] = '{}(id:{}) is clothes when executing "[PutOff] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is clothes when executing "[PutOff] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return False
         return True
@@ -570,17 +564,16 @@ class DropExecutor(ActionExecutor):
                     AddEdges(NodeInstance(node), Relation.INSIDE, RoomNode(char_node))]
                 )
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Drop] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Drop] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_drop(self, state: EnvironmentState, node: GraphNode, info: dict):
-
         char_node = _get_character_node(state)
         nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
 
         if True not in [n.id == node.id for n in nodes_in_hands]:
-            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Drop] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Drop] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, 
                                             node.class_name, node.id)
             return False
@@ -597,20 +590,19 @@ class ReadExecutor(ActionExecutor):
             if self.check_readable(state, node, info):
                 yield state.change_state([])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Read] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Read] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_readable(self, state: EnvironmentState, node: GraphNode, info: dict):
-
         if Property.READABLE not in node.properties:
-            info['error_message'] = '{}(id:{}) is not readable when executing "[Read] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not readable when executing "[Read] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
             return False
         hand_rel = _find_holding_hand(state, node)
         if hand_rel is None:
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Read] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Read] <{}> ({})"'.format(
                                             char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         return True
@@ -625,18 +617,19 @@ class TouchExecutor(ActionExecutor):
             if self.check_reachable(state, node, info):
                 yield state.change_state([])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Touch] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Touch] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_reachable(self, state: EnvironmentState, node: GraphNode, info: dict):
-
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Touch{}] <{}> ({})"'.format( \
-                                            char_node.class_name, char_node.id, node.class_name, node.id, s.name.capitalize(), node.class_name, node.id)
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Touch] <{}> ({})"'.format(
+                                            char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
-
+        if _is_inside(state, node):
+            info['error_message'] = '{}(id:{}) is inside other closed thing when executing "[Touch] <{}> ({})"'.format(
+                                            node.class_name, node.id, node.class_name, node.id)
         return True
 
 
@@ -655,7 +648,7 @@ class LieExecutor(ActionExecutor):
                      ChangeNode(new_char_node)]
                 )
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format(
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
@@ -663,19 +656,19 @@ class LieExecutor(ActionExecutor):
         char_node = _get_character_node(state)
 
         if not _is_character_close_to(state, node):
-            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Lie] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Lie] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         if State.LYING in char_node.states:
-            info['error_message'] = '{}(id:{}) is lying when executing [Lie] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is lying when executing [Lie] <{}> ({})'.format(
                                     char_node.class_name, char_node.id, node.class_name, node.id)
             return False
         if Property.LIEABLE not in node.properties:
-            info['error_message'] = '{}(id:{}) is not lieable when executing [Lie] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is not lieable when executing [Lie] <{}> ({})'.format(
                                     node.class_name, node.id, node.class_name, node.id)
             return False
         if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
-            info['error_message'] = 'something on the {}(id:{}) when executing [Lie] <{}> ({})'.format( \
+            info['error_message'] = 'something on the {}(id:{}) when executing [Lie] <{}> ({})'.format(
                                     node.class_name, node.id, node.class_name, node.id)
             return False
 
@@ -686,6 +679,7 @@ PointAtExecutor = LookAtExecutor
 
 # General checks and helpers
 
+
 def _is_character_close_to(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
         return True
@@ -693,6 +687,7 @@ def _is_character_close_to(state: EnvironmentState, node: Node):
         if state.evaluate(ExistsRelation(NodeInstance(close_node), Relation.CLOSE, NodeInstanceFilter(node))):
             return True
     return False
+
 
 def _is_character_face_to(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
@@ -702,15 +697,18 @@ def _is_character_face_to(state: EnvironmentState, node: Node):
             return True
     return False
 
+
 def _get_character_node(state: EnvironmentState):
     chars = state.get_nodes_by_attr('class_name', 'character')
     return None if len(chars) == 0 else chars[0]
+
 
 def _get_room_node(state: EnvironmentState, node: Node):
     for n in state.get_nodes_from(node, Relation.INSIDE):
         if n.category == 'Rooms':
             return n
     return None
+
 
 def _find_nodes_from(state: EnvironmentState, node: Node, relations: List[Relation]):
     nodes = []
@@ -719,12 +717,14 @@ def _find_nodes_from(state: EnvironmentState, node: Node, relations: List[Relati
         nodes += nl
     return nodes
 
+
 def _find_first_node_from(state: EnvironmentState, node: Node, relations: List[Relation]):
     for r in relations:
         nl = state.get_nodes_from(node, r)
         if len(nl) > 0:
             return nl[0]
     return None
+
 
 def _find_free_hand(state: EnvironmentState):
     if not state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, AnyNodeFilter())):
@@ -733,12 +733,20 @@ def _find_free_hand(state: EnvironmentState):
         return Relation.HOLDS_LH
     return None
 
+
 def _find_holding_hand(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_RH, NodeInstanceFilter(node))):
         return Relation.HOLDS_RH
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.HOLDS_LH, NodeInstanceFilter(node))):
         return Relation.HOLDS_LH
     return None
+
+
+def _is_inside(state: EnvironmentState, node: Node):
+    return state.evaluate(ExistsRelation(NodeInstance(node), Relation.INSIDE,
+                                         NodeConditionFilter(And(NodeAttrIn(State.CLOSED, 'states'),
+                                                                 Not(IsRoomNode())))))
+
 
 # ScriptExecutor
 ###############################################################################
@@ -790,7 +798,7 @@ class ScriptExecutor(object):
         if script_index >= len(script):
             yield state
         future_script = script.from_index(script_index)
-        for next_state in self.call_action_method(future_script, state):
+        for next_state in self.call_action_method(future_script, state, self.info):
             for rec_state_list in self.find_solutions_rec(script, script_index + 1, next_state):
                 yield rec_state_list
             if time.time() > self.processing_limit:
@@ -809,7 +817,7 @@ class ScriptExecutor(object):
         return state
 
     @classmethod
-    def call_action_method(cls, script: Script, state: EnvironmentState, info: dict={}):
+    def call_action_method(cls, script: Script, state: EnvironmentState, info: dict):
         executor = cls._action_executors.get(script[0].action, UnknownExecutor())
         return executor.execute(script, state, info)
 
@@ -882,5 +890,3 @@ def _change_state(state: EnvironmentState, new_node: GraphNode, dest_node: Node,
 
 class ExecutionException(common.Error):
     pass
-
-
