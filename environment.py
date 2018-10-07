@@ -25,6 +25,7 @@ class State(Enum):
     SITTING = 5
     DIRTY = 6
     CLEAN = 7
+    LYING = 8
 
 
 class Relation(Enum):

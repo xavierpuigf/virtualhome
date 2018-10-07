@@ -60,7 +60,7 @@ class FindExecutor(ActionExecutor):
         
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
-            info['error_message'] = '{}(id:{}) is not closed to {}(id:{}) "[Find] <{}> ({})"'.format( \
+            info['error_message'] = '{}(id:{}) is not closed to {}(id:{}) when executing "[Find] <{}> ({})"'.format( \
                                         char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         else:
@@ -104,6 +104,29 @@ class WalkExecutor(ActionExecutor):
         return True
 
 
+class GreetExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_is_person(state, node, info):
+                yield state.change_state([])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Greet] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_is_person(self, state: EnvironmentState, node: GraphNode, info: dict):
+
+        if Property.PERSON not in node.properties:
+            info['error_message'] = '{}(id:{}) is not person when executing [Greet] <{}> ({})'.format( \
+                                    node.class_name, node.id, node.class_name, node.id)
+            return False
+
+        return True
+
+
 class SitExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: dict):
@@ -131,7 +154,7 @@ class SitExecutor(ActionExecutor):
                                     char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
             return False
         if State.SITTING in char_node.states:
-            info['error_message'] = '{}(id:{}) is not sitting when executing [Sit] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) is sitting when executing [Sit] <{}> ({})'.format( \
                                     char_node.class_name, char_node.id, node.class_name, node.id)
             return False
         if Property.SITTABLE not in node.properties:
@@ -272,6 +295,7 @@ class PutExecutor(ActionExecutor):
                 yield state.change_state(
                     [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(src_node)),
                      AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
+                     AddEdges(NodeInstance(src_node), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True), 
                      AddEdges(NodeInstance(src_node), new_rel, NodeInstance(dest_node))]
                 )
         else:
@@ -416,14 +440,14 @@ class LookAtExecutor(ActionExecutor):
             if self.check_lookat(state, node, info):
                 yield state.change_state([])
         else:
-            info['error_message'] = '<{}> ({}) can not be found when executing "[TurnTo] <{}> ({})"'.format( \
+            info['error_message'] = '<{}> ({}) can not be found when executing "[LookAt] <{}> ({})"'.format( \
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
 
     def check_lookat(self, state: EnvironmentState, node: GraphNode, info: dict):
         char_node = _get_character_node(state)
         if not _is_character_face_to(state, node):
-            info['error_message'] = '{}(id:{}) does not face {}(id:{}) when executing [TurnTo] <{}> ({})'.format( \
+            info['error_message'] = '{}(id:{}) does not face {}(id:{}) when executing [LookAt] <{}> ({})'.format( \
                                     char_node.class_name, char_node.id, node.class_name, node.id,  node.class_name, node.id)
             return False
 
@@ -476,7 +500,8 @@ class PutOnExecutor(ActionExecutor):
         if node is not None:
             if self.check_puton(state, node, info):
                 yield state.change_state([
-                    AddEdges(NodeInstance(node), Relation.ON, CharacterNode())
+                    AddEdges(NodeInstance(node), Relation.ON, CharacterNode()), 
+                    DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(node)), 
                 ])
         else:
             info['error_message'] = '<{}> ({}) can not be found when executing "[PutOn] <{}> ({})"'.format( \
@@ -498,6 +523,7 @@ class PutOnExecutor(ActionExecutor):
             info['error_message'] = '{}(id:{}) is clothes when executing "[PutOn] <{}> ({})"'.format( \
                                             node.class_name, node.id, node.class_name, node.id)
             return False
+
         return True
 
 
@@ -509,13 +535,12 @@ class PutOffExecutor(ActionExecutor):
         if node is not None:
             if self.check_putoff(state, node, info):
                 yield state.change_state([
-                    DeleteEdges(NodeInstance(node), [Relation.ON], CharacterNode())
+                    DeleteEdges(NodeInstance(node), [Relation.ON, Relation.CLOSE], CharacterNode(), delete_reverse=True)
                 ])
         else:
             info['error_message'] = '<{}> ({}) can not be found when executing "[PutOff] <{}> ({})"'.format( \
                                             current_line.object().name, current_line.object().instance, 
                                             current_line.object().name, current_line.object().instance)
-
     
     def check_putoff(self, state: EnvironmentState, node: GraphNode, info: dict):
         
@@ -531,6 +556,133 @@ class PutOffExecutor(ActionExecutor):
             return False
         return True
 
+
+class DropExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_drop(state, node, info):
+                char_node = _get_character_node(state)
+                yield state.change_state(
+                    [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(node)),
+                    AddEdges(NodeInstance(node), Relation.INSIDE, RoomNode(char_node))]
+                )
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Drop] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_drop(self, state: EnvironmentState, node: GraphNode, info: dict):
+
+        char_node = _get_character_node(state)
+        nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
+
+        if True not in [n.id == node.id for n in nodes_in_hands]:
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Drop] <{}> ({})"'.format( \
+                                            char_node.class_name, char_node.id, node.class_name, node.id, 
+                                            node.class_name, node.id)
+            return False
+
+        return True
+
+
+class ReadExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_readable(state, node, info):
+                yield state.change_state([])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Read] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_readable(self, state: EnvironmentState, node: GraphNode, info: dict):
+
+        if Property.READABLE not in node.properties:
+            info['error_message'] = '{}(id:{}) is not readable when executing "[Read] <{}> ({})"'.format( \
+                                            node.class_name, node.id, node.class_name, node.id)
+            return False
+        hand_rel = _find_holding_hand(state, node)
+        if hand_rel is None:
+            char_node = _get_character_node(state)
+            info['error_message'] = '{}(id:{}) is not holding {}(id:{}) when executing "[Read] <{}> ({})"'.format( \
+                                            char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
+            return False
+        return True
+
+
+class TouchExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_reachable(state, node, info):
+                yield state.change_state([])
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Touch] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_reachable(self, state: EnvironmentState, node: GraphNode, info: dict):
+
+        if not _is_character_close_to(state, node):
+            char_node = _get_character_node(state)
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing "[Touch{}] <{}> ({})"'.format( \
+                                            char_node.class_name, char_node.id, node.class_name, node.id, s.name.capitalize(), node.class_name, node.id)
+            return False
+
+        return True
+
+
+class LieExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: dict):
+        current_line = script[0]
+        node = state.get_state_node(current_line.object())
+        if node is not None:
+            if self.check_lieable(state, node, info):
+                char_node = _get_character_node(state)
+                new_char_node = char_node.copy()
+                new_char_node.states.add(State.LYING)
+                yield state.change_state(
+                    [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
+                     ChangeNode(new_char_node)]
+                )
+        else:
+            info['error_message'] = '<{}> ({}) can not be found when executing "[Sit] <{}> ({})"'.format( \
+                                            current_line.object().name, current_line.object().instance, 
+                                            current_line.object().name, current_line.object().instance)
+
+    def check_lieable(self, state: EnvironmentState, node: GraphNode, info: dict):
+        char_node = _get_character_node(state)
+
+        if not _is_character_close_to(state, node):
+            info['error_message'] = '{}(id:{}) is not close to {}(id:{}) when executing [Lie] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id, node.class_name, node.id)
+            return False
+        if State.LYING in char_node.states:
+            info['error_message'] = '{}(id:{}) is lying when executing [Lie] <{}> ({})'.format( \
+                                    char_node.class_name, char_node.id, node.class_name, node.id)
+            return False
+        if Property.LIEABLE not in node.properties:
+            info['error_message'] = '{}(id:{}) is not lieable when executing [Lie] <{}> ({})'.format( \
+                                    node.class_name, node.id, node.class_name, node.id)
+            return False
+        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
+            info['error_message'] = 'something on the {}(id:{}) when executing [Lie] <{}> ({})'.format( \
+                                    node.class_name, node.id, node.class_name, node.id)
+            return False
+
+        return True
+
+
+PointAtExecutor = LookAtExecutor
 
 # General checks and helpers
 
@@ -613,6 +765,12 @@ class ScriptExecutor(object):
         Action.RUN: WalkExecutor(),
         Action.PUTON: PutOnExecutor(), 
         Action.PUTOFF: PutOffExecutor(), 
+        Action.GREET: GreetExecutor(), 
+        Action.DROP: DropExecutor(), 
+        Action.READ: ReadExecutor(), 
+        Action.POINTAT: PointAtExecutor(), 
+        Action.TOUCH: TouchExecutor(), 
+        Action.LIE: LieExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):

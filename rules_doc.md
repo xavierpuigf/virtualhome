@@ -70,7 +70,8 @@ Possible relations (edge labels) are:
 
 ### WalkExecutor
 - script: walk `object`
-- Pre-condition: `character` state is not sitting
+- Pre-condition: 
+	- `character` state is not sitting
 - Post-condition:
     - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` faces `any_node`
     - add undirected edges: `character` close to object_contain(`object`) [Need to be verified]
@@ -83,15 +84,17 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object`
 	- `character` state is not sitting
 	- `object` property is sittable
-	- `any_node` on `object`
+	- `any_node` not on `object`
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
 
 ### StandUpExecutor
 - script: standup
-- Pre-condition: `character` state is sitting
-- Post-condition: `character` remove state sitting
+- Pre-condition: 
+	- `character` state is sitting
+- Post-condition: 
+	- `character` remove state sitting
 
 ### GrabExecutor
 - script: grab `object`
@@ -130,7 +133,7 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object2`
 - Post-condition:
     - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
-    - add undirected edges: `character` close `object2`
+    - add undirected edges: `character` close `object2`, `object1` close `object2`
     - add directed edges: `object1` on `object2`
 
 ### PutInExecutor
@@ -177,7 +180,7 @@ Possible relations (edge labels) are:
 - Post-condition:
 	- add directed edges: `character` faces `object`
 
-### LookAtExecutor
+### LookAtExecutor (shared with PointAtExecutor)
 - script: LookAt `object`
 - Pre-condition:
 	- exists edge `character` facing `object`
@@ -193,16 +196,52 @@ Possible relations (edge labels) are:
 
 ### PutOnExecutor
 - script: PutOn `object`
-- Pre-condition
+- Pre-condition:
 	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
 	- `object` preperty is clothes
-- Post-condition
+- Post-condition:
 	- add directed edges: `object` on `character`
+	- remove directed edges: `character` holds_rh `object` or `character` holds_lh `object`
 
 ### PutOffExecutor
 - script: PutOff `object`
-- Pre-condition
+- Pre-condition:
 	- exists edge `object` on `character`
 	- `object` preperty is clothes
-- Post-condition
-	- remove directed edges: `object` on `character`
+- Post-condition:
+	- remove directed edges: `object` on `character`, `object` close `character`
+
+### GreetExecutor
+- script: Greet `object`
+- Pre-condition:
+	- `object` property is person
+
+### DropExecutor
+- script: Drop `object`
+- Pre-condition:
+	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
+- Post-condition:
+	- remove direction edges: `character` holds_rh `object` or `character` holds_lh `object`
+	- add directed edges: `object` inside room_of(`character`)
+
+### ReadExecutor
+- script: read `object`
+- Pre-condition:
+    - `object` property is readable
+    - exists edge `character` holds_rh `object` or `character` holds_lh `object`
+
+### TouchExecutor
+- script: touch `object`
+- Pre-condition:
+	- exist edge `character` close `object`
+
+### LieExecutor
+- script: lie `object`
+- Pre-condition: 
+	- exists edge `character` close `object`
+	- `character` state is not lying
+	- `object` property is lieable
+	- `any_node` not on `object`
+- Post-condition: 
+    - add directed edges: `character` on `object`
+    - state changes: `character` lying

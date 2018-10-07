@@ -36,6 +36,10 @@ class Action(Enum):
     WIPE = ("Wipe", 1)
     PUTON = ("PutOn", 1)
     PUTOFF = ("PutOff", 1)
+    GREET = ("Greet", 1)
+    DROP = ("Drop", 1)
+    READ = ("Read", 1)
+    LIE = ("Lie", 1)
 
 
 class ScriptObject(object):
