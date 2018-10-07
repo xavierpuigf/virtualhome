@@ -630,6 +630,7 @@ class TouchExecutor(ActionExecutor):
         if _is_inside(state, node):
             info['error_message'] = '{}(id:{}) is inside other closed thing when executing "[Touch] <{}> ({})"'.format(
                                             node.class_name, node.id, node.class_name, node.id)
+            return False
         return True
 
 
