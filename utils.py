@@ -85,8 +85,6 @@ def create_graph_dict_from_precond(script, precond, properties_data):
 
     for instance in all_instances:
         class_name, id = instance
-        if class_name == 'basket for clothes':
-            class_name = 'basket of clothes'
 
         if Room.has_value(class_name):
             node = {
