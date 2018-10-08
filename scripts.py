@@ -42,6 +42,9 @@ class Action(Enum):
     DROP = ("Drop", 1)
     READ = ("Read", 1)
     LIE = ("Lie", 1)
+    POUR = ("Pour", 2)
+    TYPE = ("Type", 1)
+
 
 
 class ScriptObject(object):

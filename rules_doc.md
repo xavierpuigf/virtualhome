@@ -248,3 +248,25 @@ Possible relations (edge labels) are:
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` lying
+
+
+### PourExecutor
+- script: pour `object1` `object2`
+- Pre-condition:
+	- exist edge `character` close `object2`
+	- exist edge `character` holds_rh `object1` or `character` holds_lh `object1`
+	- `object1` property is pourable or drinkable
+	- `object2` property is container
+- Post-condition:
+	- add directed edges: `object1` inside `object2`
+
+
+### TypeExecutor
+- script: type `object`
+- Pre-condition:
+	- exist edge `character` close `object`
+	- `object` property is has_switch
+
+
+### WatchExecutor
+- script: watch `object`
