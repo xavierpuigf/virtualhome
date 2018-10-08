@@ -4,6 +4,8 @@ from typing import List
 
 import common
 
+import ipdb
+
 
 class Action(Enum):
     """
@@ -116,6 +118,7 @@ def parse_script_line(string):
     return ScriptLine(action, params)
 
 
+
 def read_script(file_name):
     script_lines = []
     with open(file_name) as f:
@@ -124,3 +127,15 @@ def read_script(file_name):
             if len(line) > 0 and not line.startswith('#'):
                 script_lines.append(parse_script_line(line))
     return Script(script_lines)
+
+
+def read_precond(file_name):
+    
+    precond_lines = []
+    with open(file_name) as f:
+        for line in f:
+            line = line.strip()
+            if len(line) > 0 and not line.startswith('#'):
+                precond_lines.append(line)
+
+    return precond_lines

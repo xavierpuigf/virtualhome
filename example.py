@@ -1,7 +1,10 @@
+import json
 import utils
+
 from execution import Relation, State
-from scripts import read_script
+from scripts import read_script, read_precond
 from execution import ScriptExecutor
+from environment import EnvironmentGraph
 from preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates, \
     StatePrepare, AddObject, ChangeState, Destination
 
@@ -109,8 +112,35 @@ def example_4():
         print('Script is executable')
 
 
+def example_5():
+
+    print()
+    print('Example 5')
+    print('---------')
+    script = read_script('example_scripts/example_script_4.txt')
+    precond = read_precond('example_scripts/example_precond_script_4.txt')
+
+    properties_data = utils.load_properties_data()
+    graph_dict = utils.create_graph_dict_from_precond(script, precond, properties_data)
+
+    # load object placing
+    object_placing = utils.load_object_placing(file_name='resources/object_placing.json')
+    # add random objects
+    utils.perturb_graph_dict(graph_dict, object_placing, properties_data, n=10)
+    graph = EnvironmentGraph(graph_dict)
+
+    name_equivalence = utils.load_name_equivalence()
+    executor = ScriptExecutor(graph, name_equivalence)
+    state = executor.execute(script)
+    if state is None:
+        print('Script is not executable, since {}'.format(executor.info['error_message']))
+    else:
+        print('Script is executable')
+    
+
 if __name__ == '__main__':
     #example_1()
     #example_2()
     #example_3()
-    example_4()
+    #example_4()
+    example_5()

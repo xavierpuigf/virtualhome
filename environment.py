@@ -68,6 +68,20 @@ class Property(Enum):
     CREAM = 23
 
 
+class Room(Enum):
+    HOME_OFFICE = 1
+    KITCHEN = 2
+    LIVING_ROOM = 3
+    BATHROOM = 4
+    DINING_ROOM = 5
+    BEDROOM = 6
+    KIDS_BEDROOM = 7
+    ENTRANCE_HALL = 8
+
+    @classmethod
+    def has_value(cls, value):
+        return value.lower() in [item.name.lower() for item in cls]
+
 # EnvironmentGraph, nodes, edges and related structures
 ###############################################################################
 
@@ -85,7 +99,7 @@ class Node(object):
 
 class GraphNode(Node):
 
-    def __init__(self, id, class_name, category, properties, states, prefab_name, bounding_box):
+    def __init__(self, id, class_name, properties, states, category, prefab_name, bounding_box):
         super().__init__(id)
         self.class_name = class_name
         self.category = category
@@ -95,9 +109,8 @@ class GraphNode(Node):
         self.bounding_box = bounding_box
 
     def copy(self):
-        return GraphNode(self.id, self.class_name, self.category,
-                         self.properties.copy(), self.states.copy(), self.prefab_name,
-                         self.bounding_box)
+        return GraphNode(self.id, self.class_name, self.properties.copy(), self.states.copy(),
+                        self.category, self.prefab_name, self.bounding_box)
 
     # def __str__(self):
     #     return '<{}> ({})'.format(self.class_name, self.prefab_name)
@@ -107,10 +120,22 @@ class GraphNode(Node):
 
     @staticmethod
     def from_dict(d):
-        return GraphNode(d['id'], d['class_name'], d['category'],
-                         {Property[s.upper()] for s in d['properties']},
+        kwargs = {
+            "category": None, 
+            "prefab_name": None, 
+            "bounding_box": None
+        }
+        for k in kwargs.keys():
+            if k in d:
+                if k == 'bounding_box':
+                    kwargs[k] = Bounds(**d['k'])
+                else:
+                    kwargs[k] = d[k]
+
+        return GraphNode(d['id'], d['class_name'], 
+                         {s if isinstance(s, Property) else Property[s.upper()] for s in d['properties']},
                          {State[s.upper()] for s in d['states']},
-                         d['prefab_name'], Bounds(**d['bounding_box']))
+                         **kwargs)
 
 
 class GraphEdge(object):
