@@ -716,6 +716,38 @@ class WatchExecutor(ActionExecutor):
         return True
 
 
+class MoveExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        else:
+            new_relation = self.check_movable(state, node, info)
+            if new_relation is not None:
+                yield state.change_state([])
+
+    def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
+        if Property.MOVABLE not in node.properties:
+            info.error('{} is not movable', node)
+            return None
+        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
+            char_node = _get_character_node(state)
+            info.error('{} is not close to {}', char_node, node)
+            return None
+        if _is_inside(state, node):
+            info.error('{} is inside other closed thing', node)
+            return None
+        new_relation = _find_free_hand(state)
+        if new_relation is None:
+            char_node = _get_character_node(state)
+            info.error('{} does not have a free hand', char_node)
+            return None
+        return new_relation
+
+
 PointAtExecutor = LookAtExecutor
 
 
@@ -824,7 +856,10 @@ class ScriptExecutor(object):
         Action.PUTOBJBACK: PutBackExecutor(), 
         Action.POUR: PourExecutor(), 
         Action.TYPE: TypeExecutor(), 
-        Action.WATCH: WatchExecutor()
+        Action.WATCH: WatchExecutor(), 
+        Action.PUSH: MoveExecutor(), 
+        Action.PULL: MoveExecutor(), 
+        Action.MOVE: MoveExecutor(), 
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):

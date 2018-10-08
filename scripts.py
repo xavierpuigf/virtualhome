@@ -44,6 +44,9 @@ class Action(Enum):
     LIE = ("Lie", 1)
     POUR = ("Pour", 2)
     TYPE = ("Type", 1)
+    PUSH = ("Push", 1)
+    PULL = ("Pull", 1)
+    MOVE = ("Move", 1)
 
 
 
