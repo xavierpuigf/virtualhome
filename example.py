@@ -1,7 +1,10 @@
+import json
 import utils
+
 from execution import Relation, State
 from scripts import read_script, read_precond
 from execution import ScriptExecutor
+from environment import EnvironmentGraph
 from preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates, \
     StatePrepare, AddObject, ChangeState, Destination
 
@@ -118,7 +121,13 @@ def example_5():
     precond = read_precond('example_scripts/example_precond_script_4.txt')
 
     properties_data = utils.load_properties_data()
-    graph = utils.create_graph_from_precond(script, precond, properties_data)
+    graph_dict = utils.create_graph_dict_from_precond(script, precond, properties_data)
+
+    # load object placing
+    object_placing = utils.load_object_placing(file_name='resources/object_placing.json')
+    # add random objects
+    utils.perturb_graph_dict(graph_dict, object_placing, properties_data, n=10)
+    graph = EnvironmentGraph(graph_dict)
 
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
@@ -133,5 +142,5 @@ if __name__ == '__main__':
     #example_1()
     #example_2()
     #example_3()
-    example_4()
-    #example_5()
+    #example_4()
+    example_5()

@@ -68,6 +68,20 @@ class Property(Enum):
     CREAM = 23
 
 
+class Room(Enum):
+    HOME_OFFICE = 1
+    KITCHEN = 2
+    LIVING_ROOM = 3
+    BATHROOM = 4
+    DINING_ROOM = 5
+    BEDROOM = 6
+    KIDS_BEDROOM = 7
+    ENTRANCE_HALL = 8
+
+    @classmethod
+    def has_value(cls, value):
+        return value.lower() in [item.name.lower() for item in cls]
+
 # EnvironmentGraph, nodes, edges and related structures
 ###############################################################################
 
@@ -108,10 +122,12 @@ class GraphNode(Node):
             "prefab_name": None, 
             "bounding_box": None
         }
-        if 'category' in d:
-            kwargs["category"] = d['category']
-            kwargs["prefab_name"] = d['category']
-            kwargs["bounding_box"] = Bounds(**d['bounding_box'])
+        for k in kwargs.keys():
+            if k in d:
+                if k == 'bounding_box':
+                    kwargs[k] = Bounds(**d['k'])
+                else:
+                    kwargs[k] = d[k]
 
         return GraphNode(d['id'], d['class_name'], 
                          {s if isinstance(s, Property) else Property[s.upper()] for s in d['properties']},

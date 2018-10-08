@@ -1,4 +1,5 @@
 
+[Walk] <KITCHEN> (4)
 [Find] <BASKET FOR CLOTHES> (3)
 [Grab] <BASKET FOR CLOTHES> (3)
 [Find] <WASHING MACHINE> (1)
