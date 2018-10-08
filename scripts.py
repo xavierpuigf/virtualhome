@@ -64,6 +64,9 @@ class ScriptLine(object):
     def subject(self):
         return self.parameters[1] if len(self.parameters) > 1 else None
 
+    def __str__(self):
+        return '[{}]'.format(self.action.name) + ''.join([' ' + str(par) for par in self.parameters])
+
 
 class Script(object):
 

@@ -99,8 +99,11 @@ class GraphNode(Node):
                          self.properties.copy(), self.states.copy(), self.prefab_name,
                          self.bounding_box)
 
+    # def __str__(self):
+    #     return '<{}> ({})'.format(self.class_name, self.prefab_name)
     def __str__(self):
-        return '<{}> ({})'.format(self.class_name, self.prefab_name)
+        return '{}(id:{})'.format(self.class_name, self.id)
+
 
     @staticmethod
     def from_dict(d):
