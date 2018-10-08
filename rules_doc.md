@@ -47,6 +47,9 @@ Possible relations (edge labels) are:
 - on
 - off
 - sitting
+- dirty
+- clean
+- lying
 
 ## Template
 
@@ -68,7 +71,8 @@ Possible relations (edge labels) are:
 
 ### WalkExecutor
 - script: walk `object`
-- Pre-condition: `character` state is not sitting
+- Pre-condition: 
+	- `character` state is not sitting
 - Post-condition:
     - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` faces `any_node`
     - add undirected edges: `character` close to object_contain(`object`) [Need to be verified]
@@ -81,21 +85,24 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object`
 	- `character` state is not sitting
 	- `object` property is sittable
+	- `any_node` not on `object`
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
 
 ### StandUpExecutor
 - script: standup
-- Pre-condition: `character` state is sitting
-- Post-condition: `character` remove state sitting
+- Pre-condition: 
+	- `character` state is sitting
+- Post-condition: 
+	- `character` remove state sitting
 
 ### GrabExecutor
 - script: grab `object`
 - Pre-condition: 
 	- `object` property is grabbable
 	- exists edge `character` close `object`
-	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open
+	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot grab an object inside other one, unless it is open
 	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - remove directed and undirected edges: `object` any_relation `any_node`
@@ -127,7 +134,7 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object2`
 - Post-condition:
     - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
-    - add undirected edges: `character` close `object2`
+    - add undirected edges: `character` close `object2`, `object1` close `object2`
     - add directed edges: `object1` on `object2`
 
 ### PutInExecutor
@@ -166,3 +173,78 @@ Possible relations (edge labels) are:
 - Pre-condition:
     - `object` property is drinkable
     - exists edge `character` holds_rh `object` or `character` holds_lh `object`
+
+### TurnToExecutor
+- script: TurnTo `object`
+- Pre-condition:
+	- exists edge `character` close `object`
+- Post-condition:
+	- add directed edges: `character` faces `object`
+
+### LookAtExecutor (shared with PointAtExecutor)
+- script: LookAt `object`
+- Pre-condition:
+	- exists edge `character` facing `object`
+
+### WipeExecutor
+- script: Wipe `object`
+- Pre-condition: 
+	- `character` close `object`
+	- `object` property is `surface`
+	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
+- Post-condition:
+	- state changes: `object` state is clean
+
+### PutOnExecutor
+- script: PutOn `object`
+- Pre-condition:
+	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
+	- `object` preperty is clothes
+- Post-condition:
+	- add directed edges: `object` on `character`
+	- remove directed edges: `character` holds_rh `object` or `character` holds_lh `object`
+
+### PutOffExecutor
+- script: PutOff `object`
+- Pre-condition:
+	- exists edge `object` on `character`
+	- `object` preperty is clothes
+- Post-condition:
+	- remove directed edges: `object` on `character`, `object` close `character`
+
+### GreetExecutor
+- script: Greet `object`
+- Pre-condition:
+	- `object` property is person
+
+### DropExecutor
+- script: Drop `object`
+- Pre-condition:
+	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
+- Post-condition:
+	- remove direction edges: `character` holds_rh `object` or `character` holds_lh `object`
+	- add directed edges: `object` inside room_of(`character`)
+
+### ReadExecutor
+- script: read `object`
+- Pre-condition:
+    - `object` property is readable
+    - exists edge `character` holds_rh `object` or `character` holds_lh `object`
+
+### TouchExecutor
+- script: touch `object`
+- Pre-condition:
+	- exist edge `character` close `object`
+	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot touch an object inside other one, unless it is open
+	
+
+### LieExecutor
+- script: lie `object`
+- Pre-condition: 
+	- exists edge `character` close `object`
+	- `character` state is not lying
+	- `object` property is lieable
+	- `any_node` not on `object`
+- Post-condition: 
+    - add directed edges: `character` on `object`
+    - state changes: `character` lying
