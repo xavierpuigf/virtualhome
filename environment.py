@@ -82,7 +82,7 @@ class Node(object):
 
 class GraphNode(Node):
 
-    def __init__(self, id, class_name, category, properties, states, prefab_name, bounding_box):
+    def __init__(self, id, class_name, properties, states, category, prefab_name, bounding_box):
         super().__init__(id)
         self.class_name = class_name
         self.category = category
@@ -92,19 +92,28 @@ class GraphNode(Node):
         self.bounding_box = bounding_box
 
     def copy(self):
-        return GraphNode(self.id, self.class_name, self.category,
-                         self.properties.copy(), self.states.copy(), self.prefab_name,
-                         self.bounding_box)
+        return GraphNode(self.id, self.class_name, self.properties.copy(), self.states.copy(),
+                        self.category, self.prefab_name, self.bounding_box)
 
     def __str__(self):
         return '<{}> ({})'.format(self.class_name, self.prefab_name)
 
     @staticmethod
     def from_dict(d):
-        return GraphNode(d['id'], d['class_name'], d['category'],
-                         {Property[s.upper()] for s in d['properties']},
+        kwargs = {
+            "category": None, 
+            "prefab_name": None, 
+            "bounding_box": None
+        }
+        if 'category' in d:
+            kwargs["category"] = d['category']
+            kwargs["prefab_name"] = d['category']
+            kwargs["bounding_box"] = Bounds(**d['bounding_box'])
+
+        return GraphNode(d['id'], d['class_name'], 
+                         {s if isinstance(s, Property) else Property[s.upper()] for s in d['properties']},
                          {State[s.upper()] for s in d['states']},
-                         d['prefab_name'], Bounds(**d['bounding_box']))
+                         **kwargs)
 
 
 class GraphEdge(object):
