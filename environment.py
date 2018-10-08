@@ -128,7 +128,7 @@ class GraphNode(Node):
         for k in kwargs.keys():
             if k in d:
                 if k == 'bounding_box':
-                    kwargs[k] = Bounds(**d['k'])
+                    kwargs[k] = Bounds(**d[k])
                 else:
                     kwargs[k] = d[k]
 
