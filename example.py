@@ -133,7 +133,7 @@ def example_5():
     executor = ScriptExecutor(graph, name_equivalence)
     state = executor.execute(script)
     if state is None:
-        print('Script is not executable, since {}'.format(executor.info['error_message']))
+        print('Script is not executable, since {}'.format(executor.info.get_error_string()))
     else:
         print('Script is executable')
     
@@ -142,5 +142,5 @@ if __name__ == '__main__':
     #example_1()
     #example_2()
     #example_3()
-    #example_4()
-    example_5()
+    example_4()
+    #example_5()
