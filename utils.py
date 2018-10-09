@@ -34,35 +34,38 @@ def create_graph_dict_from_precond(script, precond, properties_data):
 
     relation_mapping = {
         "inside": "INSIDE", 
+        "location": "INSIDE", 
+        "atreach": "CLOSE", 
+        "in": "ON"
     }
     state_mapping = {
         "is_off": "OFF", 
-        "closed": "CLOSED"
+        "is_on": "ON", 
+        "open": "OPEN"
     }
 
     def _add_edges(data):
         for p in precond:
-            if "-->" in p:
-                relation, params = p.split(': ')
-                relation = relation_mapping[relation]
+            for k, v in p.items():
+                if k in ['location', 'atreach', 'inside', 'in']:
+                    relation = k
+                    relation = relation_mapping[relation]
 
-                param_match = re.search(patt_params, params)
-                src_id = int(param_match.group(2))
-                param_match = re.search(patt_params, param_match.string[param_match.end(2):])
-                tgt_id = int(param_match.group(2))
-                data['edges'].append({"relation_type": relation, "from_id": src_id, "to_id": tgt_id})
+                    src_id = v[0][1]
+                    tgt_id = v[1][1]
+                    data['edges'].append({"relation_type": relation, "from_id": src_id, "to_id": tgt_id})
 
     def _add_states(data):
         for p in precond:
-            if "-->" not in p:
-                state, params = p.split(': ')
-                state = state_mapping[state]
+            for k, v in p.items():
+                if k in ['is_on', 'is_off', 'open']:
+                    state = k
+                    state = state_mapping[state]
+                    id = v[1]
+                    for n in data["nodes"]:
+                        if n["id"] == id:
+                            n["states"].append(state)
 
-                param_match = re.search(patt_params, params)
-                id = int(param_match.group(2))
-                for n in data["nodes"]:
-                    if n["id"] == id:
-                        n["states"].append(state)
 
     character_node = {
         "properties": [], 
@@ -86,7 +89,7 @@ def create_graph_dict_from_precond(script, precond, properties_data):
     for instance in all_instances:
         class_name, id = instance
 
-        if Room.has_value(class_name):
+        if Room.has_value(class_name.replace(' ', '_')):
             node = {
                 "properties": [],
                 "id": id, 
