@@ -117,7 +117,7 @@ class WalkExecutor(ActionExecutor):
 
     def check_walk(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         char_node = _get_character_node(state)
-        if State.SITTING in char_node.states:
+        if State.SITTING in char_node.states or State.LYING in char_node.states:
             info.error('{} is sitting', char_node)
             return False
         # char_room = _get_room_node(state, char_node)
@@ -151,6 +151,17 @@ class GreetExecutor(ActionExecutor):
 
 
 class SitExecutor(ActionExecutor):
+
+    _MAX_OCCUPANCIES = {
+        'couch': 4,
+        'bed': 4,
+        'chair': 1,
+        'loveseat': 2,
+        'sofa': 4,
+        'toilet': 1,
+        'pianobench': 2,
+        'bench': 2
+    }
 
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]
@@ -638,6 +649,123 @@ class LieExecutor(ActionExecutor):
         return True
 
 
+class PourExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        src_node = state.get_state_node(current_line.object())
+        dest_node = state.get_state_node(current_line.subject())
+
+        if src_node is None or dest_node is None:
+            info.script_object_found_error(current_line.object() if src_node is None else current_line.subject())
+        elif self._check_pourable(state, src_node, dest_node, info):
+            yield state.change_state(
+                [AddEdges(NodeInstance(src_node), Relation.INSIDE, NodeInstance(dest_node))]
+            )
+
+    def _check_pourable(self, state: EnvironmentState, src_node: GraphNode, dest_node: GraphNode, info: ExecutionInfo):
+
+        if Property.POURABLE not in src_node.properties and Property.DRINKABLE not in src_node.properties:
+            info.error('{} is not pourable or drinkable', src_node)
+            return False
+
+        if Property.RECIPIENT not in dest_node.properties:
+            info.error('{} is not recipient', dest_node)
+            return False
+
+        hand_rel = _find_holding_hand(state, src_node)
+        if hand_rel is None:
+            info.error('{} is not holding {}', _get_character_node(state), src_node)
+            return False
+
+        char_node = _get_character_node(state)
+        if not _is_character_close_to(state, dest_node):
+            info.error('{} is not close to {}', char_node, dest_node)
+            return False
+        
+        return True
+
+
+class TypeExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_typeable(state, node, info):
+                yield state.change_state([])
+        
+    def check_typeable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        char_node = _get_character_node(state)
+
+        if not _is_character_close_to(state, node):
+            info.error('{} is not close to {}', char_node, node)
+            return False
+        
+        if Property.HAS_SWITCH not in node.properties:
+            info.error('{} does not have switch', node)
+            return False
+        
+        return True
+
+
+class WatchExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_watchable(state, node, info):
+            yield state.change_state([])
+
+    def check_watchable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        char_room = _get_room_node(state, _get_character_node(state))
+        node_room = _get_room_node(state, node)
+        if node_room.id != char_room.id:
+            info.error('char room {} is not node room {}', char_room, node_room)
+            return False
+        if _is_inside(state, node):
+            info.error('{} is inside other closed thing', node)
+        return True
+
+
+class MoveExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        else:
+            new_relation = self.check_movable(state, node, info)
+            if new_relation is not None:
+                yield state.change_state([])
+
+    def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
+        if Property.MOVABLE not in node.properties:
+            info.error('{} is not movable', node)
+            return None
+        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
+            char_node = _get_character_node(state)
+            info.error('{} is not close to {}', char_node, node)
+            return None
+        if _is_inside(state, node):
+            info.error('{} is inside other closed thing', node)
+            return None
+        new_relation = _find_free_hand(state)
+        if new_relation is None:
+            char_node = _get_character_node(state)
+            info.error('{} does not have a free hand', char_node)
+            return None
+        return new_relation
+
+
 PointAtExecutor = LookAtExecutor
 
 
@@ -743,7 +871,13 @@ class ScriptExecutor(object):
         Action.POINTAT: PointAtExecutor(), 
         Action.TOUCH: TouchExecutor(), 
         Action.LIE: LieExecutor(),
-        Action.PUTOBJBACK: PutBackExecutor()
+        Action.PUTOBJBACK: PutBackExecutor(), 
+        Action.POUR: PourExecutor(), 
+        Action.TYPE: TypeExecutor(), 
+        Action.WATCH: WatchExecutor(), 
+        Action.PUSH: MoveExecutor(), 
+        Action.PULL: MoveExecutor(), 
+        Action.MOVE: MoveExecutor(), 
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):

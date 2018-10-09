@@ -120,11 +120,11 @@ def example_5():
     script = read_script('example_scripts/example_script_4.txt')
     precond = read_precond('example_scripts/example_precond_script_4.txt')
 
-    properties_data = utils.load_properties_data()
+    properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
     graph_dict = utils.create_graph_dict_from_precond(script, precond, properties_data)
 
     # load object placing
-    object_placing = utils.load_object_placing(file_name='resources/object_placing.json')
+    object_placing = utils.load_object_placing(file_name='resources/object_script_placing.json')
     # add random objects
     utils.perturb_graph_dict(graph_dict, object_placing, properties_data, n=10)
     graph = EnvironmentGraph(graph_dict)
