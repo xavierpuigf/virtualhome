@@ -128,7 +128,7 @@ class GraphNode(Node):
         for k in kwargs.keys():
             if k in d:
                 if k == 'bounding_box':
-                    kwargs[k] = Bounds(**d['k'])
+                    kwargs[k] = Bounds(**d[k])
                 else:
                     kwargs[k] = d[k]
 
@@ -441,7 +441,6 @@ class BoxObjectNode(NodeEnumerator):
         for n in state.get_nodes_from(self.node, Relation.INSIDE):
             if n.category != 'Rooms':
                 yield n
-
 
 
 class FilteredNodes(NodeEnumerator):
