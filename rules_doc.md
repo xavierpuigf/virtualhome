@@ -256,7 +256,7 @@ Possible relations (edge labels) are:
 	- exist edge `character` close `object2`
 	- exist edge `character` holds_rh `object1` or `character` holds_lh `object1`
 	- `object1` property is pourable or drinkable
-	- `object2` property is container
+	- `object2` property is recipient
 - Post-condition:
 	- add directed edges: `object1` inside `object2`
 
@@ -270,11 +270,16 @@ Possible relations (edge labels) are:
 
 ### WatchExecutor
 - script: watch `object`
+- Pre-condition:
+    - room of `character` is room of `object`
+    - `object` is not inside a closed object
+
 
 ### MoveExecutor
 - script: push/pull/move `object`
 - Pre-condition: 
 	- `object` property is movable
 	- exists edge `character` close `object`
-	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot grab an object inside other one, unless it is open
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
+	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot move an object inside other one, unless it is open
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand
+ 

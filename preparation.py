@@ -170,7 +170,8 @@ def _random_property_states(properties: Iterable[Property]):
 def _create_node(class_name: str, properties, states=None):
     if states is None:
         states = [_DEFAULT_PROPERTY_STATES[p] for p in properties if p in _DEFAULT_PROPERTY_STATES]
-    return GraphNode(0, class_name, None, set(properties), set(states), None, None)
+    return GraphNode(id=0, class_name=class_name, category=None, properties=set(properties),
+                     states=set(states), prefab_name=None, bounding_box=None)
 
 
 def _add_edges(state: EnvironmentState, new_node: GraphNode, relation: Relation, dest_node: Node,
