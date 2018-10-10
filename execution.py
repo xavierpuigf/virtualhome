@@ -382,6 +382,7 @@ class SwitchExecutor(ActionExecutor):
 
     def check_switchable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         s = State.OFF if self.switch_on else State.ON
+
         if Property.HAS_SWITCH not in node.properties:
             info.error('{} does not have a switch', node)
             return False
@@ -766,6 +767,175 @@ class MoveExecutor(ActionExecutor):
         return new_relation
 
 
+class WashExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_washable(state, node, info):
+            new_node = node.copy()
+            new_node.states.discard(State.DIRTY)
+            new_node.states.add(State.CLEAN)
+            yield state.change_state([ChangeNode(new_node)])
+
+    def check_washable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        
+        if not _is_character_close_to(state, node):
+            info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+
+        return True
+
+
+class SqueezeExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_squeezable(state, node, info):
+            yield state.change_state([])
+
+    def check_squeezable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        if Property.CLOTHES not in node.properties:
+            info.error('{} is not clothes', node)
+            return False
+        if _find_free_hand(state) is None:
+            info.error('{} does not have a free hand', _get_character_node(state))
+            return False
+        if not _is_character_close_to(state, node):
+            info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+
+        return True
+
+
+class PlugExecutor(ActionExecutor):
+
+    def __init__(self, plug_in):
+        """
+            PlugInExecutor: True
+            PlugOutExecutor: False
+        """
+        self.plug_in = plug_in
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_plugable(state, node, info):
+            new_node = node.copy()
+            new_node.states.discard(State.PLUGGED_OUT if self.plug_in else State.PLUGGED_IN)
+            new_node.states.add(State.PLUGGED_IN if self.plug_in else State.PLUGGED_OUT)
+            yield state.change_state([ChangeNode(new_node)])
+
+    def check_plugable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+
+        s = State.PLUGGED_OUT if self.plug_in else State.PLUGGED_IN
+        if Property.HAS_PLUG not in node.properties:
+            info.error('{} does not have a plug', node)
+            return False
+        if not _is_character_close_to(state, node):
+            info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+        if _find_free_hand(state) is None:
+            info.error('{} does not have a free hand', _get_character_node(state))
+            return False
+        if s not in node.states:
+            info.error('{} is not {}', node, s.name.lower())
+            return False
+        return True
+    
+
+class CutExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_cuttable(state, node, info):
+            yield state.change_state([])
+
+    def check_cuttable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+
+        if _find_free_hand(state) is None:
+            info.error('{} does not have a free hand', _get_character_node(state))
+            return False
+        if not _is_character_close_to(state, node):
+            info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+        if Property.EATABLE not in node.properties:
+            info.error('{} is not eatable', node)
+            return False
+        if Property.CUTTABLE not in node.properties:
+            info.error('{} is not cuttable', node)
+            return False
+
+        char_node = _get_character_node(state)
+        holding_nodes = _find_nodes_from(state, char_node, [Relation.HOLDS_LH, Relation.HOLDS_RH])
+        if not any(['knife' in node.class_name for node in holding_nodes]):
+            info.error('{} is not folding a knife', _get_character_node(state))
+            return False
+
+        return True
+
+
+class EatExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        node = state.get_state_node(current_line.object())
+        if node is None:
+            info.object_found_error()
+        elif self.check_eatable(state, node, info):
+            yield state.change_state([])
+
+    def check_eatable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+
+        if not _is_character_close_to(state, node):
+            info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+        if Property.EATABLE not in node.properties:
+            info.error('{} is not eatable', node)
+            return False
+
+        return True
+
+
+class SleepExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+
+        info.set_current_line(script[0])
+        char_node = _get_character_node(state)
+        if State.LYING not in char_node.states and State.SITTING not in char_node.states:
+            info.error('{} is not lying or sitting', char_node)
+        else:
+            yield state.change_state([])
+
+
+class WakeUpExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+
+        info.set_current_line(script[0])
+        char_node = _get_character_node(state)
+        if State.LYING not in char_node.states and State.SITTING not in char_node.states:
+            info.error('{} is not lying or sitting', char_node)
+        else:
+            yield state.change_state([])
+
+
 PointAtExecutor = LookAtExecutor
 
 
@@ -878,6 +1048,16 @@ class ScriptExecutor(object):
         Action.PUSH: MoveExecutor(), 
         Action.PULL: MoveExecutor(), 
         Action.MOVE: MoveExecutor(), 
+        Action.RINSE: WashExecutor(),
+        Action.WASH: WashExecutor(), 
+        Action.SCRUB: WashExecutor(), 
+        Action.SQUEEZE: SqueezeExecutor(), 
+        Action.PLUGIN: PlugExecutor(True), 
+        Action.PLUGOUT: PlugExecutor(False), 
+        Action.CUT: CutExecutor(), 
+        Action.EAT: EatExecutor(), 
+        Action.SLEEP: SleepExecutor(), 
+        Action.WAKEUP: WakeUpExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):
