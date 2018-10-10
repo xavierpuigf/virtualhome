@@ -443,7 +443,6 @@ class BoxObjectNode(NodeEnumerator):
                 yield n
 
 
-
 class FilteredNodes(NodeEnumerator):
 
     def __init__(self, enumerator: NodeEnumerator, condition: 'LogicalValue'):
