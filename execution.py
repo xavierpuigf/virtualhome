@@ -190,7 +190,9 @@ class SitExecutor(ActionExecutor):
         if Property.SITTABLE not in node.properties:
             info.error('{} is not sittable', node)
             return False
-        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
+        max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
+        if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
+                                         min_value=max_occupancy)):
             info.error('something on the {}', node)
             return False
 
@@ -617,6 +619,15 @@ class TouchExecutor(ActionExecutor):
 
 class LieExecutor(ActionExecutor):
 
+    _MAX_OCCUPANCIES = {
+        'couch': 2,
+        'bathtub': 2,
+        'bed': 3,
+        'loveseat': 2,
+        'sofa': 2,
+        'bench': 1
+    }
+
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]
         info.set_current_line(current_line)
@@ -643,8 +654,10 @@ class LieExecutor(ActionExecutor):
         if Property.LIEABLE not in node.properties:
             info.error('{} is not lieable', node)
             return False
-        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
-            info.error('Something on the {}', node)
+        max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
+        if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
+                                         min_value=max_occupancy)):
+            info.error('Too many things on {}', node)
             return False
         return True
 

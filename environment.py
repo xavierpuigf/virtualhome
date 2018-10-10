@@ -539,11 +539,31 @@ class ExistsRelation(LogicalValue):
         self.to_nodes = to_nodes
 
     def evaluate(self, state: EnvironmentState, **kwargs):
-
         for fn in self.from_nodes.enumerate(state, **kwargs):
             for tn in state.get_nodes_from(fn, self.relation):
                 if self.to_nodes.filter(tn):
                     return True
+        return False
+
+
+class CountRelations(LogicalValue):
+    def __init__(self, from_nodes: NodeEnumerator, relation: Relation, to_nodes: NodeFilter, min_value: int):
+        """
+        Evaluates to true if there are at least min_value edges satisfying the conditions
+        """
+        self.from_nodes = from_nodes
+        self.relation = relation
+        self.to_nodes = to_nodes
+        self.min_value = min_value
+
+    def evaluate(self, state: EnvironmentState, **kwargs):
+        count = 0
+        for fn in self.from_nodes.enumerate(state, **kwargs):
+            for tn in state.get_nodes_from(fn, self.relation):
+                if self.to_nodes.filter(tn):
+                    count += 1
+                    if count >= self.min_value:
+                        return True
         return False
 
 
