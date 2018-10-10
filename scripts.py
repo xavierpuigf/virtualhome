@@ -48,7 +48,16 @@ class Action(Enum):
     PUSH = ("Push", 1)
     PULL = ("Pull", 1)
     MOVE = ("Move", 1)
-
+    WASH = ("Wash", 1)
+    RINSE = ("Rinse", 1)
+    SCRUB = ("Scrub", 1)
+    SQUEEZE = ("Squeeze", 1)
+    PLUGIN = ("PlugIn", 1)
+    PLUGOUT = ("PlugOut", 1)
+    CUT = ("Cut", 1)
+    EAT = ("Eat", 1) 
+    SLEEP = ("Sleep", 0) 
+    WAKEUP = ("WakeUp", 0)
 
 
 class ScriptObject(object):

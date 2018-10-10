@@ -50,6 +50,8 @@ Possible relations (edge labels) are:
 - dirty
 - clean
 - lying
+- plugged_in
+- plugged_out
 
 ## Template
 
@@ -283,3 +285,70 @@ Possible relations (edge labels) are:
 	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot move an object inside other one, unless it is open
 	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand
  
+
+### WashExecutor (shared with RinseExecutor and ScrubExecutor)
+- script: wash `object`
+- Pre-condition:
+	- exist edge `character` close `object`
+- Post-condition:
+	- `object` state not dirty
+	- `object` state clean
+
+
+### SqueezeExecutor
+- script: squeeze `object`
+- Pre-condition:
+	- `object` property is clothes
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`
+	- exist edge `character` close `object`
+
+
+### PlugInExecutor
+- script: plugin `object`
+- Pre-condition: 
+	- `object` property is has_plug
+	- `object` state is plugged_out
+	- exists edge `character` close `object`
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
+
+- Post-condition: 
+    - state changes: `object` state is plugged_in
+
+### PlugOutExecutor
+- script: plugout `object`
+- Pre-condition: 
+	- `object` property is has_plug
+	- `object` state is plugged_in
+	- exists edge `character` close `object`
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
+- Post-condition: 
+    - state changes: `object` state is plugged_out
+
+
+### CutExecutor
+- script: cut `object`
+- Pre-condition:
+	- `object` property is eatable
+	- `object` property is cuttable
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`
+	- exist edge `character` close `object`
+	- exist edge `chatectore` holds_rh `any_object` with 'knife' in name or no edge `character` holds_lh `any_object` with 'knife' in name
+
+
+### EatEXecutor
+- script: eat `object`
+- Pre-condition:
+	- `object` property is eatable
+	- exist edge `character` close `object`
+
+
+### SleepExecutor
+- script: sleep
+- Pre-condition:
+	- `character` is lying or sitting
+
+
+### WakeUpExecutor
+- script: wakeup
+- Pre-condition:
+	- `character` is lying or sitting
