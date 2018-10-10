@@ -1,5 +1,6 @@
 from enum import Enum
 import re
+import json
 from typing import List
 
 import common
@@ -53,7 +54,7 @@ class Action(Enum):
 class ScriptObject(object):
 
     def __init__(self, name, instance):
-        self.name = name.lower()
+        self.name = name.lower().replace(' ', '_')
         self.instance = instance
 
     def __str__(self):
@@ -129,6 +130,8 @@ def read_script(file_name):
     script_lines = []
     with open(file_name) as f:
         for line in f:
+            if '[' not in line:
+                continue
             line = line.strip()
             if len(line) > 0 and not line.startswith('#'):
                 script_lines.append(parse_script_line(line))
@@ -136,12 +139,6 @@ def read_script(file_name):
 
 
 def read_precond(file_name):
-    
-    precond_lines = []
-    with open(file_name) as f:
-        for line in f:
-            line = line.strip()
-            if len(line) > 0 and not line.startswith('#'):
-                precond_lines.append(line)
 
-    return precond_lines
+    f = json.load(open(file_name))
+    return f

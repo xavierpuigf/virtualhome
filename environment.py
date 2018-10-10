@@ -80,7 +80,7 @@ class Room(Enum):
 
     @classmethod
     def has_value(cls, value):
-        return value.lower() in [item.name.lower() for item in cls]
+        return value.lower().replace(' ', '_') in [item.name.lower() for item in cls]
 
 # EnvironmentGraph, nodes, edges and related structures
 ###############################################################################
