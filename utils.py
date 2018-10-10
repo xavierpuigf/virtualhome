@@ -12,6 +12,10 @@ def load_graph(file_name):
         data = json.load(f)
     return EnvironmentGraph(data)
 
+def load_graph_dict(file_name):
+    with open(file_name) as f:
+        data = json.load(f)
+    return data
 
 def load_name_equivalence(file_name='resources/class_name_equivalence.json'):
     with open(file_name) as f:

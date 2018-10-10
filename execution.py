@@ -830,7 +830,7 @@ class ScriptExecutor(object):
 
     _action_executors = {
         Action.GOTO: WalkExecutor(),
-        Action.FIND: JoinedExecutor(FindExecutor(), WalkExecutor()),
+        Action.FIND: JoinedExecutor(WalkExecutor(), FindExecutor()),
         Action.SIT: SitExecutor(),
         Action.STANDUP: StandUpExecutor(),
         Action.GRAB: GrabExecutor(),
@@ -884,6 +884,7 @@ class ScriptExecutor(object):
                 yield rec_state_list
             if time.time() > self.processing_limit:
                 break
+
 
     def execute(self, script: Script, init_changers: List[StateChanger]=None):
 
