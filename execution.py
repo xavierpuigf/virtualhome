@@ -397,6 +397,9 @@ class SwitchExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+        if self.switch_on and State.PLUGGED_OUT in node.states:
+            info.error('{} is unplugged', node)
+            return False
         return True
 
 
@@ -850,7 +853,6 @@ class PlugExecutor(ActionExecutor):
             yield state.change_state([ChangeNode(new_node)])
 
     def check_plugable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-
         s = State.PLUGGED_OUT if self.plug_in else State.PLUGGED_IN
         if Property.HAS_PLUG not in node.properties:
             info.error('{} does not have a plug', node)
@@ -1096,7 +1098,6 @@ class ScriptExecutor(object):
             if time.time() > self.processing_limit:
                 break
 
-
     def execute(self, script: Script, init_changers: List[StateChanger]=None):
 
         info = self.info
@@ -1184,5 +1185,3 @@ def _change_state(state: EnvironmentState, new_node: GraphNode, dest_node: Node,
 
 class ExecutionException(common.Error):
     pass
-
-

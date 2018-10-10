@@ -156,11 +156,13 @@ class Destination(object):
 
 
 _DEFAULT_PROPERTY_STATES = {Property.HAS_SWITCH: State.OFF,
-                            Property.CAN_OPEN: State.CLOSED}
+                            Property.CAN_OPEN: State.CLOSED,
+                            Property.HAS_PLUG: State.PLUGGED_IN}
 
 
 _PROPERTY_STATES = {Property.HAS_SWITCH: [State.ON, State.OFF],
-                    Property.CAN_OPEN: [State.CLOSED, State.OPEN]}
+                    Property.CAN_OPEN: [State.CLOSED, State.OPEN],
+                    Property.HAS_PLUG: [State.PLUGGED_IN, State.PLUGGED_OUT]}
 
 
 def _random_property_states(properties: Iterable[Property]):
