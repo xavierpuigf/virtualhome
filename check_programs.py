@@ -319,7 +319,7 @@ def check_2(dir_path, graph_path):
     executable_programs = 0
     not_parsable_programs = 0
     no_specified_room = 0
-    program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file8_1.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file8_1.txt')]
     for j, txt_file in enumerate(program_txt_files):
         
         try:
@@ -357,8 +357,7 @@ def check_2(dir_path, graph_path):
         graph_dict = utils.load_graph_dict(graph_path)
 
         objects_in_script, room_mapping, valid = add_missing_object_and_align_id(script, graph_dict, properties_data)  
-        utils.set_to_default_state(graph_dict) 
-        ipdb.set_trace()
+        utils.set_to_default_state(graph_dict)
         if not valid:
             if verbose:
                 print("Room is not specified:", txt_file)
@@ -384,7 +383,7 @@ def check_2(dir_path, graph_path):
                 print(message)
 
         info.update({txt_file: message})
-        #write_new_txt(txt_file, precond_path, message)
+        write_new_txt(txt_file, precond_path, message)
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
