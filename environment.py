@@ -433,6 +433,14 @@ class RoomNode(NodeEnumerator):
                 yield n
 
 
+class BodyNode(NodeEnumerator):
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        for n in state.get_nodes():
+            if Property.BODY_PART in n.properties:
+                yield n
+
+
 class BoxObjectNode(NodeEnumerator):
     """Find the objects that contain `node`
     """

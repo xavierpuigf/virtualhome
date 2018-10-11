@@ -77,7 +77,8 @@ Possible relations (edge labels) are:
 	- `character` state is not sitting
 - Post-condition:
     - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` faces `any_node`
-    - add undirected edges: `character` close to object_contain(`object`) [Need to be verified]
+    - add undirected edges: `character` close to object_contain(`object`)
+	- add undirected edges: `character` close to object with properties BODY_PART
     - add directed edges: `character` inside room_of(`object`)
     - add undirected edges: `character` close `object`
 

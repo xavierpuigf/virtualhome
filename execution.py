@@ -5,6 +5,7 @@ import common
 from environment import *
 from scripts import Action, ScriptLine, Script
 
+import ipdb
 
 # ExecutionInfo
 ###############################################################################
@@ -109,6 +110,7 @@ class WalkExecutor(ActionExecutor):
                                  [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                  AnyNode(), delete_reverse=True),
                      AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True), 
+                     AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True), 
                      AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
                      AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
                     node,
@@ -223,7 +225,7 @@ class GrabExecutor(ActionExecutor):
         else:
             new_relation = self.check_grabbable(state, node, info)
             if new_relation is not None:
-                changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode()),
+                changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode(), delete_reverse=True),
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
                 new_close, relation = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
@@ -235,7 +237,7 @@ class GrabExecutor(ActionExecutor):
         if Property.GRABBABLE not in node.properties:
             info.error('{} is not grabbable', node)
             return None
-        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
+        if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
             return None
@@ -769,7 +771,7 @@ class MoveExecutor(ActionExecutor):
         if Property.MOVABLE not in node.properties:
             info.error('{} is not movable', node)
             return None
-        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
+        if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
             return None
@@ -961,6 +963,7 @@ PointAtExecutor = LookAtExecutor
 def _is_character_close_to(state: EnvironmentState, node: Node):
     if state.evaluate(ExistsRelation(CharacterNode(), Relation.CLOSE, NodeInstanceFilter(node))):
         return True
+    # loose rule
     for close_node in state.get_nodes_from(_get_character_node(state), Relation.CLOSE):
         if state.evaluate(ExistsRelation(NodeInstance(close_node), Relation.CLOSE, NodeInstanceFilter(node))):
             return True
