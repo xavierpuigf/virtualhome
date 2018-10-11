@@ -190,7 +190,9 @@ class SitExecutor(ActionExecutor):
         if Property.SITTABLE not in node.properties:
             info.error('{} is not sittable', node)
             return False
-        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
+        max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
+        if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
+                                         min_value=max_occupancy)):
             info.error('something on the {}', node)
             return False
 
@@ -394,6 +396,9 @@ class SwitchExecutor(ActionExecutor):
             return False
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
+            return False
+        if self.switch_on and State.PLUGGED_OUT in node.states:
+            info.error('{} is unplugged', node)
             return False
         return True
 
@@ -618,6 +623,15 @@ class TouchExecutor(ActionExecutor):
 
 class LieExecutor(ActionExecutor):
 
+    _MAX_OCCUPANCIES = {
+        'couch': 2,
+        'bathtub': 2,
+        'bed': 3,
+        'loveseat': 2,
+        'sofa': 2,
+        'bench': 1
+    }
+
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]
         info.set_current_line(current_line)
@@ -644,8 +658,10 @@ class LieExecutor(ActionExecutor):
         if Property.LIEABLE not in node.properties:
             info.error('{} is not lieable', node)
             return False
-        if state.evaluate(ExistsRelation(AnyNode(), Relation.ON, NodeInstanceFilter(node))):
-            info.error('Something on the {}', node)
+        max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
+        if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
+                                         min_value=max_occupancy)):
+            info.error('Too many things on {}', node)
             return False
         return True
 
@@ -838,7 +854,6 @@ class PlugExecutor(ActionExecutor):
             yield state.change_state([ChangeNode(new_node)])
 
     def check_plugable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-
         s = State.PLUGGED_OUT if self.plug_in else State.PLUGGED_IN
         if Property.HAS_PLUG not in node.properties:
             info.error('{} does not have a plug', node)
@@ -1084,7 +1099,6 @@ class ScriptExecutor(object):
             if time.time() > self.processing_limit:
                 break
 
-
     def execute(self, script: Script, init_changers: List[StateChanger]=None):
 
         info = self.info
@@ -1172,5 +1186,3 @@ def _change_state(state: EnvironmentState, new_node: GraphNode, dest_node: Node,
 
 class ExecutionException(common.Error):
     pass
-
-

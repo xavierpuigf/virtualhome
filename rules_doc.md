@@ -87,7 +87,7 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object`
 	- `character` state is not sitting
 	- `object` property is sittable
-	- `any_node` not on `object`
+	- number of objects on `object` must be less than: 'couch': 4, 'bed': 4, 'chair': 1, 'loveseat': 2, 'sofa': 4, 'toilet': 1, 'pianobench': 2, 'bench': 2	
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
@@ -156,7 +156,8 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is off
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
+	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand
+	- `object` must not be plugged_out
 - Post-condition: 
     - state changes: `object` state is on
 
@@ -246,7 +247,7 @@ Possible relations (edge labels) are:
 	- exists edge `character` close `object`
 	- `character` state is not lying
 	- `object` property is lieable
-	- `any_node` not on `object`
+	- number of objects on `object` must be less than: 'couch': 2, 'bathtub': 2, 'bed': 3, 'loveseat': 2, 'sofa': 2, 'bench': 1
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` lying
