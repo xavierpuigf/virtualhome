@@ -35,6 +35,8 @@ def load_properties_data(file_name='resources/properties_data.json'):
 
 def set_to_default_state(graph_dict):
     
+    body_part = ['face', 'leg', 'arm', 'eye', 'hand', 'feet']
+    character_id = [i["id"] for i in filter(lambda v: v["class_name"] == 'character', graph_dict["nodes"])][0]
 
     for node in graph_dict["nodes"]:
 
@@ -65,6 +67,10 @@ def set_to_default_state(graph_dict):
 
         if node["category"] == "Doors":
             node["states"].append("OPEN")
+
+        if any([Property.BODY_PART in node["properties"] for v in body_part]):
+            graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": character_id, "to_id": node["id"]})
+            graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": node["id"], "to_id": character_id})
 
 
 def create_graph_dict_from_precond(script, precond, properties_data):
