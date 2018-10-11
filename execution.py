@@ -727,6 +727,7 @@ class WatchExecutor(ActionExecutor):
     def check_watchable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         char_room = _get_room_node(state, _get_character_node(state))
         node_room = _get_room_node(state, node)
+        
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
             return False

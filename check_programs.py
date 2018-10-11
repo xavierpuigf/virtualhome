@@ -4,6 +4,7 @@ import utils
 import glob
 import copy
 import random
+import numpy as np
 from tqdm import tqdm
 
 from execution import Relation, State
@@ -64,10 +65,12 @@ def translate_graph_dict():
 def add_missing_object_and_align_id(script, graph_dict, properties_data):
 
     possible_rooms = ['home_office', 'kitchen', 'living_room', 'bathroom', 'dining_room', 'bedroom', 'kids_bedroom', 'entrance_hall']
-    available_room = [i['class_name'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
+    available_rooms = [i['class_name'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
+    available_rooms_id = [i['id'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
 
 
     objects_in_script = {}
+    room_name = None
     for script_line in script:
         for parameter in script_line.parameters:
             # room mapping
@@ -80,44 +83,82 @@ def add_missing_object_and_align_id(script, graph_dict, properties_data):
             elif parameter.name == 'kids_bedroom':
                 parameter.name = 'bedroom'
 
+            if parameter.name in available_rooms:
+                room_name = parameter.name
+                
             name = parameter.name
-            if name in possible_rooms and name not in available_room:
+            if name in possible_rooms and name not in available_rooms:
                 print("There is no {} in the environment".format(name))
                 return None, False
             if (parameter.name, parameter.instance) not in objects_in_script:
                 objects_in_script[(parameter.name, parameter.instance)] = parameter.instance
 
 
-    #if True not in [obj[0] in available_room for obj in objects_in_script.keys()]:
-    #    print("Room is not specified in this program")
-    #    return None, False
-
     available_nodes = copy.deepcopy(graph_dict['nodes'])
     available_name = list(set([node['class_name'] for node in available_nodes]))
 
+    if room_name == None:
+        # Room is not specified in this program, assign one to it
+        hist = np.zeros(len(available_rooms_id))
+        for obj in objects_in_script:
+            obj_name = obj[0]
+            for node in available_nodes:
+                if node['class_name'] == obj_name:
+                    edges = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v['to_id'] in available_rooms_id, graph_dict["edges"])]
+                    
+                    if len(edges) > 0:
+                        for edge in edges:
+                            dest_id = edge['to_id']
+                            idx = available_rooms_id.index(160)
+                            hist[idx] += 1
 
+        if hist.std() < 1e-5:
+            # all equal
+            room_name = random.choice(available_rooms)
+            #print("Set a random_room")
+        else:
+            idx = np.argmax(hist)
+            room_name = available_rooms[idx]
+            #print("Pick room: {}".format(room_name))
+
+
+    room_id = [i["id"] for i in filter(lambda v: v['class_name'] == room_name, graph_dict["nodes"])][0]
     id = 1000
+
+    def _add_missing_node(_id, _obj, _category):
+                
+        graph_dict['nodes'].append({
+            "properties": properties_data[_obj[0]], 
+            "id": _id, 
+            "states": [], 
+            "category": _category, 
+            "class_name": _obj[0]
+        })
+        objects_in_script[_obj] = _id
+        return _id + 1
+
     for obj in objects_in_script.keys():
         if obj[0] in available_name:
+            added = False
             # existing nodes
             for node in available_nodes:
                 if node['class_name'] == obj[0]:
-                    objects_in_script[obj] = node['id']
-                    available_nodes.remove(node)
-                    break
+                    obj_in_room = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v['to_id'] == room_id, graph_dict["edges"])]
+                    if obj[0] not in available_rooms and len(obj_in_room) == 0:
+                        continue
+                    else:
+                        objects_in_script[obj] = node['id']
+                        available_nodes.remove(node)
+                        added = True
+                        break
+            if not added:
+                # add edges
+                graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": id, "to_id": room_id})
+                id = _add_missing_node(id, obj, 'placing_objects')
         else:
             # add missing nodes
-            prop = properties_data[obj[0]]
-                
-            graph_dict['nodes'].append({
-                "properties": prop, 
-                "id": id, 
-                "states": [], 
-                "category": "placable_objects", 
-                "class_name": obj[0]
-            })
-            objects_in_script[obj] = id
-            id += 1
+            graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": id, "to_id": room_id})
+            id = _add_missing_node(id, obj, 'placing_objects')
 
 
     # change the id in script
@@ -240,14 +281,14 @@ def check_2(dir_path):
     executable_programs = 0
     not_parsable_programs = 0
     no_specified_room = 0
-    for txt_file in program_txt_files:
+    for j, txt_file in enumerate(program_txt_files):
         try:
             script = read_script(txt_file)
         except ScriptParseException:
             print("Can not parse the script: {}".format(txt_file))
             not_parsable_programs += 1            
             continue
-    
+
         # object alias
         for script_line in script:
             for param in script_line.parameters:
@@ -273,6 +314,7 @@ def check_2(dir_path):
         # modif the graph_dict
         graph_dict = utils.load_graph_dict('example_graphs/TrimmedTestScene6_graph.json')
 
+
         objects_in_script, valid = add_missing_object_and_align_id(script, graph_dict, properties_data)        
         if not valid:
             print("Room is not specified:", txt_file)
@@ -288,16 +330,17 @@ def check_2(dir_path):
         state = executor.execute(script)
 
         if state is None:
-            print('Script is not executable, since {}'.format(executor.info.get_error_string()))
+            print('{}, Script is not executable, since {}'.format(j, executor.info.get_error_string()))
             info.update({txt_file: 'Script is not executable, since {}'.format(executor.info.get_error_string())})
         else:
-            print('Script is executable')
+            print('{}, Script is executable'.format(j))
             info.update({txt_file: 'Script is executable'})
             executable_programs += 1
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
-    print("{} programs do not specify the rooms or the specified room is not appear".format(no_specified_room))
+    print("{} programs do not specify the rooms".format(no_specified_room))
+    json.dump(info, open("executable_info.json", 'w'))
 
 
 def check_1(dir_path):
