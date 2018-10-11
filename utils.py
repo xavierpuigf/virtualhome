@@ -32,6 +32,18 @@ def load_properties_data(file_name='resources/properties_data.json'):
         pd_dict = json.load(f)
         return {key: [Property[p] for p in props] for (key, props) in pd_dict.items()}
 
+
+def ensure_object_state(graph_dict):
+    
+    for node in graph_dict["nodes"]:
+        if "CAN_OPEN" in node["properties"] and ("OPEN" not in node["states"] or "CLOSED" not in node["states"]):
+            node["states"].append("CLOSED")
+        if "HAS_PLUG" in node["properties"] and ("PLUGGED_IN" not in node["states"] or "PLUGGED_OUT" not in node["states"]):
+            node["states"].append("PLUGGED_IN")
+        if "HAS_SWTICH" in node["properties"] and ("ON" not in node["states"] or "OFF" not in node["states"]):
+            node["states"].append("OFF")
+
+
 def create_graph_dict_from_precond(script, precond, properties_data):
     
     patt_params = r'<([\w\s]+)>\s*\((\d+)\)'

@@ -313,6 +313,7 @@ def check_2(dir_path):
 
         # modif the graph_dict
         graph_dict = utils.load_graph_dict('example_graphs/TrimmedTestScene6_graph.json')
+        utils.ensure_object_state(graph_dict)
 
 
         objects_in_script, valid = add_missing_object_and_align_id(script, graph_dict, properties_data)        
