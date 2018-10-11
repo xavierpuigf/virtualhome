@@ -54,6 +54,7 @@ def write_new_txt(txt_file, precond_path, message):
 def translate_graph_dict(path):
 
     graph_dict = utils.load_graph_dict(path)
+    properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
     node_list = [node["class_name"] for node in graph_dict['nodes']]
 
     static_objects = ['bathroom', 'floor', 'wall', 'ceiling', 'rug', 'curtains', 'ceiling_lamp', 'wall_lamp', 
@@ -85,12 +86,14 @@ def translate_graph_dict(path):
 
     new_nodes_script_object = []
     for node in new_nodes:
+        class_name = unity_object2script_object[node["class_name"]].lower().replace(' ', '_') if node["class_name"] in unity_object2script_object else node["class_name"].lower().replace(' ', '_')
+        
         new_nodes_script_object.append({
-            "properties": node["properties"], 
+            "properties": [i.name for i in properties_data[class_name]] if class_name in properties_data else node["properties"], 
             "id": node["id"], 
             "states": node["states"], 
             "category": node["category"], 
-            "class_name": unity_object2script_object[node["class_name"]].lower().replace(' ', '_') if node["class_name"] in unity_object2script_object else node["class_name"].lower().replace(' ', '_')
+            "class_name": class_name
         })
     
     translated_path = path.replace('TestScene', 'TrimmedTestScene')
@@ -319,7 +322,7 @@ def check_2(dir_path, graph_path):
     executable_programs = 0
     not_parsable_programs = 0
     no_specified_room = 0
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file8_1.txt')]
+    program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file9_1.txt')]
     for j, txt_file in enumerate(program_txt_files):
         
         try:
@@ -429,6 +432,6 @@ def check_1(dir_path):
 
 if __name__ == '__main__':
     #check_1('/Users/andrew/UofT/instance_programs_processed_precond_nograb')
-    #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
+    translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
     check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb', graph_path=translated_path)
