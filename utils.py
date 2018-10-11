@@ -33,15 +33,38 @@ def load_properties_data(file_name='resources/properties_data.json'):
         return {key: [Property[p] for p in props] for (key, props) in pd_dict.items()}
 
 
-def ensure_object_state(graph_dict):
+def set_to_default_state(graph_dict):
     
+
     for node in graph_dict["nodes"]:
-        if "CAN_OPEN" in node["properties"] and ("OPEN" not in node["states"] or "CLOSED" not in node["states"]):
+
+        # always set to off, closed, open
+        if "CAN_OPEN" in node["properties"]:
+            if "OPEN" in node["states"]:
+                node["states"].remove("OPEN")
             node["states"].append("CLOSED")
-        if "HAS_PLUG" in node["properties"] and ("PLUGGED_IN" not in node["states"] or "PLUGGED_OUT" not in node["states"]):
+        if "HAS_PLUG" in node["properties"]:
+            if "PLUGGED_OUT" in node["states"]:
+                node["states"].remove("PLUGGED_OUT")
             node["states"].append("PLUGGED_IN")
-        if "HAS_SWTICH" in node["properties"] and ("ON" not in node["states"] or "OFF" not in node["states"]):
+        if "HAS_SWTICH" in node["properties"]:
+            if "ON" in node["states"]:
+                node["states"].remove("ON")
             node["states"].append("OFF")
+
+        # everyhting is clean
+        if "DIRTY" in node["states"]:
+            node["states"].remove("DIRTY")
+
+        # character is not sitting, lying
+        if node["class_name"] == 'character':
+            node["states"] = []
+
+        if "light" in node["class_name"]:
+            node["states"].append("ON")
+
+        if node["category"] == "Doors":
+            node["states"].append("OPEN")
 
 
 def create_graph_dict_from_precond(script, precond, properties_data):

@@ -15,15 +15,15 @@ import ipdb
 
 
 random.seed(123)
+verbose = True
 
 def print_node_names(n_list):
     if len(n_list) > 0:
         print([n.class_name for n in n_list])
 
 
-def translate_graph_dict():
+def translate_graph_dict(path):
 
-    path = 'example_graphs/TestScene6_graph.json'
     graph_dict = utils.load_graph_dict(path)
     node_list = [node["class_name"] for node in graph_dict['nodes']]
 
@@ -35,13 +35,18 @@ def translate_graph_dict():
                         'bench', 'kitchen_counter', 'sink', 'power_socket', 'tv', 'clock', 'wall_phone', 
                         'cutting_board', 'stove', 'oventray', 'toaster', 'fridge', 'coffeemaker', 'microwave', 
                         'livingroom', 'sofa', 'coffee_table', 'desk', 'cabinet', 'standing_mirror', 'globe', 
-                        'mouse', 'mousemat', 'cpu_screen', 'cpu_case', 'keyboard', 'remote_control']
+                        'mouse', 'mousemat', 'cpu_screen', 'cpu_case', 'keyboard', 'ceilingfan', 
+                        'kitchen_cabinets', 'dishwasher', 'cookingpot', 'wallpictureframe', 'vase', 'knifeblock', 
+                        'stovefan', 'orchid', 'long_board', 'garbage_can', 'photoframe', 'balance_ball', 'closet_drawer']
 
     new_nodes = [i for i in filter(lambda v: v["class_name"] in static_objects, graph_dict['nodes'])]
+    trimmed_nodes = [i for i in filter(lambda v: v["class_name"] not in static_objects, graph_dict['nodes'])]
+
     available_id = [i["id"] for i in filter(lambda v: v["class_name"] in static_objects, graph_dict['nodes'])]
 
     new_edges = [i for i in filter(lambda v: v['to_id'] in available_id and v['from_id'] in available_id, graph_dict['edges'])]
 
+    # change the object name 
     script_object2unity_object = utils.load_name_equivalence()
     unity_object2script_object = {}
     for k, vs in script_object2unity_object.items():
@@ -59,8 +64,10 @@ def translate_graph_dict():
             "class_name": unity_object2script_object[node["class_name"]].lower().replace(' ', '_') if node["class_name"] in unity_object2script_object else node["class_name"].lower().replace(' ', '_')
         })
     
-    json.dump({"nodes": new_nodes_script_object, "edges": new_edges}, open(path.replace('TestScene', 'TrimmedTestScene'), 'w'))
-    
+    translated_path = path.replace('TestScene', 'TrimmedTestScene')
+    json.dump({"nodes": new_nodes_script_object, "edges": new_edges, "trimmed_nodes": trimmed_nodes}, open(translated_path, 'w'))
+    return translated_path
+
 
 def add_missing_object_and_align_id(script, graph_dict, properties_data):
 
@@ -68,20 +75,28 @@ def add_missing_object_and_align_id(script, graph_dict, properties_data):
     available_rooms = [i['class_name'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
     available_rooms_id = [i['id'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
 
+    equivalent_rooms = {
+        "kitchen": ["dining_room"], 
+        "dining_room": ["kitchen"], 
+        "entrance_hall": ["living_room"], 
+        "home_office": ["living_room"], 
+        "living_room": ["home_office"],
+        "kids_bedroom": ["bedroom"]
+    }
+    room_mapping = {}
+    for room in possible_rooms:
+        if room not in available_rooms:
+            assert room in equivalent_rooms, "Not pre-specified mapping for room: {}".format(room)
+            room_mapping[room] = random.choice(equivalent_rooms[room])
+
 
     objects_in_script = {}
     room_name = None
     for script_line in script:
         for parameter in script_line.parameters:
             # room mapping
-            if parameter.name == 'kitchen':
-                parameter.name = 'dining_room'
-            elif parameter.name == 'entrance_hall':
-                parameter.name = 'living_room'
-            elif parameter.name == 'home_office':
-                parameter.name = 'living_room'
-            elif parameter.name == 'kids_bedroom':
-                parameter.name = 'bedroom'
+            if parameter.name in room_mapping:
+                parameter.name = room_mapping[parameter.name]
 
             if parameter.name in available_rooms:
                 room_name = parameter.name
@@ -169,10 +184,10 @@ def add_missing_object_and_align_id(script, graph_dict, properties_data):
 
             parameter.instance = objects_in_script[(parameter.name, parameter.instance)]
             
-    return objects_in_script, True
+    return objects_in_script, room_mapping, True
 
 
-def prepare_with_precondition(precond, objects_in_script, graph_dict):
+def prepare_with_precondition(precond, objects_in_script, room_mapping, graph_dict):
 
     relation_mapping = {
         "inside": "INSIDE", 
@@ -188,14 +203,8 @@ def prepare_with_precondition(precond, objects_in_script, graph_dict):
                 src_id = int(src_id)
                 tgt_id = int(tgt_id)
                 # room mapping
-                if tgt_name.lower() == 'kitchen':
-                    tgt_name = 'dining_room'
-                elif tgt_name.lower() == 'entrance_hall':
-                    tgt_name = 'living_room'
-                elif tgt_name.lower() == 'home_office':
-                    tgt_name = 'living_room'
-                elif tgt_name.lower() == 'kids_bedroom':
-                    tgt_name = 'bedroom'
+                if tgt_name.lower() in room_mapping:
+                    tgt_name = room_mapping[tgt_name.lower()]
 
                 if k == 'location':
                     assert Room.has_value(tgt_name)
@@ -260,7 +269,7 @@ def add_random_objs_graph_dict(object_placing, graph_dict, properties_data, n):
                 break
 
 
-def check_2(dir_path):
+def check_2(dir_path, graph_path):
     """Use precondition to modify the environment graphs
     """
 
@@ -285,7 +294,8 @@ def check_2(dir_path):
         try:
             script = read_script(txt_file)
         except ScriptParseException:
-            print("Can not parse the script: {}".format(txt_file))
+            if verbose:
+                print("Can not parse the script: {}".format(txt_file))
             not_parsable_programs += 1            
             continue
 
@@ -312,17 +322,17 @@ def check_2(dir_path):
 
 
         # modif the graph_dict
-        graph_dict = utils.load_graph_dict('example_graphs/TrimmedTestScene6_graph.json')
-        utils.ensure_object_state(graph_dict)
+        graph_dict = utils.load_graph_dict(graph_path)
 
-
-        objects_in_script, valid = add_missing_object_and_align_id(script, graph_dict, properties_data)        
+        objects_in_script, room_mapping, valid = add_missing_object_and_align_id(script, graph_dict, properties_data) 
+        utils.set_to_default_state(graph_dict)       
         if not valid:
-            print("Room is not specified:", txt_file)
+            if verbose:
+                print("Room is not specified:", txt_file)
             no_specified_room += 1
             continue
 
-        prepare_with_precondition(precond, objects_in_script, graph_dict)
+        prepare_with_precondition(precond, objects_in_script, room_mapping, graph_dict)
         add_random_objs_graph_dict(object_placing, graph_dict, properties_data, n=0)
         graph = EnvironmentGraph(graph_dict)
 
@@ -331,10 +341,12 @@ def check_2(dir_path):
         state = executor.execute(script)
 
         if state is None:
-            print('{}, Script is not executable, since {}'.format(j, executor.info.get_error_string()))
+            if verbose:
+                print('{}, Script is not executable, since {}'.format(j, executor.info.get_error_string()))
             info.update({txt_file: 'Script is not executable, since {}'.format(executor.info.get_error_string())})
         else:
-            print('{}, Script is executable'.format(j))
+            if verbose:
+                print('{}, Script is executable'.format(j))
             info.update({txt_file: 'Script is executable'})
             executable_programs += 1
 
@@ -382,5 +394,6 @@ def check_1(dir_path):
 
 if __name__ == '__main__':
     #check_1('/Users/andrew/UofT/instance_programs_processed_precond_nograb')
-    #translate_graph_dict()
-    check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb')
+    #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
+    translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
+    check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb', graph_path=translated_path)
