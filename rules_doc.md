@@ -79,6 +79,7 @@ Possible relations (edge labels) are:
     - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` faces `any_node`
     - add undirected edges: `character` close to object_contain(`object`)
 	- add undirected edges: `character` close to object with properties BODY_PART
+	- add undirected edges: `character` close to object in hands
     - add directed edges: `character` inside room_of(`object`)
     - add undirected edges: `character` close `object`
 

@@ -71,31 +71,6 @@ class JoinedExecutor(ActionExecutor):
                 yield s
 
 
-class FindExecutor(ActionExecutor):
-
-    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
-        current_line = script[0]
-        info.set_current_line(current_line)
-        current_obj = current_line.object()
-
-        # select objects based on current_obj
-        for node in state.select_nodes(current_obj):
-            if self.check_find(state, node, info):
-                yield state.change_state(
-                    [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
-                    node,
-                    current_obj
-                )
-
-    def check_find(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        if not _is_character_close_to(state, node):
-            char_node = _get_character_node(state)
-            info.error('{} is not close to {}', char_node, node)
-            return False
-        else:
-            return 
-
-
 class WalkExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
@@ -135,6 +110,48 @@ class WalkExecutor(ActionExecutor):
         #                         (Relation.BETWEEN, NodeInstanceFilter(node_room))])
         #     )
         return True
+
+
+class _FindExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        current_obj = current_line.object()
+
+        # select objects based on current_obj
+        for node in state.select_nodes(current_obj):
+            if self.check_find(state, node, info):
+                yield state.change_state(
+                    [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
+                    node,
+                    current_obj
+                )
+
+    def check_find(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        if not _is_character_close_to(state, node):
+            char_node = _get_character_node(state)
+            info.error('{} is not close to {}', char_node, node)
+            return False
+        
+        return True
+
+
+WalkFindExecutor = JoinedExecutor(WalkExecutor(), _FindExecutor())
+OnlyFindExecutor = _FindExecutor()
+
+
+class FindExecutor(ActionExecutor):
+
+    def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
+        current_line = script[0]
+        info.set_current_line(current_line)
+        char_node = _get_character_node(state)
+
+        if State.SITTING not in char_node.states and State.LYING not in char_node.states:
+            return WalkFindExecutor.execute(script, state, info)
+        else:
+            return OnlyFindExecutor.execute(script, state, info)
 
 
 class GreetExecutor(ActionExecutor):
@@ -1041,7 +1058,7 @@ class ScriptExecutor(object):
 
     _action_executors = {
         Action.GOTO: WalkExecutor(),
-        Action.FIND: JoinedExecutor(WalkExecutor(), FindExecutor()),
+        Action.FIND: FindExecutor(),
         Action.SIT: SitExecutor(),
         Action.STANDUP: StandUpExecutor(),
         Action.GRAB: GrabExecutor(),
