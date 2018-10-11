@@ -58,8 +58,15 @@ def set_to_default_state(graph_dict):
         if "DIRTY" in node["states"]:
             node["states"].remove("DIRTY")
 
-        # character is not sitting, lying
+        # character is not sitting, lying, holding, not close to anything
         if node["class_name"] == 'character':
+            # character is not inside anything 
+            graph_dict["edges"] = [e for e in filter(lambda e: e["from_id"] != character_id and e["to_id"] != character_id, graph_dict["edges"])]
+
+            # set the character inside the pre-specified room
+            default_room_id = [i["id"] for i in filter(lambda v: v["class_name"] == 'living_room', graph_dict["nodes"])][0]
+            graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": character_id, "to_id": default_room_id})
+
             node["states"] = []
 
         if "light" in node["class_name"]:

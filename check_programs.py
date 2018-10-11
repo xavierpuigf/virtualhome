@@ -15,11 +15,40 @@ import ipdb
 
 
 random.seed(123)
-verbose = False
+verbose = True
 
 def print_node_names(n_list):
     if len(n_list) > 0:
         print([n.class_name for n in n_list])
+
+
+def write_new_txt(txt_file, precond_path, message):
+    
+    new_dir = 'withmessage'
+    new_path = '/'.join(txt_file.split('/')[-2:])
+    new_path = os.path.join(new_dir, new_path)
+
+    new_dir = os.path.dirname(new_path)
+    if not os.path.exists(new_dir):
+        os.makedirs(new_dir)
+    new_f = open(new_path, 'w')
+ 
+    new_f.write(message)
+    new_f.write('\n'*3)
+
+    f = open(precond_path, 'r')
+    f = json.load(f)
+    for p in f:
+        for type, objects in p.items():
+            new_f.write("{}: {}".format(type, objects))
+            new_f.write('\n')
+    new_f.write('\n'*3)
+    
+    f = open(txt_file, 'r')
+    new_f.write(f.read())
+    f.close()
+
+    new_f.close()
 
 
 def translate_graph_dict(path):
@@ -306,7 +335,8 @@ def check_2(dir_path, graph_path):
                 if param.name in object_alias:
                     param.name = object_alias[param.name]
 
-        precond = read_precond(txt_file.replace('withoutconds', 'initstate').replace('txt', 'json'))
+        precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
+        precond = read_precond(precond_path)
 
         for p in precond:
             for k, vs in p.items():
@@ -342,14 +372,17 @@ def check_2(dir_path, graph_path):
         state = executor.execute(script)
 
         if state is None:
+            message = '{}, Script is not executable, since {}'.format(j, executor.info.get_error_string())
             if verbose:
-                print('{}, Script is not executable, since {}'.format(j, executor.info.get_error_string()))
-            info.update({txt_file: 'Script is not executable, since {}'.format(executor.info.get_error_string())})
+                print(message)
         else:
-            if verbose:
-                print('{}, Script is executable'.format(j))
-            info.update({txt_file: 'Script is executable'})
+            message = '{}, Script is executable'.format(j)
             executable_programs += 1
+            if verbose:
+                print(message)
+
+        info.update({txt_file: message})
+        write_new_txt(txt_file, precond_path, message)
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
