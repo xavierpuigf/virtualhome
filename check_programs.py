@@ -15,7 +15,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = True
+verbose = False
 
 def print_node_names(n_list):
     if len(n_list) > 0:
@@ -124,7 +124,7 @@ def add_missing_object_and_align_id(script, graph_dict, properties_data):
                     if len(edges) > 0:
                         for edge in edges:
                             dest_id = edge['to_id']
-                            idx = available_rooms_id.index(160)
+                            idx = available_rooms_id.index(dest_id)
                             hist[idx] += 1
 
         if hist.std() < 1e-5:
@@ -291,6 +291,7 @@ def check_2(dir_path, graph_path):
     not_parsable_programs = 0
     no_specified_room = 0
     for j, txt_file in enumerate(program_txt_files):
+        
         try:
             script = read_script(txt_file)
         except ScriptParseException:
