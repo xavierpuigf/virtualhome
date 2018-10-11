@@ -100,22 +100,26 @@ class WalkExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]
+        info.set_current_line(current_line)
         current_obj = current_line.object()
 
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             if self.check_walk(state, node, info):
-                yield state.change_state(
-                    [DeleteEdges(CharacterNode(),
+                changes = [DeleteEdges(CharacterNode(),
                                  [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                  AnyNode(), delete_reverse=True),
-                     AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True), 
-                     AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True), 
-                     AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
-                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
-                    node,
-                    current_obj
-                )
+                            AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True), 
+                            AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True), 
+                            AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
+                     ]
+                char_node = _get_character_node(state)
+                nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
+                for node_in_hands in nodes_in_hands:
+                    changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node_in_hands), add_reverse=True))
+
+                yield state.change_state(changes, node, current_obj)
 
     def check_walk(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         char_node = _get_character_node(state)
