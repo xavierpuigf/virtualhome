@@ -82,6 +82,7 @@ Possible relations (edge labels) are:
 	- add undirected edges: `character` close to object in hands
     - add directed edges: `character` inside room_of(`object`)
     - add undirected edges: `character` close `object`
+	- add undirected edges: `character` close all objects on `object`
 
 ### SitExecutor
 - script: sit `object`
@@ -283,11 +284,10 @@ Possible relations (edge labels) are:
 ### MoveExecutor
 - script: push/pull/move `object`
 - Pre-condition: 
-	- `object` property is movable
+	- `object` property is movable (exception: push button)
 	- exists edge `character` close `object`
 	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot move an object inside other one, unless it is open
 	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand
- 
 
 ### WashExecutor (shared with RinseExecutor and ScrubExecutor)
 - script: wash `object`

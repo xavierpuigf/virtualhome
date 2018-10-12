@@ -247,7 +247,7 @@ def prepare_with_precondition(precond, objects_in_script, room_mapping, graph_di
                 graph_dict['edges'].append({'relation_type': relation_mapping[k], 'from_id': src_id, 'to_id': tgt_id})
                 
             elif k in ['is_on', 'is_off', 'open']:
-                _, obj_id = v
+                obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]
                 for node in graph_dict['nodes']:
                     if node['id'] == obj_id:
                         if k == 'is_on':
@@ -322,7 +322,7 @@ def check_2(dir_path, graph_path):
     executable_programs = 0
     not_parsable_programs = 0
     no_specified_room = 0
-    program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file9_1.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file16_2.txt')]
     for j, txt_file in enumerate(program_txt_files):
         
         try:
@@ -369,6 +369,7 @@ def check_2(dir_path, graph_path):
 
         prepare_with_precondition(precond, objects_in_script, room_mapping, graph_dict)
         add_random_objs_graph_dict(object_placing, graph_dict, properties_data, n=0)
+
         graph = EnvironmentGraph(graph_dict)
 
         name_equivalence = utils.load_name_equivalence()

@@ -89,10 +89,15 @@ class WalkExecutor(ActionExecutor):
                             AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
                             AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
                      ]
+                # close to object in hands
                 char_node = _get_character_node(state)
                 nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
                 for node_in_hands in nodes_in_hands:
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node_in_hands), add_reverse=True))
+
+                # close to all objects on node
+                if Property.SURFACES in node.properties:
+                    changes.append(AddEdges(CharacterNode(), Relation.CLOSE, ObjectOnNode(node), add_reverse=True))
 
                 yield state.change_state(changes, node, current_obj)
 
@@ -745,6 +750,9 @@ class TypeExecutor(ActionExecutor):
             info.error('{} is not close to {}', char_node, node)
             return False
         
+        if node.class_name == 'keyboard':
+            return True
+
         if Property.HAS_SWITCH not in node.properties:
             info.error('{} does not have switch', node)
             return False
@@ -779,17 +787,19 @@ class MoveExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]
+        action_name = current_line.action.name.lower()
         info.set_current_line(current_line)
         node = state.get_state_node(current_line.object())
         if node is None:
             info.object_found_error()
         else:
-            new_relation = self.check_movable(state, node, info)
+            new_relation = self.check_movable(state, node, info, action_name)
             if new_relation is not None:
                 yield state.change_state([])
 
-    def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
-        if Property.MOVABLE not in node.properties:
+    def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo, action_name: str) -> Optional[Relation]:
+
+        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button'):
             info.error('{} is not movable', node)
             return None
         if not _is_character_close_to(state, node):

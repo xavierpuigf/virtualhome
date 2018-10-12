@@ -433,6 +433,16 @@ class RoomNode(NodeEnumerator):
                 yield n
 
 
+class ObjectOnNode(NodeEnumerator):
+
+    def __init__(self, node: Node):
+        self.surface_node = node
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        for n in state.get_nodes():
+            if state.evaluate(ExistsRelation(NodeInstance(n), Relation.ON, NodeInstanceFilter(self.surface_node))):
+                 yield n
+    
 class BodyNode(NodeEnumerator):
 
     def enumerate(self, state: EnvironmentState, **kwargs):
