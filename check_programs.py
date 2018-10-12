@@ -113,14 +113,15 @@ def check_2(dir_path, graph_path):
             _object_alias[v] = k
     object_alias = _object_alias
 
-
+    helper = utils.graph_dict_helper(properties_data, object_placing, object_states)
     executable_programs = 0
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
     #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file27_2.txt')]
     for j, txt_file in enumerate(program_txt_files):
-        
+
+        helper.initialize()
         try:
             script = read_script(txt_file)
         except ScriptParseException:
@@ -155,16 +156,16 @@ def check_2(dir_path, graph_path):
         graph_dict = utils.load_graph_dict(graph_path)
 
         ## add missing object from scripts (id from 1000)
-        objects_in_script, room_mapping = utils.add_missing_object_from_script(script, graph_dict, properties_data) 
+        objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
         ## place the random objects (id from 2000)
-        utils.add_random_objs_graph_dict(object_placing, graph_dict, properties_data, n=0) 
+        helper.add_random_objs_graph_dict(graph_dict, n=3) 
         ## set object state to default 
-        utils.set_to_default_state(graph_dict)
-        utils.random_change_object_state(objects_in_script, object_states, graph_dict, object_placing, properties_data)
+        helper.set_to_default_state(graph_dict)
+        helper.random_change_object_state(objects_in_script, graph_dict)
 
 
         ## set relation and state from precondition
-        utils.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
+        helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
 
         graph = EnvironmentGraph(graph_dict)
 
