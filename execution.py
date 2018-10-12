@@ -151,12 +151,17 @@ class FindExecutor(ActionExecutor):
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]
         info.set_current_line(current_line)
-        char_node = _get_character_node(state)
+        current_obj = current_line.object()
 
-        if State.SITTING not in char_node.states and State.LYING not in char_node.states:
-            return WalkFindExecutor.execute(script, state, info)
-        else:
-            return OnlyFindExecutor.execute(script, state, info)
+        for node in state.select_nodes(current_obj):
+            char_node = _get_character_node(state)
+
+            if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
+                return OnlyFindExecutor.execute(script, state, info)
+            elif State.SITTING not in char_node.states and State.LYING not in char_node.states:
+                return WalkFindExecutor.execute(script, state, info)
+            else:
+                return OnlyFindExecutor.execute(script, state, info)
 
 
 class GreetExecutor(ActionExecutor):
@@ -775,6 +780,10 @@ class WatchExecutor(ActionExecutor):
         char_room = _get_room_node(state, _get_character_node(state))
         node_room = _get_room_node(state, node)
         
+        if node.class_name not in ['television', 'laptop', 'computer']:
+            info.error('only watching television, computer or laptop is allowed')
+            return False
+
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
             return False
@@ -932,7 +941,7 @@ class CutExecutor(ActionExecutor):
         char_node = _get_character_node(state)
         holding_nodes = _find_nodes_from(state, char_node, [Relation.HOLDS_LH, Relation.HOLDS_RH])
         if not any(['knife' in node.class_name for node in holding_nodes]):
-            info.error('{} is not folding a knife', _get_character_node(state))
+            info.error('{} is not holding a knife', _get_character_node(state))
             return False
 
         return True

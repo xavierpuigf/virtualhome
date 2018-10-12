@@ -65,11 +65,16 @@ Possible relations (edge labels) are:
 
 ### FindExecutor
 - script: find `object`
-- Pre-condition: 
+- cases:
+	- object on character -> execute find
+	- character is not sitting or lying -> execute walk first, then find
+	- other -> execute find
+- Pre-condition:
 	- exists edge `character` close `object` or for each edge `character` close `object2` exists edge `object2` close `object`  # i.e., either character must be 
 		close to `object` or `object` must be close to every object the character is currenty close to
 - Post-condition:
     - add undirected edges: `character` close `object`
+
 
 ### WalkExecutor
 - script: walk `object`
@@ -279,6 +284,7 @@ Possible relations (edge labels) are:
 - Pre-condition:
     - room of `character` is room of `object`
     - `object` is not inside a closed object
+	- only television, computer, laptop is allowed to be watched
 
 
 ### MoveExecutor
