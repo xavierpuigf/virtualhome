@@ -103,7 +103,8 @@ def add_missing_object_from_script(script, graph_dict, properties_data):
             room_mapping[room] = random.choice(equivalent_rooms[room])
 
 
-    objects_in_script = {}
+    character_id = [i for i in filter(lambda v: v['class_name'] == 'character', graph_dict["nodes"])][0]["id"]
+    objects_in_script = {('character', 1): character_id}
     room_name = None
     for script_line in script:
         for parameter in script_line.parameters:
@@ -166,7 +167,9 @@ def add_missing_object_from_script(script, graph_dict, properties_data):
         return _id + 1
 
     for obj in objects_in_script.keys():
-        if obj[0] in available_name:
+        if obj[0] == 'character':
+            pass
+        elif obj[0] in available_name:
             added = False
             # existing nodes
             for node in available_nodes:

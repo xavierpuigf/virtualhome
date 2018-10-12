@@ -221,8 +221,8 @@ Possible relations (edge labels) are:
 	- exists edge `object` on `character`
 	- `object` preperty is clothes
 - Post-condition:
-	- remove directed edges: `object` on `character`, `object` close `character`
-
+	- remove directed edges: `object` on `character`
+	
 ### GreetExecutor
 - script: Greet `object`
 - Pre-condition:

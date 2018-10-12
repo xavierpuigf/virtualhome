@@ -571,7 +571,7 @@ class PutOffExecutor(ActionExecutor):
             info.object_found_error()
         elif self.check_putoff(state, node, info):
             yield state.change_state([
-                DeleteEdges(NodeInstance(node), [Relation.ON, Relation.CLOSE], CharacterNode(), delete_reverse=True)
+                DeleteEdges(NodeInstance(node), [Relation.ON], CharacterNode())
             ])
 
     def check_putoff(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
