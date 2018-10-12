@@ -289,6 +289,8 @@ class graph_dict_helper(object):
                     tgt_id = objects_in_script[(tgt_name.lower().replace(' ', '_'), tgt_id)]
 
                     graph_dict['edges'].append({'relation_type': relation_script_precond_simulator[k], 'from_id': src_id, 'to_id': tgt_id})
+                    if k == 'atreach':
+                        graph_dict['edges'].append({'relation_type': relation_script_precond_simulator[k], 'from_id': tgt_id, 'to_id': src_id})
                     
                 elif k in ['is_on', 'is_off', 'open']:
                     obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]

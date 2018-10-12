@@ -67,6 +67,7 @@ Possible relations (edge labels) are:
 - script: find `object`
 - cases:
 	- object on character -> execute find
+	- object with properties BODY_PART -> execute find
 	- character is not sitting or lying -> execute walk first, then find
 	- other -> execute find
 - Pre-condition:

@@ -159,6 +159,8 @@ class FindExecutor(ActionExecutor):
 
             if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
                 return OnlyFindExecutor.execute(script, state, info)
+            elif Property.BODY_PART in node.properties:
+                return OnlyFindExecutor.execute(script, state, info)
             elif State.SITTING not in char_node.states and State.LYING not in char_node.states:
                 return WalkFindExecutor.execute(script, state, info)
             else:
