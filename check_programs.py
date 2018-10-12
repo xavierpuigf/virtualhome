@@ -15,7 +15,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = True
+verbose = False
 
 def print_node_names(n_list):
     if len(n_list) > 0:
@@ -322,7 +322,9 @@ def check_2(dir_path, graph_path):
     executable_programs = 0
     not_parsable_programs = 0
     no_specified_room = 0
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file16_2.txt')]
+    executable_program_length = []
+    not_executable_program_length = []
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file27_2.txt')]
     for j, txt_file in enumerate(program_txt_files):
         
         try:
@@ -377,21 +379,27 @@ def check_2(dir_path, graph_path):
         state = executor.execute(script)
 
         if state is None:
+            not_executable_program_length.append(len(script))
             message = '{}, Script is not executable, since {}'.format(j, executor.info.get_error_string())
             if verbose:
                 print(message)
         else:
             message = '{}, Script is executable'.format(j)
+            executable_program_length.append(len(script))
             executable_programs += 1
             if verbose:
                 print(message)
 
         info.update({txt_file: message})
-        write_new_txt(txt_file, precond_path, message)
+        #write_new_txt(txt_file, precond_path, message)
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
     print("{} programs do not specify the rooms".format(no_specified_room))
+
+    executable_program_length = sum(executable_program_length) / len(executable_program_length)
+    not_executable_program_length = sum(not_executable_program_length) / len(not_executable_program_length)
+    print("Executable program average length: {:.2f}, not executable program average length: {:.2f}".format(executable_program_length, not_executable_program_length))
     json.dump(info, open("executable_info.json", 'w'))
 
 
