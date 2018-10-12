@@ -65,14 +65,18 @@ class BinaryVariable(object):
     def sample_state(self, node):
 
         sampled_state = random.choice([self.positive, self.negative])
-        if sampled_state == self.positive:
+        self.set_node_state(node, sampled_state)
+    
+    def set_node_state(self, node, node_state):
+
+        if node_state == self.positive:
             remove_state = self.negative
         else:
             remove_state = self.positive
         
         if remove_state in node["states"]:
             node["states"].remove(remove_state)
-        node["states"].append(sampled_state)
+        node["states"].append(node_state)
 
 
 class graph_dict_helper(object):
@@ -372,27 +376,9 @@ class graph_dict_helper(object):
                         if current_state != state:
                             if state == 'occupied':
                                 number_objects_to_add = max_occupancy - len(occupied_nodes)
-                                random.shuffle(objects_to_place)
-                                
-                                for src_name in objects_to_place:
-                                    tgt_names = object_placing[src_name]
-                                    if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
-                                        self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
-                                        graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
-                                        self.random_objects_id += 1
-                                        number_objects_to_add -= 0
-                                        if number_objects_to_add <= 0:
-                                            break
+                                self._change_to_occupied(node, graph_dict, number_objects_to_add, objects_to_place)
                             else:
-                                removed_edges = [edge for edge in filter(lambda v: v["relation_type"] == 'ON' and v["to_id"] == node["id"], graph_dict["edges"])]
-                                remove_object_id = [edge["from_id"] for edge in removed_edges]
-                                for edge in removed_edges:
-                                    graph_dict["edges"].remove(edge)
-                                
-                                floor_id = [node["id"] for node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
-                                for obj_id in remove_object_id:
-                                    to_id = random.choice(floor_id)
-                                    graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
+                                self._change_to_totally_free(node, graph_dict)
                 else:
                     state = states_mapping[state]
                     if state in ['dirty', 'clean']:
@@ -403,3 +389,30 @@ class graph_dict_helper(object):
                         open_closed.sample_state(node)
                     elif state in ['plugged_in', 'plugged_out']:
                         plugged_in_out.sample_state(node)
+
+    def _change_to_occupied(self, node, graph_dict, number_objects_to_add, objects_to_place):
+
+        object_placing = self.object_placing
+        random.shuffle(objects_to_place)
+                                    
+        for src_name in objects_to_place:
+            tgt_names = object_placing[src_name]
+            if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
+                self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
+                graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
+                self.random_objects_id += 1
+                number_objects_to_add -= 0
+                if number_objects_to_add <= 0:
+                    break
+
+    def _change_to_totally_free(self, node, graph_dict):
+        removed_edges = [edge for edge in filter(lambda v: v["relation_type"] == 'ON' and v["to_id"] == node["id"], graph_dict["edges"])]
+        remove_object_id = [edge["from_id"] for edge in removed_edges]
+
+        for edge in removed_edges:
+            graph_dict["edges"].remove(edge)
+                                
+        floor_id = [node["id"] for node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
+        for obj_id in remove_object_id:
+            to_id = random.choice(floor_id)
+            graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
