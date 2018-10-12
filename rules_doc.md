@@ -74,6 +74,7 @@ Possible relations (edge labels) are:
 		close to `object` or `object` must be close to every object the character is currenty close to
 - Post-condition:
     - add undirected edges: `character` close `object`
+	- remove directed edges: `character` faces `object`
 
 
 ### WalkExecutor
@@ -190,6 +191,7 @@ Possible relations (edge labels) are:
 - Pre-condition:
 	- exists edge `character` close `object`
 - Post-condition:
+	- remove directed edges: `character` faces anyobject
 	- add directed edges: `character` faces `object`
 
 ### LookAtExecutor (shared with PointAtExecutor)

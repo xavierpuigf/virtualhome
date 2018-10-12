@@ -128,7 +128,8 @@ class _FindExecutor(ActionExecutor):
         for node in state.select_nodes(current_obj):
             if self.check_find(state, node, info):
                 yield state.change_state(
-                    [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
+                    [DeleteEdges(CharacterNode(), [Relation.FACING], AnyNode()), 
+                     AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)],
                     node,
                     current_obj
                 )
@@ -468,7 +469,8 @@ class TurnToExecutor(ActionExecutor):
             info.object_found_error()
         elif self.check_turn_to(state, node, info):
             yield state.change_state(
-                [AddEdges(CharacterNode(), Relation.FACING, NodeInstance(node))]
+                [DeleteEdges(CharacterNode(), [Relation.FACING], AnyNode()), 
+                 AddEdges(CharacterNode(), Relation.FACING, NodeInstance(node))]
             )
 
     def check_turn_to(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
