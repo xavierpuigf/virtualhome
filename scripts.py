@@ -72,9 +72,10 @@ class ScriptObject(object):
 
 class ScriptLine(object):
 
-    def __init__(self, action: Action, parameters: List[ScriptObject]):
+    def __init__(self, action: Action, parameters: List[ScriptObject], index: int):
         self.action = action
         self.parameters = parameters
+        self.index =index
 
     def object(self):
         return self.parameters[0] if len(self.parameters) > 0 else None
@@ -83,7 +84,7 @@ class ScriptLine(object):
         return self.parameters[1] if len(self.parameters) > 1 else None
 
     def __str__(self):
-        return '[{}]'.format(self.action.name) + ''.join([' ' + str(par) for par in self.parameters])
+        return '[{}]'.format(self.action.name) + ''.join([' ' + str(par) for par in self.parameters]) + ' [{}]'.format(self.index)
 
 
 class Script(object):
@@ -105,7 +106,7 @@ class ScriptParseException(common.Error):
     pass
 
 
-def parse_script_line(string):
+def parse_script_line(string, index):
     """
     :param string: script line in format [action] <object> (object_instance) <subject> (object_instance)
     :return: ScriptLine objects; raises ScriptParseException
@@ -131,19 +132,19 @@ def parse_script_line(string):
         raise ScriptParseException('Wrong number of parameters for "{}". Got {}, expected {}',
                                    action.name, len(params), action.value[1])
 
-    return ScriptLine(action, params)
+    return ScriptLine(action, params, index)
 
 
 
 def read_script(file_name):
     script_lines = []
     with open(file_name) as f:
-        for line in f:
+        for index, line in enumerate(f):
             if '[' not in line:
                 continue
             line = line.strip()
             if len(line) > 0 and not line.startswith('#'):
-                script_lines.append(parse_script_line(line))
+                script_lines.append(parse_script_line(line, index))
     return Script(script_lines)
 
 
