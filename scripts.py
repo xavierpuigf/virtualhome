@@ -139,12 +139,14 @@ def parse_script_line(string, index):
 def read_script(file_name):
     script_lines = []
     with open(file_name) as f:
-        for index, line in enumerate(f):
+        index = 1
+        for line in f:
             if '[' not in line:
                 continue
             line = line.strip()
             if len(line) > 0 and not line.startswith('#'):
                 script_lines.append(parse_script_line(line, index))
+                index += 1
     return Script(script_lines)
 
 
