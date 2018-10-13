@@ -159,7 +159,7 @@ def check_2(dir_path, graph_path):
         ## add missing object from scripts (id from 1000)
         objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
         ## place the random objects (id from 2000)
-        helper.add_random_objs_graph_dict(graph_dict, n=3) 
+        helper.add_random_objs_graph_dict(graph_dict, n=0) 
         ## set object state to default 
         helper.set_to_default_state(graph_dict)
         helper.random_change_object_state(objects_in_script, graph_dict)
@@ -213,7 +213,7 @@ def check_executability(string, graph_dict):
     if state is None:
         return False
 
-    return True, 
+    return True
     
 
 def modify_script(script):
@@ -246,3 +246,4 @@ if __name__ == '__main__':
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
     check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb', graph_path=translated_path)
     #example_check_executability()
+    

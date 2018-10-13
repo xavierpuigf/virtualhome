@@ -4,7 +4,7 @@ import json
 from termcolor import colored
 
 
-path = 'resources/properties_data.json'
+path = 'resources/object_script_properties_data.json'
 
 property = json.load(open(path, 'r'))
 objects = list(property.keys())

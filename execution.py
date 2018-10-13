@@ -147,7 +147,7 @@ WalkFindExecutor = JoinedExecutor(WalkExecutor(), _FindExecutor())
 OnlyFindExecutor = _FindExecutor()
 
 
-class FindExecutor(ActionExecutor):``
+class FindExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         current_line = script[0]

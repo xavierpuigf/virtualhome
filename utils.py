@@ -1,6 +1,7 @@
 import random
 import json
 import re
+import os
 import copy
 import numpy as np
 from environment import EnvironmentGraph, Property, Room
@@ -21,6 +22,8 @@ def load_graph_dict(file_name):
     return data
 
 def load_name_equivalence(file_name='resources/class_name_equivalence.json'):
+    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_name = os.path.join(abs_dir_path, file_name)
     with open(file_name) as f:
         return json.load(f)
 
@@ -271,6 +274,11 @@ class graph_dict_helper(object):
     def prepare_from_precondition(self, precond, objects_in_script, room_mapping, graph_dict):
 
         relation_script_precond_simulator = self.relation_script_precond_simulator
+        open_closed = self.open_closed
+        on_off = self.on_off
+        clean_dirty = self.clean_dirty
+        plugged_in_out = self.plugged_in_out
+
         for p in precond:
             for k, v in p.items():
                 if k in ['location', 'inside', 'atreach', 'in']:
@@ -292,19 +300,30 @@ class graph_dict_helper(object):
                     if k == 'atreach':
                         graph_dict['edges'].append({'relation_type': relation_script_precond_simulator[k], 'from_id': tgt_id, 'to_id': src_id})
                     
-                elif k in ['is_on', 'is_off', 'open']:
+                elif k in ['is_on', 'is_off', 'open', 'closed', 'plugged', 'unplugged', 'dirty', 'clean', 'sitting', 'lying']:
                     obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]
                     for node in graph_dict['nodes']:
                         if node['id'] == obj_id:
                             if k == 'is_on':
-                                if 'OFF' in node['states']: node['states'].remove('OFF')
-                                node['states'].append('ON')
+                                on_off.set_node_state(node, 'ON')
                             elif k == 'is_off':
-                                if 'ON' in node['states']: node['states'].remove('ON')
-                                node['states'].append('OFF')
+                                on_off.set_node_state(node, 'OFF')
                             elif k == 'open':
-                                if 'CLOSED' in node['states']: node['states'].remove('CLOSED')
-                                node['states'].append('OPEN')
+                                open_closed.set_node_state(node, 'OPEN')
+                            elif k == 'closed':
+                                open_closed.set_node_state(node, 'CLOSED')
+                            elif k == 'dirty':
+                                clean_dirty.set_node_state(node, 'DIRTY')
+                            elif k == 'clean':
+                                clean_dirty.set_node_state(node, 'CLEAN')
+                            elif k == 'plugged':
+                                plugged_in_out.set_node_state(node, 'PLUGGED_IN')
+                            elif k == 'unplugged':
+                                plugged_in_out.set_node_state(node, 'PLUGGED_OUT')
+                            elif k == 'sitting':
+                                if "SITTING" not in node["states"]: node["states"].append("SITTING")
+                            elif k == 'lying':
+                                if "LYING" not in node["states"]: node["states"].append("LYING")
                             break
 
     def add_random_objs_graph_dict(self, graph_dict, n):
