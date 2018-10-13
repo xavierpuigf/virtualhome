@@ -6,7 +6,7 @@ import random
 from tqdm import tqdm
 
 from execution import Relation, State
-from scripts import read_script, read_precond, ScriptParseException
+from scripts import read_script, read_script_from_string, ScriptParseException
 from execution import ScriptExecutor
 from environment import EnvironmentGraph, Room
 import ipdb
@@ -119,6 +119,7 @@ def check_2(dir_path, graph_path):
     executable_program_length = []
     not_executable_program_length = []
     #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file27_2.txt')]
+    #program_txt_files = ['temp.txt']
     for j, txt_file in enumerate(program_txt_files):
 
         helper.initialize()
@@ -137,7 +138,7 @@ def check_2(dir_path, graph_path):
                     param.name = object_alias[param.name]
 
         precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
-        precond = read_precond(precond_path)
+        precond = json.load(open(precond_path))
         for p in precond:
             for k, vs in p.items():
                 if isinstance(vs[0], list): 
@@ -197,8 +198,51 @@ def check_2(dir_path, graph_path):
     json.dump(info, open("executable_info.json", 'w'))
 
 
+def check_executability(string, graph_dict):
+
+    try:
+        script = read_script_from_string(string)
+    except ScriptParseException:
+        return False
+
+    graph = EnvironmentGraph(graph_dict)
+    name_equivalence = utils.load_name_equivalence()
+    executor = ScriptExecutor(graph, name_equivalence)
+    state = executor.execute(script)
+
+    if state is None:
+        return False
+
+    return True, 
+    
+
+def modify_script(script):
+
+    modif_script = []
+    for script_line in script.split(', '):
+        action, object_name, object_i, subject_name, subject_i = script_line.split(' ')
+        if object_name in ['<<none>>', '<<eos>>']:
+            modif_script.append(action)
+        elif subject_name in ['<<none>>', '<<eos>>']:
+            modif_script.append('{} {} {}'.format(action, object_name, object_i))
+        else:
+            modif_script.append('{} {} {} {} {}'.format(action, object_name, object_i, subject_name, subject_i))
+
+    return ', '.join(modif_script)
+
+
+def example_check_executability():
+
+    script1 = '[watch] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>)'
+    script2 = '[find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>)'
+    
+    graph_dict = json.load(open('example_graphs/TrimmedTestScene6_graph.json'))
+    executability = check_executability(modify_script(script2), graph_dict)
+    print("Script is {}executable".format('' if executability else 'not '))
+
 if __name__ == '__main__':
     
     translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
     check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb', graph_path=translated_path)
+    #example_check_executability()

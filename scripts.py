@@ -128,12 +128,12 @@ def parse_script_line(string, index):
     while param_match:
         params.append(ScriptObject(param_match.group(1), int(param_match.group(2))))
         param_match = re.search(patt_params, param_match.string[param_match.end(2):])
+
     if len(params) != action.value[1]:
         raise ScriptParseException('Wrong number of parameters for "{}". Got {}, expected {}',
                                    action.name, len(params), action.value[1])
 
     return ScriptLine(action, params, index)
-
 
 
 def read_script(file_name):
@@ -144,13 +144,24 @@ def read_script(file_name):
             if '[' not in line:
                 continue
             line = line.strip()
+            
             if len(line) > 0 and not line.startswith('#'):
                 script_lines.append(parse_script_line(line, index))
                 index += 1
     return Script(script_lines)
 
 
-def read_precond(file_name):
+def read_script_from_string(string):
 
-    f = json.load(open(file_name))
-    return f
+    script_lines = []
+    string = string.split(', ')
+    index = 1
+    for line in string:
+        if '[' not in line:
+            continue
+        line = line.strip()
+        
+        if len(line) > 0 and not line.startswith('#'):
+            script_lines.append(parse_script_line(line, index))
+            index += 1
+    return Script(script_lines)
