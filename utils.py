@@ -347,7 +347,7 @@ class graph_dict_helper(object):
                                 open_closed.set_node_state(node, states_script_precond_simulator[k])
                             elif k in ['dirty', 'clean']:
                                 clean_dirty.set_node_state(node, states_script_precond_simulator[k])
-                            elif k == ['plugged', 'unplugged']:
+                            elif k in ['plugged', 'unplugged']:
                                 plugged_in_out.set_node_state(node, states_script_precond_simulator[k])
                             elif k == 'sitting':
                                 if "SITTING" not in node["states"]: node["states"].append("SITTING")
