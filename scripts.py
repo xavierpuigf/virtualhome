@@ -15,7 +15,7 @@ class Action(Enum):
     CLOSE = ("Close", 1)
     DRINK = ("Drink", 1)
     FIND = ("Find", 1)
-    GOTO = ("Walk", 1)
+    WALK = ("Walk", 1)
     GRAB = ("Grab", 1)
     LOOKAT = ("Look at", 1)
     LOOKAT_SHORT = ("Look at short", 1)
@@ -34,7 +34,6 @@ class Action(Enum):
     SWITCHON = ("Switch on", 1)
     TOUCH = ("Touch", 1)
     TURNTO = ("Turn to", 1)
-    WALK = GOTO
     WATCH = ("Watch", 1)
     WIPE = ("Wipe", 1)
     PUTON = ("PutOn", 1)

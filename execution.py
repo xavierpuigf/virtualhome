@@ -1080,7 +1080,7 @@ def _is_inside(state: EnvironmentState, node: Node):
 class ScriptExecutor(object):
 
     _action_executors = {
-        Action.GOTO: WalkExecutor(),
+        Action.WALK: WalkExecutor(),
         Action.FIND: FindExecutor(),
         Action.SIT: SitExecutor(),
         Action.STANDUP: StandUpExecutor(),

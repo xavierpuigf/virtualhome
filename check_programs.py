@@ -46,14 +46,38 @@ def write_new_txt(txt_file, precond_path, message):
     new_f.close()
 
 
-def dump_one_data(txt_file, graph_dict):
+def dump_one_data(txt_file, script, graph_dict, objects_in_script):
 
     new_path = txt_file.replace('withoutconds', 'executable_programs')
     new_dir = os.path.dirname(new_path)
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
 
-    copyfile(txt_file, new_path)
+    # read old program
+    old_f = open(txt_file, 'r')
+    old_program = old_f.read()
+    old_f.close()
+
+    new_f = open(new_path, 'w')
+    
+    prefix = old_program.split('\n\n\n')[0]
+    new_f.write(prefix)
+    new_f.write('\n\n\n')
+
+    for script_line in script:
+        script_line_str = '[{}]'.format(script_line.action.name)
+        if script_line.object():
+            script_line_str += ' <{}> ({})'.format(script_line.object().name, script_line.object().instance)
+        if script_line.subject():
+            script_line_str += ' <{}> ({})'.format(script_line.subject().name, script_line.subject().instance)
+
+        for k, v in objects_in_script.items():
+            obj_name, obj_number = k
+            id = v
+            script_line_str = script_line_str.replace('<{}> ({})'.format(obj_name, id), '<{}> ({}.{})'.format(obj_name, obj_number, id))
+        
+        new_f.write(script_line_str)
+        new_f.write('\n')
 
     new_path = txt_file.replace('withoutconds', 'executable_graphs').replace('txt', 'json')
     new_dir = os.path.dirname(new_path)
@@ -126,12 +150,6 @@ def check_2(dir_path, graph_path):
     properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
     object_states = json.load(open('resources/object_states.json'))    # not used now
     object_placing = json.load(open('resources/object_script_placing.json'))
-    object_alias = json.load(open('resources/object_merged.json'))
-    _object_alias = {}
-    for k, vs in object_alias.items():
-        for v in vs:
-            _object_alias[v] = k
-    object_alias = _object_alias
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states)
     executable_programs = 0
@@ -151,27 +169,17 @@ def check_2(dir_path, graph_path):
             not_parsable_programs += 1            
             continue
 
-        # object alias
-        for script_line in script:
-            for param in script_line.parameters:
-                if param.name in object_alias:
-                    param.name = object_alias[param.name]
-
         precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
         precond = json.load(open(precond_path))
+        
         for p in precond:
             for k, vs in p.items():
                 if isinstance(vs[0], list): 
                     for v in vs:
                         v[0] = v[0].lower().replace(' ', '_')
-                        if v[0] in object_alias:
-                            v[0] =  object_alias[v[0]]
                 else:
                     v = vs
                     v[0] = v[0].lower().replace(' ', '_')
-                    if v[0] in object_alias:
-                        v[0] =  object_alias[v[0]]
-
 
         # modif the graph_dict
         graph_dict = utils.load_graph_dict(graph_path)
@@ -200,7 +208,7 @@ def check_2(dir_path, graph_path):
             if verbose:
                 print(message)
         else:
-            dump_one_data(txt_file, graph_dict)
+            dump_one_data(txt_file, script, graph_dict, objects_in_script)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
@@ -208,7 +216,7 @@ def check_2(dir_path, graph_path):
                 print(message)
 
         info.update({txt_file: message})
-        write_new_txt(txt_file, precond_path, message)
+        #write_new_txt(txt_file, precond_path, message)
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
@@ -260,6 +268,7 @@ def example_check_executability():
     graph_dict = json.load(open('example_graphs/TrimmedTestScene6_graph.json'))
     executability = check_executability(modify_script(script2), graph_dict)
     print("Script is {}executable".format('' if executability else 'not '))
+
 
 if __name__ == '__main__':
     
