@@ -1,6 +1,7 @@
 import random
 import json
 import re
+import os
 import copy
 import numpy as np
 from environment import EnvironmentGraph, Property, Room
@@ -21,6 +22,8 @@ def load_graph_dict(file_name):
     return data
 
 def load_name_equivalence(file_name='resources/class_name_equivalence.json'):
+    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_name = os.path.join(abs_dir_path, file_name)
     with open(file_name) as f:
         return json.load(f)
 
@@ -69,6 +72,7 @@ class BinaryVariable(object):
     
     def set_node_state(self, node, node_state):
 
+        assert node_state in [self.positive, self.negative]
         if node_state == self.positive:
             remove_state = self.negative
         else:
@@ -90,16 +94,57 @@ class graph_dict_helper(object):
         self.on_off = BinaryVariable(["ON", "OFF"], default="OFF")
         self.clean_dirty = BinaryVariable(["CLEAN", "DIRTY"], default="CLEAN")
         self.plugged_in_out = BinaryVariable(["PLUGGED_IN", "PLUGGED_OUT"], default="PLUGGED_IN")
+
+        self.body_part = ['face', 'leg', 'arm', 'eye', 'hand', 'feet']
+        self.possible_rooms = ['home_office', 'kitchen', 'living_room', 'bathroom', 'dining_room', 'bedroom', 'kids_bedroom', 'entrance_hall']
+        
+        self.equivalent_rooms = {
+            "kitchen": ["dining_room"], 
+            "dining_room": ["kitchen"], 
+            "entrance_hall": ["living_room"], 
+            "home_office": ["living_room"], 
+            "living_room": ["home_office"],
+            "kids_bedroom": ["bedroom"]
+        }
+
+        # precondition to simulator
         self.relation_script_precond_simulator = {
             "inside": "INSIDE", 
             "location": "INSIDE", 
             "atreach": "CLOSE", 
             "in": "ON"
         }
+
+        self.states_script_precond_simulator = {
+            "dirty": "DIRTY", 
+            "clean": "CLEAN", 
+            "open": "OPEN", 
+            "closed": "CLOSED", 
+            "plugged": "PLUGGED_IN", 
+            "unplugged": "PLUGGED_OUT", 
+            "is_on": "ON", 
+            "is_off": "OFF", 
+            "sitting": "SITTING", 
+            "lying": "LYING"
+        }
+
+        # object_placing.json
         self.relation_placing_simulator = {
             "in": "INSIDE", 
             "on": "ON", 
             "nearby": "CLOSE"
+        }
+
+        # object_states.json
+        self.states_mapping = {
+            "dirty": "dirty", 
+            "clean": "clean", 
+            "open": "open", 
+            "closed": "closed", 
+            "plugged": "plugged_in", 
+            "unplugged": "plugged_out", 
+            "on": "on", 
+            "off": "off"
         }
 
     def initialize(self):
@@ -112,8 +157,8 @@ class graph_dict_helper(object):
         on_off = self.on_off
         clean_dirty = self.clean_dirty
         plugged_in_out = self.plugged_in_out
+        body_part = self.body_part
 
-        body_part = ['face', 'leg', 'arm', 'eye', 'hand', 'feet']
         character_id = [i["id"] for i in filter(lambda v: v["class_name"] == 'character', graph_dict["nodes"])][0]
 
         for node in graph_dict["nodes"]:
@@ -160,18 +205,12 @@ class graph_dict_helper(object):
 
     def add_missing_object_from_script(self, script, graph_dict):
         
-        possible_rooms = ['home_office', 'kitchen', 'living_room', 'bathroom', 'dining_room', 'bedroom', 'kids_bedroom', 'entrance_hall']
         available_rooms = [i['class_name'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
         available_rooms_id = [i['id'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
 
-        equivalent_rooms = {
-            "kitchen": ["dining_room"], 
-            "dining_room": ["kitchen"], 
-            "entrance_hall": ["living_room"], 
-            "home_office": ["living_room"], 
-            "living_room": ["home_office"],
-            "kids_bedroom": ["bedroom"]
-        }
+        equivalent_rooms = self.equivalent_rooms
+        possible_rooms = self.possible_rooms
+
         room_mapping = {}
         for room in possible_rooms:
             if room not in available_rooms:
@@ -271,9 +310,15 @@ class graph_dict_helper(object):
     def prepare_from_precondition(self, precond, objects_in_script, room_mapping, graph_dict):
 
         relation_script_precond_simulator = self.relation_script_precond_simulator
+        states_script_precond_simulator = self.states_script_precond_simulator
+        open_closed = self.open_closed
+        on_off = self.on_off
+        clean_dirty = self.clean_dirty
+        plugged_in_out = self.plugged_in_out
+
         for p in precond:
             for k, v in p.items():
-                if k in ['location', 'inside', 'atreach', 'in']:
+                if k in relation_script_precond_simulator:
                     src_name, src_id = v[0]
                     tgt_name, tgt_id = v[1]
                     src_id = int(src_id)
@@ -292,19 +337,22 @@ class graph_dict_helper(object):
                     if k == 'atreach':
                         graph_dict['edges'].append({'relation_type': relation_script_precond_simulator[k], 'from_id': tgt_id, 'to_id': src_id})
                     
-                elif k in ['is_on', 'is_off', 'open']:
+                elif k in states_script_precond_simulator:
                     obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]
                     for node in graph_dict['nodes']:
                         if node['id'] == obj_id:
-                            if k == 'is_on':
-                                if 'OFF' in node['states']: node['states'].remove('OFF')
-                                node['states'].append('ON')
-                            elif k == 'is_off':
-                                if 'ON' in node['states']: node['states'].remove('ON')
-                                node['states'].append('OFF')
-                            elif k == 'open':
-                                if 'CLOSED' in node['states']: node['states'].remove('CLOSED')
-                                node['states'].append('OPEN')
+                            if k in ['is_on', 'is_off']:
+                                on_off.set_node_state(node, states_script_precond_simulator[k])
+                            elif k in ['open', 'closed']:
+                                open_closed.set_node_state(node, states_script_precond_simulator[k])
+                            elif k in ['dirty', 'clean']:
+                                clean_dirty.set_node_state(node, states_script_precond_simulator[k])
+                            elif k in ['plugged', 'unplugged']:
+                                plugged_in_out.set_node_state(node, states_script_precond_simulator[k])
+                            elif k == 'sitting':
+                                if "SITTING" not in node["states"]: node["states"].append("SITTING")
+                            elif k == 'lying':
+                                if "LYING" not in node["states"]: node["states"].append("LYING")
                             break
 
     def add_random_objs_graph_dict(self, graph_dict, n):
@@ -345,17 +393,7 @@ class graph_dict_helper(object):
         object_placing = self.object_placing
         object_states = self.object_states
         objects_to_place = list(object_placing.keys())
-
-        states_mapping = {
-            "dirty": "dirty", 
-            "clean": "clean", 
-            "open": "open", 
-            "closed": "closed", 
-            "plugged": "plugged_in", 
-            "unplugged": "plugged_out", 
-            "on": "on", 
-            "off": "off"
-        }
+        states_mapping = self.states_mapping
 
         object_id_in_program = [i for i in objects_in_script.values()]
         available_states = ['dirty', 'clean', 'open', 'closed', 'free', 'occupied', 'plugged', 'unplugged', 'on', 'off']

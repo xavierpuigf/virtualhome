@@ -184,7 +184,7 @@ Possible relations (edge labels) are:
 ### DrinkExecutor
 - script: drink `object`
 - Pre-condition:
-    - `object` property is drinkable
+    - `object` property is drinkable or recipient
     - exists edge `character` holds_rh `object` or `character` holds_lh `object`
 
 ### TurnToExecutor

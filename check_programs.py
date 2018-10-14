@@ -4,6 +4,7 @@ import utils
 import glob
 import random
 from tqdm import tqdm
+from shutil import copyfile
 
 from execution import Relation, State
 from scripts import read_script, read_script_from_string, ScriptParseException
@@ -13,7 +14,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = False
+verbose = True
 
 
 def write_new_txt(txt_file, precond_path, message):
@@ -42,6 +43,25 @@ def write_new_txt(txt_file, precond_path, message):
     new_f.write(f.read())
     f.close()
 
+    new_f.close()
+
+
+def dump_one_data(txt_file, graph_dict):
+
+    new_path = txt_file.replace('withoutconds', 'executable_programs')
+    new_dir = os.path.dirname(new_path)
+    if not os.path.exists(new_dir):
+        os.makedirs(new_dir)
+
+    copyfile(txt_file, new_path)
+
+    new_path = txt_file.replace('withoutconds', 'executable_graphs').replace('txt', 'json')
+    new_dir = os.path.dirname(new_path)
+    if not os.path.exists(new_dir):
+        os.makedirs(new_dir)
+
+    new_f = open(new_path, 'w')
+    json.dump(graph_dict, new_f)
     new_f.close()
 
 
@@ -118,7 +138,7 @@ def check_2(dir_path, graph_path):
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file27_2.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file521_1.txt')]
     #program_txt_files = ['temp.txt']
     for j, txt_file in enumerate(program_txt_files):
 
@@ -159,7 +179,7 @@ def check_2(dir_path, graph_path):
         ## add missing object from scripts (id from 1000)
         objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
         ## place the random objects (id from 2000)
-        helper.add_random_objs_graph_dict(graph_dict, n=3) 
+        helper.add_random_objs_graph_dict(graph_dict, n=0) 
         ## set object state to default 
         helper.set_to_default_state(graph_dict)
         helper.random_change_object_state(objects_in_script, graph_dict)
@@ -180,6 +200,7 @@ def check_2(dir_path, graph_path):
             if verbose:
                 print(message)
         else:
+            dump_one_data(txt_file, graph_dict)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
@@ -187,7 +208,7 @@ def check_2(dir_path, graph_path):
                 print(message)
 
         info.update({txt_file: message})
-        #write_new_txt(txt_file, precond_path, message)
+        write_new_txt(txt_file, precond_path, message)
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
@@ -213,7 +234,7 @@ def check_executability(string, graph_dict):
     if state is None:
         return False
 
-    return True, 
+    return True
     
 
 def modify_script(script):
@@ -244,5 +265,6 @@ if __name__ == '__main__':
     
     translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
-    check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb', graph_path=translated_path)
+    check_2('/Users/andrew/UofT/home_sketch2program/dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
     #example_check_executability()
+    

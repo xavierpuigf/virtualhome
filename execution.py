@@ -451,8 +451,8 @@ class DrinkExecutor(ActionExecutor):
             yield state.change_state([])
 
     def check_drinkable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        if Property.DRINKABLE not in node.properties:
-            info.error('{} is not drinkable', node)
+        if Property.DRINKABLE not in node.properties and Property.RECIPIENT not in node.properties:
+            info.error('{} is not drinkable or not recipient', node)
             return False
         hand_rel = _find_holding_hand(state, node)
         if hand_rel is None:
