@@ -23,8 +23,9 @@ class Action(Enum):
     LOOKAT_LONG = ("Look at long", 1)
     OPEN = ("Open", 1)
     POINTAT = ("Point at", 1)
-    PUT = ("Put", 2)
-    PUTBACK = PUT
+    PUTBACK = ("Put", 2)
+    #PUT = ("Put", 2)
+    #PUTBACK = PUT
     PUTIN = ("Put in", 2)
     PUTOBJBACK = ("Put back", 1)
     RUN = ("Run", 1)

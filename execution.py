@@ -1087,7 +1087,7 @@ class ScriptExecutor(object):
         Action.GRAB: GrabExecutor(),
         Action.OPEN: OpenExecutor(False),
         Action.CLOSE: OpenExecutor(True),
-        Action.PUT: PutExecutor(Relation.ON),
+        Action.PUTBACK: PutExecutor(Relation.ON),
         Action.PUTIN: PutExecutor(Relation.INSIDE),
         Action.SWITCHON: SwitchExecutor(True),
         Action.SWITCHOFF: SwitchExecutor(False),

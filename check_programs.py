@@ -144,6 +144,7 @@ def check_2(dir_path, graph_path):
     """
 
     info = {}
+    max_nodes = 280
 
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
@@ -186,15 +187,18 @@ def check_2(dir_path, graph_path):
 
         ## add missing object from scripts (id from 1000)
         objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
-        ## place the random objects (id from 2000)
-        helper.add_random_objs_graph_dict(graph_dict, n=0) 
         ## set object state to default 
-        helper.set_to_default_state(graph_dict)
+        helper.set_to_default_state(graph_dict, id_checker=lambda v: True)
         helper.random_change_object_state(objects_in_script, graph_dict)
-
 
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
+
+        ## place the random objects (id from 2000)
+        helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+        ## set object state to default 
+        helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
+        assert len(graph_dict["nodes"]) == max_nodes
 
         graph = EnvironmentGraph(graph_dict)
 
