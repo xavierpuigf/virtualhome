@@ -8,10 +8,11 @@ def export_graph(file_name):
     success, graph = comm.environment_graph()
     with open('../example_graphs/' + file_name, 'w') as file:
         json.dump(graph, file)
+        print('Exported "{}"'.format(file_name))
 
 
 if __name__ == '__main__':
-    file_name = 'graph.json'
-    if len(sys.argv) > 1:
-        file_name = sys.argv[1]
-    export_graph(file_name)
+    file_name_pattern = 'TestScene{}_graph.json'
+    while True:
+        scene_index = input('Enter scene index (integer): ')
+        export_graph(file_name_pattern.format(scene_index))

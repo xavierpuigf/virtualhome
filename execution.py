@@ -784,7 +784,7 @@ class WatchExecutor(ActionExecutor):
         char_room = _get_room_node(state, _get_character_node(state))
         node_room = _get_room_node(state, node)
         
-        if node.class_name not in ['television', 'laptop', 'computer']:
+        if node.class_name not in ['television', 'tv', 'laptop', 'computer']:
             info.error('only watching television, computer or laptop is allowed')
             return False
 
