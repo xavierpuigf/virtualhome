@@ -288,13 +288,15 @@ class graph_dict_helper(object):
                 if not added:
                     # add edges
                     graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
-                    self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placing_objects')
+                    node_with_same_class_name = [node for node in filter(lambda v: v["class_name"] == obj[0], graph_dict["nodes"])]
+                    category = node_with_same_class_name[0]['category']
+                    self._add_missing_node(graph_dict, self.script_objects_id, obj[0], category)
                     objects_in_script[obj] = self.script_objects_id
                     self.script_objects_id += 1
             else:
                 # add missing nodes
                 graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
-                self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placing_objects')
+                self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placable_objects')
                 objects_in_script[obj] = self.script_objects_id
                 self.script_objects_id += 1
 
