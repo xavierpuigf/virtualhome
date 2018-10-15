@@ -1080,14 +1080,14 @@ def _is_inside(state: EnvironmentState, node: Node):
 class ScriptExecutor(object):
 
     _action_executors = {
-        Action.GOTO: WalkExecutor(),
+        Action.WALK: WalkExecutor(),
         Action.FIND: FindExecutor(),
         Action.SIT: SitExecutor(),
         Action.STANDUP: StandUpExecutor(),
         Action.GRAB: GrabExecutor(),
         Action.OPEN: OpenExecutor(False),
         Action.CLOSE: OpenExecutor(True),
-        Action.PUT: PutExecutor(Relation.ON),
+        Action.PUTBACK: PutExecutor(Relation.ON),
         Action.PUTIN: PutExecutor(Relation.INSIDE),
         Action.SWITCHON: SwitchExecutor(True),
         Action.SWITCHOFF: SwitchExecutor(False),

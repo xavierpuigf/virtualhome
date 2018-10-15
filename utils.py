@@ -151,7 +151,7 @@ class graph_dict_helper(object):
         self.script_objects_id = 1000
         self.random_objects_id = 2000
 
-    def set_to_default_state(self, graph_dict):
+    def set_to_default_state(self, graph_dict, id_checker):
         
         open_closed = self.open_closed
         on_off = self.on_off
@@ -163,35 +163,36 @@ class graph_dict_helper(object):
 
         for node in graph_dict["nodes"]:
 
-            # always set to off, closed, open, clean
-            if "CAN_OPEN" in node["properties"]:
-                open_closed.set_to_default_state(node)
-            if "HAS_PLUG" in node["properties"]:
-                plugged_in_out.set_to_default_state(node)
-            if "HAS_SWTICH" in node["properties"]:
-                on_off.set_to_default_state(node)
-            clean_dirty.set_to_default_state(node)
+            if id_checker(node["id"]):
+                # always set to off, closed, open, clean
+                if "CAN_OPEN" in node["properties"]:
+                    open_closed.set_to_default_state(node)
+                if "HAS_PLUG" in node["properties"]:
+                    plugged_in_out.set_to_default_state(node)
+                if "HAS_SWTICH" in node["properties"]:
+                    on_off.set_to_default_state(node)
+                clean_dirty.set_to_default_state(node)
 
-            # character is not sitting, lying, holding, not close to anything
-            if node["class_name"] == 'character':
-                # character is not inside anything 
-                graph_dict["edges"] = [e for e in filter(lambda e: e["from_id"] != character_id and e["to_id"] != character_id, graph_dict["edges"])]
+                # character is not sitting, lying, holding, not close to anything
+                if node["class_name"] == 'character':
+                    # character is not inside anything 
+                    graph_dict["edges"] = [e for e in filter(lambda e: e["from_id"] != character_id and e["to_id"] != character_id, graph_dict["edges"])]
 
-                # set the character inside the pre-specified room
-                default_room_id = [i["id"] for i in filter(lambda v: v["class_name"] == 'living_room', graph_dict["nodes"])][0]
-                graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": character_id, "to_id": default_room_id})
+                    # set the character inside the pre-specified room
+                    default_room_id = [i["id"] for i in filter(lambda v: v["class_name"] == 'living_room', graph_dict["nodes"])][0]
+                    graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": character_id, "to_id": default_room_id})
 
-                node["states"] = []
+                    node["states"] = []
 
-            if "light" in node["class_name"]:
-                node["states"].append("ON")
+                if "light" in node["class_name"]:
+                    node["states"].append("ON")
 
-            if node["category"] == "Doors":
-                node["states"].append("OPEN")
+                if node["category"] == "Doors":
+                    node["states"].append("OPEN")
 
-            if any([Property.BODY_PART in node["properties"] for v in body_part]):
-                graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": character_id, "to_id": node["id"]})
-                graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": node["id"], "to_id": character_id})
+                if any([Property.BODY_PART in node["properties"] for v in body_part]):
+                    graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": character_id, "to_id": node["id"]})
+                    graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": node["id"], "to_id": character_id})
      
     def _add_missing_node(self, graph_dict, id, obj, category):
                     
@@ -287,13 +288,15 @@ class graph_dict_helper(object):
                 if not added:
                     # add edges
                     graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
-                    self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placing_objects')
+                    node_with_same_class_name = [node for node in filter(lambda v: v["class_name"] == obj[0], graph_dict["nodes"])]
+                    category = node_with_same_class_name[0]['category']
+                    self._add_missing_node(graph_dict, self.script_objects_id, obj[0], category)
                     objects_in_script[obj] = self.script_objects_id
                     self.script_objects_id += 1
             else:
                 # add missing nodes
                 graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
-                self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placing_objects')
+                self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placable_objects')
                 objects_in_script[obj] = self.script_objects_id
                 self.script_objects_id += 1
 
