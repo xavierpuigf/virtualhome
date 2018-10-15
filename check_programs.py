@@ -46,7 +46,7 @@ def write_new_txt(txt_file, precond_path, message):
     new_f.close()
 
 
-def dump_one_data(txt_file, script, graph_dict, objects_in_script):
+def dump_one_data(txt_file, script, graph_dict, final_state, objects_in_script):
 
     new_path = txt_file.replace('withoutconds', 'executable_programs')
     new_dir = os.path.dirname(new_path)
@@ -79,13 +79,13 @@ def dump_one_data(txt_file, script, graph_dict, objects_in_script):
         new_f.write(script_line_str)
         new_f.write('\n')
 
-    new_path = txt_file.replace('withoutconds', 'executable_graphs').replace('txt', 'json')
+    new_path = txt_file.replace('withoutconds', 'init_and_final_graphs').replace('txt', 'json')
     new_dir = os.path.dirname(new_path)
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
 
     new_f = open(new_path, 'w')
-    json.dump(graph_dict, new_f)
+    json.dump({"init_graph": graph_dict, "final_graph": final_state}, new_f)
     new_f.close()
 
 
@@ -212,7 +212,8 @@ def check_2(dir_path, graph_path):
             if verbose:
                 print(message)
         else:
-            dump_one_data(txt_file, script, graph_dict, objects_in_script)
+            final_state = state.to_dict()
+            dump_one_data(txt_file, script, graph_dict, final_state,  objects_in_script)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
