@@ -149,7 +149,7 @@ def check_2(dir_path, graph_path):
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
     properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
-    object_states = json.load(open('resources/object_states.json'))    # not used now
+    object_states = json.load(open('resources/object_states.json'))
     object_placing = json.load(open('resources/object_script_placing.json'))
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states)
@@ -157,7 +157,7 @@ def check_2(dir_path, graph_path):
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file521_1.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file1028_1.txt')]
     #program_txt_files = ['temp.txt']
     for j, txt_file in enumerate(program_txt_files):
 
@@ -233,20 +233,23 @@ def check_2(dir_path, graph_path):
 
 def check_executability(string, graph_dict):
 
+    able_to_be_parsed = False
+    able_to_be_executed = False
     try:
         script = read_script_from_string(string)
+        able_to_be_parsed = True
     except ScriptParseException:
-        return False
+        return able_to_be_parsed, able_to_be_executed
 
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
     state = executor.execute(script)
 
-    if state is None:
-        return False
+    if state is not None:
+        able_to_be_executed = True
 
-    return True
+    return able_to_be_parsed, able_to_be_executed
     
 
 def modify_script(script):
