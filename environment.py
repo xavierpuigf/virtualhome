@@ -93,6 +93,9 @@ class Bounds(object):
         self.center = center
         self.size = size
 
+    def to_dict(self):
+        return {'center': self.center, 'size': self.size}
+
 
 class Node(object):
     def __init__(self, id):
@@ -112,13 +115,20 @@ class GraphNode(Node):
 
     def copy(self):
         return GraphNode(self.id, self.class_name, self.properties.copy(), self.states.copy(),
-                        self.category, self.prefab_name, self.bounding_box)
+                         self.category, self.prefab_name, self.bounding_box)
 
-    # def __str__(self):
-    #     return '<{}> ({})'.format(self.class_name, self.prefab_name)
     def __str__(self):
         return '{}(id:{})'.format(self.class_name, self.id)
 
+    def to_dict(self):
+        return {'id': self.id,
+                'class_name': self.class_name,
+                'category': self.category,
+                'properties': [p.name for p in self.properties],
+                'states': [s.name for s in self.states],
+                'prefab_name': self.prefab_name,
+                'bounding_box': None if self.bounding_box is None else self.bounding_box.to_dict()
+                }
 
     @staticmethod
     def from_dict(d):
@@ -138,6 +148,8 @@ class GraphNode(Node):
                          {s if isinstance(s, Property) else Property[s.upper()] for s in d['properties']},
                          {State[s.upper()] for s in d['states']},
                          **kwargs)
+
+
 
 
 class GraphEdge(object):
@@ -198,19 +210,22 @@ class EnvironmentGraph(object):
         return self._node_map.get(node_id, None)
 
     def get_nodes_from(self, from_node: Node, relation: Relation):
-        return self._get_node_maps_from(from_node, relation).values()
+        return self._get_node_maps_from(from_node.id, relation).values()
 
-    def get_node_ids_from(self, from_node: Node, relation: Relation):
-        return self._get_node_maps_from(from_node, relation).keys()
+    def get_node_ids_from(self, from_id: int, relation: Relation):
+        return self._get_node_maps_from(from_id, relation).keys()
 
-    def _get_node_maps_from(self, from_node: Node, relation: Relation):
-        return self._edge_map.get((from_node.id, relation), {})
+    def _get_node_maps_from(self, from_id: int, relation: Relation):
+        return self._edge_map.get((from_id, relation), {})
+
+    def get_from_pairs(self):
+        return self._edge_map.keys()
 
     def get_max_node_id(self):
         return self._max_node_id
 
     def has_edge(self, from_node: Node, relation: Relation, to_node: Node):
-        return to_node.id in self._get_node_maps_from(from_node, relation)
+        return to_node.id in self._get_node_maps_from(from_node.id, relation)
 
     def add_node(self, node: GraphNode):
         assert node.id not in self._node_map
@@ -284,7 +299,7 @@ class EnvironmentState(object):
 
     def get_nodes_from(self, from_node: Node, relation: Relation):
         id_set = self._new_edges_from.get((from_node.id, relation), set())
-        id_set.update(self._graph.get_node_ids_from(from_node, relation))
+        id_set.update(self._graph.get_node_ids_from(from_node.id, relation))
         removed_ids = self._removed_edges_from.get((from_node.id, relation), set())
         id_set.difference_update(removed_ids)
         result = []
@@ -294,6 +309,13 @@ class EnvironmentState(object):
             else:
                 result.append(self._graph.get_node(node_id))
         return result
+
+    def get_node_ids_from(self, from_id: int, relation: Relation):
+        id_set = self._new_edges_from.get((from_id, relation), set())
+        id_set.update(self._graph.get_node_ids_from(from_id, relation))
+        removed_ids = self._removed_edges_from.get((from_id, relation), set())
+        id_set.difference_update(removed_ids)
+        return id_set
 
     def get_nodes(self):
         result = list(self._new_nodes.values())
@@ -361,6 +383,14 @@ class EnvironmentState(object):
     def apply_changes(self, changers: List['StateChanger']):
         for changer in changers:
             changer.apply_changes(self)
+
+    def to_dict(self):
+        edges = []
+        from_pairs = self._new_edges_from.keys() | self._graph.get_from_pairs()
+        for from_n, r in from_pairs:
+            for to_n in self.get_node_ids_from(from_n, r):
+                edges.append({'from_id': from_n, 'relation_type': r.name, 'to_id': to_n})
+        return {'nodes': [n.to_dict() for n in self.get_nodes()], 'edges': edges}
 
 
 # NodeEnumerator-s
@@ -442,7 +472,8 @@ class ObjectOnNode(NodeEnumerator):
         for n in state.get_nodes():
             if state.evaluate(ExistsRelation(NodeInstance(n), Relation.ON, NodeInstanceFilter(self.surface_node))):
                  yield n
-    
+
+
 class BodyNode(NodeEnumerator):
 
     def enumerate(self, state: EnvironmentState, **kwargs):

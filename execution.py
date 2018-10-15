@@ -7,6 +7,7 @@ from scripts import Action, ScriptLine, Script
 
 import ipdb
 
+
 # ExecutionInfo
 ###############################################################################
 
@@ -38,7 +39,6 @@ class ExecutionInfo(object):
 
 # ActionExecutor-s
 ###############################################################################
-
 
 class ActionExecutor(object):
 
@@ -82,12 +82,12 @@ class WalkExecutor(ActionExecutor):
         for node in state.select_nodes(current_obj):
             if self.check_walk(state, node, info):
                 changes = [DeleteEdges(CharacterNode(),
-                                 [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
-                                 AnyNode(), delete_reverse=True),
-                            AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True), 
-                            AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True), 
-                            AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
-                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
+                                       [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
+                                       AnyNode(), delete_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True),
+                           AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                           AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
                      ]
                 # close to object in hands
                 char_node = _get_character_node(state)
@@ -143,8 +143,8 @@ class _FindExecutor(ActionExecutor):
         return True
 
 
-WalkFindExecutor = JoinedExecutor(WalkExecutor(), _FindExecutor())
-OnlyFindExecutor = _FindExecutor()
+_walk_find_executor = JoinedExecutor(WalkExecutor(), _FindExecutor())
+_only_find_executor = _FindExecutor()
 
 
 class FindExecutor(ActionExecutor):
@@ -158,13 +158,13 @@ class FindExecutor(ActionExecutor):
             char_node = _get_character_node(state)
 
             if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
-                return OnlyFindExecutor.execute(script, state, info)
+                return _only_find_executor.execute(script, state, info)
             elif Property.BODY_PART in node.properties:
-                return OnlyFindExecutor.execute(script, state, info)
+                return _only_find_executor.execute(script, state, info)
             elif State.SITTING not in char_node.states and State.LYING not in char_node.states:
-                return WalkFindExecutor.execute(script, state, info)
+                return _walk_find_executor.execute(script, state, info)
             else:
-                return OnlyFindExecutor.execute(script, state, info)
+                return _only_find_executor.execute(script, state, info)
 
 
 class GreetExecutor(ActionExecutor):
@@ -211,6 +211,7 @@ class SitExecutor(ActionExecutor):
             new_char_node.states.add(State.SITTING)
             yield state.change_state(
                 [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
+                 AddEdges(CharacterNode(), Relation.FACING, RelationFrom(node, Relation.FACING)),
                  ChangeNode(new_char_node)]
             )
 
@@ -690,7 +691,7 @@ class LieExecutor(ActionExecutor):
             info.error('{} is not close to {}', char_node, node)
             return False
         if State.LYING in char_node.states:
-            info.error('{}(id:{}) is lying', char_node)
+            info.error('{} is lying', char_node)
             return False
         if Property.LIEABLE not in node.properties:
             info.error('{} is not lieable', node)
@@ -781,15 +782,18 @@ class WatchExecutor(ActionExecutor):
             yield state.change_state([])
 
     def check_watchable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        char_room = _get_room_node(state, _get_character_node(state))
+        char_node = _get_character_node(state)
+        char_room = _get_room_node(state, char_node)
         node_room = _get_room_node(state, node)
         
-        if node.class_name not in ['television', 'tv', 'laptop', 'computer']:
-            info.error('only watching television, computer or laptop is allowed')
+        if Property.LOOKABLE not in node.properties:
+            info.error('{} not lookable', node)
             return False
-
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
+            return False
+        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+            info.error('{} is not facing {}', char_node, node)
             return False
         if _is_inside(state, node):
             info.error('{} is inside other closed thing', node)
