@@ -366,7 +366,6 @@ class graph_dict_helper(object):
         objects_to_place = list(object_placing.keys())
         random.shuffle(objects_to_place)
 
-        self.random_objects_id = 2000
         while n > 0:
 
             src_name = random.choice(objects_to_place)
