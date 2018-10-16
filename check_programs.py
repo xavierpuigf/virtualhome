@@ -240,7 +240,7 @@ def check_executability(string, graph_dict):
         script = read_script_from_string(string)
         able_to_be_parsed = True
     except ScriptParseException:
-        return able_to_be_parsed, able_to_be_executed
+        return able_to_be_parsed, able_to_be_executed, None
 
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
@@ -248,9 +248,10 @@ def check_executability(string, graph_dict):
     state = executor.execute(script)
 
     if state is not None:
+        state = state.to_dict()
         able_to_be_executed = True
 
-    return able_to_be_parsed, able_to_be_executed
+    return able_to_be_parsed, able_to_be_executed, state
     
 
 def modify_script(script):
