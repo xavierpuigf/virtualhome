@@ -78,7 +78,7 @@ def write_precond(ori_path, all_new_preconds):
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        json.dump(new_precond, new_f)
+        new_f.write(new_precond)
         new_f.close()   
 
 
@@ -172,41 +172,18 @@ for file_name in tqdm(files):
     for rec_id in recursive_selection:
         # change program
         new_lines = prog_orig
+        precond_modif = copy.deepcopy(ori_precond)
+        precond_modif = str(precond_modif).replace('\'', '\"')
+
         for iti, obj_and_id in enumerate(objects_prog):
             orign_object, idi = obj_and_id
             object_new = object_replace_map[obj_and_id][rec_id[iti]]
             object_to_replace_oldname = newobjname2old[orign_object]
             new_lines = [x.replace('<{}> ({})'.format(object_to_replace_oldname, idi), 
                                    '<{}> ({})'.format(object_new, idi)) for x in new_lines]
-        
-        augmented_progs_i.append(new_lines)
+            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(object_to_replace_oldname, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
 
-        # change precond
-        precond_modif = copy.deepcopy(ori_precond)
-        
-        for iti, obj_and_id in enumerate(objects_prog):
-            orign_object, idi = obj_and_id
-            object_new = object_replace_map[obj_and_id][rec_id[iti]]
-
-            for preconds in precond_modif:
-                for precond_relation, precond_objects in preconds.items():
-                    if precond_relation in ['location', 'inside', 'atreach', 'in']:
-                        src_object_name, tgt_object_name = precond_objects
-                        src_need_to_change = src_object_name[0].lower().replace(' ', '_') == orign_object
-                        tgt_need_to_change = tgt_object_name[0].lower().replace(' ', '_') == orign_object
-                        if src_need_to_change:
-                            precond_objects[0][0] = object_new
-                        if tgt_need_to_change:
-                            precond_objects[1][0] = object_new
-                    
-                    elif precond_relation in ['is_on', 'is_off', 'open', 'closed', 'plugged', 'unplugged']:
-                        object_name = precond_objects
-                        need_to_change = object_name[0].lower().replace(' ', '_') == orign_object
-                        if need_to_change:
-                            precond_objects[0] = object_new
-                    else:
-                        print(precond_relation, precond_objects)
-                    
+        augmented_progs_i.append(new_lines)         
         augmented_preconds_i.append(precond_modif)
         npgs += 1
         if npgs > thres:
