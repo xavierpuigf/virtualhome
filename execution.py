@@ -323,11 +323,6 @@ class OpenExecutor(ActionExecutor):
             char_node = _get_character_node(state)
             info.error('{} does not have a free hand', char_node)
             return False
-        
-        if self.close and Property.HAS_SWITCH not in node.properties and _find_free_hand(state) is None:
-            char_node = _get_character_node(state)
-            info.error('{} does not have a free hand', char_node)
-            return False
 
         s = State.OPEN if self.close else State.CLOSED
         if s not in node.states:
