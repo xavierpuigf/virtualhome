@@ -1,4 +1,4 @@
-from graph_export   .scriptcheck import UnityCommunication
+from graph_export.scriptcheck import UnityCommunication
 import json
 import sys
 
@@ -15,4 +15,6 @@ if __name__ == '__main__':
     file_name_pattern = 'TestScene{}_graph.json'
     while True:
         scene_index = input('Enter scene index (integer): ')
+        if not scene_index.isnumeric():
+            break
         export_graph(file_name_pattern.format(scene_index))

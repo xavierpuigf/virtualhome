@@ -6,13 +6,16 @@
 
 Possible relations (edge labels) are:
 
-- on
-- inside
-- between  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
-- close 
-- facing
-- holds_rh  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
-- holds_lh  _analogue of holds_rh for left hand_
+- **on**
+- **inside**
+- **between**  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
+- **close** edge `object1` close `object2` denotes that the distance between center of `object1` (`object2`) to the bounding 
+box of `object2` (`object1`) is < 1.5 units (~meters)  
+- **facing** there is an edge `object1` facing `object2` if `object2` is lookable, is visible from `object1`, and the 
+distance between the centers is < 5 units (~meters). If `object1` is a sofa or a chair
+ it should also be turned towards `object2`
+- **holds_rh**  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
+- **holds_lh**  _analogue of holds_rh for left hand_
 
 ### Properties
 
@@ -101,6 +104,7 @@ Possible relations (edge labels) are:
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
+    - add 
 
 ### StandUpExecutor
 - script: standup
