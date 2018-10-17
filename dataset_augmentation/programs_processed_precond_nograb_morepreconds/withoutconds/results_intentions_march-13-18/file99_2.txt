@@ -1,9 +1,0 @@
-Pick up phone
-Pick up phone
-
-
-[Walk] <TABLE> (1)
-[Find] <PHONE> (1)
-[TurnTo] <PHONE> (1)
-[LookAt] <PHONE> (1)
-[Grab] <PHONE> (1)

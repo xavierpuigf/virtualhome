@@ -1,9 +1,0 @@
-0
-Change sheets and pillow cases
-Bring into the bedroom one fitted sheet, one top sheet and one pillow case. Place them to the side. Remove the sheets that are on the bed. Remove the pillow case that is on the pillow. Put the things that were removed in the dirty clothes hamper. Then unfold the fitted sheet and place it on the mattress. Make sure it is placed on evenly. Then unfold the top sheet and place it on top of the fitted sheet. Make sure it is placed on evenly. Then fold the top of the top sheet back by one foot evenly. Then put the pillow in the clean pillow case. Put the pillow case at the head of the bed.
-
-
-[Find] <PILLOW> (1)
-[TurnTo] <PILLOW> (1)
-[LookAt] <PILLOW> (1)
-[Grab] <PILLOW> (1)

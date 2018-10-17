@@ -1,8 +1,0 @@
-Turn on light
-Turning on lights
-
-
-[Walk] <BEDROOM> (1)
-[Walk] <FLOOR LAMP> (1)
-[Find] <FLOOR LAMP> (1)
-[SwitchOn] <FLOOR LAMP> (1)

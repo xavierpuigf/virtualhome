@@ -1,9 +1,0 @@
-0
-Pet cat
-Find the cat in the living room and crawl on couch
-
-
-[Find] <COMFORTER> (1)
-[Crawl] <COMFORTER> (1)
-[Find] <CAT> (1)
-[Touch] <CAT> (1)

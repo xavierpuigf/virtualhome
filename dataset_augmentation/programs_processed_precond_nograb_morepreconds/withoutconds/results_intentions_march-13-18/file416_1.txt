@@ -1,7 +1,0 @@
-Relax on sofa
-I am going to lay on the sofa and relax.
-
-
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Lie] <SOFA> (1)

@@ -1,8 +1,0 @@
-Browse internet
-turn on the computer and browse the internet
-
-
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)

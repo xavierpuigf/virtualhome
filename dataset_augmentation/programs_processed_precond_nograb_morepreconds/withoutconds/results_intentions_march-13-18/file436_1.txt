@@ -1,9 +1,0 @@
-Pick up phone
-walk to living room, walk to the phone reach for the phone and pick up the phone.
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <PHONE> (1)
-[Find] <PHONE> (1)
-[Touch] <PHONE> (1)
-[Grab] <PHONE> (1)

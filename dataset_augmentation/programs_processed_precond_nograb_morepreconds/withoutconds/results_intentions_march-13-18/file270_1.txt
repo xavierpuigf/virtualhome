@@ -1,8 +1,0 @@
-Turn on light
-I open the room door and press the light button on
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)

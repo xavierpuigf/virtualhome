@@ -1,8 +1,0 @@
-Take dishes out of dishwasher
-Take clean dishes out of the dishwasher and put away
-
-
-[Walk] <KITCHEN> (1)
-[Walk] <DISHWASHER> (1)
-[Open] <DISHWASHER> (1)
-[Close] <DISHWASHER> (1)

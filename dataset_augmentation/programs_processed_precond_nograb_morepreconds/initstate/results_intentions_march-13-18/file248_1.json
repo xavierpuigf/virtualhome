@@ -1,1 +1,0 @@
-[{"is_off": ["LAPTOP", "1"]}, {"location": [["CHAIR", "1"], ["HOME OFFICE", "1"]]}, {"location": [["MAIL", "1"], ["HOME OFFICE", "1"]]}, {"location": [["LAPTOP", "1"], ["HOME OFFICE", "1"]]}, {"closed": ["MAIL", "1"]}, {"atreach": [["CHAIR", "1"], ["LAPTOP", "1"]]}, {"atreach": [["MAIL", "1"], ["CHAIR", "1"]]}, {"atreach": [["LAPTOP", "1"], ["CHAIR", "1"]]}]

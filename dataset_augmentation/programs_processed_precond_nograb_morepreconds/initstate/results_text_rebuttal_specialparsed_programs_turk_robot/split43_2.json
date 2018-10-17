@@ -1,1 +1,0 @@
-[{"inside": [["VACUUM CLEANER", "1"], ["CLOSET", "1"]]}, {"atreach": [["VACUUM CLEANER", "1"], ["CLOSET", "1"]]}, {"atreach": [["CLOSET", "1"], ["CLOSET", "1"]]}, {"location": [["CLOSET", "1"], ["ENTRANCE HALL", "1"]]}, {"closed": ["CLOSET", "1"]}, {"is_off": ["VACUUM CLEANER", "1"]}, {"plugged": ["VACUUM CLEANER", "1"]}, {"unplugged": ["VACUUM CLEANER", "1"]}]

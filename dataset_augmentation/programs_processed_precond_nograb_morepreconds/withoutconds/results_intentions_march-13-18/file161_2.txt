@@ -1,8 +1,0 @@
-Pet cat
-find a cat, touch it gently
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <CAT> (1)
-[Find] <CAT> (1)
-[Touch] <CAT> (1)

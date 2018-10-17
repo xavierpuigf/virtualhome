@@ -1,1 +1,0 @@
-[{"location": [["TABLE", "1"], ["LIVING ROOM", "1"]]}, {"location": [["COUCH", "1"], ["LIVING ROOM", "1"]]}, {"location": [["BOARD GAME", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["TABLE", "1"], ["BOARD GAME", "1"]]}, {"atreach": [["COUCH", "1"], ["TABLE", "1"]]}, {"atreach": [["BOARD GAME", "1"], ["BOARD GAME", "1"]]}]

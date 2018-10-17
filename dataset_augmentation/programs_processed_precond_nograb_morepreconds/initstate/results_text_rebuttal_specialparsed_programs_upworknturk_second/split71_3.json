@@ -1,1 +1,0 @@
-[{"location": [["CHILD", "2"], ["ENTRANCE HALL", "1"]]}, {"location": [["CHILD", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["MAN", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["CHILD", "2"], ["CHILD", "1"]]}, {"atreach": [["CHILD", "1"], ["CHILD", "1"]]}, {"atreach": [["MAN", "1"], ["CHILD", "1"]]}, {"atreach": [["ENTRANCE HALL", "1"], ["CHILD", "1"]]}]

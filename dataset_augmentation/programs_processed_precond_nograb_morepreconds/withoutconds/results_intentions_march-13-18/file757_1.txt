@@ -1,6 +1,0 @@
-Pick up phone
-Find the phone. Pick it up.
-
-
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)

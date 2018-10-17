@@ -1,1 +1,0 @@
-[{"location": [["FOOD_TURKEY", "1"], ["KITCHEN", "1"]]}, {"location": [["FOOD_BREAD", "1"], ["KITCHEN", "1"]]}, {"location": [["PLATE", "1"], ["KITCHEN", "1"]]}, {"atreach": [["FOOD_TURKEY", "1"], ["FOOD_BREAD", "1"]]}, {"atreach": [["FOOD_BREAD", "1"], ["FOOD_BREAD", "1"]]}, {"atreach": [["PLATE", "1"], ["FOOD_BREAD", "1"]]}]

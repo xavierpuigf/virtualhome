@@ -1,1 +1,0 @@
-[{"in": [["DRINKING GLASS", "1"], ["SINK", "1"]]}, {"location": [["WATER", "1"], ["KITCHEN", "1"]]}, {"location": [["SINK", "1"], ["KITCHEN", "1"]]}, {"location": [["DRINKING GLASS", "1"], ["KITCHEN", "1"]]}, {"atreach": [["WATER", "1"], ["WATER", "1"]]}, {"atreach": [["DRINKING GLASS", "1"], ["SINK", "1"]]}]

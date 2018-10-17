@@ -1,7 +1,0 @@
-Listen to music
-I find CD player. I turn on CD player. I press play.
-
-
-[Find] <CD PLAYER> (1)
-[SwitchOn] <CD PLAYER> (1)
-[Touch] <CD PLAYER> (1)

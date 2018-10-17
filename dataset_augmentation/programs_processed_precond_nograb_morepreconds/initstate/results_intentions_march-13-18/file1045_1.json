@@ -1,1 +1,0 @@
-[{"location": [["TOOTHBRUSH", "1"], ["BATHROOM", "1"]]}, {"location": [["SINK", "1"], ["BATHROOM", "1"]]}, {"location": [["TOOTH PASTE", "1"], ["BATHROOM", "1"]]}, {"atreach": [["TOOTHBRUSH", "1"], ["TOOTH PASTE", "1"]]}, {"atreach": [["SINK", "1"], ["TOOTH PASTE", "1"]]}, {"atreach": [["TOOTH PASTE", "1"], ["TOOTH PASTE", "1"]]}]

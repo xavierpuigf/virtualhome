@@ -1,8 +1,0 @@
-Pick up phone
-I walk to the home office, find where the phone is and lift the reciever.
-
-
-[Walk] <HOME OFFICE> (1)
-[Walk] <PHONE> (1)
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)

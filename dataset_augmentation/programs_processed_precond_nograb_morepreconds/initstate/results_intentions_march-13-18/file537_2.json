@@ -1,1 +1,0 @@
-[{"is_off": ["COFFE MAKER", "1"]}, {"location": [["MUG", "1"], ["KITCHEN", "1"]]}, {"location": [["COFFE MAKER", "1"], ["KITCHEN", "1"]]}, {"location": [["COFFEE", "1"], ["KITCHEN", "1"]]}, {"closed": ["COFFE MAKER", "1"]}, {"atreach": [["MUG", "1"], ["MUG", "1"]]}, {"atreach": [["COFFE MAKER", "1"], ["MUG", "1"]]}, {"atreach": [["COFFEE", "1"], ["MUG", "1"]]}]
