@@ -66,10 +66,11 @@ Possible relations (edge labels) are:
 ### FindExecutor
 - script: find `object`
 - cases:
-	- object on character -> execute find
-	- object with properties BODY_PART -> execute find
-	- character is not sitting or lying -> execute walk first, then find
-	- other -> execute find
+	- `object` on `character` -> execute find
+	- `object` with properties BODY_PART -> execute find
+	- `character` is sitting or lying -> execute find
+	- `character` close `object` -> execute find
+	- other -> execute walk first, then find
 - Pre-condition:
 	- exists edge `character` close `object` or for each edge `character` close `object2` exists edge `object2` close `object`  # i.e., either character must be 
 		close to `object` or `object` must be close to every object the character is currenty close to

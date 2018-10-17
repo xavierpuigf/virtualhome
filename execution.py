@@ -161,10 +161,12 @@ class FindExecutor(ActionExecutor):
                 return _only_find_executor.execute(script, state, info)
             elif Property.BODY_PART in node.properties:
                 return _only_find_executor.execute(script, state, info)
-            elif State.SITTING not in char_node.states and State.LYING not in char_node.states:
-                return _walk_find_executor.execute(script, state, info)
-            else:
+            elif _is_character_close_to(state, node):
                 return _only_find_executor.execute(script, state, info)
+            elif State.SITTING in char_node.states or State.LYING in char_node.states:
+                return _only_find_executor.execute(script, state, info)
+            else:
+                return _walk_find_executor.execute(script, state, info)
 
 
 class GreetExecutor(ActionExecutor):
