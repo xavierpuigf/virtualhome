@@ -1,0 +1,24 @@
+2
+location: ('WOMAN', '1') --> ('ENTRANCE HALL', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('MAN', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('WOMAN', '1') --> ('MAN', '1'), ('SOFA', '1') --> ('SOFA', '1'), ('MAN', '1') --> ('MAN', '1'), ('TELEPHONE', '1') --> ('TELEPHONE', '1')
+Entertain
+Invite guests over and sit and talk on the sofa.
+
+
+[Find] <TELEPHONE> (1)
+[Walk] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)
+[Dial] <TELEPHONE> (1)
+[PutObjBack] <TELEPHONE> (1)
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <MAN> (1)
+[Find] <MAN> (1)
+[TurnTo] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <WOMAN> (1)
+[TurnTo] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)

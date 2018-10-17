@@ -1,0 +1,19 @@
+Toast bread
+Place two slices of bread in the toaster. Select medium toast on toaster.  Push down button to begin toasting.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[Close] <FRIDGE> (1)
+[Walk] <ELECTRICAL OUTLET> (1)
+[Find] <TOASTER> (1)
+[PlugIn] <TOASTER> (1)
+[PutBack] <FOOD_BREAD> (1) <TOASTER> (1)
+[SwitchOn] <ELECTRICAL OUTLET> (1)
+[TurnTo] <TOASTER> (1)
+[LookAt] <TOASTER> (1)
+[SwitchOn] <TOASTER> (1)

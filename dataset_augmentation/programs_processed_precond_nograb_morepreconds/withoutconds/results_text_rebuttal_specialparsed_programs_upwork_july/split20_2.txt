@@ -1,0 +1,22 @@
+complete school work
+I sit down, open my school books and read them, take notes in my notebook, re-read all of the information I have written down
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <TEXTBOOK> (1)
+[Grab] <TEXTBOOK> (1)
+[Read] <TEXTBOOK> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <TEXTBOOK> (1) <DESK> (1)
+[Find] <NOTEBOOK> (1)
+[Grab] <NOTEBOOK> (1)
+[Find] <PENCIL> (1)
+[Grab] <PENCIL> (1)
+[Write] <NOTEBOOK> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)

@@ -1,0 +1,25 @@
+5
+is_off: ('FAUCET', '1') --> 
+inside: ('CLOTHES_PANTS', '1') --> ('CURTAIN', '1'), ('CLOTHES_SHIRT', '1') --> ('CURTAIN', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('CURTAIN', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1')
+closed: ('CURTAIN', '1') --> 
+atreach: ('FAUCET', '1') --> ('SHOWER', '1'), ('CURTAIN', '1') --> ('SHOWER', '1'), ('SHOWER', '1') --> ('SHOWER', '1'), ('CLOTHES_PANTS', '1') --> ('SHOWER', '1'), ('CLOTHES_SHIRT', '1') --> ('SHOWER', '1')
+Take shower
+Walk to bathroom, find shower, open curtain, turn water on, take off clothes, step in shower, close curtain.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SHOWER> (1)
+[Find] <CURTAIN> (1)
+[Open] <CURTAIN> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Drop] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Drop] <CLOTHES_SHIRT> (1)
+[Enter] <SHOWER> (1)
+[Close] <CURTAIN> (1)

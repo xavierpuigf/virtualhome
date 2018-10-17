@@ -1,0 +1,13 @@
+0
+Entertain
+Entertain guests when they are over, gather for drinks etc
+
+
+[Find] <DRINKING GLASS> (1)
+[TurnTo] <DRINKING GLASS> (1)
+[PointAt] <DRINKING GLASS> (1)
+[Wash] <DRINKING GLASS> (1)
+[TurnTo] <DRINKING GLASS> (1)
+[LookAt] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Walk] <DINING ROOM> (1)

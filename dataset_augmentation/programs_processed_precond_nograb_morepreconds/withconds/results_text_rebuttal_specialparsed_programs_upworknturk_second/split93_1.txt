@@ -1,0 +1,30 @@
+2
+location: ('DESK', '1') --> ('BEDROOM', '1'), ('BROOM', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('DUSTER', '1') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1'), ('FLOOR', '1') --> ('BEDROOM', '1'), ('BENCH', '1') --> ('BATHROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
+atreach: ('DESK', '1') --> ('DESK', '1'), ('BROOM', '1') --> ('DESK', '1'), ('DRESSER', '1') --> ('DRESSER', '1'), ('DUSTER', '1') --> ('DUSTER', '1'), ('CHAIR', '1') --> ('CHAIR', '1'), ('FLOOR', '1') --> ('DESK', '1'), ('BASKET FOR CLOTHES', '1') --> ('BASKET FOR CLOTHES', '1')
+Clean
+Clean the bedroom. Dust, sweep, return items to proper places, take laundry to laundry room.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DUSTER> (1)
+[Find] <DUSTER> (1)
+[Grab] <DUSTER> (1)
+[Walk] <DRESSER> (1)
+[Wipe] <DRESSER> (1)
+[Walk] <DESK> (1)
+[Wipe] <DESK> (1)
+[PutObjBack] <DUSTER> (1)
+[Find] <BROOM> (1)
+[Grab] <BROOM> (1)
+[Find] <FLOOR> (1)
+[Sweep] <FLOOR> (1)
+[PutObjBack] <BROOM> (1)
+[Walk] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Push] <CHAIR> (1)
+[Walk] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <BATHROOM> (1)
+[Walk] <BENCH> (1)
+[Find] <BENCH> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <BENCH> (1)

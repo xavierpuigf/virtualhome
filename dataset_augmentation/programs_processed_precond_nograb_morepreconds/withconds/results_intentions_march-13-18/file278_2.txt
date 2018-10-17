@@ -1,0 +1,21 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1'), ('FACE', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('SHOWER', '1'), ('SHOWER', '1') --> ('SHOWER', '1'), ('FACE', '1') --> ('SHOWER', '1'), ('SOAP', '1') --> ('SHOWER', '1'), ('TOWEL', '1') --> ('SHOWER', '1')
+Take shower
+Walk to the bathroom.  Find shower stall.  Enter shower stall.  Turn on water.  Apply soap.  Rinse soap off.  Turn off water.  Find towel.  Dry off.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SOAP> (1)
+[Find] <FACE> (1)
+[Wash] <FACE> (1)
+[Rinse] <FACE> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <TOWEL> (1)
+[Wipe] <FACE> (1)

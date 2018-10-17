@@ -1,0 +1,1 @@
+[{"location": [["BLANKET", "1"], ["BEDROOM", "1"]]}, {"location": [["LIGHT", "1"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"in": [["BLANKET", "1"], ["BED", "1"]]}, {"is_on": ["LIGHT", "1"]}, {"atreach": [["BLANKET", "1"], ["BED", "1"]]}, {"atreach": [["LIGHT", "1"], ["LIGHT", "1"]]}, {"atreach": [["BED", "1"], ["BED", "1"]]}]

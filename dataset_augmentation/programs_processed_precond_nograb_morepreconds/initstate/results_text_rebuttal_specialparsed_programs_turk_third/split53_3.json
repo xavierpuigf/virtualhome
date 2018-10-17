@@ -1,0 +1,1 @@
+[{"is_off": ["LIGHT", "1"]}, {"location": [["BOOK", "1"], ["LIVING ROOM", "1"]]}, {"location": [["LAMP", "1"], ["LIVING ROOM", "1"]]}, {"location": [["LIGHT", "1"], ["LIVING ROOM", "1"]]}, {"location": [["COUCH", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["BOOK", "1"], ["LAMP", "1"]]}, {"atreach": [["LIGHT", "1"], ["LAMP", "1"]]}, {"atreach": [["COUCH", "1"], ["LAMP", "1"]]}]

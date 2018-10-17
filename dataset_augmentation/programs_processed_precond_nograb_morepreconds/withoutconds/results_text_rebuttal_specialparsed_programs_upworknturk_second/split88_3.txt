@@ -1,0 +1,22 @@
+Read book
+If I dont feel like watching TV I will read a book from about 8:30 to 10:30. I prop up on pillows and use the lamp beside my bed for light.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BOOK> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Find] <BED> (1)
+[PutBack] <PILLOW> (1) <BED> (1)
+[Find] <PILLOW> (2)
+[Grab] <PILLOW> (2)
+[PutBack] <PILLOW> (2) <BED> (1)
+[Find] <PILLOW> (3)
+[Grab] <PILLOW> (3)
+[PutBack] <PILLOW> (3) <BED> (1)
+[Lie] <BED> (1)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)
+[Read] <BOOK> (1)

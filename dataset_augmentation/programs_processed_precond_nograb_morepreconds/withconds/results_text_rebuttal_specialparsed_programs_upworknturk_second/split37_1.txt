@@ -1,0 +1,24 @@
+3
+nearby: ('CHAIR', '1') --> ('TABLE', '1')
+location: ('CHAIR', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('PLATE', '1') --> ('DINING ROOM', '1'), ('FOOD_FOOD', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('FOOD_FOOD', '1'), ('PLATE', '1') --> ('TABLE', '1'), ('FORK', '1') --> ('TABLE', '1'), ('FOOD_FOOD', '1') --> ('TABLE', '1')
+Eat dinner
+Sit down at the dinning table with my family and eat dinner.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <FOOD_FOOD> (1)
+[TurnTo] <FOOD_FOOD> (1)
+[LookAt] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Find] <PLATE> (1)
+[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
+[Grab] <FOOD_FOOD> (1)
+[PutObjBack] <FOOD_FOOD> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Eat] <PLATE> (1)

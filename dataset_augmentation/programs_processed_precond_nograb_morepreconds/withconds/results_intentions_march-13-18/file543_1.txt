@@ -1,0 +1,15 @@
+2
+location: ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+atreach: ('TOOTHBRUSH', '1') --> ('TOOTH PASTE', '1'), ('TOOTH PASTE', '1') --> ('TOOTH PASTE', '1')
+Wash teeth
+I pick up toothbrush. I pick up toothpaste. I put toothpaste on toothbrush. I brush my teeth.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTH PASTE> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)

@@ -1,0 +1,17 @@
+Put away jackets
+Remove jacket from off of person. Place jacket onto hanger. Place jacket and hanger into hall closet.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CLOTHES_JACKET> (1)
+[Find] <CLOTHES_JACKET> (1)
+[Find] <CLOTHES_JACKET> (1)
+[PutOff] <CLOTHES_JACKET> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <HANGER> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[Grab] <HANGER> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)
+[PutBack] <HANGER> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

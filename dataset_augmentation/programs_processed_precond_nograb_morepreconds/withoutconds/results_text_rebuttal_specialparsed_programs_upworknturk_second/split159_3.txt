@@ -1,0 +1,18 @@
+Watch movie
+Play the dvd player end watch with my baby
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CHILD> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Walk] <DRESSER> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[Watch] <TELEVISION> (1)

@@ -1,0 +1,16 @@
+2
+location: ('CHAIR', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('BOARD GAME', '1') --> ('DINING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('CHAIR', '1'), ('TABLE', '1') --> ('BOARD GAME', '1'), ('BOARD GAME', '1') --> ('BOARD GAME', '1')
+Play games
+Set up a board or card game at the dining room table and play with friends
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <BOARD GAME> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Find] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Play]

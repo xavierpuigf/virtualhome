@@ -1,0 +1,9 @@
+Dance
+Turn on music, stand up, move to music as desired
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <RADIO> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[Dance]

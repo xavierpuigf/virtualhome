@@ -1,0 +1,21 @@
+4
+inside: ('TOWEL', '1') --> ('BATHROOM CABINET', '1')
+location: ('BATHROOM CABINET', '1') --> ('BATHROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BATHROOM', '1')
+closed: ('BATHROOM CABINET', '1') --> 
+atreach: ('BATHROOM CABINET', '1') --> ('TOWEL', '1'), ('BASKET FOR CLOTHES', '1') --> ('TOWEL', '1'), ('TOWEL', '1') --> ('TOWEL', '1')
+Replace towel
+Remove towel from towel bar. Take a clean towel off the shelf above the toilet. Place this clean towel on the towel bar. Put the dirty towel in the laundry basket.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOWEL> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[TurnTo] <BASKET FOR CLOTHES> (1)
+[Drop] <TOWEL> (1)
+[Find] <BATHROOM CABINET> (1)
+[TurnTo] <BATHROOM CABINET> (1)
+[Open] <BATHROOM CABINET> (1)
+[Grab] <TOWEL> (1)
+[PutBack] <TOWEL> (1) <BATHROOM CABINET> (1)

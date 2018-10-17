@@ -1,0 +1,27 @@
+3
+nearby: ('CHAIR', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('PLATE', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1'), ('KNIFE', '1') --> ('DINING ROOM', '1'), ('CLOTH NAPKIN', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1'), ('GLASS', '1') --> ('DINING ROOM', '1')
+atreach: ('PLATE', '1') --> ('TABLE', '1'), ('FORK', '1') --> ('TABLE', '1'), ('KNIFE', '1') --> ('TABLE', '1'), ('CLOTH NAPKIN', '1') --> ('TABLE', '1'), ('CHAIR', '1') --> ('TABLE', '1'), ('GLASS', '1') --> ('TABLE', '1')
+Set up table
+Walk to dining room, walk to dining table, arrange chairs, set napkin, set plate, set knife, set fork and glass on table.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Find] <CLOTH NAPKIN> (1)
+[Grab] <CLOTH NAPKIN> (1)
+[PutBack] <CLOTH NAPKIN> (1) <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[PutBack] <KNIFE> (1) <TABLE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[PutBack] <FORK> (1) <TABLE> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[PutBack] <GLASS> (1) <TABLE> (1)

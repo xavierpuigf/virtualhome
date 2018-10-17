@@ -1,0 +1,27 @@
+5
+is_off: ('DISHWASHER', '1') --> 
+inside: ('DETERGENT', '1') --> ('DISHWASHER', '1')
+in: ('FORK', '1') --> ('SINK', '1')
+closed: ('DISHWASHER', '1') --> 
+atreach: ('DISHWASHER', '1') --> ('DISHWASHER', '1'), ('DETERGENT', '1') --> ('DISHWASHER', '1')
+Wash dishes with dishwasher
+FIND THE DISHES IN THE SINK, AND AFTER DOING SO PLACE THE DISHES IN THE DISHWASHER
+
+
+[Find] <SINK> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Walk] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[Drop] <FORK> (1)
+[Find] <DETERGENT> (1)
+[Grab] <DETERGENT> (1)
+[PutBack] <DETERGENT> (1) <DISHWASHER> (1)
+[Grab] <DETERGENT> (1)
+[Drop] <DETERGENT> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)

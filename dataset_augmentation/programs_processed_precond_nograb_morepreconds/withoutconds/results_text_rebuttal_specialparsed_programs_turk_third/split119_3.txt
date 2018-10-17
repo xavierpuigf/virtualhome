@@ -1,0 +1,11 @@
+Break table
+Weigh too much.  Sit in chair.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <TABLE> (1)
+[Break] <TABLE> (1)

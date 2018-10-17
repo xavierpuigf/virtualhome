@@ -1,0 +1,1 @@
+[{"location": [["BLANKET", "1"], ["LIVING ROOM", "1"]]}, {"location": [["COUCH", "1"], ["LIVING ROOM", "1"]]}, {"location": [["PILLOW", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["BLANKET", "1"], ["PILLOW", "1"]]}, {"atreach": [["COUCH", "1"], ["COUCH", "1"]]}, {"atreach": [["PILLOW", "1"], ["PILLOW", "1"]]}]

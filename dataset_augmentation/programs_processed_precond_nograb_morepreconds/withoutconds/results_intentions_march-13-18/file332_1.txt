@@ -1,0 +1,15 @@
+Wash dishes with dishwasher
+I take the plates from the sink and open the dishwasher door. I put the dishes in the correct places and load the reservoir with soap. I shut the door and push the start button.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <PLATE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[Pour] <DISH SOAP> (1) <DISHWASHER> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)

@@ -1,0 +1,10 @@
+Clean floor
+Systematically inspect each square foot of the floor. Identify dirt and debris. Pick up the dirt or debris and put it in the trash.
+
+
+[Find] <CLEANING BOTTLE> (1)
+[TurnTo] <CLEANING BOTTLE> (1)
+[PointAt] <CLEANING BOTTLE> (1)
+[Wash] <CLEANING BOTTLE> (1)
+[TurnTo] <CLEANING BOTTLE> (1)
+[LookAt] <CLEANING BOTTLE> (1)

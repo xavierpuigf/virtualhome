@@ -1,0 +1,12 @@
+2
+location: ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('COUCH', '1')
+Take nap
+I habitually take naps on my living room couch.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Lie] <COUCH> (1)
+[Sleep]

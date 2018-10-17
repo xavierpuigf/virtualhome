@@ -1,0 +1,18 @@
+3
+is_off: ('COMPUTER', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('KEYBOARD', '1') --> ('CHAIR', '1'), ('MOUSE', '1') --> ('CHAIR', '1')
+Work
+work on the computer using keyboard and mouse
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <KEYBOARD> (1)
+[Grab] <KEYBOARD> (1)

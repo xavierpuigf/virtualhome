@@ -1,0 +1,13 @@
+Change TV channel
+Grab the remote. Point it toward the TV, and press the channel button.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Find] <BUTTON> (1)
+[Touch] <BUTTON> (1)

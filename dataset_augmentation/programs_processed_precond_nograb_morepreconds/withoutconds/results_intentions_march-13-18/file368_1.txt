@@ -1,0 +1,14 @@
+Get some water
+I pour water, take a cloth, go to the dining room, clean, take the cloth to the kitchen
+
+
+[Find] <CLOTH NAPKIN> (1)
+[Grab] <CLOTH NAPKIN> (1)
+[Walk] <DINING ROOM> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[TurnTo] <CHAIR> (1)
+[Wipe] <CHAIR> (1)
+[Push] <CHAIR> (1)
+[Walk] <KITCHEN> (1)
+[Drop] <CLOTH NAPKIN> (1)

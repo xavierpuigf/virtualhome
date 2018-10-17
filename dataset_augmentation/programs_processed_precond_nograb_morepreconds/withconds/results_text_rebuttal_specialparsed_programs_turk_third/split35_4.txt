@@ -1,0 +1,22 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('KEYBOARD', '1') --> ('DESK', '1'), ('DOCUMENT', '1') --> ('DESK', '1')
+Work
+I sit at my desk and work on the computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Read] <DOCUMENT> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

@@ -1,0 +1,31 @@
+7
+inside: ('VACUUM CLEANER', '1') --> ('CLOSET', '1')
+atreach: ('VACUUM CLEANER', '1') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1')
+location: ('CLOSET', '1') --> ('ENTRANCE HALL', '1')
+closed: ('CLOSET', '1') --> 
+is_off: ('VACUUM CLEANER', '1') --> 
+plugged: ('VACUUM CLEANER', '1') --> 
+unplugged: ('VACUUM CLEANER', '1') --> 
+Sweep hallway please
+Vacuum all the way up and down the hallway.  Get all the dirt and crumbs out of carpet please.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[Walk] <CLOSET> (1)
+[PutBack] <VACUUM CLEANER> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

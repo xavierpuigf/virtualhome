@@ -1,0 +1,23 @@
+5
+is_off: ('COFFE MAKER', '1') --> 
+inside: ('GROUND COFFEE', '1') --> ('COFFE MAKER', '1'), ('COFFEE FILTER', '1') --> ('COFFE MAKER', '1')
+location: ('COFFE MAKER', '1') --> ('KITCHEN', '1')
+closed: ('COFFE MAKER', '1') --> 
+atreach: ('GROUND COFFEE', '1') --> ('COFFE MAKER', '1'), ('COFFE MAKER', '1') --> ('COFFE MAKER', '1'), ('COFFEE FILTER', '1') --> ('COFFE MAKER', '1')
+Make coffee
+Open the coffee maker and put a filer, grab ground coffee and put it in the coffee maker, then close the coffee maker and switch it on
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[Find] <GROUND COFFEE> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Close] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)

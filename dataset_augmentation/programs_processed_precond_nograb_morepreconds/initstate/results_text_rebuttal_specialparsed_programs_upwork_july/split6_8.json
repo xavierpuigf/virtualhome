@@ -1,0 +1,1 @@
+[{"is_off": ["LASER POINTER", "1"]}, {"location": [["LASER POINTER", "1"], ["HOME OFFICE", "1"]]}, {"location": [["DESK", "1"], ["HOME OFFICE", "1"]]}, {"location": [["CAT", "1"], ["HOME OFFICE", "1"]]}, {"atreach": [["LASER POINTER", "1"], ["DESK", "1"]]}, {"atreach": [["DESK", "1"], ["DESK", "1"]]}, {"atreach": [["CAT", "1"], ["DESK", "1"]]}]

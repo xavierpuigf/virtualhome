@@ -1,0 +1,18 @@
+Go to sleep
+Sleep in the bed
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <BED> (1)
+[Uncover] <BED> (1)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Lie] <BED> (1)
+[Cover] <BLANKET> (1)
+[SwitchOff] <LAMP> (1)

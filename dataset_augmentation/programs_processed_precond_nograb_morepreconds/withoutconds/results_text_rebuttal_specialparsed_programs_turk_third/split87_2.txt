@@ -1,0 +1,15 @@
+Throw shoes
+I pick up the shoes that I tripped over because they were left in the middle of the floor.
+
+
+[Walk] <LIVING ROOM> (1)
+[StandUp]
+[Walk] <SHOES> (1)
+[Find] <SHOES> (1)
+[TurnTo] <SHOES> (1)
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Throw] <SHOES> (1)
+[Find] <SHOES> (2)
+[Grab] <SHOES> (2)
+[Throw] <SHOES> (2)

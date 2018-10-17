@@ -1,0 +1,21 @@
+4
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('MAIL', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+closed: ('MAIL', '1') --> 
+atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('MAIL', '1') --> ('DESK', '1'), ('MOUSE', '1') --> ('DESK', '1')
+Write an email
+I walk into the office to the desk.  I pull out the computer chair.  I sit in the computer chair and turn to the computer.  I grab the mouse and click to open the email app.  I write the email.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Write] <MAIL> (1)

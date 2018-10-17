@@ -1,0 +1,9 @@
+Pet cat
+Walk to living room. Find the cat. Walk over to the cat. Touch the cat.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CAT> (1)
+[Find] <CAT> (1)
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

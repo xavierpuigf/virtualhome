@@ -1,0 +1,17 @@
+Browse internet
+Read and write mail through internet
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Write] <MAIL> (1)
+[Close] <MAIL> (1)
+[SwitchOff] <LAPTOP> (1)

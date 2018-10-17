@@ -1,0 +1,27 @@
+4
+is_off: ('LIGHT', '1') --> 
+atreach: ('CHAIR', '1') --> ('CHAIR', '1'), ('LIGHT_BULB', '2') --> ('GARBAGE CAN', '1'), ('LIGHT_BULB', '1') --> ('CHAIR', '1'), ('LIGHT', '1') --> ('CHAIR', '1')
+location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('GARBAGE CAN', '1') --> ('LIVING ROOM', '1'), ('LIGHT_BULB', '1') --> ('LIVING ROOM', '1'), ('LIGHT_BULB', '2') --> ('LIVING ROOM', '1')
+sitting: ('Character', 1) --> 
+Change light
+Get a step stool. Position it under the chandelier. Step up on the step stool. Twist the bulb counter clockwise until it comes off. Step down off the step stool. Place used bulb in the trash can. Grab new bulb. Step back on the step stool. Twist bulb clockwise until its tightened. Step down off the step stool. Flick the switch. Turn on the light.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Climb] <CHAIR> (1)
+[StandUp]
+[Find] <LIGHT_BULB> (1)
+[Grab] <LIGHT_BULB> (1)
+[Walk] <GARBAGE CAN> (1)
+[PutBack] <LIGHT_BULB> (1) <GARBAGE CAN> (1)
+[Find] <LIGHT_BULB> (2)
+[Grab] <LIGHT_BULB> (2)
+[Walk] <CHAIR> (1)
+[Climb] <CHAIR> (1)
+[StandUp]
+[Find] <LIGHT> (1)
+[PutBack] <LIGHT_BULB> (2) <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

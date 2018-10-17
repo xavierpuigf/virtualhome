@@ -1,0 +1,15 @@
+2
+location: ('CELLPHONE', '1') --> ('HOME OFFICE', '1')
+atreach: ('CELLPHONE', '1') --> ('CELLPHONE', '1')
+Read text message
+Open your phone.  Go to text messages.  Open the message.  Read the message.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CELLPHONE> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[TurnTo] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)
+[Text] <CELLPHONE> (1)
+[PutObjBack] <CELLPHONE> (1)

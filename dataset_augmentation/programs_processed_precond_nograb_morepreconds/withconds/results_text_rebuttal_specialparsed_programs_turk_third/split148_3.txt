@@ -1,0 +1,28 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('CLEANING SOLUTION', '1') --> ('BATHROOM', '1'), ('FAUCET', '1') --> ('BATHROOM', '1'), ('MOP BUCKET', '1') --> ('BATHROOM', '1'), ('FLOOR', '1') --> ('BATHROOM', '1'), ('MOP', '1') --> ('BATHROOM', '1')
+atreach: ('CLEANING SOLUTION', '1') --> ('FAUCET', '1'), ('FAUCET', '1') --> ('FAUCET', '1'), ('MOP BUCKET', '1') --> ('MOP BUCKET', '1'), ('FLOOR', '1') --> ('FAUCET', '1'), ('MOP', '1') --> ('FAUCET', '1')
+Mop
+Get mop.  Get water.  Put cleaner on floor.  Wipe it.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <MOP BUCKET> (1)
+[Find] <MOP BUCKET> (1)
+[Grab] <MOP BUCKET> (1)
+[Walk] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Pour] <CLEANING SOLUTION> (1) <MOP BUCKET> (1)
+[Find] <MOP> (1)
+[Grab] <MOP> (1)
+[Soak] <MOP> (1) <MOP BUCKET> (1)
+[Squeeze] <MOP> (1)
+[Find] <FLOOR> (1)
+[Wash] <FLOOR> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Grab] <MOP> (1)
+[PutObjBack] <MOP> (1)
+[PutObjBack] <MOP BUCKET> (1)

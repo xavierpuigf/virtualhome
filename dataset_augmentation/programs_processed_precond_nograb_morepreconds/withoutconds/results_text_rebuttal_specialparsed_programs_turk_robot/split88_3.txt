@@ -1,0 +1,19 @@
+Sing karaoke
+Sing karaoke songs with me and my friends.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CONSOLE> (1)
+[Find] <CONSOLE> (1)
+[Grab] <CONSOLE> (1)
+[Walk] <TELEVISION> (1)
+[PlugIn] <CONSOLE> (1)
+[SwitchOn] <TELEVISION> (1)
+[SwitchOn] <CONSOLE> (1)
+[Find] <MICROPHONE> (1)
+[Grab] <MICROPHONE> (1)
+[Walk] <CONSOLE> (1)
+[PlugIn] <MICROPHONE> (1)
+[Sing]
+[Sing]
+[Sing]

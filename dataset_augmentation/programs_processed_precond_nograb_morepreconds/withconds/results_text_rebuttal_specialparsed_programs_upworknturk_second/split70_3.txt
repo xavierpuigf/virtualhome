@@ -1,0 +1,14 @@
+2
+location: ('MAGAZINE', '1') --> ('LIVING ROOM', '1'), ('LOVE SEAT', '1') --> ('LIVING ROOM', '1')
+atreach: ('MAGAZINE', '1') --> ('MAGAZINE', '1'), ('LOVE SEAT', '1') --> ('MAGAZINE', '1')
+Read
+Reading a magazine
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <MAGAZINE> (1)
+[Find] <MAGAZINE> (1)
+[Grab] <MAGAZINE> (1)
+[Find] <LOVE SEAT> (1)
+[Sit] <LOVE SEAT> (1)
+[Read] <MAGAZINE> (1)

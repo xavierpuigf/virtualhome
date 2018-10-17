@@ -1,0 +1,16 @@
+2
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('MAN', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+atreach: ('MAN', '1') --> ('MAN', '1'), ('COUCH', '1') --> ('TELEVISION', '1'), ('TELEVISION', '1') --> ('MAN', '1')
+Be able to talk to me about TV show i'm watching
+If i have any quick questions or trivial questions the robot can easily look up the answers while the  tv show plays. Many times while i'm watching a tv show i'm like oh where it that guy from i've seen him before and if the robot could look that up for me quickly and give me the answer that would be cool.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <MAN> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)
+[Talk] <MAN> (1)

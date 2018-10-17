@@ -1,0 +1,12 @@
+Write an email
+Turn on PC and log onto email account. Type email and send it. Switch off computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[SwitchOff] <COMPUTER> (1)

@@ -1,0 +1,20 @@
+4
+inside: ('TOILET PAPER', '1') --> ('BATHROOM CABINET', '1')
+location: ('TRASHCAN', '1') --> ('BATHROOM', '1'), ('BATHROOM CABINET', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '2') --> ('BATHROOM', '1')
+closed: ('BATHROOM CABINET', '1') --> 
+atreach: ('TRASHCAN', '1') --> ('BATHROOM CABINET', '1'), ('BATHROOM CABINET', '1') --> ('BATHROOM CABINET', '1'), ('TOILET PAPER', '1') --> ('BATHROOM CABINET', '1'), ('TOILET PAPER', '2') --> ('BATHROOM CABINET', '1')
+Change toilet paper roll
+Get a new roll of toilet paper.  Remove toilet paper holder.  Remove empty toilet paper roll from holder, and discard.  Slip new roll of paper onto holder.  Slide toilet paper holder back in place with new roll attached.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <BATHROOM CABINET> (1)
+[Find] <BATHROOM CABINET> (1)
+[Open] <BATHROOM CABINET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Close] <BATHROOM CABINET> (1)
+[Find] <TOILET PAPER> (2)
+[Grab] <TOILET PAPER> (2)
+[Find] <TRASHCAN> (1)
+[PutBack] <TOILET PAPER> (2) <TRASHCAN> (1)

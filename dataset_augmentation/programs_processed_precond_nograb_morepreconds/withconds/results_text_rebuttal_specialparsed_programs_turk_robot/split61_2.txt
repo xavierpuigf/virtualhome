@@ -1,0 +1,20 @@
+3
+is_off: ('RADIO', '1') --> 
+location: ('ARMS_BOTH', '1') --> ('LIVING ROOM', '1'), ('CARPET', '1') --> ('LIVING ROOM', '1'), ('LEGS_BOTH', '1') --> ('LIVING ROOM', '1'), ('MAT', '1') --> ('LIVING ROOM', '1'), ('RADIO', '1') --> ('LIVING ROOM', '1')
+atreach: ('ARMS_BOTH', '1') --> ('CARPET', '1'), ('LEGS_BOTH', '1') --> ('CARPET', '1'), ('MAT', '1') --> ('RADIO', '1'), ('RADIO', '1') --> ('RADIO', '1')
+Do yoga
+Make some space in the room, lay down yoga mat, turn on video or music, get into positions for yoga
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[Find] <MAT> (1)
+[Grab] <MAT> (1)
+[Walk] <CARPET> (1)
+[PutBack] <MAT> (1) <CARPET> (1)
+[Lie] <MAT> (1)
+[Find] <ARMS_BOTH> (1)
+[Stretch] <ARMS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)

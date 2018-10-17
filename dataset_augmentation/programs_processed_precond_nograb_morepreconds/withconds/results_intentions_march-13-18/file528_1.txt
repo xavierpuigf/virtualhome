@@ -1,0 +1,17 @@
+4
+inside: ('DRINKING GLASS', '1') --> ('FRIDGE', '1')
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('WATER', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('DRINKING GLASS', '1') --> ('FRIDGE', '1')
+Drink
+go to the kitchen
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <WATER> (1)
+[Drink] <WATER> (1)

@@ -1,0 +1,10 @@
+Paint ceiling
+Take a paint can opener and open bucket of paint. Pour some of the paint into the paint tray. Roll the roller around in the paint tray and then roll the paint roller it across the ceiling until completely covered. Repeat rolling the paint roller in the paint tray as needed to finish the ceiling.
+
+
+[Find] <PAINTING> (1)
+[TurnTo] <PAINTING> (1)
+[PointAt] <PAINTING> (1)
+[Watch] <PAINTING> (1)
+[Touch] <PAINTING> (1)
+[Walk] <KIDS BEDROOM> (1)

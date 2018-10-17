@@ -1,0 +1,25 @@
+6
+sitting: ('Character', 1) --> 
+inside: ('COFFEE CUP', '1') --> ('COFFE MAKER', '1')
+atreach: ('COFFEE CUP', '1') --> ('COFFE MAKER', '1'), ('COFFE MAKER', '1') --> ('COFFE MAKER', '1'), ('COFFEE FILTER', '1') --> ('COFFE MAKER', '1')
+location: ('COFFE MAKER', '1') --> ('KITCHEN', '1'), ('COFFEE FILTER', '1') --> ('KITCHEN', '1')
+closed: ('COFFE MAKER', '1') --> 
+is_off: ('COFFE MAKER', '1') --> 
+Make coffee
+wake up in the morning at home  thenwalk into the kitchen take coffee maker ,make some coffee by adding coffee powder finally take coffee cup to share
+
+
+[WakeUp]
+[Walk] <KITCHEN> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFE MAKER> (1)
+[TurnTo] <COFFE MAKER> (1)
+[LookAt] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[Open] <COFFE MAKER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Drink] <COFFEE CUP> (1)

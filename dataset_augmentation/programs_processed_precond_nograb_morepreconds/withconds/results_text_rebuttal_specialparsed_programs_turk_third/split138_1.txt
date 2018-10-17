@@ -1,0 +1,23 @@
+4
+is_off: ('VACUUM CLEANER', '1') --> 
+location: ('VACUUM CLEANER', '1') --> ('BEDROOM', '1'), ('TRASHCAN', '1') --> ('BEDROOM', '1'), ('FLOOR', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('VACUUM CLEANER', '1') --> ('TRASHCAN', '1'), ('FLOOR', '1') --> ('TRASHCAN', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('CLOTHES_DRESS', '1') --> ('CLOTHES_DRESS', '1')
+Clean
+I pick up clothes from my floor, I gather any trash and dispose of it and I vacuum and dust.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <CLOTHES_DRESS> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)
+[Walk] <TRASHCAN> (1)
+[Find] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Find] <FLOOR> (1)
+[Vacuum] <FLOOR> (1)
+[SwitchOff] <VACUUM CLEANER> (1)

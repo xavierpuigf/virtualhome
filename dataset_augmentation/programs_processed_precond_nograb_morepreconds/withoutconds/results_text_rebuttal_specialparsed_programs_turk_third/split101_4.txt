@@ -1,0 +1,18 @@
+Play games
+Sit in comfortable position, turn on television, turn on console, pick up remote to play
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[Walk] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <VIDEO GAME CONSOLE> (1)
+[SwitchOn] <VIDEO GAME CONSOLE> (1)
+[Find] <VIDEO GAME CONTROLLER> (1)
+[Grab] <VIDEO GAME CONTROLLER> (1)
+[Find] <CHAIR> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)

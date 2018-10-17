@@ -1,0 +1,16 @@
+2
+location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
+atreach: ('HANDS_BOTH', '1') --> ('SINK', '1'), ('SOAP', '1') --> ('SINK', '1'), ('SINK', '1') --> ('SINK', '1')
+Wash hands
+You walk to the bathroom and turn to the sink. Grab the soap and wash your hands, put the soap back.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SINK> (1)
+[TurnTo] <SINK> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[PutObjBack] <SOAP> (1)

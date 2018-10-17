@@ -1,0 +1,12 @@
+3
+location: ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('FOOD_FOOD', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1')
+Cook some food
+Go kitchen and make something for eat
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_FOOD> (1)

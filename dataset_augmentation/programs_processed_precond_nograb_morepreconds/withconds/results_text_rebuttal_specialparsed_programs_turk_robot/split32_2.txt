@@ -1,0 +1,6 @@
+0
+Open front door
+Walk over to the front door, turn the knob, and open the door.
+
+
+[Walk] <ENTRANCE HALL> (1)

@@ -1,0 +1,34 @@
+4
+inside: ('GLASS', '1') --> ('FRIDGE', '1'), ('GLASS', '2') --> ('FRIDGE', '1'), ('MILK', '1') --> ('FRIDGE', '1')
+location: ('TABLE', '1') --> ('DINING ROOM', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('TABLE', '1') --> ('MILK', '1')
+Set up table
+getting ready to eat dinner
+
+
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Find] <KITCHEN COUNTER> (1)
+[PutBack] <GLASS> (1) <KITCHEN COUNTER> (1)
+[Find] <GLASS> (2)
+[Grab] <GLASS> (2)
+[PutBack] <GLASS> (2) <KITCHEN COUNTER> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[PutBack] <MILK> (1) <KITCHEN COUNTER> (1)
+[Pour] <MILK> (1) <GLASS> (1)
+[Pour] <MILK> (1) <GLASS> (2)
+[Grab] <GLASS> (1)
+[Walk] <DINING ROOM> (1)
+[Walk] <MILK> (1)
+[Grab] <MILK> (1)
+[Find] <TABLE> (1)
+[PutBack] <MILK> (1) <TABLE> (1)
+[Walk] <KITCHEN> (1)
+[Walk] <GLASS> (2)
+[Grab] <GLASS> (2)
+[Walk] <DINING ROOM> (1)
+[PutBack] <GLASS> (2) <TABLE> (1)

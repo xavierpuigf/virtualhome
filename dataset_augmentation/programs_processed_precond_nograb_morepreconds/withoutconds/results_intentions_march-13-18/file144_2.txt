@@ -1,0 +1,10 @@
+Go to sleep
+go to bedroom, put pajamas on, lie in bed, sleep
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <PAJAMAS> (1)
+[Find] <PAJAMAS> (1)
+[PutOn] <PAJAMAS> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)

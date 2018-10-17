@@ -1,0 +1,11 @@
+Work
+Turn on computer, check mail and e-mails, check with recipients, make orders, organize desk and files.
+
+
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[PointAt] <COMPUTER> (1)
+[Wipe] <COMPUTER> (1)
+[Watch] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Touch] <COMPUTER> (1)

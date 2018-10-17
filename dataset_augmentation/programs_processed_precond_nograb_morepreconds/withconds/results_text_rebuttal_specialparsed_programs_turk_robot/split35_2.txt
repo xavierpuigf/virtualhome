@@ -1,0 +1,12 @@
+0
+Wash dining table
+Get a clean washcloth.  Soak the washcloth in soapy, warm water.  Proceed to wipe down the table, and continue until table is clean.  Allow table to air dry.
+
+
+[Find] <CLOTHES_DRESS> (1)
+[TurnTo] <CLOTHES_DRESS> (1)
+[PointAt] <CLOTHES_DRESS> (1)
+[Wash] <CLOTHES_DRESS> (1)
+[TurnTo] <CLOTHES_DRESS> (1)
+[LookAt] <CLOTHES_DRESS> (1)
+[Fold] <CLOTHES_DRESS> (1)

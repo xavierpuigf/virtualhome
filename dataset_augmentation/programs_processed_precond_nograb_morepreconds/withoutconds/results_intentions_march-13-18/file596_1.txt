@@ -1,0 +1,25 @@
+Go to sleep
+Go to the bedroom and put on pajamas. Switch off the light. Get into bed. Close your eyes. Go to sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DRESSER> (1)
+[Find] <DRESSER> (1)
+[Open] <DRESSER> (1)
+[Find] <PAJAMAS> (1)
+[Grab] <PAJAMAS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[PutOff] <CLOTHES_DRESS> (1)
+[PutOn] <PAJAMAS> (1)
+[Find] <BED> (1)
+[Uncover] <BED> (1)
+[Lie] <BED> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <EYES_BOTH> (1)
+[Close] <EYES_BOTH> (1)
+[Sleep]

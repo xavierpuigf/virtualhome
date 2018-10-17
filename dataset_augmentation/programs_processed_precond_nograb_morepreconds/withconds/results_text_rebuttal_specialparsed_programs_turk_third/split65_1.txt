@@ -1,0 +1,27 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('MAIL', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('MAIL', '1') --> ('DESK', '1'), ('KEYBOARD', '1') --> ('DESK', '1'), ('MOUSE', '1') --> ('DESK', '1')
+Browse computer
+Log in to computer and check e-mails,go to Facebook and paly online games.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[TurnTo] <COMPUTER> (1)
+[PointAt] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[PutObjBack] <MOUSE> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

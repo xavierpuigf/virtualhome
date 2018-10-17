@@ -1,0 +1,29 @@
+5
+is_off: ('DISHWASHER', '1') --> 
+inside: ('PLATE', '1') --> ('KITCHEN CABINET', '1'), ('DISHRACK', '1') --> ('KITCHEN CABINET', '1'), ('DISH SOAP', '1') --> ('DISHWASHER', '1')
+location: ('DISHWASHER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+closed: ('DISHWASHER', '1') --> , ('KITCHEN CABINET', '1') --> 
+atreach: ('DISHWASHER', '1') --> ('KITCHEN CABINET', '1'), ('PLATE', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('DISHRACK', '1') --> ('KITCHEN CABINET', '1'), ('DISH SOAP', '1') --> ('KITCHEN CABINET', '1')
+Wash dishes with dishwasher
+I went to the kitchen and collected the dishes and put them into the dish washer and wiped them with towel and put back into cabinet..
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[PutBack] <PLATE> (1) <DISHWASHER> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <DISHWASHER> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)
+[Grab] <PLATE> (1)
+[Wipe] <PLATE> (1)
+[Find] <DISHRACK> (1)
+[Grab] <DISHRACK> (1)
+[PutObjBack] <DISHRACK> (1)

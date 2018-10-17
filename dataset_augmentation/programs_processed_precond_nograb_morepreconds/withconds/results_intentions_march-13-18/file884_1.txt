@@ -1,0 +1,20 @@
+4
+is_off: ('COMPUTER', '1') --> 
+in: ('COMPUTER', '1') --> ('TABLE', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('TABLE', '1') --> ('HOME OFFICE', '1'), ('MAIL', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('TABLE', '1'), ('MAIL', '1') --> ('TABLE', '1')
+Write an email
+i went near the computer and turned it on. then sent the mail
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[Walk] <TABLE> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[TurnTo] <MAIL> (1)

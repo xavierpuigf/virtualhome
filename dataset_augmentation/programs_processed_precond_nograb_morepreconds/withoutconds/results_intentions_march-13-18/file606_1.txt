@@ -1,0 +1,10 @@
+Change TV channel
+I find the TV Remote, usually located in the Living Room. I point the remote at the television. I use the numbered buttons to input the desired channel.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Find] <BUTTON> (3)
+[Push] <BUTTON> (3)

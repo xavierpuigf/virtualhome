@@ -1,0 +1,16 @@
+De-wrinkle sheet
+Go to the bed. Remove all items from on top of the bed, including blankets and comforters, until the sheet is showing. Gently go around the bed and pull each corner of the sheet until it is smooth on the bed.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[PutBack] <BLANKET> (1) <BASKET FOR CLOTHES> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[PutBack] <COMFORTER> (1) <BASKET FOR CLOTHES> (1)
+[Find] <SHEETS> (1)
+[Touch] <SHEETS> (1)
+[Pull] <SHEETS> (1)

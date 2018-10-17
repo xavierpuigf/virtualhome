@@ -1,0 +1,12 @@
+Fold laundry
+Pick the blanket up from the floor. Put the ends together. Repeat until the blanket is in a square shape.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BLANKET> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Shake] <BLANKET> (1)
+[Fold] <BLANKET> (1)
+[Find] <BED> (1)
+[PutBack] <BLANKET> (1) <BED> (1)

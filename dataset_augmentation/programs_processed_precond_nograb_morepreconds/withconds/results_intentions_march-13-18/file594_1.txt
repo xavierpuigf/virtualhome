@@ -1,0 +1,13 @@
+1
+closed: ('FRIDGE', '1') --> 
+Put groceries in Fridge
+Open fridge and set groceries inside. Close door to fridge.
+
+
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Close] <FRIDGE> (1)

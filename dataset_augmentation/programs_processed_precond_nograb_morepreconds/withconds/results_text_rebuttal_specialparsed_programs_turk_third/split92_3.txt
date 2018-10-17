@@ -1,0 +1,14 @@
+2
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('BOARD GAME', '1') --> ('LIVING ROOM', '1')
+atreach: ('BOARD GAME', '1') --> ('BOARD GAME', '1')
+Play games
+I either bring out monopoly, uno, chess, checkers or playing cards and lay them out on the dining room table. We then play the games for a couple of hours.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <BOARD GAME> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)

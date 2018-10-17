@@ -1,0 +1,16 @@
+Drink
+Get a can of beer, open it, sit on couch, relax
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <BEER> (1)
+[Grab] <BEER> (1)
+[Close] <FRIDGE> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Drink] <BEER> (1)

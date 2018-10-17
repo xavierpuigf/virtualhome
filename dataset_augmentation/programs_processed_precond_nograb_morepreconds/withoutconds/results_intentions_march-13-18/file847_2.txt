@@ -1,0 +1,15 @@
+Work
+I go to the home office to work on my project. I turn on the light and walk to my desk. I turn on the computer. Then I look through the documents. After I'm done, I turn off the computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <DESK> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <DOCUMENT> (1)
+[TurnTo] <DOCUMENT> (1)
+[LookAt] <DOCUMENT> (1)
+[SwitchOff] <COMPUTER> (1)

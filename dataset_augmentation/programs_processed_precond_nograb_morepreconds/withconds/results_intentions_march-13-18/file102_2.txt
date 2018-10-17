@@ -1,0 +1,18 @@
+3
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1'), ('COUCH', '1') --> ('TELEVISION', '1'), ('BUTTON', '1') --> ('REMOTE CONTROL', '1')
+Change TV channel
+I go the living room, look for my tv remote control, take the control and then sit down on the couch and turn on the TV and push the buttons on the remote control to change the channel.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

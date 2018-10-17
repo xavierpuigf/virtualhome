@@ -1,0 +1,21 @@
+2
+location: ('FACE', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('EYES_BOTH', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1')
+atreach: ('FACE', '1') --> ('TEETH', '1'), ('TEETH', '1') --> ('TEETH', '1'), ('BED', '1') --> ('BED', '1'), ('EYES_BOTH', '1') --> ('BED', '1'), ('BLANKET', '1') --> ('BED', '1')
+Go to sleep
+Go to the bathroom, brush my teeth and wash my face.Then go to the bedroom, lie down on the bed, pull the blanket over me and close my eyes
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TEETH> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Find] <FACE> (1)
+[Wash] <FACE> (1)
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Find] <BLANKET> (1)
+[Pull] <BLANKET> (1)
+[Find] <EYES_BOTH> (1)
+[Cover] <EYES_BOTH> (1) <BLANKET> (1)

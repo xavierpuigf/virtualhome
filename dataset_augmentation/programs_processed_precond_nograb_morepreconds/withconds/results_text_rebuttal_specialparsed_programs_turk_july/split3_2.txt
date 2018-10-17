@@ -1,0 +1,20 @@
+0
+Dry soap bottles
+Go to the shower or bath. Locate bottles of soap or shampoo. Pick up each bottle and, using a towel, dry off the bottle. Return each bottle to its original location.
+
+
+[Find] <TOWEL> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Find] <SOAP> (1)
+[Wipe] <SOAP> (1)
+[Grab] <SOAP> (1)
+[PutObjBack] <SOAP> (1)
+[Find] <SHAMPOO> (1)
+[Grab] <SHAMPOO> (1)
+[Wipe] <SHAMPOO> (1)
+[PutObjBack] <SHAMPOO> (1)
+[Find] <SHAMPOO> (2)
+[Grab] <SHAMPOO> (2)
+[Wipe] <SHAMPOO> (2)
+[PutObjBack] <SHAMPOO> (2)

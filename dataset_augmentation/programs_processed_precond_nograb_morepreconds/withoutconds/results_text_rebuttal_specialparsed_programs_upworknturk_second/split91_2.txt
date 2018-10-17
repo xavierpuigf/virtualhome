@@ -1,0 +1,20 @@
+Get dressed
+Open drawer. Pull out pants and put them on. Take a shirt out and put it on. Put on socks and shoes.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DRESSER> (1)
+[Open] <DRESSER> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[PutOn] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutOn] <CLOTHES_SHIRT> (1)
+[Find] <CLOTHES_SOCKS> (1)
+[Grab] <CLOTHES_SOCKS> (1)
+[PutOn] <CLOTHES_SOCKS> (1)
+[Close] <DRESSER> (1)
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[PutOn] <SHOES> (1)

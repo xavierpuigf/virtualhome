@@ -1,0 +1,14 @@
+Go to sleep
+walk to bedroom. lift pillow. put back pillow. lift blanket. cover bed with blanket. lie in bed.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <PILLOW> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[PutObjBack] <PILLOW> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <BED> (1)
+[Cover] <BED> (1) <BLANKET> (1)
+[Lie] <BED> (1)

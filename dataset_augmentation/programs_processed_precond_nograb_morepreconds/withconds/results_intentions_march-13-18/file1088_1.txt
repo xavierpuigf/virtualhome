@@ -1,0 +1,12 @@
+2
+in: ('BOOK', '1') --> ('CABINET', '1')
+atreach: ('BOOK', '1') --> ('CABINET', '1')
+Read book
+I go to the book case, I select a book, I go back and sit down, then I read.
+
+
+[Walk] <CABINET> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <SOFA> (1)
+[Read] <BOOK> (1)

@@ -1,0 +1,9 @@
+Pet cat
+Robot touches cat.
+
+
+[Find] <CAT> (1)
+[TurnTo] <CAT> (1)
+[LookAt] <CAT> (1)
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

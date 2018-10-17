@@ -1,0 +1,15 @@
+Play with toys
+Go into child's room and play with a puzzle.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Close] <CABINET> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[TurnTo] <TOY> (1)
+[LookAt] <TOY> (1)
+[Shake] <TOY> (1)

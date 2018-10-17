@@ -1,0 +1,15 @@
+2
+location: ('BED', '1') --> ('BEDROOM', '1'), ('PAJAMAS', '1') --> ('BEDROOM', '1')
+atreach: ('BED', '1') --> ('BED', '1'), ('PAJAMAS', '1') --> ('PAJAMAS', '1')
+Sleep
+Put on a pair of comfortable pajamas. Position your pillows on the bed where you can rest your head.  Pull back the bed covers and lay down in bed with your head on the pillows. Close your eyes and relax your breathing. Think pleasant thoughts.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <PAJAMAS> (1)
+[Find] <PAJAMAS> (1)
+[Grab] <PAJAMAS> (1)
+[PutOn] <PAJAMAS> (1)
+[Walk] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

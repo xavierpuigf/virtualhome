@@ -1,0 +1,21 @@
+2
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('KITCHEN', '1'), ('KNIFE', '1') --> ('KITCHEN', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN', '1')
+atreach: ('FORK', '1') --> ('DRINKING GLASS', '1'), ('KNIFE', '1') --> ('DRINKING GLASS', '1'), ('DRINKING GLASS', '1') --> ('DRINKING GLASS', '1')
+Set up table
+To set the table grab a fork, knife, plate, and water glass from the kitchen. Then I place each of these items on the table.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <DRINKING GLASS> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[PutBack] <DRINKING GLASS> (1) <TABLE> (1)
+[PutBack] <FORK> (1) <TABLE> (1)
+[PutBack] <KNIFE> (1) <TABLE> (1)

@@ -1,0 +1,14 @@
+Take shower
+enter bathroom. take off clothes. get into shower. wash self. get out of shower
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Drop] <CLOTHES_DRESS> (1)
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Find] <ARMS_BOTH> (1)
+[Wash] <ARMS_BOTH> (1)
+[Leave] <SHOWER> (1)

@@ -1,0 +1,21 @@
+3
+in: ('CUP', '1') --> ('SINK', '1')
+location: ('PLATE', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1'), ('CUP', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1')
+atreach: ('PLATE', '1') --> ('SINK', '1'), ('SPONGE', '1') --> ('SINK', '1'), ('CUP', '1') --> ('SINK', '1'), ('DISH SOAP', '1') --> ('SINK', '1')
+Wash dishes by hand
+place dirty dishes in the sink, turn on the water, add dish soap to the sponge, scrub dishes with sponge, rinse dishes with water, dry with towel
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <CUP> (1)
+[Rinse] <CUP> (1)
+[Rinse] <CUP> (1)
+[Find] <DISH SOAP> (1)
+[Find] <SPONGE> (1)
+[Pour] <DISH SOAP> (1) <SPONGE> (1)
+[Scrub] <CUP> (1)
+[Find] <PLATE> (1)
+[Scrub] <PLATE> (1)
+[Rinse] <CUP> (1)
+[Rinse] <PLATE> (1)

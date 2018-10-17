@@ -1,0 +1,37 @@
+5
+is_off: ('OVEN', '1') --> 
+inside: ('FOOD_CARROT', '1') --> ('FRIDGE', '1'), ('FOOD_SALT', '1') --> ('OVEN', '1')
+location: ('OVEN', '1') --> ('KITCHEN', '1'), ('CHEF KNIFE', '1') --> ('KITCHEN', '1'), ('CUTTING BOARD', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('FRYINGPAN', '1') --> ('KITCHEN', '1'), ('BOWL', '1') --> ('KITCHEN', '1')
+closed: ('OVEN', '1') --> , ('FRIDGE', '1') --> 
+atreach: ('FOOD_CARROT', '1') --> ('FRIDGE', '1'), ('OVEN', '1') --> ('FRIDGE', '1'), ('CHEF KNIFE', '1') --> ('FRIDGE', '1'), ('FOOD_SALT', '1') --> ('FOOD_SALT', '1'), ('CUTTING BOARD', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('FRYINGPAN', '1') --> ('FRIDGE', '1'), ('BOWL', '1') --> ('FOOD_SALT', '1')
+Cook some food
+Walk to kitchen, open fridge, take out carrot, close fridge, put carrot on cutting board, grab knife, cut carrot, turn on oven, put frying pan on oven, put carrot into the pan, put some salt, stir carrot until cooked well, put carrot into bowl, turn off oven
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_CARROT> (1)
+[Grab] <FOOD_CARROT> (1)
+[Close] <FRIDGE> (1)
+[Find] <CUTTING BOARD> (1)
+[PutBack] <FOOD_CARROT> (1) <CUTTING BOARD> (1)
+[Find] <CHEF KNIFE> (1)
+[Grab] <CHEF KNIFE> (1)
+[Cut] <FOOD_CARROT> (1)
+[Find] <OVEN> (1)
+[SwitchOn] <OVEN> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Open] <OVEN> (1)
+[PutBack] <FRYINGPAN> (1) <OVEN> (1)
+[Throw] <FOOD_CARROT> (1) <FRYINGPAN> (1)
+[Walk] <FOOD_SALT> (1)
+[Find] <FOOD_SALT> (1)
+[Grab] <FOOD_SALT> (1)
+[Pour] <FOOD_SALT> (1) <FRYINGPAN> (1)
+[Scrub] <FRYINGPAN> (1)
+[Find] <BOWL> (1)
+[Throw] <FOOD_CARROT> (1) <BOWL> (1)
+[SwitchOff] <OVEN> (1)

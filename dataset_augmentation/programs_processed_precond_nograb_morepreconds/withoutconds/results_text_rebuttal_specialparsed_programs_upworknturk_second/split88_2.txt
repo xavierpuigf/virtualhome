@@ -1,0 +1,20 @@
+Read them bedtime story
+Tuck child in for the night. Grab their favorite story book. Read it.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CHILD> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <SHEETS> (1)
+[Cover] <CHILD> (1) <SHEETS> (1)
+[Find] <BLANKET> (1)
+[Cover] <CHILD> (1) <BLANKET> (1)
+[Walk] <CABINET> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[TurnTo] <CHILD> (1)
+[LookAt] <CHILD> (1)
+[Read] <BOOK> (1)

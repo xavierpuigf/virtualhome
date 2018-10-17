@@ -1,0 +1,18 @@
+Write an email
+Write an email
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <ADDRESS BOOK> (1)
+[TurnTo] <ADDRESS BOOK> (1)
+[LookAt] <ADDRESS BOOK> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Write] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Push] <MAIL> (1)
+[Close] <MAIL> (1)

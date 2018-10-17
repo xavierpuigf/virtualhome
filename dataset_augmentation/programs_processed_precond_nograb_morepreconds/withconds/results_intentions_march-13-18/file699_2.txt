@@ -1,0 +1,13 @@
+2
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('PHONE', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('PHONE', '1'), ('PHONE', '1') --> ('CHAIR', '1')
+Pick up phone
+When the phone rings, I pick up the call and give response to the call.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <PHONE> (1)
+[Grab] <PHONE> (1)

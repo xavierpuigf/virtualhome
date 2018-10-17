@@ -1,0 +1,14 @@
+Work
+walk to Office,Walk to desk ,sit down in chair, turn on computer, start homework.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <PAPER> (1)
+[Find] <HOMEWORK> (1)
+[TurnTo] <HOMEWORK> (1)
+[LookAt] <HOMEWORK> (1)

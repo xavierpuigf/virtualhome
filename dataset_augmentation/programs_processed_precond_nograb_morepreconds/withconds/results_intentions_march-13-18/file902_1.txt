@@ -1,0 +1,38 @@
+3
+is_off: ('FAUCET', '1') --> , ('STOVE', '1') --> 
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('PASTA', '1') --> ('KITCHEN', '1'), ('COOKINGPOT', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('WOODEN SPOON', '1') --> ('KITCHEN', '1'), ('DRY PASTA', '1') --> ('KITCHEN', '1')
+atreach: ('FAUCET', '1') --> ('COOKINGPOT', '1'), ('WATER', '1') --> ('COOKINGPOT', '1'), ('STOVE', '1') --> ('COOKINGPOT', '1'), ('PLATE', '1') --> ('COOKINGPOT', '1'), ('PASTA', '1') --> ('COOKINGPOT', '1'), ('COOKINGPOT', '1') --> ('COOKINGPOT', '1'), ('SINK', '1') --> ('COOKINGPOT', '1'), ('WOODEN SPOON', '1') --> ('COOKINGPOT', '1'), ('DRY PASTA', '1') --> ('COOKINGPOT', '1')
+Cook some food
+Enter kitchen and prepare food, using cooking utensils and appliances.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COOKINGPOT> (1)
+[Find] <COOKINGPOT> (1)
+[Grab] <COOKINGPOT> (1)
+[Find] <SINK> (1)
+[PutBack] <COOKINGPOT> (1) <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Grab] <COOKINGPOT> (1)
+[PutBack] <COOKINGPOT> (1) <SINK> (1)
+[Grab] <COOKINGPOT> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <STOVE> (1)
+[PutBack] <COOKINGPOT> (1) <STOVE> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <DRY PASTA> (1)
+[Soak] <DRY PASTA> (1) <COOKINGPOT> (1)
+[Find] <WOODEN SPOON> (1)
+[Grab] <WOODEN SPOON> (1)
+[Stir] <WATER> (1)
+[TurnTo] <DRY PASTA> (1)
+[LookAt] <DRY PASTA> (1)
+[SwitchOff] <STOVE> (1)
+[Pour] <WATER> (1) <SINK> (1)
+[Find] <PASTA> (1)
+[Grab] <PASTA> (1)
+[Find] <PLATE> (1)
+[PutBack] <PASTA> (1) <PLATE> (1)

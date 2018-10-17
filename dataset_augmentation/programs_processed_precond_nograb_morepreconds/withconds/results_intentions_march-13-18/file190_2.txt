@@ -1,0 +1,29 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('TOOTHBRUSH', '1') --> ('TOOTHBRUSH', '1'), ('TEETH', '1') --> ('SINK', '1'), ('TOOTH PASTE', '1') --> ('TOOTHBRUSH', '1')
+Wash teeth
+Go to the bathroom and brush teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTHBRUSH> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Brush] <TEETH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Rinse] <TEETH> (1)
+[SwitchOff] <FAUCET> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

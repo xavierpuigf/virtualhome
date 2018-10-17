@@ -1,0 +1,14 @@
+2
+location: ('BOOK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('BOOK', '1') --> ('BOOK', '1'), ('CHAIR', '1') --> ('CHAIR', '1')
+Read book
+find a book to read. sit down. read the book.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <BOOK> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Read] <BOOK> (1)

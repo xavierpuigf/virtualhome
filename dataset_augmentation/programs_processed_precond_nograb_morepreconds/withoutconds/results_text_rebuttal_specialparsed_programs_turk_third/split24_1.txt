@@ -1,0 +1,10 @@
+Greet guests
+Greet people into my home
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <WOMAN> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)

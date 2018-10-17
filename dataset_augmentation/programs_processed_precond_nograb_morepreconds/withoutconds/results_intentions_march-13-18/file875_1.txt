@@ -1,0 +1,15 @@
+Go to sleep
+walk to bedroom, look at the pillow, put pillow into bed, lie down in bed, sleep well
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <PILLOW> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[TurnTo] <PILLOW> (1)
+[LookAt] <PILLOW> (1)
+[Find] <BED> (1)
+[PutBack] <PILLOW> (1) <BED> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

@@ -1,0 +1,28 @@
+2
+inside: ('CLOTHES_UNDERWEAR', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SOCKS', '1') --> ('WASHING MACHINE', '1'), ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SOCKS', '2') --> ('WASHING MACHINE', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
+closed: ('WASHING MACHINE', '1') --> 
+Wash clothes
+Put clothes into washing machine. Add detergent.  Run washing machine. Put clothes in dryer. Add dryer sheet. Run Dryer. Fold Clothes.
+
+
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Grab] <CLOTHES_UNDERWEAR> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_SOCKS> (1)
+[Grab] <CLOTHES_SOCKS> (1)
+[PutBack] <CLOTHES_SOCKS> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_SOCKS> (2)
+[Grab] <CLOTHES_SOCKS> (2)
+[PutBack] <CLOTHES_SOCKS> (2) <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[PutBack] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Run] <WASHING MACHINE> (1)

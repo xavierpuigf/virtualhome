@@ -1,0 +1,9 @@
+Drink
+Fill up a cup with water from the fridge or sink. move cup to lips and sip water through lips. swallow.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUP> (1)
+[Find] <CUP> (1)
+[Find] <WATER> (1)
+[Drink] <WATER> (1)

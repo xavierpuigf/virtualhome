@@ -1,0 +1,14 @@
+Receive credit card
+hear the dooble, go to door, take de envelope, open it with a scissor, take the creditcard
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <ENVELOPE> (1)
+[Find] <ENVELOPE> (1)
+[Grab] <ENVELOPE> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <SCISSORS> (1)
+[Find] <SCISSORS> (1)
+[Open] <ENVELOPE> (1)
+[Find] <CREDITCARD> (1)
+[Grab] <CREDITCARD> (1)

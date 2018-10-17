@@ -1,0 +1,8 @@
+Take nap
+Lay down on the bed and nap
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

@@ -1,0 +1,10 @@
+Play piano
+Play a song on piano
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <INSTRUMENT_PIANO> (1)
+[Find] <PIANO BENCH> (1)
+[Sit] <PIANO BENCH> (1)
+[Touch] <INSTRUMENT_PIANO> (1)
+[Play]

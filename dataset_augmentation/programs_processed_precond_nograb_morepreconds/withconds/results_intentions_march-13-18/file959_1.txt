@@ -1,0 +1,17 @@
+2
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('SOFA', '1'), ('BUTTON', '1') --> ('SOFA', '1'), ('SOFA', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('SOFA', '1')
+Change TV channel
+Pickup remote control for the living room TV and push the change channel button
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

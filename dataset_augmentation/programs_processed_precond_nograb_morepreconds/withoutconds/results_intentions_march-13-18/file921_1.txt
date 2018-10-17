@@ -1,0 +1,25 @@
+Wash teeth
+Walk to bathroom, walk to counter, grab cup, fill water, grab tooth-brush, grab tooth-paste, spread tooth-paste to tooth-brush, drink water, spit into sink, move tooth-brush to wash teeth, spit to sink, drink water, spit to sink.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <BATHROOM COUNTER> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Drink] <CUP> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[Spit] <SINK> (1)
+[Drink] <WATER> (1)
+[Spit] <SINK> (1)

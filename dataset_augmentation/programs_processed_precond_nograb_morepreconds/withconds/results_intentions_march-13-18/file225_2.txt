@@ -1,0 +1,24 @@
+4
+is_off: ('TELEVISION', '1') --> 
+in: ('REMOTE CONTROL', '1') --> ('COFFEE TABLE', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('COUCH', '1'), ('TELEVISION', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('COFFEE TABLE', '1'), ('COFFEE TABLE', '1') --> ('COUCH', '1')
+Watch TV
+Sit down, turn on the TV with the remote control that is on the coffee table.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <COFFEE TABLE> (1)
+[TurnTo] <COFFEE TABLE> (1)
+[LookAt] <COFFEE TABLE> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

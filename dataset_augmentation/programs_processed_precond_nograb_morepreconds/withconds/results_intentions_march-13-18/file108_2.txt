@@ -1,0 +1,15 @@
+2
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('TELEPHONE', '1') --> ('LIVING ROOM', '1')
+atreach: ('TABLE', '1') --> ('TABLE', '1'), ('TELEPHONE', '1') --> ('TABLE', '1')
+Pick up phone
+Pick up the ringing phone
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[PointAt] <TABLE> (1)
+[Find] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)
+[PutObjBack] <TELEPHONE> (1)
