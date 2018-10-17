@@ -120,7 +120,7 @@ def check_2(dir_path, graph_path):
     not_executable_program_length = []
     #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file27_2.txt')]
     #program_txt_files = ['temp.txt']
-    for j, txt_file in enumerate(program_txt_files):
+    for j, txt_file in enumerate(tqdm(program_txt_files)):
 
         helper.initialize()
         try:
@@ -244,6 +244,8 @@ if __name__ == '__main__':
     
     translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
-    check_2('/Users/andrew/UofT/home_sketch2program/data/programs_processed_precond_nograb', graph_path=translated_path)
+    #check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds_executable_perturbed', graph_path=translated_path)
+    check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    
     #example_check_executability()
     
