@@ -1163,12 +1163,14 @@ class ScriptExecutor(object):
         info = self.info
         state = EnvironmentState(self.graph, self.name_equivalence, instance_selection=True)
         _apply_initial_changers(state, script, init_changers)
+        graph_state_list = []
         for i in range(len(script)):
+            graph_state_list.append(state.to_dict())
             future_script = script.from_index(i)
             state = next(self.call_action_method(future_script, state, info), None)
             if state is None:
-                return None
-        return state
+                return None, graph_state_list
+        return state, graph_state_list
 
     @classmethod
     def call_action_method(cls, script: Script, state: EnvironmentState, info: ExecutionInfo):
