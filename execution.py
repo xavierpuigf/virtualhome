@@ -270,7 +270,7 @@ class GrabExecutor(ActionExecutor):
                 yield state.change_state(changes)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
-        if Property.GRABBABLE not in node.properties:
+        if Property.GRABBABLE not in node.properties and node.class_name != 'water':
             info.error('{} is not grabbable', node)
             return None
         if not _is_character_close_to(state, node):

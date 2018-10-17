@@ -112,7 +112,7 @@ Possible relations (edge labels) are:
 ### GrabExecutor
 - script: grab `object`
 - Pre-condition: 
-	- `object` property is grabbable
+	- `object` property is grabbable except water
 	- exists edge `character` close `object`
 	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot grab an object inside other one, unless it is open
 	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
