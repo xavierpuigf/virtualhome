@@ -4,6 +4,7 @@ import utils
 import glob
 import random
 from tqdm import tqdm
+from shutil import copyfile
 
 from execution import Relation, State
 from scripts import read_script, read_script_from_string, ScriptParseException
@@ -13,7 +14,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = False
+verbose = True
 
 
 def write_new_txt(txt_file, precond_path, message):
@@ -42,6 +43,49 @@ def write_new_txt(txt_file, precond_path, message):
     new_f.write(f.read())
     f.close()
 
+    new_f.close()
+
+
+def dump_one_data(txt_file, script, graph_dict, objects_in_script):
+
+    new_path = txt_file.replace('withoutconds', 'executable_programs')
+    new_dir = os.path.dirname(new_path)
+    if not os.path.exists(new_dir):
+        os.makedirs(new_dir)
+
+    # read old program
+    old_f = open(txt_file, 'r')
+    old_program = old_f.read()
+    old_f.close()
+
+    new_f = open(new_path, 'w')
+    
+    prefix = old_program.split('\n\n\n')[0]
+    new_f.write(prefix)
+    new_f.write('\n\n\n')
+
+    for script_line in script:
+        script_line_str = '[{}]'.format(script_line.action.name)
+        if script_line.object():
+            script_line_str += ' <{}> ({})'.format(script_line.object().name, script_line.object().instance)
+        if script_line.subject():
+            script_line_str += ' <{}> ({})'.format(script_line.subject().name, script_line.subject().instance)
+
+        for k, v in objects_in_script.items():
+            obj_name, obj_number = k
+            id = v
+            script_line_str = script_line_str.replace('<{}> ({})'.format(obj_name, id), '<{}> ({}.{})'.format(obj_name, obj_number, id))
+        
+        new_f.write(script_line_str)
+        new_f.write('\n')
+
+    new_path = txt_file.replace('withoutconds', 'executable_graphs').replace('txt', 'json')
+    new_dir = os.path.dirname(new_path)
+    if not os.path.exists(new_dir):
+        os.makedirs(new_dir)
+
+    new_f = open(new_path, 'w')
+    json.dump(graph_dict, new_f)
     new_f.close()
 
 
@@ -100,25 +144,20 @@ def check_2(dir_path, graph_path):
     """
 
     info = {}
+    max_nodes = 280
 
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
     properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
-    object_states = json.load(open('resources/object_states.json'))    # not used now
+    object_states = json.load(open('resources/object_states.json'))
     object_placing = json.load(open('resources/object_script_placing.json'))
-    object_alias = json.load(open('resources/object_merged.json'))
-    _object_alias = {}
-    for k, vs in object_alias.items():
-        for v in vs:
-            _object_alias[v] = k
-    object_alias = _object_alias
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states)
     executable_programs = 0
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18', 'file27_2.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file1028_1.txt')]
     #program_txt_files = ['temp.txt']
     for j, txt_file in enumerate(tqdm(program_txt_files)):
 
@@ -131,42 +170,35 @@ def check_2(dir_path, graph_path):
             not_parsable_programs += 1            
             continue
 
-        # object alias
-        for script_line in script:
-            for param in script_line.parameters:
-                if param.name in object_alias:
-                    param.name = object_alias[param.name]
-
         precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
         precond = json.load(open(precond_path))
+        
         for p in precond:
             for k, vs in p.items():
                 if isinstance(vs[0], list): 
                     for v in vs:
                         v[0] = v[0].lower().replace(' ', '_')
-                        if v[0] in object_alias:
-                            v[0] =  object_alias[v[0]]
                 else:
                     v = vs
                     v[0] = v[0].lower().replace(' ', '_')
-                    if v[0] in object_alias:
-                        v[0] =  object_alias[v[0]]
-
 
         # modif the graph_dict
         graph_dict = utils.load_graph_dict(graph_path)
 
         ## add missing object from scripts (id from 1000)
         objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
-        ## place the random objects (id from 2000)
-        helper.add_random_objs_graph_dict(graph_dict, n=0) 
         ## set object state to default 
-        helper.set_to_default_state(graph_dict)
+        helper.set_to_default_state(graph_dict, id_checker=lambda v: True)
         helper.random_change_object_state(objects_in_script, graph_dict)
-
 
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
+
+        ## place the random objects (id from 2000)
+        helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+        ## set object state to default 
+        helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
+        assert len(graph_dict["nodes"]) == max_nodes
 
         graph = EnvironmentGraph(graph_dict)
 
@@ -180,6 +212,7 @@ def check_2(dir_path, graph_path):
             if verbose:
                 print(message)
         else:
+            dump_one_data(txt_file, script, graph_dict, objects_in_script)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
@@ -200,20 +233,23 @@ def check_2(dir_path, graph_path):
 
 def check_executability(string, graph_dict):
 
+    able_to_be_parsed = False
+    able_to_be_executed = False
     try:
         script = read_script_from_string(string)
+        able_to_be_parsed = True
     except ScriptParseException:
-        return False
+        return able_to_be_parsed, able_to_be_executed
 
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
     state = executor.execute(script)
 
-    if state is None:
-        return False
+    if state is not None:
+        able_to_be_executed = True
 
-    return True
+    return able_to_be_parsed, able_to_be_executed
     
 
 def modify_script(script):
@@ -240,6 +276,7 @@ def example_check_executability():
     executability = check_executability(modify_script(script2), graph_dict)
     print("Script is {}executable".format('' if executability else 'not '))
 
+
 if __name__ == '__main__':
     
     translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
@@ -247,5 +284,4 @@ if __name__ == '__main__':
     #check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds_executable_perturbed', graph_path=translated_path)
     check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
     
-    #example_check_executability()
     
