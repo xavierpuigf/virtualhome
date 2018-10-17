@@ -1,1 +1,0 @@
-[{"location": [["BOOK", "1"], ["BEDROOM", "1"]]}, {"location": [["PENCIL", "1"], ["BEDROOM", "1"]]}, {"location": [["BOOK", "2"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"atreach": [["BOOK", "1"], ["BOOK", "1"]]}, {"atreach": [["PENCIL", "1"], ["BOOK", "1"]]}, {"atreach": [["BOOK", "2"], ["BOOK", "1"]]}, {"atreach": [["BED", "1"], ["BOOK", "1"]]}]

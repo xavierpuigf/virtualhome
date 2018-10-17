@@ -1,1 +1,0 @@
-[{"location": [["BOOK", "1"], ["LIVING ROOM", "1"]]}, {"location": [["CHAIR", "1"], ["LIVING ROOM", "1"]]}, {"location": [["NOTE PAD", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["BOOK", "1"], ["CHAIR", "1"]]}, {"atreach": [["CHAIR", "1"], ["BOOK", "1"]]}, {"atreach": [["NOTE PAD", "1"], ["CHAIR", "1"]]}]

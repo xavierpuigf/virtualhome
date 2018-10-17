@@ -1,1 +1,0 @@
-[{"inside": [["SHOES", "1"], ["CLOSET", "1"]]}, {"location": [["CLOSET", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["SHOES", "2"], ["ENTRANCE HALL", "1"]]}, {"closed": ["CLOSET", "1"]}, {"atreach": [["CLOSET", "1"], ["CLOSET", "1"]]}, {"atreach": [["SHOES", "1"], ["SHOES", "1"]]}, {"atreach": [["SHOES", "2"], ["SHOES", "1"]]}]

@@ -1,9 +1,0 @@
-Read book
-Sit on couch. Grab book. Open book. Read book.
-
-
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)

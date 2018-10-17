@@ -1,8 +1,0 @@
-Work
-go to home office. turn the computer on. begin working
-
-
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)

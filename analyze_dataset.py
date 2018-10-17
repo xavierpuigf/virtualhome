@@ -2,6 +2,7 @@
 import os
 import re
 import json
+import numpy as np
 
 from glob import glob
 from matplotlib import pyplot as plt
@@ -13,7 +14,7 @@ import ipdb
 
 
 plot = False
-root_dirs = '/Users/andrew/UofT/home_sketch2program/dataset_augmentation/programs_processed_precond_nograb_morepreconds'
+root_dirs = 'dataset_augmentation/programs_processed_precond_nograb_morepreconds'
 program_dir_name = 'executable_programs'
 graph_dir_name = 'init_and_final_graphs'
 
@@ -23,19 +24,17 @@ patt_number = '\((.+?)\)'
 def check_number_of_objects():
 
     program_txt_paths = glob(os.path.join(root_dirs, program_dir_name, '*/*.txt'))
-    program_length_list = []
+
     program_instance_list = []
     for path in program_txt_paths:
         with open(path, 'r') as f:
             program_txt = f.read()
             program_txt = program_txt.split('\n')
             program = program_txt[4:]
-            program_length = len(program)
-            program_length_list.append(program_length)
 
             id_list = []
             for line in program:
-                line = line.stripe().lower()
+                line = line.strip().lower()
 
                 number_match = re.search(patt_number, line)
                 while number_match:
@@ -43,9 +42,10 @@ def check_number_of_objects():
                     id_list.append(number_name.split('.')[1])
                     number_match = re.search(patt_number, number_match.string[number_match.end(1):])
             program_instance_list.append(set(id_list))
-    ipdb.set_trace()
-    print()
 
+    n_instance_list = np.array([len(l) for l in program_instance_list])
+    mean_n_instance = np.sum(n_instance_list) / len(n_instance_list)
+    print("Average number of instance in the program = {:.2f}, std = {:.2f}, max = {}, min = {}".format(mean_n_instance, np.std(n_instance_list), np.max(n_instance_list), np.min(n_instance_list)))
 
 
 def evaluate_f1_scores(graph1_state, graph2_state, program1_id_list, program2_id_list):
@@ -226,6 +226,6 @@ def check_title():
 
 
 if __name__ == '__main__':
-    #check_title()
+    check_title()
     #check_graph_init_and_final_state()
     check_number_of_objects()

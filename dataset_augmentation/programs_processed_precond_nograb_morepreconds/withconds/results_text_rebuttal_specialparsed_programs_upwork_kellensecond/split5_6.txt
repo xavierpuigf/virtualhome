@@ -1,7 +1,0 @@
-0
-Walk to room
-Leave the living room and enter the hall
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <ENTRANCE HALL> (1)

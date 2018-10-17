@@ -1,8 +1,0 @@
-Turn on light
-switching on light in an area
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)

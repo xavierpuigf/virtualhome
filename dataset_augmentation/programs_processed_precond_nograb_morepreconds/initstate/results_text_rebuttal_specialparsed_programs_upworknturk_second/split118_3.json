@@ -1,1 +1,0 @@
-[{"inside": [["HAIRBRUSH", "1"], ["DRESSER", "1"]]}, {"location": [["HAIR", "1"], ["BEDROOM", "1"]]}, {"location": [["DRESSER", "1"], ["BEDROOM", "1"]]}, {"closed": ["DRESSER", "1"]}, {"atreach": [["HAIR", "1"], ["DRESSER", "1"]]}, {"atreach": [["DRESSER", "1"], ["DRESSER", "1"]]}, {"atreach": [["HAIRBRUSH", "1"], ["DRESSER", "1"]]}]

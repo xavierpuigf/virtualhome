@@ -1,1 +1,0 @@
-[{"in": [["DOCUMENT", "1"], ["FILING CABINET", "1"]]}, {"location": [["DOCUMENT", "1"], ["HOME OFFICE", "1"]]}, {"location": [["SHREDDER", "1"], ["HOME OFFICE", "1"]]}, {"location": [["FILING CABINET", "1"], ["HOME OFFICE", "1"]]}, {"unplugged": ["SHREDDER", "1"]}, {"atreach": [["DOCUMENT", "1"], ["FILING CABINET", "1"]]}, {"atreach": [["SHREDDER", "1"], ["SHREDDER", "1"]]}]

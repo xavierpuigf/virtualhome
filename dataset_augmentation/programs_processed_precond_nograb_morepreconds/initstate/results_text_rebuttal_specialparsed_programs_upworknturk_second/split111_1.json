@@ -1,1 +1,0 @@
-[{"location": [["WALL", "1"], ["KIDS BEDROOM", "1"]]}, {"location": [["DRAWING", "1"], ["KIDS BEDROOM", "1"]]}, {"location": [["PAINTING", "1"], ["KIDS BEDROOM", "1"]]}, {"atreach": [["WALL", "1"], ["DRAWING", "1"]]}, {"atreach": [["DRAWING", "1"], ["DRAWING", "1"]]}, {"atreach": [["PAINTING", "1"], ["DRAWING", "1"]]}]

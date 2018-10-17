@@ -1,6 +1,0 @@
-Put umbrella away
-Place the umbrella in the umbrella bucket point first.
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <MOP BUCKET> (1)

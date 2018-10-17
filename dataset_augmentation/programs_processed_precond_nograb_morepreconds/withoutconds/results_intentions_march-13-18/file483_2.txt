@@ -1,9 +1,0 @@
-Write an email
-walk to home office ,find computer , switch on ,
-
-
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (2)
-[Find] <COMPUTER> (2)
-[Find] <MAIL> (3)
-[Write] <MAIL> (3)

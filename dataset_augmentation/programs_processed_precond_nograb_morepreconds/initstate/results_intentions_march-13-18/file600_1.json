@@ -1,1 +1,0 @@
-[{"location": [["WATER GLASS", "3"], ["KITCHEN", "1"]]}, {"location": [["FRIDGE", "2"], ["KITCHEN", "1"]]}, {"closed": ["FRIDGE", "2"]}, {"atreach": [["WATER GLASS", "3"], ["FRIDGE", "2"]]}, {"atreach": [["FRIDGE", "2"], ["FRIDGE", "2"]]}]

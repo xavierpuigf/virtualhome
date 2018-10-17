@@ -1,1 +1,0 @@
-[{"is_off": ["OVEN", "1"]}, {"inside": [["TRAY", "1"], ["OVEN", "1"]]}, {"location": [["OVEN", "1"], ["KITCHEN", "1"]]}, {"location": [["DOUGH", "1"], ["KITCHEN", "1"]]}, {"closed": ["OVEN", "1"]}, {"atreach": [["TRAY", "1"], ["OVEN", "1"]]}, {"atreach": [["OVEN", "1"], ["OVEN", "1"]]}, {"atreach": [["DOUGH", "1"], ["OVEN", "1"]]}]

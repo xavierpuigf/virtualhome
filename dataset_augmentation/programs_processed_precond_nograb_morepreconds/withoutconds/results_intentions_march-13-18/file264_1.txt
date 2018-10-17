@@ -1,8 +1,0 @@
-Pick up phone
-Enter office. Go to desk. Pick up phone.
-
-
-[Walk] <HOME OFFICE> (1)
-[Walk] <DESK> (1)
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)

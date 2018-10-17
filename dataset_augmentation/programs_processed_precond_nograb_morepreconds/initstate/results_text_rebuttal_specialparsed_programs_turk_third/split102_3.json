@@ -1,1 +1,0 @@
-[{"inside": [["TOY", "3"], ["CABINET", "1"]]}, {"inside": [["TOY", "2"], ["CABINET", "1"]]}, {"closed": ["CABINET", "1"]}, {"atreach": [["TOY", "1"], ["TOY", "1"]]}, {"atreach": [["TOY", "3"], ["CABINET", "1"]]}, {"atreach": [["CABINET", "1"], ["TOY", "1"]]}, {"atreach": [["TOY", "2"], ["CABINET", "1"]]}]

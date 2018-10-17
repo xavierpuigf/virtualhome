@@ -1,1 +1,0 @@
-[{"inside": [["PEN", "1"], ["NOTE PAD", "1"]]}, {"location": [["NOTE PAD", "1"], ["HOME OFFICE", "1"]]}, {"location": [["CHAIR", "1"], ["HOME OFFICE", "1"]]}, {"closed": ["NOTE PAD", "1"]}, {"atreach": [["NOTE PAD", "1"], ["CHAIR", "1"]]}, {"atreach": [["CHAIR", "1"], ["NOTE PAD", "1"]]}, {"atreach": [["PEN", "1"], ["CHAIR", "1"]]}]

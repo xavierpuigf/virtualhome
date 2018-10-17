@@ -1,1 +1,0 @@
-[{"inside": [["TOY", "2"], ["BOOKSHELF", "1"]]}, {"location": [["TOY", "1"], ["KIDS BEDROOM", "1"]]}, {"location": [["BOOKSHELF", "1"], ["KIDS BEDROOM", "1"]]}, {"closed": ["BOOKSHELF", "1"]}, {"atreach": [["TOY", "1"], ["TOY", "1"]]}, {"atreach": [["BOOKSHELF", "1"], ["TOY", "1"]]}, {"atreach": [["TOY", "2"], ["TOY", "1"]]}]

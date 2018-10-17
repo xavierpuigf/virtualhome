@@ -1,9 +1,0 @@
-Look at mirror
-I look at my reflection to check my cleanliness.
-
-
-[Walk] <BATHROOM> (1)
-[Walk] <MIRROR> (1)
-[Find] <MIRROR> (1)
-[TurnTo] <MIRROR> (1)
-[LookAt] <MIRROR> (1)

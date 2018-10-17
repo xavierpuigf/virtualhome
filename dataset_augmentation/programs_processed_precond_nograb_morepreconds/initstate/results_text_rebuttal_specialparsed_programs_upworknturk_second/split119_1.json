@@ -1,1 +1,0 @@
-[{"is_off": ["VACUUM CLEANER", "1"]}, {"atreach": [["VACUUM CLEANER", "1"], ["VACUUM CLEANER", "1"]]}, {"atreach": [["ELECTRICAL OUTLET", "1"], ["VACUUM CLEANER", "1"]]}, {"location": [["VACUUM CLEANER", "1"], ["LIVING ROOM", "1"]]}, {"location": [["ELECTRICAL OUTLET", "1"], ["LIVING ROOM", "1"]]}, {"unplugged": ["VACUUM CLEANER", "1"]}, {"plugged": ["VACUUM CLEANER", "1"]}]

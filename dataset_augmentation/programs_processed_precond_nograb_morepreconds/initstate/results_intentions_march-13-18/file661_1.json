@@ -1,1 +1,0 @@
-[{"sitting": ["Character", 1]}, {"atreach": [["STEREO", "1"], ["LIGHT", "1"]]}, {"atreach": [["LIGHT", "1"], ["LIGHT", "1"]]}, {"location": [["STEREO", "1"], ["BEDROOM", "1"]]}, {"location": [["LIGHT", "1"], ["BEDROOM", "1"]]}, {"is_off": ["STEREO", "1"]}, {"is_off": ["LIGHT", "1"]}, {"plugged": ["STEREO", "1"]}, {"unplugged": ["STEREO", "1"]}]

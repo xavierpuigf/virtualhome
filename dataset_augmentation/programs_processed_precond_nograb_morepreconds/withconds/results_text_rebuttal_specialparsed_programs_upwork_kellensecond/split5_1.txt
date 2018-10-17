@@ -1,6 +1,0 @@
-0
-Open door
-Open the door when leaving or coming in.
-
-
-[Walk] <ENTRANCE HALL> (1)

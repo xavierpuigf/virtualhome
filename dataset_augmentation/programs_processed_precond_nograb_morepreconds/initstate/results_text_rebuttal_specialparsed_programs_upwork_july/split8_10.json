@@ -1,1 +1,0 @@
-[{"location": [["IRONING BOARD", "1"], ["BEDROOM", "1"]]}, {"location": [["IRON", "1"], ["BEDROOM", "1"]]}, {"location": [["CLOTHES_SHIRT", "1"], ["BEDROOM", "1"]]}, {"unplugged": ["IRON", "1"]}, {"atreach": [["IRON", "1"], ["IRONING BOARD", "1"]]}, {"atreach": [["CLOTHES_SHIRT", "1"], ["IRONING BOARD", "1"]]}]

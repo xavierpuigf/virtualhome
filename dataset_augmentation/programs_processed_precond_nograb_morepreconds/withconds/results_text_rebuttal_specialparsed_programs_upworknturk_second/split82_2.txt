@@ -1,8 +1,0 @@
-0
-Walk through
-Walk through the hallway.
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <KITCHEN> (1)
-[Walk] <LIVING ROOM> (1)

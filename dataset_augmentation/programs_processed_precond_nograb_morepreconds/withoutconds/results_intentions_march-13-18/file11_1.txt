@@ -1,9 +1,0 @@
-Turn on light
-I go to bedroom and locate a lamp. This lamp can be turned on by touch, as it has capacitive sensing. So I do it.
-
-
-[Walk] <BEDROOM> (1)
-[Walk] <LAMP> (1)
-[Find] <LAMP> (1)
-[Touch] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
