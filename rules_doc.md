@@ -202,7 +202,6 @@ Possible relations (edge labels) are:
 - script: Wipe `object`
 - Pre-condition: 
 	- `character` close `object`
-	- `object` property is `surface`
 	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
 - Post-condition:
 	- state changes: `object` state is clean

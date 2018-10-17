@@ -529,9 +529,9 @@ class WipeExecutor(ActionExecutor):
             info.error('{} is not close to {}', char_node, node)
             return False
 
-        if Property.SURFACES not in node.properties:
-            info.error('{} is not a surface', node)
-            return False
+        #if Property.SURFACES not in node.properties:
+        #    info.error('{} is not a surface', node)
+        #    return False
 
         nodes_in_hands = _find_nodes_from(state, char_node, [Relation.HOLDS_RH, Relation.HOLDS_LH])
         if len(nodes_in_hands) == 0:
