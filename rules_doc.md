@@ -136,7 +136,7 @@ Possible relations (edge labels) are:
 - Pre-condition: 
 	- `object` property is openable and `object` state is open
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
+	- if object property doesn't with switch: no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition:
     - state changes: `object` state is closed
 
