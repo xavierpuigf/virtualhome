@@ -261,6 +261,7 @@ class GrabExecutor(ActionExecutor):
             new_relation = self.check_grabbable(state, node, info)
             if new_relation is not None:
                 changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode(), delete_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
                 new_close, relation = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
@@ -428,9 +429,9 @@ class SwitchExecutor(ActionExecutor):
         if not _is_character_close_to(state, node):
             info.error('{} is not close to {}', _get_character_node(state), node)
             return False
-        if _find_free_hand(state) is None:
-            info.error('{} does not have a free hand', _get_character_node(state))
-            return False
+        #if _find_free_hand(state) is None:
+        #    info.error('{} does not have a free hand', _get_character_node(state))
+        #    return False
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False

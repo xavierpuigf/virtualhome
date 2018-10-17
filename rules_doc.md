@@ -119,6 +119,7 @@ Possible relations (edge labels) are:
 - Post-condition: 
     - remove directed and undirected edges: `object` any_relation `any_node`
     - add directed edges: `character` holds_rh `object` or `character` holds_lh `object`
+	- add undirected edges: `character` close `object`
     - add undirected edges: `character` close `object2` if there was edge `object` on `object2` (or `object` inside `object2`)  // do not know if this is necessary
 
 ### OpenExecutor
@@ -166,7 +167,6 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is off
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand
 	- `object` must not be plugged_out
 - Post-condition: 
     - state changes: `object` state is on
@@ -177,7 +177,6 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is on
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - state changes: `object` state is off
 
