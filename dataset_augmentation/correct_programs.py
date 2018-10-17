@@ -12,10 +12,10 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
-bool dump_results = False
+dump_results = False
 
-prog_folder = 'programs_processed_precond_nograb_morepreconds_executable_executable_perturbed'
-prog_folder_out = 'programs_processed_precond_nograb_morepreconds_executable_executable_perturbed_solved'
+prog_folder = 'programs_processed_precond_nograb_morepreconds_executable_perturbed'
+prog_folder_out = 'programs_processed_precond_nograb_morepreconds_executable_perturbed_solved'
 programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
 
 

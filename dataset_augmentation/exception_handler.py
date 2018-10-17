@@ -3,43 +3,8 @@ from utils_preconds import *
 import script_utils
 from termcolor import colored
 
-# class ProgramState():
 
-#     def first_precond(self, preconds):
-#         precond = Precond()
-#         for elem in preconds:
-#             precond_name = list(elem)[0]
-#             precond_obj = elem[precond_name]
-#             print(type(precond_name), precond_obj[0], precond_obj[1])
-#             precond.addPrecond(precond_name, tuple(precond_obj[0]), tuple(precond_obj[1]))
-#         return precond
-
-#     def __init__(self, program, preconds):
-#         self.program = program
-#         self.preconds = preconds
-#         self.state_timestep = [self.first_precond(preconds)]
-#         self.get_state_per_timestep()
-        
-#     def evolve_state(self, prev_state, action, object1, object2):
-#         new_state = prev_state.copy()
-#         if action == 'SWITCHOFF':
-#             return None
-
-#     def get_state_per_timestep(self):
-#         prev_cond = self.state_timestep[0]
-#         for elem in self.program:
-#             action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
-#             action = action.upper()
-#             obj1, obj2 = None, None
-#             if len(objects) > 1:
-#                 obj1 = tuple(objects[0], ids[0])
-#             if len(objects) > 2:
-#                 obj2 = tuple(objects[1], ids[1])
-
-#             newcond = self.evolve_state(prev_cond, action, obj1, obj2)
-#             self.state_timestep.append(newcond)
-#             prev_cond = newcond
-
+actions_2_object =  ['PUTBACK', 'POUR', 'THROW', 'COVER', 'WRAP', 'SOAK', 'SPREAD']
 
 
 class ProgramException(Enum):
@@ -118,8 +83,13 @@ def correctedProgram(input_program, init_state, exception_str):
         corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     if exception == ProgramException.NOT_CLOSE:
-        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])       
-        insert_in.append([line_exception, '[Walk] <{}> ({})'.format(objects[0], ids[0])])
+        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
+        if action.upper() in  actions_2_object:
+            insert_in.append([line_exception, '[Walk] <{}> ({})'.format(objects[1], ids[1])])
+
+        else:      
+            insert_in.append([line_exception, '[Walk] <{}> ({})'.format(objects[0], ids[0])])
+        
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.NOT_FACING:
@@ -129,8 +99,10 @@ def correctedProgram(input_program, init_state, exception_str):
 
     if exception == ProgramException.SITTING:
         action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
-        insert_in.append([line_exception, '[StandUp]'])           
+        insert_in.append([line_exception, '[StandUp]'])      
         corrected_instructions = insertInstructions(insert_in, instructions_program)
+        
+        printProgramWithLine(corrected_instructions)     
 
     #print('\n')
     #print(colored('Corrected', 'green'))

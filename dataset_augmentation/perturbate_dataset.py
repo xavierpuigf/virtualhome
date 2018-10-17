@@ -6,7 +6,7 @@ import shutil
 import pdb
 import random
 
-prob_modif = 0.3
+prob_modif = 1
 
 file_in = 'programs_processed_precond_nograb_morepreconds'
 file_out = 'programs_processed_precond_nograb_morepreconds_executable_perturbed'
