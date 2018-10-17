@@ -1,0 +1,26 @@
+Meeting
+Meet with clients and discuss upcoming ad strategies.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <MAN> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <MAN> (2)
+[Greet] <MAN> (2)
+[Walk] <DESK> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Open] <FOLDER> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Close] <FOLDER> (1)
+[Read] <DOCUMENT> (1)
+[TurnTo] <MAN> (1)
+[LookAt] <MAN> (1)
+[Talk] <MAN> (1)
+[TurnTo] <MAN> (1)
+[LookAt] <MAN> (1)
+[Talk] <MAN> (2)

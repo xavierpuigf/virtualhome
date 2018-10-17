@@ -1,0 +1,15 @@
+1
+is_off: ('STOVE', '1') --> 
+Cook some food
+find vegetable ,grab vegetable, wash vegetable, switch on the stove, put the bowl on stove, put the vegetable, switch off stove
+
+
+[Find] <FOOD_VEGETABLE> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Wash] <FOOD_VEGETABLE> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[PutBack] <BOWL> (1) <STOVE> (1)
+[Push] <FOOD_VEGETABLE> (1)
+[SwitchOff] <STOVE> (1)

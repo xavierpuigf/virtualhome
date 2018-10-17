@@ -1,0 +1,10 @@
+1
+location: ('TELEPHONE', '1') --> ('HOME OFFICE', '1')
+Pick up phone
+Picking up incoming telephone call in home office
+
+
+[Find] <TELEPHONE> (1)
+[Walk] <HOME OFFICE> (1)
+[Walk] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)

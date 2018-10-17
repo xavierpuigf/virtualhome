@@ -1,0 +1,19 @@
+Turn on light
+I want to turn the lights on in my living room and dining room for a couple of projects I will be working on.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <COFFEE TABLE> (1)
+[Walk] <COFFEE TABLE> (1)
+[PlugIn] <LIGHT> (1)
+[Walk] <DINING ROOM> (1)
+[Walk] <COFFEE TABLE> (1)
+[Find] <COFFEE TABLE> (1)
+[Walk] <COFFEE TABLE> (1)
+[PlugIn] <LIGHT> (1)
+[Find] <LIGHTING> (1)
+[TurnTo] <LIGHTING> (1)
+[LookAt] <LIGHTING> (1)

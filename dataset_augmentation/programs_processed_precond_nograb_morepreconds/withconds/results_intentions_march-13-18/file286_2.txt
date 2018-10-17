@@ -1,0 +1,22 @@
+4
+inside: ('WATER GLASS', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> , ('CUPBOARD', '1') --> 
+atreach: ('WATER GLASS', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('WATER', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+Drink
+I enter the kitchen and grab a waterglass from the cupboard. I open the fridge and grap some water. I pour the water into the cup and drink it.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUPBOARD> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[Drink] <WATER> (1)

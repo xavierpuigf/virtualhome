@@ -1,0 +1,17 @@
+3
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('TELEVISION', '1'), ('TELEVISION', '1') --> ('TELEVISION', '1')
+Change TV channel
+first i will go to living room and then take the remote and swtitch on television after that il change the channel
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[TurnTo] <REMOTE CONTROL> (1)
+[PointAt] <REMOTE CONTROL> (1)
+[Touch] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

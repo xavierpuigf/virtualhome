@@ -1,0 +1,21 @@
+Cut toenails
+First I sit in the middle of the bed. I out a towel on the bed where my foot will be to catch the toenail clippings. I start clipping the nails. When I am done clipping the nails, then I take the towel and roll it inwards so no clippings will fall out, and I take it to the garbage can and shake it out over the can so any stray clippings fall in the can.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DRESSER> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Walk] <BED> (1)
+[PutBack] <TOWEL> (1) <BED> (1)
+[Sit] <BED> (1)
+[Find] <FEET_BOTH> (1)
+[PutBack] <FEET_BOTH> (1) <TOWEL> (1)
+[TurnTo] <FEET_BOTH> (1)
+[LookAt] <FEET_BOTH> (1)
+[StandUp]
+[Grab] <TOWEL> (1)
+[Fold] <TOWEL> (1)
+[Walk] <TRASHCAN> (1)
+[Unfold] <TOWEL> (1)
+[Shake] <TOWEL> (1)

@@ -1,0 +1,22 @@
+5
+is_off: ('DISHWASHER', '1') --> 
+in: ('DISH SOAP', '1') --> ('SINK', '1')
+location: ('DISHWASHER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1')
+closed: ('DISHWASHER', '1') --> 
+atreach: ('DISHWASHER', '1') --> ('SINK', '1'), ('SINK', '1') --> ('SINK', '1'), ('DISH SOAP', '1') --> ('SINK', '1')
+Wash dishes with dishwasher
+Walk to Kitchen. Look at sink. Grab dish soap. Open dishwasher. Put dish soap in dishwasher. Close dishwasher. Switch on dishwasher.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <SINK> (1)
+[TurnTo] <SINK> (1)
+[LookAt] <SINK> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[PutBack] <DISH SOAP> (1) <DISHWASHER> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)

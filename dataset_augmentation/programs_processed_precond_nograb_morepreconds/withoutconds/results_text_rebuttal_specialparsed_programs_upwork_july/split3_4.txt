@@ -1,0 +1,19 @@
+Pay bills
+Go over monthly bills and make payments by preparing bill statements on the computer
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <BILLS> (1)
+[Grab] <BILLS> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <BILLS> (1) <DESK> (1)
+[TurnTo] <BILLS> (1)
+[LookAt] <BILLS> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

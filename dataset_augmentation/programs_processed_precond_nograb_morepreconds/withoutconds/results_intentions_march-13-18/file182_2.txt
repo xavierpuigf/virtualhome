@@ -1,0 +1,12 @@
+Make coffee
+Place coffee into mug and function the coffee maker.
+
+
+[Find] <COFFEE FILTER> (1)
+[Break] <COFFEE FILTER> (1)
+[Find] <COFFE MAKER> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Drop] <COFFEE CUP> (1)
+[Find] <GROUND COFFEE> (1)
+[Rinse] <GROUND COFFEE> (1)

@@ -1,0 +1,22 @@
+4
+is_off: ('TELEVISION', '1') --> 
+in: ('REMOTE CONTROL', '1') --> ('TABLE', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('SOFA', '1'), ('TELEVISION', '1') --> ('SOFA', '1'), ('SOFA', '1') --> ('TABLE', '1'), ('TABLE', '1') --> ('SOFA', '1')
+Watch TV
+I go to living room, sit on sofa, find the remote control on the table, switch on TV and watch the TV.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[LookAt] <TABLE> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

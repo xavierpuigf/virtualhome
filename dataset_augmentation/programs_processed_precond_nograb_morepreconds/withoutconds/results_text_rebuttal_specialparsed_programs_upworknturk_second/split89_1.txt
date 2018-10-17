@@ -1,0 +1,15 @@
+Put toys away
+Pick up toys from the floor. Put toys into specific bins. Put bins away on the bookshelf.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <TOY> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <BOOKSHELF> (1)
+[Open] <BOOKSHELF> (1)
+[PutBack] <TOY> (1) <BOOKSHELF> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[PutBack] <TOY> (2) <BOOKSHELF> (1)
+[Close] <BOOKSHELF> (1)

@@ -1,0 +1,14 @@
+2
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('COUCH', '1'), ('TELEVISION', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('REMOTE CONTROL', '1')
+Watch TV
+walk to living room, find couch, sit on couch, find remote control , turn on tv by pressing button
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)

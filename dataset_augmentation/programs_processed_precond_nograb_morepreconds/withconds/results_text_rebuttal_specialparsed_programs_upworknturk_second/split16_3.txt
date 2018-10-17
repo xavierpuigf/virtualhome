@@ -1,0 +1,30 @@
+5
+inside: ('BROOM', '1') --> ('CLOSET', '1'), ('DIRT', '1') --> ('CLOSET', '1'), ('DUSTPAN', '1') --> ('CLOSET', '1')
+in: ('DUSTPAN', '1') --> ('CLOSET', '1')
+location: ('TRASHCAN', '1') --> ('LIVING ROOM', '1'), ('FLOOR', '1') --> ('LIVING ROOM', '1'), ('CLOSET', '1') --> ('LIVING ROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('BROOM', '1') --> ('CLOSET', '1'), ('DIRT', '1') --> ('CLOSET', '1'), ('FLOOR', '1') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('DUSTPAN', '1') --> ('CLOSET', '1')
+Clean floor
+Grab the broom from the cleaning closet.  Clean the floor in a sweeping motion, being sure to contain all dirt into a single pile. Remove the pile of dirt with a smaller broom and dustpan or with a vacuum.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <BROOM> (1)
+[Grab] <BROOM> (1)
+[Find] <FLOOR> (1)
+[Sweep] <FLOOR> (1)
+[Walk] <CLOSET> (1)
+[Find] <DUSTPAN> (1)
+[Grab] <DUSTPAN> (1)
+[Find] <DIRT> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <DUSTPAN> (1)
+[Walk] <TRASHCAN> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <TRASHCAN> (1)
+[Walk] <CLOSET> (1)
+[PutObjBack] <BROOM> (1)
+[PutObjBack] <DUSTPAN> (1)
+[Close] <CLOSET> (1)

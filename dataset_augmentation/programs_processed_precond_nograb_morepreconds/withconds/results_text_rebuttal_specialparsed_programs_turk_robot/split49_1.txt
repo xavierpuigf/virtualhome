@@ -1,0 +1,14 @@
+2
+location: ('PAPER', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('PAPER', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('PAPER', '1')
+Do homework
+Sit on the couch in the Living room and pick u some papers
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Drop] <PAPER> (1)

@@ -1,0 +1,25 @@
+Have party
+Invite people.  Play music.  Talk
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <MAN> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <MAN> (2)
+[Greet] <MAN> (2)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)
+[Walk] <LIVING ROOM> (1)
+[Walk] <WOMAN> (1)
+[Talk] <WOMAN> (1)
+[Talk] <MAN> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[Dance]
+[Find] <WINE GLASS> (1)
+[Grab] <WINE GLASS> (1)
+[Drink] <WINE GLASS> (1)
+[Talk] <MAN> (2)

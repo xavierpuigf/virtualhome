@@ -1,0 +1,18 @@
+4
+inside: ('RAG', '1') --> ('BATHROOM CABINET', '1')
+location: ('BATHROOM CABINET', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
+closed: ('BATHROOM CABINET', '1') --> 
+atreach: ('RAG', '1') --> ('BATHROOM CABINET', '1'), ('BATHROOM CABINET', '1') --> ('BATHROOM CABINET', '1'), ('SINK', '1') --> ('SINK', '1')
+Wipe down sink
+Use a cloth to wipe the edge of the sink. Then wipe the bowl of the sink as well.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <BATHROOM CABINET> (1)
+[Open] <BATHROOM CABINET> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <SINK> (1)
+[Wipe] <SINK> (1)
+[PutObjBack] <RAG> (1)
+[Close] <BATHROOM CABINET> (1)

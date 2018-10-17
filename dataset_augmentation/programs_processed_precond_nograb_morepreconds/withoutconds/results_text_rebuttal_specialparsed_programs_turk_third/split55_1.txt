@@ -1,0 +1,21 @@
+Exercise
+Exercise on the floor while watching video, tv.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Find] <FLOOR> (1)
+[Lie] <FLOOR> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[Find] <ARMS_BOTH> (1)
+[Stretch] <ARMS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)
+[StandUp]
+[Jump]

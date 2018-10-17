@@ -1,0 +1,28 @@
+Put groceries in Fridge
+Put groceries in fridge.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <TABLE> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <TABLE> (1)
+[Find] <GROCERIES> (2)
+[Grab] <GROCERIES> (2)
+[PutBack] <GROCERIES> (2) <TABLE> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)
+[Close] <FRIDGE> (1)
+[Walk] <TABLE> (1)
+[Find] <GROCERIES> (2)
+[Grab] <GROCERIES> (2)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <GROCERIES> (2) <FRIDGE> (1)
+[Close] <FRIDGE> (1)
+[Walk] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[LookAt] <TABLE> (1)

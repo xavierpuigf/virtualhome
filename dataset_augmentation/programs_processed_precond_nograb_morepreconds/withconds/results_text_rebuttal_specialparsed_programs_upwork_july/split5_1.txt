@@ -1,0 +1,18 @@
+3
+in: ('BLANKET', '1') --> ('BED', '1')
+location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1')
+atreach: ('BLANKET', '1') --> ('BED', '1'), ('SHEETS', '1') --> ('BED', '1')
+Make bed
+Neatly fold the covers over your bed
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Fold] <BLANKET> (1)
+[PutBack] <BLANKET> (1) <BED> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Fold] <SHEETS> (1)
+[PutBack] <SHEETS> (1) <BED> (1)

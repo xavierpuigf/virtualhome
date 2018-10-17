@@ -1,0 +1,20 @@
+2
+is_off: ('TELEVISION', '1') --> 
+atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1')
+Change TV channel
+I find the remote control, turn, and walk over to it. I pick up the remote control. I look at the television. I point the remote control at the television and use it.
+
+
+[Find] <REMOTE CONTROL> (1)
+[TurnTo] <REMOTE CONTROL> (1)
+[LookAt] <REMOTE CONTROL> (1)
+[TurnTo] <REMOTE CONTROL> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

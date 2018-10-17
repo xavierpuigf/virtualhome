@@ -1,0 +1,13 @@
+0
+Set up table
+You get 6 place mats and put them on the table in front of each chair then you get 6 plates and place them on each mat then you get 6 bowls and set then on each plate then you get 6 forks, spoons, and knives and place them on the place mat on the left side of the plate then you will get 6 napkins and place them on the place mat on the right side of the plate.
+
+
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[PointAt] <TABLE> (1)
+[Wipe] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[LookAt] <TABLE> (1)
+[Touch] <TABLE> (1)
+[Walk] <DINING ROOM> (1)

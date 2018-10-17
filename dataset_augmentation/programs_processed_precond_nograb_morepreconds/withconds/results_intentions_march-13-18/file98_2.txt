@@ -1,0 +1,20 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('SOAP', '1') --> ('KITCHEN', '1'), ('HANDS_BOTH', '1') --> ('KITCHEN', '1')
+atreach: ('FAUCET', '1') --> ('FAUCET', '1'), ('SOAP', '1') --> ('FAUCET', '1'), ('HANDS_BOTH', '1') --> ('FAUCET', '1')
+Wash hands
+Washing Hands
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FAUCET> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Touch] <SOAP> (1)
+[PutObjBack] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Scrub] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)

@@ -1,0 +1,20 @@
+Prepare breakfast
+Remove cereal from cabinet. Remove milk from refrigerator. Remove bowl from separate cabinet. Prepare any additional items such as fruit. Pour approximately 1 cup cereal into bowl. Add approximately 1 cup milk. If adding fruit such as banana, slice fruit and add to bowl.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <FOOD_CEREAL> (1)
+[Grab] <FOOD_CEREAL> (1)
+[Walk] <KITCHEN CABINET> (2)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[Find] <FOOD_BANANA> (1)
+[Grab] <FOOD_BANANA> (1)

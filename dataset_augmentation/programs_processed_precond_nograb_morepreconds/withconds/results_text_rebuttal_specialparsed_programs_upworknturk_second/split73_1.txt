@@ -1,0 +1,17 @@
+2
+location: ('HAIR', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1'), ('HAIRBRUSH', '1') --> ('BATHROOM', '1')
+atreach: ('HAIR', '1') --> ('MIRROR', '1'), ('MIRROR', '1') --> ('MIRROR', '1'), ('HAIRBRUSH', '1') --> ('HAIRBRUSH', '1')
+Brush hair
+Part your hair with a comb into two sections. Take a brush, and go through your hair, brushing it from tip to root until there are no tangles.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <HAIRBRUSH> (1)
+[Find] <HAIRBRUSH> (1)
+[Grab] <HAIRBRUSH> (1)
+[Walk] <MIRROR> (1)
+[TurnTo] <MIRROR> (1)
+[LookAt] <MIRROR> (1)
+[Find] <HAIR> (1)
+[Brush] <HAIR> (1)
+[PutObjBack] <HAIRBRUSH> (1)

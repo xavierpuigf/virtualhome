@@ -1,0 +1,23 @@
+4
+inside: ('BLANKET', '1') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('CLOSET', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('BLANKET', '1') --> ('CLOSET', '1'), ('BED', '1') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('CLOSET', '1')
+Make bed
+Pull sheets towards top of the bed until taught. Pull up blankets towards top of bed. Smooth.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOSET> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Unfold] <SHEETS> (1)
+[Find] <BED> (1)
+[Cover] <BED> (1) <SHEETS> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Unfold] <BLANKET> (1)
+[Cover] <BED> (1) <BLANKET> (1)
+[Close] <CLOSET> (1)

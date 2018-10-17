@@ -1,0 +1,18 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('FAUCET', '1'), ('WATER', '1') --> ('FAUCET', '1'), ('TEETH', '1') --> ('FAUCET', '1')
+Wash teeth
+Wash the teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <FAUCET> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[TurnTo] <WATER> (1)
+[PointAt] <WATER> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[SwitchOff] <FAUCET> (1)

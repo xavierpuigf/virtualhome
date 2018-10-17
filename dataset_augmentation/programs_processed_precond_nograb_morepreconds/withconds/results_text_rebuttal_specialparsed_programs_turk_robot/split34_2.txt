@@ -1,0 +1,24 @@
+5
+is_off: ('ELECTRIC SHAVER', '1') --> 
+atreach: ('ELECTRIC SHAVER', '1') --> ('ELECTRIC SHAVER', '1'), ('HAIR', '1') --> ('ELECTRIC SHAVER', '1')
+location: ('ELECTRIC SHAVER', '1') --> ('BATHROOM', '1'), ('HAIR', '1') --> ('BATHROOM', '1')
+unplugged: ('ELECTRIC SHAVER', '1') --> 
+plugged: ('ELECTRIC SHAVER', '1') --> 
+Shave
+Shave my head with a 1/8 adapter on an clippers.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <ELECTRIC SHAVER> (1)
+[Find] <ELECTRIC SHAVER> (1)
+[Grab] <ELECTRIC SHAVER> (1)
+[PlugIn] <ELECTRIC SHAVER> (1)
+[SwitchOn] <ELECTRIC SHAVER> (1)
+[Find] <HAIR> (1)
+[Shave] <HAIR> (1)
+[Shave] <HAIR> (1)
+[Shave] <HAIR> (1)
+[Shave] <HAIR> (1)
+[SwitchOff] <ELECTRIC SHAVER> (1)
+[PlugOut] <ELECTRIC SHAVER> (1)
+[PutObjBack] <ELECTRIC SHAVER> (1)

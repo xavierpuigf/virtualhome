@@ -1,0 +1,13 @@
+0
+Change TV channel
+I pick up the remote control. I point the remote control at the television. I press a button on the remote control. I put down the remote control on the coffee table.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Drop] <REMOTE CONTROL> (1)

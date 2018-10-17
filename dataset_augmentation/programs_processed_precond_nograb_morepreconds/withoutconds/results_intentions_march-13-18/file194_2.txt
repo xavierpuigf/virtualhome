@@ -1,0 +1,17 @@
+Brush teeth
+I got to the bathroom, I take my toothbrush out of the toothbrush holder, I squeeze some toothpaste onto my toothbrush, I put the toothbrush in my mouth, I scrub my teeth with my toothbrush, I spit out excess toothpaste after two minutes, I rinse my mouth, I rinse the toothbrush, I put the toothbrush back in the toothbrush holder
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTHBRUSH> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

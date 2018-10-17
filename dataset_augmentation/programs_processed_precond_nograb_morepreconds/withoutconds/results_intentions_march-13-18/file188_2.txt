@@ -1,0 +1,15 @@
+Go to toilet
+its morning and im urging to go to toilet im going to restroom after finishing, i will flush it out
+
+
+[Run] <BATHROOM> (1)
+[Walk] <PAPER TOWEL> (1)
+[Find] <PAPER TOWEL> (1)
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Flush] <TOILET> (1)
+[Find] <WATER> (1)
+[Rinse] <WATER> (1)

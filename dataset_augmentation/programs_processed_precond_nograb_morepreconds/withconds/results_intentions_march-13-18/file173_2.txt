@@ -1,0 +1,18 @@
+3
+atreach: ('SLIPPERS', '1') --> ('SHOES', '1'), ('LIGHTING', '1') --> ('SHOES', '1')
+location: ('SLIPPERS', '1') --> ('BEDROOM', '1'), ('SHOES', '1') --> ('BEDROOM', '1'), ('LIGHTING', '1') --> ('BEDROOM', '1')
+sitting: ('Character', 1) --> 
+Go to sleep
+GOING TO BE IN BEDROOM
+
+
+[StandUp]
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <BEDROOM> (1)
+[Walk] <SHOES> (1)
+[Find] <SHOES> (1)
+[Find] <SLIPPERS> (1)
+[Grab] <SLIPPERS> (1)
+[Find] <LIGHTING> (1)
+[TurnTo] <LIGHTING> (1)
+[Drop] <SLIPPERS> (1)

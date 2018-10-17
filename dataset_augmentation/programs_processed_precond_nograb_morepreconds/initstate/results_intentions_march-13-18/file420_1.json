@@ -1,0 +1,1 @@
+[{"is_off": ["RADIO", "1"]}, {"atreach": [["CHAIR", "1"], ["RADIO", "1"]]}, {"atreach": [["RADIO", "1"], ["RADIO", "1"]]}, {"location": [["CHAIR", "1"], ["LIVING ROOM", "1"]]}, {"location": [["RADIO", "1"], ["LIVING ROOM", "1"]]}, {"unplugged": ["RADIO", "1"]}, {"plugged": ["RADIO", "1"]}]

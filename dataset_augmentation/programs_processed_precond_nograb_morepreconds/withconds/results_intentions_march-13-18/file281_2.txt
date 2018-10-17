@@ -1,0 +1,28 @@
+5
+is_off: ('COFFE MAKER', '1') --> 
+inside: ('GROUND COFFEE', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('CUPBOARD', '1'), ('COFFEE FILTER', '1') --> ('COFFE MAKER', '1')
+location: ('COFFE MAKER', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+closed: ('COFFE MAKER', '1') --> , ('CUPBOARD', '1') --> 
+atreach: ('WATER', '1') --> ('WATER', '1'), ('GROUND COFFEE', '1') --> ('COFFE MAKER', '1'), ('COFFE MAKER', '1') --> ('COFFE MAKER', '1'), ('COFFEE FILTER', '1') --> ('COFFE MAKER', '1'), ('CUPBOARD', '1') --> ('COFFE MAKER', '1')
+Make coffee
+I walk to the kitchen and find the coffee machine. I open the coffee machine and pour a filter in it. I open the cupboard and grab ground coffee. I put ground coffee in the filter and water in the coffee machine. I close the coffee machine. I switch on the coffee machine and wait
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <COFFE MAKER> (1)
+[Close] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)

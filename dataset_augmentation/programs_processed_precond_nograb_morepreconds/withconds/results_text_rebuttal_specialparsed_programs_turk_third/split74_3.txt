@@ -1,0 +1,26 @@
+3
+in: ('MAN', '1') --> ('BED', '1')
+location: ('FEET_BOTH', '1') --> ('BEDROOM', '1'), ('ARMS_BOTH', '1') --> ('BEDROOM', '1'), ('MAN', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('LEGS_BOTH', '1') --> ('BEDROOM', '1')
+atreach: ('FEET_BOTH', '1') --> ('BED', '1'), ('ARMS_BOTH', '1') --> ('BED', '1'), ('MAN', '1') --> ('BED', '1'), ('BED', '1') --> ('MAN', '1'), ('LEGS_BOTH', '1') --> ('BED', '1')
+Massage
+I perform massage therapy on my partner.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Sit] <BED> (1)
+[Touch] <MAN> (1)
+[Find] <ARMS_BOTH> (1)
+[Touch] <ARMS_BOTH> (1)
+[Squeeze] <ARMS_BOTH> (1)
+[Stretch] <ARMS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Touch] <LEGS_BOTH> (1)
+[Squeeze] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)
+[Find] <FEET_BOTH> (1)
+[Touch] <FEET_BOTH> (1)
+[Squeeze] <FEET_BOTH> (1)
+[StandUp]

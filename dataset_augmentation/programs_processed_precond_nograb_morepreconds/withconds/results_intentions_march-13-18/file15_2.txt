@@ -1,0 +1,12 @@
+2
+location: ('ADDRESS BOOK', '1') --> ('LIVING ROOM', '1')
+atreach: ('ADDRESS BOOK', '1') --> ('ADDRESS BOOK', '1')
+Read book
+Open coffee maker. Put filter in main basket, put ground coffee in filter, fill reservoir with water, turn on coffee maker.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <ADDRESS BOOK> (1)
+[Find] <ADDRESS BOOK> (1)
+[Grab] <ADDRESS BOOK> (1)
+[Read] <ADDRESS BOOK> (1)

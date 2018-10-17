@@ -1,0 +1,26 @@
+4
+inside: ('BRUSH', '1') --> ('TOILET', '1')
+location: ('CLEANING SOLUTION', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1')
+closed: ('TOILET', '1') --> 
+atreach: ('CLEANING SOLUTION', '1') --> ('CLEANING SOLUTION', '1'), ('TOILET', '1') --> ('TOILET', '1'), ('BRUSH', '1') --> ('TOILET', '1')
+Clean toilet
+Spray cleaner into the toilet bowl. Let it sit. Use the scrub brush to scrub the toilet bowl. Flush.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <CLEANING SOLUTION> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Walk] <TOILET> (1)
+[Open] <TOILET> (1)
+[Pour] <CLEANING SOLUTION> (1) <TOILET> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[Walk] <TOILET> (1)
+[Scrub] <TOILET> (1)
+[Scrub] <TOILET> (1)
+[Scrub] <TOILET> (1)
+[Flush] <TOILET> (1)
+[Close] <TOILET> (1)
+[PutObjBack] <BRUSH> (1)

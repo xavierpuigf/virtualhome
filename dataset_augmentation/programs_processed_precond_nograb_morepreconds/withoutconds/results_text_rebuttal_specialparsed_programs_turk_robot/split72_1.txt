@@ -1,0 +1,12 @@
+Clean
+Spray counter tops with all purpose cleaner. Using towel, wipe counter, removing all dirt and grime until clean.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CLEANING SOLUTION> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[PutObjBack] <RAG> (1)

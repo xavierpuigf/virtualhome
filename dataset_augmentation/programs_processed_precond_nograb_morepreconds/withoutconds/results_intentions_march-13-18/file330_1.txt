@@ -1,0 +1,18 @@
+Listen to music
+listen to music
+
+
+[Run] <HOME OFFICE> (1)
+[Walk] <CD PLAYER> (1)
+[Find] <CD PLAYER> (1)
+[PlugIn] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <CD PLAYER> (1)
+[LookAt] <CD PLAYER> (1)
+[StandUp]
+[Dance]
+[TurnTo] <CD PLAYER> (1)
+[PointAt] <CD PLAYER> (1)
+[Dance]

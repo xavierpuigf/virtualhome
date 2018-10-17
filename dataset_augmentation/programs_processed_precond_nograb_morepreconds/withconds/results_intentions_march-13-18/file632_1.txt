@@ -1,0 +1,38 @@
+5
+is_off: ('LIGHT', '1') --> , ('WASHING MACHINE', '1') --> 
+inside: ('DETERGENT', '1') --> ('WASHING MACHINE', '1')
+location: ('CLOTHES_UNDERWEAR', '5') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CLOTHES_UNDERWEAR', '4') --> ('BEDROOM', '1'), ('CLOTHES_UNDERWEAR', '3') --> ('BEDROOM', '1'), ('WASHING MACHINE', '1') --> ('HOME OFFICE', '1'), ('CLOTHES_UNDERWEAR', '2') --> ('BEDROOM', '1'), ('CLOTHES_UNDERWEAR', '1') --> ('BEDROOM', '1')
+closed: ('WASHING MACHINE', '1') --> 
+atreach: ('CLOTHES_UNDERWEAR', '5') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('CLOTHES_UNDERWEAR', '4') --> ('LIGHT', '1'), ('CLOTHES_UNDERWEAR', '3') --> ('LIGHT', '1'), ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_UNDERWEAR', '2') --> ('LIGHT', '1'), ('CLOTHES_UNDERWEAR', '1') --> ('LIGHT', '1'), ('DETERGENT', '1') --> ('WASHING MACHINE', '1')
+Wash clothes
+I've put off laundry for so long that I have no clean underwear left for tomorrow! I need to use my washing machine in my home office.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <CLOTHES_UNDERWEAR> (5)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Grab] <CLOTHES_UNDERWEAR> (1)
+[Find] <CLOTHES_UNDERWEAR> (2)
+[Grab] <CLOTHES_UNDERWEAR> (2)
+[Find] <CLOTHES_UNDERWEAR> (3)
+[Grab] <CLOTHES_UNDERWEAR> (3)
+[Find] <CLOTHES_UNDERWEAR> (4)
+[Grab] <CLOTHES_UNDERWEAR> (4)
+[Grab] <CLOTHES_UNDERWEAR> (5)
+[Walk] <HOME OFFICE> (1)
+[Walk] <WASHING MACHINE> (1)
+[Find] <WASHING MACHINE> (1)
+[Walk] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (1) <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (2) <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (3) <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (5) <WASHING MACHINE> (1)
+[Find] <DETERGENT> (1)
+[Grab] <DETERGENT> (1)
+[Pour] <DETERGENT> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

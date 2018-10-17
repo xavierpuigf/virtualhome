@@ -1,0 +1,10 @@
+Go to toilet
+Walk to the bathroom. Pull down pants. Use the toilet.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Pull] <CLOTHES_PANTS> (1)
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)

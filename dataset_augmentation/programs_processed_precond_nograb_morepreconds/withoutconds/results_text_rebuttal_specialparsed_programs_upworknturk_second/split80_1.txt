@@ -1,0 +1,15 @@
+Take jacket off
+I take my shirt off and then put it in the closet.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOTHES_SHIRT> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[PutOff] <CLOTHES_SHIRT> (1)
+[Fold] <CLOTHES_SHIRT> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

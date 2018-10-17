@@ -1,0 +1,12 @@
+Pet cat
+touch cat in loving mannor
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CAT> (1)
+[Find] <CAT> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <CHAIR> (1)
+[PutBack] <TOY> (1) <CHAIR> (1)
+[Touch] <CAT> (1)

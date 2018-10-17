@@ -1,0 +1,16 @@
+3
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('TELEVISION', '1'), ('TELEVISION', '1') --> ('TELEVISION', '1')
+Watch TV
+Walk into the living room/den. Turn on the television. Switch channels to find a program with remote. I find a program and look at the screen.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[TurnTo] <REMOTE CONTROL> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)

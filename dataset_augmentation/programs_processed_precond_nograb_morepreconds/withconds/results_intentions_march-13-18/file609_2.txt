@@ -1,0 +1,16 @@
+4
+inside: ('GROCERIES', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('GROCERIES', '1') --> ('FRIDGE', '1')
+Put groceries in Fridge
+go to the kitchen and put the groceries in the fridge
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)

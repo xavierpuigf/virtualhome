@@ -1,0 +1,31 @@
+5
+is_off: ('COMPUTER', '1') --> 
+inside: ('DOCUMENT', '4') --> ('MAIL', '1')
+location: ('COFFEE', '1') --> ('KITCHEN', '1'), ('MAIL', '1') --> ('BEDROOM', '1'), ('COMPUTER', '1') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1'), ('COFFEE CUP', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1')
+closed: ('MAIL', '1') --> 
+atreach: ('COFFEE', '1') --> ('COFFEE', '1'), ('MAIL', '1') --> ('CHAIR', '1'), ('DOCUMENT', '4') --> ('CHAIR', '1'), ('COMPUTER', '1') --> ('CHAIR', '1'), ('COFFEE CUP', '1') --> ('COFFEE CUP', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('COFFE MAKER', '1') --> ('COFFEE CUP', '1')
+Work
+For my work I have to see many documents that send me my mail and it takes some time
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFEE CUP> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Find] <COFFE MAKER> (1)
+[Spit] <COFFE MAKER> (1)
+[Walk] <COFFEE> (1)
+[Find] <COFFEE> (1)
+[Grab] <COFFEE> (1)
+[Pour] <COFFEE> (1) <COFFEE CUP> (1)
+[Walk] <BEDROOM> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Find] <DOCUMENT> (4)
+[Grab] <DOCUMENT> (4)
+[Read] <DOCUMENT> (4)

@@ -1,0 +1,14 @@
+3
+is_off: ('VACUUM CLEANER', '1') --> 
+location: ('VACUUM CLEANER', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('VACUUM CLEANER', '1') --> ('VACUUM CLEANER', '1')
+Clean
+Clean the welcome mat
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <VACUUM CLEANER> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)

@@ -1,0 +1,25 @@
+5
+inside: ('POT', '1') --> ('FRIDGE', '1'), ('WATER', '1') --> ('FRIDGE', '1')
+atreach: ('POT', '1') --> ('GLASS', '1'), ('GLASS', '1') --> ('GLASS', '1'), ('WATER', '1') --> ('WATER', '1'), ('FRIDGE', '1') --> ('GLASS', '1')
+location: ('GLASS', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+sitting: ('Character', 1) --> 
+Drink
+I'm watching tv but i`m thirsty so I'm going to the kitchen for something to drink
+
+
+[StandUp]
+[Walk] <KITCHEN> (1)
+[Walk] <GLASS> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <POT> (1)
+[Grab] <POT> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <GLASS> (1)
+[Close] <FRIDGE> (1)
+[Drink] <WATER> (1)

@@ -1,0 +1,25 @@
+5
+is_off: ('LAPTOP', '1') --> 
+inside: ('MAIL', '1') --> ('MAIL', '1')
+location: ('LAPTOP', '1') --> ('HOME OFFICE', '1')
+closed: ('MAIL', '1') --> 
+atreach: ('LAPTOP', '1') --> ('LAPTOP', '1'), ('MAIL', '1') --> ('LAPTOP', '1')
+Write an email
+Writing an e-mail
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LAPTOP> (1)
+[Find] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[PointAt] <LAPTOP> (1)
+[Grab] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Write] <MAIL> (1)
+[PutObjBack] <MAIL> (1)
+[Close] <MAIL> (1)
+[SwitchOff] <LAPTOP> (1)

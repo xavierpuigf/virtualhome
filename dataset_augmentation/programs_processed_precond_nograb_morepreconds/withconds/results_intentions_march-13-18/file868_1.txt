@@ -1,0 +1,12 @@
+3
+is_off: ('RADIO', '1') --> 
+location: ('RADIO', '1') --> ('BEDROOM', '1')
+atreach: ('RADIO', '1') --> ('RADIO', '1')
+Listen to music
+I go to my bedroom, and then I switch on the radio
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <RADIO> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)

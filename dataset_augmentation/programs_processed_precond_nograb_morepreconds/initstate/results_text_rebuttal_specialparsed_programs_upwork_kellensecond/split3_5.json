@@ -1,0 +1,1 @@
+[{"location": [["TABLE", "1"], ["LIVING ROOM", "1"]]}, {"location": [["NEWSPAPER", "1"], ["LIVING ROOM", "1"]]}, {"location": [["TRASHCAN", "1"], ["LIVING ROOM", "1"]]}, {"closed": ["TRASHCAN", "1"]}, {"atreach": [["TABLE", "1"], ["TABLE", "1"]]}, {"atreach": [["NEWSPAPER", "1"], ["TABLE", "1"]]}, {"atreach": [["TRASHCAN", "1"], ["TRASHCAN", "1"]]}]

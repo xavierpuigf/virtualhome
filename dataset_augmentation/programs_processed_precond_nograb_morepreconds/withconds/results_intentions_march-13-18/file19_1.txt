@@ -1,0 +1,18 @@
+4
+is_off: ('COMPUTER', '1') --> 
+sitting: ('Character', 1) --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('COMPUTER', '1')
+Browse internet
+Navigate to different websites in order to find relevant information
+
+
+[StandUp]
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)

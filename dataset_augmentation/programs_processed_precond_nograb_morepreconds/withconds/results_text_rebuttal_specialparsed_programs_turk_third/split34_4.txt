@@ -1,0 +1,12 @@
+0
+Make child's bed
+Shake the dog hair out of the sheets.  Position the top sheet over the entire bed.  Put a warm blanket over the top of that.  Put pillows at the top of the bed.  Make sure that everything is straight and looking nice.
+
+
+[Find] <BED> (1)
+[TurnTo] <BED> (1)
+[PointAt] <BED> (1)
+[Wipe] <BED> (1)
+[TurnTo] <BED> (1)
+[LookAt] <BED> (1)
+[Touch] <BED> (1)

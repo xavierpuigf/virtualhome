@@ -1,0 +1,14 @@
+Read book
+OPEN THE CUPBOARD IN THE LIVING ROOM AND FIND A BOOK
+
+
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <BOOK> (1)
+[Write] <BOOK> (1)
+[Close] <CUPBOARD> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[PutBack] <PEN> (1) <BOOK> (1)
+[Find] <BOOKMARK> (1)
+[Fold] <BOOKMARK> (1)

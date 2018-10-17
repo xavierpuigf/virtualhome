@@ -1,0 +1,10 @@
+Clean floor
+The robot will clean the floor to make the entrance hall in my home spotless, doing this at least once a day.
+
+
+[Find] <MOP> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Find] <MOP BUCKET> (1)
+[Pour] <CLEANING SOLUTION> (1) <MOP BUCKET> (1)
+[Grab] <MOP> (1)
+[Soak] <MOP> (1) <CLEANING SOLUTION> (1)

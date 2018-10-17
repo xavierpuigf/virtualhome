@@ -1,0 +1,13 @@
+Go to toilet
+Walk to the Bathroom. Find the toilet. Sit on toilet. Stand up. Grab the toilet paper. Wipe the toilet. Flush the toilet.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)
+[StandUp]
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Wipe] <TOILET> (1)
+[Flush] <TOILET> (1)

@@ -1,0 +1,16 @@
+Watch TV
+walk to living room, find remote, turn on TV, sit in chair, turn to desired channel, watch TV
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <BUTTON> (2)
+[Push] <BUTTON> (2)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

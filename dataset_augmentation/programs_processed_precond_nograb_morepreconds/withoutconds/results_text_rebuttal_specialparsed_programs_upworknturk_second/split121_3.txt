@@ -1,0 +1,23 @@
+Write research paper
+Sit down at desk in a chair. Turn on laptop. Pull up Microsoft Word. Open a book and read for research. Open the internet and do research. Write paper.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <TEXTBOOK> (1)
+[Grab] <TEXTBOOK> (1)
+[Read] <TEXTBOOK> (1)
+[Open] <DESK> (1)
+[PutBack] <TEXTBOOK> (1) <DESK> (1)
+[Type] <KEYBOARD> (1)

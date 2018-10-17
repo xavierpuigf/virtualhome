@@ -1,0 +1,21 @@
+Wash dishes by hand
+I am going to wash my plate and drinking glass with a sponge and soap.
+
+
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <SINK> (1)
+[PutBack] <PLATE> (1) <SINK> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[PutBack] <WATER GLASS> (1) <SINK> (1)
+[Find] <DISH SOAP> (1)
+[Find] <SPONGE> (1)
+[Pour] <DISH SOAP> (1) <SPONGE> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Wash] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Wash] <WATER GLASS> (1)
+[Rinse] <WATER GLASS> (1)
+[SwitchOff] <FAUCET> (1)

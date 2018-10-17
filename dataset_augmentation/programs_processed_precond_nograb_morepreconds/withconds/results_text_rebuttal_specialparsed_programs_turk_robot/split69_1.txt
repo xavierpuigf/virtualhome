@@ -1,0 +1,25 @@
+4
+in: ('BOOK', '1') --> ('DESK', '1')
+location: ('BOOK', '3') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('BOOK', '2') --> ('HOME OFFICE', '1'), ('BOOK', '1') --> ('HOME OFFICE', '1'), ('BOOKSHELF', '1') --> ('HOME OFFICE', '1'), ('BOOK', '4') --> ('HOME OFFICE', '1')
+closed: ('BOOKSHELF', '1') --> 
+atreach: ('BOOK', '1') --> ('DESK', '1'), ('BOOK', '3') --> ('DESK', '1'), ('BOOKSHELF', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('DESK', '1'), ('BOOK', '4') --> ('DESK', '1')
+Straighten bookshelf
+Pick books up off the desk. Place books in shelf with spine facing out. Be sure all books have the spine facing out.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BOOK> (2)
+[Grab] <BOOK> (2)
+[Find] <BOOK> (3)
+[Grab] <BOOK> (3)
+[Find] <BOOK> (4)
+[Grab] <BOOK> (4)
+[Walk] <BOOKSHELF> (1)
+[Open] <BOOKSHELF> (1)
+[PutBack] <BOOK> (1) <BOOKSHELF> (1)
+[PutBack] <BOOK> (2) <BOOKSHELF> (1)
+[PutBack] <BOOK> (3) <BOOKSHELF> (1)
+[PutBack] <BOOK> (4) <BOOKSHELF> (1)

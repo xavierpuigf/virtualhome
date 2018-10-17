@@ -1,0 +1,19 @@
+2
+location: ('FORK', '1') --> ('KITCHEN', '1'), ('KNIFE', '1') --> ('KITCHEN', '1'), ('CLOTH NAPKIN', '1') --> ('KITCHEN', '1')
+atreach: ('FORK', '1') --> ('CLOTH NAPKIN', '1'), ('KNIFE', '1') --> ('CLOTH NAPKIN', '1'), ('CLOTH NAPKIN', '1') --> ('CLOTH NAPKIN', '1')
+Set up table
+I walk to kitchen and get forks and knives and napkins. I walk to the dining room and place forks and knives and napkins at each place setting.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CLOTH NAPKIN> (1)
+[Find] <CLOTH NAPKIN> (1)
+[Grab] <CLOTH NAPKIN> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Walk] <DINING ROOM> (1)
+[Drop] <CLOTH NAPKIN> (1)
+[Drop] <FORK> (1)
+[Drop] <KNIFE> (1)

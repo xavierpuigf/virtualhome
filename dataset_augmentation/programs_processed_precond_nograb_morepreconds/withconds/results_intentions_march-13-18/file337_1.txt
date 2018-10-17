@@ -1,0 +1,20 @@
+4
+is_off: ('CD PLAYER', '1') --> 
+in: ('CD PLAYER', '1') --> ('DESK', '1')
+location: ('CD PLAYER', '1') --> ('BEDROOM', '1'), ('DESK', '1') --> ('BEDROOM', '1'), ('HEADSET', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+atreach: ('CD PLAYER', '1') --> ('DESK', '1'), ('HEADSET', '1') --> ('DESK', '1'), ('BED', '1') --> ('BED', '1')
+Listen to music
+I walk into my bedroom, and then walk to my desk. I find my CD player and my headphones, grab them, and then walk towards my bed before I climb in it. I lie in the bed, put the headphones on my head, and then switch my CD player on.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DESK> (1)
+[Find] <CD PLAYER> (1)
+[Grab] <CD PLAYER> (1)
+[Find] <HEADSET> (1)
+[Grab] <HEADSET> (1)
+[Walk] <BED> (1)
+[Climb] <BED> (1)
+[Lie] <BED> (1)
+[PutOn] <HEADSET> (1)
+[SwitchOn] <CD PLAYER> (1)

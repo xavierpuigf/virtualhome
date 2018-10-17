@@ -1,0 +1,20 @@
+4
+inside: ('BOARD GAME', '1') --> ('CABINET', '1')
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
+closed: ('CABINET', '1') --> 
+atreach: ('SOFA', '1') --> ('TABLE', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('TABLE', '1') --> ('CABINET', '1'), ('BOARD GAME', '1') --> ('CABINET', '1')
+Play games
+Pick a board game from a shelf. Take out board game. Set up board game. Play board game.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Close] <CABINET> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Play]

@@ -1,0 +1,8 @@
+Turn light off
+Put the light switch into the down, or off, position.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)

@@ -1,0 +1,8 @@
+Pet cat
+Find cat. Walk to cat. Pick up cat. Pet the cat.
+
+
+[Find] <CAT> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

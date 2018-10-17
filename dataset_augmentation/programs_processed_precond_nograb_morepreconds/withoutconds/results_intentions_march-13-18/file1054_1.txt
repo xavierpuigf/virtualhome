@@ -1,0 +1,8 @@
+Listen to music
+Push play button to start music.
+
+
+[Find] <STEREO> (1)
+[SwitchOn] <STEREO> (1)
+[Dance]
+[SwitchOff] <STEREO> (1)

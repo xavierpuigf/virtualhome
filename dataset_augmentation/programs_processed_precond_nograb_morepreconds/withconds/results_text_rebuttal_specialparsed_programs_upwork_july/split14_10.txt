@@ -1,0 +1,21 @@
+2
+location: ('FACE', '1') --> ('BATHROOM', '1'), ('FOUNDATION', '1') --> ('BATHROOM', '1'), ('SPONGE', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1')
+atreach: ('FACE', '1') --> ('FOUNDATION', '1'), ('FOUNDATION', '1') --> ('FOUNDATION', '1'), ('SPONGE', '1') --> ('FOUNDATION', '1'), ('MIRROR', '1') --> ('FOUNDATION', '1')
+Put on foundation
+Get out foundation. Squirt foundation onto a sponge or brush, look in the mirror, and apply it evenly to your face until there are no streaks. Put foundation and applicator away.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <FOUNDATION> (1)
+[Find] <FOUNDATION> (1)
+[Grab] <FOUNDATION> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[PutBack] <FOUNDATION> (1) <SPONGE> (1)
+[Find] <MIRROR> (1)
+[TurnTo] <MIRROR> (1)
+[Find] <FACE> (1)
+[Spread] <FOUNDATION> (1) <FACE> (1)
+[Grab] <FOUNDATION> (1)
+[PutObjBack] <FOUNDATION> (1)
+[PutObjBack] <SPONGE> (1)

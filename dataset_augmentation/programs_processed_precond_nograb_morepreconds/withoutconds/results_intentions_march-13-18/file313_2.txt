@@ -1,0 +1,16 @@
+Wash teeth
+I go to sleep and i eat the dinner so i have to clean my mouth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Drop] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)

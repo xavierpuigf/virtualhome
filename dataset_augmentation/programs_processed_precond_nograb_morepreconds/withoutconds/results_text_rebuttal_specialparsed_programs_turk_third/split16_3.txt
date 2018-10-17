@@ -1,0 +1,10 @@
+Clean
+Pick up toys and trash off the ground and arrange toys in their appropriate baskets
+
+
+[Find] <TOY> (1)
+[TurnTo] <TOY> (1)
+[PointAt] <TOY> (1)
+[Wash] <TOY> (1)
+[TurnTo] <TOY> (1)
+[LookAt] <TOY> (1)

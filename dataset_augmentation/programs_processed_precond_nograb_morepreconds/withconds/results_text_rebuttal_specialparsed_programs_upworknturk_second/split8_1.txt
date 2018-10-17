@@ -1,0 +1,31 @@
+4
+inside: ('FOOD_VEGETABLE', '1') --> ('FRIDGE', '1'), ('CUTTING BOARD', '1') --> ('KITCHEN CABINET', '1'), ('KNIFE', '1') --> ('KITCHEN CABINET', '1')
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+closed: ('KITCHEN CABINET', '1') --> , ('FRIDGE', '1') --> 
+atreach: ('FOOD_VEGETABLE', '1') --> ('FRIDGE', '1'), ('CUTTING BOARD', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('KNIFE', '1') --> ('KITCHEN CABINET', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1')
+Chop vegetables
+Cut up veggies with knife
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Find] <CUTTING BOARD> (1)
+[Grab] <CUTTING BOARD> (1)
+[Close] <KITCHEN CABINET> (1)
+[Walk] <TABLE> (1)
+[PutBack] <KNIFE> (1) <TABLE> (1)
+[PutBack] <CUTTING BOARD> (1) <TABLE> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_VEGETABLE> (1)
+[Grab] <FOOD_VEGETABLE> (1)
+[Close] <FRIDGE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <FOOD_VEGETABLE> (1) <CUTTING BOARD> (1)
+[Grab] <KNIFE> (1)
+[Cut] <FOOD_VEGETABLE> (1)
+[PutObjBack] <KNIFE> (1)

@@ -1,0 +1,18 @@
+3
+in: ('TOOTHBRUSH', '1') --> ('SINK', '1')
+location: ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+atreach: ('TOOTHBRUSH', '1') --> ('SINK', '1'), ('TEETH', '1') --> ('TOOTH PASTE', '1'), ('TOOTH PASTE', '1') --> ('TOOTH PASTE', '1')
+Wash teeth
+go brush your teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Walk] <TOOTH PASTE> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)

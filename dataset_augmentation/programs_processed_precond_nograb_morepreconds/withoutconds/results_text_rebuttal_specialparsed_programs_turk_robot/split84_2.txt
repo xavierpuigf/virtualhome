@@ -1,0 +1,23 @@
+Tidy
+Place all things in the room into their proper place. Any toys that are scattered around the room should be placed neatly back where they belong. The room should look neat and clean afterward.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TOY> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[PutBack] <TOY> (1) <CABINET> (1)
+[PutBack] <TOY> (2) <CABINET> (1)
+[Walk] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Find] <TABLE> (1)
+[PutBack] <REMOTE CONTROL> (1) <TABLE> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)

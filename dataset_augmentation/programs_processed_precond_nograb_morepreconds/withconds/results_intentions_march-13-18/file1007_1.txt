@@ -1,0 +1,13 @@
+2
+location: ('CLEANING SOLUTION', '2') --> ('BATHROOM', '1'), ('HANDS_BOTH', '3') --> ('BATHROOM', '1')
+atreach: ('CLEANING SOLUTION', '2') --> ('CLEANING SOLUTION', '2'), ('HANDS_BOTH', '3') --> ('CLEANING SOLUTION', '2')
+Wash hands
+walk to bathroom , find cleaning solution , squeeze cleaning solution , wash hands
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <CLEANING SOLUTION> (2)
+[Find] <CLEANING SOLUTION> (2)
+[Squeeze] <CLEANING SOLUTION> (2)
+[Find] <HANDS_BOTH> (3)
+[Wash] <HANDS_BOTH> (3)

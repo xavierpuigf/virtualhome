@@ -1,0 +1,23 @@
+Make coffee
+I walk to the coffee maker in the kitchen, put the coffee filter in the coffee maker, then the ground coffee on the coffee filter in the coffee maker, then I our water in the coffee maker then I turn on the coffee maker. Finally I take the coffee pot and pour coffee in the coffee cup.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[Open] <COFFE MAKER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFEE> (1)
+[Find] <COFFEE CUP> (1)
+[Pour] <COFFEE> (1) <COFFEE CUP> (1)

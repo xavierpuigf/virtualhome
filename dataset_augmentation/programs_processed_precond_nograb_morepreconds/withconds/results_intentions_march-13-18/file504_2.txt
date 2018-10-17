@@ -1,0 +1,11 @@
+1
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+Read book
+I find my favorite book then I sit down open the book and begin reading it
+
+
+[Find] <DESK> (1)
+[Find] <CHAIR> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Read] <BOOK> (1)

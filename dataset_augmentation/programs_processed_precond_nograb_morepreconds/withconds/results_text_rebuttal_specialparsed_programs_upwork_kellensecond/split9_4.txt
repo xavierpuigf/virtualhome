@@ -1,0 +1,23 @@
+4
+inside: ('GLASS', '1') --> ('CUPBOARD', '1'), ('MILK', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> , ('CUPBOARD', '1') --> 
+atreach: ('GLASS', '1') --> ('CUPBOARD', '1'), ('MILK', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+Get something to drink
+Walk into the kitchen and to the cupboard to get a cup, walk to the fridge to look for a beverage to enjoy, open the freezer and get ice, pour beverage and enjoy
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUPBOARD> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Close] <CUPBOARD> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[Close] <FRIDGE> (1)
+[Pour] <MILK> (1) <GLASS> (1)
+[Drink] <GLASS> (1)

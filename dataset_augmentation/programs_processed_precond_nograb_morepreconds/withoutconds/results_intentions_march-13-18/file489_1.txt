@@ -1,0 +1,33 @@
+Go to toilet
+Walk to the bathroom, open the toilet, sit down, do business. Wipe, stand up, close toilet, wash hands.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Find] <MAN> (1)
+[Wipe] <MAN> (1)
+[PutBack] <TOILET PAPER> (1) <TOILET> (1)
+[StandUp]
+[Flush] <TOILET> (1)
+[Close] <TOILET> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[PutOn] <CLOTHES_UNDERWEAR> (1)
+[PutOn] <CLOTHES_PANTS> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[PutObjBack] <SOAP> (1)
+[SwitchOff] <FAUCET> (1)

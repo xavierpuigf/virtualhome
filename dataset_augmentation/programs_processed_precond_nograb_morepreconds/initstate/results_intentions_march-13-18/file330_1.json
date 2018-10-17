@@ -1,0 +1,1 @@
+[{"is_off": ["CD PLAYER", "1"]}, {"atreach": [["CHAIR", "1"], ["CD PLAYER", "1"]]}, {"atreach": [["CD PLAYER", "1"], ["CD PLAYER", "1"]]}, {"location": [["CHAIR", "1"], ["HOME OFFICE", "1"]]}, {"location": [["CD PLAYER", "1"], ["HOME OFFICE", "1"]]}, {"unplugged": ["CD PLAYER", "1"]}, {"plugged": ["CD PLAYER", "1"]}]

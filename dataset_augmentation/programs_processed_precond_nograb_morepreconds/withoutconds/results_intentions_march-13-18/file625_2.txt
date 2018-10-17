@@ -1,0 +1,13 @@
+Brush teeth
+I put toothpaste on my toothbrush. I pour water on toothbrush.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTH PASTE> (1)
+[Find] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <TOOTHBRUSH> (1)
