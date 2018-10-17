@@ -365,8 +365,8 @@ class graph_dict_helper(object):
 
         objects_to_place = list(object_placing.keys())
         random.shuffle(objects_to_place)
+        rooms_id = [node["id"] for node in filter(lambda v: v['class_name'] in self.possible_rooms, graph_dict["nodes"])]
 
-        self.random_objects_id = 2000
         while n > 0:
 
             src_name = random.choice(objects_to_place)
@@ -381,7 +381,7 @@ class graph_dict_helper(object):
                     tgt_id = tgt_node["id"]
 
                     self._add_missing_node(graph_dict, self.random_objects_id, src_name, "placable_objects")
-
+                    graph_dict["edges"].append({'relation_type': "INSIDE", "from_id": self.random_objects_id, "to_id": random.choice(rooms_id)})
                     graph_dict["edges"].append({'relation_type': relation_placing_simulator[tgt_name["relation"].lower()], "from_id": self.random_objects_id, "to_id": tgt_id})
                     self.random_objects_id += 1
                     n -= 1
