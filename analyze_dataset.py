@@ -13,9 +13,39 @@ import ipdb
 
 
 plot = False
-root_dirs = '/Users/andrew/UofT/home_sketch2program/dataset_augmentation/programs_processed_precond_nograb_morepreconds/augmented_program'
+root_dirs = '/Users/andrew/UofT/home_sketch2program/dataset_augmentation/programs_processed_precond_nograb_morepreconds'
 program_dir_name = 'executable_programs'
 graph_dir_name = 'init_and_final_graphs'
+
+patt_number = '\((.+?)\)'
+
+
+def check_number_of_objects():
+
+    program_txt_paths = glob(os.path.join(root_dirs, program_dir_name, '*/*.txt'))
+    program_length_list = []
+    program_instance_list = []
+    for path in program_txt_paths:
+        with open(path, 'r') as f:
+            program_txt = f.read()
+            program_txt = program_txt.split('\n')
+            program = program_txt[4:]
+            program_length = len(program)
+            program_length_list.append(program_length)
+
+            id_list = []
+            for line in program:
+                line = line.stripe().lower()
+
+                number_match = re.search(patt_number, line)
+                while number_match:
+                    number_name = number_match.group(1)
+                    id_list.append(number_name.split('.')[1])
+                    number_match = re.search(patt_number, number_match.string[number_match.end(1):])
+            program_instance_list.append(set(id_list))
+    ipdb.set_trace()
+    print()
+
 
 
 def evaluate_f1_scores(graph1_state, graph2_state, program1_id_list, program2_id_list):
@@ -113,11 +143,11 @@ def evaluate_f1_scores(graph1_state, graph2_state, program1_id_list, program2_id
 
     return attribute_precision, relation_precision, total_precision, attribute_recall, relation_recall, total_recall, attribute_f1, relation_f1, total_f1
 
-
+    
 def check_graph_init_and_final_state():
 
     patt_id = '\.(.+?)\)'
-    graph_paths = glob(os.path.join(root_dirs, graph_dir_name, '*/*/*.json'))
+    graph_paths = glob(os.path.join(root_dirs, graph_dir_name, '*/*.json'))
 
     def _compute(path):
 
@@ -154,7 +184,7 @@ def check_graph_init_and_final_state():
 
 def check_title():
 
-    program_txt_paths = glob(os.path.join(root_dirs, program_dir_name, '*/*/*.txt'))
+    program_txt_paths = glob(os.path.join(root_dirs, program_dir_name, '*/*.txt'))
     title_list = []
     desc_list = []
     program_length_list = []
@@ -197,4 +227,5 @@ def check_title():
 
 if __name__ == '__main__':
     #check_title()
-    check_graph_init_and_final_state()
+    #check_graph_init_and_final_state()
+    check_number_of_objects()
