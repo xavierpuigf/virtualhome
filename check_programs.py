@@ -7,7 +7,7 @@ from tqdm import tqdm
 from shutil import copyfile
 
 from execution import Relation, State
-from scripts import read_script, read_script_from_string, ScriptParseException
+from scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
 from execution import ScriptExecutor
 from environment import EnvironmentGraph, Room
 import ipdb
@@ -138,6 +138,67 @@ def translate_graph_dict(path):
     json.dump({"nodes": new_nodes_script_object, "edges": new_edges, "trimmed_nodes": trimmed_nodes}, open(translated_path, 'w'))
     return translated_path
 
+
+def check_script(program_str, precond, graph_path):
+    info = {}
+    max_nodes = 280
+
+    properties_data = utils.load_properties_data(file_name='../resources/object_script_properties_data.json')
+    object_states = json.load(open('../resources/object_states.json'))
+    object_placing = json.load(open('../resources/object_script_placing.json'))
+
+    helper = utils.graph_dict_helper(properties_data, object_placing, object_states)
+    
+
+    helper.initialize()
+    try:
+        script = read_script_from_list_string(program_str)
+    except ScriptParseException:
+        if verbose:
+            print("Can not parse the script: {}".format(txt_file))
+        not_parsable_programs += 1            
+    
+    for p in precond:
+        for k, vs in p.items():
+            if isinstance(vs[0], list): 
+                for v in vs:
+                    v[0] = v[0].lower().replace(' ', '_')
+            else:
+                v = vs
+                v[0] = v[0].lower().replace(' ', '_')
+
+    # modif the graph_dict
+    graph_dict = utils.load_graph_dict(graph_path)
+
+    ## add missing object from scripts (id from 1000)
+    objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
+    ## set object state to default 
+    helper.set_to_default_state(graph_dict, id_checker=lambda v: True)
+    helper.random_change_object_state(objects_in_script, graph_dict)
+
+    ## set relation and state from precondition
+    helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
+
+    ## place the random objects (id from 2000)
+    helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+    ## set object state to default 
+    helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
+    assert len(graph_dict["nodes"]) == max_nodes
+
+    graph = EnvironmentGraph(graph_dict)
+
+    name_equivalence = utils.load_name_equivalence()
+    executor = ScriptExecutor(graph, name_equivalence)
+    state = executor.execute(script)
+
+    if state is None:
+        message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
+
+    else:
+        final_state = state.to_dict()
+        message = '{}, Script is executable'.format(0)
+
+    return message
 
 def check_2(dir_path, graph_path):
     """Use precondition to modify the environment graphs
