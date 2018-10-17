@@ -1,0 +1,19 @@
+Wash hands
+Turn faucet clockwise to turn on water.  Place hands under stream of water, pick up soap, rub hands with soap.  Put soap back down.  Rub hands together with soap on them.  Rinse hands under water from faucet.  Turn faucet counterclockwise to turn water off.  Dry hands by rubbing them on a towel.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Scrub] <HANDS_BOTH> (1)
+[PutObjBack] <SOAP> (1)
+[Wash] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <HANDS_BOTH> (1)
+[PutObjBack] <TOWEL> (1)

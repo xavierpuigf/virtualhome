@@ -1,0 +1,16 @@
+3
+in: ('CLOTHES_JACKET', '1') --> ('Character', 1)
+location: ('HANGER', '1') --> ('ENTRANCE HALL', '1'), ('CLOTHES_JACKET', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('HANGER', '1') --> ('CLOTHES_JACKET', '1'), ('CLOTHES_JACKET', '1') --> ('CLOTHES_JACKET', '1')
+Hang up jacket
+I take off my coat and hang it on a hook on the clothing hook by the front door.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CLOTHES_JACKET> (1)
+[Find] <CLOTHES_JACKET> (1)
+[Find] <CLOTHES_JACKET> (1)
+[PutOff] <CLOTHES_JACKET> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[Find] <HANGER> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)

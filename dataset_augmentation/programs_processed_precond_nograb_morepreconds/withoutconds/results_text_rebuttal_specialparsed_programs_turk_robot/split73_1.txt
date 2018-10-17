@@ -1,0 +1,21 @@
+Play games
+Turn on the computer, wait for the computer to start, Log In once the computer starts, Go to the start menu on the computer OS, type in the name of the game, wait for the search results, click on the the result, open the game, read the instructions, try to follow the instructions, and try to have fun.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <SCRABBLE> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <MOUSEPAD> (1)
+[PutBack] <MOUSE> (1) <MOUSEPAD> (1)
+[Push] <MOUSE> (1)
+[Play] <SCRABBLE> (1)

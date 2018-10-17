@@ -1,0 +1,18 @@
+Answer emails
+Open email application.  Open new emails.  Respond accordingly
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Find] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[SwitchOff] <LAPTOP> (1)

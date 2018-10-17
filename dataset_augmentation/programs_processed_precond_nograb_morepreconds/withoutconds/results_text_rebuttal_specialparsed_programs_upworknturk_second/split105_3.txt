@@ -1,0 +1,18 @@
+Talk to kids
+Having a conversation with the children
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CHILD> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[TurnTo] <CHILD> (1)
+[LookAt] <CHILD> (1)
+[TurnTo] <CHILD> (2)
+[LookAt] <CHILD> (2)
+[Talk] <CHILD> (1)
+[Talk] <CHILD> (2)

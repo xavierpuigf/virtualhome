@@ -1,0 +1,31 @@
+3
+in: ('TOWEL', '1') --> ('CLOSET', '1')
+location: ('TRASHCAN', '1') --> ('BATHROOM', '1'), ('PAPER TOWEL', '1') --> ('BATHROOM', '1'), ('CLOSET', '1') --> ('BATHROOM', '1'), ('TOWEL', '2') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
+atreach: ('TRASHCAN', '1') --> ('CLOSET', '1'), ('PAPER TOWEL', '1') --> ('CLOSET', '1'), ('TOWEL', '2') --> ('CLOSET', '1'), ('TOWEL', '1') --> ('CLOSET', '1')
+Organize closet
+Take all items out of the closet, sort them, throw away trash, put items back
+
+
+[Run] <BATHROOM> (1)
+[Walk] <CLOSET> (1)
+[Find] <CLOSET> (1)
+[Find] <TOWEL> (1)
+[TurnTo] <TOWEL> (1)
+[LookAt] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Fold] <TOWEL> (1)
+[Find] <TOWEL> (2)
+[TurnTo] <TOWEL> (2)
+[LookAt] <TOWEL> (2)
+[Grab] <TOWEL> (2)
+[Fold] <TOWEL> (2)
+[PutObjBack] <TOWEL> (2)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[PutObjBack] <PAPER TOWEL> (1)
+[TurnTo] <PAPER TOWEL> (1)
+[LookAt] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Find] <TRASHCAN> (1)
+[TurnTo] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)

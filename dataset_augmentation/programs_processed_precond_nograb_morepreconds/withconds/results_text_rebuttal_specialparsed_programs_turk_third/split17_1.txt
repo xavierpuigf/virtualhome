@@ -1,0 +1,11 @@
+0
+Take shower
+In the morning wake up and take a hot shower to start your day
+
+
+[Find] <WATER> (1)
+[TurnTo] <WATER> (1)
+[PointAt] <WATER> (1)
+[Wash] <WATER> (1)
+[TurnTo] <WATER> (1)
+[LookAt] <WATER> (1)

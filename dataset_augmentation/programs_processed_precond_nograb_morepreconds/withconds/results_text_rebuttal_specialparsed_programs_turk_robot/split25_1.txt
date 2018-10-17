@@ -1,0 +1,13 @@
+3
+is_off: ('VACUUM CLEANER', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('VACUUM CLEANER', '1') --> ('HOME OFFICE', '1')
+atreach: ('VACUUM CLEANER', '1') --> ('COMPUTER', '1')
+Vacuum
+Keep my keyboard vacuumed and free of debris.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[Find] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)

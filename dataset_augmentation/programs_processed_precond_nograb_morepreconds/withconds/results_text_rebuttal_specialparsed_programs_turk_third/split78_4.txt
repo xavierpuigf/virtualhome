@@ -1,0 +1,19 @@
+4
+inside: ('PAJAMAS', '1') --> ('CLOSET', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('BED', '1') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('PAJAMAS', '1') --> ('CLOSET', '1')
+Sleep
+I sleep in my bed in my bedroom
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOSET> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <PAJAMAS> (1)
+[Grab] <PAJAMAS> (1)
+[Close] <CLOSET> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

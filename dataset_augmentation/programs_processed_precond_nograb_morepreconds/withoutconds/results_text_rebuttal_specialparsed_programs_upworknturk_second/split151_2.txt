@@ -1,0 +1,27 @@
+Take shower
+Showering, cleaning body
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <FACE> (1)
+[Wash] <FACE> (1)
+[Find] <ARMS_BOTH> (1)
+[Wash] <ARMS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Wash] <LEGS_BOTH> (1)
+[Find] <FEET_BOTH> (1)
+[Wash] <FEET_BOTH> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <FACE> (1)
+[Wipe] <ARMS_BOTH> (1)
+[Wipe] <LEGS_BOTH> (1)
+[Wipe] <FEET_BOTH> (1)
+[PutObjBack] <TOWEL> (1)
+[Leave] <SHOWER> (1)

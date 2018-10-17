@@ -1,0 +1,1 @@
+[{"in": [["SHOES", "1"], ["BASKET FOR CLOTHES", "1"]]}, {"location": [["SHOES", "1"], ["BEDROOM", "1"]]}, {"location": [["BASKET FOR CLOTHES", "1"], ["BEDROOM", "1"]]}, {"location": [["SHOES", "2"], ["BEDROOM", "1"]]}, {"atreach": [["SHOES", "1"], ["BASKET FOR CLOTHES", "1"]]}, {"atreach": [["SHOES", "2"], ["BASKET FOR CLOTHES", "1"]]}]

@@ -1,0 +1,7 @@
+0
+Pet cat
+Locate the cat.  Move close to the cat.  Extend arm toward cat.  Gently pet the cat.
+
+
+[Find] <CAT> (1)
+[Touch] <CAT> (1)

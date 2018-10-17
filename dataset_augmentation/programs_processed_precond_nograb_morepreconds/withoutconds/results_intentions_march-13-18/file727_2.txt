@@ -1,0 +1,18 @@
+Wash dishes by hand
+Walk to kitchen. Walk to sink. Pour water into plate. Pour detergent into plate. Rinse plate. Put plate into dishrack.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <WATER> (1)
+[Find] <PLATE> (1)
+[Pour] <WATER> (1) <PLATE> (1)
+[Walk] <DETERGENT> (1)
+[Find] <DETERGENT> (1)
+[Grab] <DETERGENT> (1)
+[Pour] <DETERGENT> (1) <PLATE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)

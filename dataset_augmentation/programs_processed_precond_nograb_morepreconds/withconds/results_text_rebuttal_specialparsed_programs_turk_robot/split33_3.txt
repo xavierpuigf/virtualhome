@@ -1,0 +1,28 @@
+4
+inside: ('COMFORTER', '1') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('CLOSET', '1'), ('PILLOW', '1') --> ('CLOSET', '1'), ('PILLOW', '2') --> ('CLOSET', '1')
+location: ('BED', '1') --> ('KIDS BEDROOM', '1'), ('CLOSET', '1') --> ('KIDS BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('BED', '1') --> ('CLOSET', '1'), ('PILLOW', '2') --> ('CLOSET', '1'), ('COMFORTER', '1') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('PILLOW', '1') --> ('CLOSET', '1')
+Make kid's bed
+Clear the bed, tuck in fitted sheet, organize pillows, place comforter on bed.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CLOSET> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Unfold] <SHEETS> (1)
+[Find] <BED> (1)
+[Cover] <BED> (1) <SHEETS> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[PutBack] <COMFORTER> (1) <BED> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Find] <PILLOW> (2)
+[Grab] <PILLOW> (2)
+[PutBack] <PILLOW> (1) <BED> (1)
+[PutBack] <PILLOW> (2) <BED> (1)
+[Close] <CLOSET> (1)

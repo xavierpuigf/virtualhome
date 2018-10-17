@@ -1,0 +1,11 @@
+2
+location: ('MAN', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('MAN', '1') --> ('MAN', '1')
+Answer door
+Walk up to the door.  Open the door and greet whomever is out side
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <MAN> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)

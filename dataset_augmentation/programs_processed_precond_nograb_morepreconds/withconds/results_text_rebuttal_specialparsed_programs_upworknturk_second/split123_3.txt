@@ -1,0 +1,30 @@
+4
+inside: ('SPOON', '1') --> ('KITCHEN CABINET', '1'), ('PLATE', '1') --> ('DISHWASHER', '1'), ('FORK', '1') --> ('KITCHEN CABINET', '1'), ('BOWL', '1') --> ('DISHWASHER', '1')
+location: ('DISHWASHER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+closed: ('DISHWASHER', '1') --> , ('KITCHEN CABINET', '1') --> 
+atreach: ('DISHWASHER', '1') --> ('DISHWASHER', '1'), ('PLATE', '1') --> ('DISHWASHER', '1'), ('SPOON', '1') --> ('DISHWASHER', '1'), ('FORK', '1') --> ('DISHWASHER', '1'), ('BOWL', '1') --> ('DISHWASHER', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1')
+Unload dishwasher
+Open the dishwasher door. Take out all of the dishes and silverware. Put the dishes and silverware in their drawers/drying rack and cabinets. Close the dishwasher door.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[PutBack] <BOWL> (1) <KITCHEN CABINET> (1)
+[PutBack] <PLATE> (1) <KITCHEN CABINET> (1)
+[Walk] <DISHWASHER> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Close] <DISHWASHER> (1)
+[Walk] <KITCHEN CABINET> (1)
+[PutBack] <FORK> (1) <KITCHEN CABINET> (1)
+[PutBack] <SPOON> (1) <KITCHEN CABINET> (1)
+[Close] <KITCHEN CABINET> (1)

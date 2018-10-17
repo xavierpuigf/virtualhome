@@ -1,0 +1,12 @@
+Get dressed
+Get clothes out of closet.  Take off pajamas.  Put on shirt, pants, tie, and shoes.  Adjust clothing looking at mirror.  Leave.
+
+
+[Find] <CLOTHES_PANTS> (1)
+[TurnTo] <CLOTHES_PANTS> (1)
+[PointAt] <CLOTHES_PANTS> (1)
+[Wash] <CLOTHES_PANTS> (1)
+[TurnTo] <CLOTHES_PANTS> (1)
+[LookAt] <CLOTHES_PANTS> (1)
+[Fold] <CLOTHES_PANTS> (1)
+[Walk] <BEDROOM> (1)

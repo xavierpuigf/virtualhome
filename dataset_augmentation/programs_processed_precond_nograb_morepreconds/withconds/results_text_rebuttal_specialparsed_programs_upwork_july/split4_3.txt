@@ -1,0 +1,23 @@
+2
+location: ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('CLOTHES_SKIRT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
+atreach: ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_SKIRT', '1') --> ('BASKET FOR CLOTHES', '1'), ('BED', '1') --> ('BASKET FOR CLOTHES', '1'), ('BASKET FOR CLOTHES', '1') --> ('BASKET FOR CLOTHES', '1')
+Fold laundry
+I fold clean laundry on the bed.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BASKET FOR CLOTHES> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Find] <BED> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <BED> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Fold] <CLOTHES_DRESS> (1)
+[PutBack] <CLOTHES_DRESS> (1) <BED> (1)
+[Find] <CLOTHES_SKIRT> (1)
+[Grab] <CLOTHES_SKIRT> (1)
+[Fold] <CLOTHES_SKIRT> (1)
+[PutBack] <CLOTHES_SKIRT> (1) <BED> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[PutObjBack] <BASKET FOR CLOTHES> (1)

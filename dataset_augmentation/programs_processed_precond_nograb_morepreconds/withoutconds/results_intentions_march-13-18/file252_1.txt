@@ -1,0 +1,12 @@
+Brush teeth
+Take a brush, go to bathroom , clean brush, apply toothpaste and then brush your teeth.
+
+
+[Find] <BRUSH> (1)
+[Wash] <BRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Wipe] <BRUSH> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)

@@ -1,0 +1,20 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('DESK', '1') --> ('LIVING ROOM', '1')
+atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('DESK', '1') --> ('DESK', '1')
+Work
+Walk to living-room. Look at the desk where Computer stays. Sit in chair. Switch on computer. Work on computer. Switch off computer.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <DESK> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[LookAt] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Watch] <COMPUTER> (1)
+[SwitchOff] <COMPUTER> (1)

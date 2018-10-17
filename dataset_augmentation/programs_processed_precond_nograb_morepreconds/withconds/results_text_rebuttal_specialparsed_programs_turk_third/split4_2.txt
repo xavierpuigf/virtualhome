@@ -1,0 +1,19 @@
+4
+inside: ('CLOTHES_PANTS', '1') --> ('CLOSET', '1'), ('CLOTHES_SHIRT', '1') --> ('CLOSET', '1')
+location: ('CLOSET', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('CLOTHES_SHIRT', '1') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('CLOTHES_PANTS', '1') --> ('CLOSET', '1')
+Get dressed
+Pick out the clothes you are going to wear and put them on your body
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[PutOn] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutOn] <CLOTHES_SHIRT> (1)
+[Close] <CLOSET> (1)

@@ -1,0 +1,11 @@
+2
+location: ('BED', '1') --> ('BEDROOM', '1')
+atreach: ('BED', '1') --> ('BED', '1')
+Sleep
+Relax for the night or during the day, lying on the bed.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

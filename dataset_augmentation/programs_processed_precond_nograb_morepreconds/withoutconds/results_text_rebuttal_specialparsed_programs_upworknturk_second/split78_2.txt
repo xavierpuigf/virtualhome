@@ -1,0 +1,22 @@
+Drink
+Go to kitchen cabinet. Retrieve a cup to drink out of. Go to refrigerator. Remove bottle water jug. Pour water into cup. Return jug to refrigerator. Drink
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Close] <KITCHEN CABINET> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[PutObjBack] <WATER GLASS> (1)
+[Close] <FRIDGE> (1)
+[Drink] <CUP> (1)

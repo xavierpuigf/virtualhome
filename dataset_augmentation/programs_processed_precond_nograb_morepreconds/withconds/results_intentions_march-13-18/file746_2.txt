@@ -1,0 +1,16 @@
+3
+in: ('WATER', '1') --> ('KITCHEN CABINET', '1')
+location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+atreach: ('WATER GLASS', '1') --> ('KITCHEN CABINET', '1'), ('WATER', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1')
+Drink
+Get a glass of water to drink
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Find] <WATER> (1)
+[Find] <WATER GLASS> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[Drink] <WATER> (1)

@@ -1,0 +1,1 @@
+[{"location": [["LAMP", "1"], ["LIVING ROOM", "1"]]}, {"location": [["TRASHCAN", "1"], ["LIVING ROOM", "1"]]}, {"location": [["PAPER TOWEL", "1"], ["LIVING ROOM", "1"]]}, {"is_on": ["LAMP", "1"]}, {"atreach": [["LAMP", "1"], ["LAMP", "1"]]}, {"atreach": [["TRASHCAN", "1"], ["LAMP", "1"]]}, {"atreach": [["PAPER TOWEL", "1"], ["PAPER TOWEL", "1"]]}]

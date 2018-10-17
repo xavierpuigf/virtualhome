@@ -1,0 +1,17 @@
+3
+in: ('HANDS_BOTH', '1') --> ('SINK', '1')
+location: ('HANDS_BOTH', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+atreach: ('HANDS_BOTH', '1') --> ('SINK', '1'), ('WATER', '1') --> ('SINK', '1'), ('SINK', '1') --> ('SINK', '1')
+Wash hands
+walk to kitchen. look at sink. stretch hands both. wash water.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <SINK> (1)
+[TurnTo] <SINK> (1)
+[LookAt] <SINK> (1)
+[Find] <HANDS_BOTH> (1)
+[Stretch] <HANDS_BOTH> (1)
+[Find] <WATER> (1)
+[Wash] <WATER> (1)

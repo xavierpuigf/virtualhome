@@ -1,0 +1,22 @@
+Play with barbies
+Get dolls, set up barbie house, get accessories
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CABINET> (1)
+[Find] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Close] <CABINET> (1)
+[Walk] <BED> (1)
+[PutBack] <TOY> (1) <BED> (1)
+[PutBack] <TOY> (2) <BED> (1)
+[Sit] <BED> (1)
+[TurnTo] <TOY> (1)
+[LookAt] <TOY> (1)
+[Touch] <TOY> (1)
+[Squeeze] <TOY> (1)
+[Shake] <TOY> (2)

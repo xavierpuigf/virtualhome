@@ -1,0 +1,12 @@
+1
+atreach: ('COUCH', '1') --> ('CAT', '1')
+Pet cat
+I sit next to the cat. I hold out my hand. I put my hand on the cat. I pet the cat.
+
+
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <CAT> (1)
+[TurnTo] <CAT> (1)
+[LookAt] <CAT> (1)
+[Touch] <CAT> (1)

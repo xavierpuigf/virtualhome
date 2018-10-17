@@ -1,0 +1,17 @@
+4
+inside: ('GROCERIES', '1') --> ('FREEZER', '1')
+location: ('FREEZER', '1') --> ('DINING ROOM', '1')
+closed: ('FREEZER', '1') --> 
+atreach: ('FREEZER', '1') --> ('FREEZER', '1'), ('GROCERIES', '1') --> ('FREEZER', '1')
+Added meat to freezer
+After shopping for groceries, i returned home, i walked to the dining room and placed meat items in freezer located in the dining room. I opened up the bags from the grocery store, removed all the meat items, and after opening the freezer door, i placed the meat items into the freezer, and closed the door.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <FREEZER> (1)
+[Find] <FREEZER> (1)
+[Open] <FREEZER> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <FREEZER> (1)
+[Close] <FREEZER> (1)

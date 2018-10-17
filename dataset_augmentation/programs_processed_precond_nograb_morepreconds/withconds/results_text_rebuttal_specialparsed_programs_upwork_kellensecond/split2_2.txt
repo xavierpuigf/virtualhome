@@ -1,0 +1,16 @@
+3
+is_off: ('STEREO', '1') --> 
+location: ('STEREO', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('LEGS_BOTH', '1') --> ('BEDROOM', '1')
+atreach: ('STEREO', '1') --> ('STEREO', '1'), ('BED', '1') --> ('STEREO', '1'), ('LEGS_BOTH', '1') --> ('STEREO', '1')
+Relax
+Read a book, surf the internet, watch videos, lie down, play games
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <STEREO> (1)
+[Find] <STEREO> (1)
+[SwitchOn] <STEREO> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Find] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)

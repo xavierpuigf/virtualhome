@@ -1,0 +1,1 @@
+[{"location": [["CAT", "1"], ["LIVING ROOM", "1"]]}, {"location": [["FOOD_FOOD", "1"], ["LIVING ROOM", "1"]]}, {"location": [["PILLOW", "1"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"atreach": [["FOOD_FOOD", "1"], ["CAT", "1"]]}, {"atreach": [["PILLOW", "1"], ["PILLOW", "1"]]}, {"atreach": [["BED", "1"], ["PILLOW", "1"]]}]

@@ -1,0 +1,19 @@
+Wash hands
+Go to bathroom, turn on faucet, wet hands, apply soap, rub hands, rinse hands, turn off faucet, dry hands
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <FAUCET> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Scrub] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <HANDS_BOTH> (1)
+[PutObjBack] <TOWEL> (1)

@@ -1,0 +1,13 @@
+Watch TV
+In the evenings after dinner, we sit on the couch, turn on the television, cue up Netflix and watch our favorite shows.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Sit] <COUCH> (1)
+[Watch] <TELEVISION> (1)

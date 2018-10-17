@@ -1,0 +1,17 @@
+Organize
+Put things in a right place.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <AFTER SHAVE> (1)
+[Find] <AFTER SHAVE> (1)
+[Grab] <AFTER SHAVE> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[PutBack] <AFTER SHAVE> (1) <CUPBOARD> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[PutBack] <TOOTHBRUSH> (1) <CUPBOARD> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[PutBack] <BRUSH> (1) <CUPBOARD> (1)

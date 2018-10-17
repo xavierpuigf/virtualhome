@@ -1,0 +1,20 @@
+Go to toilet
+walk to bathroom. put off clothes_pants. put off clothes_underwear. open toilet. sit toilet. grab toilet paper. flush toilet.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[PutOff] <CLOTHES_UNDERWEAR> (1)
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Flush] <TOILET> (1)

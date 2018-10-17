@@ -1,0 +1,25 @@
+3
+in: ('CLOTHES_UNDERWEAR', '1') --> ('Character', 1), ('CLOTHES_PANTS', '1') --> ('Character', 1)
+location: ('CLOTHES_UNDERWEAR', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
+atreach: ('CLOTHES_UNDERWEAR', '1') --> ('CLOTHES_PANTS', '1'), ('TOILET', '1') --> ('TOILET PAPER', '1'), ('CLOTHES_PANTS', '1') --> ('CLOTHES_PANTS', '1'), ('TOILET PAPER', '1') --> ('CLOTHES_PANTS', '1')
+Go to toilet
+I go to the bathroom and I remove my pants and underwear. Then I sit on the toilet and do evacuate my bowels. Then I clean myself with toilet paper. Then I flush the toilet and dress up.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[PutOff] <CLOTHES_UNDERWEAR> (1)
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Wipe] <TOILET PAPER> (1)
+[Flush] <TOILET> (1)
+[PutOn] <CLOTHES_UNDERWEAR> (1)
+[PutOn] <CLOTHES_PANTS> (1)

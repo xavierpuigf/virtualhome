@@ -1,0 +1,24 @@
+3
+inside: ('COFFEE', '1') --> ('COFFE MAKER', '1'), ('WATER', '1') --> ('COFFE MAKER', '1')
+closed: ('COFFE MAKER', '1') --> 
+atreach: ('BUTTON', '1') --> ('WATER', '1'), ('WATER', '1') --> ('WATER', '1'), ('COFFE MAKER', '1') --> ('WATER', '1')
+Make coffee
+Open coffee maker, put in a coffee filter, open coffee grounds container, reach in, grasp scoop, scoop out portion of coffee, place coffee into coffee filter, set down scoop, add one cup of water to coffee, press coffee start button, put scoop back in container, close container, wait for coffee.
+
+
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <COFFEE> (1)
+[Grab] <COFFEE> (1)
+[PutBack] <COFFEE> (1) <COFFE MAKER> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <COFFE MAKER> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[TurnTo] <COFFE MAKER> (1)
+[LookAt] <COFFE MAKER> (1)

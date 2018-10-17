@@ -1,0 +1,11 @@
+Turn on light
+turn on the light for room
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[PlugIn] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)

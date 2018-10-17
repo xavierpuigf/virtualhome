@@ -1,0 +1,15 @@
+Work
+Walk to living-room. Look at the desk where Computer stays. Sit in chair. Switch on computer. Work on computer. Switch off computer.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <DESK> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[LookAt] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Watch] <COMPUTER> (1)
+[SwitchOff] <COMPUTER> (1)

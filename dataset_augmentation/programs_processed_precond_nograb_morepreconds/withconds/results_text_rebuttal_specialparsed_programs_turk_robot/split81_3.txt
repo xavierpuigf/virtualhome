@@ -1,0 +1,14 @@
+0
+Wash dishes
+Running the water over the dishes, putting dish soap on a sponge, rubbing the dish to be cleaned, rinsing the washed dish.
+
+
+[Find] <WATER> (1)
+[TurnTo] <WATER> (1)
+[PointAt] <WATER> (1)
+[Drink] <WATER> (1)
+[TurnTo] <WATER> (1)
+[LookAt] <WATER> (1)
+[Stir] <WATER> (1)
+[Find] <KITCHEN> (1)
+[Crawl] <KITCHEN> (1)

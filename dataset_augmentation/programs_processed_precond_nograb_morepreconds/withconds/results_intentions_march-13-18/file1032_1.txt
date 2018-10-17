@@ -1,0 +1,25 @@
+0
+Set up table
+Grab plates, silverware, napkins and cups out of the kitchen, take them in the dining room and set them on the table.
+
+
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Find] <TABLE> (1)
+[PutBack] <CUP> (1) <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <NAPKIN> (1)
+[Grab] <NAPKIN> (1)
+[PutBack] <NAPKIN> (1) <TABLE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[PutBack] <FORK> (1) <TABLE> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[PutBack] <SPOON> (1) <TABLE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Grab] <CUP> (1)
+[PutBack] <CUP> (1) <TABLE> (1)

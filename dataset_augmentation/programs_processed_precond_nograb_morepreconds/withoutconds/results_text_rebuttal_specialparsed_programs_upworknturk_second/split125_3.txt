@@ -1,0 +1,13 @@
+Tuck kids in bed
+Tell your son goodnight and tuck him in
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Cover] <CHILD> (1) <BLANKET> (1)
+[Find] <LAMP> (1)
+[SwitchOff] <LAMP> (1)

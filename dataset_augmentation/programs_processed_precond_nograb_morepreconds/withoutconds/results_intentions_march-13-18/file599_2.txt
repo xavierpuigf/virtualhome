@@ -1,0 +1,19 @@
+Wash teeth
+Go to bathroom. Find toothbrush. find Toothpast. Apply toothpaste to toothbrush. Brush Teeth with Toothbrush. rinse both the toothbrush and the tooth paste and put away.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SINK> (1)
+[TurnTo] <SINK> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

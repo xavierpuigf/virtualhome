@@ -1,0 +1,31 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('FACIAL CLEANSER', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('FACE', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('WATER', '1') --> ('SINK', '1'), ('FACIAL CLEANSER', '1') --> ('SINK', '1'), ('HANDS_BOTH', '1') --> ('SINK', '1'), ('TOWEL', '1') --> ('SINK', '1'), ('FACE', '1') --> ('SINK', '1')
+Wash face
+Turn the faucet on. Wet the face. Take facial cleanser out of packaging, using hands. Lather on face. Rinse face with water. Turn off the faucet. Dry face with towel.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Find] <HANDS_BOTH> (1)
+[Pour] <WATER> (1) <HANDS_BOTH> (1)
+[Find] <FACE> (1)
+[Wash] <FACE> (1)
+[Find] <FACIAL CLEANSER> (1)
+[Grab] <FACIAL CLEANSER> (1)
+[Pour] <FACIAL CLEANSER> (1) <HANDS_BOTH> (1)
+[PutObjBack] <FACIAL CLEANSER> (1)
+[Spread] <FACIAL CLEANSER> (1) <FACE> (1)
+[Scrub] <FACE> (1)
+[Pour] <WATER> (1) <HANDS_BOTH> (1)
+[Rinse] <FACE> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <FACE> (1)
+[PutObjBack] <TOWEL> (1)

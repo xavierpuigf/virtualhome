@@ -1,0 +1,13 @@
+3
+in: ('TELEPHONE', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('TELEPHONE', '1') --> ('LIVING ROOM', '1')
+atreach: ('TELEPHONE', '1') --> ('TABLE', '1')
+Pick up phone
+A friend told me he would call me the next day to discuss some business matter. The bell started ringing and I walked towards the table and grabbed the phone and discussed the matter.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)
+[Drop] <TELEPHONE> (1)

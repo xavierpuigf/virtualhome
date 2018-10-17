@@ -1,0 +1,18 @@
+2
+location: ('PLATE', '1') --> ('ENTRANCE HALL', '1'), ('CAT', '1') --> ('ENTRANCE HALL', '1'), ('MILK', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('PLATE', '1') --> ('CAT', '1'), ('CAT', '1') --> ('CAT', '1'), ('MILK', '1') --> ('CAT', '1')
+Give milk to cat
+Grab milk and pour it into the plate so that the cat can drink
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CAT> (1)
+[Find] <CAT> (1)
+[TurnTo] <CAT> (1)
+[PointAt] <CAT> (1)
+[Pull] <CAT> (1)
+[Find] <MILK> (1)
+[Find] <PLATE> (1)
+[Pour] <MILK> (1) <PLATE> (1)
+[Touch] <CAT> (1)
+[Scrub] <CAT> (1)

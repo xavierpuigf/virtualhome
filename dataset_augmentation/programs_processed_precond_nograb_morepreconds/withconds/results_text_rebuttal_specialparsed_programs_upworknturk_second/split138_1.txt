@@ -1,0 +1,22 @@
+5
+is_off: ('VACUUM CLEANER', '1') --> 
+atreach: ('VACUUM CLEANER', '1') --> ('VACUUM CLEANER', '1'), ('ELECTRICAL OUTLET', '1') --> ('VACUUM CLEANER', '1'), ('CARPET', '1') --> ('VACUUM CLEANER', '1')
+location: ('VACUUM CLEANER', '1') --> ('LIVING ROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1'), ('CARPET', '1') --> ('LIVING ROOM', '1')
+unplugged: ('VACUUM CLEANER', '1') --> 
+plugged: ('VACUUM CLEANER', '1') --> 
+Vacuum
+Plug vacuum cleaner into an outlet. Turn vacuum cleaner on. Run vacuum cleaner over the carpet. Turn vacuum cleaner off. Unplug vacuum cleaner.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <VACUUM CLEANER> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Find] <CARPET> (1)
+[Vacuum] <CARPET> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[PutObjBack] <VACUUM CLEANER> (1)

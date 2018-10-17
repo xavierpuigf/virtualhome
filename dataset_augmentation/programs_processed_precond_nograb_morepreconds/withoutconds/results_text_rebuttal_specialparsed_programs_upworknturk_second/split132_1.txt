@@ -1,0 +1,11 @@
+Wipe down sink
+Use a cloth to wipe the edge of the sink. Then wipe the bowl of the sink as well.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <RAG> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <SINK> (1)
+[Wipe] <SINK> (1)
+[PutObjBack] <RAG> (1)

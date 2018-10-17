@@ -1,0 +1,10 @@
+Turn on light
+Walk to entrance hall, stretch right arm, and switch on lights.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <ARMS_RIGHT> (1)
+[Find] <ARMS_RIGHT> (1)
+[Stretch] <ARMS_RIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

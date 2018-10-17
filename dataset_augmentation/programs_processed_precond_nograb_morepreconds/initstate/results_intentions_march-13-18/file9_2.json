@@ -1,0 +1,1 @@
+[{"location": [["COMPUTER", "1"], ["HOME OFFICE", "1"]]}, {"location": [["BUTTON", "1"], ["HOME OFFICE", "1"]]}, {"location": [["CHAIR", "1"], ["HOME OFFICE", "1"]]}, {"atreach": [["COMPUTER", "1"], ["BUTTON", "1"]]}, {"atreach": [["CHAIR", "1"], ["COMPUTER", "1"]]}, {"atreach": [["BUTTON", "1"], ["BUTTON", "1"]]}]

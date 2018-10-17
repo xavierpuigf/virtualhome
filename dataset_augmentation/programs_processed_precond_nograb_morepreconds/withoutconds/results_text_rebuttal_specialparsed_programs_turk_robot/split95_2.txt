@@ -1,0 +1,20 @@
+Pick up toys
+Bend down and pick up the toys off of the floor.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <TOY> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <TOY> (1) <CLOSET> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Walk] <CLOSET> (1)
+[PutBack] <TOY> (2) <CLOSET> (1)
+[Find] <TOY> (3)
+[Walk] <CLOSET> (1)
+[Grab] <TOY> (3)
+[PutBack] <TOY> (3) <CLOSET> (1)
+[Close] <CLOSET> (1)

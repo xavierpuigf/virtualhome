@@ -1,0 +1,18 @@
+Go to toilet
+Walk to the bathroom. Find the toilet and put off your pants. Sit on the toilet and pee. Take the toilet paper and wipe yourself. Stand up and put your clothes on back.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Wipe] <TOILET PAPER> (1)
+[StandUp]
+[PutOn] <CLOTHES_PANTS> (1)
+[Flush] <TOILET> (1)

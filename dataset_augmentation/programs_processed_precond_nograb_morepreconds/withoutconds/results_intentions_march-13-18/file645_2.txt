@@ -1,0 +1,15 @@
+Change TV channel
+I go to the livingroom. The TV is on. I pick up the remote and press the next channel button. I look at the television, and see that the channel has changed.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)

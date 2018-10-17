@@ -1,0 +1,14 @@
+Pet cat
+I need to pet a cat and not hurt it. To do this, I use my left hand to pet the cat softly on their back.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CAT> (1)
+[Find] <CAT> (1)
+[TurnTo] <CAT> (1)
+[Walk] <CAT> (1)
+[Find] <ARMS_LEFT> (1)
+[Stretch] <ARMS_LEFT> (1)
+[Find] <HANDS_LEFT> (1)
+[Stretch] <HANDS_LEFT> (1)
+[Touch] <CAT> (1)

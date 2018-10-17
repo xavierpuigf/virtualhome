@@ -1,0 +1,17 @@
+3
+location: ('CURTAIN', '1') --> ('HOME OFFICE', '1'), ('CURTAIN', '2') --> ('HOME OFFICE', '1')
+closed: ('CURTAIN', '1') --> , ('CURTAIN', '2') --> 
+atreach: ('CURTAIN', '1') --> ('CURTAIN', '1'), ('CURTAIN', '2') --> ('CURTAIN', '2')
+Raise blinds
+Pull the string down and to the right until the blinds are up. Release string.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CURTAIN> (1)
+[Find] <CURTAIN> (1)
+[Pull] <CURTAIN> (1)
+[Open] <CURTAIN> (1)
+[Walk] <CURTAIN> (2)
+[Find] <CURTAIN> (2)
+[Pull] <CURTAIN> (2)
+[Open] <CURTAIN> (2)

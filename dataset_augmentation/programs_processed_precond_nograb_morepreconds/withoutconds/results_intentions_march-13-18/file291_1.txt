@@ -1,0 +1,14 @@
+Drink
+GOING TO DRINK WATER IN KITCHEN
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Find] <WATER GLASS> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[Drink] <WATER GLASS> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)

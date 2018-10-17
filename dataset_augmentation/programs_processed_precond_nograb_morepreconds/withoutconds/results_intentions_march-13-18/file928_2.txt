@@ -1,0 +1,11 @@
+Wash hands
+Going to the sink and scrubbing hands
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SINK> (1)
+[Find] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)
+[Scrub] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)

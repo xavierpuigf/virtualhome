@@ -1,0 +1,12 @@
+1
+is_off: ('TELEVISION', '1') --> 
+Change TV channel
+Lift right arm to grab the remote control with right hand, aim the remote control at the television using right hand and arm, use right hand to click the correct button on the remote control and change the channel.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

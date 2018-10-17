@@ -1,0 +1,18 @@
+2
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CARDS', '1') --> ('LIVING ROOM', '1'), ('DECK OF CARDS', '1') --> ('LIVING ROOM', '1')
+atreach: ('TABLE', '1') --> ('DECK OF CARDS', '1'), ('SOFA', '1') --> ('CARDS', '1'), ('CARDS', '1') --> ('DECK OF CARDS', '1'), ('DECK OF CARDS', '1') --> ('DECK OF CARDS', '1')
+Play games
+We play a card game
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <DECK OF CARDS> (1)
+[Find] <DECK OF CARDS> (1)
+[Grab] <DECK OF CARDS> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <CARDS> (1)
+[Grab] <CARDS> (1)
+[Find] <TABLE> (1)
+[PutBack] <CARDS> (1) <TABLE> (1)
+[Play] <CARDS> (1)

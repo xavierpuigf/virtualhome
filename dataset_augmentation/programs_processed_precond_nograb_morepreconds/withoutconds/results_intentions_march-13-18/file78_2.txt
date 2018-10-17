@@ -1,0 +1,13 @@
+Go to toilet
+walk to bathroom, turn on light, walk to toilet, open toilet lid, sit on toilet, use toilet, flush toilet, close toilet lid.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <TOILET> (1)
+[Open] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Flush] <TOILET> (1)
+[Close] <TOILET> (1)

@@ -1,0 +1,26 @@
+Make eggs
+Every morning my robot would make me scrambled eggs on the stove
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRYINGPAN> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Walk] <STOVE> (1)
+[PutBack] <FRYINGPAN> (1) <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_EGG> (1)
+[Grab] <FOOD_EGG> (1)
+[Find] <FOOD_EGG> (2)
+[Grab] <FOOD_EGG> (2)
+[Close] <FRIDGE> (1)
+[Walk] <STOVE> (1)
+[PutBack] <FOOD_EGG> (1) <FRYINGPAN> (1)
+[PutBack] <FOOD_EGG> (2) <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Shake] <FRYINGPAN> (1)
+[Shake] <FRYINGPAN> (1)
+[Shake] <FRYINGPAN> (1)
+[SwitchOff] <STOVE> (1)

@@ -1,0 +1,10 @@
+Take shower
+Walk to bathroom. Find shower. Walk to shower. Stand up. Turn on shower.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SHOWER> (1)
+[Walk] <SHOWER> (1)
+[StandUp]
+[TurnTo] <SHOWER> (1)

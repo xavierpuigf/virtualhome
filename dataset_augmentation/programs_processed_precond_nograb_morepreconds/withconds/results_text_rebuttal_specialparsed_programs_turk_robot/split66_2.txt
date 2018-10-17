@@ -1,0 +1,20 @@
+2
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('WALL', '1') --> ('LIVING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('WALL', '1'), ('WALL', '1') --> ('CHAIR', '1')
+Sit quietly
+SIT IN A CHAIR
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <WALL> (1)
+[TurnTo] <WALL> (1)
+[LookAt] <WALL> (1)
+[Sit] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Sit] <CHAIR> (1)

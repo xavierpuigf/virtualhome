@@ -1,0 +1,15 @@
+Put slippers in closet
+Pick up the slippers. Toss in the closet.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <SHOES> (1)
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Find] <SHOES> (2)
+[Grab] <SHOES> (2)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <SHOES> (1) <CLOSET> (1)
+[PutBack] <SHOES> (2) <CLOSET> (1)
+[Close] <CLOSET> (1)

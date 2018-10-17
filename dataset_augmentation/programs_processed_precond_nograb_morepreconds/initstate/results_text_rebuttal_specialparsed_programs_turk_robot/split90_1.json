@@ -1,0 +1,1 @@
+[{"location": [["WOMAN", "1"], ["LIVING ROOM", "1"]]}, {"location": [["CURTAIN", "1"], ["LIVING ROOM", "1"]]}, {"location": [["MAN", "1"], ["LIVING ROOM", "1"]]}, {"closed": ["CURTAIN", "1"]}, {"atreach": [["WOMAN", "1"], ["CURTAIN", "1"]]}, {"atreach": [["CURTAIN", "1"], ["CURTAIN", "1"]]}, {"atreach": [["MAN", "1"], ["CURTAIN", "1"]]}]

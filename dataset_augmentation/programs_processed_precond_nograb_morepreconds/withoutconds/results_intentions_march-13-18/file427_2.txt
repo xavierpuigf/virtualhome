@@ -1,0 +1,25 @@
+Wash dishes by hand
+PUT AN  CLOTH AND DETERGENT TOGETHER AND SCRUB THE DISHES IN THE SINK, GATHERED AND RINSED
+
+
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <DISHRACK> (1)
+[Find] <PLATE> (4)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <PLATE> (2)
+[Grab] <PLATE> (2)
+[Find] <PLATE> (3)
+[Grab] <PLATE> (3)
+[Grab] <PLATE> (4)
+[Find] <WATER GLASS> (2)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (2)
+[Find] <DISH SOAP> (1)
+[Find] <WATER> (1)
+[Find] <SINK> (1)
+[Grab] <SINK> (1)
+[PutBack] <SINK> (1) <SINK> (1)
+[Grab] <SINK> (1)

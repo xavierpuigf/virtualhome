@@ -1,0 +1,17 @@
+Relax on sofa
+I walk in the living room.  I walk to the sofa.  I sit on the sofa.  I grab a pillow and place it on the armrest.  I lie my head on the pilow.  I grab a blanket and put it over me.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[PutBack] <PILLOW> (1) <SOFA> (1)
+[Lie] <SOFA> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <LEGS_BOTH> (1)
+[Cover] <LEGS_BOTH> (1) <BLANKET> (1)
+[Find] <ARMS_BOTH> (1)
+[Cover] <ARMS_BOTH> (1) <BLANKET> (1)

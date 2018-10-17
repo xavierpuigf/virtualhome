@@ -1,0 +1,10 @@
+Wash teeth
+before going to bed or when wake up earily morning brush teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTH PASTE> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)

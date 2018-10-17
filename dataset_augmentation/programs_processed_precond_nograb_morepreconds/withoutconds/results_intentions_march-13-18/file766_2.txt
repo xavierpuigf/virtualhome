@@ -1,0 +1,21 @@
+Wash teeth
+I walk in to the bathroom. I turn on the faucet. I find the toothbrush and toothpaste. I grab the toothbrush and toothpaste. I rinse off the toothbrush. I add toothpaste to the toothbrush. I put back the toothpaste. I wash my teeth with the toothbrush. I rinse off the toothbrush. I put the toothbrush back. I rinse my mouth out. I turn the faucet off.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <FAUCET> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTHBRUSH> (1)
+[Rinse] <TEETH> (1)
+[SwitchOff] <FAUCET> (1)

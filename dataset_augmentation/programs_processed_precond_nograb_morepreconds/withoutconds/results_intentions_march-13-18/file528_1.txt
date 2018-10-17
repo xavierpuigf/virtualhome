@@ -1,0 +1,12 @@
+Drink
+go to the kitchen
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <WATER> (1)
+[Drink] <WATER> (1)

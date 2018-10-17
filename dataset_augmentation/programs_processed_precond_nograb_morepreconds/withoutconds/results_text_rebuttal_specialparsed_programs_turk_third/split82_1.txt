@@ -1,0 +1,11 @@
+Pick up dirty dishes
+Go into dining room, grab plates, cups, and other dishware from the table, take them into the kitchen to be washed.
+
+
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[PointAt] <TABLE> (1)
+[Wash] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[LookAt] <TABLE> (1)
+[Touch] <TABLE> (1)

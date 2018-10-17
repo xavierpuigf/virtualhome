@@ -1,0 +1,17 @@
+3
+is_off: ('STOVE', '1') --> 
+location: ('STOVE', '1') --> ('KITCHEN', '1'), ('GROCERIES', '1') --> ('KITCHEN', '1'), ('BOWL', '1') --> ('KITCHEN', '1')
+atreach: ('STOVE', '1') --> ('STOVE', '1'), ('GROCERIES', '1') --> ('STOVE', '1'), ('BOWL', '1') --> ('STOVE', '1')
+Cook some food
+I switch on the stove and cook my groceries there.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <STOVE> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[PutBack] <BOWL> (1) <STOVE> (1)
+[Find] <GROCERIES> (1)
+[SwitchOff] <STOVE> (1)

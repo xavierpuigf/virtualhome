@@ -1,0 +1,15 @@
+Study
+Study norwegian
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <DESK> (1)
+[Find] <NOTEBOOK> (1)
+[Grab] <NOTEBOOK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <NOTEBOOK> (1)
+[LookAt] <NOTEBOOK> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)

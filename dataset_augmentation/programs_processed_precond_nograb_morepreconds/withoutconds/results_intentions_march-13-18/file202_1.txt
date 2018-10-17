@@ -1,0 +1,8 @@
+Pet cat
+Pet cat No. 2 in the living room.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CAT> (2)
+[Find] <CAT> (2)
+[Wipe] <CAT> (2)
