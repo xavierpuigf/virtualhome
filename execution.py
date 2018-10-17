@@ -161,10 +161,12 @@ class FindExecutor(ActionExecutor):
                 return _only_find_executor.execute(script, state, info)
             elif Property.BODY_PART in node.properties:
                 return _only_find_executor.execute(script, state, info)
-            elif State.SITTING not in char_node.states and State.LYING not in char_node.states:
-                return _walk_find_executor.execute(script, state, info)
-            else:
+            elif _is_character_close_to(state, node):
                 return _only_find_executor.execute(script, state, info)
+            elif State.SITTING in char_node.states or State.LYING in char_node.states:
+                return _only_find_executor.execute(script, state, info)
+            else:
+                return _walk_find_executor.execute(script, state, info)
 
 
 class GreetExecutor(ActionExecutor):
@@ -261,6 +263,7 @@ class GrabExecutor(ActionExecutor):
             new_relation = self.check_grabbable(state, node, info)
             if new_relation is not None:
                 changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode(), delete_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
                 new_close, relation = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
@@ -269,7 +272,7 @@ class GrabExecutor(ActionExecutor):
                 yield state.change_state(changes)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
-        if Property.GRABBABLE not in node.properties:
+        if Property.GRABBABLE not in node.properties and node.class_name != 'water':
             info.error('{} is not grabbable', node)
             return None
         if not _is_character_close_to(state, node):
@@ -309,6 +312,7 @@ class OpenExecutor(ActionExecutor):
             yield state.change_state([ChangeNode(new_node)])
 
     def check_openable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        
         if Property.CAN_OPEN not in node.properties:
             info.error('{} can not be opened', node)
             return False
@@ -316,7 +320,8 @@ class OpenExecutor(ActionExecutor):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
             return False
-        if _find_free_hand(state) is None:
+        
+        if not self.close and _find_free_hand(state) is None:
             char_node = _get_character_node(state)
             info.error('{} does not have a free hand', char_node)
             return False
@@ -428,9 +433,9 @@ class SwitchExecutor(ActionExecutor):
         if not _is_character_close_to(state, node):
             info.error('{} is not close to {}', _get_character_node(state), node)
             return False
-        if _find_free_hand(state) is None:
-            info.error('{} does not have a free hand', _get_character_node(state))
-            return False
+        #if _find_free_hand(state) is None:
+        #    info.error('{} does not have a free hand', _get_character_node(state))
+        #    return False
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
@@ -526,9 +531,9 @@ class WipeExecutor(ActionExecutor):
             info.error('{} is not close to {}', char_node, node)
             return False
 
-        if Property.SURFACES not in node.properties:
-            info.error('{} is not a surface', node)
-            return False
+        #if Property.SURFACES not in node.properties:
+        #    info.error('{} is not a surface', node)
+        #    return False
 
         nodes_in_hands = _find_nodes_from(state, char_node, [Relation.HOLDS_RH, Relation.HOLDS_LH])
         if len(nodes_in_hands) == 0:
@@ -869,14 +874,17 @@ class SqueezeExecutor(ActionExecutor):
             yield state.change_state([])
 
     def check_squeezable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        if Property.CLOTHES not in node.properties:
-            info.error('{} is not clothes', node)
-            return False
+        
         if _find_free_hand(state) is None:
             info.error('{} does not have a free hand', _get_character_node(state))
             return False
         if not _is_character_close_to(state, node):
             info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+
+        squeezable_objects = ['cleaning_solution', 'tooth_paste', 'shampoo', 'food_peanut_butter', 'dish_soap', 'soap', 'towel', 'rag', 'paper']
+        if Property.CLOTHES not in node.properties and node.class_name not in squeezable_objects:
+            info.error('{} is not clothes', node)
             return False
 
         return True
@@ -1155,12 +1163,14 @@ class ScriptExecutor(object):
         info = self.info
         state = EnvironmentState(self.graph, self.name_equivalence, instance_selection=True)
         _apply_initial_changers(state, script, init_changers)
+        graph_state_list = []
         for i in range(len(script)):
+            graph_state_list.append(state.to_dict())
             future_script = script.from_index(i)
             state = next(self.call_action_method(future_script, state, info), None)
             if state is None:
-                return None
-        return state
+                return None, graph_state_list
+        return state, graph_state_list
 
     @classmethod
     def call_action_method(cls, script: Script, state: EnvironmentState, info: ExecutionInfo):
