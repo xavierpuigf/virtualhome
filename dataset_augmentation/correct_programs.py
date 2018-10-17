@@ -12,8 +12,12 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
+bool dump_results = False
+
 prog_folder = 'programs_processed_precond_nograb_morepreconds_executable_executable_perturbed'
+prog_folder_out = 'programs_processed_precond_nograb_morepreconds_executable_executable_perturbed_solved'
 programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
+
 
 errors = []
 titles = []
@@ -49,6 +53,17 @@ for program in programs:
 
     if executable and max_iter > 0:
         print(colored('Program modified in {} exceptions'.format(max_iter), 'green'))
+        
+        if dump_results:
+            prog_out = program.replace(prog_folder, prog_folder_out)
+            state_out = prog_out.replace('.txt', '.json').replace('withoutconds', 'initstate')
+            if not os.path.isdir(os.path.basedir(prog_out)):
+                os.makedirs(os.path.basedir(prog_out))
+                os.makedirs(os.path.basedir(state_out))
+                with open(state_out, 'w+') as f:
+                    f.write(json.dumps(init_state))
+                with open(prog_out, 'w+') as f:
+                    f.writelines([x+'\n' for x in lines_program])
     elif not executable:
         print(colored('Program not solved', 'red'))
 
