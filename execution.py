@@ -797,8 +797,8 @@ class WatchExecutor(ActionExecutor):
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
             return False
-        if not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
-            info.error('{} is not facing {}', char_node, node)
+        if State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+            info.error('{} is not facing {} while sitting', char_node, node)
             return False
         if _is_inside(state, node):
             info.error('{} is inside other closed thing', node)
