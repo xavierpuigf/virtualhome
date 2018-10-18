@@ -290,6 +290,7 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
     - room of `character` is room of `object`
     - `object` is not inside a closed object
 	- only television, computer, laptop is allowed to be watched
+	- `character` face `object` if character sitting
 
 
 ### MoveExecutor
