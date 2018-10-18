@@ -209,12 +209,8 @@ def check_title():
     cnt = Counter(title_list)
     print("Title:")
     print("-"*30)
-    print(colored("Top 10", 'cyan'))
-    for title, count in cnt.most_common()[:10]:
-        print("{}: {}".format(title, count))
-
-    print(colored("Bottom 10", 'cyan'))
-    for title, count in cnt.most_common()[-10:]:
+    print(colored("Top 20", 'cyan'))
+    for title, count in cnt.most_common()[:20]:
         print("{}: {}".format(title, count))
 
     cnt_values = [v for v in cnt.values()]
@@ -228,4 +224,4 @@ def check_title():
 if __name__ == '__main__':
     check_title()
     #check_graph_init_and_final_state()
-    check_number_of_objects()
+    #check_number_of_objects()
