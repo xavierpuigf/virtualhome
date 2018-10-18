@@ -1,8 +1,9 @@
-4
+5
 is_off: ('FLOOR LAMP', '1') --> 
 inside: ('CLOTHES_PANTS', '1') --> ('DRESSER', '1'), ('CLOTHES_SHIRT', '1') --> ('DRESSER', '1')
 is_on: ('TELEVISION', '1') --> , ('LIGHT', '1') --> 
 closed: ('DRESSER', '1') --> 
+plugged: ('TELEVISION', '1') --> , ('LIGHT', '1') --> 
 Clean room
 after sleeping the children, pick up the toys and clothes, keep them in the dressing room, turn off the television, turn on his lamp and turn off the light of the room
 

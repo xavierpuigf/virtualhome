@@ -1,10 +1,11 @@
-6
+7
 is_on: ('LIGHT', '1') --> 
 inside: ('PAJAMAS', '1') --> ('DRESSER', '1')
 atreach: ('BED', '1') --> ('BED', '1'), ('PAJAMAS', '1') --> ('BASKET FOR CLOTHES', '1'), ('COMFORTER', '1') --> ('BED', '1'), ('DRESSER', '1') --> ('BASKET FOR CLOTHES', '1'), ('SHEETS', '1') --> ('BED', '1'), ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1'), ('LIGHT', '1') --> ('BASKET FOR CLOTHES', '1')
 location: ('BED', '1') --> ('BEDROOM', '1'), ('COMFORTER', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
 closed: ('DRESSER', '1') --> 
 in: ('COMFORTER', '1') --> ('BED', '1'), ('CLOTHES_DRESS', '1') --> ('Character', 1)
+plugged: ('LIGHT', '1') --> 
 Go to sleep
 I walk to the bedroom.  I remove my clothes and put them in the laundry basket.  I walk to my dresser and open it. I find my pajamas and put them on.  I turn off the light and make my way to bed.  I pull the comforter and sheets back and climb into bed.  I lay down and put my head on the pillow.  I put back the comforter and sheets over me and go to sleep.
 

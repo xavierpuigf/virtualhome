@@ -1,7 +1,8 @@
-3
+4
 location: ('LIGHT', '1') --> ('BEDROOM', '1')
-is_on: ('LIGHT', '1') --> 
 atreach: ('LIGHT', '1') --> ('LIGHT', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Turn off light
 Grasp light switch, flip light switch.
 

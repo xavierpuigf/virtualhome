@@ -1,7 +1,8 @@
-3
+4
 location: ('LAMP', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('PILLOW', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
-is_on: ('LAMP', '1') --> 
 atreach: ('LAMP', '1') --> ('LAMP', '1'), ('COUCH', '1') --> ('COUCH', '1'), ('PILLOW', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('LAMP', '1')
+is_on: ('LAMP', '1') --> 
+plugged: ('LAMP', '1') --> 
 Relax on sofa
 I am feeling tired, so I am going to go turn off the lamp, grab the pillow off of the chair, put it on the couch, and lie down to sleep.
 

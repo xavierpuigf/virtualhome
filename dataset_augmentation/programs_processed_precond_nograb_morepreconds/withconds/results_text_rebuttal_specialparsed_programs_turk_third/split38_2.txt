@@ -1,5 +1,6 @@
-1
+2
 is_on: ('STOVE', '1') --> 
+plugged: ('STOVE', '1') --> 
 Prepare Dinner
 Prepare meals for the family
 

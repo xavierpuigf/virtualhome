@@ -1,7 +1,8 @@
-3
+4
 location: ('SHEETS', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('LEGS_BOTH', '1') --> ('BEDROOM', '1')
-is_on: ('LIGHT', '1') --> 
 atreach: ('SHEETS', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('LIGHT', '1'), ('LEGS_BOTH', '1') --> ('LIGHT', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Go to sleep
 I walk to the bedroom and turn off the lights. I lie in bed, cover myself with the sheets, shut my eyes and sleep.
 
