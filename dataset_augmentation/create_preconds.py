@@ -4,7 +4,7 @@ import glob
 import numpy as np
 import script_utils
 import os
-from utils import *
+from utils_preconds import *
 import json
 import pdb
 num_lines = []
@@ -30,60 +30,6 @@ actions_2_object =  ['PutBack', 'Pour', 'Throw', 'Cover', 'Wrap', 'Soak', 'Sprea
 body_parts = ['HANDS_BOTH', 'ARMS_LEFT', 'HANDS_LEFT', 'FACE', 'ARMS_RIGHT', 
               'HANDS_RIGHT', 'HAIR', 'ARMS_BOTH', 'LEGS_BOTH', 'FEET_BOTH', 'EYES_BOTH', 'TEETH']
 conte = 0
-
-class Precond:
-    def __init__(self):
-        self.precond_dict = {}
-
-    def addPrecond(self, cond, obj1, obj2):
-        if cond not in self.precond_dict.keys():
-            self.precond_dict[cond] = {}
-        if obj1 not in self.precond_dict[cond]:
-            
-            self.precond_dict[cond][obj1] = set(obj2)
-        else:
-            # self.precond_dict[cond][obj1] = set(list(self.precond_dict[cond][obj1])+list(obj2))
-            if len(self.precond_dict[cond][obj1]) == 0:
-                self.precond_dict[cond][obj1] = set(obj2)
-    def printConds(self):
-        res = [str(len(self.precond_dict.keys()))]
-        for cond in self.precond_dict.keys():
-            elem_list = []
-            for l in self.precond_dict[cond].keys():
-
-                # if not type(list(self.precond_dict[cond][l])[0]) == tuple:
-                #     pdb.set_trace()
-                this_str = '{} --> {}'.format(str(l), ' / '.join([str(p) for p in list(self.precond_dict[cond][l])]))
-                elem_list.append(this_str)
-            elements = ', '.join(elem_list)
-            stri = '{}: {}'.format(cond, elements)
-            res.append(stri)
-        return res
-
-    def printCondsJSON(self):
-        conds = []
-        for cond in self.precond_dict.keys():
-            if cond != 'nearby':
-                for it in self.precond_dict[cond].keys():
-                    if len(self.precond_dict[cond][it]) > 1:
-                        pdb.set_trace()
-                    if len(self.precond_dict[cond][it]) == 0:
-                        conds.append({cond: it})
-                    else:
-                        conds.append({cond: [it, list(self.precond_dict[cond][it])[0]]})
-        return conds
-    def removeCond(self, cond, object_id=None, second=None):
-        if object_id is None:
-            del self.precond_dict[cond]
-        elif second is None:
-            del self.precond_dict[cond][object_id]
-        else:
-            self.precond_dict[cond][object_id].remove(second)
-    def obtainCond(self, cond):
-        if cond in self.precond_dict.keys():
-            return self.precond_dict[cond].keys()
-        return []
-
 
 
 print len(all_scripts)
@@ -194,7 +140,7 @@ for script_name in all_scripts:
             if obj_id not in is_on.keys(): # If this light was never switched on/off
                 precond_dict.addPrecond('is_on', obj_id, [])
                 # If it was not plugged, needs to be plugged
-                if obj_id in precond_dict.obtainCond('unplugged'):
+                if obj_id not in precond_dict.obtainCond('unplugged'):
                     precond_dict.addPrecond('plugged', obj_id, [])
 
             else:
