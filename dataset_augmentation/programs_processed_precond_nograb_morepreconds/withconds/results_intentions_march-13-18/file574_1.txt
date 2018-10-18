@@ -1,5 +1,6 @@
-1
+2
 is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Go to sleep
 I go into my bedroom. I turn off the light. I get into my bed and lay my head on a pillow. I cover up from my toes to my chin with blankets. I close my eyes.
 

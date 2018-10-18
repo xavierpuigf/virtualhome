@@ -1,6 +1,7 @@
-2
+3
 is_off: ('ALARM CLOCK', '1') --> 
 is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Go to sleep
 I change to my pyjamas. I get into bed. I set the alarm clock for the next morning. Then I turn off the light and sleep.
 

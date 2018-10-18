@@ -1,8 +1,9 @@
-4
+5
 is_off: ('TELEVISION', '1') --> 
+atreach: ('REMOTE CONTROL', '1') --> ('BED', '1'), ('BLANKET', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('BED', '1'), ('TELEVISION', '1') --> ('BED', '1')
 location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('TELEVISION', '1') --> ('BEDROOM', '1')
 is_on: ('LIGHT', '1') --> 
-atreach: ('REMOTE CONTROL', '1') --> ('BED', '1'), ('BLANKET', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('BED', '1'), ('TELEVISION', '1') --> ('BED', '1')
+plugged: ('LIGHT', '1') --> 
 Watch TV
 Turn off lights. Enter bed. Lay down in bed and get comfortable with pillows and blanket. Use remote control to turn on TV. Find show to watch on TV. Watch TV while laying in bed.
 

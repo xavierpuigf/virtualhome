@@ -1,8 +1,9 @@
-4
+5
 location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+atreach: ('BLANKET', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('BED', '1')
 in: ('BLANKET', '1') --> ('BED', '1')
 is_on: ('LIGHT', '1') --> 
-atreach: ('BLANKET', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('BED', '1')
+plugged: ('LIGHT', '1') --> 
 Sleep
 Go to sleep
 

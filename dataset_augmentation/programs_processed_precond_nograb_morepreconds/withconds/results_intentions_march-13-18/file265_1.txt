@@ -1,7 +1,8 @@
-3
+4
 location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
-is_on: ('LIGHT', '1') --> 
 atreach: ('SOFA', '1') --> ('SOFA', '1'), ('LIGHT', '1') --> ('LIGHT', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Relax on sofa
 I go to the living room, switch off the light, sit in the sofa and do nothing.
 

@@ -1,10 +1,11 @@
-6
+7
 is_on: ('LIGHT', '1') --> 
 inside: ('PAJAMAS', '1') --> ('DRESSER', '1')
 atreach: ('BED', '1') --> ('BED', '1'), ('PAJAMAS', '1') --> ('DRESSER', '1'), ('BLANKET', '1') --> ('DRESSER', '1'), ('CLOTHES_SHIRT', '1') --> ('DRESSER', '1'), ('DRESSER', '1') --> ('DRESSER', '1'), ('LIGHT', '1') --> ('BED', '1'), ('CLOTHES_PANTS', '1') --> ('DRESSER', '1'), ('PILLOW', '1') --> ('BED', '1')
 location: ('BED', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
 closed: ('DRESSER', '1') --> 
 in: ('CLOTHES_PANTS', '1') --> ('DRESSER', '1')
+plugged: ('LIGHT', '1') --> 
 Go to sleep
 It is time for bed, I will go to my bedroom and lie down on the bed.
 

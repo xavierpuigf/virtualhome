@@ -1,7 +1,8 @@
-3
+4
 location: ('STOVE', '1') --> ('KITCHEN', '1'), ('WALL CLOCK', '1') --> ('KITCHEN', '1'), ('POT', '1') --> ('KITCHEN', '1')
-is_on: ('STOVE', '1') --> 
 atreach: ('POT', '1') --> ('STOVE', '1'), ('STOVE', '1') --> ('STOVE', '1'), ('WALL CLOCK', '1') --> ('STOVE', '1')
+is_on: ('STOVE', '1') --> 
+plugged: ('STOVE', '1') --> 
 Keep an eye on stove as something is cooking
 Watch whatever is cooking on the stove so it doesn't burn or pour. Turn off heat when done
 

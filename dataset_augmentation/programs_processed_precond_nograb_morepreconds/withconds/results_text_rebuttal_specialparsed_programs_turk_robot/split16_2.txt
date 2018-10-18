@@ -1,7 +1,8 @@
-3
+4
 location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('NAPKIN', '1') --> ('HOME OFFICE', '1'), ('BRUSH', '1') --> ('HOME OFFICE', '1')
-is_on: ('COMPUTER', '1') --> 
 atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('NAPKIN', '1') --> ('COMPUTER', '1'), ('BRUSH', '1') --> ('COMPUTER', '1')
+is_on: ('COMPUTER', '1') --> 
+plugged: ('COMPUTER', '1') --> 
 Wash monitor
 Clean the grime off of my monitor screen when not in use
 

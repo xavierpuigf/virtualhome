@@ -1,10 +1,11 @@
-6
+7
 is_on: ('LIGHT', '1') --> 
 inside: ('PAJAMAS', '1') --> ('CLOSET', '1')
 atreach: ('BED', '1') --> ('CLOTHES_DRESS', '1'), ('PAJAMAS', '1') --> ('CLOTHES_DRESS', '1'), ('CLOTHES_DRESS', '1') --> ('CLOTHES_DRESS', '1'), ('LIGHT', '1') --> ('CLOTHES_DRESS', '1'), ('CLOSET', '1') --> ('CLOTHES_DRESS', '1'), ('BASKET FOR CLOTHES', '1') --> ('CLOTHES_DRESS', '1')
 location: ('BED', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
 closed: ('CLOSET', '1') --> 
 in: ('CLOTHES_DRESS', '1') --> ('Character', 1)
+plugged: ('LIGHT', '1') --> 
 Get ready for bed
 Take off clothes.  Put them in a hamper.  Put on fresh underwear and pajamas. Get under the covers.  Turn on a white noise machine.  Turn off light.
 

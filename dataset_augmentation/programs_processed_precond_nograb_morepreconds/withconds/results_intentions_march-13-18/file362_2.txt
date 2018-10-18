@@ -1,9 +1,10 @@
-5
-inside: ('MAIL', '1') --> ('MAIL', '1')
-location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+6
 is_on: ('COMPUTER', '1') --> 
-closed: ('MAIL', '1') --> 
+inside: ('MAIL', '1') --> ('MAIL', '1')
 atreach: ('DOCUMENT', '1') --> ('KEYBOARD', '1'), ('COMPUTER', '1') --> ('KEYBOARD', '1'), ('MAIL', '1') --> ('KEYBOARD', '1'), ('KEYBOARD', '1') --> ('KEYBOARD', '1'), ('MOUSE', '1') --> ('KEYBOARD', '1')
+location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+closed: ('MAIL', '1') --> 
+plugged: ('COMPUTER', '1') --> 
 Work
 To do some online jobs I had to browse through sites and save information and send some mails to head office.
 

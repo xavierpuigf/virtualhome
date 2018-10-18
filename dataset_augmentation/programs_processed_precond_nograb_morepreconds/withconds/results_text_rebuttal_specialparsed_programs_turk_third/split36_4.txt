@@ -1,9 +1,8 @@
-5
+4
 location: ('VACUUM CLEANER', '1') --> ('BEDROOM', '1')
-atreach: ('VACUUM CLEANER', '1') --> ('VACUUM CLEANER', '1')
 is_on: ('VACUUM CLEANER', '1') --> 
 unplugged: ('VACUUM CLEANER', '1') --> 
-plugged: ('VACUUM CLEANER', '1') --> 
+atreach: ('VACUUM CLEANER', '1') --> ('VACUUM CLEANER', '1')
 Vacuum
 Plug in the vacuum. Turn on vacuum. Push the vacuum around the rug in the bedroom until all the dirt and debris is gone. Unplug the vacuum and put it away.
 

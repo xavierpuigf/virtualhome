@@ -1,1 +1,1 @@
-[{"location": [["TELEVISION", "1"], ["LIVING ROOM", "1"]]}, {"is_on": ["TELEVISION", "1"]}, {"atreach": [["TELEVISION", "1"], ["TELEVISION", "1"]]}]
+[{"location": [["TELEVISION", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["TELEVISION", "1"], ["TELEVISION", "1"]]}, {"is_on": ["TELEVISION", "1"]}, {"plugged": ["TELEVISION", "1"]}]

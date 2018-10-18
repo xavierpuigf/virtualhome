@@ -1,1 +1,1 @@
-[{"location": [["ALARM CLOCK", "1"], ["BEDROOM", "1"]]}, {"is_on": ["ALARM CLOCK", "1"]}, {"atreach": [["ALARM CLOCK", "1"], ["ALARM CLOCK", "1"]]}]
+[{"location": [["ALARM CLOCK", "1"], ["BEDROOM", "1"]]}, {"atreach": [["ALARM CLOCK", "1"], ["ALARM CLOCK", "1"]]}, {"is_on": ["ALARM CLOCK", "1"]}, {"plugged": ["ALARM CLOCK", "1"]}]

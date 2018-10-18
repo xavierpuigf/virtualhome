@@ -1,9 +1,10 @@
-5
-inside: ('LIGHT_BULB', '2') --> ('CABINET', '1')
-location: ('LIGHT_BULB', '1') --> ('BEDROOM', '1'), ('TRASHCAN', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1'), ('CABINET', '1') --> ('BEDROOM', '1')
+6
 is_on: ('LIGHT', '1') --> 
-closed: ('CABINET', '1') --> 
+inside: ('LIGHT_BULB', '2') --> ('CABINET', '1')
 atreach: ('CHAIR', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT_BULB', '1') --> ('LIGHT', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('LIGHT_BULB', '2') --> ('CABINET', '1')
+location: ('LIGHT_BULB', '1') --> ('BEDROOM', '1'), ('TRASHCAN', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1'), ('CABINET', '1') --> ('BEDROOM', '1')
+closed: ('CABINET', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Change light
 It seems a little dark in here. A light bulb is not burning. I get a chair and a new light bulb. I climb on the chair to remove the old bulb. I lay it on the table and pick up the new bulb. I place it in the light socket and twist until it comes on. I climb down and throw the old bulb away and return the chair to its proper place.
 

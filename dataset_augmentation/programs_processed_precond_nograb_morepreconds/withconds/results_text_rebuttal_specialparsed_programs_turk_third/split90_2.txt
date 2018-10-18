@@ -5,7 +5,7 @@ atreach: ('BOOK', '2') --> ('COUCH', '1'), ('BOOK', '1') --> ('COUCH', '1'), ('C
 location: ('BOOK', '2') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('DRESSER', '1') --> ('KIDS BEDROOM', '1'), ('CUP', '2') --> ('DINING ROOM', '1'), ('CUP', '1') --> ('DINING ROOM', '1'), ('TOY', '2') --> ('KIDS BEDROOM', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('TOY', '1') --> ('KIDS BEDROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CARPET', '1') --> ('LIVING ROOM', '1')
 closed: ('CABINET', '1') --> , ('DRESSER', '1') --> 
 is_off: ('VACUUM CLEANER', '1') --> 
-plugged: ('VACUUM CLEANER', '1') --> 
+plugged: ('VACUUM CLEANER', '1') --> , ('ELECTRICAL OUTLET', '1') --> 
 unplugged: ('VACUUM CLEANER', '1') --> 
 Clean
 Put all toys back into baskets. Put baskets into shelves. Take cups and plates back to kitchen. Organize books on the shelves. Vacuum rug.

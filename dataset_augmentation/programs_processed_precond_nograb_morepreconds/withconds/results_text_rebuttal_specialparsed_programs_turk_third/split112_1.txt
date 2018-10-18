@@ -1,8 +1,9 @@
-4
+5
 is_off: ('TELEVISION', '1') --> 
+atreach: ('REMOTE CONTROL', '1') --> ('BED', '1'), ('TELEVISION', '1') --> ('BED', '1'), ('BED', '1') --> ('REMOTE CONTROL', '1')
 location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('TELEVISION', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
 is_on: ('REMOTE CONTROL', '1') --> 
-atreach: ('REMOTE CONTROL', '1') --> ('BED', '1'), ('TELEVISION', '1') --> ('BED', '1'), ('BED', '1') --> ('REMOTE CONTROL', '1')
+plugged: ('REMOTE CONTROL', '1') --> 
 Watch movie
 Sit up in bed.  Turn on the tv.  Turn on the cable box.  Activate dvr.  Go to bed when the movie is over.
 

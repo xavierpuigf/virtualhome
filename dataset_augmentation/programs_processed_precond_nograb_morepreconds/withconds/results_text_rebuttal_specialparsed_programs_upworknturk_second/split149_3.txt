@@ -5,7 +5,7 @@ atreach: ('VACUUM CLEANER', '1') --> ('CLOSET', '1'), ('ELECTRICAL OUTLET', '1')
 location: ('ELECTRICAL OUTLET', '1') --> ('BEDROOM', '1'), ('FLOOR', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
 closed: ('CLOSET', '1') --> 
 is_off: ('VACUUM CLEANER', '1') --> 
-plugged: ('VACUUM CLEANER', '1') --> 
+plugged: ('VACUUM CLEANER', '1') --> , ('ELECTRICAL OUTLET', '1') --> 
 unplugged: ('VACUUM CLEANER', '1') --> 
 Vacuum
 Bring the vacuum cleaner into the bathroom, plug it into the electrical socket.   Move it across the floor, vacuuming up any dirt/dust on the floor.  Unplug the vacuum cleaner and return it to the closet.

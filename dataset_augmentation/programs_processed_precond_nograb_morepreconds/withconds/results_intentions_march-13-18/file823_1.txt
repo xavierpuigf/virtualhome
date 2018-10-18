@@ -1,9 +1,10 @@
-5
-is_off: ('ALARM CLOCK', '1') --> 
-in: ('BLANKET', '1') --> ('BED', '1')
+6
 is_on: ('LAMP', '1') --> 
-unplugged: ('PHONE', '1') --> 
 atreach: ('BED', '1') --> ('BED', '1'), ('BLANKET', '1') --> ('BED', '1'), ('LAMP', '1') --> ('BED', '1'), ('ALARM CLOCK', '1') --> ('BED', '1'), ('WOMAN', '1') --> ('BED', '1'), ('PHONE', '1') --> ('BED', '1')
+in: ('BLANKET', '1') --> ('BED', '1')
+is_off: ('ALARM CLOCK', '1') --> 
+plugged: ('LAMP', '1') --> 
+unplugged: ('PHONE', '1') --> 
 Go to sleep
 First I walk into the bedroom. Then I lay on the bed, put the blanket over me, set my alarm, plug in my cell phone, turn the lamp off, then close my eyes and sleep.
 
