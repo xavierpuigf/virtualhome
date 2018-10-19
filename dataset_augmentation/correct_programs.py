@@ -12,7 +12,7 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
-dump_results = False
+dump_results = True
 
 prog_folder = 'programs_processed_precond_nograb_morepreconds_executable_perturbed'
 prog_folder_out = 'programs_processed_precond_nograb_morepreconds_executable_perturbed_solved'
@@ -57,9 +57,9 @@ for program in programs:
         if dump_results:
             prog_out = program.replace(prog_folder, prog_folder_out)
             state_out = prog_out.replace('.txt', '.json').replace('withoutconds', 'initstate')
-            if not os.path.isdir(os.path.basedir(prog_out)):
-                os.makedirs(os.path.basedir(prog_out))
-                os.makedirs(os.path.basedir(state_out))
+            if not os.path.isdir(os.path.dirname(prog_out)):
+                os.makedirs(os.path.dirname(prog_out))
+                os.makedirs(os.path.dirname(state_out))
                 with open(state_out, 'w+') as f:
                     f.write(json.dumps(init_state))
                 with open(prog_out, 'w+') as f:

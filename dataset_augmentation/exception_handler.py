@@ -15,6 +15,8 @@ class ProgramException(Enum):
     NOT_CLOSE = 5
     NOT_FACING = 6
     SITTING = 7
+    NOT_OFF = 8
+    NOT_ON = 9
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -23,7 +25,10 @@ message_to_exception = {
     'is not lying': ProgramException.NOT_LYING,
     'is not lying or sitting': ProgramException.NOT_SITTING,
     'is not close to': ProgramException.NOT_CLOSE,
-    'is not facing': ProgramException.NOT_FACING
+    'is not facing': ProgramException.NOT_FACING,
+    'is not off': ProgramException.NOT_OFF
+    'is not on': ProgramException.NOT_ON
+    'is not plugged_out': ProgramException.NOT_PLUGGED_OUT
 }
 
 def printProgramWithLine(program, lines=[]):
@@ -103,6 +108,15 @@ def correctedProgram(input_program, init_state, exception_str):
         corrected_instructions = insertInstructions(insert_in, instructions_program)
         
         printProgramWithLine(corrected_instructions)     
+
+    if exception == ProgramException.NOT_OFF:
+        corrected_instructions = removeInstructions([line_exception], instructions_program)
+
+    if exception == ProgramException.NOT_OFF:
+        corrected_instructions = removeInstructions([line_exception], instructions_program)
+
+    if exception == ProgramException.NOT_PLUGGED_OUT:
+        corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     #print('\n')
     #print(colored('Corrected', 'green'))
