@@ -14,6 +14,7 @@ import ipdb
 import re
 from collections import Counter
 import sys
+from tqdm import tqdm
 from termcolor import colored
 sys.path.append('..')
 import check_programs
@@ -29,7 +30,7 @@ file_out = 'programs_processed_precond_nograb_morepreconds_executable_perturbed'
 with open('..//executable_info.json', 'r') as f:
     content = json.load(f)
 
-for elem in content:
+for elem in tqdm(content):
     elem_modif = ' '.join(content[elem].split()[1:])
     if 'Script is executable' in elem_modif:
         programs_executable
@@ -43,6 +44,7 @@ for elem in content:
         with open(init_state_file, 'r') as f:
             modified_state = json.load(f)
 
+        prev_state = modified_state.copy()
         # Remove sitting
         modified_state = [x for x in modified_state if list(x)[0] != 'sitting' or random.random() > prob_modif]
 
@@ -80,15 +82,15 @@ for elem in content:
 
         executable = False
         max_iter = 0
+
         while not executable and max_iter < 10 and lines_program is not None:
-            
             message = check_programs.check_script(lines_program, 
                                                   init_state, 
                                                   '../example_graphs/TrimmedTestScene6_graph.json')
             
             
             lines_program = [x.strip() for x in lines_program]
-            
+            #print(message)
             if 'is executable' not in message:
                 lines_program = exception_handler.correctedProgram(lines_program, init_state, message)
                 max_iter += 1

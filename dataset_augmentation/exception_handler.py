@@ -17,6 +17,7 @@ class ProgramException(Enum):
     SITTING = 7
     NOT_OFF = 8
     NOT_ON = 9
+    NOT_PLUGGED_OUT = 10
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -26,8 +27,8 @@ message_to_exception = {
     'is not lying or sitting': ProgramException.NOT_SITTING,
     'is not close to': ProgramException.NOT_CLOSE,
     'is not facing': ProgramException.NOT_FACING,
-    'is not off': ProgramException.NOT_OFF
-    'is not on': ProgramException.NOT_ON
+    'is not off': ProgramException.NOT_OFF,
+    'is not on': ProgramException.NOT_ON,
     'is not plugged_out': ProgramException.NOT_PLUGGED_OUT
 }
 
@@ -62,7 +63,7 @@ def parseException(exception_str):
     return None
 
 def correctedProgram(input_program, init_state, exception_str):
-    print('Correct exception {}'.format(exception_str))
+    #print('Correct exception {}'.format(exception_str))
     instructions_program = input_program[4:]
     program_header = input_program[:4]
     try:
@@ -76,7 +77,7 @@ def correctedProgram(input_program, init_state, exception_str):
     
     #program = ProgramState(input_program, init_state)
     
-    corrected_instructions = None
+    corrected_instructions = instructions_program
     insert_in = []
     if exception == ProgramException.NOT_CLOSED:
         corrected_instructions = removeInstructions([line_exception], instructions_program)
@@ -107,7 +108,7 @@ def correctedProgram(input_program, init_state, exception_str):
         insert_in.append([line_exception, '[StandUp]'])      
         corrected_instructions = insertInstructions(insert_in, instructions_program)
         
-        printProgramWithLine(corrected_instructions)     
+        #printProgramWithLine(corrected_instructions)     
 
     if exception == ProgramException.NOT_OFF:
         corrected_instructions = removeInstructions([line_exception], instructions_program)

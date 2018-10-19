@@ -192,13 +192,12 @@ def check_script(program_str, precond, graph_path):
 
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    state = executor.execute(script)
+    state, _ = executor.execute(script)
 
     if state is None:
         message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
 
     else:
-        final_state = state.to_dict()
         message = '{}, Script is executable'.format(0)
 
     return message

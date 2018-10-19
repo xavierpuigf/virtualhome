@@ -288,7 +288,6 @@ class graph_dict_helper(object):
                             break
                 if not added:
                     # add edges
-                    ipdb.set_trace()
                     graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
                     node_with_same_class_name = [node for node in filter(lambda v: v["class_name"] == obj[0], graph_dict["nodes"])]
                     category = node_with_same_class_name[0]['category']
