@@ -247,6 +247,8 @@ class graph_dict_helper(object):
             hist = np.zeros(len(available_rooms_id))
             for obj in objects_in_script:
                 obj_name = obj[0]
+                if obj_name == 'character':
+                    continue
                 for node in available_nodes:
                     if node['class_name'] == obj_name:
                         edges = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v['to_id'] in available_rooms_id, graph_dict["edges"])]
@@ -265,7 +267,6 @@ class graph_dict_helper(object):
                 idx = np.argmax(hist)
                 room_name = available_rooms[idx]
                 #print("Pick room: {}".format(room_name))
-
 
         room_id = [i["id"] for i in filter(lambda v: v['class_name'] == room_name, graph_dict["nodes"])][0]
 
@@ -287,6 +288,7 @@ class graph_dict_helper(object):
                             break
                 if not added:
                     # add edges
+                    ipdb.set_trace()
                     graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
                     node_with_same_class_name = [node for node in filter(lambda v: v["class_name"] == obj[0], graph_dict["nodes"])]
                     category = node_with_same_class_name[0]['category']

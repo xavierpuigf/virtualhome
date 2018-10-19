@@ -46,7 +46,7 @@ def write_new_txt(txt_file, precond_path, message):
     new_f.close()
 
 
-def dump_one_data(txt_file, script, graph_dict, final_state, objects_in_script):
+def dump_one_data(txt_file, script, graph_state_list, objects_in_script):
 
     new_path = txt_file.replace('withoutconds', 'executable_programs')
     new_dir = os.path.dirname(new_path)
@@ -85,7 +85,7 @@ def dump_one_data(txt_file, script, graph_dict, final_state, objects_in_script):
         os.makedirs(new_dir)
 
     new_f = open(new_path, 'w')
-    json.dump({"init_graph": graph_dict, "final_graph": final_state}, new_f)
+    json.dump({"graph_state_list": graph_state_list}, new_f)
     new_f.close()
 
 
@@ -208,7 +208,7 @@ def check_2(dir_path, graph_path):
     """
 
     info = {}
-    max_nodes = 280
+    max_nodes = 300
 
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
@@ -223,7 +223,7 @@ def check_2(dir_path, graph_path):
     not_executable_program_length = []
     #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file1028_1.txt')]
     #program_txt_files = ['temp.txt']
-    for j, txt_file in enumerate(tqdm(program_txt_files)):
+    for j, txt_file in enumerate(program_txt_files):
 
         helper.initialize()
         try:
@@ -268,7 +268,7 @@ def check_2(dir_path, graph_path):
 
         name_equivalence = utils.load_name_equivalence()
         executor = ScriptExecutor(graph, name_equivalence)
-        state = executor.execute(script)
+        state, graph_state_list = executor.execute(script)
 
         if state is None:
             not_executable_program_length.append(len(script))
@@ -276,8 +276,7 @@ def check_2(dir_path, graph_path):
             if verbose:
                 print(message)
         else:
-            final_state = state.to_dict()
-            dump_one_data(txt_file, script, graph_dict, final_state,  objects_in_script)
+            dump_one_data(txt_file, script, graph_state_list, objects_in_script)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
@@ -309,7 +308,7 @@ def check_executability(string, graph_dict):
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    state = executor.execute(script)
+    state, _ = executor.execute(script)
 
     if state is not None:
         state = state.to_dict()
@@ -349,5 +348,3 @@ if __name__ == '__main__':
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
     #check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds_executable_perturbed', graph_path=translated_path)
     check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
-    
-    

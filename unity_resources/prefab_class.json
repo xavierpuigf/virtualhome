@@ -4600,7 +4600,15 @@
             "OvenTray_1",
             "MOD_APP_Oven_tray_01"
         ]
+    },
+	
+    {"className":"Washing_machine",
+        "prefabs":
+        [
+            "Dark_Grey_Washing_Machine"
+        ]
     }
+
 ]
 
 }
