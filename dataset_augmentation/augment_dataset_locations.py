@@ -14,7 +14,7 @@ import ipdb
 
 random.seed(123)
 thres = 300
-write_augment_data = False
+write_augment_data = True
 
 object_states = {}
 dict_cont = {}
@@ -45,8 +45,10 @@ def recursiveSelection(cont, it, curr_list):
 
 
 # For every program, check the objects that can be replaced
-program_dir = 'programs_processed_precond_nograb_morepreconds'
-files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
+#program_dir = 'programs_processed_precond_nograb_morepreconds'
+#files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
+program_dir = 'augmented_affordance_programs_processed_precond_nograb_morepreconds'
+files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*/*.txt')))
 
 
 n_all_progs = 0
@@ -66,7 +68,8 @@ if write_augment_data:
 def write_data(ori_path, all_new_progs):
     
     # make_dirs
-    sub_dir = ori_path.split('/')[-2]
+    #sub_dir = ori_path.split('/')[-2]
+    sub_dir = '/'.join(ori_path.split('/')[-3:-1])
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'withoutconds', sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()
@@ -82,7 +85,8 @@ def write_data(ori_path, all_new_progs):
 def write_precond(ori_path, all_new_preconds):
     
     # make_dirs
-    sub_dir = ori_path.split('/')[-2]
+    #sub_dir = ori_path.split('/')[-2]
+    sub_dir = '/'.join(ori_path.split('/')[-3:-1])
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'initstate', sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()

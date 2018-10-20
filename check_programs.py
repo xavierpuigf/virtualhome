@@ -15,6 +15,7 @@ import ipdb
 
 random.seed(123)
 verbose = True
+dump = True
 
 
 def write_new_txt(txt_file, precond_path, message):
@@ -141,7 +142,7 @@ def translate_graph_dict(path):
 
 def check_script(program_str, precond, graph_path):
     info = {}
-    max_nodes = 280
+    max_nodes = 300
 
     properties_data = utils.load_properties_data(file_name='../resources/object_script_properties_data.json')
     object_states = json.load(open('../resources/object_states.json'))
@@ -192,7 +193,7 @@ def check_script(program_str, precond, graph_path):
 
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    state, _ = executor.execute(script)
+    state, _ = executor.execute(script, w_graph_list=False)
 
     if state is None:
         message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
@@ -202,6 +203,7 @@ def check_script(program_str, precond, graph_path):
 
     return message
 
+
 def check_2(dir_path, graph_path):
     """Use precondition to modify the environment graphs
     """
@@ -210,7 +212,7 @@ def check_2(dir_path, graph_path):
     max_nodes = 300
 
     program_dir = os.path.join(dir_path, 'withoutconds')
-    program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
+    program_txt_files = glob.glob(os.path.join(program_dir, '*/*/*/*.txt'))
     properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
     object_states = json.load(open('resources/object_states.json'))
     object_placing = json.load(open('resources/object_script_placing.json'))
@@ -228,8 +230,8 @@ def check_2(dir_path, graph_path):
         try:
             script = read_script(txt_file)
         except ScriptParseException:
-            if verbose:
-                print("Can not parse the script: {}".format(txt_file))
+            #if verbose:
+            #    print("Can not parse the script: {}".format(txt_file))
             not_parsable_programs += 1            
             continue
 
@@ -275,7 +277,8 @@ def check_2(dir_path, graph_path):
             if verbose:
                 print(message)
         else:
-            dump_one_data(txt_file, script, graph_state_list, objects_in_script)
+            if dump:
+                dump_one_data(txt_file, script, graph_state_list, objects_in_script)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
@@ -343,7 +346,8 @@ def example_check_executability():
 
 if __name__ == '__main__':
     
-    translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
+    #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
-    #check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds_executable_perturbed', graph_path=translated_path)
-    check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    #check_2('dataset_augmentation/augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    check_2('dataset_augmentation/perturb_augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    #check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)

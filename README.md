@@ -1,5 +1,21 @@
 # VirtualHome
 
+
+## Dataset generation
+
+### dataset strucutre
+
+programs_processed_precond_nograb_morepreconds/
+├── initstate
+├── withconds
+└── withoutconds
+
+- go to dataset_augmentation/ and run `python augment_dataset_affordances.py`
+- run `python augment_dataset_locations.py`
+- go to root dir, and run `python check_programs.py` with check_2('dataset_augmentation/augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+- got o dataset_augmentation/ and run `python perturbate_dataset.py`
+- go to root dir, and run `python check_programs.py` with check_2('dataset_augmentation/perturb_augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+
 ## Examples
 
 For how to use the code, see `example.py` file
