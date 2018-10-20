@@ -20,7 +20,7 @@ sys.path.append('..')
 import check_programs
 
 
-dump_results = False
+dump_results = True
 prob_modif = 0.8
 programs_new, programs_executable = 0, 0
 
@@ -45,10 +45,11 @@ for elem in tqdm(content):
             modified_state = json.load(f)
 
         prev_state = modified_state.copy()
+        
         # Remove sitting
         modified_state = [x for x in modified_state if list(x)[0] != 'sitting' or random.random() > prob_modif]
 
-         # Remove sitting
+        # Remove sitting
         modified_state = [x for x in modified_state if list(x)[0] != 'sitting' or random.random() > prob_modif] 
 
         # Remove at reach
@@ -101,15 +102,18 @@ for elem in tqdm(content):
             print(colored('Program modified in {} exceptions'.format(max_iter), 'green'))
             programs_new += 1
             if dump_results:
-                prog_out = program.replace(prog_folder, prog_folder_out)
-                state_out = prog_out.replace('.txt', '.json').replace('withoutconds', 'initstate')
-                if not os.path.isdir(os.path.dirname(file_out_program)):
+                #prog_out = program.replace(prog_folder, prog_folder_out)
+                #state_out = prog_out.replace('.txt', '.json').replace('withoutconds', 'initstate')
+
+                if not os.path.exists(os.path.dirname(file_out_program)):
                     os.makedirs(os.path.dirname(file_out_program))
+                if not os.path.exists(os.path.dirname(file_out_state)):
                     os.makedirs(os.path.dirname(file_out_state))
-                    with open(file_out_state, 'w+') as f:
-                        f.write(json.dumps(init_state))
-                    with open(file_o, 'w+') as f:
-                        f.writelines([x+'\n' for x in lines_program])
+                    
+                with open(file_out_state, 'w+') as f:
+                    f.write(json.dumps(init_state))
+                with open(file_out_program, 'w+') as f:
+                    f.writelines([x+'\n' for x in lines_program])
         elif not executable:
             print(colored('Program not solved', 'red'))
 

@@ -1,1 +1,0 @@
-[{"inside": [["milk", "1"], ["fridge", "1"]]}, {"location": [["glass", "1"], ["kitchen", "1"]]}, {"location": [["fridge", "1"], ["kitchen", "1"]]}, {"open": ["fridge", "1"]}, {"atreach": [["glass", "1"], ["glass", "1"]]}, {"atreach": [["milk", "1"], ["fridge", "1"]]}, {"atreach": [["fridge", "1"], ["fridge", "1"]]}]
