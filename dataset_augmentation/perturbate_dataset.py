@@ -24,11 +24,15 @@ dump_results = True
 prob_modif = 0.8
 programs_new, programs_executable = 0, 0
 
-file_in = 'programs_processed_precond_nograb_morepreconds'
-file_out = 'programs_processed_precond_nograb_morepreconds_executable_perturbed'
+#file_in = 'programs_processed_precond_nograb_morepreconds'
+#file_out = 'programs_processed_precond_nograb_morepreconds_executable_perturbed'
+file_in = 'augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds'
+file_out = 'perturb_' + file_in
 
-with open('..//executable_info.json', 'r') as f:
+
+with open('../executable_info.json', 'r') as f:
     content = json.load(f)
+
 
 for elem in tqdm(content):
     elem_modif = ' '.join(content[elem].split()[1:])
