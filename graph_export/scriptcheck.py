@@ -57,6 +57,14 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success'], json.loads(response['message'])
 
+    def expand_scene(self, new_graph):
+        """
+        Expands scene with the given graph
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'expand_scene', 'stringParams':
+                                      [json.dumps(new_graph)]})
+        return response['success'], response['message']
+
 
 def _decode_image(img_string):
     img_bytes = base64.b64decode(img_string)
