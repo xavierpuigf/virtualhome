@@ -230,6 +230,7 @@ for file_name in tqdm(files):
         recursive_selection = recursiveSelection(cont, 0, [])
 
         # For every permutation, we compute the new program
+        # TODO: recursive selection should be randomized
         for rec_id in recursive_selection:
 
             # change program
