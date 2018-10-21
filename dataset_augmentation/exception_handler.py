@@ -40,7 +40,7 @@ def printProgramWithLine(program, lines=[]):
             char = ' '
         print('{}  {}'.format(char, elem))
 
-def parseException(exception_str):
+def parseException(exception_str, verbose=True):
     split_exception = exception_str.split(',')
     exception_name = split_exception[2]
     exception_split = exception_name.split('when executing')
@@ -57,19 +57,21 @@ def parseException(exception_str):
         return line_number, message_to_exception[exception_name]
 
     else:
-        print(colored('Exception "{}" not found'.format(exception_name), 'red'))
+        if verbose:
+            print(colored('Exception "{}" not found'.format(exception_name), 'red'))
         raise ValueError
 
     return None
 
-def correctedProgram(input_program, init_state, exception_str):
+def correctedProgram(input_program, init_state, exception_str, verbose=True):
     #print('Correct exception {}'.format(exception_str))
     instructions_program = input_program[4:]
     program_header = input_program[:4]
     try:
-        line_exception, exception = parseException(exception_str)
+        line_exception, exception = parseException(exception_str, verbose)
     except:
-        printProgramWithLine(instructions_program)
+        if verbose:
+            printProgramWithLine(instructions_program)
         return None
     
 

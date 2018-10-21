@@ -154,9 +154,8 @@ def check_script(program_str, precond, graph_path):
     try:
         script = read_script_from_list_string(program_str)
     except ScriptParseException:
-        if verbose:
-            print("Can not parse the script: {}".format(txt_file))
-        not_parsable_programs += 1            
+        # print("Can not parse the script")
+        return None
     
     for p in precond:
         for k, vs in p.items():
