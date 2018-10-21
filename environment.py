@@ -140,7 +140,7 @@ class GraphNode(Node):
         for k in kwargs.keys():
             if k in d:
                 if k == 'bounding_box':
-                    kwargs[k] = Bounds(**d[k])
+                    kwargs[k] = Bounds(**d[k]) if d[k] is not None else d[k]
                 else:
                     kwargs[k] = d[k]
 
@@ -148,8 +148,6 @@ class GraphNode(Node):
                          {s if isinstance(s, Property) else Property[s.upper()] for s in d['properties']},
                          {State[s.upper()] for s in d['states']},
                          **kwargs)
-
-
 
 
 class GraphEdge(object):

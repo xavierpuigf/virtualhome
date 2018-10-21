@@ -13,15 +13,10 @@ import ipdb
 
 
 random.seed(123)
-thres = 300
-write_augment_data = False
+thres = 100
+write_augment_data = True
 
-if write_augment_data:
-    augmented_data_dir = '../augmented_program'
-    if not os.path.exists(augmented_data_dir):
-        os.makedirs(augmented_data_dir)
-
-
+'''
 synthetic_data = loadmat('../synthetic_data')
 object_names = [x[0] for x in synthetic_data['objects'][0].tolist()]
 actions = synthetic_data['actions'][0].tolist()
@@ -98,14 +93,6 @@ def getObjectAffordance(obj_id):
     dict_cont[merge_dict[obj_id]] = obj_same
     return cont-1
 
-def recursiveSelection(cont, it, curr_list):
-    if it == len(cont):
-        return [curr_list]
-    res = []
-    for idi in range(cont[it]):
-        res += recursiveSelection(cont, it+1, curr_list+[idi])
-    return res
-
 # Build dict_cont
 for idi in range(len(object_names)):
     getObjectAffordance(idi)
@@ -130,15 +117,34 @@ list_replace_list = [list_replace[x] for x in list_replace.keys()]
 with open('../object_replace.json', 'w+') as f:
     f.write(json.dumps(list_replace_list, indent=4))
 
+'''
+
+def recursiveSelection(cont, it, curr_list):
+    if it == len(cont):
+        return [curr_list]
+    res = []
+    for idi in range(cont[it]):
+        res += recursiveSelection(cont, it+1, curr_list+[idi])
+    return res
+
 
 # For every object, map all the objects that can be there
-if os.path.isfile('../object_replace_manually_modif.json'):
-    object_replace = json.load(open('../object_replace_manually_modif.json', 'r'))
+object_replace = json.load(open('../resources/object_replace_manually_modif.json', 'r'))
 object_replace_dict = {}
 for elem in object_replace:
     for object_name in elem:
         assert object_name not in object_replace_dict.keys()
         object_replace_dict[object_name.lower().replace(' ', '_')] = elem
+
+# For every program, check the objects that can be replaced
+program_dir = 'programs_processed_precond_nograb_morepreconds'
+files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
+
+
+if write_augment_data:
+    augmented_data_dir = 'augmented_affordance_' + program_dir
+    if not os.path.exists(augmented_data_dir):
+        os.makedirs(augmented_data_dir)
 
 
 def write_data(ori_path, all_new_progs):
@@ -168,14 +174,12 @@ def write_precond(ori_path, all_new_preconds):
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        json.dump(new_precond, new_f)
+        new_f.write(new_precond)
         new_f.close()   
 
 
-# For every program, check the objects that can be replaced
-files = glob.glob('../programs_processed_precond_nograb/withoutconds/*/*.txt')
 n_all_progs = 0
-temp = []
+all_conts = 0
 
 for file_name in tqdm(files):
     with open(file_name, 'r') as f:
@@ -227,54 +231,28 @@ for file_name in tqdm(files):
 
         # For every permutation, we compute the new program
         for rec_id in recursive_selection:
+
             # change program
             new_lines = prog_orig
+            precond_modif = copy.deepcopy(ori_precond)
+            precond_modif = str(precond_modif).replace('\'', '\"')
+
             for iti, obj_and_id in enumerate(objects_prog):
                 orign_object, idi = obj_and_id
                 object_new = object_replace_map[obj_and_id][rec_id[iti]]
-
                 object_to_replace_oldname = newobjname2old[orign_object]
                 new_lines = [x.replace('<{}> ({})'.format(object_to_replace_oldname, idi), 
-                                       '<{}> ({})'.format(object_new, idi)) for x in new_lines]
-            
-            augmented_progs_i.append(new_lines)
+                                    '<{}> ({})'.format(object_new, idi)) for x in new_lines]
+                precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(object_to_replace_oldname, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
 
-            # change precond
-            precond_modif = copy.deepcopy(ori_precond)
-            
-            for iti, obj_and_id in enumerate(objects_prog):
-                orign_object, idi = obj_and_id
-                object_new = object_replace_map[obj_and_id][rec_id[iti]]
-
-                for preconds in precond_modif:
-                    for precond_relation, precond_objects in preconds.items():
-                        if precond_relation in ['location', 'inside', 'atreach', 'in']:
-                            src_object_name, tgt_object_name = precond_objects
-                            src_need_to_change = src_object_name[0].lower().replace(' ', '_') == orign_object
-                            tgt_need_to_change = tgt_object_name[0].lower().replace(' ', '_') == orign_object
-                            if src_need_to_change:
-                                precond_objects[0][0] = object_new
-                            if tgt_need_to_change:
-                                precond_objects[1][0] = object_new
-                        
-                        elif precond_relation in ['is_on', 'is_off', 'open']:
-                            object_name = precond_objects
-                            need_to_change = object_name[0].lower().replace(' ', '_') == orign_object
-                            if need_to_change:
-                                precond_objects[0] = object_new
-                        else:
-                            print(precond_relation, precond_objects)
-                            ipdb.set_trace()
-                        
+            augmented_progs_i.append(new_lines)         
             augmented_preconds_i.append(precond_modif)
             npgs += 1
+            all_conts += all_cont
+            
             if npgs > thres:
                 break
-
         n_all_progs += npgs
-
-        # The current program
-        all_conts += all_cont
 
     if write_augment_data:
         write_data(file_name, augmented_progs_i)

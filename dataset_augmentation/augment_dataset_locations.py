@@ -14,20 +14,12 @@ import ipdb
 
 random.seed(123)
 thres = 300
-write_augment_data = False
-
-if write_augment_data:
-    augmented_data_dir = 'augmented_program_location'
-    if not os.path.exists(augmented_data_dir):
-        os.makedirs(augmented_data_dir)
-
-
+write_augment_data = True
 
 object_states = {}
-
 dict_cont = {}
 
-with open('object_script_placing.json', 'r') as f:
+with open('../resources/object_script_placing.json', 'r') as f:
     info_locations = json.loads(f.read())
 
 # maps every object, and relation to all the possible objects
@@ -51,10 +43,33 @@ def recursiveSelection(cont, it, curr_list):
         res += recursiveSelection(cont, it+1, curr_list+[idi])
     return res
 
+
+# For every program, check the objects that can be replaced
+#program_dir = 'programs_processed_precond_nograb_morepreconds'
+#files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
+program_dir = 'augmented_affordance_programs_processed_precond_nograb_morepreconds'
+files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*/*.txt')))
+
+
+n_all_progs = 0
+temp = []
+precondtorelation = {
+    'in': 'ON',
+    'inside': 'IN'
+}
+
+
+if write_augment_data:
+    augmented_data_dir = 'augmented_location_' + program_dir
+    if not os.path.exists(augmented_data_dir):
+        os.makedirs(augmented_data_dir)
+
+
 def write_data(ori_path, all_new_progs):
     
     # make_dirs
-    sub_dir = ori_path.split('/')[-2]
+    #sub_dir = ori_path.split('/')[-2]
+    sub_dir = '/'.join(ori_path.split('/')[-3:-1])
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'withoutconds', sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()
@@ -70,7 +85,8 @@ def write_data(ori_path, all_new_progs):
 def write_precond(ori_path, all_new_preconds):
     
     # make_dirs
-    sub_dir = ori_path.split('/')[-2]
+    #sub_dir = ori_path.split('/')[-2]
+    sub_dir = '/'.join(ori_path.split('/')[-3:-1])
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'initstate', sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()
@@ -82,17 +98,9 @@ def write_precond(ori_path, all_new_preconds):
         new_f.close()   
 
 
-# For every program, check the objects that can be replaced
-files = glob.glob('programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt')
-n_all_progs = 0
-temp = []
-precondtorelation = {
-    'in': 'ON',
-    'inside': 'IN'
-}
-
-all_cont = 1
 for file_name in tqdm(files):
+
+    all_cont = 1
     with open(file_name, 'r') as f:
         augmented_progs_i = []
         augmented_preconds_i = []
@@ -121,7 +129,7 @@ for file_name in tqdm(files):
     # property
     relations_per_object = {}
     for cstate in state:
-        precond = cstate.keys()[0]
+        precond = [k for k in cstate.keys()][0]
         if precond in ['inside', 'in']:
             relation = precondtorelation[precond]
             object1 = cstate[precond][0][0].lower().replace(' ', '_')
@@ -170,6 +178,7 @@ for file_name in tqdm(files):
 
     # For every permutation, we compute the new program
     for rec_id in recursive_selection:
+
         # change program
         new_lines = prog_orig
         precond_modif = copy.deepcopy(ori_precond)
