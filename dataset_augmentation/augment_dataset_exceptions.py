@@ -20,7 +20,7 @@ thres = 300
 write_augment_data = True
 
 if write_augment_data:
-    augmented_data_dir = 'augmented_program_exception'
+    augmented_data_dir = 'augmented_program_exception2'
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
@@ -41,7 +41,8 @@ def write_data(ori_path, all_new_progs):
 
     for j, new_progs in enumerate(all_new_progs):
         new_f = open('{}/{}.txt'.format(new_dir, j), 'w')
-        for lines in new_progs:
+        nnew_progs = [x+'\n' for x in new_progs]
+        for lines in nnew_progs:
             new_f.write(lines)
         new_f.close()    
 
