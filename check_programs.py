@@ -312,9 +312,10 @@ def check_executability(string, graph_dict):
     
     if executable:
         able_to_be_executed = True
+        return able_to_be_parsed, able_to_be_executed, final_state.to_dict()
+    else:
+        return able_to_be_parsed, able_to_be_executed, None
 
-    return able_to_be_parsed, able_to_be_executed, final_state.to_dict()
-    
 
 def modify_script(script):
 
