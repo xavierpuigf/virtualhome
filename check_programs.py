@@ -86,7 +86,8 @@ def dump_one_data(txt_file, script, graph_state_list, objects_in_script):
         os.makedirs(new_dir)
 
     new_f = open(new_path, 'w')
-    json.dump({"graph_state_list": graph_state_list}, new_f)
+    #json.dump({"graph_state_list": graph_state_list}, new_f)
+    json.dump({"init_graph": graph_state_list[0], "final_graph": graph_state_list[-1]}, new_f)
     new_f.close()
 
 
@@ -210,7 +211,7 @@ def check_2(dir_path, graph_path):
     max_nodes = 300
 
     program_dir = os.path.join(dir_path, 'withoutconds')
-    program_txt_files = glob.glob(os.path.join(program_dir, '*/*/*/*.txt'))
+    program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
     properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
     object_states = json.load(open('resources/object_states.json'))
     object_placing = json.load(open('resources/object_script_placing.json'))
@@ -257,6 +258,7 @@ def check_2(dir_path, graph_path):
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
 
+        ipdb.set_trace()
         ## place the random objects (id from 2000)
         helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
         ## set object state to default 
@@ -347,5 +349,5 @@ if __name__ == '__main__':
     #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
     #check_2('dataset_augmentation/augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
-    check_2('dataset_augmentation/perturb_augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
-    #check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    #check_2('dataset_augmentation/perturb_augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    check_2('dataset_augmentation/programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
