@@ -118,7 +118,7 @@ class GraphNode(Node):
                          self.category, self.prefab_name, self.bounding_box)
 
     def __str__(self):
-        return '{}(id:{})'.format(self.class_name, self.id)
+        return '<{}> ({})'.format(self.class_name, self.id)
 
     def to_dict(self):
         return {'id': self.id,

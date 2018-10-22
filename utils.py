@@ -304,8 +304,6 @@ class graph_dict_helper(object):
         # change the id in script
         for script_line in script:
             for parameter in script_line.parameters:
-                if parameter.name == 'kitchen':
-                    parameter.name = 'dining_room'
 
                 parameter.instance = objects_in_script[(parameter.name, parameter.instance)]
                 
