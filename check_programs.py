@@ -180,8 +180,10 @@ def check_script(program_str, precond, graph_path):
     helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
 
     ## place the random objects (id from 2000)
-    #helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
-    # helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+    ## place the random objects (id from 2000)
+    helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+    ## set object state to default 
+    helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
         
 
     ## set object state to default 
