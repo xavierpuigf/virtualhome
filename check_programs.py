@@ -156,7 +156,7 @@ def check_script(program_str, precond, graph_path):
         script = read_script_from_list_string(program_str)
     except ScriptParseException:
         # print("Can not parse the script")
-        return None
+        return None, None
     
     for p in precond:
         for k, vs in p.items():
@@ -201,7 +201,7 @@ def check_script(program_str, precond, graph_path):
     else:
         message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
 
-    return message
+    return message, final_state
 
 
 def check_2(dir_path, graph_path):
