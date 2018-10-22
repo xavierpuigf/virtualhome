@@ -313,6 +313,9 @@ class graph_dict_helper(object):
 
     def prepare_from_precondition(self, precond, objects_in_script, room_mapping, graph_dict):
 
+        object_placing = self.object_placing
+        objects_to_place = list(object_placing.keys())
+
         relation_script_precond_simulator = self.relation_script_precond_simulator
         states_script_precond_simulator = self.states_script_precond_simulator
         open_closed = self.open_closed
@@ -357,6 +360,15 @@ class graph_dict_helper(object):
                                 if "SITTING" not in node["states"]: node["states"].append("SITTING")
                             elif k == 'lying':
                                 if "LYING" not in node["states"]: node["states"].append("LYING")
+                            break
+                elif k in ["occupied", "free"]:
+                    obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]
+                    for node in graph_dict['nodes']:
+                        if node['id'] == obj_id:
+                            if k == 'free':
+                                self._change_to_totally_free(node, graph_dict)
+                            elif k == 'occupied':
+                                self._change_to_occupied(node, graph_dict, objects_to_place)
                             break
 
     def add_random_objs_graph_dict(self, graph_dict, n):
@@ -413,16 +425,10 @@ class graph_dict_helper(object):
 
                 state = random.choice(possible_states)
                 if state in ['free', 'occupied']:
-                    if node["class_name"] in SitExecutor._MAX_OCCUPANCIES:
-                        max_occupancy = SitExecutor._MAX_OCCUPANCIES[node["class_name"]]
-                        occupied_nodes = [node for node in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
-                        current_state = 'free' if len(occupied_nodes) < max_occupancy else "occupied"
-                        if current_state != state:
-                            if state == 'occupied':
-                                number_objects_to_add = max_occupancy - len(occupied_nodes)
-                                self._change_to_occupied(node, graph_dict, number_objects_to_add, objects_to_place)
-                            else:
-                                self._change_to_totally_free(node, graph_dict)
+                    if state == 'free':
+                        self._change_to_totally_free(node, graph_dict)
+                    elif state == 'occupied':
+                        self._change_to_occupied(node, graph_dict, objects_to_place)
                 else:
                     state = states_mapping[state]
                     if state in ['dirty', 'clean']:
@@ -434,29 +440,45 @@ class graph_dict_helper(object):
                     elif state in ['plugged_in', 'plugged_out']:
                         plugged_in_out.sample_state(node)
 
-    def _change_to_occupied(self, node, graph_dict, number_objects_to_add, objects_to_place):
+    def _change_to_occupied(self, node, graph_dict, objects_to_place):
 
-        object_placing = self.object_placing
-        random.shuffle(objects_to_place)
-                                    
-        for src_name in objects_to_place:
-            tgt_names = object_placing[src_name]
-            if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
-                self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
-                graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
-                self.random_objects_id += 1
-                number_objects_to_add -= 0
-                if number_objects_to_add <= 0:
-                    break
+        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES:
+            max_occupancy = SitExecutor._MAX_OCCUPANCIES[node["class_name"]]
+            occupied_nodes = [node for node in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
+            current_state = 'free' if len(occupied_nodes) < max_occupancy else "occupied"
+
+            if current_state != "occupied":
+                number_objects_to_add = max_occupancy - len(occupied_nodes)
+                
+                object_placing = self.object_placing
+                random.shuffle(objects_to_place)
+                                            
+                for src_name in objects_to_place:
+                    tgt_names = object_placing[src_name]
+                    if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
+                        self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
+                        graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
+                        self.random_objects_id += 1
+                        number_objects_to_add -= 0
+                        if number_objects_to_add <= 0:
+                            break
 
     def _change_to_totally_free(self, node, graph_dict):
-        removed_edges = [edge for edge in filter(lambda v: v["relation_type"] == 'ON' and v["to_id"] == node["id"], graph_dict["edges"])]
-        remove_object_id = [edge["from_id"] for edge in removed_edges]
 
-        for edge in removed_edges:
-            graph_dict["edges"].remove(edge)
-                                
-        floor_id = [node["id"] for node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
-        for obj_id in remove_object_id:
-            to_id = random.choice(floor_id)
-            graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
+        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES:
+            max_occupancy = SitExecutor._MAX_OCCUPANCIES[node["class_name"]]
+            occupied_nodes = [node for node in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
+            current_state = 'free' if len(occupied_nodes) < max_occupancy else "occupied"
+
+            if current_state != "free":
+
+                removed_edges = [edge for edge in filter(lambda v: v["relation_type"] == 'ON' and v["to_id"] == node["id"], graph_dict["edges"])]
+                remove_object_id = [edge["from_id"] for edge in removed_edges]
+
+                for edge in removed_edges:
+                    graph_dict["edges"].remove(edge)
+                                        
+                floor_id = [node["id"] for node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
+                for obj_id in remove_object_id:
+                    to_id = random.choice(floor_id)
+                    graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})

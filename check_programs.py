@@ -194,13 +194,12 @@ def check_script(program_str, precond, graph_path):
 
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    state, _ = executor.execute(script, w_graph_list=False)
+    executable, final_state, _ = executor.execute(script, w_graph_list=False)
 
-    if state is None:
-        message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
-
-    else:
+    if executable:
         message = '{}, Script is executable'.format(0)
+    else:
+        message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
 
     return message
 
@@ -270,19 +269,19 @@ def check_2(dir_path, graph_path):
 
         name_equivalence = utils.load_name_equivalence()
         executor = ScriptExecutor(graph, name_equivalence)
-        state, graph_state_list = executor.execute(script)
+        executable, _, graph_state_list = executor.execute(script)
 
-        if state is None:
-            not_executable_program_length.append(len(script))
-            message = '{}, Script is not executable, since {}'.format(j, executor.info.get_error_string())
-            if verbose:
-                print(message)
-        else:
+        if executable:
             if dump:
                 dump_one_data(txt_file, script, graph_state_list, objects_in_script)
             message = '{}, Script is executable'.format(j)
             executable_program_length.append(len(script))
             executable_programs += 1
+            if verbose:
+                print(message)
+        else:
+            not_executable_program_length.append(len(script))
+            message = '{}, Script is not executable, since {}'.format(j, executor.info.get_error_string())
             if verbose:
                 print(message)
 
@@ -311,14 +310,14 @@ def check_executability(string, graph_dict):
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    state, _ = executor.execute(script)
-
-    if state is not None:
-        state = state.to_dict()
-        able_to_be_executed = True
-
-    return able_to_be_parsed, able_to_be_executed, state
+    executable, final_state, _ = executor.execute(script)
     
+    if executable:
+        able_to_be_executed = True
+        return able_to_be_parsed, able_to_be_executed, final_state.to_dict()
+    else:
+        return able_to_be_parsed, able_to_be_executed, None
+
 
 def modify_script(script):
 
