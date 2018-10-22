@@ -58,7 +58,8 @@ class Action(Enum):
     EAT = ("Eat", 1) 
     SLEEP = ("Sleep", 0) 
     WAKEUP = ("WakeUp", 0)
-
+    RELEASE = ("Release", 1)
+    
 
 class ScriptObject(object):
 
