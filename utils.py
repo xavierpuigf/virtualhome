@@ -456,6 +456,8 @@ class graph_dict_helper(object):
                     if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
                         self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
                         graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
+                        graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": self.random_objects_id, "to_id": node["id"]})
+                        graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": node["id"], "to_id": self.random_objects_id})
                         self.random_objects_id += 1
                         number_objects_to_add -= 0
                         if number_objects_to_add <= 0:
@@ -480,3 +482,5 @@ class graph_dict_helper(object):
                 for obj_id in remove_object_id:
                     to_id = random.choice(floor_id)
                     graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
+                    graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": obj_id, "to_id": to_id})
+                    graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": to_id, "to_id": obj_id})

@@ -1023,6 +1023,8 @@ def _is_character_close_to(state: EnvironmentState, node: Node):
     for close_node in state.get_nodes_from(_get_character_node(state), Relation.CLOSE):
         if state.evaluate(ExistsRelation(NodeInstance(close_node), Relation.CLOSE, NodeInstanceFilter(node))):
             return True
+        if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(close_node))):
+            return True
     return False
 
 
