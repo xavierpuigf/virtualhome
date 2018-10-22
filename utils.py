@@ -369,7 +369,7 @@ class graph_dict_helper(object):
                                 self._change_to_totally_free(node, graph_dict)
                             elif k == 'occupied':
                                 self._change_to_occupied(node, graph_dict, objects_to_place)
-
+                            break
 
     def add_random_objs_graph_dict(self, graph_dict, n):
 
