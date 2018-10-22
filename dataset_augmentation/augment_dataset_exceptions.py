@@ -15,7 +15,7 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
-verbose = False
+verbose = True
 thres = 300
 write_augment_data = True
 
@@ -29,6 +29,16 @@ programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
 
 
 cont = 0
+
+objects_occupied = [
+    'couch',
+    'bed',
+    'chair',
+    'loveseat',
+    'sofa',
+    'toilet',
+    'pianobench',
+    'bench']
 
 def write_data(ori_path, all_new_progs):
     
@@ -109,8 +119,13 @@ def augment_dataset(d, programs):
         hprev_state = to_hash(init_state.copy())
         modified_state = init_state
 
+        program = lines_program[4:]
+        for instr in program:
+            _, objects, indx = script_utils.parseStrBlock(instr)
+            for ob, idi in zip(objects, indx):
+                objects_program.append([ob.lower().replace(' ', '_'), idi])
         
-        prob_modif = 0.6
+        prob_modif = 0.7
         for _ in range(thres):
             # Remove sitting
             modified_state = [x for x in modified_state if list(x)[0] != 'sitting' or random.random() > prob_modif] 
@@ -129,6 +144,13 @@ def augment_dataset(d, programs):
             # Swap is_off
             modified_state = [x if list(x)[0] != 'closed' or random.random() > prob_modif else {'open': x[list(x)[0]]} for x in modified_state ]
             
+            # Occupied
+            for object_name in objects_program:
+                if object_name[0] in objects_occupied:
+                    if random.random() > 0.7: # occupied with 30% of prob
+                        modified_state.append({'occupied': object_name})
+                    else:
+                        modified_state.append({'free': object_name})
             # convert to hashable type
             hmodified_state = to_hash(modified_state)
             if hmodified_state != hprev_state:
@@ -175,7 +197,7 @@ def augment_dataset(d, programs):
             write_data(program, augmented_progs_i)
             write_precond(program, augmented_preconds_i)
 
-num_processes = 50
+num_processes = 1
 processes = []
 manager = Manager()
 programs_done = manager.dict()

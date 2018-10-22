@@ -47,10 +47,10 @@ def recursiveSelection(cont, it, curr_list):
 # For every program, check the objects that can be replaced
 #program_dir = 'programs_processed_precond_nograb_morepreconds'
 #files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
-program_dir = 'augmented_affordance_programs_processed_precond_nograb_morepreconds'
-files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*/*.txt')))
+program_dir = 'programs_processed_precond_nograb_morepreconds'
+files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
 
-
+print(len(files))
 n_all_progs = 0
 temp = []
 precondtorelation = {
@@ -60,7 +60,7 @@ precondtorelation = {
 
 
 if write_augment_data:
-    augmented_data_dir = 'augmented_location_' + program_dir
+    augmented_data_dir = 'augmented_location'
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
@@ -149,7 +149,9 @@ for file_name in tqdm(files):
 
         # do a intersection of all the replace candidates
         intersection = []
-        object_replace_map[container] = [container[0]]
+        #object_replace_map[container] = [container[0]]
+        object_replace_map[container] = []
+        
         if len(replace_candidates) > 0  and len([l for l in replace_candidates if len(l) == 0]) == 0: # if there are objects we can replace
             intersection = list(set.intersection(*[set(l) for l in replace_candidates]))
             candidates = list(intersection)

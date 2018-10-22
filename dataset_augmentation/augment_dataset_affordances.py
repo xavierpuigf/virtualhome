@@ -142,7 +142,7 @@ files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')
 
 
 if write_augment_data:
-    augmented_data_dir = 'augmented_affordance_' + program_dir
+    augmented_data_dir = 'augmented_affordance'
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
@@ -209,6 +209,8 @@ for file_name in tqdm(files):
         object_replace_map = {}
         for objectn, idn in objects_prog:
             object_replace_map[(objectn, idn)] = [objectn]
+            #object_replace_map[(objectn, idn)] = []
+            
             if objectn in object_replace_dict.keys():
                 cont = random.randint(1, min(len(object_replace_dict[objectn]), 5))     # always including `objectn`
                 object_candidates = [x.lower().replace(' ', '_') for x in object_replace_dict[objectn] if x.lower().replace(' ', '_') != objectn] 
@@ -232,7 +234,7 @@ for file_name in tqdm(files):
         # For every permutation, we compute the new program
         # TODO: recursive selection should be randomized
         for rec_id in recursive_selection:
-
+            if np.sum(rec_id) == 0: continue
             # change program
             new_lines = prog_orig
             precond_modif = copy.deepcopy(ori_precond)
