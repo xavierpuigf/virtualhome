@@ -6,7 +6,7 @@ import script_utils
 import os
 from utils_preconds import *
 import json
-import pdb
+import pdb, ipdb
 num_lines = []
 errors_putback = 0
 already_grb = 0
@@ -169,7 +169,7 @@ for script_name in all_scripts:
                 precond_dict.addPrecond('is_off', obj_id, [])
 
                 # If it was not plugged, needs to be plugged
-                if obj_id in precond_dict.obtainCond('unplugged'):
+                if obj_id not in precond_dict.obtainCond('unplugged'):
                     precond_dict.addPrecond('plugged', obj_id, [])
 
             is_on[obj_id] = True        
@@ -273,6 +273,7 @@ for script_name in all_scripts:
     # If you pour something and not grabbed make sure you grab it
 
     # Check objects of interaction while sitting
+
     is_sitting = None
     obj_location = {}
     object_grabbed = {}
@@ -397,6 +398,7 @@ for script_name in all_scripts:
     object_grabbed = {}
     last_walked = None
     insert_in = []
+
     for k in precond_dict.obtainCond('grabbed'):
         object_grabbed[k] = True
     for i in range(4, len(content)):
@@ -427,6 +429,7 @@ for script_name in all_scripts:
             
             if action.upper() in ['PUTOBJBACK', 'PUTBACK', 'PUTOFF']:
                 object_grabbed[object_id] = False
+
     content = insertInstructions(insert_in, content)
 
     # Make sure you do not turn to an object if you are grabbing it
