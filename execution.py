@@ -232,7 +232,7 @@ class SitExecutor(ActionExecutor):
         max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
         if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
                                          min_value=max_occupancy)):
-            info.error('something on the {}', node)
+            info.error('Too many things on {}', node)
             return False
 
         return True
@@ -482,11 +482,6 @@ class TurnToExecutor(ActionExecutor):
             )
 
     def check_turn_to(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        char_node = _get_character_node(state)
-        if not _is_character_close_to(state, node):
-            info.error('{} is not close to {}', char_node, node)
-            return False
-        
         return True
 
 
@@ -797,7 +792,7 @@ class WatchExecutor(ActionExecutor):
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
             return False
-        if State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+        if node.class_name != 'computer' and State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
             info.error('{} is not facing {} while sitting', char_node, node)
             return False
         if _is_inside(state, node):
@@ -821,7 +816,7 @@ class MoveExecutor(ActionExecutor):
 
     def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo, action_name: str) -> Optional[Relation]:
 
-        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button'):
+        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button') and node.class_name != 'chair':
             info.error('{} is not movable', node)
             return None
         if not _is_character_close_to(state, node):
