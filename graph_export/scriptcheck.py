@@ -24,7 +24,7 @@ class UnityCommunication(object):
         """
         Returns pair (success, message); message is Null when success == True
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'check_script' , 'stringParams': script_lines})
+        response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
 
     def reset(self):
@@ -63,7 +63,7 @@ class UnityCommunication(object):
         """
         response = self.post_command({'id': str(time.time()), 'action': 'expand_scene', 'stringParams':
                                       [json.dumps(new_graph)]})
-        return response['success'], response['message']
+        return response['success'], json.loads(response['message'])
 
 
 def _decode_image(img_string):
