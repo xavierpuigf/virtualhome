@@ -316,6 +316,7 @@ class OpenExecutor(ActionExecutor):
         if Property.CAN_OPEN not in node.properties:
             info.error('{} can not be opened', node)
             return False
+
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
@@ -330,6 +331,9 @@ class OpenExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+
+        if not self.close and State.ON in node.states:
+            info.error('{} is still on'.format(node))
         return True
 
 
@@ -920,6 +924,8 @@ class PlugExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+        if not self.plug_in and State.ON in node.states:
+            info.error('{} is still on')
         return True
     
 
