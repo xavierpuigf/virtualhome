@@ -35,7 +35,6 @@ def transform_object_placing():
 
     with open('unity_resources/placingobjects.txt') as f:
         key = None
-        value = None
         for line in f:
             m = begin_matcher.match(line)
             if m:
@@ -74,8 +73,30 @@ def transform_properties_data():
         f.write(json.dumps(result))
 
 
+def transform_allprefabs_parsed():
+    begin_matcher = re.compile(r'BEGIN<([\w_\s]+)>')
+    end_matcher = re.compile(r'END<([\w_\s]+)>')
+
+    result = {}
+
+    with open('unity_resources/allprefabs_parsed.txt') as f:
+        key = None
+        for line in f:
+            m = begin_matcher.match(line)
+            if m:
+                key = m.group(1).lower().strip()
+            elif end_matcher.match(line):
+                key = None
+            elif key is not None:
+                value = line.lower().strip()
+                result.setdefault(key, []).append(value)
+
+    with open('resources/object_prefabs.json', 'w') as f:
+        f.write(json.dumps(result, sort_keys=True, indent=4))
+
 
 if __name__ == '__main__':
     # transform_name_equivalence()
     # transform_object_placing()
-    transform_properties_data()
+    # transform_properties_data()
+    transform_allprefabs_parsed()
