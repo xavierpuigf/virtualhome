@@ -1135,7 +1135,8 @@ class ScriptExecutor(object):
         Action.CUT: CutExecutor(), 
         Action.EAT: EatExecutor(), 
         Action.SLEEP: SleepExecutor(), 
-        Action.WAKEUP: WakeUpExecutor()
+        Action.WAKEUP: WakeUpExecutor(), 
+        Action.RELEASE: DropExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):
