@@ -1,6 +1,5 @@
 from graph_export.scriptcheck import UnityCommunication
 import json
-from PIL import Image
 
 
 def expand_scene():
@@ -15,9 +14,14 @@ def expand_scene():
         else:
             success, value = comm.camera_count()
             print("Cameras: ", value)
-            success, imgs = comm.camera_image([0,1,2,38])
-            for i, img in enumerate(imgs):
-                img.save('c:/tmp/camera_img_{0:03d}.jpg'.format(i))
+            success, imgs = comm.camera_image(38, mode='seg_inst')
+            # Possible modes are: 'normal', 'seg_inst', 'seg_class', 'depth', 'flow'
+            if success:
+                imgs[0].save('c:/tmp/camera_img_{0:03d}.jpg'.format(38))
+            success, imgs = comm.camera_image([39, 40])
+            if success:
+                imgs[0].save('c:/tmp/camera_img_{0:03d}.jpg'.format(39))
+                imgs[1].save('c:/tmp/camera_img_{0:03d}.jpg'.format(40))
 
 
 if __name__ == '__main__':
