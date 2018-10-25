@@ -81,6 +81,7 @@ class WalkExecutor(ActionExecutor):
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             if self.check_walk(state, node, info):
+
                 changes = [DeleteEdges(CharacterNode(),
                                        [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                        AnyNode(), delete_reverse=True),
@@ -89,9 +90,13 @@ class WalkExecutor(ActionExecutor):
                            AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
                      ]
+
                 # close to object in hands
                 char_node = _get_character_node(state)
                 nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
+                for node_in_hands in nodes_in_hands:
+                    changes.append(DeleteEdges(NodeInstance(node_in_hands), [Relation.INSIDE, Relation.CLOSE, Relation.FACING], AnyNode(), delete_reverse=True))
+
                 for node_in_hands in nodes_in_hands:
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node_in_hands), add_reverse=True))
 
@@ -272,7 +277,7 @@ class GrabExecutor(ActionExecutor):
                 yield state.change_state(changes)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
-        if Property.GRABBABLE not in node.properties and node.class_name != 'water':
+        if Property.GRABBABLE not in node.properties and node.class_name not in ['water', 'child']:
             info.error('{} is not grabbable', node)
             return None
         if not _is_character_close_to(state, node):
@@ -313,7 +318,7 @@ class OpenExecutor(ActionExecutor):
 
     def check_openable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         
-        if Property.CAN_OPEN not in node.properties:
+        if Property.CAN_OPEN not in node.properties and node.class_name not in ["desk", "window"]:
             info.error('{} can not be opened', node)
             return False
 
@@ -729,7 +734,7 @@ class PourExecutor(ActionExecutor):
             info.error('{} is not pourable or drinkable', src_node)
             return False
 
-        if Property.RECIPIENT not in dest_node.properties:
+        if Property.RECIPIENT not in dest_node.properties and dest_node.class_name not in ["hands_both", "sponge", "face"]:
             info.error('{} is not recipient', dest_node)
             return False
 
@@ -820,7 +825,7 @@ class MoveExecutor(ActionExecutor):
 
     def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo, action_name: str) -> Optional[Relation]:
 
-        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button') and node.class_name != 'chair':
+        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button') and node.class_name not in ['chair', 'curtain']:
             info.error('{} is not movable', node)
             return None
         if not _is_character_close_to(state, node):
