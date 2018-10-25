@@ -68,8 +68,7 @@ if write_augment_data:
 def write_data(ori_path, all_new_progs):
     
     # make_dirs
-    #sub_dir = ori_path.split('/')[-2]
-    sub_dir = '/'.join(ori_path.split('/')[-3:-1])
+    sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'withoutconds', sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()
@@ -94,7 +93,7 @@ def write_precond(ori_path, all_new_preconds):
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        new_f.write(new_precond)
+        new_f.write(str(dict).replace('\'', '\"'))
         new_f.close()   
 
 
