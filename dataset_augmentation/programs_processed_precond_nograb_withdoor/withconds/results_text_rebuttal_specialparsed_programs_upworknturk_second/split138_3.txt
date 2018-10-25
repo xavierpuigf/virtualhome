@@ -1,0 +1,26 @@
+3
+nearby: ('COUCH', '1') --> , ('MAN', '2') --> , ('TABLE', '1') --> , ('MAN', '1') --> 
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('MAN', '2') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('MAN', '1') --> ('LIVING ROOM', '1'), ('BOARD GAME', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('TABLE', '1')
+Visit with friends while engaging in games
+Invite over friends. Go into the living room and get the board games out and play. Actively engage in vibrant conversations with friends and have fun.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <MAN> (2)
+[Greet] <MAN> (2)
+[Walk] <LIVING ROOM> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Find] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Uncover] <BOARD GAME> (1)
+[Play] <BOARD GAME> (1)
+[LookAt] <MAN> (1)
+[Talk] <MAN> (1)
+[LookAt] <MAN> (2)
+[Talk] <MAN> (2)

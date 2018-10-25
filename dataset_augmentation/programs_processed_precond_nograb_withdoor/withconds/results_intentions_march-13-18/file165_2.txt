@@ -1,0 +1,11 @@
+1
+location: ('BUTTON', '1') --> ('HOME OFFICE', '1'), ('PHONE', '1') --> ('HOME OFFICE', '1')
+Pick up phone
+Find the phone, take the phone in hand, press the answer button.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <PHONE> (1)
+[Grab] <PHONE> (1)
+[Find] <BUTTON> (1)
+[Touch] <BUTTON> (1)

@@ -282,7 +282,7 @@ for script_name in all_scripts:
     for i in range(4, len(content)):
         curr_block = content[i]
         action, obj_names, ins_num = script_utils.parseStrBlock(curr_block)
-        if action == 'Sit':
+        if action in  ['Sit', 'Lie']:
             is_sitting = (obj_names[0], ins_num[0])
         elif action in ['StandUp', 'Walk', 'Run']:
             is_sitting = None
@@ -420,6 +420,7 @@ for script_name in all_scripts:
                         obj_names[0], ins_num[0])])
                 else:
                     if last_walked is not None:
+                        # if we last walked towards an object, this new object should be close
                         precond_dict.addPrecond('atreach', object_id, [last_walked]) 
 
                     l = 0
@@ -580,7 +581,6 @@ for script_name in all_scripts:
             object_grabbed[obj_id] = True
 
     # If we look at something make sure we turn to it
-    # TODO: finish this
     currently_facing = None
     for i in range(4, len(content)):
         curr_block = content[i]
@@ -597,10 +597,24 @@ for script_name in all_scripts:
                     obj_names[0], ins_num[0])])
     content = insertInstructions(insert_in, content)
 
+    # If sit and watch, the object you sit should be facing
+    is_sitting = None
+    obj_location = {}
+    for i in range(4, len(content)):
+        curr_block = content[i]
+        action, obj_names, ins_num = script_utils.parseStrBlock(curr_block)
+        if action in ['Sit', 'Lie']:
+            is_sitting = (obj_names[0], ins_num[0])
+        elif action in ['StandUp', 'Walk', 'Run']:
+            is_sitting = None
 
-    # 
-        
+        else:
+            if len(obj_names) > 0:
+                obj_id = (obj_names[0], ins_num[0])
 
+            if action in ['Watch']:
+                if is_sitting is not None:
+                    precond_dict.addPrecond('facing', is_sitting, [obj_id])
 
     # Eliminate duplicate preconds
     # 1. Only keep the first time something is inside
@@ -616,11 +630,11 @@ for script_name in all_scripts:
     #             continue
     #         to_keep.append(elem)
     # if 'inside' in precond_dict.keys(): precond_dict['inside'] = to_keep
-    for cond in ['location', 'nearby']:
-        for elem in list(precond_dict.obtainCond(cond)):
-            if elem in precond_dict.obtainCond('inside'):
-                precond_dict.removeCond(cond, elem)
-    
+    #for cond in ['location', 'nearby']:
+    #    for elem in list(precond_dict.obtainCond(cond)):
+    #        if elem in precond_dict.obtainCond('inside'):
+    #            precond_dict.removeCond(cond, elem)
+    #
     # Good proxy for scripts that are bad (bad AMT workers)
     for i in range(4, len(content)-2):
 

@@ -1,0 +1,22 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('FACE', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1'), ('FAUCET', '1') --> ('BATHROOM', '1')
+nearby: ('HANDS_BOTH', '1') --> , ('FACE', '1') --> 
+Pop zit
+Squeeze your hands on your zit.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <MIRROR> (1)
+[LookAt] <MIRROR> (1)
+[Find] <FACE> (1)
+[LookAt] <FACE> (1)
+[Touch] <FACE> (1)
+[Squeeze] <FACE> (1)
+[Squeeze] <FACE> (1)
+[Squeeze] <FACE> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)

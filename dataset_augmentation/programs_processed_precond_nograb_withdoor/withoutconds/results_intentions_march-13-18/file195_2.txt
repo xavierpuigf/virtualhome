@@ -1,0 +1,22 @@
+Wash clothes
+Go to the bathroom and wash clothes in the washing machine.
+
+
+[Run] <BATHROOM> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Walk] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Walk] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[Walk] <WASHING MACHINE> (1)
+[Pour] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[PlugIn] <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)
+[PutObjBack] <LAUNDRY DETERGENT> (1)

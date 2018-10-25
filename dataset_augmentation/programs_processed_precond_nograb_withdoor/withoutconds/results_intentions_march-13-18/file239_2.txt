@@ -1,0 +1,10 @@
+Change TV channel
+locate TV remote in living room, grab TV remote, locate TV in living room, find channel up button on TV remote, point TV remote at TV, press channel up button on TV remote
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[LookAt] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[PutObjBack] <REMOTE CONTROL> (1)

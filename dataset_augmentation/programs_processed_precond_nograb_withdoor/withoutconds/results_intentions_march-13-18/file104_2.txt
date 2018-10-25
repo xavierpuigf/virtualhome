@@ -1,0 +1,18 @@
+Wash teeth
+Morning Teeth Washing .
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BRUSH> (1)
+[Touch] <BRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Touch] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[Find] <WATER GLASS> (1)
+[Touch] <WATER GLASS> (1)
+[Find] <FACE> (1)
+[Wash] <FACE> (1)
+[Find] <PAPER TOWEL> (1)
+[Touch] <PAPER TOWEL> (1)
+[Wipe] <FACE> (1)

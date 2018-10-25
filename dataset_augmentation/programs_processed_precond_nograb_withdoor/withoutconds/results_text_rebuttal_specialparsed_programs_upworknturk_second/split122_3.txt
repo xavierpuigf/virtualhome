@@ -1,0 +1,11 @@
+Text friend
+Sit down on bed. Take out cell phone out of purse. Open contacts. Start new text message. Text friend.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)
+[Text] <CELLPHONE> (1)

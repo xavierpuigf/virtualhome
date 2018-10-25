@@ -1,0 +1,13 @@
+2
+is_off: ('REMOTE CONTROL', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+Change TV channel
+Walk to the living room. Find remote control. Grab remote control. Walk to television. Look at television. Switch on remote control.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Walk] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

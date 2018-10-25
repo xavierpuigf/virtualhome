@@ -1,0 +1,21 @@
+4
+is_off: ('LAPTOP', '1') --> 
+inside: ('MAIL', '1') --> ('MAIL', '1')
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('LAPTOP', '1') --> ('LIVING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('LAPTOP', '1')
+Browse internet
+Read and write mail through internet
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Write] <MAIL> (1)
+[Close] <MAIL> (1)
+[SwitchOff] <LAPTOP> (1)

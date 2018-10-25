@@ -1,0 +1,10 @@
+2
+is_off: ('CD PLAYER', '1') --> 
+location: ('CD PLAYER', '1') --> ('BEDROOM', '1')
+Listen to music
+Find the playback device you want to listen to. turn on. press play. enjoyu music.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)

@@ -1,0 +1,11 @@
+Ignore people
+Do something that requires intense concentration.  When anyone around invariably comes up to ask you non-stop questions, do not acknowledge their presence.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Sit] <BED> (1)
+[Find] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)
+[Find] <EYES_BOTH> (1)
+[Close] <EYES_BOTH> (1)

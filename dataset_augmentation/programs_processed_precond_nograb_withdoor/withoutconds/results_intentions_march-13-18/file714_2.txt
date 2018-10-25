@@ -1,0 +1,22 @@
+Cook some food
+Walk to the kitchen and open the fridge. From the fridge take some chicken and close the fridge. Walk to the table and put the chicken on the table. Plug in oven and put the chicken into the oven.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_CHICKEN> (1)
+[Grab] <FOOD_CHICKEN> (1)
+[Close] <FRIDGE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <FOOD_CHICKEN> (1) <TABLE> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[PutBack] <FRYINGPAN> (1) <TABLE> (1)
+[Find] <OVEN> (1)
+[PlugIn] <OVEN> (1)
+[Open] <OVEN> (1)
+[Grab] <FOOD_CHICKEN> (1)
+[PutBack] <FOOD_CHICKEN> (1) <OVEN> (1)

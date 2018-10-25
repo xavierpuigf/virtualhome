@@ -1,0 +1,14 @@
+2
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN', '1')
+nearby: ('DRINKING GLASS', '1') --> 
+Drink
+I walk to the kitchen. Take a glass out of the cabinet. Then I walk to the sink and turn the water on and fill the glass. Then I take a drink.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <WATER> (1)
+[Find] <DRINKING GLASS> (1)
+[Pour] <WATER> (1) <DRINKING GLASS> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Drink] <WATER> (1)

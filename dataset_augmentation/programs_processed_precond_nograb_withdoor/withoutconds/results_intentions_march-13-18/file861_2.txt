@@ -1,0 +1,15 @@
+Drink
+I go in the kitchen and get the glass near the sink. I open the faucet, then I pour water in it, turn off the faucet and drink it.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[PutBack] <GLASS> (1) <SINK> (1)
+[Grab] <GLASS> (1)
+[SwitchOff] <FAUCET> (1)
+[Drink] <GLASS> (1)

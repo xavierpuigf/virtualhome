@@ -1,0 +1,24 @@
+3
+inside: ('TOWEL', '1') --> ('CLOSET', '1')
+location: ('ARMS_BOTH', '1') --> ('BEDROOM', '1'), ('LEGS_BOTH', '1') --> ('BEDROOM', '1'), ('FEET_BOTH', '1') --> ('BEDROOM', '1'), ('FACE', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
+nearby: ('ARMS_BOTH', '1') --> , ('LEGS_BOTH', '1') --> , ('FEET_BOTH', '1') --> , ('FACE', '1') --> , ('CLOSET', '1') --> , ('BASKET FOR CLOTHES', '1') --> 
+Try yourself off
+After your shower, go into your bedroom and use a towel to dry water off of yourself before dressing.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Close] <CLOSET> (1)
+[Find] <FACE> (1)
+[Wipe] <FACE> (1)
+[Find] <ARMS_BOTH> (1)
+[Wipe] <ARMS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Wipe] <LEGS_BOTH> (1)
+[Find] <FEET_BOTH> (1)
+[Wipe] <FEET_BOTH> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[PutBack] <TOWEL> (1) <BASKET FOR CLOTHES> (1)

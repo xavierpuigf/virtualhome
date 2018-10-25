@@ -1,0 +1,15 @@
+2
+location: ('WOMAN', '1') --> ('ENTRANCE HALL', '1'), ('WOMAN', '2') --> ('ENTRANCE HALL', '1'), ('DOOR', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('WOMAN', '1') --> , ('WOMAN', '2') --> 
+Greet guests
+Greet people into my home
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <DOOR> (1)
+[Pull] <DOOR> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)
+[Push] <DOOR> (1)

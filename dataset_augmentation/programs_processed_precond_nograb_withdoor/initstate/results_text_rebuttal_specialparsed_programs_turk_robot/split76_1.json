@@ -1,0 +1,1 @@
+[{"inside": [["PLATE", "1"], ["DISHWASHER", "1"]]}, {"inside": [["PLATE", "2"], ["DISHWASHER", "1"]]}, {"inside": [["CUP", "1"], ["KITCHEN CABINET", "1"]]}, {"inside": [["BOWL", "1"], ["KITCHEN CABINET", "1"]]}, {"location": [["DISHWASHER", "1"], ["KITCHEN", "1"]]}, {"location": [["KITCHEN CABINET", "1"], ["KITCHEN", "1"]]}]

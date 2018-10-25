@@ -1,0 +1,21 @@
+1
+nearby: ('TOOTHBRUSH HOLDER', '1') --> , ('SINK', '1') --> 
+Wash teeth
+Find toothbrush. Walk to toothbrush. Pick up toothbrush. Find toothpaste. Pick up toothpaste. Open toothpaste. Squeeze toothpaste onto toothbrush. Close toothpaste. Put down toothpaste. Wash teeth with toothbrush. Turn on sink. Rinse toothbrush. Rinse teeth. Turn off sink. Put toothbrush in toothbrush holder.
+
+
+[Find] <TOOTHBRUSH> (1)
+[Walk] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <SINK> (1)
+[PutBack] <TOOTHBRUSH> (1) <SINK> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[PutBack] <TOOTHBRUSH> (1) <TOOTHBRUSH HOLDER> (1)

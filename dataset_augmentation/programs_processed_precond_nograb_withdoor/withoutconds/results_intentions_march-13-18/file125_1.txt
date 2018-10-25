@@ -1,0 +1,23 @@
+Make coffee
+making coffee
+
+
+[Walk] <KITCHEN> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[Find] <COFFEE CUP> (4)
+[Grab] <COFFEE CUP> (4)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Find] <COFFEE TABLE> (1)
+[PutBack] <COFFEE CUP> (1) <COFFEE TABLE> (1)
+[Find] <COFFEE CUP> (2)
+[Grab] <COFFEE CUP> (2)
+[PutBack] <COFFEE CUP> (2) <COFFEE TABLE> (1)
+[PutBack] <COFFEE CUP> (4) <COFFEE TABLE> (1)
+[Find] <COFFEE> (1)
+[Drink] <COFFEE> (1)

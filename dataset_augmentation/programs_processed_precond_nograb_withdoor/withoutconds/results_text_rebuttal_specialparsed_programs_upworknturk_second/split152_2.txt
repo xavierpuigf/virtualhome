@@ -1,0 +1,23 @@
+Tuck kids in bed
+Walk over to the bed. Pull sheets and comforter up over the kids. Tuck bedclothes around the kids.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Cover] <CHILD> (1) <SHEETS> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Cover] <CHILD> (1) <BLANKET> (1)
+[Walk] <BED> (2)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Find] <SHEETS> (2)
+[Cover] <CHILD> (2) <SHEETS> (2)
+[Grab] <SHEETS> (2)
+[Find] <BLANKET> (2)
+[Grab] <BLANKET> (2)
+[Cover] <CHILD> (2) <BLANKET> (2)

@@ -1,0 +1,12 @@
+Wash hands
+Washing hands to get clean
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SOAP> (1)
+[Rinse] <SOAP> (1)
+[Find] <WATER> (1)
+[Rinse] <WATER> (1)
+[Find] <PAPER TOWEL> (1)
+[Wipe] <PAPER TOWEL> (1)

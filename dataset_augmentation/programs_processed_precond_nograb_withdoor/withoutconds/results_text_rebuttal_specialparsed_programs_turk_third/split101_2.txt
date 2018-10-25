@@ -1,0 +1,15 @@
+Pay bills
+Check my bills, on the computer, open the appropriate sites, pay my due bills
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DESK> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[SwitchOff] <COMPUTER> (1)

@@ -1,0 +1,22 @@
+Organize desk
+Organize my cluttered desk when I get up for a break.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[Open] <FOLDER> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[PutBack] <DOCUMENT> (1) <FOLDER> (1)
+[Find] <FILING CABINET> (1)
+[Open] <FILING CABINET> (1)
+[PutBack] <FOLDER> (1) <FILING CABINET> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[PutObjBack] <BOOK> (1)
+[Find] <NEWSPAPER> (1)
+[Grab] <NEWSPAPER> (1)
+[Fold] <NEWSPAPER> (1)
+[PutBack] <NEWSPAPER> (1) <BOOK> (1)

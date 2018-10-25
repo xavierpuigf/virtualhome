@@ -1,0 +1,16 @@
+Vacuum
+Pull out the vacuum, plug it in and vacuum runner carpet in the entrance hallway.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Walk] <CARPET> (1)
+[Vacuum] <CARPET> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)

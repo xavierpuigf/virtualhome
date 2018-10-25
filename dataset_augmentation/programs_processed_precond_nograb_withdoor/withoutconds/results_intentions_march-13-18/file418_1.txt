@@ -1,0 +1,19 @@
+Wash dishes by hand
+Walk to the kitchen and find the kitchen sink. Grab the sponge, add some dish soap. Grab a plate and scrub it with the sponge. Open the Faucet and rinse the plate with water. Put the plate into the dishrack
+
+
+[Walk] <KITCHEN> (1)
+[Find] <SINK> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[Find] <DISH SOAP> (1)
+[Find] <PLATE> (1)
+[Spread] <DISH SOAP> (1) <PLATE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Scrub] <PLATE> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <PLATE> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)

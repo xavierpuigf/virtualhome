@@ -1,0 +1,16 @@
+Go to toilet
+Walk to the bathroom. Find the toilet. Put off pants. Put off underwear. Sit down on toilet. Stand up. Flush the toilet. Put on pants. Put on underwear.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOILET> (1)
+[Walk] <TOILET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Sit] <TOILET> (1)
+[StandUp]
+[Flush] <TOILET> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[PutOn] <CLOTHES_UNDERWEAR> (1)
+[PutOn] <CLOTHES_PANTS> (1)

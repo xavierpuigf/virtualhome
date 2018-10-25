@@ -1,0 +1,17 @@
+3
+is_off: ('COMPUTER', '1') --> , ('LIGHT', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('LIGHT', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+in: ('COMPUTER', '1') --> ('DESK', '1')
+Work
+I go to the home office to work on my project. I turn on the light and walk to my desk. I turn on the computer. Then I look through the documents. After I'm done, I turn off the computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <DESK> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <DOCUMENT> (1)
+[LookAt] <DOCUMENT> (1)
+[SwitchOff] <COMPUTER> (1)

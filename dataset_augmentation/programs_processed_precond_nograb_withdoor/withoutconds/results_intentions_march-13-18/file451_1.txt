@@ -1,0 +1,7 @@
+Pet cat
+I walk to the living room. I find the cat. I pet the cat.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CAT> (1)
+[Touch] <CAT> (1)

@@ -1,0 +1,7 @@
+Turn on light
+I walk into the living room and then I walk to the light switch in there and turn the lights on
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <LAMP> (1)
+[SwitchOn] <LAMP> (1)

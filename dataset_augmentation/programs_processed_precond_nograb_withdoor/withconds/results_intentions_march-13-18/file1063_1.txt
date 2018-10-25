@@ -1,0 +1,16 @@
+2
+location: ('TOOTHBRUSH HOLDER', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+in: ('TOOTH PASTE', '1') --> ('TOOTHBRUSH HOLDER', '1')
+Brush teeth
+Breakfast, lunch, dinner you should always brush your teeth. If you want to get even more detailed about brushing your teeth, you should brush your teeth after every meal this includes snacks as well.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[PutBack] <TOOTH PASTE> (1) <TOOTHBRUSH HOLDER> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Find] <WATER> (1)
+[Drink] <WATER> (1)

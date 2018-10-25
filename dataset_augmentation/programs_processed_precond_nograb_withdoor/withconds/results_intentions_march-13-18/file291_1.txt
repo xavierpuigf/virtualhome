@@ -1,0 +1,14 @@
+1
+location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('WATER', '1') --> ('KITCHEN', '1')
+Drink
+GOING TO DRINK WATER IN KITCHEN
+
+
+[Walk] <KITCHEN> (1)
+[Find] <WATER> (1)
+[Find] <WATER GLASS> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[Drink] <WATER GLASS> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)

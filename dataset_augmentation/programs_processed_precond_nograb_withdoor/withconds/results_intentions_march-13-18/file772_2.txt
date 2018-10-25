@@ -1,0 +1,19 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN', '1')
+nearby: ('SINK', '1') --> , ('DRINKING GLASS', '1') --> 
+Drink
+Walk to kitchen. Walk to faucet. Switch on faucet. Pour water into drinking glass. Switch off faucet. Drink water.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <SINK> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Grab] <DRINKING GLASS> (1)
+[SwitchOff] <FAUCET> (1)
+[Drink] <WATER> (1)

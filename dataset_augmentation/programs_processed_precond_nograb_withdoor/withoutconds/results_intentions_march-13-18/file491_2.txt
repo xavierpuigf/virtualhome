@@ -1,0 +1,9 @@
+Brush teeth
+go to the bathroom and brush your teeth
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)

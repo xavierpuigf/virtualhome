@@ -1,0 +1,13 @@
+Write an email
+walk to home office, look at the chair, sit in chair, switch on the computer, open mail account, write an email
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[LookAt] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Write] <MAIL> (1)

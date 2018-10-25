@@ -1,0 +1,27 @@
+3
+is_off: ('VACUUM CLEANER', '1') --> 
+inside: ('VACUUM CLEANER', '1') --> ('CLOSET', '1')
+location: ('CLOSET', '1') --> ('LIVING ROOM', '1')
+ vacuum carpet
+I bring my vacuum cleaner into the living room.  I plug it into the wall.  I press the on switch on the vacuum cleaner.  I push the vacuum cleaner back and forth over the length and width of the carpet until I have vacuumed the entire carpet.  I turn the vacuum cleaner off.  I take the vacuum cleaner back to the hall closet.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[Walk] <CLOSET> (1)
+[PutBack] <VACUUM CLEANER> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

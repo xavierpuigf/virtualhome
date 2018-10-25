@@ -1,0 +1,10 @@
+0
+Dust
+Get duster. Open china cabinet doors. Dust shelves. Pick up each individual piece of china. Dust underneath all china. Close china cabinet doors.
+
+
+[Find] <DUSTER> (1)
+[PointAt] <DUSTER> (1)
+[Wipe] <DUSTER> (1)
+[Break] <DUSTER> (1)
+[Crawl] <DUSTER> (1)

@@ -1,0 +1,16 @@
+2
+location: ('TOILET', '1') --> ('BATHROOM', '1'), ('DOOR', '1') --> ('BATHROOM', '1')
+atreach: ('TOILET', '1') --> ('TOILET', '1')
+Go to toilet
+walk to bathroom, open door, enter to bathroom, close door, find toilet, walk to toilet, sit in toilet, flush toilet
+
+
+[Walk] <BATHROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <BATHROOM> (1)
+[Close] <DOOR> (1)
+[Find] <TOILET> (1)
+[Walk] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Flush] <TOILET> (1)

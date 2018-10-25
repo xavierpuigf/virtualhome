@@ -1,0 +1,22 @@
+3
+inside: ('GROCERIES', '1') --> ('KITCHEN CABINET', '1')
+location: ('KITCHEN COUNTER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+nearby: ('KITCHEN COUNTER', '1') --> , ('KITCHEN CABINET', '1') --> , ('FRIDGE', '1') --> 
+Put groceries in Fridge
+carry groceries from outside into the kitchen. Take groceries out of the bags. Put them in the cabinets and fridge.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Find] <KITCHEN COUNTER> (1)
+[PutBack] <GROCERIES> (1) <KITCHEN COUNTER> (1)
+[Uncover] <GROCERIES> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <KITCHEN CABINET> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)

@@ -1,0 +1,9 @@
+Pick up phone
+Walk to Living Room. Find table. Walk to table. Find telephone. Lift telephone.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TABLE> (1)
+[Walk] <TABLE> (1)
+[Find] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)

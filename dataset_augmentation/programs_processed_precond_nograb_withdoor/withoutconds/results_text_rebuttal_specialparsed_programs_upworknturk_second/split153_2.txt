@@ -1,0 +1,12 @@
+Watch TV
+Lay in bed.  Aim remote at TV and power on.  Use the remote to change channel until finding desired program.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

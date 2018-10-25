@@ -1,0 +1,13 @@
+Watch TV
+Watch favorite shows, netflix, hulu
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutBack] <REMOTE CONTROL> (1) <COUCH> (1)
+[Watch] <TELEVISION> (1)

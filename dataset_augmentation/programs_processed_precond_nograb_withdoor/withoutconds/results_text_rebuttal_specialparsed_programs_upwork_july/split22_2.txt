@@ -1,0 +1,8 @@
+Sleep
+Lie down in a bed at night and fall asleep
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

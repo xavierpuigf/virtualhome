@@ -1,0 +1,19 @@
+3
+is_off: ('ELECTRICAL OUTLET', '1') --> 
+location: ('VACUUM CLEANER', '1') --> ('ENTRANCE HALL', '1'), ('ELECTRICAL OUTLET', '1') --> ('ENTRANCE HALL', '1'), ('CARPET', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('CARPET', '1') --> 
+Vacuum
+Pull out the vacuum, plug it in and vacuum runner carpet in the entrance hallway.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <ELECTRICAL OUTLET> (1)
+[Find] <CARPET> (1)
+[Vacuum] <CARPET> (1)
+[SwitchOff] <ELECTRICAL OUTLET> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[PutObjBack] <VACUUM CLEANER> (1)

@@ -1,0 +1,29 @@
+4
+is_off: ('OVEN', '1') --> 
+inside: ('FOOD_PIZZA', '1') --> ('FREEZER', '1')
+location: ('KITCHEN COUNTER', '1') --> ('KITCHEN', '1'), ('FREEZER', '1') --> ('KITCHEN', '1'), ('SHEETS', '1') --> ('KITCHEN', '1'), ('OVEN MITTS', '1') --> ('KITCHEN', '1'), ('OVEN', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+nearby: ('KITCHEN COUNTER', '1') --> 
+Cook some food
+walk into the kitchen, turn on oven, open cupboard, take out cookie sheet, spray cookie sheet with Pam, take frozen pizza out of freezer, unwrap pizza, put pizza on the cookie sheet, open oven, put pizza sheet in oven, close oven, set timer for 20 minutes, put on oven mitts, take pizza out after timer goes off, set pizza on counter
+
+
+[Walk] <KITCHEN> (1)
+[Find] <OVEN> (1)
+[SwitchOn] <OVEN> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <SHEETS> (1)
+[Pull] <SHEETS> (1)
+[Find] <FREEZER> (1)
+[Open] <FREEZER> (1)
+[Find] <FOOD_PIZZA> (1)
+[Grab] <FOOD_PIZZA> (1)
+[Find] <KITCHEN COUNTER> (1)
+[PutBack] <FOOD_PIZZA> (1) <KITCHEN COUNTER> (1)
+[Open] <OVEN> (1)
+[Grab] <FOOD_PIZZA> (1)
+[PutBack] <FOOD_PIZZA> (1) <OVEN> (1)
+[Find] <OVEN MITTS> (1)
+[PutOn] <OVEN MITTS> (1)
+[Grab] <FOOD_PIZZA> (1)
+[SwitchOff] <OVEN> (1)

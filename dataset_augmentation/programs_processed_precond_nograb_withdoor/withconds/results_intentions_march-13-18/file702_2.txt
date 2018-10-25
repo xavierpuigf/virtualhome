@@ -1,0 +1,17 @@
+2
+inside: ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1')
+location: ('LAUNDRY DETERGENT', '1') --> ('BATHROOM', '1'), ('WASHING MACHINE', '1') --> ('BATHROOM', '1')
+Wash clothes
+Walk to bathroom. Open washing maschine. Grab pants and put it into washing maschine. Pour laundry detergent into washing machine and close the washing maschine. Plug in washing machine.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Pour] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[PlugIn] <WASHING MACHINE> (1)

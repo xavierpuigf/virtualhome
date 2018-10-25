@@ -1,0 +1,15 @@
+Build lego house
+Play a boardgame
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Close] <CABINET> (1)
+[Walk] <BED> (1)
+[PutBack] <BOARD GAME> (1) <BED> (1)
+[Sit] <BED> (1)
+[LookAt] <BOARD GAME> (1)
+[Play]

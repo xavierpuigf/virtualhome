@@ -1,0 +1,21 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('FACE', '1') --> ('BATHROOM', '1'), ('FACE SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
+nearby: ('FAUCET', '1') --> , ('FACE', '1') --> 
+Wash face
+Run warm water. Cleanse my face with soap. Rinse my face with water.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <FACE SOAP> (1)
+[Grab] <FACE SOAP> (1)
+[Find] <FACE> (1)
+[Scrub] <FACE> (1)
+[PutObjBack] <FACE SOAP> (1)
+[Wash] <FACE> (1)
+[Rinse] <FACE> (1)
+[SwitchOff] <FAUCET> (1)

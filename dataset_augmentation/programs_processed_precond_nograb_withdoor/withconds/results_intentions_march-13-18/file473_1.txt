@@ -1,0 +1,11 @@
+1
+atreach: ('SOFA', '1') --> ('BLANKET', '1')
+Relax on sofa
+Find the sofa. Sit on it. Pick the blanket on the sofa and put on yourself. Relax.
+
+
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[PutBack] <BLANKET> (1) <SOFA> (1)

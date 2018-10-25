@@ -1,0 +1,12 @@
+1
+location: ('WATER', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1')
+Take shower
+go to a bathroom, open the shower, let water wash your body
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SOAP> (1)
+[Scrub] <SOAP> (1)
+[Find] <WATER> (1)
+[Rinse] <WATER> (1)

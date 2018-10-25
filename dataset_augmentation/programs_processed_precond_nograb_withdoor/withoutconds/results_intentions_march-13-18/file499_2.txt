@@ -1,0 +1,14 @@
+Brush teeth
+I walk into the bathroom. I grab my toothbrush. I rinse my toothbrush. I put on toothpaste. I put the toothbrush in my mouth. I brush my teeth with the toothbrush. I spit into the sink. I rinse my toothbrush.
+
+
+[Walk] <SINK> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Spit] <SINK> (1)
+[Rinse] <TOOTHBRUSH> (1)

@@ -1,0 +1,12 @@
+Relax on sofa
+im feeling so tired so i wanted to go to my living room and relax on my sofa and i love drinking coffee while relaxing and some good shows in television
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COFFEE> (1)
+[Grab] <COFFEE> (1)
+[Find] <SOFA> (1)
+[Lie] <SOFA> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)
+[Sleep]

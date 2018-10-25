@@ -1,0 +1,20 @@
+Clean toilet
+When dirty, take a rag and cleanser and clean and rinse out the sink.  Same thing with the dirty toilet;  Take the rag and clean under the rim with toilet cleanser, soak if necessary if not getting clean; take your scrunger and rinse around inside the toilet. Flush
+
+
+[Walk] <BATHROOM> (1)
+[Find] <SINK> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <SINK> (1)
+[Pour] <CLEANING SOLUTION> (1) <SINK> (1)
+[Scrub] <SINK> (1)
+[Wash] <SINK> (1)
+[Walk] <TOILET> (1)
+[Pour] <CLEANING SOLUTION> (1) <TOILET> (1)
+[Scrub] <TOILET> (1)
+[Flush] <TOILET> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[PutObjBack] <RAG> (1)

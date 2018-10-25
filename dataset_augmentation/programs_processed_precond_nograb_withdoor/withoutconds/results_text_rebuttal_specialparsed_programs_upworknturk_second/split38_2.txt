@@ -1,0 +1,13 @@
+Color
+I find a coloring book and crayons, we pick a page out together and we color it in.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <DESK> (1)
+[Find] <BOOK> (1)
+[Find] <DRAWING> (1)
+[Find] <CRAYON> (1)
+[Grab] <CRAYON> (1)
+[LookAt] <DRAWING> (1)
+[Write] <DRAWING> (1)
+[PutObjBack] <CRAYON> (1)

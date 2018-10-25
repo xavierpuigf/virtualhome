@@ -1,0 +1,20 @@
+4
+is_off: ('REMOTE CONTROL', '1') --> 
+nearby: ('REMOTE CONTROL', '1') --> , ('TELEVISION', '1') --> , ('COUCH', '1') --> , ('WALL CLOCK', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('WALL CLOCK', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('REMOTE CONTROL', '1')
+Watch TV
+I watch Netflix from about 8:30 to 10:30 every night. I usually watch TV shows.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WALL CLOCK> (1)
+[LookAt] <WALL CLOCK> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

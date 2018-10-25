@@ -1,0 +1,7 @@
+Turn on light
+Walk over to light switch, flip the switch to the on position
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <FLOOR LAMP> (1)
+[SwitchOn] <FLOOR LAMP> (1)

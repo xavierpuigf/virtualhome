@@ -1,0 +1,18 @@
+3
+inside: ('PAJAMAS', '1') --> ('CLOSET', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
+nearby: ('CLOSET', '1') --> 
+Sleep
+Getting my bed put my pajamas on and go to sleep
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <PAJAMAS> (1)
+[Grab] <PAJAMAS> (1)
+[PutOn] <PAJAMAS> (1)
+[Close] <CLOSET> (1)
+[Walk] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

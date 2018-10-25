@@ -1,0 +1,19 @@
+Make coffee
+Put Keurig kcup into Keurig machine and turn on.  Place cup underneath as coffee dispenses from machine.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)
+[Walk] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Close] <CUPBOARD> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFEE> (1)
+[Pour] <COFFEE> (1) <CUP> (1)
+[PutObjBack] <COFFEE POT> (1)
+[Find] <TABLE> (1)
+[PutBack] <CUP> (1) <TABLE> (1)

@@ -1,0 +1,17 @@
+Cook some food
+Go to kitchen. Turn on oven. Get oven cookable food from fridge. Open food from packaging. Put food in oven. Start timer. After timer ends, take out food and consume.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <OVEN> (1)
+[SwitchOn] <OVEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_FOOD> (1)
+[Unwrap] <FOOD_FOOD> (1)
+[Open] <OVEN> (1)
+[Push] <FOOD_FOOD> (1)
+[Close] <OVEN> (1)
+[Open] <OVEN> (1)
+[Pull] <FOOD_FOOD> (1)
+[Close] <OVEN> (1)

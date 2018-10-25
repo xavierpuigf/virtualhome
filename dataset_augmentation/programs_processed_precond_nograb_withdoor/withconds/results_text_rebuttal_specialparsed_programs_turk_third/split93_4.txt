@@ -1,0 +1,25 @@
+2
+location: ('HAIR', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('BRUSH', '1') --> ('BATHROOM', '1'), ('SHAMPOO', '1') --> ('BATHROOM', '1')
+nearby: ('HAIR', '1') --> , ('SHOWER', '1') --> , ('SOAP', '1') --> , ('BRUSH', '1') --> , ('SHAMPOO', '1') --> 
+Take shower
+Wash hair, scrub body
+
+
+[Walk] <BATHROOM> (1)
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Find] <SHAMPOO> (1)
+[Grab] <SHAMPOO> (1)
+[Find] <HAIR> (1)
+[Pour] <SHAMPOO> (1) <HAIR> (1)
+[PutObjBack] <SHAMPOO> (1)
+[Wash] <HAIR> (1)
+[Rinse] <HAIR> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Scrub] <BRUSH> (1)
+[PutObjBack] <SOAP> (1)
+[PutObjBack] <BRUSH> (1)
+[Leave] <SHOWER> (1)

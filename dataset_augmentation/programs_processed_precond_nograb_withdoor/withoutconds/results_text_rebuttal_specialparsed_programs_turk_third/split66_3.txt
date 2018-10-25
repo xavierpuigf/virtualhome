@@ -1,0 +1,9 @@
+Pay bills
+Take the bills, and put them in order by due date.  Determine which ones are due first, and which ones will be paid on the computer and which ones will need a paper check. Log into bill pay and select the bills to be paid via computer.  All others, then write a check in pen for the amount due.  Put a check in a stamped envelope and record amount in check register.  Shred excess papers.
+
+
+[Find] <BILLS> (1)
+[PointAt] <BILLS> (1)
+[Grab] <BILLS> (1)
+[Read] <BILLS> (1)
+[Drop] <BILLS> (1)

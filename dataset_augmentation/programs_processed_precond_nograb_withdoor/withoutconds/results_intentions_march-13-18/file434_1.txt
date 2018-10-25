@@ -1,0 +1,9 @@
+Turn on light
+I walk into my bedroom, go to the lamp and use the switch to turn it on.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LAMP> (1)
+[LookAt] <LAMP> (1)
+[Walk] <LAMP> (1)
+[SwitchOn] <LAMP> (1)

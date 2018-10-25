@@ -1,0 +1,8 @@
+1
+is_off: ('LIGHT', '1') --> 
+Turn on light
+flip the switch and turn on the lights
+
+
+[Walk] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

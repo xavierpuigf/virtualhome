@@ -1,0 +1,11 @@
+Read book
+Walk to bookcase in office. Take book from desk. Take book over to chair. Sit down in the chair. Open book and then read book.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Read] <BOOK> (1)

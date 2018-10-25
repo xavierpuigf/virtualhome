@@ -1,0 +1,16 @@
+Make coffee
+Make coffee in the kitchen.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFE MAKER> (1)
+[PlugIn] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Close] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)

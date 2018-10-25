@@ -1,0 +1,21 @@
+3
+in: ('CD', '1') --> ('TABLE', '1')
+location: ('CLEANING SOLUTION', '1') --> ('LIVING ROOM', '1'), ('RAG', '1') --> ('LIVING ROOM', '1'), ('CD', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('CLEANING BOTTLE', '1') --> ('LIVING ROOM', '1')
+nearby: ('CLEANING SOLUTION', '1') --> , ('CD', '1') --> 
+Put dvds on shelves
+Take dvds, wipe them off with a slightly, damp rag that has all purpose cleaner on it. Put dvds on shelves, with titles facing out.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Find] <CLEANING BOTTLE> (1)
+[Grab] <CLEANING BOTTLE> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Pour] <CLEANING SOLUTION> (1) <RAG> (1)
+[PutObjBack] <CLEANING BOTTLE> (1)
+[Walk] <TABLE> (1)
+[Find] <CD> (1)
+[Grab] <CD> (1)
+[Wipe] <CD> (1)
+[PutObjBack] <RAG> (1)

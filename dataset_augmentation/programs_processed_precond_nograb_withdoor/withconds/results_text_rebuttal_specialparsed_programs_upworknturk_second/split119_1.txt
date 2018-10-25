@@ -1,0 +1,18 @@
+2
+is_off: ('VACUUM CLEANER', '1') --> 
+location: ('VACUUM CLEANER', '1') --> ('LIVING ROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1')
+Vacuum
+Plug vacuum into the wall. Turn on the vacuum. Move vacuum around the floor to clean it. Unplug vacuum.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[PutObjBack] <VACUUM CLEANER> (1)

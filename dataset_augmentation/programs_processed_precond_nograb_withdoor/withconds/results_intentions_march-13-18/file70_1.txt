@@ -1,0 +1,13 @@
+2
+location: ('PHONE', '1') --> ('LIVING ROOM', '1'), ('DESK', '1') --> ('LIVING ROOM', '1')
+in: ('PHONE', '1') --> ('DESK', '1')
+Pick up phone
+walk to living room. find desk. plug out phone. grab phone. touch phone.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DESK> (1)
+[Find] <PHONE> (1)
+[PlugOut] <PHONE> (1)
+[Grab] <PHONE> (1)
+[Touch] <PHONE> (1)

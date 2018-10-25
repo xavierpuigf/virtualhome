@@ -1,0 +1,15 @@
+2
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
+Change TV channel
+walk to living room, look at the television, switch on the television, grab the remote control, press the channel button in remote control, now the tv channel is changed
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Grab] <BUTTON> (1)

@@ -1,0 +1,9 @@
+1
+location: ('TELEPHONE', '1') --> ('KITCHEN', '1')
+Pick up phone
+I walk to the kitchen and find the phone. I pick up the phone. I hold it to my ear.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)

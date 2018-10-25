@@ -1,0 +1,21 @@
+4
+location: ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1'), ('BED', '2') --> ('KIDS BEDROOM', '1'), ('BLANKET', '1') --> ('KIDS BEDROOM', '1'), ('LIGHT', '1') --> ('KIDS BEDROOM', '1')
+in: ('CHILD', '2') --> ('BED', '2'), ('CHILD', '1') --> ('BED', '1')
+is_on: ('LIGHT', '1') --> 
+nearby: ('BLANKET', '1') --> , ('LIGHT', '1') --> , ('CHILD', '1') --> , ('CHILD', '2') --> 
+Tuck kids in bed
+Once the kids are in bed, tuck them in
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <BLANKET> (1)
+[Cover] <CHILD> (1) <BLANKET> (1)
+[Walk] <BED> (2)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Cover] <CHILD> (2) <BLANKET> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)

@@ -1,0 +1,13 @@
+Text friends while sitting on couch
+Text while sitting
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)
+[Find] <KEYBOARD> (1)
+[Touch] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

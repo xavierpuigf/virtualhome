@@ -1,0 +1,26 @@
+3
+is_off: ('WASHING MACHINE', '1') --> 
+inside: ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1')
+location: ('WATER', '1') --> ('BATHROOM', '1'), ('WASHING MACHINE', '1') --> ('BATHROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BATHROOM', '1')
+Wash clothes
+look at the basket and take away dirty dresses, walk into bathroom, look at the washing machine, put dirty clothes into washing machine, put laundry detergent into washing machine, switch on the washing machine, open the water, set the time, rinse the clothes, after wipe the cloths switch off the washing machine
+
+
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[LookAt] <CLOTHES_DRESS> (1)
+[Walk] <BATHROOM> (1)
+[Find] <WASHING MACHINE> (1)
+[LookAt] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_DRESS> (1) <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[PutBack] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)
+[Find] <WATER> (1)
+[LookAt] <WATER> (1)
+[Rinse] <CLOTHES_DRESS> (1)
+[Wipe] <CLOTHES_DRESS> (1)
+[SwitchOff] <WASHING MACHINE> (1)

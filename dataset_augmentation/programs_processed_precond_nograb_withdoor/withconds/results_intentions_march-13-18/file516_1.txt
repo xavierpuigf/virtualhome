@@ -1,0 +1,18 @@
+1
+inside: ('FOOD_EGG', '1') --> ('FRIDGE', '1'), ('FOOD_FISH', '1') --> ('FRIDGE', '1')
+Put groceries in Fridge
+after shopping putting perishables away in the fridge
+
+
+[Find] <FOOD_APPLE> (1)
+[Grab] <FOOD_APPLE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <FOOD_APPLE> (1) <FRIDGE> (1)
+[Find] <FOOD_EGG> (1)
+[Grab] <FOOD_EGG> (1)
+[PutBack] <FOOD_EGG> (1) <FRIDGE> (1)
+[Find] <FOOD_FISH> (1)
+[Grab] <FOOD_FISH> (1)
+[PutBack] <FOOD_FISH> (1) <FRIDGE> (1)
+[Close] <FRIDGE> (1)

@@ -1,0 +1,15 @@
+Browse internet
+Walk to home office, walk to desk, sit in chair, turn on laptop, grab mouse, open a web page to look at it, move mouse, keep looking at laptop screen.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[LookAt] <LAPTOP> (1)
+[Touch] <MOUSE> (1)
+[LookAt] <LAPTOP> (1)

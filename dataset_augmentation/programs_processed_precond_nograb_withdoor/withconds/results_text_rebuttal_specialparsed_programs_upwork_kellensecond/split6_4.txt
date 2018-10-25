@@ -1,0 +1,19 @@
+4
+is_off: ('LAPTOP', '1') --> 
+nearby: ('KEYBOARD', '1') --> , ('COUCH', '1') --> 
+location: ('LAPTOP', '1') --> ('LIVING ROOM', '1'), ('KEYBOARD', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('KEYBOARD', '1')
+Play on laptop
+Sit down on the couch. Place laptop on lap. Open laptop. Turn on laptop. Choose selected program. Play selected program. Close game. Close laptop.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LAPTOP> (1)
+[Grab] <LAPTOP> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[SwitchOff] <LAPTOP> (1)
+[PutObjBack] <LAPTOP> (1)

@@ -1,0 +1,11 @@
+2
+is_off: ('REMOTE CONTROL', '3') --> 
+location: ('REMOTE CONTROL', '3') --> ('LIVING ROOM', '1'), ('TELEVISION', '2') --> ('LIVING ROOM', '1')
+Watch TV
+walk to living room ,find television , switch on remote control 
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TELEVISION> (2)
+[Find] <REMOTE CONTROL> (3)
+[SwitchOn] <REMOTE CONTROL> (3)

@@ -1,0 +1,8 @@
+Take nap
+I habitually take naps on my living room couch.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COUCH> (1)
+[Lie] <COUCH> (1)
+[Sleep]

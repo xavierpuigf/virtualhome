@@ -1,0 +1,14 @@
+Dust
+Gather wood cleaner and cleaning rag. Wipe baseboards and window sills with dry cloth, then spray with cleaner and buff
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Pour] <CLEANING SOLUTION> (1) <RAG> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Walk] <WALL> (1)
+[Walk] <WINDOW> (1)
+[PutObjBack] <RAG> (1)

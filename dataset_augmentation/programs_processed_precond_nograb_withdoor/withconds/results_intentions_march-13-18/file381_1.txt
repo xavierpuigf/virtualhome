@@ -1,0 +1,9 @@
+1
+location: ('CAT', '1') --> ('LIVING ROOM', '1')
+Pet cat
+Walk into the living room. Walk up to the cat. Pet the cat with your hand.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CAT> (1)
+[Touch] <CAT> (1)

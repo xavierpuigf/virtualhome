@@ -1,0 +1,13 @@
+Turn on light
+walk to living room, find the light and also switch board, switch on the first light, look at the next light switch, again switch on the second light, look at the next light switch, again switch on the third light
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <LIGHT> (2)
+[LookAt] <LIGHT> (2)
+[SwitchOn] <LIGHT> (2)
+[Find] <LIGHT> (3)
+[LookAt] <LIGHT> (3)
+[SwitchOn] <LIGHT> (3)

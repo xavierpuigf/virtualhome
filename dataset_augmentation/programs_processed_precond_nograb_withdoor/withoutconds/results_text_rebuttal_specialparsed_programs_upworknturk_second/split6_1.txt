@@ -1,0 +1,17 @@
+Put away clothes
+Take clothes out of a laundry basket. Fold clothes. Put folded clothes in a drawer. Hang other clothes up.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Fold] <CLOTHES_DRESS> (1)
+[Find] <CABINET> (1)
+[Open] <CABINET> (1)
+[PutBack] <CLOTHES_DRESS> (1) <CABINET> (1)
+[Find] <CLOTHES_DRESS> (2)
+[Grab] <CLOTHES_DRESS> (2)
+[Fold] <CLOTHES_DRESS> (2)
+[PutBack] <CLOTHES_DRESS> (2) <CABINET> (1)
+[Close] <CABINET> (1)

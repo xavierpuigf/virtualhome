@@ -1,0 +1,1 @@
+[{"inside": [["SOAP", "1"], ["WASHING MACHINE", "1"]]}, {"inside": [["CLOTHES_SHIRT", "1"], ["WASHING MACHINE", "1"]]}, {"is_on": ["WASHING MACHINE", "1"]}, {"location": [["CLOTHES_SOCKS", "1"], ["BEDROOM", "1"]]}, {"location": [["WASHING MACHINE", "1"], ["KITCHEN", "1"]]}, {"location": [["CLOTHES_PANTS", "1"], ["BEDROOM", "1"]]}]

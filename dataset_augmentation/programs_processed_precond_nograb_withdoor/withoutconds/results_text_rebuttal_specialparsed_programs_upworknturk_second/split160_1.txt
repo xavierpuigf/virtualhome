@@ -1,0 +1,14 @@
+Story reading time
+Sit on bed with child, open mother goose, pick story, read book, point at the pretty pictures
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[LookAt] <CHILD> (1)
+[PointAt] <BOOK> (1)
+[Read] <BOOK> (1)

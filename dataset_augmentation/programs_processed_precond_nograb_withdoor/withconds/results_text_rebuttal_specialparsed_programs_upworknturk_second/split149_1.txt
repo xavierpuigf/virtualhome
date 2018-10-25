@@ -1,0 +1,19 @@
+3
+nearby: ('WOMAN', '1') --> , ('COUCH', '1') --> , ('WOMAN', '2') --> 
+location: ('WOMAN', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('WOMAN', '2') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('WOMAN', '1')
+Visit neighbors
+Sit on the couch and talk to my neighbors
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[LookAt] <WOMAN> (1)
+[Talk] <WOMAN> (1)
+[LookAt] <WOMAN> (2)
+[Talk] <WOMAN> (2)

@@ -1,0 +1,13 @@
+Sent email
+Open email.  Write.  Send it.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Write]
+[SwitchOff] <COMPUTER> (1)

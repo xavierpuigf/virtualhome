@@ -1,0 +1,7 @@
+Go to toilet
+I walk into the bathroom. I walk over to the toilet. I sit on the toilet.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Sit] <TOILET> (1)

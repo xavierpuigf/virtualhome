@@ -1,0 +1,22 @@
+3
+in: ('PLATE', '1') --> ('SINK', '1')
+location: ('PLATE', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1'), ('DISHRACK', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1')
+nearby: ('SPONGE', '1') --> , ('DISHRACK', '1') --> 
+Wash dishes by hand
+Walk into the kitchen and walk over to the sink. Turn on the hot water and rinse off the dish. Put dish soap on a kitchen sponge. Scrub the dishes with the sponge. Rinse the soap off of each dish. Set them on the dish rack to dry. Once dry, put away the dishes.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Find] <DISH SOAP> (1)
+[Find] <SPONGE> (1)
+[Pour] <DISH SOAP> (1) <SPONGE> (1)
+[Scrub] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)
+[Grab] <PLATE> (1)
+[PutObjBack] <PLATE> (1)

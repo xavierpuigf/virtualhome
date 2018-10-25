@@ -1,0 +1,12 @@
+Fold laundry
+Putting away laundry
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <CLOTHES_PANTS> (5)
+[Fold] <CLOTHES_PANTS> (5)
+[Find] <CLOTHES_SHIRT> (5)
+[Fold] <CLOTHES_SHIRT> (5)
+[Close] <CABINET> (1)

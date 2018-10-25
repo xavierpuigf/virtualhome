@@ -1,0 +1,14 @@
+Read book
+Obtain a book from the book shelf. Sit in the easy chair.  Read the book.  Mark the stopping point with a bookmark.  Put the book back on the book shelf.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <LOVE SEAT> (1)
+[Sit] <LOVE SEAT> (1)
+[Read] <BOOK> (1)
+[Find] <BOOKMARK> (1)
+[Grab] <BOOKMARK> (1)
+[PutBack] <BOOKMARK> (1) <BOOK> (1)
+[PutObjBack] <BOOK> (1)

@@ -1,0 +1,14 @@
+2
+location: ('ARMS_BOTH', '1') --> ('LIVING ROOM', '1'), ('LEGS_BOTH', '1') --> ('LIVING ROOM', '1')
+nearby: ('ARMS_BOTH', '1') --> , ('LEGS_BOTH', '1') --> 
+Stretch
+Stretch your muscles
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <ARMS_BOTH> (1)
+[Stretch] <ARMS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)
+[StandUp]
+[Jump]

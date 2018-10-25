@@ -1,0 +1,12 @@
+Put groceries in Fridge
+I leave the bags with groceries near the fridge, open the door and put the groceries in the shelves.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)

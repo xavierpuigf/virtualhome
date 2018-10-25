@@ -1,0 +1,13 @@
+Go to toilet
+I'm on my computer, I start to feel sick in my stomach so I go to the bathroom
+
+
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[StandUp]
+[Walk] <BATHROOM> (1)
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)
+[StandUp]
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)

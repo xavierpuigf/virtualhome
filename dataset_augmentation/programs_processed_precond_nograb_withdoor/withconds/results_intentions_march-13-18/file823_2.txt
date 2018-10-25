@@ -1,0 +1,25 @@
+2
+inside: ('TOOTHBRUSH', '1') --> ('BATHROOM CABINET', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM CABINET', '1')
+in: ('BATHROOM CABINET', '1') --> ('SINK', '1')
+Brush teeth
+At bathroom sink I take out toothbrush and toothpaste from the cabinet. Wet toothbrush and put toothpaste on toothbrush. Scrub teeth with toothbrush. Rinse off toothbrush. Rinse mouth. Return toothbrush and toothpaste to cabinet.
+
+
+[Walk] <SINK> (1)
+[Find] <BATHROOM CABINET> (1)
+[Open] <BATHROOM CABINET> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[PutBack] <TOOTH PASTE> (1) <BATHROOM CABINET> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Spit] <SINK> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Wash] <TEETH> (1)
+[Spit] <SINK> (1)
+[Rinse] <SINK> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

@@ -1,0 +1,10 @@
+Place bathmat
+Take the bathmat off of the bathtub edge. Shake out. Place on floor in front of the bath tub.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <BATHTUB> (1)
+[Find] <MAT> (1)
+[Grab] <MAT> (1)
+[Shake] <MAT> (1)
+[PutObjBack] <MAT> (1)

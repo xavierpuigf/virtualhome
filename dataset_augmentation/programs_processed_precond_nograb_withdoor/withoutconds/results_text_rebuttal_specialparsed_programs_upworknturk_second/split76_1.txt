@@ -1,0 +1,22 @@
+Clean
+My husband plays video games and likes to snack and drink water while playing. He also hates to clean up after himself. I'm a bit of a neat freak, so I always go into the room and straighten it after a night of raiding.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Walk] <KITCHEN> (1)
+[Find] <SINK> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <TABLE> (1)
+[Wipe] <TABLE> (1)
+[Find] <VIDEO GAME CONTROLLER> (1)
+[Grab] <VIDEO GAME CONTROLLER> (1)
+[Find] <CABINET> (1)
+[Open] <CABINET> (1)
+[PutBack] <VIDEO GAME CONTROLLER> (1) <CABINET> (1)
+[Walk] <KITCHEN> (1)
+[PutObjBack] <RAG> (1)

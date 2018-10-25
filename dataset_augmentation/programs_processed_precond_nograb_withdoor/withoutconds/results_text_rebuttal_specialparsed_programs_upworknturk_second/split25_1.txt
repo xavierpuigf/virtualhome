@@ -1,0 +1,13 @@
+Play fetch with dog
+Locate dog.  Locate dog's favorite toy.  Pick up toy and toss across the room.  Wait for dog to fetch toy and bring back to you.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <DOG> (1)
+[LookAt] <DOG> (1)
+[PointAt] <TOY> (1)
+[Throw] <TOY> (1)

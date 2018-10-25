@@ -1,0 +1,12 @@
+2
+location: ('CARPET', '1') --> ('ENTRANCE HALL', '1'), ('SHOES', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('CARPET', '1') --> 
+Tale off shoes
+I step inside the home and wipe my feet off on a doormat. I then bend over to unlace my shoes and set them out of the way near a wall but far enough from the door so as to not prevent it from opening.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[PutOff] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Find] <CARPET> (1)
+[PutBack] <SHOES> (1) <CARPET> (1)

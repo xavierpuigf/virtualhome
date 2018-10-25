@@ -1,0 +1,26 @@
+2
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('BRUSH', '1') --> ('KITCHEN', '1'), ('DISHWASHER', '1') --> ('KITCHEN', '1')
+Wash dishes with dishwasher
+Wash a plate using dishwasher
+
+
+[Walk] <KITCHEN> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <PLATE> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <DISHWASHER> (1)
+[PointAt] <DISHWASHER> (1)
+[Spit] <PLATE> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[Rinse] <BRUSH> (1)
+[Scrub] <PLATE> (1)
+[Drop] <BRUSH> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <PLATE> (1)
+[SwitchOff] <FAUCET> (1)
+[Drop] <PLATE> (1)

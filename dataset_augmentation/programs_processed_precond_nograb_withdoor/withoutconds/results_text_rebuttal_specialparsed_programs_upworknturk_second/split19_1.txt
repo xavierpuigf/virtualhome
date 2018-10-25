@@ -1,0 +1,10 @@
+Admire art
+Looking at painting, art
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <PAINTING> (1)
+[LookAt] <PAINTING> (1)
+[Find] <PAINTING> (2)
+[TurnTo] <PAINTING> (2)
+[LookAt] <PAINTING> (2)

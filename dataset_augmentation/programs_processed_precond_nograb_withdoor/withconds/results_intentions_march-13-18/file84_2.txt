@@ -1,0 +1,19 @@
+2
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('TAPE', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN', '1')
+in: ('TAPE', '1') --> ('SINK', '1')
+Drink
+walk to kitchen. grab drinking glass. look at sink. pull the tape. pour water into drinking glass. push the tape. drink from water. put back drinking glass.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <SINK> (1)
+[LookAt] <SINK> (1)
+[Find] <TAPE> (1)
+[Pull] <TAPE> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <DRINKING GLASS> (1)
+[Push] <TAPE> (1)
+[Drink] <WATER> (1)
+[PutObjBack] <DRINKING GLASS> (1)

@@ -1,0 +1,23 @@
+Print documents
+I open a word document, click the image of a printer, check the size, and then hit print. I gather my documents and put them in a folder.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <PRINTING PAPER> (1)
+[Grab] <PRINTING PAPER> (1)
+[Walk] <PRINTER> (1)
+[SwitchOn] <PRINTER> (1)
+[PutBack] <PRINTING PAPER> (1) <PRINTER> (1)
+[TurnTo] <LAPTOP> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[TurnTo] <PRINTER> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[Open] <FOLDER> (1)
+[PutBack] <DOCUMENT> (1) <FOLDER> (1)
+[Close] <FOLDER> (1)

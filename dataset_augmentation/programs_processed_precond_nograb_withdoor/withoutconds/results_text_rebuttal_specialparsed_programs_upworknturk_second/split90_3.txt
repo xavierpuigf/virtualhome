@@ -1,0 +1,11 @@
+Take shoes off
+Take off your shoes by the door
+
+
+[Walk] <ENTRANCE HALL> (1)
+[PutOff] <SHOES> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Grab] <SHOES> (1)
+[PutBack] <SHOES> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

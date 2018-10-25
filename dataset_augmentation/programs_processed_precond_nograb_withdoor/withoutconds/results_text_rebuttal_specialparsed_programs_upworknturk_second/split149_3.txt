@@ -1,0 +1,18 @@
+Vacuum
+Bring the vacuum cleaner into the bathroom, plug it into the electrical socket.   Move it across the floor, vacuuming up any dirt/dust on the floor.  Unplug the vacuum cleaner and return it to the closet.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Find] <FLOOR> (1)
+[Vacuum] <FLOOR> (1)
+[SwitchOff] <ELECTRICAL OUTLET> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[Walk] <CLOSET> (1)
+[PutObjBack] <VACUUM CLEANER> (1)

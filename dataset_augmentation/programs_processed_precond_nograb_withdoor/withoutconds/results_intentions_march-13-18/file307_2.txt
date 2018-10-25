@@ -1,0 +1,12 @@
+Watch TV
+I go into the living room. I find the remote. I turn on the tv. I sit on the couch and watch tv.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Watch] <TELEVISION> (1)

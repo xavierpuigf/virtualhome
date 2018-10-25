@@ -1,0 +1,13 @@
+2
+inside: ('PLATE', '1') --> ('CUPBOARD', '1')
+location: ('CUPBOARD', '1') --> ('KITCHEN', '1')
+Get out dish
+Open cupboard.  Get out the dish.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Close] <CUPBOARD> (1)

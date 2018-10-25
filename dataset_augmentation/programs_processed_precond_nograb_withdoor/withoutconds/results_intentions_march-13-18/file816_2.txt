@@ -1,0 +1,9 @@
+Turn on light
+Coming home turning on lights.
+
+
+[Find] <DOOR> (1)
+[Pull] <DOOR> (1)
+[Walk] <ENTRANCE HALL> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

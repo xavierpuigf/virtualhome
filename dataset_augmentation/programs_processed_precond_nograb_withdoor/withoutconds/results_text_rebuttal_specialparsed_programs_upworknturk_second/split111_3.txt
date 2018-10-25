@@ -1,0 +1,19 @@
+Eat dinner
+Put food (on a plate) on the table. Sit in a chair at the table. Pick up a fork. Stab the food with the fork. Bring the fork and food to the mouth. Open mouth. Put food in. Chew. Swallow. Repeat.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Walk] <STOVE> (1)
+[Find] <FOOD_FOOD> (1)
+[Uncover] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Eat] <PLATE> (1)

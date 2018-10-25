@@ -1,0 +1,13 @@
+Work
+I walk to the office. I find the copmputer. I turn on the computer. I find the chair. I sit down. I find the keyboard and mouse. I type on the keyboard.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <KEYBOARD> (1)
+[Find] <MOUSE> (1)
+[LookAt] <COMPUTER> (1)
+[Type] <KEYBOARD> (1)

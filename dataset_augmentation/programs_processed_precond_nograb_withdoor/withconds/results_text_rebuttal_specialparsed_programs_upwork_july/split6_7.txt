@@ -1,0 +1,14 @@
+2
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CHILD', '1') --> ('LIVING ROOM', '1')
+nearby: ('COUCH', '1') --> , ('CHILD', '1') --> 
+Let baby learn how to walk
+The baby tries to stand up and balances on the couch and there are no sharp edges so it's safe.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CHILD> (1)
+[Touch] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <COUCH> (1)
+[PointAt] <COUCH> (1)
+[LookAt] <CHILD> (1)

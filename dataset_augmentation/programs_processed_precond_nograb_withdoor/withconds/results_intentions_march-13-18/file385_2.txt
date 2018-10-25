@@ -1,0 +1,9 @@
+1
+is_off: ('CD PLAYER', '1') --> 
+Listen to music
+Go to living room. Find CD player. Pick CD. Put CD in CD player. Play music.
+
+
+[Find] <CD PLAYER> (1)
+[Walk] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)

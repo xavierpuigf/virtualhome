@@ -1,0 +1,22 @@
+Put mail away
+Open front door. Enter with mail. Sort mail into different piles on table. Put separate piles into different slots on box hung on the wall.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Find] <MAIL> (2)
+[Grab] <MAIL> (2)
+[Find] <MAIL> (3)
+[Grab] <MAIL> (3)
+[Find] <MAIL> (4)
+[Grab] <MAIL> (4)
+[Walk] <LIVING ROOM> (1)
+[Find] <COFFEE TABLE> (1)
+[PutBack] <MAIL> (1) <COFFEE TABLE> (1)
+[PutBack] <MAIL> (2) <COFFEE TABLE> (1)
+[Walk] <HOME OFFICE> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <MAIL> (3) <DESK> (1)
+[PutBack] <MAIL> (4) <DESK> (1)

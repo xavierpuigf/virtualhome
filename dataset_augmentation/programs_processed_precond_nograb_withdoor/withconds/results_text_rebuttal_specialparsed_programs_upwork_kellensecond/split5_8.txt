@@ -1,0 +1,13 @@
+3
+nearby: ('TELEVISION', '1') --> , ('COUCH', '1') --> 
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('TELEVISION', '1')
+Watch TV
+Sitting on the couch watching my favorite television show.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

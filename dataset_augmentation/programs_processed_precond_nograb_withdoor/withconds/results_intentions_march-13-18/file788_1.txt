@@ -1,0 +1,23 @@
+4
+is_off: ('FAUCET', '1') --> 
+inside: ('DRINKING GLASS', '1') --> ('KITCHEN CABINET', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+in: ('FAUCET', '1') --> ('SINK', '1')
+Drink
+I go to the kitchen to get a glass from the cabinet. I turn on the faucet and fill up the glass. I take a drink.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Find] <WATER> (1)
+[Grab] <DRINKING GLASS> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Grab] <DRINKING GLASS> (1)
+[Drink] <WATER> (1)

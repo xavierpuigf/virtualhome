@@ -1,0 +1,16 @@
+Get glass of water
+Get a glass from a cabinet. Hold it under the sink and turn the cold water on. Fill the glass. Turn off the water.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Close] <KITCHEN CABINET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <GLASS> (1) <SINK> (1)
+[Grab] <GLASS> (1)
+[SwitchOff] <FAUCET> (1)

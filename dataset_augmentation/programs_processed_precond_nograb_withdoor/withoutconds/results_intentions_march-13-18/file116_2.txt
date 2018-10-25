@@ -1,0 +1,16 @@
+Make coffee
+Walk to the kitchen at the coffee maker, grab coffee, pour coffee into coffee maker, put coffee into coffee maker, push coffee maker's button, wait to complete, grab coffee cup
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFEE> (1)
+[Grab] <COFFEE> (1)
+[Open] <COFFE MAKER> (1)
+[Pour] <COFFEE> (1) <COFFE MAKER> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[PutBack] <COFFEE CUP> (1) <COFFE MAKER> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Grab] <COFFEE CUP> (1)

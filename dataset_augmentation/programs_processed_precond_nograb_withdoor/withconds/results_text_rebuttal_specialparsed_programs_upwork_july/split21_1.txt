@@ -1,0 +1,37 @@
+4
+inside: ('PAPER', '1') --> ('DESK', '1'), ('PEN', '1') --> ('DESK', '1'), ('STAMP', '1') --> ('DESK', '1'), ('ADDRESS BOOK', '1') --> ('DESK', '1'), ('ENVELOPE', '1') --> ('DESK', '1')
+nearby: ('CHAIR', '1') --> , ('DESK', '1') --> 
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('DESK', '1')
+Write letter
+Pick up a pen and paper and write 'dear' and the person's name. Follow with whatever you would like to say to them.  End with 'love', etc. And sign your name, fold in thirds, place in envelope, and address and stamp it.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[PutBack] <PAPER> (1) <DESK> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <PAPER> (1)
+[PutBack] <PEN> (1) <DESK> (1)
+[Grab] <PAPER> (1)
+[Fold] <PAPER> (1)
+[Find] <ENVELOPE> (1)
+[Grab] <ENVELOPE> (1)
+[PutBack] <PAPER> (1) <ENVELOPE> (1)
+[PutBack] <ENVELOPE> (1) <DESK> (1)
+[Find] <ADDRESS BOOK> (1)
+[Grab] <ADDRESS BOOK> (1)
+[PutBack] <ADDRESS BOOK> (1) <DESK> (1)
+[LookAt] <ADDRESS BOOK> (1)
+[Grab] <PEN> (1)
+[Write] <ENVELOPE> (1)
+[PutObjBack] <PEN> (1)
+[Find] <STAMP> (1)
+[Grab] <STAMP> (1)
+[PutBack] <STAMP> (1) <ENVELOPE> (1)

@@ -1,0 +1,13 @@
+2
+location: ('KITCHEN COUNTER', '1') --> ('KITCHEN', '1'), ('CELLPHONE', '1') --> ('KITCHEN', '1')
+in: ('CELLPHONE', '1') --> ('KITCHEN COUNTER', '1')
+Pick up phone
+reach down, grasp phone, pick up phone
+
+
+[StandUp]
+[Walk] <KITCHEN> (1)
+[Find] <KITCHEN COUNTER> (1)
+[LookAt] <KITCHEN COUNTER> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)

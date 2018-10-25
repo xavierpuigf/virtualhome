@@ -1,0 +1,16 @@
+Sweep floor
+Remove and rugs or trash cans, etc, out of bathroom.  Sweep everything into a pile.  Sweep into a dustpan, and empty into the trash can, and replace objects.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BROOM> (1)
+[Grab] <BROOM> (1)
+[Find] <DUSTPAN> (1)
+[Grab] <DUSTPAN> (1)
+[Find] <DIRT> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <DUSTPAN> (1)
+[Find] <TRASHCAN> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <TRASHCAN> (1)
+[PutObjBack] <BROOM> (1)

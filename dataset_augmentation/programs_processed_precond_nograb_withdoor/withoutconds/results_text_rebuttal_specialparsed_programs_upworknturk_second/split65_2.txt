@@ -1,0 +1,20 @@
+Clean sink
+Squirt soap into the sink. Get a wet rag. Wipe out the sink. Rinse out the sink and the rag. Hang the rag out to dry.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Walk] <SINK> (1)
+[Pour] <CLEANING SOLUTION> (1) <SINK> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Wipe] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <SINK> (1)
+[Rinse] <RAG> (1)
+[SwitchOff] <FAUCET> (1)
+[PutObjBack] <RAG> (1)

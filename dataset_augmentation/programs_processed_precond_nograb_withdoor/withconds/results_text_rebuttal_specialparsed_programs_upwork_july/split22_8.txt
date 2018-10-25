@@ -1,0 +1,18 @@
+3
+nearby: ('CHAIR', '1') --> , ('TABLE', '1') --> , ('CHILD', '1') --> , ('HOMEWORK', '1') --> 
+location: ('CHAIR', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('CHILD', '1') --> ('DINING ROOM', '1'), ('HOMEWORK', '1') --> ('DINING ROOM', '1')
+atreach: ('CHILD', '1') --> ('CHILD', '1')
+Check homework
+Have child sit at dining room table and attempt homework, instruct child to call you upon completion for review, ask child to explain what they did and help them with any difficulties, congratulate them on a job well done, dismiss them from the table
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <HOMEWORK> (1)
+[Grab] <HOMEWORK> (1)
+[Find] <TABLE> (1)
+[PutBack] <HOMEWORK> (1) <TABLE> (1)
+[Find] <CHILD> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHILD> (1) <CHAIR> (1)
+[Talk] <CHILD> (1)
+[LookAt] <HOMEWORK> (1)

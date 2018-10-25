@@ -1,0 +1,22 @@
+3
+is_off: ('WASHING MACHINE', '1') --> 
+inside: ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
+location: ('LAUNDRY DETERGENT', '1') --> ('BEDROOM', '1'), ('WASHING MACHINE', '1') --> ('BEDROOM', '1')
+Wash clothes
+I grab the basket of clothes and go to the bedroom. I put my shirt into the basket of clothes and go to washing machine. I put the shirt into the washing machine. I put detergent and close the washing machine and switch it on.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <BEDROOM> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <BASKET FOR CLOTHES> (1)
+[Walk] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Pour] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

@@ -1,0 +1,26 @@
+3
+inside: ('KEYS', '1') --> ('DOOR', '1'), ('CLOTHES_JACKET', '1') --> ('DOOR', '1'), ('CLOTHES_HAT', '1') --> ('DOOR', '1'), ('PURSE', '1') --> ('DOOR', '1')
+location: ('TABLE', '1') --> ('ENTRANCE HALL', '1'), ('HANGER', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('HANGER', '1') --> , ('TABLE', '1') --> , ('DOOR', '1') --> 
+Return from store
+Unlock the door. Enter the hall. Remove hat and coat. Set down keys and purse. Enter home.
+
+
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <ENTRANCE HALL> (1)
+[PutOff] <CLOTHES_HAT> (1)
+[Grab] <CLOTHES_HAT> (1)
+[Find] <HANGER> (1)
+[PutBack] <CLOTHES_HAT> (1) <HANGER> (1)
+[PutOff] <CLOTHES_JACKET> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)
+[Find] <KEYS> (1)
+[Grab] <KEYS> (1)
+[Find] <TABLE> (1)
+[PutBack] <KEYS> (1) <TABLE> (1)
+[Find] <PURSE> (1)
+[Grab] <PURSE> (1)
+[PutBack] <PURSE> (1) <TABLE> (1)
+[Walk] <LIVING ROOM> (1)

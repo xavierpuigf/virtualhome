@@ -1,0 +1,10 @@
+2
+is_off: ('LAMP', '1') --> 
+location: ('LAMP', '1') --> ('BEDROOM', '1')
+Switch on lamp
+Press the button so the light comes on.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)

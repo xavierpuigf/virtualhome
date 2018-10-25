@@ -1,0 +1,12 @@
+1
+inside: ('GROCERIES', '1') --> ('FRIDGE', '1')
+Put groceries in Fridge
+Open fridge, grab groceries, put groceries in fridge, close fridge
+
+
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)
+[Close] <FRIDGE> (1)

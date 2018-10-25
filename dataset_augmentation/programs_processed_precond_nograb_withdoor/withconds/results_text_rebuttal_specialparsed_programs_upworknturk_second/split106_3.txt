@@ -1,0 +1,36 @@
+5
+is_off: ('FAUCET', '1') --> , ('COFFE MAKER', '1') --> 
+inside: ('GROUND COFFEE', '1') --> ('KITCHEN CABINET', '1'), ('CUP', '1') --> ('COFFE MAKER', '1'), ('COFFEE FILTER', '1') --> ('KITCHEN CABINET', '1')
+in: ('FAUCET', '1') --> ('SINK', '1'), ('CUP', '1') --> ('KITCHEN CABINET', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+nearby: ('FAUCET', '1') --> , ('WATER', '1') --> , ('CABINET', '1') --> 
+Make coffee
+Put filter in coffee machine. Pour in grounds. Pour in water. Push button.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[Walk] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <CUP> (1) <SINK> (1)
+[Grab] <CUP> (1)
+[SwitchOff] <FAUCET> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)
+[PutObjBack] <CUP> (1)
+[Close] <KITCHEN CABINET> (1)

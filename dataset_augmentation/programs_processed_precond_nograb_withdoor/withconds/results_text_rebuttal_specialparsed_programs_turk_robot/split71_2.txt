@@ -1,0 +1,16 @@
+3
+nearby: ('WOMAN', '1') --> , ('TELEVISION', '1') --> , ('COUCH', '1') --> 
+location: ('WOMAN', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('TELEVISION', '1')
+Watch TV
+Watch television with me and talk about what we are watching
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)
+[Talk] <WOMAN> (1)

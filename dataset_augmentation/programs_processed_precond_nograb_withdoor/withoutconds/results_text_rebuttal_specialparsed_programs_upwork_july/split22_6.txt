@@ -1,0 +1,23 @@
+Sew button
+Find sewing kit in desk drawer and remove a button, needle and thread. Thread the needle, put it through a hole in the button which you have placed on the item it is being sewn onto.  Bring the needle back up threw another hole in the button, alternating holes as desired until it seems secure. Knot the thread.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[Open] <DESK> (1)
+[Find] <BUTTON> (1)
+[Grab] <BUTTON> (1)
+[Find] <NEEDLE> (1)
+[Grab] <NEEDLE> (1)
+[Find] <THREAD> (1)
+[Grab] <THREAD> (1)
+[Walk] <BED> (1)
+[Sit] <BED> (1)
+[PutBack] <BUTTON> (1) <BED> (1)
+[PutBack] <THREAD> (1) <NEEDLE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Grab] <BUTTON> (1)
+[PutBack] <BUTTON> (1) <CLOTHES_SHIRT> (1)
+[Sew] <BUTTON> (1) <CLOTHES_SHIRT> (1)

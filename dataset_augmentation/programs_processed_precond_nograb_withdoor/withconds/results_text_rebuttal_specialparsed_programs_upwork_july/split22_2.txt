@@ -1,0 +1,11 @@
+2
+location: ('BED', '1') --> ('BEDROOM', '1')
+nearby: ('BED', '1') --> 
+Sleep
+Lie down in a bed at night and fall asleep
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

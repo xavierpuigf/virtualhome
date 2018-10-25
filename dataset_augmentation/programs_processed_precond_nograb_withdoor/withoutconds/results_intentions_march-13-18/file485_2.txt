@@ -1,0 +1,18 @@
+Brush teeth
+Go to the bathroom, find toothbrush, use it on teeth.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Find] <SINK> (1)
+[Rinse] <SINK> (1)
+[PutObjBack] <TOOTHBRUSH> (1)
+[Rinse] <TEETH> (1)
+[PutObjBack] <TEETH> (1)

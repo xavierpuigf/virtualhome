@@ -1,0 +1,31 @@
+2
+in: ('PLATE', '1') --> ('SINK', '1')
+nearby: ('DISHRACK', '1') --> 
+Wash dishes by hand
+Find sink. Walk to sink. Find plate. grab plate. put plate in sink. find fork. grab fork. put fork in sink. find dish soap. grab dish soap. pour some dish soap into sink. turn on sink faucet. turn off sink faucet. find rag. grab rag. wash plate. wash fork.
+
+
+[Find] <SINK> (1)
+[Walk] <SINK> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <SINK> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[PutBack] <FORK> (1) <SINK> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Pour] <DISH SOAP> (1) <SINK> (1)
+[PutObjBack] <DISH SOAP> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Wash] <PLATE> (1)
+[Wash] <FORK> (1)
+[Rinse] <PLATE> (1)
+[Rinse] <FORK> (1)
+[PutObjBack] <RAG> (1)
+[Grab] <PLATE> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)
+[Grab] <FORK> (1)
+[PutBack] <FORK> (1) <DISHRACK> (1)

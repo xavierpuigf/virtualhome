@@ -1,0 +1,11 @@
+0
+Brush teeth
+Take toothbrush and toothpaste out of drawer, put toothpaste on toothbrush, start water from faucet. Wet toothbrush. Brush teeth. Rinse toothbrush and place back in drawer.
+
+
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[PointAt] <BRUSH> (1)
+[Wash] <BRUSH> (1)
+[LookAt] <BRUSH> (1)
+[PutObjBack] <BRUSH> (1)

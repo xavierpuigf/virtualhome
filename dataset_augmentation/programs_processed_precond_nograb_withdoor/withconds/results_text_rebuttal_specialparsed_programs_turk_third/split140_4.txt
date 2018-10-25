@@ -1,0 +1,14 @@
+2
+inside: ('NAIL POLISH', '1') --> ('CLOSET', '1')
+location: ('CLOSET', '1') --> ('BATHROOM', '1'), ('SHOES', '1') --> ('BATHROOM', '1')
+Do nails
+Take off shoes.  Apply nail polish.  Wait until dry.  Leave the bathroom.
+
+
+[Walk] <BATHROOM> (1)
+[PutOff] <SHOES> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <NAIL POLISH> (1)
+[Grab] <NAIL POLISH> (1)
+[Leave] <BATHROOM> (1)

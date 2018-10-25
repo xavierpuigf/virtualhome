@@ -1,0 +1,1 @@
+[{"location": [["KNIFE", "1"], ["KITCHEN", "1"]]}, {"location": [["PLATE", "1"], ["KITCHEN", "1"]]}, {"location": [["FORK", "1"], ["KITCHEN", "1"]]}, {"location": [["TABLE", "1"], ["DINING ROOM", "1"]]}, {"location": [["CUPBOARD", "1"], ["KITCHEN", "1"]]}, {"in": [["PLATE", "1"], ["CUPBOARD", "1"]]}, {"in": [["FORK", "1"], ["CUPBOARD", "1"]]}]

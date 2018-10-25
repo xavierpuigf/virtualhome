@@ -1,0 +1,20 @@
+2
+nearby: ('BOOK', '1') --> , ('LAMP', '1') --> , ('BOOKMARK', '1') --> , ('DESK', '1') --> , ('CHAIR', '1') --> 
+atreach: ('CHAIR', '1') --> ('BOOK', '1')
+Read book
+Sit down in a comfortable chair with a lamp for lighting. Open the book to your last read page. Follow the words in the book from one sentence to the next. Turn the page when you are ready for the next set of words.
+
+
+[Find] <LAMP> (1)
+[Touch] <LAMP> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BOOKMARK> (1)
+[Grab] <BOOKMARK> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <BOOKMARK> (1) <DESK> (1)
+[Read] <BOOK> (1)
+[Fold] <BOOK> (1)

@@ -1,0 +1,16 @@
+3
+inside: ('CLOTHES_DRESS', '1') --> ('CLOSET', '1')
+location: ('CHAIR', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
+nearby: ('CHAIR', '1') --> 
+Sew
+Using  the sewing machine  to  fix  and make  clothes
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Close] <CLOSET> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)

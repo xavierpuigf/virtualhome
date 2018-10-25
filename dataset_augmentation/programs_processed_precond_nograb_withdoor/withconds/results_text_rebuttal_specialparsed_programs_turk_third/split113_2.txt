@@ -1,0 +1,21 @@
+2
+inside: ('RECEIPT', '1') --> ('FILING CABINET', '1'), ('DOCUMENT', '1') --> ('FILING CABINET', '1')
+location: ('BILLS', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1')
+File documents
+I file all of my paperwork (including bills, receipts, documents, device instructions, etc.) in my black paperwork case that has many different files in order to organize.  I place each piece of paper in its' corresponding subject (as indicated by printed words on each tab).
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <BILLS> (1)
+[Grab] <BILLS> (1)
+[Walk] <FILING CABINET> (1)
+[Open] <FILING CABINET> (1)
+[PutBack] <BILLS> (1) <FILING CABINET> (1)
+[Find] <RECEIPT> (1)
+[Grab] <RECEIPT> (1)
+[Walk] <FILING CABINET> (1)
+[PutBack] <RECEIPT> (1) <FILING CABINET> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Walk] <FILING CABINET> (1)
+[PutBack] <DOCUMENT> (1) <FILING CABINET> (1)

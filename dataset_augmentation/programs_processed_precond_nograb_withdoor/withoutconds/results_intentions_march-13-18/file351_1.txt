@@ -1,0 +1,12 @@
+Watch TV
+Walk to living room to watch TV. Move near to TV. Swich on the TV. Grap remote control. Sit on the Chair and do watching TV.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Watch] <TELEVISION> (1)

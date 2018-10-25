@@ -1,0 +1,15 @@
+Bake
+Gather bread recipe. Gather the ingredients. Mix the ingredients. Allow the dough to rise. Place dough in bread pan. Turn on the oven. Bake the dough. Let cool.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <OVEN> (1)
+[SwitchOn] <OVEN> (1)
+[Find] <DOUGH> (1)
+[Grab] <DOUGH> (1)
+[Find] <TRAY> (1)
+[PutBack] <DOUGH> (1) <TRAY> (1)
+[Open] <OVEN> (1)
+[Grab] <TRAY> (1)
+[PutBack] <TRAY> (1) <OVEN> (1)
+[Close] <OVEN> (1)

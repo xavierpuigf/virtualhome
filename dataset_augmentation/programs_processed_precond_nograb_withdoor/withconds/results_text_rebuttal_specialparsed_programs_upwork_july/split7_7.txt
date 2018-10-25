@@ -1,0 +1,31 @@
+2
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('CENTERPIECE', '1') --> ('DINING ROOM', '1'), ('PLATE', '1') --> ('DINING ROOM', '1'), ('PLACEMAT', '1') --> ('DINING ROOM', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('CLOTH NAPKIN', '1') --> ('DINING ROOM', '1'), ('FOOD_TURKEY', '1') --> ('KITCHEN', '1')
+nearby: ('FOOD_TURKEY', '1') --> , ('TABLE', '1') --> , ('FOOD_FOOD', '1') --> 
+Thanksgiving
+Set out centerpieces, fancy china, etc.  Then, bring out turkey and rest of food.
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <CENTERPIECE> (1)
+[Grab] <CENTERPIECE> (1)
+[Find] <TABLE> (1)
+[PutBack] <CENTERPIECE> (1) <TABLE> (1)
+[Find] <PLACEMAT> (1)
+[Grab] <PLACEMAT> (1)
+[PutBack] <PLACEMAT> (1) <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <PLACEMAT> (1)
+[Find] <CLOTH NAPKIN> (1)
+[Grab] <CLOTH NAPKIN> (1)
+[PutBack] <CLOTH NAPKIN> (1) <TABLE> (1)
+[Walk] <KITCHEN> (1)
+[Find] <FOOD_TURKEY> (1)
+[Grab] <FOOD_TURKEY> (1)
+[Walk] <DINING ROOM> (1)
+[PutBack] <FOOD_TURKEY> (1) <TABLE> (1)
+[Walk] <KITCHEN> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Walk] <DINING ROOM> (1)
+[PutBack] <FOOD_FOOD> (1) <TABLE> (1)

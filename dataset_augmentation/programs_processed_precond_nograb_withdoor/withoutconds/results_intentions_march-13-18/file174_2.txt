@@ -1,0 +1,23 @@
+Wash clothes
+go to the bedroom, take clothes, go to the kitchen, open washing machine , put clothes , put soap and close, switch off washing machine
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Find] <CLOTHES_SOCKS> (1)
+[Grab] <CLOTHES_SOCKS> (1)
+[Walk] <KITCHEN> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[PutBack] <SOAP> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOff] <WASHING MACHINE> (1)

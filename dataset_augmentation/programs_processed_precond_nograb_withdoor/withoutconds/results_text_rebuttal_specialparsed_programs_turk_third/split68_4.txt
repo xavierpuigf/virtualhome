@@ -1,0 +1,19 @@
+File documents
+I use a pen to write down information on various forms
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[LookAt] <DOCUMENT> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <DOCUMENT> (1)
+[PutObjBack] <PEN> (1)
+[StandUp]
+[Walk] <FILING CABINET> (1)
+[Open] <FILING CABINET> (1)
+[PutBack] <DOCUMENT> (1) <FILING CABINET> (1)

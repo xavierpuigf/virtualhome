@@ -1,0 +1,13 @@
+Wash hands
+Walk to bathroom, walk to sink, put soap in hands, put water on hands, wash hands, rinse with water.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <SINK> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)

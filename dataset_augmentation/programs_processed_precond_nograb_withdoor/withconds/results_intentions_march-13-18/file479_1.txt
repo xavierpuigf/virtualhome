@@ -1,0 +1,10 @@
+2
+is_off: ('LIGHTING', '1') --> 
+location: ('LIGHTING', '1') --> ('DINING ROOM', '1')
+Turn on light
+I walk into the dining room and turn on the lights
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <LIGHTING> (1)
+[SwitchOn] <LIGHTING> (1)

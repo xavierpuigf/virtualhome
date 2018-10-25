@@ -1,0 +1,12 @@
+Listen to music
+go to the living room, turn on the radio, sit on the sofa, use my cell phone
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[TurnTo] <RADIO> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)

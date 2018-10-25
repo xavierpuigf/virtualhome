@@ -1,0 +1,16 @@
+Browse internet
+I walk into the home office and find the computer. I switch on the cumputer and sit in the chair in front of the computer. I find and grab the mouse, then shake it. I look at the computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <COMPUTER> (1)
+[Walk] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Walk] <CHAIR> (1)
+[Climb] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Shake] <MOUSE> (1)
+[LookAt] <COMPUTER> (1)

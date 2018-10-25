@@ -1,0 +1,23 @@
+Mop
+Get mop.  Get water.  Put cleaner on floor.  Wipe it.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <MOP BUCKET> (1)
+[Grab] <MOP BUCKET> (1)
+[Walk] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Pour] <CLEANING SOLUTION> (1) <MOP BUCKET> (1)
+[Find] <MOP> (1)
+[Grab] <MOP> (1)
+[Soak] <MOP> (1) <MOP BUCKET> (1)
+[Squeeze] <MOP> (1)
+[Find] <FLOOR> (1)
+[Wash] <FLOOR> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Grab] <MOP> (1)
+[PutObjBack] <MOP> (1)
+[PutObjBack] <MOP BUCKET> (1)

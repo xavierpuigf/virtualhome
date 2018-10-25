@@ -1,0 +1,13 @@
+Wash hands
+I have had my lunch and walked towards the sink and applied soap to my hands and washed cleanly.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <HANDS_BOTH> (1)

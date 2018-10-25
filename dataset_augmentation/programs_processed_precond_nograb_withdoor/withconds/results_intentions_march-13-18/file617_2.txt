@@ -1,0 +1,16 @@
+2
+inside: ('BOOK', '1') --> ('NIGHTSTAND', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('NIGHTSTAND', '1') --> ('BEDROOM', '1')
+Read book
+Go to the bedroom. Grab the book out of the nightstand. Lay down in bed. Open the book. Read the book.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <NIGHTSTAND> (1)
+[Open] <NIGHTSTAND> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BED> (1)
+[TurnTo] <BED> (1)
+[Sit] <BED> (1)
+[Read] <BOOK> (1)

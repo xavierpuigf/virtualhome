@@ -1,0 +1,18 @@
+Wash teeth
+I walk into the bathroom. I find the toothbrush and grab it. I find the tooth paste and grab it. I pour some tooth paste on the toothbrush, then I put it back. I brush my teeth, then I spit into the sink. I rinse the toothbrush and I put it back. Finally, I rinse my teeth.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTHBRUSH> (1)
+[Rinse] <TEETH> (1)

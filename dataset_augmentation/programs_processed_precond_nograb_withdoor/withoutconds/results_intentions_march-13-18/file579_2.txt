@@ -1,0 +1,10 @@
+Change TV channel
+change the tv channel
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

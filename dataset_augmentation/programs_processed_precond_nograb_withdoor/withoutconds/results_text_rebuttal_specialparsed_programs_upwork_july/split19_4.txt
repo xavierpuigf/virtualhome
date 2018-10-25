@@ -1,0 +1,15 @@
+Shred receipts
+Take old receipts and put through the shredder
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <FILING CABINET> (1)
+[Open] <FILING CABINET> (1)
+[Find] <RECEIPT> (1)
+[Grab] <RECEIPT> (1)
+[Close] <FILING CABINET> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[Find] <SHREDDER> (1)
+[PlugIn] <SHREDDER> (1)
+[SwitchOn] <SHREDDER> (1)
+[PutBack] <RECEIPT> (1) <SHREDDER> (1)

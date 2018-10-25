@@ -1,0 +1,16 @@
+2
+is_off: ('STEREO', '1') --> , ('LIGHT', '1') --> 
+location: ('STEREO', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1')
+Listen to music
+I am sitting in the living room with nothing to do today. I decide that I want to listen to some music and dance for a little while.
+
+
+[StandUp]
+[Walk] <BEDROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <STEREO> (1)
+[Walk] <STEREO> (1)
+[PlugIn] <STEREO> (1)
+[SwitchOn] <STEREO> (1)
+[Dance]

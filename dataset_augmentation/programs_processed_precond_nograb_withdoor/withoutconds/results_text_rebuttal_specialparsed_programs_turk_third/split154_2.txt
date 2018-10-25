@@ -1,0 +1,19 @@
+Teach them to make their bed
+The child and I take the linens off the bed and then put the fitted sheet on. We pull and stretch it to fit just right, no wrinkles. We then put on the top sheet followed by a blanket. All nice and neat with no wrinkles. Now we put the pillow on top.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CABINET> (1)
+[Walk] <CABINET> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Walk] <BED> (1)
+[Cover] <BED> (1) <SHEETS> (1)
+[Walk] <CABINET> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Find] <PILLOW> (2)
+[Grab] <PILLOW> (2)
+[Walk] <BED> (1)
+[PutBack] <PILLOW> (1) <BED> (1)
+[PutBack] <PILLOW> (2) <BED> (1)

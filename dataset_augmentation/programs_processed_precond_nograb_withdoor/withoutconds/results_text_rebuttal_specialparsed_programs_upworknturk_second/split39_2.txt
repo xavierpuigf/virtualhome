@@ -1,0 +1,30 @@
+Pay bills
+Sit down in the chair. Use the keyboard and mouse to log into my banks website.  Go to the bill pay section.  Enter the values from my statements.  Click to approve the amounts.  Print off the payment confirmation.  Log out of the bank's website.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <BILLS> (1)
+[Grab] <BILLS> (1)
+[LookAt] <BILLS> (1)
+[Open] <DESK> (1)
+[PutBack] <BILLS> (1) <DESK> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <PRINTER> (1)
+[SwitchOn] <PRINTER> (1)
+[Find] <RECEIPT> (1)
+[Grab] <RECEIPT> (1)
+[StandUp]
+[Walk] <FILING CABINET> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[Open] <FOLDER> (1)
+[PutBack] <RECEIPT> (1) <FOLDER> (1)
+[Close] <FOLDER> (1)
+[Open] <FILING CABINET> (1)
+[PutBack] <FOLDER> (1) <FILING CABINET> (1)

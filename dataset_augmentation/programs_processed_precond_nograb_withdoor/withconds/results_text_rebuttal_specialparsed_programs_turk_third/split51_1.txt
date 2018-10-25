@@ -1,0 +1,15 @@
+2
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('BOOKSHELF', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+nearby: ('CABINET', '1') --> 
+Read book
+Pick a book from the bookshelf, lie in the couch, read.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOKSHELF> (1)
+[TurnTo] <BOOKSHELF> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <COUCH> (1)
+[Lie] <COUCH> (1)
+[Read] <BOOK> (1)

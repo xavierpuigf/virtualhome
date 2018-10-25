@@ -1,0 +1,17 @@
+Play games
+Play chess with my friend using large tournament sized pieces.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Walk] <CABINET> (1)
+[Find] <CHESSBOARD> (1)
+[Grab] <CHESSBOARD> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TABLE> (1)
+[PutBack] <CHESSBOARD> (1) <TABLE> (1)
+[LookAt] <WOMAN> (1)
+[PointAt] <CHESSBOARD> (1)
+[Play]

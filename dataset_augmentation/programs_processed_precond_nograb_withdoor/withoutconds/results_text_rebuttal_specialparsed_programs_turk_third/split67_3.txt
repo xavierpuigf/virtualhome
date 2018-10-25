@@ -1,0 +1,11 @@
+Hang up jacket
+Remove coats and other outwear from your person, and assist others to do so. If using a closet, remove a hanger. Place the coat on the hanger.  Place hats on a shelf and boots on the floor. Mittens, or gloves, and scarves can be placed on a shelf, or left in the pockets of the coat, in the case of the mittens, or gloves, or around the neck of the coat, in the case of the scarf.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <HANGER> (1)
+[PutOff] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <CLOSET> (1)
