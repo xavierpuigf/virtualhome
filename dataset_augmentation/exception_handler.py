@@ -18,6 +18,7 @@ class ProgramException(Enum):
     NOT_OFF = 8
     NOT_ON = 9
     NOT_PLUGGED_OUT = 10
+    OCCUPIED = 11
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -29,7 +30,9 @@ message_to_exception = {
     'is not facing': ProgramException.NOT_FACING,
     'is not off': ProgramException.NOT_OFF,
     'is not on': ProgramException.NOT_ON,
-    'is not plugged_out': ProgramException.NOT_PLUGGED_OUT
+    'is not plugged_out': ProgramException.NOT_PLUGGED_OUT,
+    'many things on': ProgramException.OCCUPIED,
+    'on the': ProgramException.OCCUPIED,
 }
 
 def printProgramWithLine(program, lines=[]):
@@ -41,7 +44,7 @@ def printProgramWithLine(program, lines=[]):
         print('{}  {}'.format(char, elem))
 
 def parseException(exception_str, verbose=True):
-    split_exception = exception_str.split(',')
+    split_exception = exception_str.replace('> (', '>(').split(',')
     exception_name = split_exception[2]
     exception_split = exception_name.split('when executing')
     exception_name = exception_split[0]
@@ -49,27 +52,36 @@ def parseException(exception_str, verbose=True):
     instruction = exception_split[1][1:-1]
 
     exception_name = exception_name.split()[2:]
+    argument = [x for x in exception_name if ')' in x]
+    
+    for it_arg, argu in enumerate(argument):
+        obji = argu.split('>')[0][1:]
+        idi = argu.split('(')[1][:-1]
+        argument[it_arg] = (obji, idi)
     exception_name = [x for x in exception_name if ')' not in x]
     exception_name = ' '.join(exception_name)
+
     line_number = int(instruction.split()[-1][1:-1])-1
 
     if exception_name in message_to_exception.keys():
-        return line_number, message_to_exception[exception_name]
+        return line_number, message_to_exception[exception_name], argument
 
     else:
         if verbose:
             print(colored('Exception "{}" not found'.format(exception_name), 'red'))
+            print(colored(exception_str, 'blue'))
+            
         raise ValueError
 
     return None
 
-def correctedProgram(input_program, init_state, exception_str, verbose=True):
+def correctedProgram(input_program, init_state, final_state, exception_str, verbose=True):
     #print('Correct exception {}'.format(exception_str))
     instructions_program = input_program[4:]
     program_header = input_program[:4]
     try:
-        line_exception, exception = parseException(exception_str, verbose)
-    except:
+        line_exception, exception, argument_exception = parseException(exception_str, verbose)
+    except ValueError:
         if verbose:
             printProgramWithLine(instructions_program)
         return None
@@ -120,6 +132,36 @@ def correctedProgram(input_program, init_state, exception_str, verbose=True):
 
     if exception == ProgramException.NOT_PLUGGED_OUT:
         corrected_instructions = removeInstructions([line_exception], instructions_program)
+
+    if exception == ProgramException.OCCUPIED:
+       
+        node_state_dict = final_state.to_dict()['nodes']
+        edge_state_dict = final_state.to_dict()['edges']
+        edge_interest = [edge_graph['from_id'] for edge_graph in edge_state_dict 
+                if (edge_graph['to_id'] == int(argument_exception[0][1]) 
+                    and edge_graph['relation_type'] in ['ON'])]
+        node_interest = [node_graph for node_graph in node_state_dict if node_graph['id'] in edge_interest]
+
+        # assumption: all the objects did not appear in the program before
+        prev_obj = {}
+        for object_script in list(final_state._script_objects):
+            ob_mod = object_script[0]
+            if ob_mod not in prev_obj:
+                prev_obj[ob_mod] = 1
+            else:
+                prev_obj[ob_mod] += 1
+        for object_occupied in node_interest:
+            object_name = object_occupied['class_name']
+            if object_name not in prev_obj.keys():
+                id_object = 1
+            else:
+                id_object = prev_obj[object_name] + 1
+            # TODO: we may want to pick objects with 2 hands
+            insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
+            insert_in.append([line_exception, '[Grab] <{}> ({})'.format(object_name, id_object)])
+            insert_in.append([line_exception, '[Release] <{}> ({})'.format(object_name, id_object)])
+        corrected_instructions = insertInstructions(insert_in, instructions_program)
+        #corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     #print('\n')
     #print(colored('Corrected', 'green'))
