@@ -14,7 +14,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = False
+verbose = True
 dump = False
 
 
@@ -143,23 +143,23 @@ def check_script(program_str, precond, graph_path):
     graph_dict = utils.load_graph_dict(graph_path)
 
     ## add missing object from scripts (id from 1000)
-    objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict) 
+    objects_in_script, first_room = helper.add_missing_object_from_script(script, precond, graph_dict)
     ## set object state to default 
     objects_id_in_script = [v for v in objects_in_script.values()]
-    helper.set_to_default_state(graph_dict, id_checker=lambda v: v in objects_id_in_script)
+    helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
     ## place the random objects (id from 2000)
     #helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
     helper.random_change_object_state(objects_in_script, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
     ## set relation and state from precondition
-    helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
+    helper.prepare_from_precondition(precond, objects_in_script, graph_dict)
 
     ## place the random objects (id from 2000)
     ## place the random objects (id from 2000)
     helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
     ## set object state to default 
-    helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
+    helper.set_to_default_state(graph_dict, None, id_checker=lambda v: v >= 2000)
         
 
     ## set object state to default 
@@ -198,7 +198,7 @@ def check_2(dir_path, graph_path):
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file1028_1.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file196_2.txt')]
 
     iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
     for j, txt_file in iterators:
@@ -212,7 +212,7 @@ def check_2(dir_path, graph_path):
 
         precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
         precond = json.load(open(precond_path))
-        print(txt_file)
+        #print(txt_file)
         
         for p in precond:
             for k, vs in p.items():
@@ -227,22 +227,22 @@ def check_2(dir_path, graph_path):
         graph_dict = utils.load_graph_dict(graph_path)
 
         ## add missing object from scripts (id from 1000) and set them to default setting
-        objects_in_script, room_mapping = helper.add_missing_object_from_script(script, graph_dict)
+        objects_in_script, first_room = helper.add_missing_object_from_script(script, precond, graph_dict)
         objects_id_in_script = [v for v in objects_in_script.values()]
-        helper.set_to_default_state(graph_dict, id_checker=lambda v: v in objects_id_in_script)
+        helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
         ## place the random objects (id from 2000)
         helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
         helper.random_change_object_state(objects_in_script, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
-        helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
+        helper.prepare_from_precondition(precond, objects_in_script, graph_dict)
 
         #ipdb.set_trace()
         ## place the random objects (id from 2000)
         helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
         ## set object state to default 
-        helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
+        helper.set_to_default_state(graph_dict, None, id_checker=lambda v: v >= 2000)
         assert len(graph_dict["nodes"]) == max_nodes
 
         graph = EnvironmentGraph(graph_dict)

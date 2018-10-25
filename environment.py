@@ -163,6 +163,20 @@ class NodeQueryType(Enum):
     NODE_WITH_ATTR = 3
 
 
+def _ensure_unique_nodes_unique_edges(graph_dict):
+    
+    nodes = graph_dict["nodes"]
+    edges = graph_dict["edges"]
+    
+    new_nodes = {node["id"]: node for node in nodes}
+    new_nodes = list(new_nodes.values())
+
+    new_edges = {"{}.{}.{}".format(edge["from_id"], edge["relation_type"], edge["to_id"]): edge for edge in edges}
+    new_edges = list(new_edges.values())
+    
+    return {"nodes": new_nodes, "edges": new_edges}
+
+        
 class EnvironmentGraph(object):
 
     def __init__(self, dictionary=None):
@@ -171,7 +185,10 @@ class EnvironmentGraph(object):
         self._node_map = {}
         self._class_name_map = {}
         if dictionary is not None:
+            dictionary = _ensure_unique_nodes_unique_edges(dictionary)
             self._from_dictionary(dictionary)
+        else:
+            self._dictionary = dictionary
 
     def _from_dictionary(self, d):
         nodes = [GraphNode.from_dict(n) for n in d['nodes']]
@@ -367,6 +384,7 @@ class EnvironmentState(object):
         self._new_nodes[node.id] = node
 
     def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
+
         new_state = EnvironmentState(self._graph, self._name_equivalence, self.instance_selection)
         new_state._new_nodes = self._new_nodes.copy()
         new_state._removed_edges_from = self._removed_edges_from.copy()
@@ -376,6 +394,7 @@ class EnvironmentState(object):
         if obj is not None and node is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
         new_state.apply_changes(changers)
+
         return new_state
 
     def apply_changes(self, changers: List['StateChanger']):
