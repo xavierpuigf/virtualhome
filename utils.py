@@ -5,7 +5,7 @@ import os
 import copy
 import numpy as np
 from environment import EnvironmentGraph, Property, Room
-from execution import SitExecutor
+from execution import SitExecutor, LieExecutor
 import ipdb
 
 random.seed(123)
@@ -85,10 +85,11 @@ class BinaryVariable(object):
 
 class graph_dict_helper(object):
 
-    def __init__(self, properties_data, object_placing, object_states):
+    def __init__(self, properties_data, object_placing, object_states, max_nodes):
         self.properties_data = properties_data
         self.object_placing = object_placing
         self.object_states = object_states
+        self.max_nodes = max_nodes
 
         self.open_closed = BinaryVariable(["OPEN", "CLOSED"], default="CLOSED")
         self.on_off = BinaryVariable(["ON", "OFF"], default="OFF")
@@ -394,11 +395,13 @@ class graph_dict_helper(object):
                     self._add_missing_node(graph_dict, self.random_objects_id, src_name, "placable_objects")
                     graph_dict["edges"].append({'relation_type': "INSIDE", "from_id": self.random_objects_id, "to_id": random.choice(rooms_id)})
                     graph_dict["edges"].append({'relation_type': relation_placing_simulator[tgt_name["relation"].lower()], "from_id": self.random_objects_id, "to_id": tgt_id})
+                    graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": self.random_objects_id, "to_id": tgt_id})
+                    graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": tgt_id, "to_id": self.random_objects_id})
                     self.random_objects_id += 1
                     n -= 1
                     break
 
-    def random_change_object_state(self, objects_in_script, graph_dict):
+    def random_change_object_state(self, objects_in_script, graph_dict, id_checker):
 
         open_closed = self.open_closed
         on_off = self.on_off
@@ -406,54 +409,57 @@ class graph_dict_helper(object):
         plugged_in_out = self.plugged_in_out
         object_placing = self.object_placing
         object_states = self.object_states
-        objects_to_place = list(object_placing.keys())
         states_mapping = self.states_mapping
 
-        object_id_in_program = [i for i in objects_in_script.values()]
         available_states = ['dirty', 'clean', 'open', 'closed', 'free', 'occupied', 'plugged', 'unplugged', 'on', 'off']
         for node in graph_dict["nodes"]:
-            if node["id"] in object_id_in_program:
-                continue
+            if id_checker(node["id"]):
+                if node["class_name"] in object_states:
+                    possible_states = object_states[node["class_name"]]
+                    possible_states = [i for i in filter(lambda v: v in available_states, possible_states)]
+                    if len(possible_states) == 0:
+                        continue
 
-            if node["class_name"] in object_states:
-                possible_states = object_states[node["class_name"]]
-                possible_states = [i for i in filter(lambda v: v in available_states, possible_states)]
-                if len(possible_states) == 0:
-                    continue
+                    state = random.choice(possible_states)
+                    if state in ['free', 'occupied']:
+                        pass
+                    else:
+                        state = states_mapping[state]
+                        if state in ['dirty', 'clean']:
+                            clean_dirty.sample_state(node)
+                        elif state in ['on', 'off']:
+                            on_off.sample_state(node)
+                        elif state in ['open', 'closed']:
+                            open_closed.sample_state(node)
+                        elif state in ['plugged_in', 'plugged_out']:
+                            plugged_in_out.sample_state(node)
 
-                state = random.choice(possible_states)
-                if state in ['free', 'occupied']:
-                    if state == 'free':
-                        self._change_to_totally_free(node, graph_dict)
-                    elif state == 'occupied':
-                        self._change_to_occupied(node, graph_dict, objects_to_place)
-                else:
-                    state = states_mapping[state]
-                    if state in ['dirty', 'clean']:
-                        clean_dirty.sample_state(node)
-                    elif state in ['on', 'off']:
-                        on_off.sample_state(node)
-                    elif state in ['open', 'closed']:
-                        open_closed.sample_state(node)
-                    elif state in ['plugged_in', 'plugged_out']:
-                        plugged_in_out.sample_state(node)
+    def _remove_one_random_nodes(self, graph_dict):
+        start_id = 2000
+        random_nodes_ids = [node["id"] for node in filter(lambda v: v["id"] >= start_id, graph_dict["nodes"])]
+        remove_id = np.min(random_nodes_ids)
+
+        graph_dict["nodes"] = [node for node in filter(lambda v: v["id"] != remove_id, graph_dict["nodes"])]
+        graph_dict["edges"] = [edge for edge in filter(lambda v: v["from_id"] != remove_id and v["to_id"] != remove_id, graph_dict["edges"])]
 
     def _change_to_occupied(self, node, graph_dict, objects_to_place):
 
-        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES:
-            max_occupancy = SitExecutor._MAX_OCCUPANCIES[node["class_name"]]
-            occupied_nodes = [node for node in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
-            current_state = 'free' if len(occupied_nodes) < max_occupancy else "occupied"
+        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES or node["class_name"] in LieExecutor._MAX_OCCUPANCIES:
+            name = node["class_name"]
+            max_occupancy = SitExecutor._MAX_OCCUPANCIES[name] if name in SitExecutor._MAX_OCCUPANCIES else LieExecutor._MAX_OCCUPANCIES[name]
+            occupied_edges = [_edge for _edge in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
+            current_state = 'free' if len(occupied_edges) < max(max_occupancy-1, 1) else "occupied"
 
             if current_state != "occupied":
-                number_objects_to_add = max_occupancy - len(occupied_nodes)
+                number_objects_to_add = max_occupancy - len(occupied_edges)
                 
                 object_placing = self.object_placing
                 random.shuffle(objects_to_place)
-                                            
+
                 for src_name in objects_to_place:
                     tgt_names = object_placing[src_name]
-                    if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
+                    if name in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
+                        self._remove_one_random_nodes(graph_dict)
                         self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
                         graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
                         graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": self.random_objects_id, "to_id": node["id"]})
@@ -465,22 +471,23 @@ class graph_dict_helper(object):
 
     def _change_to_totally_free(self, node, graph_dict):
 
-        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES:
-            max_occupancy = SitExecutor._MAX_OCCUPANCIES[node["class_name"]]
-            occupied_nodes = [node for node in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
-            current_state = 'free' if len(occupied_nodes) < max_occupancy else "occupied"
+        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES or node["class_name"] in LieExecutor._MAX_OCCUPANCIES:
 
-            if current_state != "free":
+            occupied_edges = [_edge for _edge in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
 
-                removed_edges = [edge for edge in filter(lambda v: v["relation_type"] == 'ON' and v["to_id"] == node["id"], graph_dict["edges"])]
-                remove_object_id = [edge["from_id"] for edge in removed_edges]
+            occupied_nodes_id = [_edge["from_id"] for _edge in occupied_edges]
+            removed_edges = []
 
-                for edge in removed_edges:
-                    graph_dict["edges"].remove(edge)
-                                        
-                floor_id = [node["id"] for node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
-                for obj_id in remove_object_id:
-                    to_id = random.choice(floor_id)
-                    graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
-                    graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": obj_id, "to_id": to_id})
-                    graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": to_id, "to_id": obj_id})
+            for occupied_node_id in occupied_nodes_id:
+                removed_edges += [edge for edge in filter(lambda v: v["from_id"] == occupied_node_id and v["to_id"] == node["id"], graph_dict["edges"])]
+                removed_edges += [edge for edge in filter(lambda v: v["from_id"] == node["id"] and v["to_id"] == occupied_node_id, graph_dict["edges"])]
+
+            for edge in removed_edges:
+                graph_dict["edges"].remove(edge)
+                                    
+            floor_id = [_node["id"] for _node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
+            for obj_id in occupied_nodes_id:
+                to_id = random.choice(floor_id)
+                graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
+                graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": obj_id, "to_id": to_id})
+                graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": to_id, "to_id": obj_id})
