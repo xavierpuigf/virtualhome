@@ -1,0 +1,31 @@
+4
+inside: ('FOOD_ONION', '1') --> ('FRIDGE', '1'), ('COOKINGPOT', '1') --> ('FRIDGE', '1'), ('FOOD_CHICKEN', '1') --> ('FRIDGE', '1')
+location: ('KITCHEN COUNTER', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('KITCHEN COUNTER', '1') --> ('FRIDGE', '1'), ('TABLE', '1') --> ('FRIDGE', '1'), ('FOOD_CHICKEN', '1') --> ('FRIDGE', '1'), ('STOVE', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('COOKINGPOT', '1') --> ('FRIDGE', '1'), ('FOOD_ONION', '1') --> ('FRIDGE', '1')
+Cook some food
+to cook some food, go to kitchen, take ingredients from fridge, put them on a table, put all ingredients on pot, cook it on the stove
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_CHICKEN> (1)
+[Grab] <FOOD_CHICKEN> (1)
+[Find] <KITCHEN COUNTER> (1)
+[PutBack] <FOOD_CHICKEN> (1) <KITCHEN COUNTER> (1)
+[Grab] <FOOD_CHICKEN> (1)
+[Find] <TABLE> (1)
+[PutBack] <FOOD_CHICKEN> (1) <TABLE> (1)
+[Cut] <FOOD_CHICKEN> (1)
+[Find] <COOKINGPOT> (1)
+[Grab] <COOKINGPOT> (1)
+[PutBack] <COOKINGPOT> (1) <TABLE> (1)
+[Find] <FOOD_ONION> (1)
+[Grab] <FOOD_ONION> (1)
+[PutBack] <FOOD_ONION> (1) <TABLE> (1)
+[Cut] <FOOD_ONION> (1)
+[Grab] <COOKINGPOT> (1)
+[Find] <STOVE> (1)
+[PutBack] <COOKINGPOT> (1) <STOVE> (1)

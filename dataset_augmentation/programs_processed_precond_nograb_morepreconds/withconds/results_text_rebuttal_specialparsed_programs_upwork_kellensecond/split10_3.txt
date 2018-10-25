@@ -1,0 +1,17 @@
+3
+in: ('CLOTHES_PANTS', '1') --> ('Character', 1)
+location: ('TOILET', '1') --> ('BATHROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BATHROOM', '1')
+atreach: ('TOILET', '1') --> ('TOILET', '1'), ('CLOTHES_PANTS', '1') --> ('TOILET', '1')
+use bathroom
+I pull out my penis, and i pee in the toilet, i then flush.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[TurnTo] <TOILET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Flush] <TOILET> (1)
+[PutOn] <CLOTHES_PANTS> (1)

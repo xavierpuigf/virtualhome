@@ -1,0 +1,12 @@
+Browse internet
+Use social media apps on your phone
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CELLPHONE> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[Uncover] <CELLPHONE> (1)
+[TurnTo] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)
+[Type] <CELLPHONE> (1)

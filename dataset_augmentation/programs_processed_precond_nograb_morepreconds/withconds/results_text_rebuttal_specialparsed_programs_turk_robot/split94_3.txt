@@ -1,0 +1,15 @@
+3
+location: ('CLOSET', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('CLOSET', '1') --> ('CLOSET', '1'), ('CLOTHES_DRESS', '1') --> ('CLOSET', '1')
+Fold laundry
+Fold my clothes the way I like them.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOSET> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Fold] <CLOTHES_DRESS> (1)
+[Close] <CLOSET> (1)

@@ -1,0 +1,17 @@
+Surf internet
+SIT ON COUCH OR CHAIR AND SURF SHOPPING AN SOCIAL MEDIA SITES
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Shake] <MOUSE> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

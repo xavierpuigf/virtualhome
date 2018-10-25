@@ -1,0 +1,12 @@
+3
+is_off: ('COMPUTER', '2') --> 
+location: ('COMPUTER', '2') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '2') --> ('COMPUTER', '2')
+Work
+walk to home office ,find computer ,switch on computer and work
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (2)
+[Find] <COMPUTER> (2)
+[SwitchOn] <COMPUTER> (2)

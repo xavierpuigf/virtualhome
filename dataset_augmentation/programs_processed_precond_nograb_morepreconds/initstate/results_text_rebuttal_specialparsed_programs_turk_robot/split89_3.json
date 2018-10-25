@@ -1,0 +1,1 @@
+[{"inside": [["BRUSH", "1"], ["CLOSET", "1"]]}, {"location": [["TOILET", "1"], ["BATHROOM", "1"]]}, {"location": [["CLOSET", "1"], ["BATHROOM", "1"]]}, {"closed": ["CLOSET", "1"]}, {"atreach": [["TOILET", "1"], ["BRUSH", "1"]]}, {"atreach": [["CLOSET", "1"], ["BRUSH", "1"]]}, {"atreach": [["BRUSH", "1"], ["BRUSH", "1"]]}]

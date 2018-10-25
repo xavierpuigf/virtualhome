@@ -1,0 +1,27 @@
+Slice apple
+Take apple out of the fridge. Pull knife out of the drawer. Take out cutting board. Slice apple with knife on the cutting board. Put apple slices on a paper plate.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_APPLE> (1)
+[Grab] <FOOD_APPLE> (1)
+[Close] <FRIDGE> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <CUTTING BOARD> (1)
+[Grab] <CUTTING BOARD> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Close] <KITCHEN CABINET> (1)
+[Find] <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[PutBack] <CUTTING BOARD> (1) <TABLE> (1)
+[PutBack] <FOOD_APPLE> (1) <CUTTING BOARD> (1)
+[Cut] <FOOD_APPLE> (1)
+[Grab] <FOOD_APPLE> (1)
+[PutBack] <FOOD_APPLE> (1) <PLATE> (1)
+[PutObjBack] <KNIFE> (1)

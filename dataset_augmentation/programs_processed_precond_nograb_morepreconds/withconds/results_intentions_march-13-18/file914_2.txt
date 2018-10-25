@@ -1,0 +1,19 @@
+3
+in: ('PLATE', '1') --> ('SINK', '1')
+location: ('PLATE', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1')
+atreach: ('PLATE', '1') --> ('SINK', '1'), ('DISH SOAP', '1') --> ('SINK', '1')
+Wash dishes by hand
+I walk to the sink and find a dirty plate. I squeeze dish soap onto the plate and start to wash the plate. I rinse the plate and wipe it dry.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Squeeze] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <PLATE> (1)
+[Wash] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Wipe] <PLATE> (1)

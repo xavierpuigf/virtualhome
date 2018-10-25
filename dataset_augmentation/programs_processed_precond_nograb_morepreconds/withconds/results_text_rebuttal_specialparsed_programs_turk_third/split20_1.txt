@@ -1,0 +1,32 @@
+6
+inside: ('PEN', '1') --> ('DESK', '1'), ('CHECK', '1') --> ('DESK', '1')
+atreach: ('KEYBOARD', '1') --> ('DESK', '1'), ('COMPUTER', '1') --> ('DESK', '1'), ('BILLS', '1') --> ('BILLS', '1'), ('PEN', '1') --> ('DESK', '1'), ('DESK', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('DESK', '1'), ('CHECK', '1') --> ('DESK', '1')
+location: ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('BILLS', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+closed: ('DESK', '1') --> 
+is_off: ('COMPUTER', '1') --> 
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+Tax filing
+Turning in quarterly payments , paying the tax  bill
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <BILLS> (1)
+[Find] <BILLS> (1)
+[Grab] <BILLS> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <BILLS> (1)
+[LookAt] <BILLS> (1)
+[Open] <DESK> (1)
+[PutBack] <BILLS> (1) <DESK> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <CHECK> (1)
+[Grab] <CHECK> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <CHECK> (1)
+[PutObjBack] <PEN> (1)

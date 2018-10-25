@@ -1,0 +1,24 @@
+Wash dishes by hand
+In the kitchen, I grab the plate on the table and put them in them sink. I add water and soap in the sink. I use the rag to wash the plate. then use an another to dry it.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Walk] <SINK> (1)
+[PutBack] <PLATE> (1) <SINK> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <SINK> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <SINK> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Wash] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Find] <RAG> (2)
+[Grab] <RAG> (2)
+[Scrub] <PLATE> (1)

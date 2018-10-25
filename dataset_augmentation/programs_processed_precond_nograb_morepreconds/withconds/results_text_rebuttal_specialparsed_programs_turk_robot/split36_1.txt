@@ -1,0 +1,43 @@
+8
+inside: ('TOY', '2') --> ('DRESSER', '1')
+atreach: ('TOY', '1') --> ('TOY', '1'), ('VACUUM CLEANER', '1') --> ('CLOSET', '1'), ('DRESSER', '1') --> ('DRESSER', '1'), ('TOY', '2') --> ('DRESSER', '1'), ('CLOSET', '1') --> ('CLOSET', '1')
+location: ('TOY', '1') --> ('BEDROOM', '1'), ('VACUUM CLEANER', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
+closed: ('DRESSER', '1') --> , ('CLOSET', '1') --> 
+in: ('VACUUM CLEANER', '1') --> ('CLOSET', '1')
+is_off: ('VACUUM CLEANER', '1') --> 
+plugged: ('VACUUM CLEANER', '1') --> 
+unplugged: ('VACUUM CLEANER', '1') --> 
+Clean room
+Pick up his toys, vacuum the garbage off the floor.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <TOY> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Walk] <DRESSER> (1)
+[Open] <DRESSER> (1)
+[PutBack] <TOY> (1) <DRESSER> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Walk] <DRESSER> (1)
+[PutBack] <TOY> (2) <DRESSER> (1)
+[Close] <DRESSER> (1)
+[Walk] <CLOSET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <VACUUM CLEANER> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

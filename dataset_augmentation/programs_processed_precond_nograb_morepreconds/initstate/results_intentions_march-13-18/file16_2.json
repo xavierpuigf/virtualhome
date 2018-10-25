@@ -1,0 +1,1 @@
+[{"in": [["BOOK", "1"], ["COFFEE TABLE", "1"]]}, {"location": [["BOOK", "1"], ["LIVING ROOM", "1"]]}, {"location": [["CHAIR", "1"], ["LIVING ROOM", "1"]]}, {"location": [["COFFEE TABLE", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["BOOK", "1"], ["COFFEE TABLE", "1"]]}, {"atreach": [["CHAIR", "1"], ["CHAIR", "1"]]}]

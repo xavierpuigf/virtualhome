@@ -1,0 +1,17 @@
+3
+is_off: ('LAMP', '1') --> 
+location: ('BOOK', '1') --> ('HOME OFFICE', '1'), ('LAMP', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('BOOK', '1') --> ('LAMP', '1'), ('LAMP', '1') --> ('LAMP', '1'), ('CHAIR', '1') --> ('LAMP', '1')
+Study
+Study norwegian
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LAMP> (1)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Read] <BOOK> (1)

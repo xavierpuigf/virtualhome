@@ -1,0 +1,12 @@
+Put away keys
+Return keys into a bag
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <KEYS> (1)
+[Find] <KEYS> (1)
+[Grab] <KEYS> (1)
+[Find] <BAG> (1)
+[Open] <BAG> (1)
+[PutBack] <KEYS> (1) <BAG> (1)
+[Close] <BAG> (1)

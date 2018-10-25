@@ -1,0 +1,14 @@
+Turn on light
+Go to the kitchen and living room and turn on the lights.
+
+
+[Run] <KITCHEN> (1)
+[Walk] <LIGHTING> (1)
+[Find] <LIGHTING> (1)
+[SwitchOn] <LIGHTING> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <LIGHTING> (2)
+[Find] <LIGHTING> (2)
+[SwitchOn] <LIGHTING> (2)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)

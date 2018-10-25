@@ -1,0 +1,12 @@
+2
+is_off: ('TELEVISION', '1') --> 
+atreach: ('COUCH', '1') --> ('REMOTE CONTROL', '1')
+Watch TV
+Sit on the couch. Find the remote. Turn on the TV and find the channel you like with the remote. Watch.
+
+
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

@@ -1,0 +1,13 @@
+0
+Set up table
+Setting the table for a meal
+
+
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[PointAt] <TABLE> (1)
+[Wash] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[LookAt] <TABLE> (1)
+[Uncover] <TABLE> (1)
+[TurnTo] <TABLE> (1)

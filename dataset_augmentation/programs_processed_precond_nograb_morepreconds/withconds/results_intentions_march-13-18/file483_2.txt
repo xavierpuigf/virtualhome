@@ -1,0 +1,12 @@
+2
+location: ('MAIL', '3') --> ('HOME OFFICE', '1'), ('COMPUTER', '2') --> ('HOME OFFICE', '1')
+atreach: ('MAIL', '3') --> ('COMPUTER', '2')
+Write an email
+walk to home office ,find computer , switch on ,
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (2)
+[Find] <COMPUTER> (2)
+[Find] <MAIL> (3)
+[Write] <MAIL> (3)

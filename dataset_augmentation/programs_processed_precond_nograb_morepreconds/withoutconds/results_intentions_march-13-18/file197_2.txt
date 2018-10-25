@@ -1,0 +1,17 @@
+Watch TV
+i will walk into living room and the i will first take the remote control switch on tv after that i will watch all my favorite shows
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[SwitchOn] <ELECTRICAL OUTLET> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

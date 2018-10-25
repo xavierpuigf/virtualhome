@@ -1,0 +1,20 @@
+4
+inside: ('TOY', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1')
+closed: ('CABINET', '1') --> 
+atreach: ('TOY', '1') --> ('CABINET', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('BED', '1') --> ('CABINET', '1')
+Play with toys
+Go into child's room and play with a puzzle.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Close] <CABINET> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[TurnTo] <TOY> (1)
+[LookAt] <TOY> (1)
+[Shake] <TOY> (1)

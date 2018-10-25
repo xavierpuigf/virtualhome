@@ -1,0 +1,21 @@
+Cook some food
+Unwrap a bag of microwave popcorn. Place it into the microwave. Set the timer for three minutes. Remove the bag from the microwave.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Close] <CUPBOARD> (1)
+[Walk] <MICROWAVE> (1)
+[Open] <MICROWAVE> (1)
+[PutBack] <FOOD_FOOD> (1) <MICROWAVE> (1)
+[Close] <MICROWAVE> (1)
+[SwitchOn] <MICROWAVE> (1)
+[Sleep]
+[WakeUp]
+[Open] <MICROWAVE> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Close] <MICROWAVE> (1)

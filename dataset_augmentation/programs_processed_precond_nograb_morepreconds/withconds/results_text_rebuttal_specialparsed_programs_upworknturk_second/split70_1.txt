@@ -1,0 +1,22 @@
+4
+inside: ('BOOK', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('BOOKSHELF', '1')
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('BOOKSHELF', '1') --> ('LIVING ROOM', '1')
+closed: ('BOOKSHELF', '1') --> 
+atreach: ('BOOK', '1') --> ('BOOKSHELF', '1'), ('SOFA', '1') --> ('BOOKSHELF', '1'), ('BOOKSHELF', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('BOOKSHELF', '1')
+Read book
+Take books off the book shelf and read.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <BOOKSHELF> (1)
+[Find] <BOOKSHELF> (1)
+[Open] <BOOKSHELF> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Read] <BOOK> (1)
+[PutObjBack] <BOOK> (1)
+[Find] <BOOK> (2)
+[Grab] <BOOK> (2)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Read] <BOOK> (2)

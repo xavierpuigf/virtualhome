@@ -1,0 +1,20 @@
+3
+in: ('TOOTH PASTE', '1') --> ('TOOTHBRUSH HOLDER', '1')
+location: ('WATER', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH HOLDER', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+atreach: ('WATER', '1') --> ('WATER', '1'), ('TOOTHBRUSH', '1') --> ('TOOTHBRUSH HOLDER', '1'), ('TOOTH PASTE', '1') --> ('TOOTHBRUSH HOLDER', '1')
+Brush teeth
+today morning i went to bathroom and took my toothbrush and paste from tooth brush holder and brushed and cleaned my teeth well
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[PutBack] <TOOTH PASTE> (1) <TOOTHBRUSH HOLDER> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <TOOTHBRUSH> (1)

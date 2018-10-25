@@ -1,0 +1,15 @@
+2
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('BOOKMARK', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('BOOK', '1') --> ('BOOK', '1'), ('BOOKMARK', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('BOOKMARK', '1')
+Read book
+Pick up a book and open to the last page you were on. Read the book.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <BOOK> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <BOOKMARK> (1)
+[Read] <BOOK> (1)

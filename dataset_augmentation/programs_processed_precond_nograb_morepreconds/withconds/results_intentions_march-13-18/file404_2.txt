@@ -1,0 +1,31 @@
+5
+is_off: ('DISHWASHER', '1') --> 
+inside: ('SPOON', '2') --> ('DISHWASHER', '1')
+location: ('DISHWASHER', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1'), ('PLATE', '2') --> ('DINING ROOM', '1'), ('FORK', '2') --> ('DINING ROOM', '1')
+closed: ('DISHWASHER', '1') --> 
+atreach: ('DISHWASHER', '1') --> ('DISHWASHER', '1'), ('PLATE', '1') --> ('PLATE', '2'), ('FORK', '1') --> ('PLATE', '2'), ('SPOON', '2') --> ('DISHWASHER', '1'), ('PLATE', '2') --> ('PLATE', '2'), ('FORK', '2') --> ('PLATE', '2')
+Wash dishes with dishwasher
+Walk to Dining room. Grab 2 plates. Grab 2 spoons. Grab 2 Forks. Walk to kitchen. Open dishwasher. Put 2 plates in dishwasher. Put 2 spoons in dishwasher. Put 2 Forksin dishwasher. Close dishwasher. Switch on dishwasher.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <PLATE> (2)
+[Find] <PLATE> (2)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Grab] <PLATE> (2)
+[Find] <FORK> (2)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Grab] <FORK> (2)
+[Walk] <KITCHEN> (1)
+[Walk] <DISHWASHER> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[PutBack] <PLATE> (2) <DISHWASHER> (1)
+[PutBack] <FORK> (2) <DISHWASHER> (1)
+[Find] <SPOON> (2)
+[Grab] <SPOON> (2)
+[PutBack] <SPOON> (2) <DISHWASHER> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)

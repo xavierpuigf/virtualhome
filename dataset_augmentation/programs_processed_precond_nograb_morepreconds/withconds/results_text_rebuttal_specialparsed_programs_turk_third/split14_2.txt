@@ -1,0 +1,17 @@
+2
+location: ('WOMAN', '1') --> ('ENTRANCE HALL', '1'), ('MAN', '2') --> ('ENTRANCE HALL', '1'), ('MAN', '1') --> ('ENTRANCE HALL', '1'), ('WOMAN', '2') --> ('ENTRANCE HALL', '1')
+atreach: ('WOMAN', '1') --> ('WOMAN', '1'), ('MAN', '2') --> ('WOMAN', '1'), ('MAN', '1') --> ('WOMAN', '1'), ('WOMAN', '2') --> ('WOMAN', '1')
+Greet people
+Say HI to those that come in.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <WOMAN> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <MAN> (2)
+[Greet] <MAN> (2)

@@ -1,0 +1,8 @@
+1
+atreach: ('CAT', '1') --> ('CAT', '1')
+Pet cat
+I walk to my cat, and I pet him
+
+
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

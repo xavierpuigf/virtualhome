@@ -1,0 +1,9 @@
+Gaze out window
+Look at the yard from the window
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <WINDOW> (1)
+[Find] <WINDOW> (1)
+[TurnTo] <WINDOW> (1)
+[LookAt] <WINDOW> (1)

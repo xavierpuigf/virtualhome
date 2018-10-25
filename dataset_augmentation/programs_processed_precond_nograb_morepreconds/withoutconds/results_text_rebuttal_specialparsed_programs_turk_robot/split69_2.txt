@@ -1,0 +1,13 @@
+Rain welcome
+The robot would greet me and then hand me a towel.  It would make an appropriate quip about the weather while I dried off.  It would receive the wet towel when I was done.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <TOWEL> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Find] <FACE> (1)
+[Wipe] <FACE> (1)
+[Find] <HAIR> (1)
+[Wipe] <HAIR> (1)
+[PutObjBack] <TOWEL> (1)

@@ -1,0 +1,8 @@
+Go to toilet
+Go the bathroom, find toilet and flush.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[Flush] <TOILET> (1)

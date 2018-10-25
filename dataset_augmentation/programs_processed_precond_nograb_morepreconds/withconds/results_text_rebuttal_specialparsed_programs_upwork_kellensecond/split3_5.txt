@@ -1,0 +1,18 @@
+3
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('NEWSPAPER', '1') --> ('LIVING ROOM', '1'), ('TRASHCAN', '1') --> ('LIVING ROOM', '1')
+closed: ('TRASHCAN', '1') --> 
+atreach: ('TABLE', '1') --> ('TABLE', '1'), ('NEWSPAPER', '1') --> ('TABLE', '1'), ('TRASHCAN', '1') --> ('TRASHCAN', '1')
+Throw away newspaper
+Take the newspaper on the living room table and toss it
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[Find] <NEWSPAPER> (1)
+[Grab] <NEWSPAPER> (1)
+[Walk] <TRASHCAN> (1)
+[Open] <TRASHCAN> (1)
+[PutBack] <NEWSPAPER> (1) <TRASHCAN> (1)
+[Close] <TRASHCAN> (1)

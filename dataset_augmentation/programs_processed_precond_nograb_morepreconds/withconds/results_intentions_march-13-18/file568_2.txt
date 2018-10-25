@@ -1,0 +1,28 @@
+1
+atreach: ('WATER', '1') --> ('WATER', '1'), ('TEETH', '1') --> ('WATER', '1'), ('WATER GLASS', '1') --> ('WATER', '1'), ('TOOTHBRUSH', '1') --> ('WATER', '1'), ('SINK', '1') --> ('WATER', '1'), ('TOOTH PASTE', '1') --> ('WATER', '1')
+Brush teeth
+Using toothpaste on a toothbrush, clean teeth by rubbing the toothpaste over all the teeth with the toothbrush, rinsing, and spitting out toothpaste and water.
+
+
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[PutObjBack] <WATER GLASS> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Drop] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Drop] <TOOTHBRUSH> (1)
+[Grab] <WATER GLASS> (1)
+[Drink] <WATER GLASS> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)

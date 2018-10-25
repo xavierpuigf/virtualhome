@@ -1,0 +1,14 @@
+Browse internet
+walk to living room. look at computer. switch on computer. sit in chair. watch computer. switch off computer.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COMPUTER> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Watch] <COMPUTER> (1)
+[SwitchOff] <COMPUTER> (1)

@@ -1,0 +1,15 @@
+Wash dishes by hand
+I walk into the kitchen and see dishes in the sink. I go to the sink, fill the sink with soap and water, and wash the dishes. Then I rinse the dishes with clean water and put them in the drying rack.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <PLATE> (3)
+[Find] <PLATE> (3)
+[TurnTo] <PLATE> (3)
+[LookAt] <PLATE> (3)
+[Walk] <SINK> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <SINK> (1)
+[Wash] <PLATE> (3)
+[Rinse] <PLATE> (3)

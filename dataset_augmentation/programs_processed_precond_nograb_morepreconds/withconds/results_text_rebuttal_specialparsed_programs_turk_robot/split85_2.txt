@@ -1,0 +1,17 @@
+2
+location: ('WOMAN', '1') --> ('ENTRANCE HALL', '1'), ('MAN', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('WOMAN', '1') --> ('WOMAN', '1'), ('MAN', '1') --> ('WOMAN', '1')
+Greet guests
+Stand next to the door. When the door opens from the outside, greet the guests.
+
+
+[Run] <ENTRANCE HALL> (1)
+[Walk] <WOMAN> (1)
+[Find] <WOMAN> (1)
+[TurnTo] <WOMAN> (1)
+[LookAt] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <MAN> (1)
+[TurnTo] <MAN> (1)
+[LookAt] <MAN> (1)
+[Greet] <MAN> (1)

@@ -1,0 +1,17 @@
+3
+in: ('BOOK', '1') --> ('DESK', '1')
+location: ('BOOK', '1') --> ('BEDROOM', '1'), ('BOOKSHELF', '1') --> ('BEDROOM', '1'), ('DESK', '1') --> ('BEDROOM', '1'), ('BOOK', '2') --> ('BEDROOM', '1')
+atreach: ('BOOK', '1') --> ('DESK', '1'), ('BOOK', '2') --> ('DESK', '1')
+Put new books in shelves
+Put new books in shelves next to bed, stand, and lamp.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DESK> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BOOK> (2)
+[Grab] <BOOK> (2)
+[Walk] <BOOKSHELF> (1)
+[PutBack] <BOOK> (1) <BOOKSHELF> (1)
+[PutBack] <BOOK> (2) <BOOKSHELF> (1)

@@ -1,0 +1,22 @@
+5
+inside: ('WATER', '1') --> ('CUPBOARD', '1'), ('CUP', '1') --> ('CUPBOARD', '1')
+in: ('WATER', '1') --> ('SINK', '1')
+location: ('SINK', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+closed: ('CUPBOARD', '1') --> 
+atreach: ('WATER', '1') --> ('WATER', '1'), ('CUP', '1') --> ('CUPBOARD', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+Drink
+Walk to kitchen, walk to cupboard, open cupboard, grab cup, walk to sink, pour water in cup, drink water.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUPBOARD> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Walk] <SINK> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[Drink] <CUP> (1)

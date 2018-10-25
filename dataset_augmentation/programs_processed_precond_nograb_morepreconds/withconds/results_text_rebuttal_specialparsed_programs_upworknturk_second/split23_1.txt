@@ -1,0 +1,20 @@
+2
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('PAPER TOWEL', '1') --> ('DINING ROOM', '1'), ('TRASHCAN', '1') --> ('DINING ROOM', '1'), ('CLEANING BOTTLE', '1') --> ('DINING ROOM', '1')
+atreach: ('TABLE', '1') --> ('TABLE', '1'), ('PAPER TOWEL', '1') --> ('TABLE', '1'), ('TRASHCAN', '1') --> ('TABLE', '1'), ('CLEANING BOTTLE', '1') --> ('CLEANING BOTTLE', '1')
+Polish table
+I use a furniture and polish my dining room table.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <CLEANING BOTTLE> (1)
+[Find] <CLEANING BOTTLE> (1)
+[Grab] <CLEANING BOTTLE> (1)
+[Walk] <TABLE> (1)
+[Squeeze] <CLEANING BOTTLE> (1)
+[Pour] <CLEANING BOTTLE> (1) <TABLE> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Wipe] <TABLE> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)
+[PutObjBack] <CLEANING BOTTLE> (1)

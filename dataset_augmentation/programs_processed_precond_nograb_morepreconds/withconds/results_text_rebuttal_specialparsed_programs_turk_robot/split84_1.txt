@@ -1,0 +1,14 @@
+2
+location: ('RAG', '1') --> ('BEDROOM', '1'), ('WALL', '1') --> ('BEDROOM', '1')
+atreach: ('RAG', '1') --> ('RAG', '1')
+Clean
+Use a rag to wipe the dust from the edges of the baseboard.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <RAG> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <WALL> (1)
+[Shake] <RAG> (1)
+[PutObjBack] <RAG> (1)

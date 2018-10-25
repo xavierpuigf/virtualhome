@@ -1,0 +1,7 @@
+Open window
+Unlock the latch at the top. Push the bottom half of the window upwards.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <WINDOW> (1)
+[Open] <WINDOW> (1)

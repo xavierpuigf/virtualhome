@@ -15,7 +15,7 @@ class Action(Enum):
     CLOSE = ("Close", 1)
     DRINK = ("Drink", 1)
     FIND = ("Find", 1)
-    GOTO = ("Walk", 1)
+    WALK = ("Walk", 1)
     GRAB = ("Grab", 1)
     LOOKAT = ("Look at", 1)
     LOOKAT_SHORT = ("Look at short", 1)
@@ -23,8 +23,9 @@ class Action(Enum):
     LOOKAT_LONG = ("Look at long", 1)
     OPEN = ("Open", 1)
     POINTAT = ("Point at", 1)
-    PUT = ("Put", 2)
-    PUTBACK = PUT
+    PUTBACK = ("Put", 2)
+    #PUT = ("Put", 2)
+    #PUTBACK = PUT
     PUTIN = ("Put in", 2)
     PUTOBJBACK = ("Put back", 1)
     RUN = ("Run", 1)
@@ -34,7 +35,6 @@ class Action(Enum):
     SWITCHON = ("Switch on", 1)
     TOUCH = ("Touch", 1)
     TURNTO = ("Turn to", 1)
-    WALK = GOTO
     WATCH = ("Watch", 1)
     WIPE = ("Wipe", 1)
     PUTON = ("PutOn", 1)
@@ -58,7 +58,8 @@ class Action(Enum):
     EAT = ("Eat", 1) 
     SLEEP = ("Sleep", 0) 
     WAKEUP = ("WakeUp", 0)
-
+    RELEASE = ("Release", 1)
+    
 
 class ScriptObject(object):
 
@@ -150,6 +151,19 @@ def read_script(file_name):
                 index += 1
     return Script(script_lines)
 
+def read_script_from_list_string(list_string):
+    script_lines = []
+    f = list_string
+    index = 1
+    for line in f:
+        if '[' not in line:
+            continue
+        line = line.strip()
+        
+        if len(line) > 0 and not line.startswith('#'):
+            script_lines.append(parse_script_line(line, index))
+            index += 1
+    return Script(script_lines)
 
 def read_script_from_string(string):
 

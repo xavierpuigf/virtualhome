@@ -1,0 +1,21 @@
+5
+is_off: ('TELEVISION', '1') --> 
+atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('LOVE SEAT', '1') --> ('TELEVISION', '1'), ('LIGHT', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('LOVE SEAT', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
+Watch TV
+I'll watch TV
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <LOVE SEAT> (1)
+[Sit] <LOVE SEAT> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

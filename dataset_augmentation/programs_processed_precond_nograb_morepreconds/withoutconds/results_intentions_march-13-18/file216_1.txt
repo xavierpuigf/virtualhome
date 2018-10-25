@@ -1,0 +1,15 @@
+Browse internet
+first i will walk into my home office and i needed to know the today's gold prices so wih the help of keyboard and mouse i will browse and find it
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <KEYBOARD> (1)
+[Grab] <KEYBOARD> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Type] <KEYBOARD> (1)

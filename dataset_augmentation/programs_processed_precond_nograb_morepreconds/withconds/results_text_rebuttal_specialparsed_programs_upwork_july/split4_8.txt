@@ -1,0 +1,21 @@
+2
+location: ('SCISSORS', '1') --> ('BATHROOM', '1'), ('HAIR', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1'), ('HAIRBRUSH', '1') --> ('BATHROOM', '1')
+atreach: ('SCISSORS', '1') --> ('SCISSORS', '1'), ('HAIR', '1') --> ('SCISSORS', '1'), ('MIRROR', '1') --> ('SCISSORS', '1'), ('HAIRBRUSH', '1') --> ('SCISSORS', '1')
+Cut your hair
+Get scissors, look in the mirror, cut hair you do not want to be there. Go to a barber because you don't know what you are doing.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SCISSORS> (1)
+[Find] <SCISSORS> (1)
+[Grab] <SCISSORS> (1)
+[Find] <SCISSORS> (1)
+[Find] <HAIRBRUSH> (1)
+[Grab] <HAIRBRUSH> (1)
+[Find] <MIRROR> (1)
+[TurnTo] <MIRROR> (1)
+[Find] <HAIR> (1)
+[Brush] <HAIR> (1)
+[PutObjBack] <HAIRBRUSH> (1)
+[Cut] <HAIR> (1)
+[PutObjBack] <SCISSORS> (1)

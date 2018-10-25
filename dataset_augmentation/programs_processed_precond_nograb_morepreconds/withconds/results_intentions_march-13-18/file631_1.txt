@@ -1,0 +1,14 @@
+0
+Wash teeth
+walk to bathroom and take brush and apply paste. clean outer surfaces. clean chewing surfaces. clean tongue. wash with water.
+
+
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Wash] <TEETH> (1)

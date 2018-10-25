@@ -1,0 +1,28 @@
+Put away toys
+Pick up all toys that are not in the appropriate place they belong. Look under bed, around floor, on dresser, and in closet. Remove all toys from those areas and place them in toy box. Close toy box when complete.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[TurnTo] <BED> (1)
+[LookAt] <BED> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Walk] <BOX> (1)
+[PutBack] <TOY> (1) <BOX> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[TurnTo] <CLOSET> (1)
+[LookAt] <CLOSET> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Close] <CLOSET> (1)
+[Walk] <BOX> (1)
+[PutBack] <TOY> (2) <BOX> (1)
+[Walk] <DRESSER> (1)
+[TurnTo] <DRESSER> (1)
+[LookAt] <DRESSER> (1)
+[Find] <TOY> (3)
+[Grab] <TOY> (3)
+[Walk] <BOX> (1)
+[PutBack] <TOY> (3) <BOX> (1)

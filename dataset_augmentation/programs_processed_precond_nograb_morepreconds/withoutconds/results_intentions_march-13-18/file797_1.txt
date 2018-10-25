@@ -1,0 +1,19 @@
+Brush teeth
+I go to my bathroom and pick up the brush and toothpaste and brush my teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <SINK> (1)
+[TurnTo] <SINK> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Soak] <TOOTHBRUSH> (1) <SINK> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Wash] <TOOTHBRUSH> (1)

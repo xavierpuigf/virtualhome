@@ -1,0 +1,9 @@
+1
+location: ('TELEPHONE', '2') --> ('LIVING ROOM', '1')
+Pick up phone
+walk to living room , find phone ,pick up phone 3
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEPHONE> (2)
+[Find] <TELEPHONE> (2)

@@ -1,0 +1,24 @@
+Wash face
+Turn on cold water from sink. Wet face with cold water and then lather soap in hands. Rub soap residue on face in circular motion and then wash with cold water. Then grab a towel and dry your face.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Find] <HANDS_BOTH> (1)
+[Pour] <WATER> (1) <HANDS_BOTH> (1)
+[Find] <FACE> (1)
+[Wash] <FACE> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Scrub] <FACE> (1)
+[PutObjBack] <SOAP> (1)
+[Pour] <WATER> (1) <HANDS_BOTH> (1)
+[Rinse] <FACE> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <FACE> (1)
+[PutObjBack] <TOWEL> (1)

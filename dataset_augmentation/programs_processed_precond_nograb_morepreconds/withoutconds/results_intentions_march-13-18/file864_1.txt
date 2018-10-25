@@ -1,0 +1,19 @@
+Listen to music
+I'll walk to my bedroom, where I have my computer. I'll walk to my computer and sit down in front of it. I'll put on my headphones and unlock my computer. I'll then navigate to music stored locally or streamed through the web.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <COMPUTER> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Walk] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <HEADSET> (1)
+[Grab] <HEADSET> (1)
+[PutOn] <HEADSET> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

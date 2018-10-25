@@ -1,0 +1,10 @@
+Write an email
+Walk to Home Office. Walk to computer and switch it on. Open mail and write mail.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Write] <MAIL> (1)

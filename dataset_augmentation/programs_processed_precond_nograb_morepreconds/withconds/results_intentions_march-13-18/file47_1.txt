@@ -1,0 +1,20 @@
+2
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
+Go to sleep
+walk to bedroom, lay in bed, turn off light, close your eyes
+
+
+[Find] <BED> (1)
+[TurnTo] <BED> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Uncover] <BED> (1)
+[Lie] <BED> (1)
+[Grab] <SHEETS> (1)
+[Pull] <SHEETS> (1)
+[Find] <LIGHT> (1)
+[TurnTo] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <EYES_BOTH> (1)
+[Close] <EYES_BOTH> (1)

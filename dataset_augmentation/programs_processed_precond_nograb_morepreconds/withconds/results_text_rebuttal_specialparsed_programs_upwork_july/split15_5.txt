@@ -1,0 +1,17 @@
+3
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('KIDS BEDROOM', '1'), ('CHAIR', '1') --> ('KIDS BEDROOM', '1'), ('TELEVISION', '1') --> ('KIDS BEDROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('CHAIR', '1') --> ('TELEVISION', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1')
+Watch TV
+Sit down and pick up the remote.  Turn on the tv and find a show you like
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

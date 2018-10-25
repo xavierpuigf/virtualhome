@@ -1,0 +1,23 @@
+2
+location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('PEN', '1') --> ('HOME OFFICE', '1'), ('STAMP', '1') --> ('HOME OFFICE', '1'), ('ENVELOPE', '1') --> ('HOME OFFICE', '1')
+atreach: ('DOCUMENT', '1') --> ('ENVELOPE', '1'), ('PEN', '1') --> ('ENVELOPE', '1'), ('STAMP', '1') --> ('ENVELOPE', '1'), ('ENVELOPE', '1') --> ('ENVELOPE', '1')
+Prepare letter for mailing
+Choose an envelope that will fit the material you are mailing.  Before filling envelope, apply return address to top left corner of envelope, and mailing address to center of envelope.  Fold material you are mailing and insert into envelope.  If self-stick, pull tab off adhesive and seal envelope.  If not, moisten glue strip and seal envelope.   Apply appropriate postage to top right corner of envelope.  Insert into a mailbox.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <ENVELOPE> (1)
+[Find] <ENVELOPE> (1)
+[Grab] <ENVELOPE> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <ENVELOPE> (1)
+[PutObjBack] <PEN> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Fold] <DOCUMENT> (1)
+[PutBack] <DOCUMENT> (1) <ENVELOPE> (1)
+[Close] <ENVELOPE> (1)
+[Find] <STAMP> (1)
+[Grab] <STAMP> (1)
+[PutBack] <STAMP> (1) <ENVELOPE> (1)

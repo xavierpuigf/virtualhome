@@ -1,0 +1,12 @@
+Sleep
+Sleeping
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LAMP> (1)
+[SwitchOff] <LAMP> (1)
+[Walk] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]
+[Sleep]
+[Sleep]

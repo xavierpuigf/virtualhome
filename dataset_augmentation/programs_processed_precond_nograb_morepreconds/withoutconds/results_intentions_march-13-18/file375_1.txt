@@ -1,0 +1,11 @@
+Relax on sofa
+I walk over to the sofa. I sit down on the sofa and lay back. I put a blanket over my legs and close my eyes.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Lie] <SOFA> (1)
+[Find] <BLANKET> (1)
+[Cover] <SOFA> (1) <BLANKET> (1)

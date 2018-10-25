@@ -1,0 +1,21 @@
+4
+inside: ('WATER', '1') --> ('FRIDGE', '1')
+location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('WATER GLASS', '1') --> ('WATER GLASS', '1'), ('WATER', '1') --> ('WATER', '1'), ('FRIDGE', '1') --> ('WATER GLASS', '1')
+Drink
+go to kitchen, find water glass and grab it, find fridge and open grab water and pour into it, then drink.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <WATER GLASS> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[Close] <FRIDGE> (1)
+[Drink] <WATER> (1)

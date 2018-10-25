@@ -1,0 +1,16 @@
+Take shower
+Go to bathroom, switch on the shower, then find soap and scrub your hands and legs; now find the towel, wipe and leave the shower.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SHOWER> (1)
+[SwitchOn] <SHOWER> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Scrub] <HANDS_BOTH> (1)
+[Find] <LEGS_BOTH> (1)
+[Scrub] <LEGS_BOTH> (1)
+[Find] <TOWEL> (1)
+[Leave] <SHOWER> (1)

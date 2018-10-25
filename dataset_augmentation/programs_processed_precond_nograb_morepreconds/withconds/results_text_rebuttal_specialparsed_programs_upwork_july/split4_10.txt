@@ -1,0 +1,39 @@
+6
+inside: ('TRAY', '1') --> ('OVEN', '1'), ('DOUGH', '1') --> ('FRIDGE', '1')
+atreach: ('TRAY', '1') --> ('FRIDGE', '1'), ('OVEN', '1') --> ('FRIDGE', '1'), ('OVEN MITTS', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('DOUGH', '1') --> ('FRIDGE', '1'), ('COFFEE TABLE', '1') --> ('FRIDGE', '1')
+location: ('OVEN', '1') --> ('KITCHEN', '1'), ('OVEN MITTS', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('COFFEE TABLE', '1') --> ('KITCHEN', '1')
+closed: ('OVEN', '1') --> , ('FRIDGE', '1') --> 
+in: ('OVEN MITTS', '1') --> ('Character', 1)
+is_off: ('OVEN', '1') --> 
+Make  cookies
+Put dough on baking sheets, then in oven.  Remove when golden brown
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <DOUGH> (1)
+[Grab] <DOUGH> (1)
+[Close] <FRIDGE> (1)
+[Find] <TRAY> (1)
+[PutBack] <DOUGH> (1) <TRAY> (1)
+[Find] <OVEN> (1)
+[SwitchOn] <OVEN> (1)
+[Open] <OVEN> (1)
+[Grab] <TRAY> (1)
+[PutBack] <TRAY> (1) <OVEN> (1)
+[Close] <OVEN> (1)
+[Wait]
+[Find] <OVEN MITTS> (1)
+[Grab] <OVEN MITTS> (1)
+[PutOn] <OVEN MITTS> (1)
+[Open] <OVEN> (1)
+[Grab] <TRAY> (1)
+[Close] <OVEN> (1)
+[Find] <COFFEE TABLE> (1)
+[PutBack] <TRAY> (1) <COFFEE TABLE> (1)
+[Find] <OVEN MITTS> (1)
+[Find] <OVEN MITTS> (1)
+[PutOff] <OVEN MITTS> (1)
+[SwitchOff] <OVEN> (1)

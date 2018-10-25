@@ -1,0 +1,24 @@
+5
+is_off: ('TOASTER', '1') --> 
+atreach: ('TOASTER', '1') --> ('FOOD_BREAD', '2'), ('FOOD_BREAD', '1') --> ('FOOD_BREAD', '2'), ('FOOD_BREAD', '2') --> ('FOOD_BREAD', '2'), ('PLATE', '1') --> ('FOOD_BREAD', '2'), ('FOOD_JAM', '1') --> ('FOOD_BREAD', '2')
+location: ('TOASTER', '1') --> ('KITCHEN', '1'), ('FOOD_BREAD', '1') --> ('KITCHEN', '1'), ('FOOD_BREAD', '2') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('FOOD_JAM', '1') --> ('KITCHEN', '1')
+unplugged: ('TOASTER', '1') --> 
+plugged: ('TOASTER', '1') --> 
+Cook some food
+I decide I'm hungry so I go to the kitchen to make some food. I decide to make toast with jam. I go to the bread and take out two slices. I put the splices into the toaster and turn it on. When the toast is done I take it out and put it on the plate. Then I get the jam, open the jar and put jam on the toast with a knife.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FOOD_BREAD> (2)
+[Find] <FOOD_BREAD> (2)
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (2)
+[Find] <TOASTER> (1)
+[PlugIn] <TOASTER> (1)
+[SwitchOn] <TOASTER> (1)
+[Find] <PLATE> (1)
+[PutBack] <FOOD_BREAD> (2) <PLATE> (1)
+[Find] <FOOD_JAM> (1)
+[Grab] <FOOD_JAM> (1)
+[PutBack] <FOOD_JAM> (1) <PLATE> (1)

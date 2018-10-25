@@ -1,0 +1,1 @@
+[{"in": [["PLATE", "1"], ["SINK", "1"]]}, {"location": [["PLATE", "1"], ["KITCHEN", "1"]]}, {"location": [["SPONGE", "1"], ["KITCHEN", "1"]]}, {"location": [["SINK", "1"], ["KITCHEN", "1"]]}, {"atreach": [["PLATE", "1"], ["SINK", "1"]]}, {"atreach": [["SPONGE", "1"], ["SINK", "1"]]}]

@@ -1,4 +1,5 @@
 import base64
+import collections
 import time
 import io
 import json
@@ -24,7 +25,7 @@ class UnityCommunication(object):
         """
         Returns pair (success, message); message is Null when success == True
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'check_script' , 'stringParams': script_lines})
+        response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
 
     def reset(self):
@@ -41,13 +42,15 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
         return response['success'], response['value']
 
-    def camera_image(self, camera_index):
+    def camera_image(self, camera_indexes, mode='normal'):
         """
-        Returns the number of cameras in the scene
+        Returns a list of renderings of cameras given in camera_indexes.
+        Possible modes are: 'normal', 'seg_inst', 'seg_class', 'depth', 'flow'
         """
-        if not isinstance(camera_index, list):
-            camera_index = [camera_index]
-        response = self.post_command({'id': str(time.time()), 'action': 'camera_image', 'intParams': camera_index})
+        if not isinstance(camera_indexes, collections.Iterable):
+            camera_indexes = [camera_indexes]
+        response = self.post_command({'id': str(time.time()), 'action': 'camera_image',
+                                      'intParams': camera_indexes, 'stringParams': [mode]})
         return response['success'], _decode_image_list(response['message_list'])
 
     def environment_graph(self):
@@ -55,6 +58,14 @@ class UnityCommunication(object):
         Returns environment graph
         """
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
+        return response['success'], json.loads(response['message'])
+
+    def expand_scene(self, new_graph):
+        """
+        Expands scene with the given graph
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'expand_scene', 'stringParams':
+                                      [json.dumps(new_graph)]})
         return response['success'], json.loads(response['message'])
 
 

@@ -1,0 +1,26 @@
+Write
+I'm currently editing a novel. So I sit at my desk, type on my laptop. I keep a pad of paper next to me so I can write down notes if something non story related comes to me.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <NOTE PAD> (1)
+[Grab] <NOTE PAD> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <NOTE PAD> (1) <DESK> (1)
+[Find] <PENCIL> (1)
+[Grab] <PENCIL> (1)
+[Write] <NOTE PAD> (1)
+[PutObjBack] <PENCIL> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Type] <KEYBOARD> (1)

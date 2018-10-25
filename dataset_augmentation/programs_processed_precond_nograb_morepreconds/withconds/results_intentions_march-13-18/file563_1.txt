@@ -1,0 +1,8 @@
+1
+atreach: ('SOFA', '1') --> ('SOFA', '1')
+Relax on sofa
+I walk to the sofa, and lie down on the sofa.
+
+
+[Walk] <SOFA> (1)
+[Lie] <SOFA> (1)

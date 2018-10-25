@@ -1,0 +1,1 @@
+[{"location": [["FLOOR", "1"], ["KITCHEN", "1"]]}, {"location": [["FOOD_FOOD", "1"], ["KITCHEN", "1"]]}, {"location": [["DOG", "1"], ["KITCHEN", "1"]]}, {"location": [["BOWL", "1"], ["KITCHEN", "1"]]}, {"atreach": [["FLOOR", "1"], ["DOG", "1"]]}, {"atreach": [["FOOD_FOOD", "1"], ["DOG", "1"]]}, {"atreach": [["DOG", "1"], ["DOG", "1"]]}, {"atreach": [["BOWL", "1"], ["DOG", "1"]]}]

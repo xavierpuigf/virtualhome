@@ -1,0 +1,18 @@
+Wash dishes with dishwasher
+I walk to the kitchen. I open the dishwasher. I open the kitchen cabinet. I reach inside the cabinet and grab the box of dish soap. I add some soap to the open dishwasher. I put the box of dish soap back in the kitchen cabinet. I close the kitchen cabinet and then I close the dishwasher. I turn the dishwasher on and wait.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <DISHWASHER> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <DISHWASHER> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <KITCHEN CABINET> (1)
+[Close] <KITCHEN CABINET> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)

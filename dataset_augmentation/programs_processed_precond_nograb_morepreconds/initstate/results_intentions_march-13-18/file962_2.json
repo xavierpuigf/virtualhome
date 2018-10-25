@@ -1,0 +1,1 @@
+[{"location": [["BUTTON", "1"], ["BEDROOM", "1"]]}, {"location": [["CD PLAYER", "1"], ["BEDROOM", "1"]]}, {"location": [["EYES_BOTH", "1"], ["BEDROOM", "1"]]}, {"location": [["CHAIR", "1"], ["BEDROOM", "1"]]}, {"atreach": [["CHAIR", "1"], ["EYES_BOTH", "1"]]}, {"atreach": [["EYES_BOTH", "1"], ["CD PLAYER", "1"]]}, {"atreach": [["BUTTON", "1"], ["CD PLAYER", "1"]]}]

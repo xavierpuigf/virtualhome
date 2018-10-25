@@ -1,0 +1,15 @@
+Write an email
+Walk to home office, walk to desk, sit in chair, turn on laptop, open email page, type on keyboard to write email.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Write] <MAIL> (1)

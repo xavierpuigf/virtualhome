@@ -1,0 +1,42 @@
+6
+atreach: ('TOASTER', '1') --> ('TABLE', '1'), ('ELECTRICAL OUTLET', '1') --> ('TABLE', '1'), ('PLATE', '1') --> ('TABLE', '1'), ('FOOD_BREAD', '1') --> ('TABLE', '1'), ('FOOD_PEANUT BUTTER', '1') --> ('TOASTER', '1'), ('KNIFE', '1') --> ('TOASTER', '1'), ('FOOD_BREAD', '2') --> ('TABLE', '1')
+location: ('TOASTER', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1'), ('ELECTRICAL OUTLET', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('FOOD_BREAD', '1') --> ('KITCHEN', '1'), ('FOOD_PEANUT BUTTER', '1') --> ('KITCHEN', '1'), ('KNIFE', '1') --> ('KITCHEN', '1'), ('FOOD_BREAD', '2') --> ('KITCHEN', '1')
+in: ('FOOD_BREAD', '1') --> ('TABLE', '1'), ('PLATE', '1') --> ('TABLE', '1')
+is_off: ('TOASTER', '1') --> , ('ELECTRICAL OUTLET', '1') --> 
+plugged: ('TOASTER', '1') --> 
+unplugged: ('TOASTER', '1') --> 
+Cook some food
+Take two slices of bread out of the bread bag. Drop the slices into the toaster. Push the toaster lever down. Wait for the slices to pop up. Use a knife to spread a thin layer of butter on the toast.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <TABLE> (1)
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[Find] <FOOD_BREAD> (2)
+[Grab] <FOOD_BREAD> (2)
+[Find] <TOASTER> (1)
+[PutBack] <FOOD_BREAD> (1) <TOASTER> (1)
+[PutBack] <FOOD_BREAD> (2) <TOASTER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <TOASTER> (1)
+[SwitchOn] <ELECTRICAL OUTLET> (1)
+[SwitchOn] <TOASTER> (1)
+[Walk] <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Walk] <TOASTER> (1)
+[Grab] <FOOD_BREAD> (1)
+[PutBack] <FOOD_BREAD> (1) <PLATE> (1)
+[Grab] <FOOD_BREAD> (2)
+[PutBack] <FOOD_BREAD> (2) <PLATE> (1)
+[SwitchOff] <ELECTRICAL OUTLET> (1)
+[PlugOut] <TOASTER> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Find] <FOOD_PEANUT BUTTER> (1)
+[Grab] <FOOD_PEANUT BUTTER> (1)
+[Spread] <FOOD_PEANUT BUTTER> (1) <FOOD_BREAD> (1)
+[Spread] <FOOD_PEANUT BUTTER> (1) <FOOD_BREAD> (2)
+[PutObjBack] <KNIFE> (1)

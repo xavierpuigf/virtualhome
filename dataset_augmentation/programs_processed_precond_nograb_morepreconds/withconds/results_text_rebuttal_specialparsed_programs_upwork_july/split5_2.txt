@@ -1,0 +1,21 @@
+4
+location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('COMFORTER', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+atreach: ('BLANKET', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('BED', '1'), ('COMFORTER', '1') --> ('BED', '1'), ('BED', '1') --> ('BED', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
+Sleep
+Crawl into bed, pull up covers, sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BED> (1)
+[Climb] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[Lie] <BED> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Sleep]

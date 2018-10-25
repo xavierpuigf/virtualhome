@@ -1,0 +1,11 @@
+Clean
+Remove all shampoos, soaps, etc. From Bathtub. Spray bath cleaner in and around tub. Let is sit for five minutes. Using scrub brush, scrub all of bathtub areas, including faucets. Rinse tub of all cleaner. Dry with towel.
+
+
+[Find] <BATHTUB> (1)
+[TurnTo] <BATHTUB> (1)
+[PointAt] <BATHTUB> (1)
+[Wash] <BATHTUB> (1)
+[TurnTo] <BATHTUB> (1)
+[LookAt] <BATHTUB> (1)
+[Leave] <BATHTUB> (1)

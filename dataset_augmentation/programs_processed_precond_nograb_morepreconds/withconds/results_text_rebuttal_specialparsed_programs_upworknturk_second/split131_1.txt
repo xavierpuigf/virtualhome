@@ -1,0 +1,22 @@
+5
+is_off: ('TELEVISION', '1') --> 
+atreach: ('REMOTE CONTROL', '1') --> ('LIGHT', '1'), ('TELEVISION', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('LIGHT', '1')
+location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('TELEVISION', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
+Watch TV
+Turn off lights. Enter bed. Lay down in bed and get comfortable with pillows and blanket. Use remote control to turn on TV. Find show to watch on TV. Watch TV while laying in bed.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

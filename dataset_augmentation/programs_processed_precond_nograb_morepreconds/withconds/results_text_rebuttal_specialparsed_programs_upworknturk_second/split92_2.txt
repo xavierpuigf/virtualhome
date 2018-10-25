@@ -1,0 +1,38 @@
+5
+inside: ('PAPER', '1') --> ('CABINET', '1'), ('PEN', '1') --> ('CABINET', '1'), ('PAPER', '3') --> ('CABINET', '1'), ('PAPER', '2') --> ('CABINET', '1')
+nearby: ('CHAIR', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1'), ('CABINET', '1') --> ('DINING ROOM', '1')
+closed: ('CABINET', '1') --> 
+atreach: ('PAPER', '3') --> ('CABINET', '1'), ('PAPER', '2') --> ('CABINET', '1'), ('PAPER', '1') --> ('CABINET', '1'), ('PEN', '1') --> ('CABINET', '1'), ('CHAIR', '1') --> ('TABLE', '1'), ('CABINET', '1') --> ('CABINET', '1')
+Make place cards
+Get small pieces of paper from drawer. Write names on them in pen. Fold papers in half. Set place cards on the dining room table. Put away pen and rest of paper.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Find] <PAPER> (2)
+[Grab] <PAPER> (2)
+[Find] <PAPER> (3)
+[Grab] <PAPER> (3)
+[Walk] <TABLE> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Write] <PAPER> (1)
+[Write] <PAPER> (2)
+[Write] <PAPER> (3)
+[Fold] <PAPER> (1)
+[Fold] <PAPER> (2)
+[Fold] <PAPER> (3)
+[PutBack] <PAPER> (1) <TABLE> (1)
+[PutBack] <PAPER> (2) <TABLE> (1)
+[PutBack] <PAPER> (3) <TABLE> (1)
+[StandUp]
+[Walk] <CABINET> (1)
+[PutBack] <PEN> (1) <CABINET> (1)
+[Close] <CABINET> (1)

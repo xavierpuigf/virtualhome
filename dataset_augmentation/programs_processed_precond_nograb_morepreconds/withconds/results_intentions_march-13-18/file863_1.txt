@@ -1,0 +1,30 @@
+0
+Set up table
+in the dining room, a table and chairs, on the table plates, forks, spoons knives and glsses. you might also have candles and a center piece.
+
+
+[Find] <TABLE CLOTH> (1)
+[Grab] <TABLE CLOTH> (1)
+[Find] <TABLE> (1)
+[PutBack] <TABLE CLOTH> (1) <TABLE> (1)
+[Find] <CENTERPIECE> (1)
+[Grab] <CENTERPIECE> (1)
+[PutBack] <CENTERPIECE> (1) <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[PutBack] <SPOON> (1) <TABLE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[PutBack] <KNIFE> (1) <TABLE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[PutBack] <FORK> (1) <TABLE> (1)
+[Find] <NAPKIN> (1)
+[Grab] <NAPKIN> (1)
+[Fold] <NAPKIN> (1)
+[PutBack] <NAPKIN> (1) <TABLE> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)

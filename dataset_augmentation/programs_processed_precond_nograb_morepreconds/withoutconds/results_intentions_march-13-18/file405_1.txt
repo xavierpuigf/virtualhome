@@ -1,0 +1,12 @@
+Watch TV
+Find the remote control. Switch on the tv with the remote control. Find the couch and sit on it. Touch the remote control and set a channel. Look at the television.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Touch] <COUCH> (1)
+[TurnTo] <COUCH> (1)
+[LookAt] <COUCH> (1)

@@ -7,6 +7,7 @@ from scripts import Action, ScriptLine, Script
 
 import ipdb
 
+
 # ExecutionInfo
 ###############################################################################
 
@@ -38,7 +39,6 @@ class ExecutionInfo(object):
 
 # ActionExecutor-s
 ###############################################################################
-
 
 class ActionExecutor(object):
 
@@ -82,12 +82,12 @@ class WalkExecutor(ActionExecutor):
         for node in state.select_nodes(current_obj):
             if self.check_walk(state, node, info):
                 changes = [DeleteEdges(CharacterNode(),
-                                 [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
-                                 AnyNode(), delete_reverse=True),
-                            AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True), 
-                            AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True), 
-                            AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
-                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
+                                       [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
+                                       AnyNode(), delete_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True),
+                           AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                           AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
                      ]
                 # close to object in hands
                 char_node = _get_character_node(state)
@@ -143,8 +143,8 @@ class _FindExecutor(ActionExecutor):
         return True
 
 
-WalkFindExecutor = JoinedExecutor(WalkExecutor(), _FindExecutor())
-OnlyFindExecutor = _FindExecutor()
+_walk_find_executor = JoinedExecutor(WalkExecutor(), _FindExecutor())
+_only_find_executor = _FindExecutor()
 
 
 class FindExecutor(ActionExecutor):
@@ -158,13 +158,15 @@ class FindExecutor(ActionExecutor):
             char_node = _get_character_node(state)
 
             if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
-                return OnlyFindExecutor.execute(script, state, info)
+                return _only_find_executor.execute(script, state, info)
             elif Property.BODY_PART in node.properties:
-                return OnlyFindExecutor.execute(script, state, info)
-            elif State.SITTING not in char_node.states and State.LYING not in char_node.states:
-                return WalkFindExecutor.execute(script, state, info)
+                return _only_find_executor.execute(script, state, info)
+            elif _is_character_close_to(state, node):
+                return _only_find_executor.execute(script, state, info)
+            elif State.SITTING in char_node.states or State.LYING in char_node.states:
+                return _only_find_executor.execute(script, state, info)
             else:
-                return OnlyFindExecutor.execute(script, state, info)
+                return _walk_find_executor.execute(script, state, info)
 
 
 class GreetExecutor(ActionExecutor):
@@ -211,6 +213,7 @@ class SitExecutor(ActionExecutor):
             new_char_node.states.add(State.SITTING)
             yield state.change_state(
                 [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
+                 AddEdges(CharacterNode(), Relation.FACING, RelationFrom(node, Relation.FACING)),
                  ChangeNode(new_char_node)]
             )
 
@@ -229,7 +232,7 @@ class SitExecutor(ActionExecutor):
         max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
         if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
                                          min_value=max_occupancy)):
-            info.error('something on the {}', node)
+            info.error('Too many things on {}', node)
             return False
 
         return True
@@ -260,6 +263,7 @@ class GrabExecutor(ActionExecutor):
             new_relation = self.check_grabbable(state, node, info)
             if new_relation is not None:
                 changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode(), delete_reverse=True),
+                           AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
                 new_close, relation = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
@@ -268,7 +272,7 @@ class GrabExecutor(ActionExecutor):
                 yield state.change_state(changes)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
-        if Property.GRABBABLE not in node.properties:
+        if Property.GRABBABLE not in node.properties and node.class_name != 'water':
             info.error('{} is not grabbable', node)
             return None
         if not _is_character_close_to(state, node):
@@ -308,14 +312,17 @@ class OpenExecutor(ActionExecutor):
             yield state.change_state([ChangeNode(new_node)])
 
     def check_openable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
+        
         if Property.CAN_OPEN not in node.properties:
             info.error('{} can not be opened', node)
             return False
+
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
             return False
-        if _find_free_hand(state) is None:
+        
+        if not self.close and _find_free_hand(state) is None:
             char_node = _get_character_node(state)
             info.error('{} does not have a free hand', char_node)
             return False
@@ -324,6 +331,9 @@ class OpenExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+
+        if not self.close and State.ON in node.states:
+            info.error('{} is still on'.format(node))
         return True
 
 
@@ -427,9 +437,9 @@ class SwitchExecutor(ActionExecutor):
         if not _is_character_close_to(state, node):
             info.error('{} is not close to {}', _get_character_node(state), node)
             return False
-        if _find_free_hand(state) is None:
-            info.error('{} does not have a free hand', _get_character_node(state))
-            return False
+        #if _find_free_hand(state) is None:
+        #    info.error('{} does not have a free hand', _get_character_node(state))
+        #    return False
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
@@ -476,11 +486,6 @@ class TurnToExecutor(ActionExecutor):
             )
 
     def check_turn_to(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        char_node = _get_character_node(state)
-        if not _is_character_close_to(state, node):
-            info.error('{} is not close to {}', char_node, node)
-            return False
-        
         return True
 
 
@@ -525,9 +530,9 @@ class WipeExecutor(ActionExecutor):
             info.error('{} is not close to {}', char_node, node)
             return False
 
-        if Property.SURFACES not in node.properties:
-            info.error('{} is not a surface', node)
-            return False
+        #if Property.SURFACES not in node.properties:
+        #    info.error('{} is not a surface', node)
+        #    return False
 
         nodes_in_hands = _find_nodes_from(state, char_node, [Relation.HOLDS_RH, Relation.HOLDS_LH])
         if len(nodes_in_hands) == 0:
@@ -690,7 +695,7 @@ class LieExecutor(ActionExecutor):
             info.error('{} is not close to {}', char_node, node)
             return False
         if State.LYING in char_node.states:
-            info.error('{}(id:{}) is lying', char_node)
+            info.error('{} is lying', char_node)
             return False
         if Property.LIEABLE not in node.properties:
             info.error('{} is not lieable', node)
@@ -781,15 +786,18 @@ class WatchExecutor(ActionExecutor):
             yield state.change_state([])
 
     def check_watchable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        char_room = _get_room_node(state, _get_character_node(state))
+        char_node = _get_character_node(state)
+        char_room = _get_room_node(state, char_node)
         node_room = _get_room_node(state, node)
         
-        if node.class_name not in ['television', 'laptop', 'computer']:
-            info.error('only watching television, computer or laptop is allowed')
+        if Property.LOOKABLE not in node.properties:
+            info.error('{} not lookable', node)
             return False
-
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
+            return False
+        if node.class_name != 'computer' and State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+            info.error('{} is not facing {} while sitting', char_node, node)
             return False
         if _is_inside(state, node):
             info.error('{} is inside other closed thing', node)
@@ -812,7 +820,7 @@ class MoveExecutor(ActionExecutor):
 
     def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo, action_name: str) -> Optional[Relation]:
 
-        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button'):
+        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button') and node.class_name != 'chair':
             info.error('{} is not movable', node)
             return None
         if not _is_character_close_to(state, node):
@@ -865,14 +873,17 @@ class SqueezeExecutor(ActionExecutor):
             yield state.change_state([])
 
     def check_squeezable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        if Property.CLOTHES not in node.properties:
-            info.error('{} is not clothes', node)
-            return False
+        
         if _find_free_hand(state) is None:
             info.error('{} does not have a free hand', _get_character_node(state))
             return False
         if not _is_character_close_to(state, node):
             info.error('{} is not close to {}', _get_character_node(state), node)
+            return False
+
+        squeezable_objects = ['cleaning_solution', 'tooth_paste', 'shampoo', 'food_peanut_butter', 'dish_soap', 'soap', 'towel', 'rag', 'paper']
+        if Property.CLOTHES not in node.properties and node.class_name not in squeezable_objects:
+            info.error('{} is not clothes', node)
             return False
 
         return True
@@ -913,6 +924,8 @@ class PlugExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+        if not self.plug_in and State.ON in node.states:
+            info.error('{} is still on')
         return True
     
 
@@ -1011,6 +1024,8 @@ def _is_character_close_to(state: EnvironmentState, node: Node):
     for close_node in state.get_nodes_from(_get_character_node(state), Relation.CLOSE):
         if state.evaluate(ExistsRelation(NodeInstance(close_node), Relation.CLOSE, NodeInstanceFilter(node))):
             return True
+        if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(close_node))):
+            return True
     return False
 
 
@@ -1080,14 +1095,14 @@ def _is_inside(state: EnvironmentState, node: Node):
 class ScriptExecutor(object):
 
     _action_executors = {
-        Action.GOTO: WalkExecutor(),
+        Action.WALK: WalkExecutor(),
         Action.FIND: FindExecutor(),
         Action.SIT: SitExecutor(),
         Action.STANDUP: StandUpExecutor(),
         Action.GRAB: GrabExecutor(),
         Action.OPEN: OpenExecutor(False),
         Action.CLOSE: OpenExecutor(True),
-        Action.PUT: PutExecutor(Relation.ON),
+        Action.PUTBACK: PutExecutor(Relation.ON),
         Action.PUTIN: PutExecutor(Relation.INSIDE),
         Action.SWITCHON: SwitchExecutor(True),
         Action.SWITCHOFF: SwitchExecutor(False),
@@ -1120,7 +1135,8 @@ class ScriptExecutor(object):
         Action.CUT: CutExecutor(), 
         Action.EAT: EatExecutor(), 
         Action.SLEEP: SleepExecutor(), 
-        Action.WAKEUP: WakeUpExecutor()
+        Action.WAKEUP: WakeUpExecutor(), 
+        Action.RELEASE: DropExecutor()
     }
 
     def __init__(self, graph: EnvironmentGraph, name_equivalence):
@@ -1146,17 +1162,22 @@ class ScriptExecutor(object):
             if time.time() > self.processing_limit:
                 break
 
-    def execute(self, script: Script, init_changers: List[StateChanger]=None):
+    def execute(self, script: Script, init_changers: List[StateChanger]=None, w_graph_list: bool=True):
 
         info = self.info
         state = EnvironmentState(self.graph, self.name_equivalence, instance_selection=True)
         _apply_initial_changers(state, script, init_changers)
+        graph_state_list = []
         for i in range(len(script)):
+            prev_state = state
+            if w_graph_list:
+                graph_state_list.append(state.to_dict())
+            
             future_script = script.from_index(i)
             state = next(self.call_action_method(future_script, state, info), None)
             if state is None:
-                return None
-        return state
+                return False, prev_state, graph_state_list
+        return True, state, graph_state_list
 
     @classmethod
     def call_action_method(cls, script: Script, state: EnvironmentState, info: ExecutionInfo):

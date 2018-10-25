@@ -1,0 +1,15 @@
+Dust
+Grab cleaning product. Spray light mist on television. Grab clean cleaning rag. Wipe television.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <RAG> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Pour] <CLEANING SOLUTION> (1) <RAG> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Walk] <TELEVISION> (1)
+[Wipe] <TELEVISION> (1)
+[PutObjBack] <RAG> (1)

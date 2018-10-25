@@ -1,0 +1,32 @@
+6
+inside: ('TOILET PAPER', '1') --> ('TOILET', '1'), ('CLOTHES_DRESS', '1') --> ('TOILET', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('TOILET', '1') --> ('TOILET PAPER', '1'), ('TOILET PAPER', '1') --> ('TOILET', '1'), ('CLOTHES_DRESS', '1') --> ('TOILET', '1'), ('HANDS_BOTH', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
+closed: ('TOILET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+is_off: ('FAUCET', '1') --> 
+Use toilet
+Sit on toilet, use it, flush
+
+
+[Run] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Wipe]
+[PutBack] <TOILET PAPER> (1) <TOILET> (1)
+[StandUp]
+[Close] <TOILET> (1)
+[Flush] <TOILET> (1)
+[PutObjBack] <CLOTHES_DRESS> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)

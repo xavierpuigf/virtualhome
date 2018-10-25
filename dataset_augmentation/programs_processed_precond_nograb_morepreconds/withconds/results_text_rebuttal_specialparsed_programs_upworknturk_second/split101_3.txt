@@ -1,0 +1,35 @@
+5
+is_off: ('FAUCET', '1') --> 
+in: ('FOOD_EGG', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1'), ('RAG', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('BOX', '1') --> ('KITCHEN', '1'), ('FOOD_EGG', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('SPONGE', '1') --> ('SINK', '1'), ('RAG', '1') --> ('SINK', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('BOX', '1') --> ('SINK', '1'), ('FOOD_EGG', '1') --> ('SINK', '1')
+Clean eggs from our chickens
+Take chicken eggs from basket, rinse under cold water, remove debris with small sponge. Dry off eggs, place in carton, place carton in fridge.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <FOOD_EGG> (1)
+[Grab] <FOOD_EGG> (1)
+[PutBack] <FOOD_EGG> (1) <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <FOOD_EGG> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[Scrub] <FOOD_EGG> (1)
+[PutObjBack] <SPONGE> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Wipe] <FOOD_EGG> (1)
+[PutObjBack] <RAG> (1)
+[Find] <BOX> (1)
+[Grab] <BOX> (1)
+[Grab] <FOOD_EGG> (1)
+[PutBack] <FOOD_EGG> (1) <BOX> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <BOX> (1) <FRIDGE> (1)
+[Close] <FRIDGE> (1)

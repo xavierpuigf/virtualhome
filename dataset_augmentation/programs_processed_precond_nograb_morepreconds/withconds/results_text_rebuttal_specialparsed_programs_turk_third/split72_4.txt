@@ -1,0 +1,17 @@
+3
+in: ('COMPUTER', '1') --> ('DESK', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('RAG', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('RAG', '1') --> ('RAG', '1'), ('DESK', '1') --> ('DESK', '1')
+Clean
+Wipe down computer desk and monitor
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <RAG> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <DESK> (1)
+[Find] <COMPUTER> (1)
+[Wipe] <COMPUTER> (1)
+[Wipe] <DESK> (1)
+[PutObjBack] <RAG> (1)

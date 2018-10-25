@@ -1,0 +1,8 @@
+0
+Change TV channel
+Pick up the remote. Press the remote to change the channel.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Push] <REMOTE CONTROL> (1)

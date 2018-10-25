@@ -1,0 +1,22 @@
+2
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('CUP', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+atreach: ('WATER', '1') --> ('WATER', '1'), ('CUP', '1') --> ('CUP', '1'), ('FRIDGE', '1') --> ('CUP', '1')
+Drink
+Walk into kitchen, look for cup, walk to cup, look for refrigerator, walk to refrigerator, open door, grab water, pour water into cup
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUP> (1)
+[Find] <CUP> (1)
+[TurnTo] <CUP> (1)
+[LookAt] <CUP> (1)
+[Walk] <CUP> (1)
+[Find] <FRIDGE> (1)
+[TurnTo] <FRIDGE> (1)
+[LookAt] <FRIDGE> (1)
+[Walk] <FRIDGE> (1)
+[Grab] <CUP> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)

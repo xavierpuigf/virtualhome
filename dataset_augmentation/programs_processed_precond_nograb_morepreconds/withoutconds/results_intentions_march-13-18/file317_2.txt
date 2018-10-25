@@ -1,0 +1,19 @@
+Drink
+I walk the kitchen and walk up to the kitchen cabinet. I open the cabinet and take out a cup. I walk to sink and I turn the faucet on using the cold water handle. I put my cup under the running water until it is full. I turn off the cold water handle and bring the cup to my mouth and take a drink.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[Push] <FAUCET> (1)
+[PutBack] <CUP> (1) <SINK> (1)
+[Grab] <CUP> (1)
+[SwitchOff] <FAUCET> (1)
+[Drink] <CUP> (1)

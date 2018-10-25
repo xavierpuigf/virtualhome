@@ -1,0 +1,8 @@
+Listen to music
+I walk to the living room. I find a radio there and switch it on to listen to music.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <RADIO> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)

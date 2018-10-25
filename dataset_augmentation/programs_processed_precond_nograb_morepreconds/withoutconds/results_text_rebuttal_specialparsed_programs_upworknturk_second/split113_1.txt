@@ -1,0 +1,25 @@
+Wash dishes
+Put the dishes on the side of the counter run some dish water wash the dishes once the dishes and put the dishes in the drain.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Grab] <SINK> (1)
+[PutBack] <SINK> (1) <SINK> (1)
+[Grab] <SINK> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Pour] <DISH SOAP> (1) <SINK> (1)
+[PutObjBack] <DISH SOAP> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Soak] <PLATE> (1) <SINK> (1)
+[Scrub] <PLATE> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <PLATE> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)

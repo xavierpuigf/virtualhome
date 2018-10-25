@@ -1,0 +1,10 @@
+Turn on light
+Switch on light in home office
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[PlugIn] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <ENTRANCE HALL> (1)

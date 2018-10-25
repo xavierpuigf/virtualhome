@@ -1,0 +1,31 @@
+4
+inside: ('DOCUMENT', '1') --> ('FOLDER', '1'), ('FOLDER', '1') --> ('DESK', '1'), ('PEN', '1') --> ('DESK', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+closed: ('FOLDER', '1') --> , ('DESK', '1') --> , ('FILING CABINET', '1') --> 
+atreach: ('DESK', '1') --> ('CHAIR', '1'), ('DOCUMENT', '1') --> ('CHAIR', '1'), ('PEN', '1') --> ('CHAIR', '1'), ('FILING CABINET', '1') --> ('CHAIR', '1'), ('FOLDER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('DOCUMENT', '1')
+File documents
+Take the documents you have, put them in a manila folder, and label the folder with a title. Put the folder in the filing cabinet drawer
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <DOCUMENT> (1) <DESK> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[Open] <FOLDER> (1)
+[Grab] <DOCUMENT> (1)
+[PutBack] <DOCUMENT> (1) <FOLDER> (1)
+[Close] <FOLDER> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <FOLDER> (1)
+[PutObjBack] <PEN> (1)
+[Find] <FILING CABINET> (1)
+[Open] <FILING CABINET> (1)
+[PutBack] <FOLDER> (1) <FILING CABINET> (1)

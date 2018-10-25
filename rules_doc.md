@@ -6,13 +6,16 @@
 
 Possible relations (edge labels) are:
 
-- on
-- inside
-- between  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
-- close 
-- facing
-- holds_rh  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
-- holds_lh  _analogue of holds_rh for left hand_
+- **on**
+- **inside**
+- **between**  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
+- **close** edge `object1` close `object2` denotes that the distance between center of `object1` (`object2`) to the bounding 
+box of `object2` (`object1`) is < 1.5 units (~meters)  
+- **facing** there is an edge `object1` facing `object2` if `object2` is lookable, is visible from `object1`, and the 
+distance between the centers is < 5 units (~meters). If `object1` is a sofa or a chair
+ it should also be turned towards `object2`
+- **holds_rh**  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
+- **holds_lh**  _analogue of holds_rh for left hand_
 
 ### Properties
 
@@ -66,10 +69,11 @@ Possible relations (edge labels) are:
 ### FindExecutor
 - script: find `object`
 - cases:
-	- object on character -> execute find
-	- object with properties BODY_PART -> execute find
-	- character is not sitting or lying -> execute walk first, then find
-	- other -> execute find
+	- `object` on `character` -> execute find
+	- `object` with properties BODY_PART -> execute find
+	- `character` is sitting or lying -> execute find
+	- `character` close `object` -> execute find
+	- other -> execute walk first, then find
 - Pre-condition:
 	- exists edge `character` close `object` or for each edge `character` close `object2` exists edge `object2` close `object`  # i.e., either character must be 
 		close to `object` or `object` must be close to every object the character is currenty close to
@@ -101,6 +105,7 @@ Possible relations (edge labels) are:
 - Post-condition: 
     - add directed edges: `character` on `object`
     - state changes: `character` sitting
+    - add 
 
 ### StandUpExecutor
 - script: standup
@@ -112,13 +117,14 @@ Possible relations (edge labels) are:
 ### GrabExecutor
 - script: grab `object`
 - Pre-condition: 
-	- `object` property is grabbable
+	- `object` property is grabbable except water
 	- exists edge `character` close `object`
 	- no edge `object` inside `object2` unless `object2` is room or `object2` state is open // Cannot grab an object inside other one, unless it is open
 	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - remove directed and undirected edges: `object` any_relation `any_node`
     - add directed edges: `character` holds_rh `object` or `character` holds_lh `object`
+	- add undirected edges: `character` close `object`
     - add undirected edges: `character` close `object2` if there was edge `object` on `object2` (or `object` inside `object2`)  // do not know if this is necessary
 
 ### OpenExecutor
@@ -135,7 +141,6 @@ Possible relations (edge labels) are:
 - Pre-condition: 
 	- `object` property is openable and `object` state is open
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition:
     - state changes: `object` state is closed
 
@@ -166,7 +171,6 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is off
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand
 	- `object` must not be plugged_out
 - Post-condition: 
     - state changes: `object` state is on
@@ -177,7 +181,6 @@ Possible relations (edge labels) are:
 	- `object` property is has_switch
 	- `object` state is on
 	- exists edge `character` close `object`
-	- no edge `character` holds_rh `any_object` or no edge `character` holds_lh `any_object`  // character has at least one free hand 
 - Post-condition: 
     - state changes: `object` state is off
 
@@ -204,7 +207,6 @@ Possible relations (edge labels) are:
 - script: Wipe `object`
 - Pre-condition: 
 	- `character` close `object`
-	- `object` property is `surface`
 	- exists edge `character` holds_rh `object` or `character` holds_lh `object`
 - Post-condition:
 	- state changes: `object` state is clean
@@ -288,6 +290,7 @@ Possible relations (edge labels) are:
     - room of `character` is room of `object`
     - `object` is not inside a closed object
 	- only television, computer, laptop is allowed to be watched
+	- `character` face `object` if character sitting
 
 
 ### MoveExecutor

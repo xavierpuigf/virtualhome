@@ -1,0 +1,12 @@
+0
+Bake
+Preparing cake mix , pour into bowl, mixed with eggs, butter, oil, water with mixer then spray pan with oil spray , pour cake mix to pan , heat oven and put cake into oven, cook it until not stick to toothpick and cool cake it down.
+
+
+[Find] <BOWL> (1)
+[TurnTo] <BOWL> (1)
+[PointAt] <BOWL> (1)
+[Wash] <BOWL> (1)
+[Eat] <BOWL> (1)
+[TurnTo] <BOWL> (1)
+[LookAt] <BOWL> (1)

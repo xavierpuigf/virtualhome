@@ -1,0 +1,28 @@
+Cook some food
+I go to the kitchen and get some bread. I grab cheese and take a frying pan. I turn on the stove and put the bread and cheese into the frying pan. When it is done I get a plate and put the food into the plate.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <PANTRY> (1)
+[Find] <PANTRY> (1)
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FOOD_CHEESE> (1)
+[Grab] <FOOD_CHEESE> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <FRYINGPAN> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <FOOD_BREAD> (2)
+[Grab] <FOOD_BREAD> (2)
+[Drop] <FOOD_BREAD> (2)
+[Find] <FOOD_CHEESE> (2)
+[Grab] <FOOD_CHEESE> (2)
+[Drop] <FOOD_CHEESE> (2)
+[Grab] <FRYINGPAN> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[PutBack] <FOOD_FOOD> (1) <PLATE> (1)

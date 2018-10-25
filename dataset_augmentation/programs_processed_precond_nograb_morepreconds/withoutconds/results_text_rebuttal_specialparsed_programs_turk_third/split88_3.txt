@@ -1,0 +1,21 @@
+Dance with kids
+Plug iphone into speaker and turn on Pandora radio. Put favorite station on and begin dancing with kids and singing to music.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CHILD> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Walk] <DRESSER> (1)
+[Find] <PHONE> (1)
+[Grab] <PHONE> (1)
+[Walk] <RADIO> (1)
+[PlugIn] <PHONE> (1)
+[SwitchOn] <RADIO> (1)
+[TurnTo] <CHILD> (1)
+[LookAt] <CHILD> (1)
+[TurnTo] <CHILD> (2)
+[LookAt] <CHILD> (2)
+[Dance]

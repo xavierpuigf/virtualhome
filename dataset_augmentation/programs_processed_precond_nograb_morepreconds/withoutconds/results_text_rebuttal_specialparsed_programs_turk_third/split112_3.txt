@@ -1,0 +1,14 @@
+Watch TV
+Sit on the couch nd watch t.V
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)

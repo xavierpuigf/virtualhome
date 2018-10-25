@@ -1,0 +1,29 @@
+1
+atreach: ('WATER', '1') --> ('WATER', '1'), ('SAUCE', '1') --> ('SAUCE', '1'), ('POT', '1') --> ('WATER', '1'), ('PASTA', '1') --> ('WATER', '1'), ('FOOD_SALT', '1') --> ('WATER', '1'), ('SINK', '1') --> ('WATER', '1'), ('STOVE', '1') --> ('WATER', '1')
+Cook some food
+Ok so while i am in the kitchen 60% of the time i am cooking.Today we will boil water for pasta ok so the first thing you will need is a mid size pot so we can boil water.The second thing you will need is 1 box of your favorite pasta 1lb.3ed think is to fill mid size pot up about 3/4 of the way put on stove and turn to medium heat  add pinch of salt cover let come to rapid boil 10 mins or so add you pasta let boil for 12-15 mins strain.Do not wash.Put back in pot and add you sauce.
+
+
+[Find] <POT> (1)
+[Grab] <POT> (1)
+[Find] <PASTA> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <POT> (1)
+[Grab] <PASTA> (1)
+[Find] <STOVE> (1)
+[PutBack] <POT> (1) <STOVE> (1)
+[Touch] <STOVE> (1)
+[Find] <FOOD_SALT> (1)
+[Grab] <FOOD_SALT> (1)
+[PutBack] <FOOD_SALT> (1) <STOVE> (1)
+[PutBack] <PASTA> (1) <STOVE> (1)
+[Find] <SINK> (1)
+[Pour] <WATER> (1) <SINK> (1)
+[Grab] <POT> (1)
+[PutBack] <POT> (1) <STOVE> (1)
+[Walk] <SAUCE> (1)
+[Find] <SAUCE> (1)
+[Grab] <SAUCE> (1)
+[Pour] <SAUCE> (1) <POT> (1)

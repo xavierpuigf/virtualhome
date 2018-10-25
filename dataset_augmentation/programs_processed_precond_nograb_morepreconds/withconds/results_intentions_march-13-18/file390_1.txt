@@ -1,0 +1,17 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('PLATE', '1') --> ('SINK', '1')
+Wash dishes by hand
+Walk into the kitchen. Walk up to the sink. Turn on the faucet. Pick up the plate. Wash the plate. Rinse the plate.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Wash] <PLATE> (1)
+[Rinse] <PLATE> (1)

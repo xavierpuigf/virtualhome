@@ -1,0 +1,23 @@
+3
+in: ('BOARD GAME', '1') --> ('CABINET', '1')
+location: ('WOMAN', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('BOARD GAME', '1') --> ('LIVING ROOM', '1')
+atreach: ('WOMAN', '1') --> ('WOMAN', '1'), ('TABLE', '1') --> ('CABINET', '1'), ('COUCH', '1') --> ('TABLE', '1'), ('BOARD GAME', '1') --> ('CABINET', '1')
+Play games
+Take a game out called candyland, and invite at least one other person.  Read the directions and play.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <WOMAN> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Walk] <CABINET> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Find] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Uncover] <BOARD GAME> (1)
+[TurnTo] <WOMAN> (1)
+[LookAt] <WOMAN> (1)
+[Play]

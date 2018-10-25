@@ -1,0 +1,20 @@
+3
+in: ('SHOES', '1') --> ('Character', 1), ('SHOES', '2') --> ('Character', 1)
+location: ('SHOES', '1') --> ('ENTRANCE HALL', '1'), ('SHOES', '2') --> ('ENTRANCE HALL', '1')
+atreach: ('SHOES', '1') --> ('SHOES', '1'), ('SHOES', '2') --> ('SHOES', '1')
+Shoe removal
+One removes the shoes from their feet/
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <SHOES> (1)
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Find] <SHOES> (1)
+[Find] <SHOES> (1)
+[PutOff] <SHOES> (1)
+[Find] <SHOES> (2)
+[Find] <SHOES> (2)
+[Grab] <SHOES> (2)
+[Find] <SHOES> (2)
+[PutOff] <SHOES> (2)

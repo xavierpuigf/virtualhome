@@ -1,0 +1,33 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1'), ('DISHRACK', '1') --> ('KITCHEN', '1'), ('BOWL', '2') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('BOWL', '1') --> ('KITCHEN', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('SPONGE', '1') --> ('SINK', '1'), ('DISH SOAP', '1') --> ('SINK', '1'), ('BOWL', '2') --> ('SINK', '1'), ('DISHRACK', '1') --> ('SINK', '1'), ('BOWL', '1') --> ('SINK', '1')
+Wash dishes
+Fill sink with warm, sudsy water. Place dirty dishes in soapy water. With a washcloth or sponge scrub dishes clean. Rinse under clean warm water. Place in dish rack to dry.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Pour] <DISH SOAP> (1) <SINK> (1)
+[PutObjBack] <DISH SOAP> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Scrub] <BOWL> (1)
+[Rinse] <BOWL> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <BOWL> (1) <DISHRACK> (1)
+[Find] <BOWL> (2)
+[Grab] <BOWL> (2)
+[Scrub] <BOWL> (2)
+[Rinse] <BOWL> (2)
+[PutBack] <BOWL> (2) <DISHRACK> (1)
+[Rinse] <SPONGE> (1)
+[SwitchOff] <FAUCET> (1)
+[PutObjBack] <SPONGE> (1)

@@ -1,0 +1,12 @@
+Pet cat
+I enter the room where the cat is. I look for the cat. I find the cat. I walk over to the cat. I use my hand to pet the cat.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CAT> (1)
+[Find] <CAT> (1)
+[TurnTo] <CAT> (1)
+[LookAt] <CAT> (1)
+[Find] <CAT> (1)
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

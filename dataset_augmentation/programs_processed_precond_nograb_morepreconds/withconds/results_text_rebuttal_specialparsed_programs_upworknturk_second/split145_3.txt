@@ -1,0 +1,32 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('RAG', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('RAG', '1') --> ('BATHROOM', '1'), ('FACE SOAP', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('FACE', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('RAG', '1') --> ('SINK', '1'), ('FACE', '1') --> ('SINK', '1'), ('FACE SOAP', '1') --> ('SINK', '1'), ('TOWEL', '1') --> ('SINK', '1')
+Wash face
+Turn on water faucet. Get rag wet. Get face soap out. Squirt face soap in hands and put it on face. Rub soap into face. Wash soap off of face. Dry face off on the hand towel. Hang out rag and hand towel.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Wash] <RAG> (1)
+[Find] <FACE SOAP> (1)
+[Grab] <FACE SOAP> (1)
+[Pour] <FACE SOAP> (1) <RAG> (1)
+[PutObjBack] <FACE SOAP> (1)
+[Find] <FACE> (1)
+[Scrub] <FACE> (1)
+[PutBack] <RAG> (1) <SINK> (1)
+[Rinse] <FACE> (1)
+[Rinse] <RAG> (1)
+[SwitchOff] <FAUCET> (1)
+[Grab] <RAG> (1)
+[PutObjBack] <RAG> (1)
+[Find] <TOWEL> (1)
+[Grab] <TOWEL> (1)
+[Wipe] <FACE> (1)
+[PutObjBack] <TOWEL> (1)

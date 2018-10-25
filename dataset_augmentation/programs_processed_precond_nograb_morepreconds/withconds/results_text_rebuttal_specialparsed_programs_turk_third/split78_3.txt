@@ -1,0 +1,19 @@
+4
+inside: ('BOARD GAME', '1') --> ('CUPBOARD', '1')
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('CUPBOARD', '1') --> ('LIVING ROOM', '1')
+closed: ('CUPBOARD', '1') --> 
+atreach: ('TABLE', '1') --> ('CUPBOARD', '1'), ('BOARD GAME', '1') --> ('CUPBOARD', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+Play games
+Get out a board game.  Play it.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CUPBOARD> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Close] <CUPBOARD> (1)
+[Find] <TABLE> (1)
+[Sit] <TABLE> (1)
+[Play] <BOARD GAME> (1)

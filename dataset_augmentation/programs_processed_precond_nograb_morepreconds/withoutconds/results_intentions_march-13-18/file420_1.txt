@@ -1,0 +1,11 @@
+Listen to music
+Walk to the Living room. Find the radio. Plug in the radio. Switch on the radio. Sit in the chair.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <RADIO> (1)
+[Find] <RADIO> (1)
+[PlugIn] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)

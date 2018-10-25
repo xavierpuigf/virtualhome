@@ -1,0 +1,10 @@
+Go to toilet
+I go to the bathroom open the door and close it, then i sit on the toilet.... I use toilet paper, wash my hands and open the door to exit.
+
+
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Find] <CLOSET> (1)
+[Wash] <CLOSET> (1)

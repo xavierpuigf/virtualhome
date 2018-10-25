@@ -1,0 +1,14 @@
+Watch TV
+SIT ON THE COUCH, TURN TV ON WITH REMOTE, FIND A SHOW
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutBack] <REMOTE CONTROL> (1) <COUCH> (1)
+[Watch] <TELEVISION> (1)

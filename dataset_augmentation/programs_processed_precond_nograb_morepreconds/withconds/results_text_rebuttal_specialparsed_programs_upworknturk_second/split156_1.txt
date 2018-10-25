@@ -1,0 +1,11 @@
+2
+location: ('SHOES', '1') --> ('ENTRANCE HALL', '1'), ('MAT', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('SHOES', '1') --> ('MAT', '1')
+Wipe off shoes
+The person shuffles their feet in their shoes on the hall mat in order to get all of the dirt, moisture, and residue from off of their shoes.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <MAT> (1)
+[Find] <SHOES> (1)
+[Wipe] <SHOES> (1)
