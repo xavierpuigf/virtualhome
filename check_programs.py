@@ -238,6 +238,7 @@ def check_2(dir_path, graph_path):
 
         precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
         precond = json.load(open(precond_path))
+        print(txt_file)
         
         for p in precond:
             for k, vs in p.items():
@@ -260,7 +261,7 @@ def check_2(dir_path, graph_path):
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
 
-        ipdb.set_trace()
+        #ipdb.set_trace()
         ## place the random objects (id from 2000)
         helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
         ## set object state to default 
