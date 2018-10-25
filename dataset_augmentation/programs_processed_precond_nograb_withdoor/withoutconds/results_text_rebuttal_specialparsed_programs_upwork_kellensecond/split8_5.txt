@@ -1,0 +1,15 @@
+Throw away paper
+Crumple the paper.  Get up from the desk.  Walk to the trash can.  Toss the paper in the trash can.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Squeeze] <PAPER> (1)
+[StandUp]
+[Walk] <TRASHCAN> (1)
+[PutBack] <PAPER> (1) <TRASHCAN> (1)

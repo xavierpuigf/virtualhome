@@ -1,0 +1,25 @@
+3
+inside: ('GROUND COFFEE', '1') --> ('DOOR', '1'), ('COFFEE POT', '1') --> ('DOOR', '1'), ('COFFEE FILTER', '1') --> ('COFFE MAKER', '1'), ('COFFEE CUP', '1') --> ('COFFE MAKER', '1')
+location: ('COFFEE', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1')
+nearby: ('COFFE MAKER', '1') --> 
+Make coffee
+I wake up early on the moorning and stard to make some coffee for the breakfast
+
+
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <KITCHEN> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Find] <COFFEE> (1)
+[Drink] <COFFEE> (1)

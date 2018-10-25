@@ -1,0 +1,7 @@
+Turn on light
+Hit light switch
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

@@ -1,0 +1,21 @@
+3
+is_off: ('WASHING MACHINE', '1') --> 
+inside: ('DETERGENT', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
+location: ('WASHING MACHINE', '1') --> ('BATHROOM', '1')
+Wash clothes
+Collect the basket for clothes and bring to the bathroom, use arms and hands to remove clothes from the basket and load into the washing machine, add detergent to the washing machine, use hand to turn the washing machine on.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <BATHROOM> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <DETERGENT> (1)
+[Grab] <DETERGENT> (1)
+[PutBack] <DETERGENT> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

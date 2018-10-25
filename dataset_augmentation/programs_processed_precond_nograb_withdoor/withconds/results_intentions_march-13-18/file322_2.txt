@@ -1,0 +1,9 @@
+0
+Pet cat
+Look for cat, bend down towards cat. with right hand on right arm, gently touch the fur of the cat. Move righ hand on right arm in slow back and forth motions along cats head and nape. Continue this motion untill the cat runs away.
+
+
+[Find] <CAT> (1)
+[LookAt] <CAT> (1)
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

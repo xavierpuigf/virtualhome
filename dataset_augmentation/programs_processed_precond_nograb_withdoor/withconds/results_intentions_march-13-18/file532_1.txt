@@ -1,0 +1,23 @@
+4
+is_off: ('FAUCET', '1') --> 
+inside: ('DRINKING GLASS', '1') --> ('KITCHEN CABINET', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+in: ('FAUCET', '1') --> ('SINK', '1')
+Drink
+I walk to the kitchen and open the cabinet containing the drinking glasses. I grab a drinking glass and close the cabinet. I bring the glass to the sink and turn on the faucet to cold. I move the glass under the stream of water and keep it there until the glass is 80% full of water. I move the glass away from the stream of water and shut off the faucet. I bring the cup to my mouth and drink the water.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Close] <KITCHEN CABINET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Grab] <DRINKING GLASS> (1)
+[SwitchOff] <FAUCET> (1)
+[Drink] <WATER> (1)

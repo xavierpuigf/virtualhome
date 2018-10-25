@@ -1,0 +1,28 @@
+Make coffee
+Walk to kitchen, open coffee make, put coffee filter to coffee make, put ground coffee, pour water, turn on coffee make, grab coffee pot when coffee is ready, pour coffee into coffee cup, add milk, add sugar, stir coffee with spoon.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFEE> (1)
+[Find] <COFFEE CUP> (1)
+[Pour] <COFFEE> (1) <COFFEE CUP> (1)
+[Find] <MILK> (1)
+[Pour] <MILK> (1) <COFFEE CUP> (1)
+[Find] <FOOD_SUGAR> (1)
+[Pour] <FOOD_SUGAR> (1) <COFFEE CUP> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Stir] <COFFEE> (1)

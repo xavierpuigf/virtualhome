@@ -1,0 +1,31 @@
+3
+inside: ('FOOD_LEMON', '1') --> ('FRIDGE', '1')
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('GARBAGE CAN', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('CHEF KNIFE', '1') --> ('KITCHEN', '1'), ('CUTTING BOARD', '1') --> ('KITCHEN', '1'), ('BOWL', '1') --> ('KITCHEN', '1'), ('JUICE', '1') --> ('KITCHEN', '1')
+nearby: ('TABLE', '1') --> , ('GARBAGE CAN', '1') --> , ('JUICE', '1') --> , ('FRIDGE', '1') --> 
+Squeeze lemon
+Place a cutting board on a counter or otherwise flat, elevated surface. Place a lemon on the cutting board. Use a hand knife to cut the lemon in half width-wise. Grasp a half of the lemon in your palm, wrapping the thumb around for grip, and holding the cut side away from the palm. Use fingers and butt of hand to squeeze lemon toward hand above the item you wish to add fresh lemon juice to (e.G. Drink, food)
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_LEMON> (1)
+[Grab] <FOOD_LEMON> (1)
+[Close] <FRIDGE> (1)
+[Find] <CUTTING BOARD> (1)
+[Grab] <CUTTING BOARD> (1)
+[Find] <TABLE> (1)
+[PutBack] <CUTTING BOARD> (1) <TABLE> (1)
+[Find] <CHEF KNIFE> (1)
+[Grab] <CHEF KNIFE> (1)
+[PutBack] <FOOD_LEMON> (1) <CUTTING BOARD> (1)
+[Cut] <FOOD_LEMON> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[PutBack] <BOWL> (1) <TABLE> (1)
+[Squeeze] <FOOD_LEMON> (1)
+[Find] <JUICE> (1)
+[Pour] <JUICE> (1) <BOWL> (1)
+[Grab] <FOOD_LEMON> (1)
+[Find] <GARBAGE CAN> (1)
+[PutBack] <FOOD_LEMON> (1) <GARBAGE CAN> (1)

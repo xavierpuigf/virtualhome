@@ -1,0 +1,31 @@
+1
+location: ('CLOTHES_PANTS', '2') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '1') --> ('BEDROOM', '1'), ('DRESSER', '2') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '2') --> ('BEDROOM', '1')
+Put clothes away
+Separate the clean and folded laundry by owner (which child) and type (pants, pajamas, short-sleeved shirts, etc.). Place each type in the dresser drawer containing the same type of item owned by the same child.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Walk] <DRESSER> (1)
+[Open] <DRESSER> (1)
+[PutBack] <CLOTHES_PANTS> (1) <DRESSER> (1)
+[Close] <DRESSER> (1)
+[Find] <CLOTHES_PANTS> (2)
+[Grab] <CLOTHES_PANTS> (2)
+[Walk] <DRESSER> (2)
+[Open] <DRESSER> (2)
+[PutBack] <CLOTHES_PANTS> (2) <DRESSER> (2)
+[Close] <DRESSER> (2)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Walk] <DRESSER> (1)
+[Open] <DRESSER> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <DRESSER> (1)
+[Close] <DRESSER> (1)
+[Find] <CLOTHES_SHIRT> (2)
+[Grab] <CLOTHES_SHIRT> (2)
+[Walk] <DRESSER> (2)
+[Open] <DRESSER> (2)
+[PutBack] <CLOTHES_SHIRT> (2) <DRESSER> (2)
+[Close] <DRESSER> (2)

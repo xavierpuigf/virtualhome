@@ -1,0 +1,10 @@
+Place centerpiece
+Move the centerpiece until it is centered in the middle of the table.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <CENTERPIECE> (1)
+[LookAt] <CENTERPIECE> (1)
+[Grab] <CENTERPIECE> (1)
+[Pull] <CENTERPIECE> (1)

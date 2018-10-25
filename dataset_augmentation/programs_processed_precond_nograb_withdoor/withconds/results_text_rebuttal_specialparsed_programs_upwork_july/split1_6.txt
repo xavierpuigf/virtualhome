@@ -1,0 +1,37 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('ENTRANCE HALL', '1'), ('WATER', '1') --> ('ENTRANCE HALL', '1'), ('DRAWING', '3') --> ('KIDS BEDROOM', '1'), ('DRAWING', '2') --> ('KIDS BEDROOM', '1'), ('MOP BUCKET', '1') --> ('ENTRANCE HALL', '1'), ('WALL', '2') --> ('KIDS BEDROOM', '1'), ('SPONGE', '1') --> ('ENTRANCE HALL', '1'), ('WALL', '3') --> ('KIDS BEDROOM', '1'), ('SINK', '1') --> ('ENTRANCE HALL', '1'), ('WALL', '1') --> ('KIDS BEDROOM', '1'), ('DRAWING', '1') --> ('KIDS BEDROOM', '1')
+nearby: ('FAUCET', '1') --> , ('WATER', '1') --> , ('DRAWING', '3') --> , ('DRAWING', '2') --> , ('WALL', '2') --> , ('WALL', '3') --> , ('WALL', '1') --> , ('DRAWING', '1') --> 
+Clean
+Find various children's drawings on walls.  Scrub them with a sponge. Rinse and repeat.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <MOP BUCKET> (1)
+[Grab] <MOP BUCKET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[Find] <WATER> (1)
+[Soak] <SPONGE> (1) <WATER> (1)
+[Walk] <KIDS BEDROOM> (1)
+[Find] <DRAWING> (1)
+[Scrub] <DRAWING> (1)
+[Squeeze] <SPONGE> (1)
+[Find] <WALL> (1)
+[Wipe] <WALL> (1)
+[Grab] <SPONGE> (1)
+[Find] <DRAWING> (2)
+[Scrub] <DRAWING> (2)
+[Squeeze] <SPONGE> (1)
+[Find] <WALL> (2)
+[Wipe] <WALL> (2)
+[Grab] <SPONGE> (1)
+[Find] <DRAWING> (3)
+[Scrub] <DRAWING> (3)
+[Find] <WALL> (3)
+[Wipe] <WALL> (3)
+[Wash] <SPONGE> (1)

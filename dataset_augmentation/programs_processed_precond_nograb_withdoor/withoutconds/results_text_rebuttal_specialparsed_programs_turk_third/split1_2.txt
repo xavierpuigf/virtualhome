@@ -1,0 +1,9 @@
+Make jello
+Open a pack of Jello.  Add water.  Pour into a pan and boil water.  Set aside to cool.  Pour into a mold and refrigerate.
+
+
+[Find] <WATER> (1)
+[PointAt] <WATER> (1)
+[Drink] <WATER> (1)
+[Find] <KITCHEN> (1)
+[Crawl] <KITCHEN> (1)

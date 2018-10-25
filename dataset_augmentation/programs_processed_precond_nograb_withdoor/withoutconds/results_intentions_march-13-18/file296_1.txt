@@ -1,0 +1,11 @@
+Put groceries in Fridge
+Collect groceries from kitchen table. Put it inside the fridge.
+
+
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutObjBack] <GROCERIES> (1)
+[Close] <FRIDGE> (1)

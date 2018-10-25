@@ -1,0 +1,16 @@
+Wash clothes
+washing clothes
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <BATHROOM> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <BASKET FOR CLOTHES> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Drop] <DISH SOAP> (1)
+[Wash] <BASKET FOR CLOTHES> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[Drop] <BRUSH> (1)

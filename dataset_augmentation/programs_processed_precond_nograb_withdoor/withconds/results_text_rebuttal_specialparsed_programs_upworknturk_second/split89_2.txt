@@ -1,0 +1,22 @@
+4
+inside: ('PEN', '1') --> ('DESK', '1')
+nearby: ('CHAIR', '1') --> , ('DESK', '1') --> 
+location: ('PAPER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('PAPER', '1')
+Work
+Walk into home office. Sit down in a chair at a desk. Pull out a drawer and take out paper and a pen. Begin writing lesson plans.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Open] <DESK> (1)
+[PutBack] <PAPER> (1) <DESK> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <PAPER> (1)
+[PutObjBack] <PEN> (1)

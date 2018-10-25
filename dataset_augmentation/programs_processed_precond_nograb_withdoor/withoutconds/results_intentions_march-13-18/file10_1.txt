@@ -1,0 +1,11 @@
+Browse internet
+walk into Living room, look for computer, walk to computer, turn on computer, grab mouse, click mouse
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Walk] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)

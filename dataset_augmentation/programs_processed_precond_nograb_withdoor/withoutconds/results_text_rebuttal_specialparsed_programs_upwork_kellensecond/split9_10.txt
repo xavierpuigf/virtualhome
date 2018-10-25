@@ -1,0 +1,11 @@
+Put away shoes
+Pick up shoes from entry hall. Open entry way closet. Put shoes in closet. Close closet door.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <SHOES> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

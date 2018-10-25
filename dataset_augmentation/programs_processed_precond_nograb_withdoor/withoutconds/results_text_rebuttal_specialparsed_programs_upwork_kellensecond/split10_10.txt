@@ -1,0 +1,12 @@
+Call mother
+I get my phone out, and dial my mothers phone number.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)
+[Dial] <TELEPHONE> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)

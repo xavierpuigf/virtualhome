@@ -1,0 +1,13 @@
+Make popcorn
+Lay popcorn bag flat inside microwave and press popcorn button to start.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Walk] <MICROWAVE> (1)
+[TurnTo] <MICROWAVE> (1)
+[Open] <MICROWAVE> (1)
+[PutBack] <FOOD_FOOD> (1) <MICROWAVE> (1)
+[Close] <MICROWAVE> (1)
+[SwitchOn] <MICROWAVE> (1)

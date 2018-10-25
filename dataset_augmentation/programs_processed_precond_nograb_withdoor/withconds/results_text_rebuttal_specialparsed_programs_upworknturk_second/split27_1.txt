@@ -1,0 +1,19 @@
+2
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('RAG', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('INSTRUMENT_PIANO', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
+nearby: ('TELEVISION', '1') --> , ('INSTRUMENT_PIANO', '1') --> , ('COUCH', '1') --> , ('COFFEE TABLE', '1') --> 
+Clean room
+Tidy the room
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Find] <COFFEE TABLE> (1)
+[Wipe] <COFFEE TABLE> (1)
+[Find] <COUCH> (1)
+[Wipe] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[Wipe] <TELEVISION> (1)
+[Find] <INSTRUMENT_PIANO> (1)
+[Wipe] <INSTRUMENT_PIANO> (1)
+[PutObjBack] <RAG> (1)

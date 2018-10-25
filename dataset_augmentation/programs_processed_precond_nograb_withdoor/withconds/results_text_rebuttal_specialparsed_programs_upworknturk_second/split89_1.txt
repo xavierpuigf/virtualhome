@@ -1,0 +1,18 @@
+3
+inside: ('TOY', '2') --> ('BOOKSHELF', '1')
+location: ('TOY', '1') --> ('KIDS BEDROOM', '1'), ('BOOKSHELF', '1') --> ('KIDS BEDROOM', '1')
+nearby: ('TOY', '1') --> , ('CABINET', '1') --> 
+Put toys away
+Pick up toys from the floor. Put toys into specific bins. Put bins away on the bookshelf.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <BOOKSHELF> (1)
+[Open] <BOOKSHELF> (1)
+[PutBack] <TOY> (1) <BOOKSHELF> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[PutBack] <TOY> (2) <BOOKSHELF> (1)
+[Close] <BOOKSHELF> (1)

@@ -1,0 +1,13 @@
+Watch TV
+Enjoy TV programs and movies while sitting on the bed.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[Watch] <TELEVISION> (1)

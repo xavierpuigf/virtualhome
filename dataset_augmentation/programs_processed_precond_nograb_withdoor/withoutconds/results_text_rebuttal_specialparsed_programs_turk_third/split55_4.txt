@@ -1,0 +1,19 @@
+Play games
+Play video games on my PS3
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Find] <VIDEO GAME CONSOLE> (1)
+[PlugIn] <VIDEO GAME CONSOLE> (1)
+[SwitchOn] <VIDEO GAME CONSOLE> (1)
+[Find] <VIDEO GAME CONTROLLER> (1)
+[Grab] <VIDEO GAME CONTROLLER> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <CD> (1)
+[Play] <CD> (1)

@@ -1,0 +1,14 @@
+2
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
+Change TV channel
+Walk into the Living room.  Find the television remote.  Use it to turn on the television.  Point the remote at the television. Press the channel button on the remote.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

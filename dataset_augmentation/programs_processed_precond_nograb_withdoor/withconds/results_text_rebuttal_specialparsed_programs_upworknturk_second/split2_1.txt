@@ -1,0 +1,21 @@
+3
+inside: ('BOOK', '1') --> ('CABINET', '1')
+location: ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('CABINET', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1')
+nearby: ('CHILD', '2') --> , ('CHILD', '1') --> 
+Read book
+Read story to children
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Close] <CABINET> (1)
+[Walk] <BED> (1)
+[Sit] <BED> (1)
+[Read] <BOOK> (1)

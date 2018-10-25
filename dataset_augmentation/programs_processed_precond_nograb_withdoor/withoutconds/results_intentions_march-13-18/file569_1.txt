@@ -1,0 +1,8 @@
+Listen to music
+I walk to my bedroom and plugin the radio, and dance with the music
+
+
+[Walk] <BEDROOM> (1)
+[Find] <RADIO> (1)
+[PlugIn] <RADIO> (1)
+[Dance]

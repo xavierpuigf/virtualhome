@@ -1,0 +1,18 @@
+3
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('DOOR', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Work
+Go to home office and open door.  Walk to desk and sit in computer chair.  Look at computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Touch] <COMPUTER> (1)

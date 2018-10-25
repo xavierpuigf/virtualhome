@@ -1,0 +1,13 @@
+Hang out
+Sit on couch.  Talk with people
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Talk] <WOMAN> (1)
+[Talk] <WOMAN> (2)

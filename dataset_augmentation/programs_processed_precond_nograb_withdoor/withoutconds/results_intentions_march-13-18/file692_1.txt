@@ -1,0 +1,19 @@
+Go to toilet
+lift toilet seat, pull down pants, sit down, wipe, pull up pants, flush toilet, wash hands
+
+
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Drop] <CLOTHES_PANTS> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Drop] <TOILET PAPER> (1)
+[Flush] <TOILET> (1)
+[StandUp]
+[Grab] <CLOTHES_PANTS> (1)
+[Close] <TOILET> (1)
+[Find] <SINK> (1)
+[Rinse] <SINK> (1)

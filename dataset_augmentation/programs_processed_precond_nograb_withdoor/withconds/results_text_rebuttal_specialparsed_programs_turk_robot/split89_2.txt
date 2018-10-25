@@ -1,0 +1,12 @@
+2
+location: ('CURTAIN', '1') --> ('LIVING ROOM', '1'), ('CURTAIN', '2') --> ('LIVING ROOM', '1')
+nearby: ('CURTAIN', '1') --> , ('CURTAIN', '2') --> 
+Open curtains
+Gently pull the curtains open, from the middle to the sides.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CURTAIN> (1)
+[Pull] <CURTAIN> (1)
+[Find] <CURTAIN> (2)
+[Pull] <CURTAIN> (2)

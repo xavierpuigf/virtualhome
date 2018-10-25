@@ -1,0 +1,16 @@
+Go to sleep
+GOING TO BE IN BEDROOM
+
+
+[StandUp]
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <BEDROOM> (1)
+[Find] <DOOR> (1)
+[PointAt] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <SHOES> (1)
+[Find] <SLIPPERS> (1)
+[Grab] <SLIPPERS> (1)
+[Find] <LIGHTING> (1)
+[TurnTo] <LIGHTING> (1)
+[Drop] <SLIPPERS> (1)

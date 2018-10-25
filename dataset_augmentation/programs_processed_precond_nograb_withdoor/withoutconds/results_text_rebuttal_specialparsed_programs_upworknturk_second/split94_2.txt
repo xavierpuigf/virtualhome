@@ -1,0 +1,26 @@
+Vacuum
+Pick up anything on the floor that would damage the vacuum or is too big to be sucked up by the vacuum.  Vacuum the floor.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <TOY> (1) <CLOSET> (1)
+[PutBack] <SHOES> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Walk] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[Push] <VACUUM CLEANER> (1)
+[Pull] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[PutObjBack] <VACUUM CLEANER> (1)

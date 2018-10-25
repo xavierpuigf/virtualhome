@@ -1,0 +1,14 @@
+2
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('PHONE', '1') --> ('LIVING ROOM', '1')
+in: ('PHONE', '1') --> ('TABLE', '1')
+Pick up phone
+Go to the phone and pick it up.
+
+
+[Run] <LIVING ROOM> (1)
+[Run] <TABLE> (1)
+[Find] <PHONE> (1)
+[Grab] <PHONE> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Touch] <PHONE> (1)

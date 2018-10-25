@@ -1,0 +1,30 @@
+2
+location: ('WATER', '1') --> ('DINING ROOM', '1'), ('FOOD_CHICKEN', '1') --> ('DINING ROOM', '1'), ('POT', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1'), ('KNIFE', '1') --> ('DINING ROOM', '1'), ('GLASS', '1') --> ('DINING ROOM', '1')
+nearby: ('GLASS', '1') --> 
+Set up table
+I finish the meal, I go to the dining room, to arrange the plates, cutlery, glasses, I serve the food and the water
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Drop] <PLATE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Drop] <KNIFE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Drop] <FORK> (1)
+[Walk] <KITCHEN> (1)
+[Grab] <FORK> (1)
+[Walk] <DINING ROOM> (1)
+[Find] <FOOD_CHICKEN> (1)
+[Grab] <FOOD_CHICKEN> (1)
+[PutBack] <FOOD_CHICKEN> (1) <PLATE> (1)
+[Walk] <KITCHEN> (1)
+[Find] <POT> (1)
+[Grab] <POT> (1)
+[Walk] <DINING ROOM> (1)
+[Find] <WATER> (1)
+[Find] <GLASS> (1)
+[Pour] <WATER> (1) <GLASS> (1)

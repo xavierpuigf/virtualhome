@@ -1,0 +1,22 @@
+4
+is_off: ('TELEVISION', '1') --> 
+nearby: ('SLIPPERS', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('SLIPPERS', '1') --> ('LIVING ROOM', '1'), ('SHOES', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('SHOES', '1')
+Change TV channel
+I go to the living room, I settle on the sofa, I turn on the television, change the channel
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <SHOES> (1)
+[Find] <SLIPPERS> (1)
+[Grab] <SLIPPERS> (1)
+[Drop] <SLIPPERS> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

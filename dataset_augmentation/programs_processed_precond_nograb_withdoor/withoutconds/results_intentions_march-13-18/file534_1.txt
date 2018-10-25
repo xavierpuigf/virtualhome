@@ -1,0 +1,14 @@
+Brush teeth
+Walk to  bathroom, grab toothbrush, grab toothpaste, put toothpaste on toothbrush, put toothpaste down, brush for 2 minutes, clean toothbrush, put toothbrush away, rinse mouth
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Scrub] <TOOTHBRUSH> (1)
+[Rinse] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

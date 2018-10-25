@@ -1,0 +1,15 @@
+Watch TV
+I will enter the room with the TV and walk to a remote. I'll pick up the remote and walk to a nearby couch or chair. I'll sit in the couch and use the remote to turn on the TV. I'll then select a channel to watch.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <COUCH> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

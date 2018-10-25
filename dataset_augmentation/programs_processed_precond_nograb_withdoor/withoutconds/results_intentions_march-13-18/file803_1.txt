@@ -1,0 +1,10 @@
+Go to sleep
+I walk to bedroom. I switch off the lamp. I get on the bed. I go to sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LAMP> (1)
+[SwitchOff] <LAMP> (1)
+[Find] <BED> (1)
+[Climb] <BED> (1)
+[Sleep]

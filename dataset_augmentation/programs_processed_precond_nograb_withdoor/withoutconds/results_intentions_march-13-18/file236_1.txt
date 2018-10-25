@@ -1,0 +1,18 @@
+Go to sleep
+Go to the bedroom and sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LAMP> (1)
+[SwitchOff] <LAMP> (1)
+[Walk] <BED> (1)
+[Sit] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Lie] <BED> (1)
+[Pull] <BLANKET> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Pull] <PILLOW> (1)
+[Lie] <BED> (1)
+[Sleep]

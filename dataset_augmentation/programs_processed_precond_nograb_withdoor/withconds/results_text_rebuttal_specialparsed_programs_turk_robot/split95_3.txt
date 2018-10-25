@@ -1,0 +1,13 @@
+2
+location: ('HANGER', '1') --> ('ENTRANCE HALL', '1'), ('WALL', '1') --> ('ENTRANCE HALL', '1'), ('CLOTHES_JACKET', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('HANGER', '1') --> , ('CLOTHES_JACKET', '1') --> 
+Hang up jacket
+Pick the coat up off the floor. Hang it by the collar from the hook.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <CLOTHES_JACKET> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[Walk] <WALL> (1)
+[Find] <HANGER> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)

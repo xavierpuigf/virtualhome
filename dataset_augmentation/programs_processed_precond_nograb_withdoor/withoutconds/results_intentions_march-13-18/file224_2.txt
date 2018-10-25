@@ -1,0 +1,11 @@
+Put groceries in Fridge
+Take groceries out of back, peel containers and turn on freezer lights
+
+
+[Find] <FOOD_FOOD> (1)
+[Find] <FOOD_CHICKEN> (1)
+[Grab] <FOOD_CHICKEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Drop] <FOOD_CHICKEN> (1)
+[Close] <FRIDGE> (1)

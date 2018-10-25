@@ -1,0 +1,13 @@
+2
+in: ('SHEETS', '2') --> ('BED', '1')
+nearby: ('SHEETS', '2') --> , ('SHEETS', '1') --> , ('BED', '1') --> 
+Change sheets on bed
+Take old sheets off the bed, put the new sheets on and make the bed.
+
+
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Find] <BED> (1)
+[Find] <SHEETS> (2)
+[Cover] <BED> (1) <SHEETS> (2)
+[Fold] <SHEETS> (2)

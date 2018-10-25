@@ -1,0 +1,22 @@
+2
+inside: ('TOOTHBRUSH', '1') --> ('DOOR', '1')
+location: ('TOOTH PASTE', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('DOOR', '2') --> ('BATHROOM', '1'), ('DOOR', '1') --> ('BATHROOM', '1')
+Go to sleep
+as I go towards to the bedroom, I first go to the bathroom to wash my teeth and after that I go to the bedroom and sleep.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Walk] <BATHROOM> (1)
+[Close] <DOOR> (1)
+[Find] <DOOR> (2)
+[Open] <DOOR> (2)
+[Close] <DOOR> (2)
+[Sleep]

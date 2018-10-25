@@ -1,0 +1,17 @@
+Polish tea pot
+Squirt the silver cleaner onto a rag. Rub the rag on the tea pot until shiny. Wipe off cleaner.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CLEANING BOTTLE> (1)
+[Grab] <CLEANING BOTTLE> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Squeeze] <CLEANING BOTTLE> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Pour] <CLEANING SOLUTION> (1) <RAG> (1)
+[PutObjBack] <CLEANING BOTTLE> (1)
+[Find] <POT> (1)
+[Grab] <POT> (1)
+[Wipe] <POT> (1)
+[PutObjBack] <RAG> (1)

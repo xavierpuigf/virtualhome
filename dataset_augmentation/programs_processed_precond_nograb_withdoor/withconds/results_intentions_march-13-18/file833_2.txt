@@ -1,0 +1,17 @@
+1
+location: ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+Brush teeth
+I go to the bathroom, then I pick up my toothbrush and toothpaste bottle. Then I wet the toothbrush and put toothpaste on it. Then I put the toothpaste bottle down.Then I brush my teeth, and then I rinse the brush. Then I dry my face
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[Scrub] <TOOTHBRUSH> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

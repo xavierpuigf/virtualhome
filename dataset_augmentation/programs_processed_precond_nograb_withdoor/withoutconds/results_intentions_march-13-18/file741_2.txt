@@ -1,0 +1,15 @@
+Go to sleep
+I walk to the bedroom. I find the bed. I uncover the blanket from the bed. I lie down on the bed. I cover myself with the blanket. I sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Walk] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Uncover] <BLANKET> (1)
+[Lie] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Cover] <BED> (1) <BLANKET> (1)
+[Sleep]

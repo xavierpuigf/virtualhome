@@ -1,0 +1,20 @@
+Clean
+Locate the mildew. Using a bottle of bleach, spray the mildew.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Find] <DIRT> (1)
+[Find] <DIRT> (2)
+[Find] <DIRT> (3)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <DIRT> (1)
+[Wipe] <DIRT> (1)
+[Walk] <DIRT> (2)
+[Wipe] <DIRT> (2)
+[Walk] <DIRT> (3)
+[Wipe] <DIRT> (3)
+[PutObjBack] <RAG> (1)

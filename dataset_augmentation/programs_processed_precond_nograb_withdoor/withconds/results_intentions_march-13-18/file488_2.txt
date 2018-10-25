@@ -1,0 +1,14 @@
+2
+location: ('GLASS', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+in: ('WATER', '1') --> ('SINK', '1')
+Drink
+Walk to kitchen, grab a glass, walk to sink, turn on tap and pour water into glass, drink from glass.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Walk] <SINK> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <GLASS> (1)
+[Drink] <GLASS> (1)

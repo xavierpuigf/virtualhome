@@ -1,0 +1,25 @@
+Pay bills
+Sit down at dining room table. Spread mail on the table. Sort through the mail, making different piles on the table. Choose the bills and write checks.
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Find] <TABLE> (1)
+[PutBack] <MAIL> (1) <TABLE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Find] <BILLS> (1)
+[Grab] <BILLS> (1)
+[LookAt] <BILLS> (1)
+[PutObjBack] <BILLS> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[PutBack] <BOOK> (1) <TABLE> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Find] <CHECK> (1)
+[Write] <CHECK> (1)
+[PutObjBack] <PEN> (1)

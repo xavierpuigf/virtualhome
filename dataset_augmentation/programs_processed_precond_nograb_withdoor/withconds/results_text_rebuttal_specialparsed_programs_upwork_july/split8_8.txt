@@ -1,0 +1,34 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('DISHRACK', '1') --> ('KITCHEN', '1'), ('COOKINGPOT', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1')
+nearby: ('FAUCET', '1') --> , ('SPONGE', '1') --> , ('PLATE', '1') --> , ('DISHRACK', '1') --> , ('COOKINGPOT', '1') --> , ('DISH SOAP', '1') --> 
+Wash dishes
+Rinse dishes with water, put soap on sponges, scrub dishes till all food residue is gone, rise soap off dishes, put in dish strainer/drying rack
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Rinse] <PLATE> (1)
+[Find] <COOKINGPOT> (1)
+[Grab] <COOKINGPOT> (1)
+[Rinse] <COOKINGPOT> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[Pour] <DISH SOAP> (1) <SPONGE> (1)
+[PutObjBack] <DISH SOAP> (1)
+[Grab] <COOKINGPOT> (1)
+[Scrub] <COOKINGPOT> (1)
+[Wash] <COOKINGPOT> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <COOKINGPOT> (1) <DISHRACK> (1)
+[Grab] <PLATE> (1)
+[Scrub] <PLATE> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)
+[SwitchOff] <FAUCET> (1)

@@ -1,0 +1,18 @@
+Wash teeth
+I walk to the bathroom and find my toothbrush. I pick it up and find the toothpaste, then squeeze some toothpaste out onto the toothbrush. I then brush my teeth for a minute, first brushing the top row then the bottom row. I spit, find a cup, and rinse my mouth out. Then I turn the sink on and rinse my toothbrush. I put the toothpaste and toothbrush back where the belong.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

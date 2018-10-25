@@ -1,0 +1,12 @@
+Cook some food
+I switch on the stove and cook my groceries there.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[PutBack] <BOWL> (1) <STOVE> (1)
+[Find] <GROCERIES> (1)
+[SwitchOff] <STOVE> (1)

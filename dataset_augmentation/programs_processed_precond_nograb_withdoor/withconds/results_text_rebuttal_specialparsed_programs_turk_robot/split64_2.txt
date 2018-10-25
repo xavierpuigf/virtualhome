@@ -1,0 +1,15 @@
+1
+location: ('MAGAZINE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+Read magazine
+Please sit on the couch and read a magazine
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <MAGAZINE> (1)
+[Grab] <MAGAZINE> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[LookAt] <MAGAZINE> (1)
+[Read] <MAGAZINE> (1)
+[Read] <MAGAZINE> (1)
+[Read] <MAGAZINE> (1)

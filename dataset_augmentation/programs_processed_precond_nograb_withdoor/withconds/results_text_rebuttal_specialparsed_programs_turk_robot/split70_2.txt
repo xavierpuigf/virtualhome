@@ -1,0 +1,20 @@
+2
+location: ('FLOOR', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('DOG', '1') --> ('KITCHEN', '1'), ('BOWL', '1') --> ('KITCHEN', '1')
+nearby: ('FLOOR', '1') --> , ('DOG', '1') --> 
+Feed dog
+Open the food container, scoop a cup of food, and pour into bowl
+
+
+[Walk] <KITCHEN> (1)
+[Find] <DOG> (1)
+[Touch] <DOG> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Find] <FLOOR> (1)
+[PutBack] <BOWL> (1) <FLOOR> (1)
+[Pour] <FOOD_FOOD> (1) <BOWL> (1)
+[PutObjBack] <FOOD_FOOD> (1)
+[LookAt] <DOG> (1)
+[PointAt] <BOWL> (1)

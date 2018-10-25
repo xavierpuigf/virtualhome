@@ -1,0 +1,6 @@
+Turn on light
+walk to living room. switch on lights.
+
+
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)

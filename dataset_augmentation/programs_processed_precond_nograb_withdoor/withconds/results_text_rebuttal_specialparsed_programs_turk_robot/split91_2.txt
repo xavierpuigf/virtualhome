@@ -1,0 +1,19 @@
+3
+is_off: ('PRINTER', '1') --> 
+location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('PAPER', '1') --> ('HOME OFFICE', '1'), ('PRINTER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+in: ('DOCUMENT', '1') --> ('DESK', '1')
+Make several copies on printer
+Put a piece of important paper on the printer, press the number o copies to be made and wait for the copies.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Walk] <PRINTER> (1)
+[PutBack] <DOCUMENT> (1) <PRINTER> (1)
+[PutBack] <PAPER> (1) <PRINTER> (1)
+[SwitchOn] <PRINTER> (1)
+[Touch] <PRINTER> (1)

@@ -1,0 +1,21 @@
+Clean
+Do dusting, change their bedsheets, spread bedspread, vacuum clean
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Uncover] <SHEETS> (1)
+[Find] <DUSTER> (1)
+[Grab] <DUSTER> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Grab] <SHEETS> (1)
+[Close] <CLOSET> (1)
+[Cover] <BED> (1) <SHEETS> (1)
+[Find] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Find] <FLOOR> (1)
+[Vacuum] <FLOOR> (1)
+[SwitchOff] <VACUUM CLEANER> (1)

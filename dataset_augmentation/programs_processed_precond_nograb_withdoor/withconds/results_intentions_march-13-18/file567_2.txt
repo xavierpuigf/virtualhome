@@ -1,0 +1,17 @@
+3
+is_off: ('STEREO', '1') --> , ('LIGHT', '1') --> 
+location: ('STEREO', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('SOFA', '1')
+Relax on sofa
+I want to relax on the sofa to some relaxing music in the living room.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <STEREO> (1)
+[PlugIn] <STEREO> (1)
+[SwitchOn] <STEREO> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Lie] <SOFA> (1)

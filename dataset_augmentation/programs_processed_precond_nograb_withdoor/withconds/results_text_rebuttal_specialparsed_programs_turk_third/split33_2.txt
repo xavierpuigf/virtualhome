@@ -1,0 +1,21 @@
+3
+in: ('PURSE', '1') --> ('CABINET', '1')
+location: ('KEYS', '1') --> ('ENTRANCE HALL', '1'), ('CABINET', '1') --> ('ENTRANCE HALL', '1'), ('DOOR', '1') --> ('ENTRANCE HALL', '1'), ('PURSE', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('KEYS', '1') --> , ('PURSE', '1') --> 
+Put on purse, put keys and lucky charms in pockets, leave home
+Purse, keys and lucky charms are on the tiled shelf right by the front door.  Put on purse (has a long strap that is worn across chest), put keys and two little bags of lucky gem stones in pockets, unlock front door, exit home.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CABINET> (1)
+[Find] <PURSE> (1)
+[Grab] <PURSE> (1)
+[Find] <KEYS> (1)
+[Grab] <KEYS> (1)
+[Open] <PURSE> (1)
+[PutBack] <KEYS> (1) <PURSE> (1)
+[Close] <PURSE> (1)
+[Walk] <DOOR> (1)
+[Open] <DOOR> (1)
+[Leave] <ENTRANCE HALL> (1)
+[Close] <DOOR> (1)

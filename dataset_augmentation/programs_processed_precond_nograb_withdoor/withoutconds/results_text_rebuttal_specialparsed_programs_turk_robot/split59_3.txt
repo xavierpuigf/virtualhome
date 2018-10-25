@@ -1,0 +1,26 @@
+Prepare Dinner
+THE ROBOT WOULD PREPARE A MEAL BASED ON A RECIPE LOADED INTO IT'S DATABASE
+
+
+[WakeUp]
+[StandUp]
+[Walk] <KITCHEN> (1)
+[Find] <FOOD_FOOD> (1)
+[Find] <PLATE> (1)
+[Find] <OVEN> (1)
+[Grab] <PLATE> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[SwitchOn] <OVEN> (1)
+[Open] <OVEN> (1)
+[PutBack] <FOOD_FOOD> (1) <OVEN> (1)
+[Close] <OVEN> (1)
+[LookAt] <FOOD_FOOD> (1)
+[Open] <OVEN> (1)
+[Grab] <FOOD_FOOD> (1)
+[Close] <OVEN> (1)
+[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
+[Find] <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Eat] <PLATE> (1)
+[Sleep]

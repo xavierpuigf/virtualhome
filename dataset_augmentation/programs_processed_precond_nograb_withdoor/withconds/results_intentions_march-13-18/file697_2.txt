@@ -1,0 +1,21 @@
+3
+is_off: ('COMPUTER', '1') --> 
+inside: ('PEN', '1') --> ('MAIL', '1')
+location: ('NOTE PAD', '1') --> ('HOME OFFICE', '1'), ('MAIL', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1')
+Work
+TYPING FOR PROJECT
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Find] <NOTE PAD> (1)
+[Write] <NOTE PAD> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)

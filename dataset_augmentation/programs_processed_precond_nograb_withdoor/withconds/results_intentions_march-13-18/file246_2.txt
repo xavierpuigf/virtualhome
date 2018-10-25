@@ -1,0 +1,24 @@
+2
+is_off: ('STOVE', '1') --> 
+location: ('COFFEE', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('SPOON', '1') --> ('KITCHEN', '1'), ('FOOD_SUGAR', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1'), ('MILK', '1') --> ('KITCHEN', '1')
+Make coffee
+stand up, walk to kitchen, find stove, switch on stove, find coffee pot, put coffee pot on stove, find milk, pour milk to coffee pot, find coffee, pour coffee to coffee pot, find sugar, add sugar to coffee pot, find spoon, stir coffee pot with spoon, switch off stove
+
+
+[StandUp]
+[Walk] <KITCHEN> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[PutBack] <COFFEE POT> (1) <STOVE> (1)
+[Find] <MILK> (1)
+[Pour] <MILK> (1) <COFFEE POT> (1)
+[Find] <COFFEE> (1)
+[Pour] <COFFEE> (1) <COFFEE POT> (1)
+[Find] <FOOD_SUGAR> (1)
+[Rinse] <FOOD_SUGAR> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Stir] <COFFEE> (1)
+[SwitchOff] <STOVE> (1)

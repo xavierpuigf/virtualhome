@@ -1,0 +1,13 @@
+2
+location: ('PAPER', '1') --> ('LIVING ROOM', '1')
+nearby: ('PAPER', '1') --> , ('LIVING ROOM', '1') --> 
+Help with quiz shows
+The robot could sneak me some answers while I'm watching Jeopardy so I can impress the babes.
+
+
+[Find] <PAPER> (1)
+[PointAt] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Find] <LIVING ROOM> (1)
+[Crawl] <LIVING ROOM> (1)
+[Drop] <PAPER> (1)

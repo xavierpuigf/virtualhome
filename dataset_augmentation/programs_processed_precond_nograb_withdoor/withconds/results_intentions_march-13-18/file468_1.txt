@@ -1,0 +1,17 @@
+2
+inside: ('SOAP', '1') --> ('WASHING MACHINE', '1')
+nearby: ('WASHING MACHINE', '1') --> 
+Wash clothes
+I hold my clothes. I walk over to the washing machine. I put clothes in the washing machine. I wash the clothes.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <WASHING MACHINE> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[PutBack] <SOAP> (1) <WASHING MACHINE> (1)
+[Find] <WASHING MACHINE> (1)
+[TurnTo] <WASHING MACHINE> (1)

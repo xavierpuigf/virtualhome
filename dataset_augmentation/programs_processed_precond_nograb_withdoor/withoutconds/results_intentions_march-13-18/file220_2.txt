@@ -1,0 +1,8 @@
+Pet cat
+First I need to find the cat in the living room. Then I walk over to the cat and pet it gently.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CAT> (1)
+[Walk] <CAT> (1)
+[Touch] <CAT> (1)

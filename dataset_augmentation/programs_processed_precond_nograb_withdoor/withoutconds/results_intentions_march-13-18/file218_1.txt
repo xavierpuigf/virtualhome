@@ -1,0 +1,15 @@
+Wash hands
+Wash your hands in the bathroom.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Touch] <WATER> (1)
+[Find] <HANDS_BOTH> (1)
+[Spread] <SOAP> (1) <HANDS_BOTH> (1)
+[Rinse] <SOAP> (1)

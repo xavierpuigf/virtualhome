@@ -1,0 +1,12 @@
+0
+Change TV channel
+Add pressure with finger to the channel change button of electronic remote that controls the channels on the TV
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[LookAt] <REMOTE CONTROL> (1)
+[Touch] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

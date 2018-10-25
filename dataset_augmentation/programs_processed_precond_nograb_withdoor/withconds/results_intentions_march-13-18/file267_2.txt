@@ -1,0 +1,14 @@
+2
+is_off: ('CD PLAYER', '1') --> 
+location: ('BUTTON', '1') --> ('LIVING ROOM', '1'), ('CD PLAYER', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
+Listen to music
+Walk to living room, walk to cd player, turn on cd player, press play button, walk to sofa, sit in sofa and listen to music
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)

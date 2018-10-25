@@ -1,0 +1,18 @@
+Make coffee
+Walk to kitchen. Place new filter in the coffee maker and add ground coffee to filter. Fill Coffee pot with water and pour water into the water receptacle on the Coffee maker. Turn on coffee maker.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <WATER> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Pour] <WATER> (1) <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <COFFEE> (1)
+[Pour] <COFFEE> (1) <COFFE MAKER> (1)
+[Find] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)

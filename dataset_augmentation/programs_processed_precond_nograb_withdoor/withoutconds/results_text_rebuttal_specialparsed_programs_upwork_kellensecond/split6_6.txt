@@ -1,0 +1,12 @@
+Turn off light
+Turn off lights in the dining room, ceiling and on the table
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <LIGHT> (2)
+[SwitchOff] <LIGHT> (2)
+[Walk] <TABLE> (1)
+[Find] <LAMP> (1)
+[SwitchOff] <LAMP> (1)

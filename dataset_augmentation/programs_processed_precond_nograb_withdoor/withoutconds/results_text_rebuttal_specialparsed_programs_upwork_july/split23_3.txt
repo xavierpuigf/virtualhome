@@ -1,0 +1,17 @@
+Take nap
+Throw toys off of the love seat.  Lie down on it.  Throw toys on top of yourself as a disguise so no one will bother you.  Close your eyes and sleep.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <LOVE SEAT> (1)
+[TurnTo] <LOVE SEAT> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Lie] <LOVE SEAT> (1)
+[Cover] <TOY> (1)
+[Cover] <TOY> (2)
+[Find] <EYES_BOTH> (1)
+[Close] <EYES_BOTH> (1)
+[Sleep]

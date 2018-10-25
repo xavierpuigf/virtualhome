@@ -1,0 +1,20 @@
+Get mail ready
+Pull envelope out of a drawer. Put letter in the envelope. Put a stamp on the envelope. Seal the envelope.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[Find] <ENVELOPE> (1)
+[Grab] <ENVELOPE> (1)
+[Open] <ENVELOPE> (1)
+[Find] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Fold] <MAIL> (1)
+[PutBack] <MAIL> (1) <ENVELOPE> (1)
+[Close] <ENVELOPE> (1)
+[Find] <STAMP> (1)
+[Grab] <STAMP> (1)
+[PutBack] <STAMP> (1) <ENVELOPE> (1)
+[Open] <DESK> (1)
+[PutBack] <ENVELOPE> (1) <DESK> (1)

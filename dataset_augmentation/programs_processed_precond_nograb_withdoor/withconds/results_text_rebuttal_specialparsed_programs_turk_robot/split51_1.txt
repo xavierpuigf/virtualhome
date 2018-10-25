@@ -1,0 +1,29 @@
+1
+location: ('PAINTING', '3') --> ('LIVING ROOM', '1'), ('WALL', '1') --> ('LIVING ROOM', '1'), ('PAINTING', '2') --> ('LIVING ROOM', '1'), ('PAINTING', '1') --> ('LIVING ROOM', '1')
+Straighten paintings on wall
+Go up to the painting and tilt it which ever way it is uneven until it looks straight.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <WALL> (1)
+[Walk] <PAINTING> (1)
+[Find] <PAINTING> (1)
+[LookAt] <PAINTING> (1)
+[Touch] <PAINTING> (1)
+[Pull] <PAINTING> (1)
+[Push] <PAINTING> (1)
+[Walk] <PAINTING> (2)
+[Find] <PAINTING> (2)
+[LookAt] <PAINTING> (2)
+[Touch] <PAINTING> (2)
+[Pull] <PAINTING> (2)
+[Push] <PAINTING> (2)
+[Walk] <PAINTING> (3)
+[Find] <PAINTING> (3)
+[LookAt] <PAINTING> (3)
+[Touch] <PAINTING> (3)
+[Pull] <PAINTING> (3)
+[Push] <PAINTING> (3)
+[LookAt] <PAINTING> (1)
+[LookAt] <PAINTING> (2)
+[LookAt] <PAINTING> (3)

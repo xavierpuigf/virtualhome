@@ -1,0 +1,17 @@
+Paint nails
+I grab some paper towels and lay them down on the sink counter .I open a bottle of nail polish  and proceed to paint my nails. I then wipe any excess nail polish off with paper towels and then let my nails dry. After that I throw out the paper towels.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <NAIL POLISH> (1)
+[Grab] <NAIL POLISH> (1)
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[Uncover] <NAIL POLISH> (1)
+[Cover] <NAIL POLISH> (1)
+[PutObjBack] <NAIL POLISH> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)

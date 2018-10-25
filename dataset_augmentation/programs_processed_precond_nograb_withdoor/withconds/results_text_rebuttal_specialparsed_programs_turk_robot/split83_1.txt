@@ -1,0 +1,12 @@
+2
+location: ('MAN', '1') --> ('KITCHEN', '1')
+nearby: ('MAN', '1') --> 
+Tell jokes
+Locate an intelligent being in the kitchen. Approach and turn to the being. Tell the joke. Do not laugh at your own joke.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <MAN> (1)
+[LookAt] <MAN> (1)
+[Greet] <MAN> (1)
+[Talk] <MAN> (1)

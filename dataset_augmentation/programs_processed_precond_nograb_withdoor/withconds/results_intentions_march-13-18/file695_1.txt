@@ -1,0 +1,18 @@
+2
+is_off: ('WASHING MACHINE', '2') --> 
+location: ('WASHING MACHINE', '2') --> ('BATHROOM', '1'), ('LAUNDRY DETERGENT', '4') --> ('BATHROOM', '1'), ('BASKET FOR CLOTHES', '3') --> ('BATHROOM', '1')
+Wash clothes
+walk to bathroom ,find washing machine ,find basket of clothes ,find laundery detergent , put clothes in washing machine, put detergent in washing machine, switch on washing machine
+
+
+[Walk] <BATHROOM> (1)
+[Find] <WASHING MACHINE> (2)
+[Find] <BASKET FOR CLOTHES> (3)
+[Grab] <BASKET FOR CLOTHES> (3)
+[Find] <LAUNDRY DETERGENT> (4)
+[Grab] <LAUNDRY DETERGENT> (4)
+[Open] <WASHING MACHINE> (2)
+[PutBack] <BASKET FOR CLOTHES> (3) <WASHING MACHINE> (2)
+[PutBack] <LAUNDRY DETERGENT> (4) <WASHING MACHINE> (2)
+[Close] <WASHING MACHINE> (2)
+[SwitchOn] <WASHING MACHINE> (2)

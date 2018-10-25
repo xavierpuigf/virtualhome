@@ -1,0 +1,12 @@
+Pick up all trash
+Pick up each individual piece of trash from dinner the night before and put it in a trash bag
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)
+[Find] <NAPKIN> (1)
+[Grab] <NAPKIN> (1)
+[PutBack] <NAPKIN> (1) <TRASHCAN> (1)

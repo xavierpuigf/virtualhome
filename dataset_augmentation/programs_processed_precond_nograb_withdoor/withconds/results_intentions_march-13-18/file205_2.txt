@@ -1,0 +1,12 @@
+1
+nearby: ('BLANKET', '1') --> 
+Go to sleep
+Walk to bedroom. Walk to bed. Pull back blankets. Get into bed. Lay down and rest head on pillow. Go to sleep.
+
+
+[Walk] <BED> (1)
+[Uncover] <BED> (1)
+[Lie] <BED> (1)
+[Find] <BLANKET> (1)
+[Cover] <BED> (1) <BLANKET> (1)
+[Sleep]

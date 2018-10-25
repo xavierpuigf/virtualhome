@@ -1,0 +1,37 @@
+5
+is_off: ('LAPTOP', '1') --> 
+inside: ('NOTE PAD', '1') --> ('DESK', '1'), ('PEN', '1') --> ('DESK', '1'), ('HIGHLIGHTER', '1') --> ('DESK', '1')
+nearby: ('KEYBOARD', '1') --> , ('DESK', '1') --> , ('BOOK', '1') --> , ('LAPTOP', '1') --> , ('CHAIR', '1') --> 
+location: ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('BOOK', '1') --> ('HOME OFFICE', '1'), ('LAPTOP', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('BOOK', '1')
+Research
+Researching a topic
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Read] <BOOK> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <BOOK> (1) <DESK> (1)
+[Find] <HIGHLIGHTER> (1)
+[Grab] <HIGHLIGHTER> (1)
+[Write] <BOOK> (1)
+[PutObjBack] <HIGHLIGHTER> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Find] <NOTE PAD> (1)
+[Grab] <NOTE PAD> (1)
+[Open] <NOTE PAD> (1)
+[PutBack] <NOTE PAD> (1) <DESK> (1)
+[Write] <NOTE PAD> (1)
+[PutObjBack] <PEN> (1)
+[Find] <LAPTOP> (1)
+[SwitchOn] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[SwitchOff] <LAPTOP> (1)

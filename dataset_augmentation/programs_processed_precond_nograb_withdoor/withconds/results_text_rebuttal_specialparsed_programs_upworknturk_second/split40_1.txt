@@ -1,0 +1,18 @@
+2
+location: ('PAINTING', '2') --> ('LIVING ROOM', '1'), ('PAINTING', '1') --> ('LIVING ROOM', '1')
+nearby: ('PAINTING', '2') --> , ('PAINTING', '1') --> 
+Straighten pictures on wall
+Move the pictures/paintings until they are straight.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <PAINTING> (1)
+[TurnTo] <PAINTING> (1)
+[LookAt] <PAINTING> (1)
+[Touch] <PAINTING> (1)
+[Push] <PAINTING> (1)
+[Find] <PAINTING> (2)
+[TurnTo] <PAINTING> (2)
+[LookAt] <PAINTING> (2)
+[Touch] <PAINTING> (2)
+[Push] <PAINTING> (2)

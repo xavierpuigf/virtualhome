@@ -1,0 +1,21 @@
+4
+is_off: ('FAUCET', '1') --> 
+inside: ('CUP', '1') --> ('CUPBOARD', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+nearby: ('SINK', '1') --> 
+Drink
+Walk to kitchen, grab a cup, fill with water and then drink it.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Find] <SINK> (1)
+[PutBack] <CUP> (1) <SINK> (1)
+[Grab] <CUP> (1)
+[Drink] <WATER> (1)

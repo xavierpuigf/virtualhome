@@ -1,0 +1,15 @@
+Sleep
+Crawl into bed, pull up covers, sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Climb] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[Lie] <BED> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Sleep]

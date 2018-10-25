@@ -1,0 +1,33 @@
+3
+inside: ('FOOD_PEANUT BUTTER', '1') --> ('FRIDGE', '1'), ('FOOD_BREAD', '1') --> ('FRIDGE', '1'), ('FOOD_BREAD', '2') --> ('FRIDGE', '1')
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('KNIFE', '1') --> ('KITCHEN', '1')
+nearby: ('TABLE', '1') --> 
+Prepare sandwich
+I will create a peanut butter sandwich by applying peanut butter via the knife to the bread , then sandwiching the slices together.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[PutBack] <FOOD_BREAD> (1) <PLATE> (1)
+[Find] <FOOD_BREAD> (2)
+[Grab] <FOOD_BREAD> (2)
+[PutBack] <FOOD_BREAD> (2) <PLATE> (1)
+[Find] <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <FOOD_PEANUT BUTTER> (1)
+[Grab] <FOOD_PEANUT BUTTER> (1)
+[PutBack] <FOOD_PEANUT BUTTER> (1) <TABLE> (1)
+[Close] <FRIDGE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Open] <FOOD_PEANUT BUTTER> (1)
+[Grab] <FOOD_PEANUT BUTTER> (1)
+[PutBack] <FOOD_PEANUT BUTTER> (1) <KNIFE> (1)
+[Spread] <FOOD_PEANUT BUTTER> (1) <FOOD_BREAD> (1)
+[Spread] <FOOD_PEANUT BUTTER> (1) <FOOD_BREAD> (2)
+[PutObjBack] <KNIFE> (1)

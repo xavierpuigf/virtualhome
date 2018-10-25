@@ -1,0 +1,18 @@
+2
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('PAPER TOWEL', '1') --> ('KITCHEN', '1'), ('TRASHCAN', '1') --> ('KITCHEN', '1'), ('CLEANING BOTTLE', '1') --> ('KITCHEN', '1')
+nearby: ('TABLE', '1') --> , ('TRASHCAN', '1') --> 
+Clean
+I get out paper towels and disinfectant. Spray cleaner on table and wipe it up.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CLEANING BOTTLE> (1)
+[Grab] <CLEANING BOTTLE> (1)
+[Find] <TABLE> (1)
+[Pour] <CLEANING BOTTLE> (1) <TABLE> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Wipe] <TABLE> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)
+[PutObjBack] <CLEANING BOTTLE> (1)

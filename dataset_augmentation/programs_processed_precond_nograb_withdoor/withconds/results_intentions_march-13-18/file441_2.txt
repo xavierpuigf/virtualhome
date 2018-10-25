@@ -1,0 +1,10 @@
+2
+is_off: ('TELEVISION', '1') --> 
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+Watch TV
+Walk to the room, in which the TV is located. Turn on TV pressing the power button for the TV. Watch TV.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

@@ -1,0 +1,15 @@
+Sleep
+Take a rest
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)
+[Walk] <BED> (1)
+[Unwrap] <BED> (1)
+[SwitchOff] <LAMP> (1)
+[Sit] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Drop] <BLANKET> (1)
+[Sleep]

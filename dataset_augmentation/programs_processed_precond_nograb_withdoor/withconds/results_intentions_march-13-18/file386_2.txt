@@ -1,0 +1,14 @@
+2
+location: ('TOILET', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
+atreach: ('TOILET', '1') --> ('TOILET PAPER', '1')
+Go to toilet
+Find bathroom. Walk to bathroom. Find toilet. Walk to toilet. Pull down pants. Sit on toilet. Use the toilet. Use toilet paper to wipe.
+
+
+[Find] <TOILET> (1)
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Wipe] <TOILET PAPER> (1)
+[Flush] <TOILET> (1)

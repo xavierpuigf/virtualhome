@@ -1,0 +1,25 @@
+Go pee
+I go pee in the toilet then flush and wash hands
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Sit] <TOILET> (1)
+[StandUp]
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Grab] <CLOTHES_UNDERWEAR> (1)
+[PutObjBack] <CLOTHES_UNDERWEAR> (1)
+[PutObjBack] <CLOTHES_DRESS> (1)
+[Flush] <TOILET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[PutObjBack] <SOAP> (1)
+[Rinse] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)

@@ -1,0 +1,7 @@
+Take shoes off
+Take off your shoes by the door
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <DOOR> (1)
+[PutOff] <SHOES> (1)

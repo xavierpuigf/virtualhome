@@ -1,0 +1,14 @@
+Drink
+Walk into kitchen, look for cup, walk to cup, look for refrigerator, walk to refrigerator, open door, grab water, pour water into cup
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUP> (1)
+[LookAt] <CUP> (1)
+[Walk] <CUP> (1)
+[Find] <FRIDGE> (1)
+[LookAt] <FRIDGE> (1)
+[Walk] <FRIDGE> (1)
+[Grab] <CUP> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)

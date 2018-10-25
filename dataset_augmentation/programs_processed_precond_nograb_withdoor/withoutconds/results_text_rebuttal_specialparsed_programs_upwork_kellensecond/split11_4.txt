@@ -1,0 +1,8 @@
+Look at painting
+Walk to the painting.  Look up at the painting.  Admire it on the wall.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <PAINTING> (1)
+[TurnTo] <PAINTING> (1)
+[LookAt] <PAINTING> (1)

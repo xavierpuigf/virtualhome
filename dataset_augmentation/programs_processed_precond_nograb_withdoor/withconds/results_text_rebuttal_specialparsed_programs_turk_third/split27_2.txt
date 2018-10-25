@@ -1,0 +1,13 @@
+3
+in: ('SHEETS', '1') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1')
+nearby: ('SHEETS', '1') --> 
+Make bed
+Straighten the different sheets on the bed So that they are staight and in line with the frame and mattress
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Pull] <SHEETS> (1)

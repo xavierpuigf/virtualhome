@@ -1,0 +1,13 @@
+1
+location: ('WATER', '1') --> ('BATHROOM', '1'), ('BRUSH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+Brush teeth
+I pull up my online classes on the computer to look at what the assigned reading is. I get my textbook, notebook, and mechanical pencil. As I'm reading, I take notes over important points. I then use those notes to complete the assignment for the week. Frequently that involves writing a post on an online discussion board that answers a question related to things from the reading.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <WATER> (1)
+[Wash] <WATER> (1)

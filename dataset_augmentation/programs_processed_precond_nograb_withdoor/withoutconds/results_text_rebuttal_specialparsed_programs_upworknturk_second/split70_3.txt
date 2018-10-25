@@ -1,0 +1,10 @@
+Read
+Reading a magazine
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <MAGAZINE> (1)
+[Grab] <MAGAZINE> (1)
+[Find] <LOVE SEAT> (1)
+[Sit] <LOVE SEAT> (1)
+[Read] <MAGAZINE> (1)

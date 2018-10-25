@@ -1,0 +1,17 @@
+2
+location: ('CHAIR', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('CHAIR', '2') --> ('DINING ROOM', '1'), ('CHAIR', '4') --> ('DINING ROOM', '1'), ('CHAIR', '3') --> ('DINING ROOM', '1')
+nearby: ('CHAIR', '1') --> ('TABLE', '1'), ('CHAIR', '4') --> , ('CHAIR', '2') --> , ('CHAIR', '3') --> 
+Push all chairs in
+Go around the dining room table, going to each chair, and push all the chairs in neatly.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <CHAIR> (1)
+[Push] <CHAIR> (1)
+[Find] <CHAIR> (2)
+[Push] <CHAIR> (2)
+[Find] <CHAIR> (3)
+[Push] <CHAIR> (3)
+[Find] <CHAIR> (4)
+[Push] <CHAIR> (4)

@@ -1,0 +1,20 @@
+Brush teeth
+Get toothbrush, apply toothpaste, brush teeth, rinse mouth, rinse toothbrush, put stuff away
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[PutBack] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Rinse] <TEETH> (1)
+[SwitchOff] <FAUCET> (1)
+[Grab] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTH PASTE> (1)
+[PutObjBack] <TOOTHBRUSH> (1)

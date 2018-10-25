@@ -1,0 +1,14 @@
+Eat
+Take food into room. Put it in your mouth.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <PLATE> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
+[Grab] <PLATE> (1)
+[Walk] <DINING ROOM> (1)
+[Find] <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Eat] <PLATE> (1)

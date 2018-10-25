@@ -1,0 +1,12 @@
+1
+nearby: ('TOY', '1') --> , ('VACUUM CLEANER', '1') --> , ('CLOTHES_DRESS', '1') --> 
+Clean room
+Pick up toys, pick up dirty clothes, throw away garbage, straighten surfaces like desks and dresser, straighten closets, clean surfaces with cleaner, vacuum.
+
+
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Find] <VACUUM CLEANER> (1)
+[Wipe] <VACUUM CLEANER> (1)

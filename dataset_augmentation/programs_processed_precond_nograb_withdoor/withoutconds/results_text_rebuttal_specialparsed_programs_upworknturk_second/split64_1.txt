@@ -1,0 +1,16 @@
+Light candle
+Press the button on a lighter to make a flame. Touch the flame to the candle wick.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CANDLE> (1)
+[Grab] <CANDLE> (1)
+[Find] <TABLE> (1)
+[PutBack] <CANDLE> (1) <TABLE> (1)
+[Find] <LIGHTER> (1)
+[Grab] <LIGHTER> (1)
+[SwitchOn] <LIGHTER> (1)
+[PutBack] <LIGHTER> (1) <CANDLE> (1)
+[SwitchOff] <LIGHTER> (1)
+[Grab] <LIGHTER> (1)
+[PutObjBack] <LIGHTER> (1)

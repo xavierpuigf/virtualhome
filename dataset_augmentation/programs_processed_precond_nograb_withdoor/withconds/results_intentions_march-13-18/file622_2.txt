@@ -1,0 +1,14 @@
+2
+is_off: ('STEREO', '1') --> , ('CD PLAYER', '1') --> 
+location: ('STEREO', '1') --> ('LIVING ROOM', '1'), ('CD PLAYER', '1') --> ('LIVING ROOM', '1')
+Listen to music
+Walk to living room, switch on stereo, switch on cd player, dance
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <STEREO> (1)
+[PlugIn] <STEREO> (1)
+[SwitchOn] <STEREO> (1)
+[Find] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Dance]

@@ -1,0 +1,11 @@
+Listen to music
+walk to living room, look at the DVD player, switch on the dvd player, look at the sofa, sit on the sofa and listen the music
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DVD PLAYER> (1)
+[LookAt] <DVD PLAYER> (1)
+[SwitchOn] <DVD PLAYER> (1)
+[Find] <SOFA> (1)
+[LookAt] <SOFA> (1)
+[Sit] <SOFA> (1)

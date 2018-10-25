@@ -1,0 +1,11 @@
+Hang car keys
+Pick up the car keys. Hang them on the key hook.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <KEYS> (1)
+[Grab] <KEYS> (1)
+[Walk] <WALL> (1)
+[Find] <HANGER> (1)
+[PutBack] <KEYS> (1) <HANGER> (1)

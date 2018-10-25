@@ -1,0 +1,11 @@
+2
+location: ('DOOR', '1') --> ('LIVING ROOM', '1')
+nearby: ('DOOR', '1') --> 
+Walk through
+Walk through the hallway.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <ENTRANCE HALL> (1)

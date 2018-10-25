@@ -1,0 +1,26 @@
+Wash clothes
+Robot activates Wash mode. Walks to each room with laundry basket in it. Obtains laundry baskets, washes close in designated machine.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <KIDS BEDROOM> (1)
+[Find] <BASKET FOR CLOTHES> (2)
+[Grab] <BASKET FOR CLOTHES> (2)
+[Walk] <WASHING MACHINE> (1)
+[Drop] <BASKET FOR CLOTHES> (1)
+[Drop] <BASKET FOR CLOTHES> (2)
+[Open] <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[PutBack] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[PutObjBack] <LAUNDRY DETERGENT> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <WASHING MACHINE> (1)
+[Grab] <BASKET FOR CLOTHES> (2)
+[PutBack] <BASKET FOR CLOTHES> (2) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)

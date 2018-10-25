@@ -1,0 +1,18 @@
+Wash dishes with dishwasher
+wipe loose dirt, place in the dishwasher, turn on the dishwasher
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Wipe] <DRINKING GLASS> (1)
+[Rinse] <DRINKING GLASS> (1)
+[PutBack] <DRINKING GLASS> (1) <DISHWASHER> (1)
+[Close] <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (1)

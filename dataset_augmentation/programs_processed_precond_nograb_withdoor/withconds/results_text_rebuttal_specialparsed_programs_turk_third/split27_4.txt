@@ -1,0 +1,15 @@
+2
+location: ('BLANKET', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
+nearby: ('BLANKET', '1') --> , ('CHAIR', '1') --> 
+Fold laundry
+Pick up the throw. Straighten it out. Fold the ends together. Repeat. Hang over the back of the easy chair.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Shake] <BLANKET> (1)
+[Fold] <BLANKET> (1)
+[Find] <CHAIR> (1)
+[PutBack] <BLANKET> (1) <CHAIR> (1)

@@ -1,0 +1,16 @@
+2
+is_off: ('LIGHT', '1') --> , ('FLOOR LAMP', '1') --> 
+location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1'), ('FLOOR LAMP', '1') --> ('LIVING ROOM', '1'), ('DOOR', '1') --> ('LIVING ROOM', '1')
+Turn on light
+first i will walk into my living room and then  i will go to the switch board and switch on the floor lamp and light
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DOOR> (1)
+[Pull] <DOOR> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[LookAt] <ELECTRICAL OUTLET> (1)
+[Find] <FLOOR LAMP> (1)
+[SwitchOn] <FLOOR LAMP> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

@@ -1,0 +1,10 @@
+Do homework
+Sit on the couch in the Living room and pick u some papers
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Drop] <PAPER> (1)

@@ -1,0 +1,15 @@
+3
+is_off: ('TELEVISION', '1') --> 
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('TELEVISION', '1')
+Watch TV
+walk to living room, find the television, switch on the television, find the sofa, walk to sofa, sit in sofa, watch the television
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <SOFA> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Watch] <TELEVISION> (1)

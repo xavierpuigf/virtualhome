@@ -1,0 +1,15 @@
+Wash clothes
+Walk to bathroom. Open washer. Put clothes in washer. Put soap in washer. Close washer. Turn washer on.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Grab] <CLOTHES_UNDERWEAR> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (1) <WASHING MACHINE> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[PutBack] <SOAP> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

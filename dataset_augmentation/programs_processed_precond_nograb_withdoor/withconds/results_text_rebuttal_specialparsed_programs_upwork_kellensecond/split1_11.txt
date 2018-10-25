@@ -1,0 +1,14 @@
+3
+inside: ('TOILET PAPER', '1') --> ('BATHROOM CABINET', '1')
+location: ('BATHROOM CABINET', '1') --> ('BATHROOM', '1')
+nearby: ('CABINET', '1') --> 
+Get toilet paper
+There are extra toilet papers in the bottom cabinet.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BATHROOM CABINET> (1)
+[Open] <BATHROOM CABINET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Close] <BATHROOM CABINET> (1)

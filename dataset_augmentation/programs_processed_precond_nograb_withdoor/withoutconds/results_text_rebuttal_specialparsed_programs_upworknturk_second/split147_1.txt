@@ -1,0 +1,12 @@
+Tabletop game
+Play a tabletop game with the family.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Find] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Play] <BOARD GAME> (1)

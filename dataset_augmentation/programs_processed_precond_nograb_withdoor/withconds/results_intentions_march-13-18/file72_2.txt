@@ -1,0 +1,22 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('CUP', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+in: ('FAUCET', '1') --> ('SINK', '1')
+Drink
+Go to the kitchen and drink some water.
+
+
+[Run] <KITCHEN> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <CUP> (1) <SINK> (1)
+[Find] <WATER> (1)
+[Grab] <CUP> (1)
+[PutBack] <CUP> (1) <SINK> (1)
+[Grab] <CUP> (1)
+[SwitchOff] <FAUCET> (1)
+[Drink] <CUP> (1)
+[PutBack] <CUP> (1) <SINK> (1)

@@ -1,0 +1,14 @@
+Wash teeth
+its morning and im going to brush my teeth so i walk into bathroom take my brush and toothpaste and squeeze the toothpaste into toothbrush and with water ill wash my teeth
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Shake] <TOOTHBRUSH> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <TOOTHBRUSH> (1)

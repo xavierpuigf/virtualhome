@@ -1,0 +1,17 @@
+2
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('BOOK', '1')
+Read book
+"walk to entrance" "walk to living room" "look for book" "find book" "pick up book" "look for chair" "find chair" "sit in chair" "read book"
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[LookAt] <BOOK> (1)
+[Find] <BOOK> (1)
+[Find] <CHAIR> (1)
+[LookAt] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Grab] <BOOK> (1)
+[Read] <BOOK> (1)

@@ -1,0 +1,16 @@
+Change TV channel
+After watching Animal planet I want to change channel to watch news channel so I grabbed the remote and pressed the remote button to change channel sitting back in a chair.
+
+
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)
+[SwitchOff] <REMOTE CONTROL> (1)
+[PlugOut] <TELEVISION> (1)

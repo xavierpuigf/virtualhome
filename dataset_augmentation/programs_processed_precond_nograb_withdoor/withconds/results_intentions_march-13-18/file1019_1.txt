@@ -1,0 +1,16 @@
+2
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
+in: ('REMOTE CONTROL', '1') --> ('COFFEE TABLE', '1')
+Change TV channel
+Walk to the living room and look at the coffee table. Grab the remote control and turn to the television and point the remote control. Put back the remote control.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COFFEE TABLE> (1)
+[LookAt] <COFFEE TABLE> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)

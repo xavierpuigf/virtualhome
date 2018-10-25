@@ -1,0 +1,31 @@
+3
+is_off: ('DISHWASHER', '1') --> 
+inside: ('CUP', '5') --> ('DOOR', '1'), ('CUP', '2') --> ('DOOR', '1'), ('CUP', '1') --> ('DOOR', '1'), ('CUP', '3') --> ('DOOR', '1'), ('DISH SOAP', '1') --> ('DOOR', '1')
+nearby: 
+Wash dishes with dishwasher
+locate dishwasher in kitchen, open dishwasher door, pull out rack, locate cups, grab cup one at a time, put cups on dish rack in dishwasher, push dish rack back into dishwasher, locate soap, put soap in dishwasher soap area, close dishwasher door, locate cycle buttons on dishwasher, push wash normal cycle, push start
+
+
+[Find] <DISHWASHER> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <DISHRACK> (1)
+[Pull] <DISHRACK> (1)
+[Find] <CUP> (5)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[PutBack] <CUP> (1) <DISHRACK> (1)
+[Find] <CUP> (2)
+[Grab] <CUP> (2)
+[Grab] <CUP> (5)
+[PutBack] <CUP> (2) <DISHRACK> (1)
+[Find] <CUP> (3)
+[Grab] <CUP> (3)
+[PutBack] <CUP> (3) <DISHRACK> (1)
+[PutBack] <CUP> (5) <DISHRACK> (1)
+[Push] <DISHRACK> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <DISHRACK> (1)
+[Close] <DOOR> (1)
+[SwitchOn] <DISHWASHER> (1)

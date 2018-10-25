@@ -1,0 +1,1 @@
+[{"inside": [["BOOK", "1"], ["CABINET", "1"]]}, {"in": [["CHILD", "1"], ["BED", "1"]]}, {"location": [["CHILD", "1"], ["BEDROOM", "1"]]}, {"location": [["CABINET", "1"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"atreach": [["BED", "1"], ["CHILD", "1"]]}]

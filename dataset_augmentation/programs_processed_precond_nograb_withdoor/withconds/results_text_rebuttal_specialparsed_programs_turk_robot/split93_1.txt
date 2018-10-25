@@ -1,0 +1,12 @@
+2
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+Push in desk chair
+Push the desk chair until it is under the desk.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Touch] <CHAIR> (1)
+[Push] <CHAIR> (1)

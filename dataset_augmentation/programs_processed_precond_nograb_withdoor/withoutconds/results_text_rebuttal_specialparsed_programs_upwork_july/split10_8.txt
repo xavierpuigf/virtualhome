@@ -1,0 +1,14 @@
+Cut steak
+I place my fork on my steak, I slide my knife back and forth on my steak until it is in multiple pieces
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <FOOD_STEAK> (1)
+[Push] <FORK> (1) <FOOD_STEAK> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Cut] <FOOD_STEAK> (1)

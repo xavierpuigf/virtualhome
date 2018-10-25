@@ -1,0 +1,8 @@
+1
+location: ('LAMP', '1') --> ('LIVING ROOM', '1')
+Turn on light
+walk to living room, find lamp, switch on.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LAMP> (1)

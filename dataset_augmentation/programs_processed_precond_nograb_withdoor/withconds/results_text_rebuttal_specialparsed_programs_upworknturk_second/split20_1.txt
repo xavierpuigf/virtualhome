@@ -1,0 +1,19 @@
+4
+location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+in: ('BLANKET', '1') --> ('BED', '1')
+is_on: ('LIGHT', '1') --> 
+nearby: ('BLANKET', '1') --> 
+Sleep
+Go to sleep
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Walk] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Climb] <BED> (1)
+[Lie] <BED> (1)
+[Cover] <BLANKET> (1)
+[Sleep]

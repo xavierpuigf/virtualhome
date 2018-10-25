@@ -1,0 +1,12 @@
+2
+is_off: ('REMOTE CONTROL', '1') --> 
+nearby: ('TELEVISION', '1') --> 
+Change TV channel
+I NEED TO TAKE REMOTE AND CHANGE THE CHANNEL I NEED TO WATCH
+
+
+[Find] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

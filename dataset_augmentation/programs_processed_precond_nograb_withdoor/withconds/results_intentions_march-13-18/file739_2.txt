@@ -1,0 +1,12 @@
+2
+location: ('TABLE CLOTH', '3') --> ('HOME OFFICE', '1'), ('TABLE', '2') --> ('HOME OFFICE', '1')
+in: ('TABLE CLOTH', '3') --> ('TABLE', '2')
+Set up table
+walk to home office ,find table , put table cloth on table 
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <TABLE> (2)
+[Find] <TABLE CLOTH> (3)
+[Grab] <TABLE CLOTH> (3)
+[PutBack] <TABLE CLOTH> (3) <TABLE> (2)

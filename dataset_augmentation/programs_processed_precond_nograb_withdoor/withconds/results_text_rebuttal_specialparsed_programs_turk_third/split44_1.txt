@@ -1,0 +1,14 @@
+2
+inside: ('SHOES', '1') --> ('CLOSET', '1')
+location: ('CLOSET', '1') --> ('ENTRANCE HALL', '1')
+Take off shoes
+Untie one shoe and slip it off. Untie the other shoe and slip it off as well. Place the shoes off to the side.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[PutOff] <SHOES> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Grab] <SHOES> (1)
+[PutBack] <SHOES> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

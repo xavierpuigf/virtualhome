@@ -1,0 +1,20 @@
+Hair dressing
+I spray my wet hair with heat protection spray. Then I blow dry it and then I run a flat iron through it to prevent it from getting frizzy.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <HAIRBRUSH> (1)
+[Grab] <HAIRBRUSH> (1)
+[Find] <HAIR> (1)
+[Brush] <HAIR> (1)
+[PutObjBack] <HAIRBRUSH> (1)
+[Find] <HAIRDRYER> (1)
+[Grab] <HAIRDRYER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <HAIRDRYER> (1)
+[SwitchOn] <HAIRDRYER> (1)
+[PointAt] <HAIR> (1)
+[Shake] <HAIRDRYER> (1)
+[SwitchOff] <HAIRDRYER> (1)
+[PlugOut] <HAIRDRYER> (1)
+[PutObjBack] <HAIRDRYER> (1)

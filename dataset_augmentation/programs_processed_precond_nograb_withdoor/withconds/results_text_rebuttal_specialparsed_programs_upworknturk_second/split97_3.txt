@@ -1,0 +1,16 @@
+2
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
+nearby: ('TELEVISION', '1') --> , ('BUTTON', '1') --> 
+Change TV channel
+Use the remote control. Point it at the television. Press the channel up button.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[PutObjBack] <REMOTE CONTROL> (1)

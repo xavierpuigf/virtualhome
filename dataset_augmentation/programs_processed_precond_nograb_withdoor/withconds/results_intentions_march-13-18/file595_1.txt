@@ -1,0 +1,19 @@
+4
+is_off: ('TELEVISION', '1') --> 
+nearby: ('COFFEE TABLE', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('REMOTE CONTROL', '1')
+Watch TV
+I walk into the living room and sit on the couch. I pick up the remote to turn on the television. I put down the remote on the coffee table and look at the television.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <COFFEE TABLE> (1)
+[PutBack] <REMOTE CONTROL> (1) <COFFEE TABLE> (1)
+[LookAt] <TELEVISION> (1)

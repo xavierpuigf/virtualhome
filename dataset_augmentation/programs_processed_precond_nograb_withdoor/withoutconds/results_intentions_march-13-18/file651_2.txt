@@ -1,0 +1,10 @@
+Read book
+Go to the living room and find the book you want to read. Take it and then go to the couch. Sit on it, open the book and start reading.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Read] <BOOK> (1)

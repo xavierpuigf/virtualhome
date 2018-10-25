@@ -1,0 +1,23 @@
+2
+is_off: ('STOVE', '1') --> 
+nearby: ('POT', '1') --> 
+Cook some food
+I am going to make a pot of pasta on the stove.
+
+
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <WATER> (1)
+[Find] <POT> (1)
+[Pour] <WATER> (1) <POT> (1)
+[Find] <POT> (1)
+[Grab] <POT> (1)
+[PutBack] <POT> (1) <STOVE> (1)
+[Find] <DRY PASTA> (1)
+[Grab] <DRY PASTA> (1)
+[PutBack] <DRY PASTA> (1) <POT> (1)
+[SwitchOff] <STOVE> (1)
+[Rinse] <DRY PASTA> (1)
+[Find] <BOWL> (1)
+[Pour] <DRY PASTA> (1) <BOWL> (1)
+[Eat] <BOWL> (1)

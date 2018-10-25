@@ -1,0 +1,13 @@
+Browse internet
+I sit in the chair and switch computer on. I use the mouse and look at the computer. I then switch the computer off.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[LookAt] <COMPUTER> (1)
+[SwitchOff] <COMPUTER> (1)

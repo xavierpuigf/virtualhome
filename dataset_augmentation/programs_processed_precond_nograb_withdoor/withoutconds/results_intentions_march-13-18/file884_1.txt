@@ -1,0 +1,13 @@
+Write an email
+i went near the computer and turned it on. then sent the mail
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <TABLE> (1)
+[Walk] <TABLE> (1)
+[Find] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[TurnTo] <MAIL> (1)

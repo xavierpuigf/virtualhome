@@ -1,0 +1,16 @@
+Use computer
+Unscrew the lid of a bottle of mouthwash. Pour a small amount, open your mouth and put the mouthwash into your mouth. Without swallowing, move the liquid to either side of your mouth. Let it run to the back of your mouth and to all sides. Tilt your head back and gargle. Swish some more. Let this process continue for about 2-3 minutes and then spit out the mouthwash. Rinse once more with cold water if desired.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <MOUTHWASH> (1)
+[Grab] <MOUTHWASH> (1)
+[Open] <MOUTHWASH> (1)
+[Close] <MOUTHWASH> (1)
+[PutObjBack] <MOUTHWASH> (1)
+[Spit] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Spit] <SINK> (1)
+[SwitchOff] <FAUCET> (1)

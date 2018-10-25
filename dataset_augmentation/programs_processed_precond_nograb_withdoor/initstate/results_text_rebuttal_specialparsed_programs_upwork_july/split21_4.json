@@ -1,0 +1,1 @@
+[{"is_off": ["FAUCET", "1"]}, {"is_off": ["DISHWASHER", "1"]}, {"location": [["FAUCET", "1"], ["KITCHEN", "1"]]}, {"location": [["PLATE", "1"], ["KITCHEN", "1"]]}, {"location": [["SINK", "1"], ["KITCHEN", "1"]]}, {"location": [["DISHWASHER", "1"], ["KITCHEN", "1"]]}]

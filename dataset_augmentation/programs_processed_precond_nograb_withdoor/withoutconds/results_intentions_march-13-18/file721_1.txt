@@ -1,0 +1,9 @@
+Change TV channel
+Find Television, switch on Television,Find remote control, grab remote control,Press the Remote control channel button
+
+
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Touch] <REMOTE CONTROL> (1)

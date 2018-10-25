@@ -1,0 +1,14 @@
+2
+location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('SHREDDER', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1')
+in: ('DOCUMENT', '1') --> ('FILING CABINET', '1')
+Shredding
+Shred old documents
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <FILING CABINET> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Walk] <SHREDDER> (1)
+[PlugIn] <SHREDDER> (1)
+[PutBack] <DOCUMENT> (1) <SHREDDER> (1)

@@ -1,0 +1,24 @@
+4
+is_off: ('COMPUTER', '1') --> 
+inside: ('NOTEBOOK', '1') --> ('MAIL', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('MAIL', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Write an email
+I wrote the task completion in a Notebook. After completing the work, I send email to my Superior. I done this task in day to day activity.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Find] <NOTEBOOK> (1)
+[Grab] <NOTEBOOK> (1)
+[Read] <NOTEBOOK> (1)
+[Find] <KEYBOARD> (1)
+[LookAt] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[LookAt] <COMPUTER> (1)

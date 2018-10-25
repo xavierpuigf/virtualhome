@@ -1,0 +1,16 @@
+Rearrange photo frames
+Place all the photo frames in a different order.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <WALL> (1)
+[Find] <PICTURE> (1)
+[LookAt] <PICTURE> (1)
+[Grab] <PICTURE> (1)
+[Walk] <WALL> (2)
+[PutBack] <PICTURE> (1) <WALL> (2)
+[Find] <PICTURE> (2)
+[LookAt] <PICTURE> (2)
+[Grab] <PICTURE> (2)
+[Walk] <WALL> (1)
+[PutBack] <PICTURE> (2) <WALL> (1)

@@ -1,0 +1,22 @@
+3
+is_off: ('TELEVISION', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('TELEVISION', '1')
+Watch TV
+go to the living room to watch TV
+
+
+[Run] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Touch] <REMOTE CONTROL> (1)
+[SwitchOn] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)
+[Drop] <REMOTE CONTROL> (1)
+[LookAt] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

@@ -1,0 +1,22 @@
+Set up table
+go to the dinning room and set the table
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <TABLE> (1)
+[Find] <TABLE CLOTH> (1)
+[Cover] <TABLE> (1) <TABLE CLOTH> (1)
+[Find] <CUP> (2)
+[Grab] <CUP> (2)
+[PutBack] <CUP> (2) <TABLE> (1)
+[Find] <PLATE> (2)
+[Grab] <PLATE> (2)
+[PutBack] <PLATE> (2) <TABLE> (1)
+[Find] <FORK> (2)
+[Grab] <FORK> (2)
+[PutBack] <FORK> (2) <TABLE> (1)
+[Find] <NAPKIN> (2)
+[Grab] <NAPKIN> (2)
+[PutBack] <NAPKIN> (2) <TABLE> (1)

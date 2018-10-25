@@ -1,0 +1,23 @@
+Eat dessert
+Put out a cake or pie and eat
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_DESSERT> (1)
+[Grab] <FOOD_DESSERT> (1)
+[Close] <FRIDGE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <FOOD_DESSERT> (1) <TABLE> (1)
+[Uncover] <FOOD_DESSERT> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Cut] <FOOD_DESSERT> (1)
+[Grab] <FOOD_DESSERT> (1)
+[Find] <PLATE> (1)
+[PutBack] <FOOD_DESSERT> (1) <PLATE> (1)
+[PutObjBack] <KNIFE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Eat] <PLATE> (1)

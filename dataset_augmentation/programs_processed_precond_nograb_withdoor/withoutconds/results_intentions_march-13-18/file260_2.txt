@@ -1,0 +1,27 @@
+Cook some food
+Cook pasta and jelly in a pot of milk. Yum!
+
+
+[Walk] <KITCHEN> (1)
+[Find] <POT> (1)
+[Grab] <POT> (1)
+[Walk] <STOVE> (1)
+[PutBack] <POT> (1) <STOVE> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[Walk] <STOVE> (1)
+[Pour] <MILK> (1) <POT> (1)
+[SwitchOn] <STOVE> (1)
+[PutObjBack] <MILK> (1)
+[Find] <DRY PASTA> (1)
+[Grab] <DRY PASTA> (1)
+[Walk] <STOVE> (1)
+[PutBack] <DRY PASTA> (1) <STOVE> (1)
+[Find] <JELLY> (1)
+[Grab] <JELLY> (1)
+[Walk] <POT> (1)
+[PutBack] <JELLY> (1) <STOVE> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Walk] <POT> (1)
+[Stir] <MILK> (1)
