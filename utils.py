@@ -458,10 +458,11 @@ class graph_dict_helper(object):
     def _remove_one_random_nodes(self, graph_dict):
         start_id = 2000
         random_nodes_ids = [node["id"] for node in filter(lambda v: v["id"] >= start_id, graph_dict["nodes"])]
-        remove_id = np.min(random_nodes_ids)
-
-        graph_dict["nodes"] = [node for node in filter(lambda v: v["id"] != remove_id, graph_dict["nodes"])]
-        graph_dict["edges"] = [edge for edge in filter(lambda v: v["from_id"] != remove_id and v["to_id"] != remove_id, graph_dict["edges"])]
+        
+        if len(random_nodes_ids) != 0:
+            remove_id = np.min(random_nodes_ids)
+            graph_dict["nodes"] = [node for node in filter(lambda v: v["id"] != remove_id, graph_dict["nodes"])]
+            graph_dict["edges"] = [edge for edge in filter(lambda v: v["from_id"] != remove_id and v["to_id"] != remove_id, graph_dict["edges"])]
 
     def _change_to_occupied(self, node, graph_dict, objects_to_place):
 
