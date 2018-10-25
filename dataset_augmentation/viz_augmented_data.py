@@ -1,4 +1,7 @@
 import glob
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import ipdb
 import json
 import os
@@ -6,17 +9,24 @@ import os
 original_dir = 'programs_processed_precond_nograb_morepreconds'
 programs = glob.glob('{}/withoutconds/*/*.txt'.format(original_dir))
 print(len(programs))
-names = ['affordance_programs', 'location', 'program_exception']
 instr_to_id = {}
 
 def printProgram(script, color):
     return ''
 
+def createHist(data, xlabel, title, imgname, nbins=20):
+    # Data is a list of elements
+    plt.figure()
+    n, bins, patches = plt.hist(data, nbins)
+    plt.xlabel(xlabel)
+    plt.ylabel('Programs')
+    plt.title(title)
+    plt.savefig(imgname)
+
 def parseProg(prog):
     result = []
     for elem_l in prog:
         elem = elem_l.strip()
-        elem = elem.lower().replace(' ', '_')
         if elem not in instr_to_id:
             instr_to_id[elem] = len(list(instr_to_id))+1
         result.append(instr_to_id[elem])
@@ -68,21 +78,44 @@ def computeLCS(prog1, prog2):
         return len(lcs_set[0])*1./max(n,m), prev_p2[-1][-1] 
 
 program_sim = {}
+names = ['affordance', 'location', 'program_exception']
 sim_file = 'similarity_info.json'
-stats = [{}, {}, {}, {}, {}]
+stats = {'LCS': {}, 'Lengths': {}, 'Distr': {}}
+for name in names + ['initial', 'total']:
+    stats['LCS'][name] = [[], []] # all, exec
+    stats['Lengths'][name] = [[], []]
+    stats['Distr'][name] = [{}, {}]
+
+# Executable info
+with open('../executable_info.json', 'r') as f:
+    executable_info = json.load(f)
+
 #if not os.path.isfile(sim_file):
 if True:
     for program_name in programs:
+        if ('dataset_augmentation/'+program_name in executable_info and 
+            'Script is executable' in executable_info['dataset_augmentation/'+program_name]):
+            is_executable = True
+        else:
+            is_executable = False
         with open(program_name, 'r') as f:
             lines = f.readlines()
             title = lines[0]
             program = lines[4:]
         
-        if title not in stats[0].keys(): stats[0][title] = 0
-        stats[0][title] += 1
-        script_similar = []
+        indices_to_collect_stats = [0]
+        if is_executable: indices_to_collect_stats.append(1)
+        
+        for nm in ['initial', 'total']:
+            for indi in indices_to_collect_stats:
+                if title not in stats['Distr'][nm][indi].keys(): 
+                    stats['Distr'][nm][indi][title] = 0
+                stats['Distr'][nm][indi][title] += 1
+                stats['Lengths'][nm][indi].append(len(program))
+
+        script_similar = {}
         for it, name in enumerate(names):
-            script_similar.append([])
+            script_similar[name] = []
             new_dir = program_name.replace(original_dir, 'augmented_{}'.format(name)).replace('.txt', '/')
             new_progs = glob.glob('{}/*.txt'.format(new_dir))
             for new_prog in new_progs:
@@ -90,29 +123,65 @@ if True:
                     lines = f.readlines()
                     newprogram = lines[4:]
                 lcs, match = computeLCS(program, newprogram)
-                script_similar[it].append([lcs, match, newprogram])
-            script_similar[it] = sorted(script_similar[it], key=lambda x: -x[0])
-            if title not in stats[-1].keys():
-                stats[-1][title] = 0
-            if title not in stats[it+1].keys():
-                stats[it+1][title] = 0
+                script_similar[name].append([lcs, match, newprogram])
+            script_similar[name] = sorted(script_similar[name], key=lambda x: -x[0])
 
-            stats[it+1][title] += len(new_progs)
-            stats[-1][title] += len(new_progs)
+            for nm in ['total', name]:
+                for indi in indices_to_collect_stats:
+                    if title not in stats['Distr'][nm][indi].keys(): 
+                        stats['Distr'][nm][indi][title] = 0
+                    stats['Distr'][nm][indi][title] += len(script_similar[name])
+                    stats['Lengths'][nm][indi] += [len(ss[2]) for ss in script_similar[name]]
+                    stats['LCS'][nm][indi] += [ss[0] for ss in script_similar[name]]
 
-        program_sim[program_name] = [title, program, script_similar]
+
+        program_sim[program_name] = [title, program, script_similar, is_executable]
 
     with open(sim_file, 'w+') as f:
         f.write(json.dumps(program_sim, indent=4))
 
+# Generate histograms
+nameexec = ['all', 'exec']
+for nm in names+['total', 'initial']:
+    for it in range(2):
+        distribution = stats['Distr'][nm][it]
+        elems = distribution.items()
+        elems = sorted(elems, key=lambda x: -x[1])
+        elems = elems[:25]
+        conts = [x[1] for x in elems]
+        names = [x[0] for x in elems]
+        plt.figure()
+        plt.plot(names, conts)
+        plt.xticks(range(len(names)), names, rotation='vertical')
+        plt.tight_layout()
+
+
+        plt.savefig('viz/distr_{}_{}.png'.format(nm, nameexec[it]))
+
+    createHist(stats['Lengths'][nm][0], 'Program Length', 
+               '{} all'.format(nm), 'viz/len_{}_all'.format(nm))
+    createHist(stats['Lengths'][nm][1], 'Program Length', 
+               '{} exec'.format(nm), 'viz/len_{}_exec'.format(nm))
+for nm in names:
+    createHist(stats['LCS'][nm][0], 'LCS', 'LCS {} all'.format(nm), 
+               'viz/LCS_{}_all'.format(nm))
+    createHist(stats['LCS'][nm][1], 'LCS', 'LCS {} exec'.format(nm), 
+               'viz/LCS_{}_exec'.format(nm))
+
+
 sim_info = json.load(open(sim_file, 'r')) 
-nprogs = []
-for it, st in enumerate(stats):
-    tuples = [(-t, name, t) for name, t in stats[it].iteritems()]
+nprogs = {}
+for it, st in stats['Distr'].iteritems():
+    tuples = [(-t, name, t) for name, t in stats['Distr'][it][0].iteritems()]
+    tuples_exec = [(-t, name, t) for name, t in stats['Distr'][it][1].iteritems()]
     progs = 0 
     for t in tuples:
         progs += t[2]
-    nprogs.append(progs)
+    progs_exec = 0 
+    for t in tuples_exec:
+        progs_exec += t[2]
+
+    nprogs[it] = [progs, progs_exec]
     
 stats = {
     'all_progs': nprogs,

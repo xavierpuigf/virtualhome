@@ -43,12 +43,16 @@ class Precond:
         for cond in self.precond_dict.keys():
             if cond != 'nearby':
                 for it in self.precond_dict[cond].keys():
+                    it_lowercase = [it[0].lower().replace(' ', '_'), it[1]]
                     if len(self.precond_dict[cond][it]) > 1:
                         pdb.set_trace()
                     if len(self.precond_dict[cond][it]) == 0:
-                        conds.append({cond: it})
+                        conds.append({cond: it_lowercase})
                     else:
-                        conds.append({cond: [it, list(self.precond_dict[cond][it])[0]]})
+                        elements = list(self.precond_dict[cond][it])[0]
+                        elements_lower = [elements[0].lower().replace(' ', '_'), elements[1]]
+                        conds.append({cond: [it_lowercase, elements_lower]})
+
         return conds
     def removeCond(self, cond, object_id=None, second=None):
         if object_id is None:

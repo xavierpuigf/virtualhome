@@ -190,7 +190,7 @@ for file_name in tqdm(files):
         prog_orig = lines
         lines = lines[4:]
         objects_prog = []
-        newobjname2old = {}
+        #newobjname2old = {}
         # Obtain all the object instance of a given program
         for line in lines:
             if '<' not in line:
@@ -199,8 +199,9 @@ for file_name in tqdm(files):
             for el in content[1:]:
                 obj_name_orig = el.split('>')[0]
                 num_name = el.split('(')[1].split(')')[0]
-                obj_name = obj_name_orig.lower().replace(' ', '_')
-                newobjname2old[obj_name] = obj_name_orig
+                obj_name = obj_name_orig
+                #obj_name = obj_name_orig.lower().replace(' ', '_')
+                #newobjname2old[obj_name] = obj_name_orig
                 objects_prog.append((obj_name, num_name))           # object, index
         objects_prog = list(set(objects_prog))
         all_cont = 1
@@ -213,7 +214,8 @@ for file_name in tqdm(files):
             
             if objectn in object_replace_dict.keys():
                 cont = random.randint(1, min(len(object_replace_dict[objectn]), 5))     # always including `objectn`
-                object_candidates = [x.lower().replace(' ', '_') for x in object_replace_dict[objectn] if x.lower().replace(' ', '_') != objectn] 
+                #object_candidates = [x.lower().replace(' ', '_') for x in object_replace_dict[objectn] if x.lower().replace(' ', '_') != objectn] 
+                object_candidates = [x for x in object_replace_dict[objectn] if x != objectn] 
                 if cont > 1:
                     object_replace = random.sample(object_candidates, cont-1)
                     # For every object instance, the object we will replace with
@@ -243,10 +245,10 @@ for file_name in tqdm(files):
             for iti, obj_and_id in enumerate(objects_prog):
                 orign_object, idi = obj_and_id
                 object_new = object_replace_map[obj_and_id][rec_id[iti]]
-                object_to_replace_oldname = newobjname2old[orign_object]
-                new_lines = [x.replace('<{}> ({})'.format(object_to_replace_oldname, idi), 
-                                    '<{}> ({})'.format(object_new, idi)) for x in new_lines]
-                precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(object_to_replace_oldname, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
+                #object_to_replace_oldname = newobjname2old[orign_object]
+                new_lines = [x.replace('<{}> ({})'.format(orign_object, idi), 
+                                   '<{}> ({})'.format(object_new, idi)) for x in new_lines]
+                precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(orign_object, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
 
             augmented_progs_i.append(new_lines)         
             augmented_preconds_i.append(precond_modif)

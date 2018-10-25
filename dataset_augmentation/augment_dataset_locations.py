@@ -108,17 +108,11 @@ for file_name in tqdm(files):
         lines = f.readlines() 
         prog_orig = lines
         lines = lines[4:]
-    newobjname2old = {'character': 'character'}
     # Obtain all the object instance of a given program
     for line in lines:
         if '<' not in line:
             continue
         content = line.split('<')
-        for el in content[1:]:
-            obj_name_orig = el.split('>')[0]
-            num_name = el.split('(')[1].split(')')[0]
-            obj_name = obj_name_orig.lower().replace(' ', '_')
-            newobjname2old[obj_name] = obj_name_orig
 
     with open(file_name.replace('withoutconds', 'initstate').replace('.txt', '.json'),
               'r') as fst:
@@ -189,10 +183,9 @@ for file_name in tqdm(files):
         for iti, obj_and_id in enumerate(objects_prog):
             orign_object, idi = obj_and_id
             object_new = object_replace_map[obj_and_id][rec_id[iti]]
-            object_to_replace_oldname = newobjname2old[orign_object]
-            new_lines = [x.replace('<{}> ({})'.format(object_to_replace_oldname, idi), 
+            new_lines = [x.replace('<{}> ({})'.format(orign_object, idi), 
                                    '<{}> ({})'.format(object_new, idi)) for x in new_lines]
-            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(object_to_replace_oldname, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
+            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(orign_object, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
 
         augmented_progs_i.append(new_lines)         
         augmented_preconds_i.append(precond_modif)

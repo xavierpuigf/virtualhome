@@ -10,22 +10,29 @@ import re
 from collections import Counter
 from multiprocessing import Process, Manager, current_process
 import sys
+import script_utils
 from termcolor import colored
 
 sys.path.append('..')
 import check_programs
 
-verbose = True
+verbose = False
 thres = 300
 write_augment_data = True
+multi_process = True
 
 if write_augment_data:
-    augmented_data_dir = 'augmented_program_exception2'
+    augmented_data_dir = 'augmented_program_exception'
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
 prog_folder = 'programs_processed_precond_nograb_morepreconds'
 programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
+
+with open('../executable_info.json', 'r') as f:
+    executable_info = json.load(f)
+# Select only exec programs
+programs = [x for x in programs if 'dataset_augmentation/'+x in executable_info and 'Script is executable' in executable_info['dataset_augmentation/'+x]]
 
 
 cont = 0
@@ -98,19 +105,20 @@ def from_hash(precond_tuple):
 
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
-    for program in programs:
+    for program_name in programs:
         augmented_progs_i = []
         augmented_preconds_i = []
         augmented_precond_candidates = []
-        if program in d.keys(): 
+        if program_name in d.keys(): 
             continue
-        d[program] = str(current_process())
+        if multi_process:
+            d[program_name] = str(current_process())
         if len(d.keys()) % 20 == 0:
             print(len(d.keys()))
-        state_file = program.replace(
+        state_file = program_name.replace(
                 'withoutconds', 'initstate').replace('.txt', '.json')
 
-        with open(program, 'r') as f:
+        with open(program_name, 'r') as f:
             lines_program = f.readlines()
             
         with open(state_file, 'r') as f:
@@ -120,10 +128,11 @@ def augment_dataset(d, programs):
         modified_state = init_state
 
         program = lines_program[4:]
+        objects_program = []
         for instr in program:
-            _, objects, indx = script_utils.parseStrBlock(instr)
+            _, objects, indx = script_utils.parseStrBlock(instr.strip())
             for ob, idi in zip(objects, indx):
-                objects_program.append([ob.lower().replace(' ', '_'), idi])
+                objects_program.append([ob, idi])
         
         prob_modif = 0.7
         for _ in range(thres):
@@ -141,16 +150,12 @@ def augment_dataset(d, programs):
             modified_state = [x if list(x)[0] != 'is_off' or random.random() > prob_modif else {'is_on': x[list(x)[0]]} for x in modified_state]
             # Swap open
             modified_state = [x  if list(x)[0] != 'open' or random.random() > prob_modif else {'closed': x[list(x)[0]]} for x in modified_state]
-            # Swap is_off
+            # Swap is_closed
             modified_state = [x if list(x)[0] != 'closed' or random.random() > prob_modif else {'open': x[list(x)[0]]} for x in modified_state ]
+            # Swap is free
+            modified_state = [x if list(x)[0] != 'free' or random.random() > prob_modif else {'occupied': x[list(x)[0]]} for x in modified_state ]
             
-            # Occupied
-            for object_name in objects_program:
-                if object_name[0] in objects_occupied:
-                    if random.random() > 0.7: # occupied with 30% of prob
-                        modified_state.append({'occupied': object_name})
-                    else:
-                        modified_state.append({'free': object_name})
+
             # convert to hashable type
             hmodified_state = to_hash(modified_state)
             if hmodified_state != hprev_state:
@@ -166,10 +171,11 @@ def augment_dataset(d, programs):
             executable = False
             max_iter = 0
             while not executable and max_iter < 10 and lines_program is not None:        
-                message = check_programs.check_script(
+                message, final_state = check_programs.check_script(
                         lines_program, 
                         init_state, 
                         '../example_graphs/TrimmedTestScene6_graph.json')
+                #print(message)
                 if message is None:
                     lines_program = None
                     continue
@@ -177,35 +183,44 @@ def augment_dataset(d, programs):
                 
                 if 'is executable' not in message:
                     lines_program = exception_handler.correctedProgram(
-                            lines_program, init_state, message, verbose)
+                            lines_program, init_state, final_state, message, verbose)
                     max_iter += 1
                 else:
                     executable = True
 
             if executable and max_iter > 0:
-                if verbose:
-                    print(colored(
-                        'Program modified in {} exceptions'.format(max_iter), 
-                        'green'))        
+                # if verbose:
+                print(colored(
+                    'Program modified in {} exceptions'.format(max_iter), 
+                    'green'))        
                 augmented_preconds_i.append(str(init_state))
                 augmented_progs_i.append(lines_program)
             elif not executable:
                 if verbose:
                     print(colored('Program not solved', 'red'))
+                    if lines_program:
+                        print(''.join(lines_program_orig))
+                        print('---')
+                        print('\n'.join(lines_program))
 
         if write_augment_data:
-            write_data(program, augmented_progs_i)
-            write_precond(program, augmented_preconds_i)
+            write_data(program_name, augmented_progs_i)
+            write_precond(program_name, augmented_preconds_i)
 
-num_processes = 1
+num_processes = 100
 processes = []
-manager = Manager()
-programs_done = manager.dict()
-for m in range(num_processes):
-    p = Process(target=augment_dataset, args=(programs_done, programs))
-    p.start()
-    processes.append(p)
+if multi_process:
+    manager = Manager()
+    programs_done = manager.dict()
+    for m in range(num_processes):
+        
+        p = Process(target=augment_dataset, args=(programs_done, programs))
+        p.start()
+        processes.append(p)
 
 
-for p in processes:
-    p.join()
+    for p in processes:
+        p.join()
+
+else:
+    augment_dataset({}, programs)

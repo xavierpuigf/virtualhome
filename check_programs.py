@@ -128,7 +128,7 @@ def check_script(program_str, precond, graph_path):
         script = read_script_from_list_string(program_str)
     except ScriptParseException:
         # print("Can not parse the script")
-        return None
+        return None, None
     
     for p in precond:
         for k, vs in p.items():
@@ -155,6 +155,15 @@ def check_script(program_str, precond, graph_path):
     ## set relation and state from precondition
     helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
 
+    ## place the random objects (id from 2000)
+    ## place the random objects (id from 2000)
+    helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+    ## set object state to default 
+    helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
+        
+
+    ## set object state to default 
+    # helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
     # assert len(graph_dict["nodes"]) == max_nodes
 
     graph = EnvironmentGraph(graph_dict)
@@ -168,7 +177,7 @@ def check_script(program_str, precond, graph_path):
     else:
         message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
 
-    return message
+    return message, final_state
 
 
 def check_2(dir_path, graph_path):
@@ -203,6 +212,7 @@ def check_2(dir_path, graph_path):
 
         precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
         precond = json.load(open(precond_path))
+        print(txt_file)
         
         for p in precond:
             for k, vs in p.items():
@@ -228,6 +238,11 @@ def check_2(dir_path, graph_path):
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, objects_in_script, room_mapping, graph_dict)
 
+        #ipdb.set_trace()
+        ## place the random objects (id from 2000)
+        helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"])) 
+        ## set object state to default 
+        helper.set_to_default_state(graph_dict, id_checker=lambda v: v >= 2000)
         assert len(graph_dict["nodes"]) == max_nodes
 
         graph = EnvironmentGraph(graph_dict)
