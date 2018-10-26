@@ -113,7 +113,7 @@ def translate_graph_dict(path):
     return translated_path
 
 
-def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mapping={}):
+def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mapping={}, info={}):
 
     properties_data = utils.load_properties_data(file_name='../resources/object_script_properties_data.json')
     object_states = json.load(open('../resources/object_states.json'))
@@ -126,19 +126,19 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
         script = read_script_from_list_string(program_str)
     except ScriptParseException:
         # print("Can not parse the script")
-        return None, None
+        return None, None, None, None, None
     
     if inp_graph_dict is None:
         graph_dict = utils.load_graph_dict(graph_path)
     else:
         graph_dict = inp_graph_dict
-    message, executable, final_state, graph_state_list, id_mapping = check_one_program(
-        helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping)
+    message, executable, final_state, graph_state_list, id_mapping, info = check_one_program(
+        helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
 
-    return message, final_state, graph_dict, id_mapping
+    return message, final_state, graph_dict, id_mapping, info
 
 
-def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}):
+def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
 
     for p in precond:
         for k, vs in p.items():
@@ -153,7 +153,8 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
         ## id mapping can specify the objects that already specify in the graphs
-        id_mapping, first_room = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
+        id_mapping, first_room, room_mapping = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
+        info = {'room_mapping': room_mapping}
         objects_id_in_script = [v for v in id_mapping.values()]
         helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
@@ -167,7 +168,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     
     elif len(id_mapping) != 0:
         # Assume that object mapping specify all the objects in the scripts
-        helper.modify_script_with_specified_id(script, id_mapping)
+        helper.modify_script_with_specified_id(script, id_mapping, **info)
 
     graph = EnvironmentGraph(graph_dict)
 
@@ -180,7 +181,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     else:
         message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
 
-    return message, executable, final_state, graph_state_list, id_mapping
+    return message, executable, final_state, graph_state_list, id_mapping, info
 
 
 def check_whole_set(dir_path, graph_path):
@@ -216,7 +217,7 @@ def check_whole_set(dir_path, graph_path):
 
         graph_dict = utils.load_graph_dict(graph_path)
 
-        message, executable, final_state, graph_state_list, id_mapping  = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
+        message, executable, final_state, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
         
         if executable:
             if dump:

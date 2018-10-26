@@ -96,7 +96,7 @@ def getidperobject(object_name, id_env, id_mapping):
     
     # update the script2env mapping
     id_object = cont_object + 1
-    id_mapping[(object_name, str(id_object))] = id_env
+    id_mapping[(object_name, id_object)] = id_env
     print(id_mapping)
     print('!!!')
     return id_object
