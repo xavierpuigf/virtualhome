@@ -42,6 +42,16 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
         return response['success'], response['value']
 
+    def camera_data(self, camera_indexes):
+        """
+        Returns camera data for cameras given in camera_indexes list
+        """
+        if not isinstance(camera_indexes, collections.Iterable):
+            camera_indexes = [camera_indexes]
+        response = self.post_command({'id': str(time.time()), 'action': 'camera_data',
+                                      'intParams': camera_indexes})
+        return response['success'], json.loads(response['message'])
+
     def camera_image(self, camera_indexes, mode='normal'):
         """
         Returns a list of renderings of cameras given in camera_indexes.
