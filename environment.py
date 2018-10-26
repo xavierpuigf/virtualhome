@@ -469,17 +469,6 @@ class ClassNameNode(NodeEnumerator):
         return state.get_nodes_by_attr('class_name', self.class_name)
 
 
-class RoomNode(NodeEnumerator):
-
-    def __init__(self, node: Node):
-        self.node = node
-
-    def enumerate(self, state: EnvironmentState, **kwargs):
-        for n in state.get_nodes_from(self.node, Relation.INSIDE):
-            if n.category == 'Rooms':
-                yield n
-
-
 class ObjectOnNode(NodeEnumerator):
 
     def __init__(self, node: Node):
