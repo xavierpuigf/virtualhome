@@ -82,10 +82,14 @@ def parseException(exception_str, verbose=True):
     return None
 
 def getidperobject(object_name, id_env, id_mapping):
+    print('--')
+    print(id_env)
+    print(id_mapping)
     # Given an object name and an id in the environment returns a script id
+    object_name = object_name.lower().replace(' ', '_')
     cont_object = 0
-    for elem, id_env in id_mapping.items():
-        if elem[1] == id_env:
+    for elem, id_en in id_mapping.items():
+        if id_en == id_env:
             return int(elem[1])
         if elem[0] == object_name:
             cont_object += 1
@@ -93,6 +97,8 @@ def getidperobject(object_name, id_env, id_mapping):
     # update the script2env mapping
     id_object = cont_object + 1
     id_mapping[(object_name, str(id_object))] = id_env
+    print(id_mapping)
+    print('!!!')
     return id_object
 
 def correctedProgram(input_program, init_state, final_state, exception_str, verbose=True, id_mapping={}):

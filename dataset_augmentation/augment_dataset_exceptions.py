@@ -181,6 +181,7 @@ def augment_dataset(d, programs):
                         '../example_graphs/TrimmedTestScene6_graph.json',
                         input_graph,
                         id_mapping)
+                print('CHECK')
                 if False:
                     print('Error reading', lines_program)
                     lines_program = None
@@ -197,8 +198,8 @@ def augment_dataset(d, programs):
                     executable = True
 
                 if isinstance(lines_program, tuple) and lines_program[0] is None:
-                    print(lines_program[1])
                     lines_program = None
+                    continue
 
 
             if executable and max_iter > 0:
