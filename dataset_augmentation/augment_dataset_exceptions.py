@@ -175,14 +175,13 @@ def augment_dataset(d, programs):
             id_mapping = {}
 
             while not executable and max_iter < 10 and lines_program is not None:        
-                try:
-                    message, final_state, input_graph, id_mapping = check_programs.check_script(
-                            lines_program, 
-                            init_state, 
-                            '../example_graphs/TrimmedTestScene6_graph.json',
-                            input_graph
-                            id_mapping)
-                except:
+                message, final_state, input_graph, id_mapping = check_programs.check_script(
+                        lines_program, 
+                        init_state, 
+                        '../example_graphs/TrimmedTestScene6_graph.json',
+                        input_graph,
+                        id_mapping)
+                if False:
                     print('Error reading', lines_program)
                     lines_program = None
                     continue

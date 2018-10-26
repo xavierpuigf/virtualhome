@@ -81,9 +81,10 @@ def parseException(exception_str, verbose=True):
 
     return None
 
-def getidperobject(object_name, id_env, object_id_mapping):
+def getidperobject(object_name, id_env, id_mapping):
     # Given an object name and an id in the environment returns a script id
-    for elem, id_env in object_id_mapping.items():
+    cont_object = 0
+    for elem, id_env in id_mapping.items():
         if elem[1] == id_env:
             return int(elem[1])
         if elem[0] == object_name:
@@ -166,7 +167,7 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     if exception == ProgramException.DOOR_CLOSED:
         pdb.set_trace()
         object_name = 'Door'
-        id_mapping = argument_exception[0][1]
+        id_object_env = argument_exception[0][1]
         id_object = getidperobject(object_name, id_object_env, id_mapping)
         insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
@@ -205,5 +206,5 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     #print(colored('Corrected', 'green'))
     #printProgramWithLine(corrected_instructions)
     output_program = program_header + corrected_instructions
-
+    print(id_mapping)
     return output_program

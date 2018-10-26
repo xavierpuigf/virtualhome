@@ -121,7 +121,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
 
-    helper.initialize()
+    #helper.initialize()
     try:
         script = read_script_from_list_string(program_str)
     except ScriptParseException:
@@ -135,7 +135,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
     message, executable, final_state, graph_state_list, id_mapping = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping)
 
-    return message, final_statem, graph_dict, id_mapping
+    return message, final_state, graph_dict, id_mapping
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}):
