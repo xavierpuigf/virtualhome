@@ -19,6 +19,7 @@ class ProgramException(Enum):
     NOT_ON = 9
     NOT_PLUGGED_OUT = 10
     OCCUPIED = 11
+    UNPLUGGED = 12
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -31,6 +32,7 @@ message_to_exception = {
     'is not off': ProgramException.NOT_OFF,
     'is not on': ProgramException.NOT_ON,
     'is not plugged_out': ProgramException.NOT_PLUGGED_OUT,
+    'is unplugged': ProgramException.UNPLUGGED,
     'many things on': ProgramException.OCCUPIED,
     'on the': ProgramException.OCCUPIED,
 }
@@ -82,9 +84,10 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     try:
         line_exception, exception, argument_exception = parseException(exception_str, verbose)
     except ValueError:
+        print(exception_str)
         if verbose:
             printProgramWithLine(instructions_program)
-        return None
+        return (None, exception_str)
     
 
     #printProgramWithLine(instructions_program, [line_exception])
@@ -132,6 +135,12 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
 
     if exception == ProgramException.NOT_PLUGGED_OUT:
         corrected_instructions = removeInstructions([line_exception], instructions_program)
+
+    if exception == ProgramException.UNPLUGGED:
+        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
+        insert_in.append(
+                [line_exception, '[PlugIn] <{}> ({})'.format(objects[0], ids[0])])           
+        corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.OCCUPIED:
        

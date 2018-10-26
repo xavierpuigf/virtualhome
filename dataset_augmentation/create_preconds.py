@@ -149,8 +149,9 @@ for script_name in all_scripts:
             if obj_id not in is_on.keys(): # If this light was never switched on/off
                 precond_dict.addPrecond('is_on', obj_id, [])
                 # If it was not plugged, needs to be plugged
-                if obj_id not in precond_dict.obtainCond('unplugged'):
-                    precond_dict.addPrecond('plugged', obj_id, [])
+                if hasProperty(obj_id[0], 'HAS_PLUG'):
+                    if obj_id not in precond_dict.obtainCond('unplugged'):
+                        precond_dict.addPrecond('plugged', obj_id, [])
 
             else:
                 if not is_on[obj_id]:
@@ -169,8 +170,9 @@ for script_name in all_scripts:
                 precond_dict.addPrecond('is_off', obj_id, [])
 
                 # If it was not plugged, needs to be plugged
-                if obj_id not in precond_dict.obtainCond('unplugged'):
-                    precond_dict.addPrecond('plugged', obj_id, [])
+                if hasProperty(obj_id[0], 'HAS_PLUG'):
+                    if obj_id not in precond_dict.obtainCond('unplugged'):
+                        precond_dict.addPrecond('plugged', obj_id, [])
 
             is_on[obj_id] = True        
 

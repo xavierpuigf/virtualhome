@@ -1,4 +1,13 @@
 import pdb
+import json
+object_properties = json.load(open('../resources/object_script_properties_data.json', 'r'))
+
+
+def hasProperty(obj_name, property_name):
+    obj_name_corrected = obj_name.lower().replace(' ', '_')
+    return property_name in object_properties[obj_name_corrected]
+
+
 def insertInstructions(insert_in, content):
     acum = 0
     for insertval in insert_in:

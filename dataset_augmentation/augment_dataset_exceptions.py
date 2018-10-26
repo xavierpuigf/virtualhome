@@ -18,8 +18,8 @@ import check_programs
 
 verbose = False
 thres = 300
-write_augment_data = True
-multi_process = True
+write_augment_data = False
+multi_process = False
 
 if write_augment_data:
     augmented_data_dir = 'augmented_program_exception'
@@ -105,6 +105,7 @@ def from_hash(precond_tuple):
 
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
+    exceptions_not_found = []
     for program_name in programs:
         augmented_progs_i = []
         augmented_preconds_i = []
@@ -171,22 +172,30 @@ def augment_dataset(d, programs):
             executable = False
             max_iter = 0
             while not executable and max_iter < 10 and lines_program is not None:        
-                message, final_state = check_programs.check_script(
-                        lines_program, 
-                        init_state, 
-                        '../example_graphs/TrimmedTestScene6_graph.json')
-                #print(message)
+                try:
+                    message, final_state = check_programs.check_script(
+                            lines_program, 
+                            init_state, 
+                            '../example_graphs/TrimmedTestScene6_graph.json')
+                except:
+                    print('Error reading', lines_program)
+                    lines_program = None
+                    continue
                 if message is None:
                     lines_program = None
                     continue
                 lines_program = [x.strip() for x in lines_program]
-                
                 if 'is executable' not in message:
                     lines_program = exception_handler.correctedProgram(
                             lines_program, init_state, final_state, message, verbose)
                     max_iter += 1
                 else:
                     executable = True
+
+                if isinstance(lines_program, tuple) and lines_program[0] is None:
+                    print(lines_program[1])
+                    lines_program = None
+
 
             if executable and max_iter > 0:
                 # if verbose:
@@ -206,6 +215,7 @@ def augment_dataset(d, programs):
         if write_augment_data:
             write_data(program_name, augmented_progs_i)
             write_precond(program_name, augmented_preconds_i)
+        #print('\n'.join(exceptions_not_found))
 
 num_processes = 100
 processes = []
