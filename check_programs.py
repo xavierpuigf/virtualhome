@@ -19,7 +19,7 @@ dump = False
 max_nodes = 300
 
 
-def dump_one_data(txt_file, script, graph_state_list, objects_in_script):
+def dump_one_data(txt_file, script, graph_state_list, id_mapping):
 
     new_path = txt_file.replace('withoutconds', 'executable_programs')
     new_dir = os.path.dirname(new_path)
@@ -44,7 +44,7 @@ def dump_one_data(txt_file, script, graph_state_list, objects_in_script):
         if script_line.subject():
             script_line_str += ' <{}> ({})'.format(script_line.subject().name, script_line.subject().instance)
 
-        for k, v in objects_in_script.items():
+        for k, v in id_mapping.items():
             obj_name, obj_number = k
             id = v
             script_line_str = script_line_str.replace('<{}> ({})'.format(obj_name, id), '<{}> ({}.{})'.format(obj_name, obj_number, id))
@@ -113,7 +113,7 @@ def translate_graph_dict(path):
     return translated_path
 
 
-def check_script(program_str, precond, graph_path, inp_graph_dict=None):
+def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mapping={}):
 
     properties_data = utils.load_properties_data(file_name='../resources/object_script_properties_data.json')
     object_states = json.load(open('../resources/object_states.json'))
@@ -132,14 +132,13 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None):
         graph_dict = utils.load_graph_dict(graph_path)
     else:
         graph_dict = inp_graph_dict
-    message, executable, final_state, graph_state_list, objects_in_script = check_one_program(
-        helper, script, precond, graph_dict, 
-        w_graph_list=False, modify_graph=(inp_graph_dict is None))
+    message, executable, final_state, graph_state_list, id_mapping = check_one_program(
+        helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping)
 
-    return message, final_state
+    return message, final_statem, id_mapping
 
 
-def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph):
+def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}):
 
     for p in precond:
         for k, vs in p.items():
@@ -150,19 +149,25 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
                 v = vs
                 v[0] = v[0].lower().replace(' ', '_')
 
+    helper.initialize(graph_dict)
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
-        objects_in_script, first_room = helper.add_missing_object_from_script(script, precond, graph_dict)
-        objects_id_in_script = [v for v in objects_in_script.values()]
+        ## id mapping can specify the objects that already specify in the graphs
+        id_mapping, first_room = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
+        objects_id_in_script = [v for v in id_mapping.values()]
         helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
         ## place the random objects (id from 2000)
         helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
-        helper.random_change_object_state(objects_in_script, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
+        helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
-        helper.prepare_from_precondition(precond, objects_in_script, graph_dict)
+        helper.prepare_from_precondition(precond, id_mapping, graph_dict)
         #assert len(graph_dict["nodes"]) == max_nodes
+    
+    elif len(id_mapping) != 0:
+        # Assume that object mapping specify all the objects in the scripts
+        helper.modify_script_with_specified_id(script, id_mapping)
 
     graph = EnvironmentGraph(graph_dict)
 
@@ -175,7 +180,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     else:
         message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
 
-    return message, executable, final_state, graph_state_list, objects_in_script
+    return message, executable, final_state, graph_state_list, id_mapping
 
 
 def check_whole_set(dir_path, graph_path):
@@ -200,7 +205,6 @@ def check_whole_set(dir_path, graph_path):
     iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
     for j, txt_file in iterators:
 
-        helper.initialize()
         try:
             script = read_script(txt_file)
         except ScriptParseException:
@@ -212,11 +216,11 @@ def check_whole_set(dir_path, graph_path):
 
         graph_dict = utils.load_graph_dict(graph_path)
 
-        message, executable, final_state, graph_state_list, objects_in_script  = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
+        message, executable, final_state, graph_state_list, id_mapping  = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
         
         if executable:
             if dump:
-                dump_one_data(txt_file, script, graph_state_list, objects_in_script)
+                dump_one_data(txt_file, script, graph_state_list, id_mapping)
             executable_program_length.append(len(script))
             executable_programs += 1
             if verbose:

@@ -148,9 +148,11 @@ class graph_dict_helper(object):
             "off": "off"
         }
 
-    def initialize(self):
-        self.script_objects_id = 1000
-        self.random_objects_id = 2000
+    def initialize(self, graph_dict):
+        script_object_ids = [id for id in filter(lambda v: v["id"] >= 1000 and v["id"] < 2000, graph_dict["nodes"])]
+        random_object_ids = [id for id in filter(lambda v: v["id"] >= 2000, graph_dict["nodes"])]
+        self.script_objects_id = max(script_object_ids) if len(script_object_ids) != 0 else 1000
+        self.random_objects_id = max(random_object_ids) if len(random_object_ids) != 0 else 2000
 
     def set_to_default_state(self, graph_dict, first_room, id_checker):
         
@@ -205,7 +207,7 @@ class graph_dict_helper(object):
                 "class_name": obj
             })
 
-    def _random_pick_a_room_with_objects_name_in_script(self, available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict):
+    def _random_pick_a_room_with_objects_name_in_graph(self, available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict):
 
         # Room is not specified in this program, assign one to it
         hist = np.zeros(len(available_rooms_in_graph_id))
@@ -236,8 +238,15 @@ class graph_dict_helper(object):
         available_rooms.remove(first_room)
         return random.choice(available_rooms)
 
-    def add_missing_object_from_script(self, script, precond, graph_dict):
-        
+    def modify_script_with_specified_id(self, script, id_mapping):
+
+        # change the id in script
+        for script_line in script:
+            for parameter in script_line.parameters:
+                parameter.instance = id_mapping[(parameter.name, parameter.instance)]
+
+    def add_missing_object_from_script(self, script, precond, graph_dict, id_mapping):
+
         equivalent_rooms = self.equivalent_rooms
         possible_rooms = self.possible_rooms
 
@@ -261,36 +270,46 @@ class graph_dict_helper(object):
             if 'location' in precond_i:
                 room = precond_i['location'][1][0] 
                 precond_i['location'][1][0] = room_mapping[room]
-
-        location_precond = {tuple(i['location'][0]): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
-        rooms_in_precond = list(set([i for i in location_precond.values()]))
-
-        # initialize the `objects_in_script`
-        character_id = [i for i in filter(lambda v: v['class_name'] == 'character', graph_dict["nodes"])][0]["id"]
-        objects_in_script = {('character', 1): character_id}
         
+        # apply room mapping to the script
+        for script_line in script:
+            for parameter in script_line.parameters:
+                if parameter.name in possible_rooms:
+                    parameter.name = room_mapping[parameter.name]
+
+        # find the first room
         first_room = None
         for script_line in script:
             for parameter in script_line.parameters:
+                if parameter.name in possible_rooms and first_room is None:
+                    first_room = parameter.name
 
-                if parameter.name in possible_rooms:
-                    parameter.name = room_mapping[parameter.name]
-                    if first_room is None:
-                        first_room = parameter.name
-                    
-                if (parameter.name, parameter.instance) not in objects_in_script:
-                    objects_in_script[(parameter.name, parameter.instance)] = None
+        # initialize the `objects_in_script`
+        objects_in_script = {}
+        character_id = [i for i in filter(lambda v: v['class_name'] == 'character', graph_dict["nodes"])][0]["id"]
+        key = ('character', 1)
+        objects_in_script[key] = id_mapping[key] if key in id_mapping else character_id
 
-        # pick room is not specified
+        for script_line in script:
+            for parameter in script_line.parameters:
+                key = (parameter.name, parameter.instance)
+                if key not in objects_in_script:
+                    objects_in_script[key] = id_mapping[key] if key in id_mapping else None
+
+        # set up the first room
+        location_precond = {tuple(i['location'][0]): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
+        rooms_in_precond = list(set([i for i in location_precond.values()]))
         if first_room == None:
             assert len(rooms_in_precond) == 0
-            first_room = self._random_pick_a_room_with_objects_name_in_script(available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict)
+            first_room = self._random_pick_a_room_with_objects_name_in_graph(available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict)
         else:
             first_room = self._any_room_except(first_room, available_rooms_in_graph)
         assert first_room is not None and first_room in available_rooms_in_graph, ipdb.set_trace()
 
+        # mapping objects
         for obj in objects_in_script.keys():
-            if obj[0] == 'character':
+            # objects that are specified already
+            if objects_in_script[obj] is not None:
                 continue
 
             room_obj = location_precond[obj] if obj in location_precond else first_room
@@ -329,6 +348,7 @@ class graph_dict_helper(object):
                 # add edges
                 graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
                 self.script_objects_id += 1
+
 
         # change the id in script
         for script_line in script:
