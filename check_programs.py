@@ -156,7 +156,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list):
 
     ## set relation and state from precondition
     helper.prepare_from_precondition(precond, objects_in_script, graph_dict)
-    assert len(graph_dict["nodes"]) == max_nodes
+    #assert len(graph_dict["nodes"]) == max_nodes
 
     graph = EnvironmentGraph(graph_dict)
 
