@@ -113,7 +113,7 @@ def translate_graph_dict(path):
     return translated_path
 
 
-def check_script(program_str, precond, graph_path):
+def check_script(program_str, precond, graph_path, inp_graph_dict=None):
 
     properties_data = utils.load_properties_data(file_name='../resources/object_script_properties_data.json')
     object_states = json.load(open('../resources/object_states.json'))
@@ -128,13 +128,18 @@ def check_script(program_str, precond, graph_path):
         # print("Can not parse the script")
         return None, None
     
-    graph_dict = utils.load_graph_dict(graph_path)
-    message, executable, final_state, graph_state_list, objects_in_script = check_one_program(helper, script, precond, graph_dict, w_graph_list=False)
+    if inp_graph_dict is None:
+        graph_dict = utils.load_graph_dict(graph_path)
+    else:
+        graph_dict = inp_graph_dict
+    message, executable, final_state, graph_state_list, objects_in_script = check_one_program(
+        helper, script, precond, graph_dict, 
+        w_graph_list=False, modify_graph=(inp_graph_dict is None))
 
     return message, final_state
 
 
-def check_one_program(helper, script, precond, graph_dict, w_graph_list):
+def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph):
 
     for p in precond:
         for k, vs in p.items():
@@ -145,18 +150,19 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list):
                 v = vs
                 v[0] = v[0].lower().replace(' ', '_')
 
-    ## add missing object from scripts (id from 1000) and set them to default setting
-    objects_in_script, first_room = helper.add_missing_object_from_script(script, precond, graph_dict)
-    objects_id_in_script = [v for v in objects_in_script.values()]
-    helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
+    if modify_graph:
+        ## add missing object from scripts (id from 1000) and set them to default setting
+        objects_in_script, first_room = helper.add_missing_object_from_script(script, precond, graph_dict)
+        objects_id_in_script = [v for v in objects_in_script.values()]
+        helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
-    ## place the random objects (id from 2000)
-    helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
-    helper.random_change_object_state(objects_in_script, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
+        ## place the random objects (id from 2000)
+        helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
+        helper.random_change_object_state(objects_in_script, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
-    ## set relation and state from precondition
-    helper.prepare_from_precondition(precond, objects_in_script, graph_dict)
-    #assert len(graph_dict["nodes"]) == max_nodes
+        ## set relation and state from precondition
+        helper.prepare_from_precondition(precond, objects_in_script, graph_dict)
+        #assert len(graph_dict["nodes"]) == max_nodes
 
     graph = EnvironmentGraph(graph_dict)
 
