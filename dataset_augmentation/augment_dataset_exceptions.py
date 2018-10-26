@@ -16,7 +16,7 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
-verbose = False
+verbose = True
 thres = 300
 write_augment_data = False
 multi_process = False
@@ -171,12 +171,14 @@ def augment_dataset(d, programs):
             lines_program = lines_program_orig.copy()
             executable = False
             max_iter = 0
+            input_graph = None
             while not executable and max_iter < 10 and lines_program is not None:        
                 try:
-                    message, final_state = check_programs.check_script(
+                    message, final_state, input_graph = check_programs.check_script(
                             lines_program, 
                             init_state, 
-                            '../example_graphs/TrimmedTestScene6_graph.json')
+                            '../example_graphs/TrimmedTestScene6_graph.json',
+                            input_graph)
                 except:
                     print('Error reading', lines_program)
                     lines_program = None
