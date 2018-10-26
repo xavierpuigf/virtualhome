@@ -1114,6 +1114,9 @@ def _create_walkable_graph(state: EnvironmentState):
 
 def _check_closed_doors(state: EnvironmentState, room1: GraphNode, room2: GraphNode):
     graph_adj_lists = _create_walkable_graph(state)
+    bfs_prev = BFS_check_closed(state, graph_adj_lists, room1.id)
+    if room2.id in bfs_prev:
+        return []
     bfs_prev = BFS(graph_adj_lists, room1.id)
     if room2.id not in bfs_prev:
         return None  # No path!
@@ -1128,6 +1131,21 @@ def _check_closed_doors(state: EnvironmentState, room1: GraphNode, room2: GraphN
             closed_between.append(door_node)
         current_id = next_id
     return closed_between
+
+
+def BFS_check_closed(state: EnvironmentState, adj_lists: dict, s):
+    prev = {}
+    prev[s] = None
+    q = queue.Queue()
+    q.put(s)
+    while not q.empty():
+        v = q.get()
+        for u, d in adj_lists[v]:
+            door_node = state.get_node(d)
+            if State.CLOSED not in door_node.states and u not in prev:
+                prev[u] = v
+                q.put(u)
+    return prev
 
 
 def BFS(adj_lists: dict, s):
