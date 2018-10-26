@@ -76,7 +76,7 @@ class ScriptLine(object):
     def __init__(self, action: Action, parameters: List[ScriptObject], index: int):
         self.action = action
         self.parameters = parameters
-        self.index =index
+        self.index = index
 
     def object(self):
         return self.parameters[0] if len(self.parameters) > 0 else None
@@ -151,6 +151,7 @@ def read_script(file_name):
                 index += 1
     return Script(script_lines)
 
+
 def read_script_from_list_string(list_string):
     script_lines = []
     f = list_string
@@ -164,6 +165,7 @@ def read_script_from_list_string(list_string):
             script_lines.append(parse_script_line(line, index))
             index += 1
     return Script(script_lines)
+
 
 def read_script_from_string(string):
 

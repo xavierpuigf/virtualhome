@@ -1,6 +1,6 @@
 import time
+import queue
 from typing import Optional
-
 import common
 from environment import *
 from scripts import Action, ScriptLine, Script
@@ -113,12 +113,9 @@ class WalkExecutor(ActionExecutor):
             return False
         # char_room = _get_room_node(state, char_node)
         # node_room = _get_room_node(state, node)
-        # if char_room.id != node_room.id:
-        #     return not state.evaluate(
-        #         ExistRelations(FilteredNodes(ClassNameNode('door'), NodeAttrIn(State.CLOSED, 'states')),
-        #                        [(Relation.BETWEEN, NodeInstanceFilter(char_room)),
-        #                         (Relation.BETWEEN, NodeInstanceFilter(node_room))])
-        #     )
+        # if not _check_closed_doors(state, char_room, node_room):
+        #     info.error('Doors between {} and {} are closed', char_room, node_room)
+        #     return False
         return True
 
 
@@ -1091,6 +1088,44 @@ def _is_inside(state: EnvironmentState, node: Node):
     return state.evaluate(ExistsRelation(NodeInstance(node), Relation.INSIDE,
                                          NodeConditionFilter(And(NodeAttrIn(State.CLOSED, 'states'),
                                                                  Not(IsRoomNode())))))
+
+
+def _create_walkable_graph(state: EnvironmentState):
+    doors = state.get_nodes_by_attr('class_name', 'door')
+    doorjambs = state.get_nodes_by_attr('class_name', 'doorjamb')
+    adj_lists = {}
+    for door_node in doors:
+        door_rooms = state.get_nodes_from(door_node, Relation.BETWEEN)
+        if len(door_rooms) > 1:
+            adj_lists.setdefault(door_rooms[0].id, []).append((door_rooms[1].id, door_node.id))
+            adj_lists.setdefault(door_rooms[1].id, []).append((door_rooms[0].id, door_node.id))
+    for dj_node in doorjambs:
+        dj_rooms = state.get_nodes_from(dj_node, Relation.BETWEEN)
+        if len(dj_rooms) > 1:
+            adj_lists.setdefault(dj_rooms[0].id, []).append((dj_rooms[1].id, dj_node.id))
+            adj_lists.setdefault(dj_rooms[1].id, []).append((dj_rooms[0].id, dj_node.id))
+    return adj_lists
+
+
+def _check_closed_doors(state: EnvironmentState, room1: GraphNode, room2: GraphNode):
+    graph_adj_lists = _create_walkable_graph(state)
+    bfs_prev = BFS(state, graph_adj_lists, room1.id)
+    return room2.id in bfs_prev
+
+
+def BFS(state: EnvironmentState, adj_lists: dict, s):
+    prev = {}
+    prev[s] = None
+    q = queue.Queue()
+    q.put(s)
+    while not q.empty():
+        v = q.get()
+        for u, d in adj_lists[v]:
+            door_node = state.get_node(d)
+            if State.CLOSED not in door_node.states and u not in prev:
+                prev[u] = v
+                q.put(u)
+    return prev
 
 
 # ScriptExecutor
