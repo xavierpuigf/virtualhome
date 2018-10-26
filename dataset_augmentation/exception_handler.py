@@ -20,6 +20,8 @@ class ProgramException(Enum):
     NOT_PLUGGED_OUT = 10
     OCCUPIED = 11
     UNPLUGGED = 12
+    STILL_ON = 13
+    DOOR_CLOSED = 14
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -35,6 +37,8 @@ message_to_exception = {
     'is unplugged': ProgramException.UNPLUGGED,
     'many things on': ProgramException.OCCUPIED,
     'on the': ProgramException.OCCUPIED,
+    'is still on': ProgramException.STILL_ON,
+    'between and is closed': ProgramException.DOOR_CLOSED
 }
 
 def printProgramWithLine(program, lines=[]):
@@ -77,7 +81,20 @@ def parseException(exception_str, verbose=True):
 
     return None
 
-def correctedProgram(input_program, init_state, final_state, exception_str, verbose=True):
+def getidperobject(object_name, id_env, object_id_mapping):
+    # Given an object name and an id in the environment returns a script id
+    for elem, id_env in object_id_mapping.items():
+        if elem[1] == id_env:
+            return int(elem[1])
+        if elem[0] == object_name:
+            cont_object += 1
+    
+    # update the script2env mapping
+    id_object = cont_object + 1
+    id_mapping[(object_name, str(id_object))] = id_env
+    return id_object
+
+def correctedProgram(input_program, init_state, final_state, exception_str, verbose=True, id_mapping={}):
     #print('Correct exception {}'.format(exception_str))
     instructions_program = input_program[4:]
     program_header = input_program[:4]
@@ -90,9 +107,6 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         return (None, exception_str)
     
 
-    #printProgramWithLine(instructions_program, [line_exception])
-    
-    #program = ProgramState(input_program, init_state)
     
     corrected_instructions = instructions_program
     insert_in = []
@@ -136,12 +150,27 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     if exception == ProgramException.NOT_PLUGGED_OUT:
         corrected_instructions = removeInstructions([line_exception], instructions_program)
 
+    if exception == ProgramException.STILL_ON:
+        # TODO: check that we are actually switching it on afterwards
+        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
+        insert_in.append(
+                [line_exception, '[SwitchOff] <{}> ({})'.format(objects[0], ids[0])])           
+        corrected_instructions = insertInstructions(insert_in, instructions_program)
+
     if exception == ProgramException.UNPLUGGED:
         action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
         insert_in.append(
                 [line_exception, '[PlugIn] <{}> ({})'.format(objects[0], ids[0])])           
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
+    if exception == ProgramException.DOOR_CLOSED:
+        pdb.set_trace()
+        object_name = 'Door'
+        id_mapping = argument_exception[0][1]
+        id_object = getidperobject(object_name, id_object_env, id_mapping)
+        insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
+        insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
+        insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
     if exception == ProgramException.OCCUPIED:
        
         node_state_dict = final_state.to_dict()['nodes']
@@ -161,10 +190,10 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
                 prev_obj[ob_mod] += 1
         for object_occupied in node_interest:
             object_name = object_occupied['class_name']
-            if object_name not in prev_obj.keys():
-                id_object = 1
-            else:
-                id_object = prev_obj[object_name] + 1
+            id_object_env = object_occupied['id']
+            id_object = getidperobject(object_name, id_object_env,id_mapping)
+
+           
             # TODO: we may want to pick objects with 2 hands
             insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
             insert_in.append([line_exception, '[Grab] <{}> ({})'.format(object_name, id_object)])

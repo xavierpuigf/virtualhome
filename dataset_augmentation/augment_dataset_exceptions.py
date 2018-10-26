@@ -16,7 +16,7 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
-verbose = False
+verbose = True
 thres = 300
 write_augment_data = False
 multi_process = False
@@ -171,12 +171,17 @@ def augment_dataset(d, programs):
             lines_program = lines_program_orig.copy()
             executable = False
             max_iter = 0
+            input_graph = None
+            id_mapping = {}
+
             while not executable and max_iter < 10 and lines_program is not None:        
                 try:
-                    message, final_state = check_programs.check_script(
+                    message, final_state, input_graph, id_mapping = check_programs.check_script(
                             lines_program, 
                             init_state, 
-                            '../example_graphs/TrimmedTestScene6_graph.json')
+                            '../example_graphs/TrimmedTestScene6_graph.json',
+                            input_graph
+                            id_mapping)
                 except:
                     print('Error reading', lines_program)
                     lines_program = None
@@ -187,7 +192,7 @@ def augment_dataset(d, programs):
                 lines_program = [x.strip() for x in lines_program]
                 if 'is executable' not in message:
                     lines_program = exception_handler.correctedProgram(
-                            lines_program, init_state, final_state, message, verbose)
+                            lines_program, init_state, final_state, message, verbose, id_mapping)
                     max_iter += 1
                 else:
                     executable = True
