@@ -168,6 +168,8 @@ class graph_dict_helper(object):
                 # always set to off, closed, open, clean
                 if "CAN_OPEN" in node["properties"]:
                     open_closed.set_to_default_state(node)
+                    if node["class_name"] == "door":
+                        open_closed.set_node_state(node, "OPEN")
                 if "HAS_PLUG" in node["properties"]:
                     plugged_in_out.set_to_default_state(node)
                 if "HAS_SWTICH" in node["properties"]:
@@ -285,7 +287,7 @@ class graph_dict_helper(object):
             first_room = self._random_pick_a_room_with_objects_name_in_script(available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict)
         else:
             first_room = self._any_room_except(first_room, available_rooms_in_graph)
-
+        assert first_room is not None and first_room in available_rooms_in_graph, ipdb.set_trace()
 
         for obj in objects_in_script.keys():
             if obj[0] == 'character':
