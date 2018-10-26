@@ -189,7 +189,7 @@ def check_whole_set(dir_path, graph_path):
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file196_2.txt')]
+    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file784_2.txt')]
 
     iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
     for j, txt_file in iterators:

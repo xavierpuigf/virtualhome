@@ -82,23 +82,27 @@ class WalkExecutor(ActionExecutor):
         for node in state.select_nodes(current_obj):
             if self.check_walk(state, node, info):
 
+                node_room = _get_room_node(state, node)
+                assert node_room is not None, ipdb.set_trace()
                 changes = [DeleteEdges(CharacterNode(),
                                        [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                        AnyNode(), delete_reverse=True),
                            AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True),
                            AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True),
-                           AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
+                           AddEdges(CharacterNode(), Relation.INSIDE, NodeInstance(node_room)),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
                      ]
 
                 # close to object in hands
                 char_node = _get_character_node(state)
+                char_room = _get_room_node(state, char_node)
                 nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
                 for node_in_hands in nodes_in_hands:
                     changes.append(DeleteEdges(NodeInstance(node_in_hands), [Relation.INSIDE, Relation.CLOSE, Relation.FACING], AnyNode(), delete_reverse=True))
 
                 for node_in_hands in nodes_in_hands:
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node_in_hands), add_reverse=True))
+                    changes.append(AddEdges(NodeInstance(node_in_hands), Relation.INSIDE, NodeInstance(char_room), add_reverse=True))
 
                 # close to all objects on node
                 if Property.SURFACES in node.properties:
@@ -111,11 +115,18 @@ class WalkExecutor(ActionExecutor):
         if State.SITTING in char_node.states or State.LYING in char_node.states:
             info.error('{} is sitting', char_node)
             return False
-        # char_room = _get_room_node(state, char_node)
-        # node_room = _get_room_node(state, node)
-        # if not _check_closed_doors(state, char_room, node_room):
-        #     info.error('Doors between {} and {} are closed', char_room, node_room)
-        #     return False
+        
+        char_room = _get_room_node(state, char_node)
+        node_room = _get_room_node(state, node)
+        closed_doors = _check_closed_doors(state, char_room, node_room)
+        if closed_doors is None:
+            info.error('No path between between {} and {}', char_room, node_room)
+            return False
+        if len(closed_doors) > 0:
+            info.error("Door(s) {} between {} and {} is (are) closed", ', '.join([str(d) for d in closed_doors]),
+                       char_room, node_room)
+            return False
+
         return True
 
 
@@ -264,9 +275,12 @@ class GrabExecutor(ActionExecutor):
         else:
             new_relation = self.check_grabbable(state, node, info)
             if new_relation is not None:
+                char_node = _get_character_node(state)
+                char_room = _get_room_node(state, char_node)
                 changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode(), delete_reverse=True),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
-                           AddEdges(CharacterNode(), new_relation, NodeInstance(node))]
+                           AddEdges(CharacterNode(), new_relation, NodeInstance(node)), 
+                           AddEdges(NodeInstance(node), Relation.INSIDE, NodeInstance(char_room))]
                 new_close, relation = _find_first_node_from(state, node, [Relation.ON, Relation.INSIDE, Relation.CLOSE])
                 if new_close is not None:
                     changes += [AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(new_close), add_reverse=True),
@@ -606,9 +620,10 @@ class DropExecutor(ActionExecutor):
             info.object_found_error()
         elif self.check_drop(state, node, info):
             char_node = _get_character_node(state)
+            char_room = _get_room_node(state, char_node)
             yield state.change_state(
                 [DeleteEdges(CharacterNode(), [Relation.HOLDS_LH, Relation.HOLDS_RH], NodeInstance(node)),
-                 AddEdges(NodeInstance(node), Relation.INSIDE, RoomNode(char_node)),
+                 AddEdges(NodeInstance(node), Relation.INSIDE, NodeInstance(char_room)),
                  ClearExecDataKey((Action.GRAB, node.id))]
             )
 
@@ -1046,6 +1061,8 @@ def _get_character_node(state: EnvironmentState):
 
 
 def _get_room_node(state: EnvironmentState, node: Node):
+    if node.category == 'Rooms':
+        return node
     for n in state.get_nodes_from(node, Relation.INSIDE):
         if n.category == 'Rooms':
             return n
@@ -1109,11 +1126,26 @@ def _create_walkable_graph(state: EnvironmentState):
 
 def _check_closed_doors(state: EnvironmentState, room1: GraphNode, room2: GraphNode):
     graph_adj_lists = _create_walkable_graph(state)
-    bfs_prev = BFS(state, graph_adj_lists, room1.id)
-    return room2.id in bfs_prev
+    bfs_prev = BFS_check_closed(state, graph_adj_lists, room1.id)
+    if room2.id in bfs_prev:
+        return []
+    bfs_prev = BFS(graph_adj_lists, room1.id)
+    if room2.id not in bfs_prev:
+        return None  # No path!
+    closed_between = []
+    current_id = room2.id
+    while current_id != room1.id:
+        next_id, door_id = bfs_prev[current_id]
+        if next_id is None:
+            break
+        door_node = state.get_node(door_id)
+        if State.CLOSED in door_node.states:
+            closed_between.append(door_node)
+        current_id = next_id
+    return closed_between
 
 
-def BFS(state: EnvironmentState, adj_lists: dict, s):
+def BFS_check_closed(state: EnvironmentState, adj_lists: dict, s):
     prev = {}
     prev[s] = None
     q = queue.Queue()
@@ -1124,6 +1156,20 @@ def BFS(state: EnvironmentState, adj_lists: dict, s):
             door_node = state.get_node(d)
             if State.CLOSED not in door_node.states and u not in prev:
                 prev[u] = v
+                q.put(u)
+    return prev
+
+
+def BFS(adj_lists: dict, s):
+    prev = {}
+    prev[s] = (None, None)
+    q = queue.Queue()
+    q.put(s)
+    while not q.empty():
+        v = q.get()
+        for u, d in adj_lists[v]:
+            if u not in prev:
+                prev[u] = (v, d)
                 q.put(u)
     return prev
 
