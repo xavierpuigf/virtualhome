@@ -136,7 +136,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None):
         helper, script, precond, graph_dict, 
         w_graph_list=False, modify_graph=(inp_graph_dict is None))
 
-    return message, final_state
+    return message, final_state, graph_dict
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph):
