@@ -199,7 +199,7 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
             object_name = object_occupied['class_name']
             id_object_env = object_occupied['id']
             id_object = getidperobject(object_name, id_object_env,id_mapping)
-
+            print('newidenv', id_object_env)
            
             # TODO: we may want to pick objects with 2 hands
             insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])

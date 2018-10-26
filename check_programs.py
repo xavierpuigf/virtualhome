@@ -132,6 +132,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
         graph_dict = utils.load_graph_dict(graph_path)
     else:
         graph_dict = inp_graph_dict
+        ipdb.set_trace()
     message, executable, final_state, graph_state_list, id_mapping = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping)
 
