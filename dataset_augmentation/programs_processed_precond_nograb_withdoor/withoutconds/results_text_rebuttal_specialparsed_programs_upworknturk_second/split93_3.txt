@@ -1,0 +1,13 @@
+Watch  TV
+Sit on my couch  directly opposite  my tv , switch  on my tv with the  remote control  and watch
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Touch] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

@@ -1,0 +1,11 @@
+Relax on sofa
+Enter Living Room from the bedroom  and lay down in living room sofa
+
+
+[Find] <BED> (1)
+[Crawl] <BED> (1)
+[StandUp]
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Crawl] <SOFA> (1)

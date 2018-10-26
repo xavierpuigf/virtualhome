@@ -1,0 +1,7 @@
+Relax
+Lie down on the couch.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Lie] <COUCH> (1)

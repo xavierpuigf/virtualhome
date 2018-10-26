@@ -1,0 +1,1 @@
+[{"location": [["HAIR", "1"], ["BATHROOM", "1"]]}, {"location": [["MIRROR", "1"], ["BATHROOM", "1"]]}, {"location": [["HAIRBRUSH", "1"], ["BATHROOM", "1"]]}, {"atreach": [["HAIR", "1"], ["HAIRBRUSH", "1"]]}, {"atreach": [["MIRROR", "1"], ["HAIRBRUSH", "1"]]}, {"atreach": [["HAIRBRUSH", "1"], ["HAIRBRUSH", "1"]]}]

@@ -1,0 +1,12 @@
+4
+location: ('LIGHT', '1') --> ('BEDROOM', '1')
+atreach: ('LIGHT', '1') --> ('LIGHT', '1')
+is_on: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
+Turn light off
+Put the light switch into the down, or off, position.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)

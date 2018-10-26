@@ -1,0 +1,34 @@
+3
+is_off: ('STOVE', '1') --> 
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('PASTA', '1') --> ('KITCHEN', '1'), ('FOOD_SALT', '1') --> ('KITCHEN', '1'), ('SPOON', '1') --> ('KITCHEN', '1'), ('SAUCE PAN', '1') --> ('KITCHEN', '1'), ('DRY PASTA', '1') --> ('KITCHEN', '1')
+atreach: ('WATER', '1') --> ('WATER', '1'), ('STOVE', '1') --> ('WATER', '1'), ('PLATE', '1') --> ('WATER', '1'), ('PASTA', '1') --> ('WATER', '1'), ('FOOD_SALT', '1') --> ('WATER', '1'), ('SPOON', '1') --> ('WATER', '1'), ('SAUCE PAN', '1') --> ('SAUCE PAN', '1'), ('DRY PASTA', '1') --> ('WATER', '1')
+Cook some food
+Cooking pasta
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SAUCE PAN> (1)
+[Find] <SAUCE PAN> (1)
+[Grab] <SAUCE PAN> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <SAUCE PAN> (1)
+[Find] <STOVE> (1)
+[PutBack] <SAUCE PAN> (1) <STOVE> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <DRY PASTA> (1)
+[Grab] <DRY PASTA> (1)
+[PutBack] <DRY PASTA> (1) <SAUCE PAN> (1)
+[Find] <FOOD_SALT> (1)
+[Grab] <FOOD_SALT> (1)
+[PutBack] <FOOD_SALT> (1) <SAUCE PAN> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Stir] <WATER> (1)
+[SwitchOff] <STOVE> (1)
+[Find] <PASTA> (1)
+[Grab] <PASTA> (1)
+[Find] <PLATE> (1)
+[PutBack] <PASTA> (1) <PLATE> (1)

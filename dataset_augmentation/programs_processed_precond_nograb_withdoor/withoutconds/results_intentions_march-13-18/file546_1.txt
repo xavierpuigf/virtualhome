@@ -1,0 +1,12 @@
+Watch TV
+Walk to living room. Find remote control. Look at remote control. Push power on button. Find sofa. Sit down on sofa. Watch Television.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[LookAt] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Watch] <TELEVISION> (1)

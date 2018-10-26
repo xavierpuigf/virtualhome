@@ -1,0 +1,11 @@
+Read book
+go to living room,find the text book on the self ,sat on the chair ,open and read the book
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TEXTBOOK> (1)
+[Grab] <TEXTBOOK> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Read] <TEXTBOOK> (1)

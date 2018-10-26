@@ -1,0 +1,15 @@
+3
+inside: ('INSTRUMENT_GUITAR', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('LIVING ROOM', '1')
+nearby: 
+Play guitar
+Grab guitar.  Pluck strings.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <INSTRUMENT_GUITAR> (1)
+[Grab] <INSTRUMENT_GUITAR> (1)
+[Close] <CABINET> (1)
+[Play] <INSTRUMENT_GUITAR> (1)

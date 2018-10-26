@@ -1,0 +1,14 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('FAUCET', '1'), ('TEETH', '1') --> ('FAUCET', '1')
+Wash teeth
+Walk to bathroom.  Find mouthwash or turn on water.  Put mouthwash or water in mouth.  Swish around for 30 seconds.  Spit mouthwash out.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <FAUCET> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <TEETH> (1)
+[Rinse] <TEETH> (1)

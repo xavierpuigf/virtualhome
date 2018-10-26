@@ -1,0 +1,15 @@
+2
+location: ('CELLPHONE', '1') --> ('LIVING ROOM', '1'), ('TELEPHONE', '1') --> ('HOME OFFICE', '1')
+atreach: ('CELLPHONE', '1') --> ('CELLPHONE', '1'), ('TELEPHONE', '1') --> ('TELEPHONE', '1')
+Pick up phone
+WALK TO LIVING ROOM OR OFFICE..TAKE THE PHONE AND ANSWER THE PHONE CALL
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CELLPHONE> (1)
+[Find] <CELLPHONE> (1)
+[Call] <CELLPHONE> (1)
+[Walk] <HOME OFFICE> (1)
+[Walk] <TELEPHONE> (1)
+[Find] <TELEPHONE> (1)
+[Dial] <TELEPHONE> (1)

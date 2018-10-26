@@ -1,0 +1,18 @@
+3
+is_off: ('RADIO', '1') --> 
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CELLPHONE', '1') --> ('LIVING ROOM', '1'), ('RADIO', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('CELLPHONE', '1'), ('CELLPHONE', '1') --> ('RADIO', '1'), ('RADIO', '1') --> ('RADIO', '1')
+Listen to music
+go to the living room, turn on the radio, sit on the sofa, use my cell phone
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <RADIO> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[TurnTo] <RADIO> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <CELLPHONE> (1)
+[TurnTo] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)

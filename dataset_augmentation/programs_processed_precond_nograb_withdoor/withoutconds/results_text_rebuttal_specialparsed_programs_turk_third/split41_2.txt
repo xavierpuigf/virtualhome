@@ -1,0 +1,8 @@
+Sit
+We sit at the dining room table
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)

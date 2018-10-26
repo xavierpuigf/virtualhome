@@ -1,0 +1,14 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('CHAIR', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Social media  checks
+Logging on to  things like  facebook  and  twitter
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[SwitchOn] <COMPUTER> (1)

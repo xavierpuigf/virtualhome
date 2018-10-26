@@ -1,0 +1,38 @@
+4
+inside: ('PAJAMAS', '1') --> ('DRESSER', '1')
+in: ('CLOTHES_PANTS', '1') --> ('DRESSER', '1')
+is_on: ('LIGHT', '1') --> 
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('DOOR', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
+Go to sleep
+It is time for bed, I will go to my bedroom and lie down on the bed.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <DOOR> (1)
+[Close] <DOOR> (1)
+[Walk] <DRESSER> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Drop] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Drop] <CLOTHES_SHIRT> (1)
+[Open] <DRESSER> (1)
+[Find] <PAJAMAS> (1)
+[Grab] <PAJAMAS> (1)
+[Close] <DRESSER> (1)
+[PutOn] <PAJAMAS> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Unfold] <BLANKET> (1)
+[Walk] <BED> (1)
+[PutBack] <BLANKET> (1) <BED> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[PutBack] <PILLOW> (1) <BED> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Climb] <BED> (1)
+[Lie] <BED> (1)
+[Wrap] <PAJAMAS> (1) <BLANKET> (1)
+[Sleep]

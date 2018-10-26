@@ -1,0 +1,22 @@
+4
+inside: ('PLATE', '1') --> ('CUPBOARD', '1'), ('PLATE', '2') --> ('CUPBOARD', '1')
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+closed: ('CUPBOARD', '1') --> 
+atreach: ('PLATE', '1') --> ('CUPBOARD', '1'), ('PLATE', '2') --> ('CUPBOARD', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+Set up table
+Go to kitchen, go to cupboard with dishes, grab dishes, walk to dining room, find table, put dishes on table.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CUPBOARD> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <PLATE> (2)
+[Grab] <PLATE> (2)
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[PutBack] <PLATE> (2) <TABLE> (1)

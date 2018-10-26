@@ -1,0 +1,11 @@
+Go to sleep
+walk to bedroom, walk to bed, climb onto bed, turn off lights, lie in bed, close eyes and sleep
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Climb] <BED> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Lie] <BED> (1)
+[Sleep]

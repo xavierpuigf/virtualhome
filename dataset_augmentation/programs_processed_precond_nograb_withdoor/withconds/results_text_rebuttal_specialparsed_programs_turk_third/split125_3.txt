@@ -1,0 +1,18 @@
+2
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('CENTERPIECE', '1') --> ('LIVING ROOM', '1'), ('WALL', '1') --> ('LIVING ROOM', '1'), ('PAINTING', '1') --> ('LIVING ROOM', '1')
+nearby: ('CENTERPIECE', '1') --> 
+Put up decoration
+Get decorations.  Hammer in nails. Put up decoration.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <PAINTING> (1)
+[Find] <CENTERPIECE> (1)
+[Grab] <CENTERPIECE> (1)
+[Walk] <WALL> (1)
+[Grab] <PAINTING> (1)
+[PutBack] <PAINTING> (1) <WALL> (1)
+[Find] <CENTERPIECE> (1)
+[Grab] <CENTERPIECE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <CENTERPIECE> (1) <TABLE> (1)

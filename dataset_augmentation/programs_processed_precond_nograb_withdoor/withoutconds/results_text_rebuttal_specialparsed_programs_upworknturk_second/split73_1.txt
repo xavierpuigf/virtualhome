@@ -1,0 +1,12 @@
+Brush hair
+Part your hair with a comb into two sections. Take a brush, and go through your hair, brushing it from tip to root until there are no tangles.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <HAIRBRUSH> (1)
+[Grab] <HAIRBRUSH> (1)
+[Walk] <MIRROR> (1)
+[LookAt] <MIRROR> (1)
+[Find] <HAIR> (1)
+[Brush] <HAIR> (1)
+[PutObjBack] <HAIRBRUSH> (1)

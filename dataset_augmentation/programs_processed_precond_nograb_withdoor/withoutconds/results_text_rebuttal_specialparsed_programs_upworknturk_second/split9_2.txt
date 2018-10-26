@@ -1,0 +1,14 @@
+Hang up jacket
+Take jacket off that you are wearing, and put it on the coat hanger in the entrance hall way
+
+
+[Walk] <ENTRANCE HALL> (1)
+[PutOff] <CLOTHES_JACKET> (1)
+[Find] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <HANGER> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[Grab] <HANGER> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)
+[PutBack] <HANGER> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

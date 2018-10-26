@@ -1,0 +1,17 @@
+Read book
+Go to home office and read a book
+
+
+[Run] <HOME OFFICE> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <BOOKMARK> (1)
+[Grab] <BOOKMARK> (1)
+[Find] <FLOOR> (1)
+[PutBack] <BOOKMARK> (1) <FLOOR> (1)
+[LookAt] <BOOK> (1)
+[Read] <BOOK> (1)
+[LookAt] <BOOK> (1)
+[Read] <BOOK> (1)

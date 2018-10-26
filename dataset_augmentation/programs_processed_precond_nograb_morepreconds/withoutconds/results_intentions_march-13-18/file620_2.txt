@@ -1,0 +1,9 @@
+Read book
+walk to living room ,find a book ,open the book ,read the book
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <BOOK> (2)
+[Find] <BOOK> (2)
+[Grab] <BOOK> (2)
+[Read] <BOOK> (2)

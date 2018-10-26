@@ -1,0 +1,18 @@
+Clean
+Pick up each toy that is on the floor and place in proper storage spot.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <TOY> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[Find] <TOY> (2)
+[Grab] <TOY> (2)
+[Find] <TOY> (3)
+[Grab] <TOY> (3)
+[Walk] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[PutBack] <TOY> (1) <CUPBOARD> (1)
+[PutBack] <TOY> (2) <CUPBOARD> (1)
+[PutBack] <TOY> (3) <CUPBOARD> (1)
+[Close] <CUPBOARD> (1)

@@ -1,0 +1,16 @@
+2
+inside: ('SHEETS', '1') --> ('WASHING MACHINE', '1')
+location: ('LAUNDRY DETERGENT', '1') --> ('BATHROOM', '1'), ('WASHING MACHINE', '1') --> ('BATHROOM', '1')
+Wash clothes
+Enter the laundry room to clean your clothes. Bring your dirty clothes with you. Place the dirty clothes into the washer and add one dose of soap to the unit. Upon adding the soap and closing the door to the washer, place the setting on normal wash. After roughly 45 minutes, when the wash is complete, add laundry to the dryer. Add 2 dryer sheets and dry on normal.
+
+
+[StandUp]
+[Walk] <BATHROOM> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[PutBack] <SHEETS> (1) <WASHING MACHINE> (1)

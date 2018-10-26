@@ -1,0 +1,23 @@
+3
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('BOWL', '2') --> ('DINING ROOM', '1'), ('BOWL', '1') --> ('DINING ROOM', '1')
+closed: ('FRIDGE', '1') --> 
+atreach: ('TABLE', '1') --> ('TABLE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('BOWL', '2') --> ('TABLE', '1'), ('BOWL', '1') --> ('TABLE', '1')
+Bring leftovers in kitchen
+Pick up serving bowls. Carry them to the kitchen. Put away in refrigerator.
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[TurnTo] <TABLE> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Find] <BOWL> (2)
+[Grab] <BOWL> (2)
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <BOWL> (1) <FRIDGE> (1)
+[PutBack] <BOWL> (2) <FRIDGE> (1)
+[Close] <FRIDGE> (1)

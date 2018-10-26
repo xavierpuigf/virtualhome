@@ -1,0 +1,15 @@
+2
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('FLOOR', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('CHAIR', '1') --> ('CHAIR', '1')
+Put in chair
+Take a comfortable chair. Place it in the entrance hall
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Grab] <CHAIR> (1)
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <FLOOR> (1)
+[Find] <FLOOR> (1)
+[PutBack] <CHAIR> (1) <FLOOR> (1)

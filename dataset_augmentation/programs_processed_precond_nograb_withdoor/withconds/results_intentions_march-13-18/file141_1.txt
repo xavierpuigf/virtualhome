@@ -1,0 +1,15 @@
+2
+is_off: ('MICROWAVE', '1') --> 
+location: ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('MICROWAVE', '1') --> ('KITCHEN', '1')
+Cook some food
+Walk Into Kitchen. Open Refrigerator. Grab Food. Walk to Microwave. Insert food into microwave. Cook until warm.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_FOOD> (1)
+[Close] <FRIDGE> (1)
+[Walk] <MICROWAVE> (1)
+[SwitchOn] <MICROWAVE> (1)
+[SwitchOff] <MICROWAVE> (1)

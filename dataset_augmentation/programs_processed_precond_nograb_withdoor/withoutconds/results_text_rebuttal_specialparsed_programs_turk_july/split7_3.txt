@@ -1,0 +1,25 @@
+Make iced coffee
+Pour spoon of sugar into glass. Pour prepared coffee over sugar. Stir the coffee. Place three pieces of ice into glass of coffee. Pour a quarter-cup milk into coffee. Stir coffee. Serve iced coffee to you.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Find] <FOOD_SUGAR> (1)
+[Grab] <FOOD_SUGAR> (1)
+[Pour] <FOOD_SUGAR> (1) <GLASS> (1)
+[Find] <COFFEE> (1)
+[Grab] <COFFEE> (1)
+[Pour] <COFFEE> (1) <GLASS> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Stir] <COFFEE> (1)
+[Find] <ICE> (1)
+[Grab] <ICE> (1)
+[PutBack] <ICE> (1) <GLASS> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[Pour] <MILK> (1) <GLASS> (1)
+[Stir] <COFFEE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <GLASS> (1) <TABLE> (1)

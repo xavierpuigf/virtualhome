@@ -1,0 +1,18 @@
+4
+is_off: ('TELEVISION', '1') --> 
+inside: ('REMOTE CONTROL', '1') --> ('DOOR', '1')
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('DOOR', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('REMOTE CONTROL', '1')
+Watch TV
+you go into the living room, sit on a chair/sofa, grab remote control, turn on tv, change channels, then watch somethign fun.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)

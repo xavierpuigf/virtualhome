@@ -1,0 +1,25 @@
+Use toilet
+Sit on toilet, use it, flush
+
+
+[Run] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Wipe]
+[PutBack] <TOILET PAPER> (1) <TOILET> (1)
+[StandUp]
+[Close] <TOILET> (1)
+[Flush] <TOILET> (1)
+[PutObjBack] <CLOTHES_DRESS> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)

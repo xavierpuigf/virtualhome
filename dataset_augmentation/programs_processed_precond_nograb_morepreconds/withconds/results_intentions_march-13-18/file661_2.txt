@@ -1,0 +1,27 @@
+6
+sitting: ('Character', 1) --> 
+atreach: ('TELEVISION', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('COUCH', '1') --> ('TELEVISION', '1')
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+is_off: ('TELEVISION', '1') --> , ('LIGHT', '1') --> 
+plugged: ('TELEVISION', '1') --> 
+unplugged: ('TELEVISION', '1') --> 
+Watch TV
+After listening to music for a while in the bedroom, I now decide I would like to watch some TV in the living room.
+
+
+[StandUp]
+[Walk] <LIVING ROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <TELEVISION> (1)
+[Walk] <TELEVISION> (1)
+[PlugIn] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Walk] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Find] <COUCH> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[TurnTo] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)

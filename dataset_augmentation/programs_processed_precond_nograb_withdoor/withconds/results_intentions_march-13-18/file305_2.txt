@@ -1,0 +1,17 @@
+4
+is_off: ('LIGHT', '1') --> , ('RADIO', '1') --> 
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('CHAIR', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('DESK', '1') --> ('BEDROOM', '1'), ('RADIO', '1') --> ('BEDROOM', '1')
+atreach: ('CHAIR', '1') --> ('RADIO', '1')
+Listen to music
+I go to the bedroom and sit at my desk. I turn my radio on and listen to music.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)

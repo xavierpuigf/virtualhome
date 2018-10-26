@@ -1,0 +1,16 @@
+1
+is_off: ('COMPUTER', '1') --> 
+Browse internet
+open browser, type what you want search, click on link you want.
+
+
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[TurnTo] <MOUSE> (1)
+[PointAt] <MOUSE> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[TurnTo] <MOUSE> (1)
+[PointAt] <MOUSE> (1)

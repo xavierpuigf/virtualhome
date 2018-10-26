@@ -1,0 +1,13 @@
+0
+Physical therapy
+Put a chair on one end of the hall.  Sit down.  Practice getting up and walking down the hall using a cane.  Time the walk down the hall.  Do this three times.  Sit and rest.
+
+
+[Find] <CHAIR> (1)
+[TurnTo] <CHAIR> (1)
+[PointAt] <CHAIR> (1)
+[Wipe] <CHAIR> (1)
+[TurnTo] <CHAIR> (1)
+[LookAt] <CHAIR> (1)
+[Touch] <CHAIR> (1)
+[Sit] <CHAIR> (1)

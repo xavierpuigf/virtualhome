@@ -1,0 +1,12 @@
+Set up table
+Put tablecloth on table. Put dishes on table.
+
+
+[Find] <TABLE CLOTH> (1)
+[TurnTo] <TABLE CLOTH> (1)
+[PointAt] <TABLE CLOTH> (1)
+[Wash] <TABLE CLOTH> (1)
+[TurnTo] <TABLE CLOTH> (1)
+[LookAt] <TABLE CLOTH> (1)
+[Fold] <TABLE CLOTH> (1)
+[Walk] <ENTRANCE HALL> (1)

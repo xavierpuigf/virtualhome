@@ -1,0 +1,21 @@
+2
+is_on: ('LAMP', '1') --> 
+location: ('LAMP', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('PILLOW', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
+Relax on sofa
+I am feeling tired, so I am going to go turn off the lamp, grab the pillow off of the chair, put it on the couch, and lie down to sleep.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LAMP> (1)
+[LookAt] <LAMP> (1)
+[Walk] <LAMP> (1)
+[SwitchOff] <LAMP> (1)
+[Find] <CHAIR> (1)
+[LookAt] <CHAIR> (1)
+[Walk] <CHAIR> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Walk] <COUCH> (1)
+[PutBack] <PILLOW> (1) <COUCH> (1)
+[Lie] <COUCH> (1)
+[Sleep]

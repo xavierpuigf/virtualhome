@@ -1,0 +1,12 @@
+Wash sink
+Turn on faucet. Rub down sink.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Find] <SINK> (1)
+[Pour] <CLEANING SOLUTION> (1) <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Scrub] <SINK> (1)
+[Wash] <SINK> (1)

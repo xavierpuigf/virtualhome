@@ -1,0 +1,9 @@
+1
+is_off: ('LIGHT', '1') --> 
+Turn on light
+I walk to wall. I put my hand on the switch. I push the button. I turn on the lights.
+
+
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

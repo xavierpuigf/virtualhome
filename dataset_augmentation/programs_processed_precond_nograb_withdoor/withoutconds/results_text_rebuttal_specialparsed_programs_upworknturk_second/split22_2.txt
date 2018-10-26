@@ -1,0 +1,12 @@
+Clean sink
+Take a premoistened cleaning wipe and wipe down top of sink and faucet.  Next clean the sink bowl.  Let air dry.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[Wipe] <FAUCET> (1)
+[Wipe] <SINK> (1)
+[PutObjBack] <RAG> (1)

@@ -1,0 +1,15 @@
+2
+location: ('HAIR', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1'), ('HAIRBRUSH', '1') --> ('BATHROOM', '1')
+nearby: ('HAIR', '1') --> , ('MIRROR', '1') --> 
+Brush hair
+Stand in front of mirror.  Pick up hair brush, run brush through hair until hair is neat.  Put brush back down.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <HAIRBRUSH> (1)
+[Grab] <HAIRBRUSH> (1)
+[Find] <MIRROR> (1)
+[LookAt] <MIRROR> (1)
+[Find] <HAIR> (1)
+[Brush] <HAIR> (1)
+[PutObjBack] <HAIRBRUSH> (1)

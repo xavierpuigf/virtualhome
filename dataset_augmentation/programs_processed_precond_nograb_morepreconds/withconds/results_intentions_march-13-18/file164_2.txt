@@ -1,0 +1,13 @@
+1
+atreach: ('WATER', '1') --> ('WATER', '1')
+Drink
+First take the Drinking glass from the kitchen and then fill it up with water then drink it.
+
+
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <DRINKING GLASS> (1)
+[Drink] <WATER> (1)

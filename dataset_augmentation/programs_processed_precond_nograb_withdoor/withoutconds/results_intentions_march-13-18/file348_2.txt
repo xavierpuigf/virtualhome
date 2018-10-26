@@ -1,0 +1,16 @@
+Wash dishes by hand
+I pick up dish. I turn on water. I pick up sponge. I pour soap on sponge. I run sponge under water. I put sponge on dish. I wash dish.
+
+
+[Find] <DISH SOAP> (1)
+[TurnTo] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[Find] <PLATE> (1)
+[PutBack] <DISH SOAP> (1) <PLATE> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[PutBack] <SPONGE> (1) <PLATE> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <PLATE> (1)
+[Find] <PLATE> (1)
+[Wash] <PLATE> (1)

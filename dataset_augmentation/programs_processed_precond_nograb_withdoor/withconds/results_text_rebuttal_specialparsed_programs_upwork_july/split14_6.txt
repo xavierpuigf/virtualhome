@@ -1,0 +1,19 @@
+4
+is_off: ('TOASTER', '1') --> 
+inside: ('FOOD_BREAD', '1') --> ('FRIDGE', '1')
+location: ('TOASTER', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+nearby: ('FRIDGE', '1') --> 
+Make toast
+Place slices of bread in a toaster ,wait for the bread to pop up .Set aside.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[Close] <FRIDGE> (1)
+[Find] <TOASTER> (1)
+[PlugIn] <TOASTER> (1)
+[PutBack] <FOOD_BREAD> (1) <TOASTER> (1)
+[SwitchOn] <TOASTER> (1)

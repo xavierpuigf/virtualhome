@@ -1,0 +1,23 @@
+4
+is_off: ('FAUCET', '1') --> , ('LIGHT', '1') --> 
+in: ('SOAP', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('LIGHT', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('SOAP', '1') --> ('SINK', '1'), ('HANDS_BOTH', '1') --> ('SINK', '1')
+Wash hands
+I go into the bathroom and turn on the light. I walk to the sink and turn on the water. I grab the soap and wash my hands
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <SINK> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[Rinse] <HANDS_BOTH> (1)
+[PutObjBack] <SOAP> (1)
+[SwitchOff] <FAUCET> (1)

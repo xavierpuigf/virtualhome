@@ -1,0 +1,16 @@
+3
+is_off: ('COMPUTER', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('ADDRESS BOOK', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Write an email
+Walk to Home office. Sit on the chair. Switch on the computer. Find address in addressbook. Type in the keyboard. Write mail.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <ADDRESS BOOK> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

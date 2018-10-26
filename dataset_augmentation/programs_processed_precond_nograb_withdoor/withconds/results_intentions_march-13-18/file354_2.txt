@@ -1,0 +1,20 @@
+2
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('BOOKMARK', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('BOOKMARK', '1')
+Relax on sofa
+Go to the living room and relax on the sofa with a book
+
+
+[Run] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[LookAt] <BOOK> (1)
+[Find] <BOOKMARK> (1)
+[Grab] <BOOKMARK> (1)
+[Drop] <BOOKMARK> (1)
+[LookAt] <BOOK> (1)
+[Read] <BOOK> (1)
+[Read] <BOOK> (1)
+[Read] <BOOK> (1)

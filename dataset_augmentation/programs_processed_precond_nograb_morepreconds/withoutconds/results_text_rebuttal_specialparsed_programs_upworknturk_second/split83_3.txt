@@ -1,0 +1,15 @@
+Hang keys
+Remove keys from purse, pocket or hand.  Place in designated area (bowl, or on hook). Leave area
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DRESSER> (1)
+[Find] <PURSE> (1)
+[Grab] <PURSE> (1)
+[Open] <PURSE> (1)
+[Find] <KEYS> (1)
+[Grab] <KEYS> (1)
+[Find] <BOWL> (1)
+[PutBack] <KEYS> (1) <BOWL> (1)
+[Close] <PURSE> (1)
+[PutObjBack] <PURSE> (1)

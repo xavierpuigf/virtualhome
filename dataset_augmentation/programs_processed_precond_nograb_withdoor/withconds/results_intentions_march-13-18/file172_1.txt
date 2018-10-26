@@ -1,0 +1,19 @@
+2
+location: ('TOOTHBRUSH HOLDER', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+nearby: ('TOOTHBRUSH HOLDER', '1') --> 
+Brush teeth
+Go to bathroom, take the toothbrush, put toothpaste on the toothbrush, brush teeth with the toothbrush, rinse teeth and toothbrush
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[PutBack] <TOOTH PASTE> (1) <TOOTHBRUSH HOLDER> (1)
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[PutBack] <TOOTHBRUSH> (1) <TOOTHBRUSH HOLDER> (1)

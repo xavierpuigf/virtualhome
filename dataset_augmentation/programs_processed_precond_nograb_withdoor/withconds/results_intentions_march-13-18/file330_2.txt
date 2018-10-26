@@ -1,0 +1,26 @@
+4
+is_off: ('FAUCET', '1') --> 
+inside: ('SOAP', '1') --> ('TOILET', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1')
+in: ('FAUCET', '1') --> ('SINK', '1')
+Go to toilet
+go to bathroom, use the toilet, wash hands
+
+
+[Run] <BATHROOM> (1)
+[Find] <TOILET> (1)
+[Open] <TOILET> (1)
+[Sit] <TOILET> (1)
+[StandUp]
+[Flush] <TOILET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Touch] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)
+[PutObjBack] <SOAP> (1)
+[Rinse] <HANDS_BOTH> (1)
+[SwitchOff] <FAUCET> (1)

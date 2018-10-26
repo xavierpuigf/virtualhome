@@ -1,0 +1,10 @@
+Pay bills
+Open all bills, Write a check for each bill, place bill and check into envelope, place stamp on envelope
+
+
+[Find] <BILLS> (1)
+[TurnTo] <BILLS> (1)
+[PointAt] <BILLS> (1)
+[Grab] <BILLS> (1)
+[Read] <BILLS> (1)
+[Touch] <BILLS> (1)

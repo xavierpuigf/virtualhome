@@ -1,0 +1,19 @@
+Wash clothes
+i have to take out all my dirty clothes from my basket and put it into washing machine add some cleaning solution  and run washing machine set timer for it to get finished
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Find] <WASHING MACHINE> (1)
+[Soak] <CLOTHES_DRESS> (1) <WASHING MACHINE> (1)
+[Soak] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[Soak] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <WATER> (1)
+[Wash] <WATER> (1)
+[Find] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)
+[Run] <WASHING MACHINE> (1)

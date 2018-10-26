@@ -1,0 +1,12 @@
+1
+nearby: ('BATHROOM', '1') --> 
+Brush teeth
+After showering  I brush my teeth. Using a natural made toothpaste I squeeze the toothpaste on my toothbrush and brush my teeth for 2 minutes. I then  gargle with mouthwash.
+
+
+[Find] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Wash] <TEETH> (1)
+[LookAt] <TEETH> (1)
+[Find] <BATHROOM> (1)
+[Crawl] <BATHROOM> (1)

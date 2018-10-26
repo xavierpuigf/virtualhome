@@ -1,0 +1,12 @@
+2
+location: ('DUSTER', '1') --> ('BEDROOM', '1')
+atreach: ('DUSTER', '1') --> ('DUSTER', '1')
+Dust
+Get a broom or duster with long handle. Dust blades of ceiling fan.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DUSTER> (1)
+[Find] <DUSTER> (1)
+[Grab] <DUSTER> (1)
+[PutObjBack] <DUSTER> (1)

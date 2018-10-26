@@ -1,0 +1,9 @@
+Take shower
+go to the bathroom and take a shower
+
+
+[Walk] <BATHROOM> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)

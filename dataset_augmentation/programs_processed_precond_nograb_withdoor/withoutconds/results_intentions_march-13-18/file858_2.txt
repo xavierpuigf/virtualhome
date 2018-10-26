@@ -1,0 +1,12 @@
+Change TV channel
+I go to the the living room, sit down on the sofa, and then I enter the channel I want to view with the TV remote
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Touch] <REMOTE CONTROL> (1)

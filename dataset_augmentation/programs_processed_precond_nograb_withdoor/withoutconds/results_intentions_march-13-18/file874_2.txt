@@ -1,0 +1,10 @@
+Turn on light
+I walk towards to the bedroom, and I open the door of the bedroom, and I switch on the lights inside the bedroom, the switch is beside the door.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Close] <DOOR> (1)

@@ -1,0 +1,16 @@
+Use computer
+Sit at desk, use the computer mouse
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <MOUSEPAD> (1)
+[PutBack] <MOUSE> (1) <MOUSEPAD> (1)
+[TurnTo] <COMPUTER> (1)
+[PointAt] <COMPUTER> (1)

@@ -1,0 +1,30 @@
+Go to sleep
+I walk to the bedroom.  I remove my clothes and put them in the laundry basket.  I walk to my dresser and open it. I find my pajamas and put them on.  I turn off the light and make my way to bed.  I pull the comforter and sheets back and climb into bed.  I lay down and put my head on the pillow.  I put back the comforter and sheets over me and go to sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BASKET FOR CLOTHES> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Find] <CLOTHES_DRESS> (1)
+[PutOff] <CLOTHES_DRESS> (1)
+[PutBack] <CLOTHES_DRESS> (1) <BASKET FOR CLOTHES> (1)
+[Find] <DRESSER> (1)
+[Open] <DRESSER> (1)
+[Find] <PAJAMAS> (1)
+[Grab] <PAJAMAS> (1)
+[PutOn] <PAJAMAS> (1)
+[Close] <DRESSER> (1)
+[Find] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)
+[Walk] <BED> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Climb] <BED> (1)
+[PutObjBack] <SHEETS> (1)
+[PutObjBack] <COMFORTER> (1)
+[Sleep]

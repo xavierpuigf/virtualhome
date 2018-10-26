@@ -1,0 +1,8 @@
+1
+atreach: ('PHONE', '1') --> ('PHONE', '1')
+Pick up phone
+I walk over to the phone and pick it up.
+
+
+[Walk] <PHONE> (1)
+[Grab] <PHONE> (1)

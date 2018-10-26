@@ -1,0 +1,18 @@
+Read book
+Read story to children
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Walk] <CHILD> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Close] <CABINET> (1)
+[Walk] <BED> (1)
+[Sit] <BED> (1)
+[Read] <BOOK> (1)

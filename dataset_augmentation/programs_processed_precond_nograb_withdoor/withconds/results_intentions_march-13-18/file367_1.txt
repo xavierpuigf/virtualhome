@@ -1,0 +1,20 @@
+2
+location: ('DETERGENT', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('BRUSH', '1') --> ('BATHROOM', '1')
+nearby: ('TOILET', '1') --> 
+Clean bathroom
+I'm going to clean the bathroom, take the brush, wash and rinse the toilet and shower
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BRUSH> (1)
+[Grab] <BRUSH> (1)
+[Find] <DETERGENT> (1)
+[Grab] <DETERGENT> (1)
+[Find] <TOILET> (1)
+[PutBack] <DETERGENT> (1) <TOILET> (1)
+[Find] <TOILET> (1)
+[Scrub] <TOILET> (1)
+[Rinse] <TOILET> (1)
+[Find] <SHOWER> (1)
+[Scrub] <SHOWER> (1)
+[Rinse] <SHOWER> (1)

@@ -1,0 +1,17 @@
+3
+is_off: ('DISHWASHER', '2') --> 
+location: ('DISHRACK', '3') --> ('KITCHEN', '1'), ('DISHWASHER', '2') --> ('KITCHEN', '1'), ('DISHRACK', '1') --> ('KITCHEN', '1'), ('DISHWASHER', '1') --> ('KITCHEN', '1')
+nearby: ('DISHWASHER', '1') --> 
+Wash dishes by hand
+walk to kitchen , find dish washer , wash the dishe rack , put dishes in dish washer , switch on dish washer
+
+
+[Walk] <KITCHEN> (1)
+[Find] <DISHWASHER> (2)
+[Find] <DISHRACK> (3)
+[Find] <DISHRACK> (1)
+[Grab] <DISHRACK> (1)
+[Find] <DISHWASHER> (1)
+[Open] <DISHWASHER> (1)
+[PutBack] <DISHRACK> (1) <DISHWASHER> (1)
+[SwitchOn] <DISHWASHER> (2)

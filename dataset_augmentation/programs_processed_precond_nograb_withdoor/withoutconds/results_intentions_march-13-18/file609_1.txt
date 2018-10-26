@@ -1,0 +1,11 @@
+Drink
+go to the kitchen, walk to the cabinet, pic up a glass. carry the glass to the sink. turn on the water and fill up the glass. drink the water.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <SINK> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[Drink] <WATER> (1)

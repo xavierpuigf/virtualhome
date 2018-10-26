@@ -1,0 +1,7 @@
+Go to toilet
+i go to the bathroom. I find the toilet
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)

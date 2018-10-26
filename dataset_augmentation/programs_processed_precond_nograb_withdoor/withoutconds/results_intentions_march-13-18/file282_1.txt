@@ -1,0 +1,7 @@
+Browse internet
+Walk to the Home Office.  Find the computer.  Turn on the computer.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)

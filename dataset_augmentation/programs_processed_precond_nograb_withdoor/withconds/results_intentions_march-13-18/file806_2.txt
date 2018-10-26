@@ -1,0 +1,38 @@
+3
+is_off: ('WASHING MACHINE', '1') --> 
+inside: ('DETERGENT', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_DRESS', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
+location: ('WASHING MACHINE', '1') --> ('ENTRANCE HALL', '1'), ('BASKET FOR CLOTHES', '1') --> ('ENTRANCE HALL', '1')
+Wash clothes
+I will take my basket of laundry to the room with the laundry machine. I'll open the laundry machine and put the clothes in it. I'll then add detergent. Then I'll close and use the machine. Then when it's done, I'll reopen it. I would next move them to a dryer, but it wouldn't let me put clothes on the drying rack, and there was no dryer machine in the props.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <ENTRANCE HALL> (1)
+[Find] <WASHING MACHINE> (1)
+[Walk] <WASHING MACHINE> (1)
+[Drop] <BASKET FOR CLOTHES> (1)
+[Open] <WASHING MACHINE> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[PutBack] <CLOTHES_DRESS> (1) <WASHING MACHINE> (1)
+[Find] <DETERGENT> (1)
+[Grab] <DETERGENT> (1)
+[PutBack] <DETERGENT> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)
+[SwitchOff] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[PutBack] <CLOTHES_PANTS> (1) <BASKET FOR CLOTHES> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <BASKET FOR CLOTHES> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[PutBack] <CLOTHES_DRESS> (1) <BASKET FOR CLOTHES> (1)
+[Close] <WASHING MACHINE> (1)

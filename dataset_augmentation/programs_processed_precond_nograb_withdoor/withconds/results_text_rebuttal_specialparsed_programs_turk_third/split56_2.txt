@@ -1,0 +1,16 @@
+3
+is_off: ('RADIO', '1') --> 
+location: ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('RADIO', '1') --> ('KIDS BEDROOM', '1')
+nearby: ('CHILD', '2') --> , ('CHILD', '1') --> , ('RADIO', '1') --> 
+Listen to music
+Turn on the radio.  Listen and dance with kids to the music.
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)
+[Dance]

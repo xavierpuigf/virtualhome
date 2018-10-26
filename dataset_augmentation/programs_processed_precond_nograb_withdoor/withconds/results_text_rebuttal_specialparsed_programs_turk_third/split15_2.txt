@@ -1,0 +1,13 @@
+1
+is_off: ('COMPUTER', '1') --> 
+Use computer
+Organizing work activities
+
+
+[Find] <COMPUTER> (1)
+[PointAt] <COMPUTER> (1)
+[Wipe] <COMPUTER> (1)
+[Watch] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Touch] <COMPUTER> (1)
+[Walk] <COMPUTER> (1)

@@ -1,0 +1,11 @@
+2
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1')
+atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1')
+Change TV channel
+I walk to the living room. I find the TV remote. I change the channel.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <REMOTE CONTROL> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)

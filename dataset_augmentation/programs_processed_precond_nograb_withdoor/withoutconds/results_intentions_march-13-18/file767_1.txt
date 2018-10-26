@@ -1,0 +1,21 @@
+Set up table
+set the table with plate, fork, knife, spoon, napkin
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE CLOTH> (1)
+[Grab] <TABLE CLOTH> (1)
+[Cover] <TABLE> (1) <TABLE CLOTH> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[PutBack] <CUP> (1) <TABLE CLOTH> (1)
+[PutBack] <FORK> (1) <TABLE CLOTH> (1)
+[PutBack] <KNIFE> (1) <TABLE CLOTH> (1)
+[PutBack] <SPOON> (1) <TABLE CLOTH> (1)

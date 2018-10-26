@@ -1,0 +1,14 @@
+Wash teeth
+walk to bathroom, find toothbrush, pick up toothbrush, put toothpaste on brush, brush teeth, rinse mouth, spit into sink
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)

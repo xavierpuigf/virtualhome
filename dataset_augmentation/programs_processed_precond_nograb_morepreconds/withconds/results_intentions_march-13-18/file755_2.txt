@@ -1,0 +1,25 @@
+5
+is_off: ('STOVE', '1') --> 
+inside: ('SAUCE PAN', '1') --> ('KITCHEN CABINET', '1'), ('PASTA', '1') --> ('KITCHEN CABINET', '1')
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+closed: ('KITCHEN CABINET', '1') --> 
+atreach: ('WATER', '1') --> ('KITCHEN CABINET', '1'), ('STOVE', '1') --> ('KITCHEN CABINET', '1'), ('SAUCE PAN', '1') --> ('KITCHEN CABINET', '1'), ('PASTA', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1')
+Cook some food
+Cook some pasta on the stove
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <PASTA> (1)
+[Grab] <PASTA> (1)
+[Find] <WATER> (1)
+[Find] <SAUCE PAN> (1)
+[Pour] <WATER> (1) <SAUCE PAN> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[PutBack] <PASTA> (1) <SAUCE PAN> (1)
+[Find] <SAUCE PAN> (1)
+[Grab] <SAUCE PAN> (1)
+[PutBack] <SAUCE PAN> (1) <STOVE> (1)

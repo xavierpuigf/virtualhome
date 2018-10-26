@@ -1,0 +1,9 @@
+Browse internet
+Go to home office, turn on the computer, open the internet and browse around the internet.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)

@@ -1,0 +1,10 @@
+1
+nearby: ('PAPER', '1') --> 
+Organise paperwork
+Pick up paperwork, sort into piles according to category, put each pile in a separate folder on the desk. Label folder with category name, put folder on shelf.
+
+
+[Find] <PAPER> (1)
+[Write] <PAPER> (1)
+[LookAt] <PAPER> (1)
+[Fold] <PAPER> (1)

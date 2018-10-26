@@ -1,0 +1,23 @@
+5
+is_off: ('TELEVISION', '1') --> , ('CD PLAYER', '1') --> 
+nearby: ('REMOTE CONTROL', '1') --> , ('TELEVISION', '1') --> , ('CD PLAYER', '1') --> , ('CHILD', '1') --> , ('BED', '1') --> 
+in: ('REMOTE CONTROL', '1') --> ('DRESSER', '1')
+location: ('TELEVISION', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1'), ('REMOTE CONTROL', '1') --> ('KIDS BEDROOM', '1'), ('DRESSER', '1') --> ('KIDS BEDROOM', '1'), ('CD PLAYER', '1') --> ('KIDS BEDROOM', '1')
+atreach: ('BED', '1') --> ('TELEVISION', '1')
+Watch movie
+Play the dvd player end watch with my baby
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Walk] <DRESSER> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[Watch] <TELEVISION> (1)

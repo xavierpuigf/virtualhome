@@ -1,0 +1,16 @@
+4
+inside: ('BOOK', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('LIVING ROOM', '1')
+closed: ('CABINET', '1') --> 
+atreach: ('BOOK', '1') --> ('CABINET', '1'), ('CABINET', '1') --> ('CABINET', '1')
+Read
+Read a book in the living room
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Close] <CABINET> (1)
+[Read] <BOOK> (1)

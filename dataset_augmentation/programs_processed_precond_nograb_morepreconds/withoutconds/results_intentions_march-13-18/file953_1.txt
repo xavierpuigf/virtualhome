@@ -1,0 +1,10 @@
+Listen to music
+Walk to the living and turn to the music stand. Switch on the CD player to listen to music.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <MUSIC STAND> (1)
+[Find] <MUSIC STAND> (1)
+[TurnTo] <MUSIC STAND> (1)
+[Find] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)

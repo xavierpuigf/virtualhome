@@ -1,0 +1,15 @@
+Watch TV
+I watch Netflix from about 8:30 to 10:30 every night. I usually watch TV shows.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WALL CLOCK> (1)
+[LookAt] <WALL CLOCK> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

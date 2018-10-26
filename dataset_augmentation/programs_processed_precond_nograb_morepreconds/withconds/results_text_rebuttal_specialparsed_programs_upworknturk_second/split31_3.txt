@@ -1,0 +1,21 @@
+3
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('BOARD GAME', '1') --> ('LIVING ROOM', '1')
+closed: ('CABINET', '1') --> 
+atreach: ('CABINET', '1') --> ('CABINET', '1'), ('TABLE', '1') --> ('CABINET', '1'), ('COUCH', '1') --> ('TABLE', '1'), ('BOARD GAME', '1') --> ('CABINET', '1')
+Play games
+Sit at a table or on the floor and take out board game instructions and pieces.  Play game.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CABINET> (1)
+[Find] <CABINET> (1)
+[Open] <CABINET> (1)
+[Find] <BOARD GAME> (1)
+[Pull] <BOARD GAME> (1)
+[Close] <CABINET> (1)
+[Grab] <BOARD GAME> (1)
+[Find] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Play] <BOARD GAME> (1)

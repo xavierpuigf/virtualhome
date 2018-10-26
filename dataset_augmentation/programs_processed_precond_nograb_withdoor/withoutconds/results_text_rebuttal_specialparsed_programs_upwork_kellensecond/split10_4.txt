@@ -1,0 +1,17 @@
+Watch movie
+Turn on tv. Turn on dvd player. Insert dvd into player. Start movie. Sit on the couch and watch movie
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <DVD PLAYER> (1)
+[SwitchOn] <DVD PLAYER> (1)
+[Find] <CD> (1)
+[Grab] <CD> (1)
+[PutBack] <CD> (1) <DVD PLAYER> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Watch] <TELEVISION> (1)

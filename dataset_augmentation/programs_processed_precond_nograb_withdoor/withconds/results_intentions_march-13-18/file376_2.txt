@@ -1,0 +1,26 @@
+3
+is_off: ('WASHING MACHINE', '1') --> 
+inside: ('CLOTHES_UNDERWEAR', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
+location: ('WASHING MACHINE', '1') --> ('KITCHEN', '1'), ('CLOTHES_PANTS', '1') --> ('KITCHEN', '1')
+Wash clothes
+Find basket of clothes, pick it up and find the washing machine. Take clothes (shirt, pants and underwear) out of basket and into the washing machine. Turn on washing machine.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Walk] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[StandUp]
+[Walk] <KITCHEN> (1)
+[Find] <WASHING MACHINE> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Grab] <CLOTHES_UNDERWEAR> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

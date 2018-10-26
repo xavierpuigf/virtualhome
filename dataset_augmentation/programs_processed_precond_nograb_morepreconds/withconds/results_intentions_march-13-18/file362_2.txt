@@ -1,0 +1,27 @@
+6
+is_on: ('COMPUTER', '1') --> 
+inside: ('MAIL', '1') --> ('MAIL', '1')
+atreach: ('DOCUMENT', '1') --> ('KEYBOARD', '1'), ('COMPUTER', '1') --> ('KEYBOARD', '1'), ('MAIL', '1') --> ('KEYBOARD', '1'), ('KEYBOARD', '1') --> ('KEYBOARD', '1'), ('MOUSE', '1') --> ('KEYBOARD', '1')
+location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+closed: ('MAIL', '1') --> 
+plugged: ('COMPUTER', '1') --> 
+Work
+To do some online jobs I had to browse through sites and save information and send some mails to head office.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <KEYBOARD> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <MOUSE> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)
+[Find] <DOCUMENT> (1)
+[TurnTo] <DOCUMENT> (1)
+[LookAt] <DOCUMENT> (1)
+[Write] <MAIL> (1)
+[Close] <MAIL> (1)
+[Find] <COMPUTER> (1)
+[SwitchOff] <COMPUTER> (1)

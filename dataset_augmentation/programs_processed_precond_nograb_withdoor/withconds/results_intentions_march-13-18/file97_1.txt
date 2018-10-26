@@ -1,0 +1,15 @@
+2
+inside: ('DRINKING GLASS', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1')
+Drink
+Robot Drinks the water
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Drink] <DRINKING GLASS> (1)
+[PutObjBack] <DRINKING GLASS> (1)
+[Close] <FRIDGE> (1)

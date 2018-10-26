@@ -1,0 +1,18 @@
+Study
+Sit at desk and review notes.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <NOTES> (1) <DESK> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)
+[Find] <HIGHLIGHTER> (1)
+[Grab] <HIGHLIGHTER> (1)
+[Write] <NOTES> (1)

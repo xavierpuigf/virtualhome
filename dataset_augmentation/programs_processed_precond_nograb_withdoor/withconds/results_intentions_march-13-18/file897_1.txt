@@ -1,0 +1,14 @@
+1
+location: ('FRIDGE', '1') --> ('DINING ROOM', '1'), ('GROCERIES', '1') --> ('DINING ROOM', '1')
+Put groceries in Fridge
+find groceries, grab that groceries, walk to dining room, look at the fridge, open the fridge door, put the groceries into fridge, close the fridge
+
+
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Walk] <DINING ROOM> (1)
+[Find] <FRIDGE> (1)
+[LookAt] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)
+[Close] <FRIDGE> (1)

@@ -1,0 +1,15 @@
+1
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+Read book
+Sit on a couch, grab a book, open it, and scan the pages
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[LookAt] <BOOK> (1)
+[Read] <BOOK> (1)
+[Read] <BOOK> (1)
+[Read] <BOOK> (1)

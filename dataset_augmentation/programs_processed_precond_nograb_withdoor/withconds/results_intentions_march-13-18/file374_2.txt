@@ -1,0 +1,13 @@
+2
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('KEYBOARD', '1')
+Browse internet
+Walk into the home office. Walk up to the chair. Sit down in the chair. Type with the keyboard.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

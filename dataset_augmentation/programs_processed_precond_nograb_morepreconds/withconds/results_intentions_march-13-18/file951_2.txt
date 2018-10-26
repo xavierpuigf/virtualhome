@@ -1,0 +1,18 @@
+5
+is_off: ('CD PLAYER', '1') --> 
+atreach: ('CD PLAYER', '1') --> ('CD PLAYER', '1'), ('HEADSET', '1') --> ('CD PLAYER', '1')
+location: ('CD PLAYER', '1') --> ('LIVING ROOM', '1'), ('HEADSET', '1') --> ('LIVING ROOM', '1')
+unplugged: ('CD PLAYER', '1') --> 
+plugged: ('CD PLAYER', '1') --> 
+Listen to music
+Listen to music
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CD PLAYER> (1)
+[Find] <CD PLAYER> (1)
+[PlugIn] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Find] <HEADSET> (1)
+[PutOn] <HEADSET> (1)
+[Dance]

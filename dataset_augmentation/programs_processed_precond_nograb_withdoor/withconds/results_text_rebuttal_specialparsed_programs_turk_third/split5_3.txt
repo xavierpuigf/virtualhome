@@ -1,0 +1,21 @@
+1
+nearby: ('TABLE', '1') --> , ('FOOD_BREAD', '1') --> , ('FOOD_PEANUT BUTTER', '1') --> , ('PLATE', '1') --> , ('KNIFE', '1') --> 
+Make peanut butter sandwich
+I get out the peanut butter jar.  I get out the loaf of pre-sliced bread.  I get out a knife.  Get out a plate. I open the loaf of bread and get out two slices, and lay them on a plate.  I open the peanut butter jar, and using the knife, I scoop out some peanut butter, and spread it on one of the slices of bread.  I put the second slice of bread on top of the slice that has the peanut butter.
+
+
+[Find] <FOOD_BREAD> (1)
+[Grab] <FOOD_BREAD> (1)
+[Find] <FOOD_PEANUT BUTTER> (1)
+[Grab] <FOOD_PEANUT BUTTER> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[PutBack] <FOOD_BREAD> (1) <PLATE> (1)
+[Find] <TABLE> (1)
+[PutBack] <KNIFE> (1) <TABLE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[PutBack] <FOOD_PEANUT BUTTER> (1) <TABLE> (1)
+[Push] <KNIFE> (1)
+[Spread] <FOOD_PEANUT BUTTER> (1) <FOOD_BREAD> (1)

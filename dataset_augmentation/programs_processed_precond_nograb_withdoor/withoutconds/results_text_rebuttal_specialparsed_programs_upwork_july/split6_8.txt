@@ -1,0 +1,14 @@
+Pet cat
+Find your laser pointer on your desk.  When your cat comes in, point it near him and randomly move it around.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[Find] <LASER POINTER> (1)
+[Grab] <LASER POINTER> (1)
+[SwitchOn] <LASER POINTER> (1)
+[Find] <CAT> (1)
+[LookAt] <CAT> (1)
+[PointAt] <LASER POINTER> (1) <CAT> (1)
+[Shake] <LASER POINTER> (1)

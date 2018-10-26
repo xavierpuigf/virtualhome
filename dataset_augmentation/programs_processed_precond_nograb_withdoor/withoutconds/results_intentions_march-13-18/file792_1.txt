@@ -1,0 +1,23 @@
+Go to sleep
+I find the bed and walk over to it. I uncover the bed and climb in. I find the pillow on the bed and crawl over to it. I lie down and pull the covers back over me.
+
+
+[Find] <BED> (1)
+[LookAt] <BED> (1)
+[TurnTo] <BED> (1)
+[Walk] <BED> (1)
+[Find] <BLANKET> (1)
+[LookAt] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Fold] <BLANKET> (1)
+[Drop] <BLANKET> (1)
+[Climb] <BED> (1)
+[Find] <PILLOW> (1)
+[LookAt] <PILLOW> (1)
+[Crawl] <PILLOW> (1)
+[Lie] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Cover] <BED> (1) <BLANKET> (1)
+[Drop] <BLANKET> (1)
+[Sleep]

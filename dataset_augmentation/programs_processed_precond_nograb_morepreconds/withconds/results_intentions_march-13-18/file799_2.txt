@@ -1,0 +1,25 @@
+4
+is_off: ('LAPTOP', '1') --> 
+location: ('LAPTOP', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+closed: ('DESK', '1') --> 
+atreach: ('CHAIR', '1') --> ('DESK', '1'), ('KEYBOARD', '1') --> ('LAPTOP', '1'), ('DESK', '1') --> ('LAPTOP', '1'), ('LAPTOP', '1') --> ('LAPTOP', '1')
+Browse internet
+I go to the home office. I put the laptop on the desk. I sit on the chair. I switch on my laptop and I type on the keyboard and browse the internet.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LAPTOP> (1)
+[Find] <LAPTOP> (1)
+[Grab] <LAPTOP> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <LAPTOP> (1) <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[SwitchOn] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)

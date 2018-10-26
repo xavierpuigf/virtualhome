@@ -1,0 +1,9 @@
+Walk to room
+Leave the living room and enter the hall
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <ENTRANCE HALL> (1)
+[Close] <DOOR> (1)

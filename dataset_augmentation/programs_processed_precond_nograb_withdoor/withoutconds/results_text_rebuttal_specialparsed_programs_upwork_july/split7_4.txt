@@ -1,0 +1,26 @@
+Do homework
+Put notebooks, pen and textooks on table.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <TEXTBOOK> (1)
+[Grab] <TEXTBOOK> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <TEXTBOOK> (1) <DESK> (1)
+[Find] <NOTEBOOK> (1)
+[Grab] <NOTEBOOK> (1)
+[PutBack] <NOTEBOOK> (1) <DESK> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Find] <PEN> (1)
+[PutBack] <PEN> (1) <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Grab] <TEXTBOOK> (1)
+[Read] <TEXTBOOK> (1)
+[Grab] <PEN> (1)
+[Write] <NOTEBOOK> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)

@@ -1,0 +1,37 @@
+6
+inside: ('MOUSE', '1') --> ('DESK', '1')
+atreach: ('DESK', '1') --> ('LIGHT', '1'), ('MOUSEPAD', '1') --> ('LIGHT', '1'), ('COMPUTER', '1') --> ('LIGHT', '1'), ('MOUSE', '1') --> ('LIGHT', '1'), ('KEYBOARD', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('CHAIR', '1') --> ('COMPUTER', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('MOUSEPAD', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('LIGHT', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+closed: ('DESK', '1') --> 
+is_off: ('COMPUTER', '1') --> , ('LIGHT', '1') --> 
+unplugged: ('KEYBOARD', '1') --> , ('MOUSE', '1') --> 
+Browse internet
+I want to surf the internet and look around at funny pictures.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <KEYBOARD> (1)
+[Grab] <KEYBOARD> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <KEYBOARD> (1) <DESK> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <MOUSEPAD> (1)
+[PutBack] <MOUSE> (1) <MOUSEPAD> (1)
+[PlugIn] <KEYBOARD> (1)
+[PlugIn] <MOUSE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Grab] <MOUSE> (1)
+[Touch] <MOUSE> (1)
+[Type] <KEYBOARD> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)

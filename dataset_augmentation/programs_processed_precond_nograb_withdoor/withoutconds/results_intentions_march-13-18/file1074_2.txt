@@ -1,0 +1,7 @@
+Listen to music
+Walk into living room. Turn on radio.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <RADIO> (1)
+[SwitchOn] <RADIO> (1)

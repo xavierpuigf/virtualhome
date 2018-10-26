@@ -1,0 +1,10 @@
+0
+Collect napkin rings
+Collect all the napkin rings. Place them in the basket.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[PointAt] <BASKET FOR CLOTHES> (1)
+[Wash] <BASKET FOR CLOTHES> (1)
+[LookAt] <BASKET FOR CLOTHES> (1)
+[TurnTo] <BASKET FOR CLOTHES> (1)

@@ -1,0 +1,17 @@
+2
+location: ('FACE', '1') --> ('BEDROOM', '1'), ('HAIR', '1') --> ('BEDROOM', '1'), ('MIRROR', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1')
+nearby: ('FACE', '1') --> , ('HAIR', '1') --> , ('MIRROR', '1') --> , ('CLOTHES_DRESS', '1') --> 
+Check appearance in mirror
+Walk to full-length mirror. Look in mirror. Make sure everything about your appearance is adequate. Adjust clothes as needed.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <MIRROR> (1)
+[TurnTo] <MIRROR> (1)
+[LookAt] <MIRROR> (1)
+[Find] <FACE> (1)
+[LookAt] <FACE> (1)
+[Find] <HAIR> (1)
+[LookAt] <HAIR> (1)
+[Find] <CLOTHES_DRESS> (1)
+[LookAt] <CLOTHES_DRESS> (1)

@@ -1,0 +1,28 @@
+3
+is_off: ('STOVE', '1') --> 
+inside: ('FOOD_EGG', '2') --> ('FRIDGE', '1'), ('FOOD_EGG', '1') --> ('FRIDGE', '1')
+location: ('STOVE', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('FRYINGPAN', '1') --> ('KITCHEN', '1')
+Cook some food
+Make me eggs in the morning however I want them.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Walk] <STOVE> (1)
+[PutBack] <FRYINGPAN> (1) <STOVE> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_EGG> (1)
+[Grab] <FOOD_EGG> (1)
+[Find] <FOOD_EGG> (2)
+[Grab] <FOOD_EGG> (2)
+[Close] <FRIDGE> (1)
+[Walk] <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[PutBack] <FOOD_EGG> (1) <FRYINGPAN> (1)
+[PutBack] <FOOD_EGG> (2) <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Pull] <FRYINGPAN> (1)
+[Push] <FRYINGPAN> (1)
+[SwitchOff] <STOVE> (1)

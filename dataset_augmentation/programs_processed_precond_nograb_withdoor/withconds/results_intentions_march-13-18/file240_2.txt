@@ -1,0 +1,11 @@
+1
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
+Change TV channel
+Walk into living room. Find television remote control. Pick up remote control. Press button.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

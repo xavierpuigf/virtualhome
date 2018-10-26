@@ -1,0 +1,27 @@
+3
+is_off: ('LAPTOP', '1') --> 
+location: ('LAPTOP', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
+atreach: ('LAPTOP', '1') --> ('LAPTOP', '1'), ('CHAIR', '1') --> ('CHAIR', '1')
+Check email
+Sit in teak deck chair, have wooden drawing board on lap, laptop on wooden drawing board, log in to my two email accounts, go through new emails and respond.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <LAPTOP> (1)
+[Find] <LAPTOP> (1)
+[Grab] <LAPTOP> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[SwitchOn] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Touch] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Touch] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Touch] <LAPTOP> (1)
+[TurnTo] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Touch] <LAPTOP> (1)

@@ -1,0 +1,19 @@
+2
+location: ('CURTAIN', '3') --> ('LIVING ROOM', '1'), ('CURTAIN', '1') --> ('LIVING ROOM', '1'), ('CURTAIN', '2') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('CURTAIN', '3') --> ('CURTAIN', '3'), ('CURTAIN', '1') --> ('CURTAIN', '1'), ('CURTAIN', '2') --> ('CURTAIN', '2'), ('COUCH', '1') --> ('COUCH', '1')
+Close curtains
+Walk to the windows. Unbutton the window sash. Pull curtains over the windows.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <CURTAIN> (1)
+[Pull] <CURTAIN> (1)
+[Close] <CURTAIN> (1)
+[Walk] <CURTAIN> (2)
+[Pull] <CURTAIN> (2)
+[Close] <CURTAIN> (2)
+[Walk] <CURTAIN> (3)
+[Pull] <CURTAIN> (3)
+[Close] <CURTAIN> (3)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)

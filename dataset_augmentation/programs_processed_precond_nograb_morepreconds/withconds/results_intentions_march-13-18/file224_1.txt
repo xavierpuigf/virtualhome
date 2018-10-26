@@ -1,0 +1,21 @@
+4
+is_off: ('STOVE', '1') --> 
+inside: ('DRY PASTA', '1') --> ('FREEZER', '1'), ('FRYINGPAN', '1') --> ('FREEZER', '1')
+closed: ('FREEZER', '1') --> 
+atreach: ('STOVE', '1') --> ('SINK', '1'), ('FRYINGPAN', '1') --> ('SINK', '1')
+Cook some food
+Find pottery, food and refrigerator items.
+
+
+[Find] <FREEZER> (1)
+[Open] <FREEZER> (1)
+[Find] <DRY PASTA> (1)
+[Grab] <DRY PASTA> (1)
+[Walk] <SINK> (1)
+[Drop] <DRY PASTA> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Rinse] <FRYINGPAN> (1)
+[PutObjBack] <FRYINGPAN> (1)
+[Find] <STOVE> (1)
+[SwitchOn] <STOVE> (1)

@@ -1,0 +1,1 @@
+[{"location": [["STOVE", "1"], ["KITCHEN", "1"]]}, {"location": [["SAUCE PAN", "1"], ["KITCHEN", "1"]]}, {"location": [["DRY PASTA", "1"], ["KITCHEN", "1"]]}, {"atreach": [["STOVE", "1"], ["DRY PASTA", "1"]]}, {"atreach": [["SAUCE PAN", "1"], ["DRY PASTA", "1"]]}, {"atreach": [["DRY PASTA", "1"], ["DRY PASTA", "1"]]}]

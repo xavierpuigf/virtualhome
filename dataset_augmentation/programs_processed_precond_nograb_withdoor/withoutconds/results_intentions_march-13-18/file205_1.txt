@@ -1,0 +1,7 @@
+Turn on light
+Walk into the bedroom and walk to the light switch. Flip the switch.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

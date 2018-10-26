@@ -1,0 +1,8 @@
+Turn on light
+I walk into the dining room and turn on the lights
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <LIGHTING> (1)
+[Find] <LIGHTING> (1)
+[SwitchOn] <LIGHTING> (1)

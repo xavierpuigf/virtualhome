@@ -1,0 +1,14 @@
+Drink
+First I go into the kitchen, open the cupboard and find a glass.Then I close the cupboard. Then I go to the sink, turn the faucet on fill the glass under the faucet. I turn off the faucet and then I drink.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Drink] <DRINKING GLASS> (1)

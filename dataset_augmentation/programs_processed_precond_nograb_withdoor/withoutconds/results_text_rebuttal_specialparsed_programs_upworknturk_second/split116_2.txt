@@ -1,0 +1,20 @@
+Have quality family time
+We sit around the table and play card games
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <DECK OF CARDS> (1)
+[Grab] <DECK OF CARDS> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Uncover] <DECK OF CARDS> (1)
+[Find] <CARDS> (1)
+[Grab] <CARDS> (1)
+[Find] <TABLE> (1)
+[PutBack] <CARDS> (1) <TABLE> (1)
+[LookAt] <CARDS> (1)
+[LookAt] <CHILD> (1)
+[PointAt] <CARDS> (1)
+[Play] <CARDS> (1)

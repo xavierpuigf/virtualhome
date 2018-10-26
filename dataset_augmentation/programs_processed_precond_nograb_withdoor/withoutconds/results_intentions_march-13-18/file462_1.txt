@@ -1,0 +1,9 @@
+Pick up phone
+I walk to the living room.  I find the phone and pick it up.  I press the button to answer it.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

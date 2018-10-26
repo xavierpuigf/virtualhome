@@ -1,0 +1,27 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('DESK', '1') --> ('DESK', '1')
+Browse internet
+"I walk to the entrance hall"  "I walk to the home office"  "I look for desk" "I find the desk" "I look for chair" "Ifind the chair" "I look for computer" "I find the computer" I sit in Chair"  "I switch on to the computer"  "I browse the internet"
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <DESK> (1)
+[TurnTo] <DESK> (1)
+[LookAt] <DESK> (1)
+[Find] <DESK> (1)
+[Find] <CHAIR> (1)
+[TurnTo] <CHAIR> (1)
+[LookAt] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <COMPUTER> (1)
+[Sit] <CHAIR> (1)
+[SwitchOn] <COMPUTER> (1)
+[Watch] <COMPUTER> (1)

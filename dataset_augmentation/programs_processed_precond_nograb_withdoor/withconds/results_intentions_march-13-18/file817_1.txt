@@ -1,0 +1,22 @@
+2
+inside: ('GROUND COFFEE', '1') --> ('COFFEE POT', '1'), ('COFFEE CUP', '1') --> ('COFFEE POT', '1')
+location: ('COFFEE', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('COFFEE FILTER', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1')
+Make coffee
+Go to kitchen. go to coffee maker. put coffee filter in coffee pot. put in coffee grounds. turn on coffee pot. pour water into coffee pot. pour coffee into coffee cup/
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFEE POT> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[Open] <COFFEE POT> (1)
+[Drop] <COFFEE FILTER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[Drop] <GROUND COFFEE> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <COFFEE POT> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Find] <COFFEE> (1)
+[Pour] <COFFEE> (1) <COFFEE CUP> (1)

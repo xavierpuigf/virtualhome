@@ -1,0 +1,13 @@
+Take off shoes and hang up coat
+I always take off my shoes as soon as I come in and put them on a shelf in the shoe organizer by the door. I also take off my coat or sweater and hang it on a hook.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[PutOff] <SHOES> (1)
+[Grab] <SHOES> (1)
+[Find] <SHOE RACK> (1)
+[PutBack] <SHOES> (1) <SHOE RACK> (1)
+[PutOff] <CLOTHES_JACKET> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[Find] <HANGER> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)

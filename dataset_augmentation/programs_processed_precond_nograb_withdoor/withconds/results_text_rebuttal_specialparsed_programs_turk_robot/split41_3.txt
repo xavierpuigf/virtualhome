@@ -1,0 +1,22 @@
+3
+inside: ('COFFEE CUP', '1') --> ('CUPBOARD', '1')
+location: ('COFFEE', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1')
+nearby: ('TABLE', '1') --> , ('COFFEE POT', '1') --> , ('COFFEE', '1') --> , ('CUPBOARD', '1') --> 
+Pour cup of coffee
+Pour some coffee from the carafe into the mug.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Close] <CUPBOARD> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFEE> (1)
+[Pour] <COFFEE> (1) <COFFEE CUP> (1)
+[PutObjBack] <COFFEE POT> (1)
+[Find] <TABLE> (1)
+[PutBack] <COFFEE CUP> (1) <TABLE> (1)

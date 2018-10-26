@@ -1,0 +1,17 @@
+3
+atreach: ('BLANKET', '1') --> ('BLANKET', '1'), ('PILLOW', '1') --> ('BLANKET', '1')
+location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
+sitting: ('Character', 1) --> 
+Go to sleep
+Sleeping
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BLANKET> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Wrap] <PILLOW> (1) <BLANKET> (1)
+[Sleep]
+[WakeUp]

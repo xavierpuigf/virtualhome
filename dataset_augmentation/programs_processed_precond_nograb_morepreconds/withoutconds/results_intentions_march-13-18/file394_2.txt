@@ -1,0 +1,6 @@
+Turn on light
+Find light switch. switch on
+
+
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

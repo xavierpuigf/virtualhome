@@ -1,0 +1,34 @@
+6
+inside: ('COOKINGPOT', '1') --> ('KITCHEN CABINET', '1'), ('FOOD_FOOD', '1') --> ('FRIDGE', '1')
+atreach: ('FAUCET', '1') --> ('SINK', '1'), ('STOVE', '1') --> ('STOVE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('COOKINGPOT', '1') --> ('KITCHEN CABINET', '1'), ('FOOD_FOOD', '1') --> ('FRIDGE', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1')
+location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+closed: ('KITCHEN CABINET', '1') --> , ('FRIDGE', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+is_off: ('FAUCET', '1') --> , ('STOVE', '1') --> 
+Cook some food
+Cooking a meal
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <COOKINGPOT> (1)
+[Grab] <COOKINGPOT> (1)
+[Close] <KITCHEN CABINET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <COOKINGPOT> (1) <SINK> (1)
+[Grab] <COOKINGPOT> (1)
+[SwitchOff] <FAUCET> (1)
+[Walk] <STOVE> (1)
+[PutBack] <COOKINGPOT> (1) <STOVE> (1)
+[Walk] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[Close] <FRIDGE> (1)
+[Walk] <STOVE> (1)
+[PutBack] <FOOD_FOOD> (1) <COOKINGPOT> (1)
+[SwitchOn] <STOVE> (1)

@@ -1,0 +1,10 @@
+Read book
+Climb into bed, then read the novel
+
+
+[Walk] <BEDROOM> (1)
+[Find] <NOVEL> (1)
+[Grab] <NOVEL> (1)
+[Walk] <BED> (1)
+[Lie] <BED> (1)
+[Read] <NOVEL> (1)

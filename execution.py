@@ -81,6 +81,7 @@ class WalkExecutor(ActionExecutor):
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             if self.check_walk(state, node, info):
+
                 changes = [DeleteEdges(CharacterNode(),
                                        [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                        AnyNode(), delete_reverse=True),
@@ -89,9 +90,13 @@ class WalkExecutor(ActionExecutor):
                            AddEdges(CharacterNode(), Relation.INSIDE, RoomNode(node)),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
                      ]
+
                 # close to object in hands
                 char_node = _get_character_node(state)
                 nodes_in_hands = _find_nodes_from(state, char_node, relations=[Relation.HOLDS_LH, Relation.HOLDS_RH])
+                for node_in_hands in nodes_in_hands:
+                    changes.append(DeleteEdges(NodeInstance(node_in_hands), [Relation.INSIDE, Relation.CLOSE, Relation.FACING], AnyNode(), delete_reverse=True))
+
                 for node_in_hands in nodes_in_hands:
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node_in_hands), add_reverse=True))
 
@@ -232,7 +237,7 @@ class SitExecutor(ActionExecutor):
         max_occupancy = self._MAX_OCCUPANCIES.get(node.class_name, 1)
         if state.evaluate(CountRelations(AnyNode(), Relation.ON, NodeInstanceFilter(node),
                                          min_value=max_occupancy)):
-            info.error('something on the {}', node)
+            info.error('Too many things on {}', node)
             return False
 
         return True
@@ -272,7 +277,7 @@ class GrabExecutor(ActionExecutor):
                 yield state.change_state(changes)
 
     def check_grabbable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo) -> Optional[Relation]:
-        if Property.GRABBABLE not in node.properties and node.class_name != 'water':
+        if Property.GRABBABLE not in node.properties and node.class_name not in ['water', 'child']:
             info.error('{} is not grabbable', node)
             return None
         if not _is_character_close_to(state, node):
@@ -313,9 +318,10 @@ class OpenExecutor(ActionExecutor):
 
     def check_openable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         
-        if Property.CAN_OPEN not in node.properties:
+        if Property.CAN_OPEN not in node.properties and node.class_name not in ["desk", "window"]:
             info.error('{} can not be opened', node)
             return False
+
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
@@ -330,6 +336,9 @@ class OpenExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+
+        if not self.close and State.ON in node.states:
+            info.error('{} is still on'.format(node))
         return True
 
 
@@ -482,11 +491,6 @@ class TurnToExecutor(ActionExecutor):
             )
 
     def check_turn_to(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
-        char_node = _get_character_node(state)
-        if not _is_character_close_to(state, node):
-            info.error('{} is not close to {}', char_node, node)
-            return False
-        
         return True
 
 
@@ -730,7 +734,7 @@ class PourExecutor(ActionExecutor):
             info.error('{} is not pourable or drinkable', src_node)
             return False
 
-        if Property.RECIPIENT not in dest_node.properties:
+        if Property.RECIPIENT not in dest_node.properties and dest_node.class_name not in ["hands_both", "sponge", "face"]:
             info.error('{} is not recipient', dest_node)
             return False
 
@@ -797,7 +801,7 @@ class WatchExecutor(ActionExecutor):
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
             return False
-        if State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+        if node.class_name != 'computer' and State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
             info.error('{} is not facing {} while sitting', char_node, node)
             return False
         if _is_inside(state, node):
@@ -821,7 +825,7 @@ class MoveExecutor(ActionExecutor):
 
     def check_movable(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo, action_name: str) -> Optional[Relation]:
 
-        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button'):
+        if Property.MOVABLE not in node.properties and (action_name != 'push' and node.class_name != 'button') and node.class_name not in ['chair', 'curtain']:
             info.error('{} is not movable', node)
             return None
         if not _is_character_close_to(state, node):
@@ -925,6 +929,8 @@ class PlugExecutor(ActionExecutor):
         if s not in node.states:
             info.error('{} is not {}', node, s.name.lower())
             return False
+        if not self.plug_in and State.ON in node.states:
+            info.error('{} is still on')
         return True
     
 
@@ -1022,6 +1028,8 @@ def _is_character_close_to(state: EnvironmentState, node: Node):
     # loose rule
     for close_node in state.get_nodes_from(_get_character_node(state), Relation.CLOSE):
         if state.evaluate(ExistsRelation(NodeInstance(close_node), Relation.CLOSE, NodeInstanceFilter(node))):
+            return True
+        if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(close_node))):
             return True
     return False
 
@@ -1159,19 +1167,22 @@ class ScriptExecutor(object):
             if time.time() > self.processing_limit:
                 break
 
-    def execute(self, script: Script, init_changers: List[StateChanger]=None):
+    def execute(self, script: Script, init_changers: List[StateChanger]=None, w_graph_list: bool=True):
 
         info = self.info
         state = EnvironmentState(self.graph, self.name_equivalence, instance_selection=True)
         _apply_initial_changers(state, script, init_changers)
         graph_state_list = []
         for i in range(len(script)):
-            graph_state_list.append(state.to_dict())
+            prev_state = state
+            if w_graph_list:
+                graph_state_list.append(state.to_dict())
+            
             future_script = script.from_index(i)
             state = next(self.call_action_method(future_script, state, info), None)
             if state is None:
-                return None, graph_state_list
-        return state, graph_state_list
+                return False, prev_state, graph_state_list
+        return True, state, graph_state_list
 
     @classmethod
     def call_action_method(cls, script: Script, state: EnvironmentState, info: ExecutionInfo):

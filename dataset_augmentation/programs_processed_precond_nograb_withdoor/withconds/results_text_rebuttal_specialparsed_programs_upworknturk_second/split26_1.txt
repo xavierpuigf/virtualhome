@@ -1,0 +1,18 @@
+4
+is_off: ('TELEVISION', '1') --> 
+nearby: ('TELEVISION', '1') --> , ('LOVE SEAT', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('LOVE SEAT', '1') --> ('LIVING ROOM', '1')
+atreach: ('LOVE SEAT', '1') --> ('TELEVISION', '1')
+Watch TV
+I'll watch TV
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Find] <LOVE SEAT> (1)
+[Sit] <LOVE SEAT> (1)
+[Watch] <TELEVISION> (1)

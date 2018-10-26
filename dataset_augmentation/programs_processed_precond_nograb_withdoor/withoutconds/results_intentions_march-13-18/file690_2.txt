@@ -1,0 +1,14 @@
+Go to toilet
+WALK TO THE BATHROOM
+
+
+[Walk] <BATHROOM> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Flush] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Pull] <TOILET PAPER> (1)
+[PutObjBack] <TOILET PAPER> (1)

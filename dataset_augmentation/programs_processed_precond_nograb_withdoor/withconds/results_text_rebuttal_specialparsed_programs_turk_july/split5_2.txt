@@ -1,0 +1,33 @@
+1
+nearby: ('WATER', '1') --> , ('DISHRACK', '1') --> , ('SINK', '1') --> , ('DISH SOAP', '1') --> 
+Do dishes
+Fill a sink with soapy warm water.  Put in dirty dishes.  Clean with rag, rince, and put on drainer
+
+
+[Find] <SINK> (1)
+[Crawl] <SINK> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <SINK> (1)
+[Find] <DISH SOAP> (1)
+[Pour] <DISH SOAP> (1) <SINK> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[PutBack] <CUP> (1) <SINK> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <SINK> (1)
+[Find] <RAG> (1)
+[Grab] <RAG> (1)
+[Soak] <RAG> (1) <SINK> (1)
+[PutBack] <RAG> (1) <PLATE> (1)
+[Push] <RAG> (1)
+[Pull] <RAG> (1)
+[Push] <RAG> (1)
+[Pull] <RAG> (1)
+[Grab] <PLATE> (1)
+[Pour] <WATER> (1) <PLATE> (1)
+[Find] <DISHRACK> (1)
+[PutBack] <PLATE> (1) <DISHRACK> (1)
+[Grab] <CUP> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[PutBack] <CUP> (1) <DISHRACK> (1)

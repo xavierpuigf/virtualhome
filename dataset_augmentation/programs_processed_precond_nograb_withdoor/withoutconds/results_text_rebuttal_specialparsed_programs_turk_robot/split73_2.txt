@@ -1,0 +1,15 @@
+Sing song
+Sing a song to the kids
+
+
+[Walk] <KIDS BEDROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Find] <MICROPHONE> (1)
+[Grab] <MICROPHONE> (1)
+[LookAt] <CHILD> (1)
+[LookAt] <CHILD> (2)
+[Sing]
+[PutObjBack] <MICROPHONE> (1)

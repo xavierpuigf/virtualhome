@@ -1,0 +1,12 @@
+Put groceries in Fridge
+Put groceries down on counter, open fridge, take items out of grocery bag one at a time and put them into fridge.
+
+
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Find] <KITCHEN COUNTER> (1)
+[PutBack] <GROCERIES> (1) <KITCHEN COUNTER> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[Grab] <GROCERIES> (1)
+[PutBack] <GROCERIES> (1) <FRIDGE> (1)

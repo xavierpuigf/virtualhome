@@ -1,0 +1,10 @@
+ use bathroom
+I pull out my penis, and i pee in the toilet, i then flush.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOILET> (1)
+[TurnTo] <TOILET> (1)
+[PutOff] <CLOTHES_PANTS> (1)
+[Flush] <TOILET> (1)
+[PutOn] <CLOTHES_PANTS> (1)

@@ -1,0 +1,16 @@
+3
+location: ('LAMP', '1') --> ('LIVING ROOM', '1'), ('TRASHCAN', '1') --> ('LIVING ROOM', '1'), ('PAPER TOWEL', '1') --> ('LIVING ROOM', '1')
+is_on: ('LAMP', '1') --> 
+nearby: ('TRASHCAN', '1') --> 
+Clean
+Clean lamp
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <PAPER TOWEL> (1)
+[Grab] <PAPER TOWEL> (1)
+[Walk] <LAMP> (1)
+[SwitchOff] <LAMP> (1)
+[Wipe] <LAMP> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)

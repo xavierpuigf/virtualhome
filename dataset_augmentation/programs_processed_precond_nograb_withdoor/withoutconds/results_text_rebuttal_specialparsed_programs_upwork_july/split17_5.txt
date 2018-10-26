@@ -1,0 +1,8 @@
+Pull up carpet
+Pry up a corner of your old dirty carpet.  Tug as hard as you can until it comes off the tacs. Pull up the pad. Try not to be sick at all the dirt.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CARPET> (1)
+[Touch] <CARPET> (1)
+[Pull] <CARPET> (1)

@@ -1,0 +1,15 @@
+Check email
+Turn on the computer.  Wait for it to load.  Get online.  Go to the email service.  Open the email.  Read the email.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <MAIL> (1)
+[Grab] <MAIL> (1)
+[Read] <MAIL> (1)

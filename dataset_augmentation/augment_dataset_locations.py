@@ -14,20 +14,12 @@ import ipdb
 
 random.seed(123)
 thres = 300
-write_augment_data = False
-
-if write_augment_data:
-    augmented_data_dir = 'augmented_program_location'
-    if not os.path.exists(augmented_data_dir):
-        os.makedirs(augmented_data_dir)
-
-
+write_augment_data = True
 
 object_states = {}
-
 dict_cont = {}
 
-with open('object_script_placing.json', 'r') as f:
+with open('../resources/object_script_placing.json', 'r') as f:
     info_locations = json.loads(f.read())
 
 # maps every object, and relation to all the possible objects
@@ -50,6 +42,28 @@ def recursiveSelection(cont, it, curr_list):
     for idi in range(cont[it]):
         res += recursiveSelection(cont, it+1, curr_list+[idi])
     return res
+
+
+# For every program, check the objects that can be replaced
+#program_dir = 'programs_processed_precond_nograb_morepreconds'
+#files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
+program_dir = 'programs_processed_precond_nograb_morepreconds'
+files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
+
+print(len(files))
+n_all_progs = 0
+temp = []
+precondtorelation = {
+    'in': 'ON',
+    'inside': 'IN'
+}
+
+
+if write_augment_data:
+    augmented_data_dir = 'augmented_location'
+    if not os.path.exists(augmented_data_dir):
+        os.makedirs(augmented_data_dir)
+
 
 def write_data(ori_path, all_new_progs):
     
@@ -78,21 +92,13 @@ def write_precond(ori_path, all_new_preconds):
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        new_f.write(new_precond)
+        new_f.write(str(new_precond).replace('\'', '\"'))
         new_f.close()   
 
 
-# For every program, check the objects that can be replaced
-files = glob.glob('programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt')
-n_all_progs = 0
-temp = []
-precondtorelation = {
-    'in': 'ON',
-    'inside': 'IN'
-}
-
-all_cont = 1
 for file_name in tqdm(files):
+
+    all_cont = 1
     with open(file_name, 'r') as f:
         augmented_progs_i = []
         augmented_preconds_i = []
@@ -100,17 +106,11 @@ for file_name in tqdm(files):
         lines = f.readlines() 
         prog_orig = lines
         lines = lines[4:]
-    newobjname2old = {'character': 'character'}
     # Obtain all the object instance of a given program
     for line in lines:
         if '<' not in line:
             continue
         content = line.split('<')
-        for el in content[1:]:
-            obj_name_orig = el.split('>')[0]
-            num_name = el.split('(')[1].split(')')[0]
-            obj_name = obj_name_orig.lower().replace(' ', '_')
-            newobjname2old[obj_name] = obj_name_orig
 
     with open(file_name.replace('withoutconds', 'initstate').replace('.txt', '.json'),
               'r') as fst:
@@ -121,7 +121,7 @@ for file_name in tqdm(files):
     # property
     relations_per_object = {}
     for cstate in state:
-        precond = cstate.keys()[0]
+        precond = [k for k in cstate.keys()][0]
         if precond in ['inside', 'in']:
             relation = precondtorelation[precond]
             object1 = cstate[precond][0][0].lower().replace(' ', '_')
@@ -141,7 +141,9 @@ for file_name in tqdm(files):
 
         # do a intersection of all the replace candidates
         intersection = []
-        object_replace_map[container] = [container[0]]
+        #object_replace_map[container] = [container[0]]
+        object_replace_map[container] = []
+        
         if len(replace_candidates) > 0  and len([l for l in replace_candidates if len(l) == 0]) == 0: # if there are objects we can replace
             intersection = list(set.intersection(*[set(l) for l in replace_candidates]))
             candidates = list(intersection)
@@ -170,6 +172,7 @@ for file_name in tqdm(files):
 
     # For every permutation, we compute the new program
     for rec_id in recursive_selection:
+
         # change program
         new_lines = prog_orig
         precond_modif = copy.deepcopy(ori_precond)
@@ -178,10 +181,9 @@ for file_name in tqdm(files):
         for iti, obj_and_id in enumerate(objects_prog):
             orign_object, idi = obj_and_id
             object_new = object_replace_map[obj_and_id][rec_id[iti]]
-            object_to_replace_oldname = newobjname2old[orign_object]
-            new_lines = [x.replace('<{}> ({})'.format(object_to_replace_oldname, idi), 
+            new_lines = [x.replace('<{}> ({})'.format(orign_object, idi), 
                                    '<{}> ({})'.format(object_new, idi)) for x in new_lines]
-            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(object_to_replace_oldname, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
+            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(orign_object, idi), '[\"{}\", \"{}\"]'.format(object_new, idi))
 
         augmented_progs_i.append(new_lines)         
         augmented_preconds_i.append(precond_modif)
@@ -199,3 +201,4 @@ for file_name in tqdm(files):
         write_precond(file_name, augmented_preconds_i)
 
 print ('Number of programs', all_conts, n_all_progs)
+

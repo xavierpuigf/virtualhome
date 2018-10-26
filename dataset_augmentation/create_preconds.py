@@ -4,9 +4,9 @@ import glob
 import numpy as np
 import script_utils
 import os
-from utils import *
+from utils_preconds import *
 import json
-import pdb
+import pdb, ipdb
 num_lines = []
 errors_putback = 0
 already_grb = 0
@@ -31,62 +31,17 @@ body_parts = ['HANDS_BOTH', 'ARMS_LEFT', 'HANDS_LEFT', 'FACE', 'ARMS_RIGHT',
               'HANDS_RIGHT', 'HAIR', 'ARMS_BOTH', 'LEGS_BOTH', 'FEET_BOTH', 'EYES_BOTH', 'TEETH']
 conte = 0
 
-class Precond:
-    def __init__(self):
-        self.precond_dict = {}
+objects_occupied = [
+    'couch',
+    'bed',
+    'chair',
+    'loveseat',
+    'sofa',
+    'toilet',
+    'pianobench',
+    'bench']
 
-    def addPrecond(self, cond, obj1, obj2):
-        if cond not in self.precond_dict.keys():
-            self.precond_dict[cond] = {}
-        if obj1 not in self.precond_dict[cond]:
-            
-            self.precond_dict[cond][obj1] = set(obj2)
-        else:
-            # self.precond_dict[cond][obj1] = set(list(self.precond_dict[cond][obj1])+list(obj2))
-            if len(self.precond_dict[cond][obj1]) == 0:
-                self.precond_dict[cond][obj1] = set(obj2)
-    def printConds(self):
-        res = [str(len(self.precond_dict.keys()))]
-        for cond in self.precond_dict.keys():
-            elem_list = []
-            for l in self.precond_dict[cond].keys():
-
-                # if not type(list(self.precond_dict[cond][l])[0]) == tuple:
-                #     pdb.set_trace()
-                this_str = '{} --> {}'.format(str(l), ' / '.join([str(p) for p in list(self.precond_dict[cond][l])]))
-                elem_list.append(this_str)
-            elements = ', '.join(elem_list)
-            stri = '{}: {}'.format(cond, elements)
-            res.append(stri)
-        return res
-
-    def printCondsJSON(self):
-        conds = []
-        for cond in self.precond_dict.keys():
-            if cond != 'nearby':
-                for it in self.precond_dict[cond].keys():
-                    if len(self.precond_dict[cond][it]) > 1:
-                        pdb.set_trace()
-                    if len(self.precond_dict[cond][it]) == 0:
-                        conds.append({cond: it})
-                    else:
-                        conds.append({cond: [it, list(self.precond_dict[cond][it])[0]]})
-        return conds
-    def removeCond(self, cond, object_id=None, second=None):
-        if object_id is None:
-            del self.precond_dict[cond]
-        elif second is None:
-            del self.precond_dict[cond][object_id]
-        else:
-            self.precond_dict[cond][object_id].remove(second)
-    def obtainCond(self, cond):
-        if cond in self.precond_dict.keys():
-            return self.precond_dict[cond].keys()
-        return []
-
-
-
-print len(all_scripts)
+print(len(all_scripts))
 for script_name in all_scripts:
     precond_dict = Precond()
     script_name_in = script_name
@@ -96,13 +51,13 @@ for script_name in all_scripts:
         content = [x.strip() for x in f.readlines()]
 
     if tuple(content) in dict_all_scripts.keys():
-        print 'File {} repeated'.format(script_name)
+        print('File {} repeated'.format(script_name))
         continue
     dict_all_scripts[tuple(content)] = True
 
     if content is None:
         # Remove file
-        print 'Remove'
+        print('Remove')
         continue
     
     # Standarize format, props do not appear
@@ -128,7 +83,7 @@ for script_name in all_scripts:
         if action == 'Type' and obj_names[0] in ['CELLPHONE', 'TELEPHONE']:
             if (obj_names[0], ins_num[0]) in is_grabbed.keys():
                 content[i].replace('Touch', 'Type')
-            else: print 'should_delete'
+            else: print('should_delete')
         if action in ['Grab', 'Lift']:
             is_grabbed[(obj_names[0], ins_num[0])] = True
         if action in ['PutBack', 'PutObjBack', 'Drop']:
@@ -194,7 +149,7 @@ for script_name in all_scripts:
             if obj_id not in is_on.keys(): # If this light was never switched on/off
                 precond_dict.addPrecond('is_on', obj_id, [])
                 # If it was not plugged, needs to be plugged
-                if obj_id in precond_dict.obtainCond('unplugged'):
+                if obj_id not in precond_dict.obtainCond('unplugged'):
                     precond_dict.addPrecond('plugged', obj_id, [])
 
             else:
@@ -207,14 +162,14 @@ for script_name in all_scripts:
             if obj_id in is_on.keys() and is_on[obj_id]:
                 # print script_name
                 to_delete.append(i)
-                print '\n'.join(content)
-                print 'Error, object turned on twice'
+                print('\n'.join(content))
+                print('Error, object turned on twice')
                 # pdb.set_trace()
             elif obj_id not in is_on.keys():
                 precond_dict.addPrecond('is_off', obj_id, [])
 
                 # If it was not plugged, needs to be plugged
-                if obj_id in precond_dict.obtainCond('unplugged'):
+                if obj_id not in precond_dict.obtainCond('unplugged'):
                     precond_dict.addPrecond('plugged', obj_id, [])
 
             is_on[obj_id] = True        
@@ -241,7 +196,7 @@ for script_name in all_scripts:
                 del object_open[object_id]
             except: 
                 pdb.set_trace()
-                print 'Object closed before opening', script_name, object_id
+                print('Object closed before opening', script_name, object_id)
         if action.upper() in ['PUTBACK', 'POUR']:
             try:
                 if obj_names[1] in open_recipients:
@@ -251,7 +206,7 @@ for script_name in all_scripts:
                         #print script_name, content[1]
                         #pdb.set_trace()
             except:
-                print content[i], script_name
+                print(content[i], script_name)
     
 
     # If a dishwasher, washing machine is switched on, make sure it is closed first
@@ -318,6 +273,7 @@ for script_name in all_scripts:
     # If you pour something and not grabbed make sure you grab it
 
     # Check objects of interaction while sitting
+
     is_sitting = None
     obj_location = {}
     object_grabbed = {}
@@ -326,7 +282,7 @@ for script_name in all_scripts:
     for i in range(4, len(content)):
         curr_block = content[i]
         action, obj_names, ins_num = script_utils.parseStrBlock(curr_block)
-        if action == 'Sit':
+        if action in  ['Sit', 'Lie']:
             is_sitting = (obj_names[0], ins_num[0])
         elif action in ['StandUp', 'Walk', 'Run']:
             is_sitting = None
@@ -367,7 +323,7 @@ for script_name in all_scripts:
             if (not is_sitting) and (not is_lying):
                 is_sitting = True
             else:
-                print 'Error, character already sitting'
+                print('Error, character already sitting')
                 # print('\n'.join(content))
         if action == 'Lie':
             is_lying = True
@@ -377,7 +333,7 @@ for script_name in all_scripts:
                 is_lying = False
             else:
                 if ever_sitting or ever_lying:
-                    print 'Error, character already up'
+                    print('Error, character already up')
                 else:
                     precond_dict.addPrecond('sitting', ('Character', 1), [])
 
@@ -424,7 +380,7 @@ for script_name in all_scripts:
                                      obj_names[0], ins_num[0])])
                     object_grabbed[object_id] = True
                 else:
-                    print 'Difficult case POUR'
+                    print('Difficult case POUR')
                     #print('/n'.join(content))
                     #pdb.set_trace()
 
@@ -442,6 +398,7 @@ for script_name in all_scripts:
     object_grabbed = {}
     last_walked = None
     insert_in = []
+
     for k in precond_dict.obtainCond('grabbed'):
         object_grabbed[k] = True
     for i in range(4, len(content)):
@@ -463,6 +420,7 @@ for script_name in all_scripts:
                         obj_names[0], ins_num[0])])
                 else:
                     if last_walked is not None:
+                        # if we last walked towards an object, this new object should be close
                         precond_dict.addPrecond('atreach', object_id, [last_walked]) 
 
                     l = 0
@@ -472,6 +430,7 @@ for script_name in all_scripts:
             
             if action.upper() in ['PUTOBJBACK', 'PUTBACK', 'PUTOFF']:
                 object_grabbed[object_id] = False
+
     content = insertInstructions(insert_in, content)
 
     # Make sure you do not turn to an object if you are grabbing it
@@ -494,7 +453,7 @@ for script_name in all_scripts:
             try:
                 object_grabbed[object_id] = False
             except:
-                print 'Error', script_name, object_id
+                print('Error', script_name, object_id)
                 continue
 
     
@@ -539,7 +498,7 @@ for script_name in all_scripts:
                 puton[object_id] = False
             else:    
                 if not puton[object_id]:
-                    print 'Error, this was already off'
+                     print('Error, this was already off')
     content = insertInstructions(insert_in, content)
 
     # Generate more spatial preconds
@@ -622,7 +581,6 @@ for script_name in all_scripts:
             object_grabbed[obj_id] = True
 
     # If we look at something make sure we turn to it
-    # TODO: finish this
     currently_facing = None
     for i in range(4, len(content)):
         curr_block = content[i]
@@ -639,10 +597,24 @@ for script_name in all_scripts:
                     obj_names[0], ins_num[0])])
     content = insertInstructions(insert_in, content)
 
+    # If sit and watch, the object you sit should be facing
+    is_sitting = None
+    obj_location = {}
+    for i in range(4, len(content)):
+        curr_block = content[i]
+        action, obj_names, ins_num = script_utils.parseStrBlock(curr_block)
+        if action in ['Sit', 'Lie']:
+            is_sitting = (obj_names[0], ins_num[0])
+        elif action in ['StandUp', 'Walk', 'Run']:
+            is_sitting = None
 
-    # 
-        
+        else:
+            if len(obj_names) > 0:
+                obj_id = (obj_names[0], ins_num[0])
 
+            if action in ['Watch']:
+                if is_sitting is not None:
+                    precond_dict.addPrecond('facing', is_sitting, [obj_id])
 
     # Eliminate duplicate preconds
     # 1. Only keep the first time something is inside
@@ -658,11 +630,11 @@ for script_name in all_scripts:
     #             continue
     #         to_keep.append(elem)
     # if 'inside' in precond_dict.keys(): precond_dict['inside'] = to_keep
-    for cond in ['location', 'nearby']:
-        for elem in precond_dict.obtainCond(cond):
-            if elem in precond_dict.obtainCond('inside'):
-                precond_dict.removeCond(cond, elem)
-    
+    #for cond in ['location', 'nearby']:
+    #    for elem in list(precond_dict.obtainCond(cond)):
+    #        if elem in precond_dict.obtainCond('inside'):
+    #            precond_dict.removeCond(cond, elem)
+    #
     # Good proxy for scripts that are bad (bad AMT workers)
     for i in range(4, len(content)-2):
 
@@ -671,9 +643,20 @@ for script_name in all_scripts:
         action3, obj_names3, ins_num = script_utils.parseStrBlock(content[i+2])
         if action1.upper() == 'FIND' and action2.upper() == 'POINTAT' and action3.upper() == 'LOOKAT':            
             if obj_names1[0] == obj_names2[0] and obj_names1[0] == obj_names3[0]:
-                print script_name, 'lookat, pointat'  
+                print(script_name, 'lookat, pointat')
 
-            
+    
+    # turn objects to lowercase and add free precond
+    for i in range(4, len(content)):
+        curr_block = content[i]
+        action, obj_names, ins_num = script_utils.parseStrBlock(curr_block)
+        obj_old_to_new = {obj_name: obj_name.lower().replace(' ', '_') for obj_name in obj_names}
+        for (obj_name, idi) in zip(obj_names, ins_num):
+            if obj_name.lower().replace(' ', '_') in objects_occupied:
+                precond_dict.addPrecond('free', (obj_name, idi), [])
+        for obj_old, obj_new in obj_old_to_new.items():
+            content[i] = content[i].replace(obj_old, obj_new)
+
     
     if not os.path.isdir(os.path.dirname(script_name_out2)):
         os.makedirs(os.path.dirname(script_name_out2))
@@ -693,8 +676,8 @@ for script_name in all_scripts:
     with open(json_file, 'w+') as f:
         f.write(json.dumps(precond_dict.printCondsJSON()))
 
-print already_grb
-print len(num_lines)
-print set(not_found)
-print conte
-print '{} scripts, Max Len: {}, Avg Len {}'.format(len(num_lines), np.max(num_lines), np.mean(num_lines))
+print(already_grb)
+print(len(num_lines))
+print(set(not_found))
+print(conte)
+print('{} scripts, Max Len: {}, Avg Len {}'.format(len(num_lines), np.max(num_lines), np.mean(num_lines)))

@@ -1,0 +1,12 @@
+2
+is_off: ('LIGHT', '1') --> 
+location: ('LIGHT', '1') --> ('ENTRANCE HALL', '1'), ('ARMS_RIGHT', '1') --> ('ENTRANCE HALL', '1')
+Turn on light
+Walk to entrance hall, stretch right arm, and switch on lights.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <ARMS_RIGHT> (1)
+[Stretch] <ARMS_RIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

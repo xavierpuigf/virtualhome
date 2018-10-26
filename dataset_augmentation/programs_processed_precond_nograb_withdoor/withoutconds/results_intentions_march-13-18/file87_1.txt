@@ -1,0 +1,13 @@
+Turn on light
+go to the living room open door fold the clothes and switch on the lights
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <NIGHTSTAND> (1)
+[Open] <NIGHTSTAND> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Fold] <CLOTHES_DRESS> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)

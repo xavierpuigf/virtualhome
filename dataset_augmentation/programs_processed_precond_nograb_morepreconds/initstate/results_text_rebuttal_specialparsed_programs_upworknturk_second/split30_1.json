@@ -1,0 +1,1 @@
+[{"is_off": ["LAPTOP", "1"]}, {"location": [["LAPTOP", "1"], ["BEDROOM", "1"]]}, {"location": [["KEYBOARD", "1"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"atreach": [["LAPTOP", "1"], ["LAPTOP", "1"]]}, {"atreach": [["KEYBOARD", "1"], ["LAPTOP", "1"]]}, {"atreach": [["BED", "1"], ["KEYBOARD", "1"]]}]

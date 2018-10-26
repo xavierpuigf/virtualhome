@@ -1,0 +1,14 @@
+Drink
+I go to the kitchen, take a glass from the cupboard, fill with water and drink
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <WATER GLASS> (1)
+[Drink] <WATER> (1)
+[Rinse] <WATER GLASS> (1)
+[PutBack] <WATER GLASS> (1) <CUPBOARD> (1)

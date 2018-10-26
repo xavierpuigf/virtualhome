@@ -1,0 +1,19 @@
+Fold laundry
+Bring basket of clothes into living room.  Sit on sofa.  Place basket in front of sofa.  Take items out of the basket one at a time.  Fold clothes and put into appropriates piles.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <COFFEE TABLE> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <COFFEE TABLE> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Fold] <CLOTHES_PANTS> (1)
+[PutBack] <CLOTHES_PANTS> (1) <COFFEE TABLE> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Fold] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <COFFEE TABLE> (1)

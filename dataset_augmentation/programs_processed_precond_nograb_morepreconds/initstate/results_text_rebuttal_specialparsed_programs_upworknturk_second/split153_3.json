@@ -1,0 +1,1 @@
+[{"in": [["CLOTHES_JACKET", "1"], ["Character", 1]]}, {"location": [["CLOTHES_JACKET", "1"], ["BEDROOM", "1"]]}, {"location": [["CLOSET", "1"], ["BEDROOM", "1"]]}, {"closed": ["CLOSET", "1"]}, {"atreach": [["CLOSET", "1"], ["CLOTHES_JACKET", "1"]]}]

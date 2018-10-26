@@ -1,0 +1,19 @@
+Pay bills
+Sit down at table. Go through bills. Grab a pen.  Write checks.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <BILLS> (1)
+[Grab] <BILLS> (1)
+[LookAt] <BILLS> (1)
+[Open] <DESK> (1)
+[PutBack] <BILLS> (1) <DESK> (1)
+[Find] <CHECK> (1)
+[Grab] <CHECK> (1)
+[PutBack] <CHECK> (1) <DESK> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <CHECK> (1)

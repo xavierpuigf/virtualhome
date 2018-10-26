@@ -1,0 +1,16 @@
+2
+location: ('BED', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
+atreach: ('BED', '1') --> ('BED', '1'), ('PILLOW', '1') --> ('BED', '1')
+Fluff pillow
+Walk to bed.  Pick up pillow.  Scrunch pillow together.  Straighten pillow out.  Put pillow on the bed.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BED> (1)
+[TurnTo] <BED> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[Shake] <PILLOW> (1)
+[Squeeze] <PILLOW> (1)
+[PutBack] <PILLOW> (1) <BED> (1)

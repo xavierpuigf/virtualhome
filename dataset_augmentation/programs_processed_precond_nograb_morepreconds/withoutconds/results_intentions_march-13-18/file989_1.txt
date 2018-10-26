@@ -1,0 +1,20 @@
+Make coffee
+walk to kitchen, look at the coffee maker, open the coffee maker, find milk, suger and water, mix that all, put into coffee maker, switch on the coffee maker, wait for few mins, push the coffee button in coffee maker, we get coffee in coffee cup, drink coffee
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <COFFE MAKER> (1)
+[Find] <COFFE MAKER> (1)
+[TurnTo] <COFFE MAKER> (1)
+[LookAt] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[Find] <FOOD_SUGAR> (1)
+[Find] <WATER> (1)
+[PutBack] <MILK> (1) <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)
+[Find] <COFFEE CUP> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Drink] <COFFEE CUP> (1)

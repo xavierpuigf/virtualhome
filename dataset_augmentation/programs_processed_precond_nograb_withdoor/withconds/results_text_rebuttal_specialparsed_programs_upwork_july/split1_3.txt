@@ -1,0 +1,15 @@
+3
+nearby: ('WINE GLASS', '1') --> , ('COUCH', '1') --> 
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CRACKERS', '1') --> ('LIVING ROOM', '1'), ('WINE GLASS', '1') --> ('LIVING ROOM', '1'), ('FOOD_CHEESE', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('WINE GLASS', '1')
+Entertain
+Give guests wine, cheese, crackers and sit and talk
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <FOOD_CHEESE> (1)
+[Find] <CRACKERS> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <WINE GLASS> (1)
+[Drink] <WINE GLASS> (1)

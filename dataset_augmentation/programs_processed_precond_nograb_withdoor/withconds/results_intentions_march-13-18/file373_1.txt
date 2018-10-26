@@ -1,0 +1,10 @@
+2
+is_off: ('COMPUTER', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1')
+Work
+go to home office. turn the computer on. begin working
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)

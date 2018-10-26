@@ -1,0 +1,15 @@
+2
+inside: ('BASKET FOR CLOTHES', '1') --> ('WASHING MACHINE', '1')
+location: ('LAUNDRY DETERGENT', '1') --> ('KITCHEN', '1'), ('WASHING MACHINE', '1') --> ('KITCHEN', '1')
+Wash clothes
+go do the laundry
+
+
+[Walk] <KITCHEN> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Pour] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <WASHING MACHINE> (1)

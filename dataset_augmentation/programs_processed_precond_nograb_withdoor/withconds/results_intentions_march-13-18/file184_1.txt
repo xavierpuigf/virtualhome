@@ -1,0 +1,12 @@
+2
+is_off: ('LAMP', '1') --> , ('LAMP', '2') --> 
+location: ('LAMP', '1') --> ('LIVING ROOM', '1'), ('LAMP', '2') --> ('LIVING ROOM', '1')
+Turn on light
+Turn on two lamps in the living room.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LAMP> (1)
+[SwitchOn] <LAMP> (1)
+[Find] <LAMP> (2)
+[SwitchOn] <LAMP> (2)

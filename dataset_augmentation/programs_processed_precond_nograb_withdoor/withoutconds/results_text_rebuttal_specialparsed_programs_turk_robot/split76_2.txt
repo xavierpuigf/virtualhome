@@ -1,0 +1,19 @@
+Sweep entrance hall
+Find the broom and dustbin. Sweep the entrance hall with the broom. Sweep the debris from the floor into the dustbin. Empty the dustbin into the trash.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <BROOM> (1)
+[Grab] <BROOM> (1)
+[Find] <FLOOR> (1)
+[Sweep] <FLOOR> (1)
+[Find] <DUSTPAN> (1)
+[Grab] <DUSTPAN> (1)
+[Find] <DIRT> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <DUSTPAN> (1)
+[Walk] <TRASHCAN> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <TRASHCAN> (1)
+[PutObjBack] <BROOM> (1)
+[PutObjBack] <DUSTPAN> (1)

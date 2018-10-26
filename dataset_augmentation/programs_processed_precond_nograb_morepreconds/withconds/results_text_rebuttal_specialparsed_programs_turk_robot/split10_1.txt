@@ -1,0 +1,9 @@
+1
+atreach: ('BOOK', '1') --> ('BOOK', '1')
+Grab things
+The robot will need some kind of hands or grabbing device to transport objects.
+
+
+[Walk] <BOOK> (1)
+[TurnTo] <BOOK> (1)
+[Grab] <BOOK> (1)

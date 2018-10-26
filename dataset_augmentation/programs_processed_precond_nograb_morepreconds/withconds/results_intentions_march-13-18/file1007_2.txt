@@ -1,0 +1,8 @@
+1
+location: ('TOILET', '2') --> ('BATHROOM', '1')
+Go to toilet
+walk to bathroom , run to toilet
+
+
+[Walk] <BATHROOM> (1)
+[Run] <TOILET> (2)

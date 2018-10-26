@@ -1,0 +1,13 @@
+Say goodbye to guests leaving
+Tell them bye
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <CHILD> (1)
+[Touch] <CHILD> (1)
+[Find] <MAN> (1)
+[Touch] <MAN> (1)
+[Find] <WOMAN> (1)
+[Touch] <WOMAN> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)

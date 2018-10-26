@@ -1,0 +1,15 @@
+3
+in: ('MAN', '1') --> ('BED', '1')
+location: ('MAN', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('WALL CLOCK', '1') --> ('BEDROOM', '1')
+nearby: ('MAN', '1') --> , ('WALL CLOCK', '1') --> 
+Wake me up
+When clock reaches a certain time, wake me up.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <WALL CLOCK> (1)
+[LookAt] <WALL CLOCK> (1)
+[Walk] <BED> (1)
+[Find] <MAN> (1)
+[Touch] <MAN> (1)
+[Squeeze] <MAN> (1)

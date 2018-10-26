@@ -1,0 +1,29 @@
+3
+in: ('TABLE CLOTH', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('WATER GLASS', '1') --> ('DINING ROOM', '1'), ('SPOON', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1'), ('KNIFE', '1') --> ('DINING ROOM', '1'), ('CLOTH NAPKIN', '1') --> ('DINING ROOM', '1'), ('TABLE CLOTH', '1') --> ('DINING ROOM', '1')
+atreach: ('TABLE', '1') --> ('TABLE', '1'), ('WATER GLASS', '1') --> ('TABLE', '1'), ('SPOON', '1') --> ('TABLE', '1'), ('FORK', '1') --> ('TABLE', '1'), ('KNIFE', '1') --> ('TABLE', '1'), ('CLOTH NAPKIN', '1') --> ('TABLE', '1'), ('TABLE CLOTH', '1') --> ('TABLE', '1')
+Set up table
+Setting up the table
+
+
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[Find] <TABLE CLOTH> (1)
+[Cover] <TABLE> (1) <TABLE CLOTH> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[PutBack] <SPOON> (1) <TABLE> (1)
+[PutBack] <FORK> (1) <TABLE> (1)
+[PutBack] <KNIFE> (1) <TABLE> (1)
+[Find] <CLOTH NAPKIN> (1)
+[Grab] <CLOTH NAPKIN> (1)
+[Fold] <CLOTH NAPKIN> (1)
+[PutBack] <CLOTH NAPKIN> (1) <TABLE> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[PutBack] <WATER GLASS> (1) <TABLE> (1)

@@ -1,0 +1,36 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('TOOTHBRUSH', '1') --> ('TOOTHBRUSH HOLDER', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('WATER GLASS', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH HOLDER', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+atreach: ('FAUCET', '1') --> ('TOOTH PASTE', '1'), ('WATER', '1') --> ('TOOTH PASTE', '1'), ('TEETH', '1') --> ('TOOTH PASTE', '1'), ('WATER GLASS', '1') --> ('TOOTH PASTE', '1'), ('TOOTHBRUSH', '1') --> ('TOOTHBRUSH HOLDER', '1'), ('SINK', '1') --> ('TOOTH PASTE', '1'), ('TOOTH PASTE', '1') --> ('TOOTH PASTE', '1')
+Brush teeth
+Brushing teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Walk] <TOOTH PASTE> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[Find] <SINK> (1)
+[PutBack] <TOOTHBRUSH> (1) <SINK> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[PutBack] <WATER GLASS> (1) <SINK> (1)
+[Grab] <WATER GLASS> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Drink] <WATER> (1)
+[Rinse] <TEETH> (1)
+[Wash] <FAUCET> (1)
+[SwitchOff] <FAUCET> (1)
+[PutBack] <TOOTHBRUSH> (1) <TOOTHBRUSH HOLDER> (1)

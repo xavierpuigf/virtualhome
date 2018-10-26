@@ -1,0 +1,18 @@
+4
+is_off: ('TELEVISION', '1') --> 
+nearby: ('REMOTE CONTROL', '1') --> , ('TELEVISION', '1') --> , ('BED', '1') --> 
+location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('TELEVISION', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+atreach: ('BED', '1') --> ('TELEVISION', '1')
+Watch TV
+Grab television remote. Sit down on bed. Turn television on. Select channel to watch on.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <BED> (1)
+[Sit] <BED> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[PutBack] <REMOTE CONTROL> (1) <BED> (1)
+[Watch] <TELEVISION> (1)

@@ -1,0 +1,13 @@
+2
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('PILLOW', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('PILLOW', '1'), ('PILLOW', '1') --> ('SOFA', '1')
+Relax on sofa
+Walk to the living room, find the sofa and sit in the sofa and find pillow. lie down in sofa.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <PILLOW> (1)
+[Lie] <SOFA> (1)

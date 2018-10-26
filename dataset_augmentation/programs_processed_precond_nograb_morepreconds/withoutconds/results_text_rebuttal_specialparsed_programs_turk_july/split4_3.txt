@@ -1,0 +1,10 @@
+Enter home
+Knock on door, wait for respondent, wait until respondent allows permission to enter home, step into entrance hall, wait further instructions from home owner
+
+
+[StandUp]
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <WOMAN> (1)
+[TurnTo] <WOMAN> (1)

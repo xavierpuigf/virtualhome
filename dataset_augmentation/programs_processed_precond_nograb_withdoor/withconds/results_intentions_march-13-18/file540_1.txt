@@ -1,0 +1,11 @@
+1
+location: ('CELLPHONE', '1') --> ('LIVING ROOM', '1')
+Browse internet
+I pick up my phone. I touch it to navigate to the web browser. I can swipe and tap the screen to visit different websites. Then I read or watch the content within those websites.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[Touch] <CELLPHONE> (1)
+[LookAt] <CELLPHONE> (1)

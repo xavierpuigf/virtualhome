@@ -1,0 +1,35 @@
+4
+is_off: ('STOVE', '1') --> 
+in: ('FOOD_HAMBURGER', '1') --> ('TABLE', '1'), ('FRYINGPAN', '1') --> ('KITCHEN CABINET', '1')
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('SPOON', '1') --> ('KITCHEN', '1'), ('FRYINGPAN', '1') --> ('KITCHEN', '1'), ('FOOD_HAMBURGER', '1') --> ('KITCHEN', '1'), ('OIL', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+atreach: ('STOVE', '1') --> ('KITCHEN CABINET', '1'), ('PLATE', '1') --> ('TABLE', '1'), ('SPOON', '1') --> ('TABLE', '1'), ('FRYINGPAN', '1') --> ('KITCHEN CABINET', '1'), ('FOOD_HAMBURGER', '1') --> ('TABLE', '1'), ('OIL', '1') --> ('KITCHEN CABINET', '1')
+Cook some food
+Turn the stove on, put pan on eye and cook hamburgers, flipping with spatula until done.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[Find] <STOVE> (1)
+[PutBack] <FRYINGPAN> (1) <STOVE> (1)
+[SwitchOn] <STOVE> (1)
+[Find] <OIL> (1)
+[Grab] <OIL> (1)
+[Pour] <OIL> (1) <FRYINGPAN> (1)
+[PutObjBack] <OIL> (1)
+[Walk] <TABLE> (1)
+[Find] <FOOD_HAMBURGER> (1)
+[Grab] <FOOD_HAMBURGER> (1)
+[PutBack] <FOOD_HAMBURGER> (1) <FRYINGPAN> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Grab] <FOOD_HAMBURGER> (1)
+[PutBack] <FOOD_HAMBURGER> (1) <FRYINGPAN> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Grab] <FOOD_HAMBURGER> (1)
+[PutBack] <FOOD_HAMBURGER> (1) <PLATE> (1)
+[SwitchOff] <STOVE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[PutBack] <SPOON> (1) <TABLE> (1)

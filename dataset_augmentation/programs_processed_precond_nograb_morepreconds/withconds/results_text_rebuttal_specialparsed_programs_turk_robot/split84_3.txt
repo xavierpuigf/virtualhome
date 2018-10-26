@@ -1,0 +1,14 @@
+2
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '1') --> ('BEDROOM', '1')
+atreach: ('BED', '1') --> ('CLOTHES_SHIRT', '1'), ('CLOTHES_SHIRT', '1') --> ('CLOTHES_SHIRT', '1')
+Fold laundry
+Lay the shirt flat. Fold one side into the center, then the other. Fold the bottom of the shirt to the top. Repeat.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <CLOTHES_SHIRT> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Find] <BED> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <BED> (1)
+[Fold] <CLOTHES_SHIRT> (1)

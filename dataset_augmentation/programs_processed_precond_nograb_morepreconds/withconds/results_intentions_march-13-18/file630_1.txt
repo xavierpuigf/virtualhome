@@ -1,0 +1,22 @@
+3
+is_off: ('LIGHT', '1') --> 
+location: ('BOOK', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BOOKMARK', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('NIGHTSTAND', '1') --> ('BEDROOM', '1')
+atreach: ('BOOK', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BOOKMARK', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('LIGHT', '1'), ('NIGHTSTAND', '1') --> ('LIGHT', '1')
+Read book
+I go to the bedroom and turn on the light. I lie in bed. I grab my book from the nightstand, and look for the bookmark to check where I last left off. I read for a while. When I'm done, I put the bookmark on the page I stop at and place the book back on the nightstand.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <BED> (1)
+[Lie] <BED> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <BOOKMARK> (1)
+[Grab] <BOOKMARK> (1)
+[Read] <BOOK> (1)
+[PutBack] <BOOKMARK> (1) <BOOK> (1)
+[Find] <NIGHTSTAND> (1)
+[PutBack] <BOOK> (1) <NIGHTSTAND> (1)

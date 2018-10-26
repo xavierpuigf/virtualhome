@@ -1,0 +1,16 @@
+3
+in: ('BOWL', '1') --> ('SINK', '1')
+closed: ('DISHWASHER', '1') --> 
+atreach: ('DISHWASHER', '1') --> ('SINK', '1'), ('BOWL', '1') --> ('SINK', '1')
+Wash dishes with dishwasher
+Walk to Kitchen. Take the dishes from the sink. Apply dish washer, scrub and then wash with water.
+
+
+[Walk] <SINK> (1)
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Find] <DISHWASHER> (1)
+[Scrub] <DISHWASHER> (1)
+[Rinse] <BOWL> (1)
+[Open] <DISHWASHER> (1)
+[Wash] <BOWL> (1)

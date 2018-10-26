@@ -1,0 +1,8 @@
+Listen to music
+walk to the living room or bed room and listen music to comfort free
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)
+[Dance]

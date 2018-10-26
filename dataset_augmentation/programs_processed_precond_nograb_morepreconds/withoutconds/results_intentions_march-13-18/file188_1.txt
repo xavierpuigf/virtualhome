@@ -1,0 +1,14 @@
+Change TV channel
+its time for my favorite show and im going change with the help of remote control and watch
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Touch] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

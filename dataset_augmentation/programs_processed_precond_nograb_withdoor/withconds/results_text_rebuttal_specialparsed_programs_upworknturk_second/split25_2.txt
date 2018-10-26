@@ -1,0 +1,13 @@
+2
+location: ('TELEPHONE', '1') --> ('HOME OFFICE', '1')
+nearby: ('TELEPHONE', '1') --> 
+Return phone calls
+Listen to the answering, write down the messages from the answering machine and return the calls made.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <TELEPHONE> (1)
+[Grab] <TELEPHONE> (1)
+[Dial] <TELEPHONE> (1)
+[Talk]
+[PutObjBack] <TELEPHONE> (1)

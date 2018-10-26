@@ -1,0 +1,29 @@
+5
+inside: ('DOCUMENT', '1') --> ('FOLDER', '1')
+nearby: ('MAN', '2') --> , ('SOFA', '1') --> , ('MAN', '1') --> , ('FOLDER', '1') --> 
+in: ('FOLDER', '1') --> ('DESK', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('MAN', '2') --> ('HOME OFFICE', '1'), ('MAN', '1') --> ('HOME OFFICE', '1'), ('SOFA', '1') --> ('HOME OFFICE', '1'), ('FOLDER', '1') --> ('HOME OFFICE', '1')
+atreach: ('SOFA', '1') --> ('DOCUMENT', '1')
+Meeting
+Meet with clients and discuss upcoming ad strategies.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <MAN> (2)
+[Greet] <MAN> (2)
+[Walk] <DESK> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Open] <FOLDER> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Close] <FOLDER> (1)
+[Read] <DOCUMENT> (1)
+[LookAt] <MAN> (1)
+[Talk] <MAN> (1)
+[LookAt] <MAN> (1)
+[Talk] <MAN> (2)

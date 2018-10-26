@@ -1,0 +1,12 @@
+2
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CAT', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('CAT', '1'), ('CAT', '1') --> ('SOFA', '1')
+Pet cat
+Walk into bedrrom and to the sofa. Sit on the sofa and touch cat.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <CAT> (1)
+[Touch] <CAT> (1)

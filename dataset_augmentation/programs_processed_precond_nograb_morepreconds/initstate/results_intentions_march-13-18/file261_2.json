@@ -1,0 +1,1 @@
+[{"inside": [["GROCERIES", "1"], ["FRIDGE", "1"]]}, {"location": [["FRIDGE", "1"], ["KITCHEN", "1"]]}, {"closed": ["FRIDGE", "1"]}, {"atreach": [["FRIDGE", "1"], ["FRIDGE", "1"]]}, {"atreach": [["GROCERIES", "1"], ["FRIDGE", "1"]]}]

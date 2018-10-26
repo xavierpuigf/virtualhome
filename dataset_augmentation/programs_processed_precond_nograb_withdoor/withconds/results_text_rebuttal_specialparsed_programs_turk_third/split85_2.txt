@@ -1,0 +1,13 @@
+1
+nearby: ('LIVING ROOM', '1') --> 
+Watch TV
+I like to set on my sofa. Turn on the tv. Open my mt.Dew and watch the Beverly Hillbillies. Monday's trough Fridays.
+
+
+[Find] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)
+[PlugIn] <TELEVISION> (1)
+[PlugOut] <TELEVISION> (1)
+[Find] <LIVING ROOM> (1)
+[Crawl] <LIVING ROOM> (1)

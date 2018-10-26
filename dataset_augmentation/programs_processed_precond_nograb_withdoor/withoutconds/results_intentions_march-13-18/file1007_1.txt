@@ -1,0 +1,9 @@
+Wash hands
+walk to bathroom , find cleaning solution , squeeze cleaning solution , wash hands 
+
+
+[Walk] <BATHROOM> (1)
+[Find] <CLEANING SOLUTION> (2)
+[Squeeze] <CLEANING SOLUTION> (2)
+[Find] <HANDS_BOTH> (3)
+[Wash] <HANDS_BOTH> (3)

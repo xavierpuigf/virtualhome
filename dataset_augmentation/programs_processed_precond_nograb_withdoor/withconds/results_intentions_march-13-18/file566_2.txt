@@ -1,0 +1,15 @@
+1
+nearby: ('HAIR', '1') --> 
+Take shower
+GO TO BATHROOM
+
+
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <TOWEL> (1)
+[Find] <BATHROOM CABINET> (1)
+[Open] <BATHROOM CABINET> (1)
+[Find] <SHAMPOO> (1)
+[Uncover] <SHAMPOO> (1)
+[Find] <HAIR> (1)
+[Pour] <SHAMPOO> (1) <HAIR> (1)

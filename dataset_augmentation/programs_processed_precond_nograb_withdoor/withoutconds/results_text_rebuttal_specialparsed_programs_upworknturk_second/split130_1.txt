@@ -1,0 +1,15 @@
+Talk with friends
+Speak with friends
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Find] <WOMAN> (2)
+[Greet] <WOMAN> (2)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[LookAt] <WOMAN> (1)
+[Talk] <WOMAN> (1)
+[LookAt] <WOMAN> (2)
+[Talk] <WOMAN> (2)

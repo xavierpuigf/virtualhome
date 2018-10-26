@@ -1,0 +1,11 @@
+Turn on computer
+Find the power button. Press.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)

@@ -1,0 +1,15 @@
+2
+location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
+in: ('WATER', '1') --> ('SINK', '1')
+Wash hands
+Walk to bathroom. Walk to sink and turn on the water. Grab the soap and wash the hands.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <WATER> (1)
+[TurnTo] <WATER> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[Find] <HANDS_BOTH> (1)
+[Wash] <HANDS_BOTH> (1)

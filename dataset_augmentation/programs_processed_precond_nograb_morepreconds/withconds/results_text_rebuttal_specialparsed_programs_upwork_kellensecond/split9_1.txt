@@ -1,0 +1,19 @@
+3
+in: ('SHOES', '1') --> ('Character', 1)
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('SHOES', '1') --> ('ENTRANCE HALL', '1'), ('GROCERIES', '1') --> ('KITCHEN', '1')
+atreach: ('TABLE', '1') --> ('GROCERIES', '1'), ('GROCERIES', '1') --> ('GROCERIES', '1')
+Carry groceries to kitchen
+Take off shoes, carry groceries to kitchen
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <SHOES> (1)
+[Find] <SHOES> (1)
+[Find] <SHOES> (1)
+[PutOff] <SHOES> (1)
+[Walk] <KITCHEN> (1)
+[Walk] <GROCERIES> (1)
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Find] <TABLE> (1)
+[PutBack] <GROCERIES> (1) <TABLE> (1)

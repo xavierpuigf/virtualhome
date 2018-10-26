@@ -1,0 +1,9 @@
+Go to sleep
+Go to bedroom, lie down on bed and sleep.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <BED> (1)
+[Climb] <BED> (1)
+[Lie] <BED> (1)
+[Sleep]

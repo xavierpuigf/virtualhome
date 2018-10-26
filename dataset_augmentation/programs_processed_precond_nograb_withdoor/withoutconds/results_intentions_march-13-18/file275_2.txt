@@ -1,0 +1,13 @@
+Write an email
+go to the room, sit in the chair, turn on the computer, write my email, send my email
+
+
+[Walk] <BEDROOM> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Write] <MAIL> (1)

@@ -1,0 +1,17 @@
+Wait
+Sit on the couch completely dressed and ready to go.  Periodically look at the time, sighing loudly.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <WALL CLOCK> (1)
+[TurnTo] <WALL CLOCK> (1)
+[LookAt] <WALL CLOCK> (1)
+[Wait]
+[Find] <LEGS_BOTH> (1)
+[Stretch] <LEGS_BOTH> (1)
+[TurnTo] <WALL CLOCK> (1)
+[LookAt] <WALL CLOCK> (1)
+[Wait]

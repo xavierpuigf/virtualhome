@@ -1,0 +1,12 @@
+Listen to music
+Find player and switch on to headphones
+
+
+[StandUp]
+[Walk] <BEDROOM> (1)
+[Walk] <CD PLAYER> (1)
+[Find] <CD PLAYER> (1)
+[Find] <HEADSET> (1)
+[Grab] <HEADSET> (1)
+[PlugIn] <CD PLAYER> (1)
+[SwitchOn] <CD PLAYER> (1)

@@ -1,0 +1,11 @@
+Read book
+I walk to the living room and pick up a book from the coffee table. I find my favorite chair.  I sit in the armchair and open the book.  I read.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[Walk] <COFFEE TABLE> (1)
+[Grab] <BOOK> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Read] <BOOK> (1)

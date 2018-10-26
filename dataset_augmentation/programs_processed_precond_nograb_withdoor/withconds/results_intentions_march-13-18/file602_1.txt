@@ -1,0 +1,20 @@
+2
+inside: ('WATER GLASS', '1') --> ('CUPBOARD', '1')
+location: ('SINK', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
+Drink
+I walk to the kitchen. I open the cupboard and find a glass.  I grab the glass and close the cupboard.  I walk to the sink.  I place the glass in the sink and turn on the water.  When the glass is full, I turn off the water.  I pick up the glass and drink the water.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUPBOARD> (1)
+[Open] <CUPBOARD> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Close] <CUPBOARD> (1)
+[Walk] <SINK> (1)
+[PutBack] <WATER GLASS> (1) <SINK> (1)
+[Pull] <SINK> (1)
+[LookAt] <WATER GLASS> (1)
+[Push] <SINK> (1)
+[Grab] <WATER GLASS> (1)
+[Drink] <WATER GLASS> (1)

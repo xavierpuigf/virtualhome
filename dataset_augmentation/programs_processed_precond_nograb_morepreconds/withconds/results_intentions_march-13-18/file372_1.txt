@@ -1,0 +1,25 @@
+1
+atreach: ('PLATE', '1') --> ('WATER', '1'), ('BOWL', '1') --> ('WATER', '1')
+Wash dishes by hand
+Put plate and bowl in the sink with soap and scrub with a sponge.
+
+
+[Find] <BOWL> (1)
+[Grab] <BOWL> (1)
+[Find] <SINK> (1)
+[PutBack] <BOWL> (1) <SINK> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <SINK> (1)
+[Find] <SPONGE> (1)
+[Grab] <SPONGE> (1)
+[Find] <DISH SOAP> (1)
+[Grab] <DISH SOAP> (1)
+[PutBack] <DISH SOAP> (1) <SINK> (1)
+[Run] <WATER> (1)
+[Grab] <BOWL> (1)
+[Scrub] <BOWL> (1)
+[Rinse] <BOWL> (1)
+[Grab] <PLATE> (1)
+[Scrub] <PLATE> (1)
+[Rinse] <PLATE> (1)

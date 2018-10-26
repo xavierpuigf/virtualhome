@@ -1,0 +1,33 @@
+5
+is_off: ('COMPUTER', '1') --> , ('LIGHT', '1') --> 
+inside: ('MOUSE', '1') --> ('DESK', '1')
+nearby: ('DESK', '1') --> , ('MOUSEPAD', '1') --> 
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('MOUSEPAD', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('LIGHT', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Work
+I need to finish some work on my computer in my home office to meet a deadline for tomorrow.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Find] <KEYBOARD> (1)
+[Grab] <KEYBOARD> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <KEYBOARD> (1) <DESK> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)
+[Find] <MOUSEPAD> (1)
+[PutBack] <MOUSE> (1) <MOUSEPAD> (1)
+[PlugIn] <KEYBOARD> (1)
+[PlugIn] <MOUSE> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <COMPUTER> (1)
+[Type] <KEYBOARD> (1)
+[Grab] <MOUSE> (1)
+[Touch] <MOUSE> (1)
+[LookAt] <COMPUTER> (1)

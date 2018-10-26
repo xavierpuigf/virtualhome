@@ -1,0 +1,11 @@
+Browse internet
+Sit in the desk, switch on the computer and click in the browser application
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)

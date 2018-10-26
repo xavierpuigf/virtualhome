@@ -1,0 +1,13 @@
+2
+location: ('BOOK', '1') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1')
+atreach: ('CHAIR', '1') --> ('CHAIR', '1')
+Read
+I read in my chair at night before going to bed.
+
+
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Walk] <BEDROOM> (1)
+[Walk] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Read] <BOOK> (1)

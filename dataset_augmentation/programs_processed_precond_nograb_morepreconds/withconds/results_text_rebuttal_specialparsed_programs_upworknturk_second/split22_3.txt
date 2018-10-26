@@ -1,0 +1,25 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('MOP', '1') --> ('KITCHEN', '1'), ('FAUCET', '1') --> ('KITCHEN', '1'), ('MOP BUCKET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
+atreach: ('MOP', '1') --> ('SINK', '1'), ('FAUCET', '1') --> ('SINK', '1'), ('MOP BUCKET', '1') --> ('MOP BUCKET', '1')
+Steam mop floor
+Fill the mop bucket with water, get mop and move it along the floor to mop it.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <MOP BUCKET> (1)
+[Find] <MOP BUCKET> (1)
+[Grab] <MOP BUCKET> (1)
+[Pull] <MOP BUCKET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <MOP BUCKET> (1) <SINK> (1)
+[Grab] <MOP BUCKET> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <MOP> (1)
+[Grab] <MOP> (1)
+[Soak] <MOP> (1) <MOP BUCKET> (1)
+[Squeeze] <MOP> (1)
+[PutObjBack] <MOP> (1)

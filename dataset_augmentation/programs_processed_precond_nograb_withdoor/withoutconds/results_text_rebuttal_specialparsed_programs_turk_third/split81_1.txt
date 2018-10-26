@@ -1,0 +1,11 @@
+Put up jacket
+Take off jacket.  Put it on the rack.
+
+
+[Find] <CLOSET> (1)
+[LookAt] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutOff] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

@@ -1,0 +1,16 @@
+Watch TV
+I sit down on the couch, get the tv remote, click the on button, and change the channel to the show i want to watch
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[TurnTo] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[PutObjBack] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

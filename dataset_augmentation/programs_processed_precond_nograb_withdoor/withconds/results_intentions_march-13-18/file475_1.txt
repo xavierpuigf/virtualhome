@@ -1,0 +1,15 @@
+2
+is_off: ('WASHING MACHINE', '1') --> 
+location: ('WASHING MACHINE', '1') --> ('KITCHEN', '1'), ('BASKET FOR CLOTHES', '1') --> ('KITCHEN', '1')
+Wash clothes
+I grab basket for clothes. I walk into the kitchen. I put clothes in washing machine. I turn on washing machine.
+
+
+[Find] <BASKET FOR CLOTHES> (1)
+[Grab] <BASKET FOR CLOTHES> (1)
+[Walk] <KITCHEN> (1)
+[Walk] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <BASKET FOR CLOTHES> (1) <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

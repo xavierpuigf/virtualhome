@@ -1,0 +1,9 @@
+Read magazine
+Grab magazine with both hands. Open magazine and direct to table of contents. Pick an article that sounds interesting. Turn to corresponding page. Read article and enjoy.
+
+
+[Find] <MAGAZINE> (1)
+[TurnTo] <MAGAZINE> (1)
+[PointAt] <MAGAZINE> (1)
+[Grab] <MAGAZINE> (1)
+[Read] <MAGAZINE> (1)

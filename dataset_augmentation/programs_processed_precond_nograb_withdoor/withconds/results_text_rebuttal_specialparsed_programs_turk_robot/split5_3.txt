@@ -1,0 +1,9 @@
+0
+Care for houseplants
+Gather fresh water in a watering pot and moisten all soil in houseplant pots. Trim with clippers all brown leaves. Throw plant debris in compost pile outside.
+
+
+[Find] <WATER> (1)
+[PointAt] <WATER> (1)
+[Drink] <WATER> (1)
+[LookAt] <WATER> (1)

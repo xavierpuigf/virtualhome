@@ -1,0 +1,18 @@
+4
+is_off: ('LAPTOP', '1') --> 
+nearby: ('KEYBOARD', '1') --> , ('COUCH', '1') --> 
+location: ('LAPTOP', '1') --> ('LIVING ROOM', '1'), ('KEYBOARD', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+atreach: ('COUCH', '1') --> ('KEYBOARD', '1')
+Surf internet
+SIT ON COUCH OR CHAIR AND SURF SHOPPING AN SOCIAL MEDIA SITES
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LAPTOP> (1)
+[Grab] <LAPTOP> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[SwitchOn] <LAPTOP> (1)
+[LookAt] <LAPTOP> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

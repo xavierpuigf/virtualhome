@@ -1,0 +1,14 @@
+Go to toilet
+Go to the bathroom, sit on the toilet, relieve yourself, clean with toilet paper, discard toilet paper into trash can, stand up and flush the commode.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOILET> (1)
+[Sit] <TOILET> (1)
+[Find] <TOILET PAPER> (1)
+[Grab] <TOILET PAPER> (1)
+[Break] <TOILET PAPER> (1)
+[Find] <TRASHCAN> (1)
+[PutBack] <TOILET PAPER> (1) <TRASHCAN> (1)
+[StandUp]
+[Flush] <TOILET> (1)

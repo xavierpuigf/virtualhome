@@ -1,0 +1,33 @@
+4
+inside: ('PAPER', '1') --> ('ENVELOPE', '1'), ('PEN', '1') --> ('DESK', '1'), ('ENVELOPE', '1') --> ('DESK', '1')
+nearby: ('DESK', '1') --> 
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('PAPER', '1')
+Write letter
+Sit down in a chair at a desk. Open a drawer and take out paper and a pen. Write a letter. Take out an envelope. Fold letter and place it into the envelope. Seal envelope.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <PAPER> (1)
+[Grab] <PAPER> (1)
+[Find] <DESK> (1)
+[Open] <DESK> (1)
+[PutBack] <PAPER> (1) <DESK> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <PAPER> (1)
+[PutObjBack] <PEN> (1)
+[Fold] <PAPER> (1)
+[Find] <ENVELOPE> (1)
+[Grab] <ENVELOPE> (1)
+[Open] <ENVELOPE> (1)
+[Grab] <PAPER> (1)
+[PutBack] <PAPER> (1) <ENVELOPE> (1)
+[Close] <ENVELOPE> (1)
+[PutBack] <ENVELOPE> (1) <DESK> (1)
+[Grab] <PEN> (1)
+[Write] <ENVELOPE> (1)
+[PutObjBack] <PEN> (1)

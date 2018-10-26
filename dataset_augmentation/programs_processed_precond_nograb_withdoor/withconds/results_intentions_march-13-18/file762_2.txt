@@ -1,0 +1,10 @@
+1
+location: ('SOFA', '1') --> ('LIVING ROOM', '1')
+Relax on sofa
+Walk to the living room. Find the sofa. Walk to the sofa. Lie in the sofa.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <SOFA> (1)
+[Walk] <SOFA> (1)
+[Lie] <SOFA> (1)

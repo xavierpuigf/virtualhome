@@ -1,0 +1,30 @@
+3
+inside: ('GLASS', '1') --> ('DOOR', '1'), ('GLASS', '2') --> ('DOOR', '1')
+location: ('WOMAN', '1') --> ('ENTRANCE HALL', '1'), ('MAN', '1') --> ('ENTRANCE HALL', '1'), ('DOOR', '1') --> ('ENTRANCE HALL', '1')
+nearby: ('WOMAN', '1') --> , ('MAN', '1') --> 
+Entertain
+Invite them in, offer refreshment, talk to people, escort them to the door, close door
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <DOOR> (1)
+[Open] <DOOR> (1)
+[Find] <MAN> (1)
+[LookAt] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <WOMAN> (1)
+[LookAt] <WOMAN> (1)
+[Greet] <WOMAN> (1)
+[Walk] <KITCHEN> (1)
+[Find] <GLASS> (1)
+[Grab] <GLASS> (1)
+[Find] <GLASS> (2)
+[Grab] <GLASS> (2)
+[Dance]
+[Greet] <MAN> (1)
+[Greet] <WOMAN> (1)
+[Dance]
+[Walk] <ENTRANCE HALL> (1)
+[Greet] <MAN> (1)
+[Greet] <WOMAN> (1)
+[Close] <DOOR> (1)

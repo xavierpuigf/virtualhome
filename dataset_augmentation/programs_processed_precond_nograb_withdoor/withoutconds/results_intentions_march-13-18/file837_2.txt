@@ -1,0 +1,23 @@
+Put groceries in Fridge
+I find the groceries and carry them into the kitchen. I place them on the counter and begin to sort them out. I place the vegetables, eggs, cheese, and milk in the fridge.
+
+
+[Find] <GROCERIES> (1)
+[Grab] <GROCERIES> (1)
+[Walk] <KITCHEN> (1)
+[Find] <KITCHEN COUNTER> (1)
+[PutBack] <GROCERIES> (1) <KITCHEN COUNTER> (1)
+[Find] <FOOD_CHEESE> (1)
+[Grab] <FOOD_CHEESE> (1)
+[Find] <FRIDGE> (1)
+[Open] <FRIDGE> (1)
+[PutBack] <FOOD_CHEESE> (1) <FRIDGE> (1)
+[Find] <MILK> (1)
+[Grab] <MILK> (1)
+[PutBack] <MILK> (1) <FRIDGE> (1)
+[Find] <FOOD_VEGETABLE> (1)
+[Grab] <FOOD_VEGETABLE> (1)
+[PutBack] <FOOD_VEGETABLE> (1) <FRIDGE> (1)
+[Find] <FOOD_EGG> (1)
+[Grab] <FOOD_EGG> (1)
+[PutBack] <FOOD_EGG> (1) <FRIDGE> (1)

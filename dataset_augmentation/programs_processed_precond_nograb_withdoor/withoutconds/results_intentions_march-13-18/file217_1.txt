@@ -1,0 +1,16 @@
+Make coffee
+Open the coffee maker and put a filer, grab ground coffee and put it in the coffee maker, then close the coffee maker and switch it on
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFE MAKER> (1)
+[Open] <COFFE MAKER> (1)
+[Find] <COFFEE FILTER> (1)
+[Grab] <COFFEE FILTER> (1)
+[PutBack] <COFFEE FILTER> (1) <COFFE MAKER> (1)
+[Find] <GROUND COFFEE> (1)
+[Grab] <GROUND COFFEE> (1)
+[Find] <GROUND COFFEE> (1)
+[PutBack] <GROUND COFFEE> (1) <COFFE MAKER> (1)
+[Close] <COFFE MAKER> (1)
+[SwitchOn] <COFFE MAKER> (1)

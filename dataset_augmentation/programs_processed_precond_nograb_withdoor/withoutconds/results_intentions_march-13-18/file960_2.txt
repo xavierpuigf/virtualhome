@@ -1,0 +1,11 @@
+Change TV channel
+change tv channel with the remote, then watch the tv
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Touch] <REMOTE CONTROL> (1)
+[Watch] <TELEVISION> (1)

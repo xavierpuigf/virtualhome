@@ -1,0 +1,10 @@
+0
+Prepare breakfast
+Add milk to bowl.  Mix in oatmeal.  Microwave for two minutes.  Get a coffee cup.  Place it under a Keurig machine.  Add a K cup pod, set size, and activate.  Pour orange juice in a glass.  Get out two spoons and some cream and sugar.
+
+
+[Find] <BOWL> (1)
+[PointAt] <BOWL> (1)
+[Wash] <BOWL> (1)
+[Eat] <BOWL> (1)
+[Crawl] <BOWL> (1)

@@ -1,0 +1,12 @@
+1
+location: ('SHOES', '1') --> ('ENTRANCE HALL', '1'), ('DOOR', '1') --> ('ENTRANCE HALL', '1')
+Leave home
+Put on shoes. Put on coat. Open door and exit through it. Lock door behind you.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Find] <SHOES> (1)
+[PutOn] <SHOES> (1)
+[Walk] <DOOR> (1)
+[Open] <DOOR> (1)
+[Close] <DOOR> (1)

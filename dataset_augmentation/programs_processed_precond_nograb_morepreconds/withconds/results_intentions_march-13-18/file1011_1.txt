@@ -1,0 +1,37 @@
+4
+inside: ('NAPKIN', '1') --> ('KITCHEN CABINET', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN CABINET', '1'), ('PLATE', '1') --> ('KITCHEN CABINET', '1'), ('PLACEMAT', '1') --> ('KITCHEN CABINET', '1'), ('SPOON', '1') --> ('KITCHEN CABINET', '1'), ('FORK', '1') --> ('KITCHEN CABINET', '1'), ('KNIFE', '1') --> ('KITCHEN CABINET', '1')
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+closed: ('KITCHEN CABINET', '1') --> 
+atreach: ('NAPKIN', '1') --> ('KITCHEN CABINET', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN CABINET', '1'), ('PLATE', '1') --> ('KITCHEN CABINET', '1'), ('PLACEMAT', '1') --> ('KITCHEN CABINET', '1'), ('SPOON', '1') --> ('KITCHEN CABINET', '1'), ('FORK', '1') --> ('KITCHEN CABINET', '1'), ('KNIFE', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1')
+Set up table
+I walk into the kitchen. I walk to the Kitchen Cabinet and pull out a placemat, plate, drinking glass, napkin, knife, fork, and spoon. I go to the dining room. I put down the placemat. I put the plate, napkin, and drinking glass on the placemat. I put the knife, fork, and spoon on the napkin.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <KITCHEN CABINET> (1)
+[Find] <KITCHEN CABINET> (1)
+[Open] <KITCHEN CABINET> (1)
+[Find] <PLACEMAT> (1)
+[Grab] <PLACEMAT> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[Find] <NAPKIN> (1)
+[Grab] <NAPKIN> (1)
+[Find] <KNIFE> (1)
+[Grab] <KNIFE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Find] <SPOON> (1)
+[Grab] <SPOON> (1)
+[Walk] <DINING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[PutBack] <PLACEMAT> (1) <TABLE> (1)
+[PutBack] <PLATE> (1) <PLACEMAT> (1)
+[PutBack] <DRINKING GLASS> (1) <PLACEMAT> (1)
+[PutBack] <NAPKIN> (1) <PLACEMAT> (1)
+[PutBack] <KNIFE> (1) <PLACEMAT> (1)
+[PutBack] <FORK> (1) <PLACEMAT> (1)
+[PutBack] <SPOON> (1) <PLACEMAT> (1)

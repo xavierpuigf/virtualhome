@@ -1,0 +1,15 @@
+2
+is_off: ('COMPUTER', '1') --> 
+location: ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1'), ('MOUSE', '1') --> ('LIVING ROOM', '1')
+Work
+I walk to the living room. I find the computer and turn it on. I look at the computer screen. I move and click the mouse to select buttons on the screen.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <MOUSE> (1)
+[Push] <MOUSE> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)

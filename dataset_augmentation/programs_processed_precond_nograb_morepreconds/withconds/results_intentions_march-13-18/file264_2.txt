@@ -1,0 +1,17 @@
+2
+location: ('WATER', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1'), ('FACE SOAP', '1') --> ('BATHROOM', '1')
+atreach: ('WATER', '1') --> ('SHOWER', '1'), ('SHOWER', '1') --> ('SHOWER', '1'), ('FACE SOAP', '1') --> ('SHOWER', '1')
+Take shower
+Enter Bathroom. Get in shower. Turn on water. Grab Soap. Put soap on body. Rinse off soap. Turn off shower. Leave the shower.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Find] <WATER> (1)
+[Pull] <WATER> (1)
+[Find] <FACE SOAP> (1)
+[Grab] <FACE SOAP> (1)
+[Rinse] <FACE SOAP> (1)
+[Leave] <SHOWER> (1)

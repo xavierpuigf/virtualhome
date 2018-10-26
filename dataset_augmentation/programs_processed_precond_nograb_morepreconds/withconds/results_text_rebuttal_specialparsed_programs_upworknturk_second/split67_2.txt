@@ -1,0 +1,23 @@
+2
+location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('COMFORTER', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1')
+atreach: ('BLANKET', '1') --> ('BED', '1'), ('COMFORTER', '1') --> ('BED', '1'), ('BED', '1') --> ('BED', '1'), ('PILLOW', '1') --> ('BED', '1'), ('SHEETS', '1') --> ('BED', '1')
+Make bed
+After getting up in the morning, pull covers up and tuck under pillow.  Repeat with the comforter.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BED> (1)
+[TurnTo] <BED> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[Pull] <SHEETS> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Cover] <BED> (1) <BLANKET> (1)
+[Find] <COMFORTER> (1)
+[Grab] <COMFORTER> (1)
+[PutBack] <COMFORTER> (1) <BED> (1)
+[Find] <PILLOW> (1)
+[Grab] <PILLOW> (1)
+[PutBack] <PILLOW> (1) <BED> (1)

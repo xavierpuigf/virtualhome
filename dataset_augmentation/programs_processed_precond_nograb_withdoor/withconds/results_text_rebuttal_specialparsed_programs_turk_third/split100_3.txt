@@ -1,0 +1,36 @@
+4
+inside: ('BROOM', '1') --> ('CLOSET', '1'), ('DIRT', '1') --> ('CLOSET', '1'), ('DUSTPAN', '1') --> ('CLOSET', '1')
+in: ('DUSTPAN', '1') --> ('CLOSET', '1')
+location: ('GARBAGE CAN', '1') --> ('KITCHEN', '1'), ('CLOSET', '1') --> ('KITCHEN', '1')
+nearby: 
+Sweep floor
+Get a broom. Go to kitchen. Hold broom handle with both hands. Use hands to create a side to side sweeping motion with the broom, so that the hands/handle stay in the same place, but the bottom covers 1-3 feet across. Use this action across the entire kitchen floor, making sure to collect debris in pile(s). Once all areas have been swept, use a dustpan to collect debris. Hold dustpan with one side at an angle so the side opposite the hand is touching the floor, but the handle is slightly elevated off floor. Use other hand to sweep debris onto the dustpan. Dump debris from dustpan into garbage. Return dustpan and broom to proper place.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <BROOM> (1)
+[Grab] <BROOM> (1)
+[Pull] <BROOM> (1)
+[Push] <BROOM> (1)
+[Pull] <BROOM> (1)
+[Push] <BROOM> (1)
+[Pull] <BROOM> (1)
+[Push] <BROOM> (1)
+[Walk] <CLOSET> (1)
+[Find] <DUSTPAN> (1)
+[Grab] <DUSTPAN> (1)
+[Pull] <BROOM> (1)
+[Push] <BROOM> (1)
+[Find] <DIRT> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <DUSTPAN> (1)
+[Walk] <GARBAGE CAN> (1)
+[Shake] <DUSTPAN> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <GARBAGE CAN> (1)
+[Walk] <CLOSET> (1)
+[PutBack] <BROOM> (1) <CLOSET> (1)
+[PutBack] <DUSTPAN> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)

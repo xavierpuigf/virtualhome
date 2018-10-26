@@ -1,0 +1,24 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('COMPUTER', '1') --> , ('CHAIR', '1') --> , ('DOCUMENT', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('NOTE PAD', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('PEN', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Work
+Work on take home project from work
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <DOCUMENT> (1)
+[Grab] <DOCUMENT> (1)
+[Read] <DOCUMENT> (1)
+[Find] <NOTE PAD> (1)
+[Grab] <NOTE PAD> (1)
+[PutBack] <NOTE PAD> (1) <CHAIR> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <NOTE PAD> (1)

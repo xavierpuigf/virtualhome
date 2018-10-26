@@ -1,0 +1,23 @@
+3
+is_off: ('FAUCET', '1') --> 
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('BATHROOM COUNTER', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH HOLDER', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+in: ('FAUCET', '1') --> ('BATHROOM COUNTER', '1'), ('TOOTHBRUSH', '1') --> ('TOOTHBRUSH HOLDER', '1')
+Brush teeth
+Walk to the bathroom. Find bathroom counter. Find the faucet. Switch on the faucet. Find the toothbrush holder. Find the toothbrush. Grab the toothbrush. Find the toothpaste. Grab the toothpaste.Squeeze the toothpaste. Wash teeth. Switch off the faucet.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <BATHROOM COUNTER> (1)
+[Walk] <BATHROOM COUNTER> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Squeeze] <TOOTH PASTE> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[Rinse] <TEETH> (1)
+[SwitchOff] <FAUCET> (1)

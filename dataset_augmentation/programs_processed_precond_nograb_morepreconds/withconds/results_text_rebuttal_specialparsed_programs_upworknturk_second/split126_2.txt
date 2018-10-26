@@ -1,0 +1,16 @@
+3
+in: ('SHOES', '1') --> ('Character', 1)
+location: ('FEET_BOTH', '1') --> ('ENTRANCE HALL', '1'), ('CARPET', '1') --> ('ENTRANCE HALL', '1'), ('SHOES', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('FEET_BOTH', '1') --> ('CARPET', '1')
+Wipe feet
+I wipe my feet to make sure they are clean
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <SHOES> (1)
+[Find] <SHOES> (1)
+[Find] <SHOES> (1)
+[PutOff] <SHOES> (1)
+[Walk] <CARPET> (1)
+[Find] <FEET_BOTH> (1)
+[Wipe] <FEET_BOTH> (1)

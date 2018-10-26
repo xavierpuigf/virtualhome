@@ -1,0 +1,10 @@
+2
+is_off: ('FLOOR LAMP', '1') --> 
+location: ('FLOOR LAMP', '1') --> ('BEDROOM', '1')
+Turn on light
+Turning on lights
+
+
+[Walk] <BEDROOM> (1)
+[Find] <FLOOR LAMP> (1)
+[SwitchOn] <FLOOR LAMP> (1)

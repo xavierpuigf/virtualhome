@@ -1,0 +1,29 @@
+2
+location: ('NAPKIN', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('PLACEMAT', '1') --> ('KITCHEN', '1'), ('PLATE', '2') --> ('KITCHEN', '1'), ('PLACEMAT', '2') --> ('KITCHEN', '1'), ('CHAIR', '1') --> ('KITCHEN', '1'), ('CHAIR', '2') --> ('KITCHEN', '1'), ('NAPKIN', '2') --> ('KITCHEN', '1')
+nearby: ('NAPKIN', '1') --> , ('PLATE', '1') --> , ('PLACEMAT', '1') --> , ('PLATE', '2') --> , ('PLACEMAT', '2') --> , ('CHAIR', '1') --> ('TABLE', '1'), ('NAPKIN', '2') --> 
+Set up table
+Place dishes, napkins, and place markers at each seat.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <TABLE> (1)
+[Walk] <CHAIR> (1)
+[Find] <PLACEMAT> (1)
+[Grab] <PLACEMAT> (1)
+[PutBack] <PLACEMAT> (1) <TABLE> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[PutBack] <PLATE> (1) <TABLE> (1)
+[Find] <NAPKIN> (1)
+[Grab] <NAPKIN> (1)
+[PutBack] <NAPKIN> (1) <TABLE> (1)
+[Walk] <CHAIR> (2)
+[Find] <PLACEMAT> (2)
+[Grab] <PLACEMAT> (2)
+[PutBack] <PLACEMAT> (2) <TABLE> (1)
+[Find] <PLATE> (2)
+[Grab] <PLATE> (2)
+[PutBack] <PLATE> (2) <TABLE> (1)
+[Find] <NAPKIN> (2)
+[Grab] <NAPKIN> (2)
+[PutBack] <NAPKIN> (2) <TABLE> (1)

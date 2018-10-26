@@ -1,0 +1,12 @@
+Read newspaper
+Sit on chair. Unfold newspaper. Browse articles and begin reading.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <NEWSPAPER> (1)
+[Grab] <NEWSPAPER> (1)
+[Unfold] <NEWSPAPER> (1)
+[LookAt] <NEWSPAPER> (1)
+[Read] <NEWSPAPER> (1)

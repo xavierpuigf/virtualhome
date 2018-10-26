@@ -5,7 +5,7 @@ import os
 import copy
 import numpy as np
 from environment import EnvironmentGraph, Property, Room
-from execution import SitExecutor
+from execution import SitExecutor, LieExecutor
 import ipdb
 
 random.seed(123)
@@ -85,10 +85,11 @@ class BinaryVariable(object):
 
 class graph_dict_helper(object):
 
-    def __init__(self, properties_data, object_placing, object_states):
+    def __init__(self, properties_data, object_placing, object_states, max_nodes):
         self.properties_data = properties_data
         self.object_placing = object_placing
         self.object_states = object_states
+        self.max_nodes = max_nodes
 
         self.open_closed = BinaryVariable(["OPEN", "CLOSED"], default="CLOSED")
         self.on_off = BinaryVariable(["ON", "OFF"], default="OFF")
@@ -99,12 +100,12 @@ class graph_dict_helper(object):
         self.possible_rooms = ['home_office', 'kitchen', 'living_room', 'bathroom', 'dining_room', 'bedroom', 'kids_bedroom', 'entrance_hall']
         
         self.equivalent_rooms = {
-            "kitchen": ["dining_room"], 
-            "dining_room": ["kitchen"], 
-            "entrance_hall": ["living_room"], 
-            "home_office": ["living_room"], 
-            "living_room": ["home_office"],
-            "kids_bedroom": ["bedroom"]
+            "kitchen": "dining_room", 
+            "dining_room": "kitchen", 
+            "entrance_hall": "living_room", 
+            "home_office": "living_room", 
+            "living_room": "home_office",
+            "kids_bedroom": "bedroom"
         }
 
         # precondition to simulator
@@ -151,7 +152,7 @@ class graph_dict_helper(object):
         self.script_objects_id = 1000
         self.random_objects_id = 2000
 
-    def set_to_default_state(self, graph_dict, id_checker):
+    def set_to_default_state(self, graph_dict, first_room, id_checker):
         
         open_closed = self.open_closed
         on_off = self.on_off
@@ -173,15 +174,13 @@ class graph_dict_helper(object):
                     on_off.set_to_default_state(node)
                 clean_dirty.set_to_default_state(node)
 
-                # character is not sitting, lying, holding, not close to anything
                 if node["class_name"] == 'character':
-                    # character is not inside anything 
+                    # character is not sitting, lying, holding, not close to anything
                     graph_dict["edges"] = [e for e in filter(lambda e: e["from_id"] != character_id and e["to_id"] != character_id, graph_dict["edges"])]
 
                     # set the character inside the pre-specified room
-                    default_room_id = [i["id"] for i in filter(lambda v: v["class_name"] == 'living_room', graph_dict["nodes"])][0]
-                    graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": character_id, "to_id": default_room_id})
-
+                    first_room_id = [i["id"] for i in filter(lambda v: v['class_name'] == first_room, graph_dict["nodes"])][0]
+                    graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": character_id, "to_id": first_room_id})
                     node["states"] = []
 
                 if "light" in node["class_name"]:
@@ -204,115 +203,142 @@ class graph_dict_helper(object):
                 "class_name": obj
             })
 
-    def add_missing_object_from_script(self, script, graph_dict):
-        
-        available_rooms = [i['class_name'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
-        available_rooms_id = [i['id'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
+    def _random_pick_a_room_with_objects_name_in_script(self, available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict):
 
+        # Room is not specified in this program, assign one to it
+        hist = np.zeros(len(available_rooms_in_graph_id))
+        for obj in objects_in_script:
+            obj_name = obj[0]
+            if obj_name == 'character':
+                continue
+            for node in available_nodes:
+                if node['class_name'] == obj_name:
+                    edges = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v['to_id'] in available_rooms_in_graph_id, graph_dict["edges"])]
+                        
+                    if len(edges) > 0:
+                        for edge in edges:
+                            dest_id = edge['to_id']
+                            idx = available_rooms_in_graph_id.index(dest_id)
+                            hist[idx] += 1
+
+        if hist.std() < 1e-5:
+            room_name = random.choice(available_rooms_in_graph)
+        else:
+            idx = np.argmax(hist)
+            room_name = available_rooms_in_graph[idx]
+
+        return room_name
+
+    def _any_room_except(self, first_room, available_rooms_in_graph):
+        available_rooms = copy.deepcopy(available_rooms_in_graph)
+        available_rooms.remove(first_room)
+        return random.choice(available_rooms)
+
+    def add_missing_object_from_script(self, script, precond, graph_dict):
+        
         equivalent_rooms = self.equivalent_rooms
         possible_rooms = self.possible_rooms
 
-        room_mapping = {}
-        for room in possible_rooms:
-            if room not in available_rooms:
-                assert room in equivalent_rooms, "Not pre-specified mapping for room: {}".format(room)
-                room_mapping[room] = random.choice(equivalent_rooms[room])
-
-
-        character_id = [i for i in filter(lambda v: v['class_name'] == 'character', graph_dict["nodes"])][0]["id"]
-        objects_in_script = {('character', 1): character_id}
-        room_name = None
-        for script_line in script:
-            for parameter in script_line.parameters:
-                # room mapping
-                if parameter.name in room_mapping:
-                    parameter.name = room_mapping[parameter.name]
-
-                if parameter.name in available_rooms:
-                    room_name = parameter.name
-                    
-                name = parameter.name
-                if name in possible_rooms and name not in available_rooms:
-                    print("There is no {} in the environment".format(name))
-                    return None, False
-                if (parameter.name, parameter.instance) not in objects_in_script:
-                    objects_in_script[(parameter.name, parameter.instance)] = parameter.instance
-
+        available_rooms_in_graph = [i['class_name'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
+        available_rooms_in_graph_id = [i['id'] for i in filter(lambda v: v["category"] == 'Rooms', graph_dict['nodes'])]
 
         available_nodes = copy.deepcopy(graph_dict['nodes'])
         available_name = list(set([node['class_name'] for node in available_nodes]))
 
-        if room_name == None:
-            # Room is not specified in this program, assign one to it
-            hist = np.zeros(len(available_rooms_id))
-            for obj in objects_in_script:
-                obj_name = obj[0]
-                if obj_name == 'character':
-                    continue
-                for node in available_nodes:
-                    if node['class_name'] == obj_name:
-                        edges = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v['to_id'] in available_rooms_id, graph_dict["edges"])]
-                        
-                        if len(edges) > 0:
-                            for edge in edges:
-                                dest_id = edge['to_id']
-                                idx = available_rooms_id.index(dest_id)
-                                hist[idx] += 1
-
-            if hist.std() < 1e-5:
-                # all equal
-                room_name = random.choice(available_rooms)
-                #print("Set a random_room")
+        # create room mapping
+        room_mapping = {}
+        for room in possible_rooms:
+            if room not in available_rooms_in_graph:
+                assert room in equivalent_rooms, "Not pre-specified mapping for room: {}".format(room)
+                room_mapping[room] = equivalent_rooms[room]
             else:
-                idx = np.argmax(hist)
-                room_name = available_rooms[idx]
-                #print("Pick room: {}".format(room_name))
+                room_mapping[room] = room
+        
+        # use room mapping to change the precond (in-place opetation)
+        for precond_i in precond:
+            if 'location' in precond_i:
+                room = precond_i['location'][1][0] 
+                precond_i['location'][1][0] = room_mapping[room]
 
-        room_id = [i["id"] for i in filter(lambda v: v['class_name'] == room_name, graph_dict["nodes"])][0]
+        location_precond = {tuple(i['location'][0]): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
+        rooms_in_precond = list(set([i for i in location_precond.values()]))
+
+        # initialize the `objects_in_script`
+        character_id = [i for i in filter(lambda v: v['class_name'] == 'character', graph_dict["nodes"])][0]["id"]
+        objects_in_script = {('character', 1): character_id}
+        
+        first_room = None
+        for script_line in script:
+            for parameter in script_line.parameters:
+
+                if parameter.name in possible_rooms:
+                    parameter.name = room_mapping[parameter.name]
+                    if first_room is None:
+                        first_room = parameter.name
+                    
+                if (parameter.name, parameter.instance) not in objects_in_script:
+                    objects_in_script[(parameter.name, parameter.instance)] = None
+
+        # pick room is not specified
+        if first_room == None:
+            assert len(rooms_in_precond) == 0
+            first_room = self._random_pick_a_room_with_objects_name_in_script(available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict)
+        else:
+            first_room = self._any_room_except(first_room, available_rooms_in_graph)
+
 
         for obj in objects_in_script.keys():
             if obj[0] == 'character':
-                pass
+                continue
+
+            room_obj = location_precond[obj] if obj in location_precond else first_room
+            room_id = [i["id"] for i in filter(lambda v: v['class_name'] == room_obj, graph_dict["nodes"])][0]
+
+            if obj[0] in possible_rooms:
+                id_to_be_assigned = [i["id"] for i in filter(lambda v: v["class_name"] == obj[0], graph_dict["nodes"])]
+                objects_in_script[obj] = id_to_be_assigned[0]
             elif obj[0] in available_name:
                 added = False
+                possible_matched_nodes = [i for i in filter(lambda v: v['class_name'] == obj[0], available_nodes)]
                 # existing nodes
-                for node in available_nodes:
-                    if node['class_name'] == obj[0]:
-                        obj_in_room = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v['to_id'] == room_id, graph_dict["edges"])]
-                        if obj[0] not in available_rooms and len(obj_in_room) == 0:
-                            continue
-                        else:
-                            objects_in_script[obj] = node['id']
-                            available_nodes.remove(node)
-                            added = True
-                            break
+                for node in possible_matched_nodes:
+                    obj_in_room = [i for i in filter(lambda v: v['relation_type'] == 'INSIDE' and v['from_id'] == node['id'] and v["to_id"] == room_id, graph_dict["edges"])]
+                    if len(obj_in_room) == 0:
+                        continue
+                    else:
+                        objects_in_script[obj] = node['id']
+                        available_nodes.remove(node)
+                        added = True
+                        break
+
                 if not added:
-                    # add edges
-                    ipdb.set_trace()
-                    graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
+                    # add node
                     node_with_same_class_name = [node for node in filter(lambda v: v["class_name"] == obj[0], graph_dict["nodes"])]
                     category = node_with_same_class_name[0]['category']
                     self._add_missing_node(graph_dict, self.script_objects_id, obj[0], category)
                     objects_in_script[obj] = self.script_objects_id
+                    # add edges
+                    graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
                     self.script_objects_id += 1
             else:
                 # add missing nodes
-                graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
                 self._add_missing_node(graph_dict, self.script_objects_id, obj[0], 'placable_objects')
                 objects_in_script[obj] = self.script_objects_id
+                # add edges
+                graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.script_objects_id, "to_id": room_id})
                 self.script_objects_id += 1
 
         # change the id in script
         for script_line in script:
             for parameter in script_line.parameters:
-                if parameter.name == 'kitchen':
-                    parameter.name = 'dining_room'
-
                 parameter.instance = objects_in_script[(parameter.name, parameter.instance)]
                 
-        return objects_in_script, room_mapping
+        return objects_in_script, first_room
 
-    def prepare_from_precondition(self, precond, objects_in_script, room_mapping, graph_dict):
+    def prepare_from_precondition(self, precond, objects_in_script, graph_dict):
+
+        object_placing = self.object_placing
+        objects_to_place = list(object_placing.keys())
 
         relation_script_precond_simulator = self.relation_script_precond_simulator
         states_script_precond_simulator = self.states_script_precond_simulator
@@ -323,17 +349,14 @@ class graph_dict_helper(object):
 
         for p in precond:
             for k, v in p.items():
+                if k == 'location':
+                    # handle when adding missing scripts
+                    continue
                 if k in relation_script_precond_simulator:
                     src_name, src_id = v[0]
                     tgt_name, tgt_id = v[1]
                     src_id = int(src_id)
                     tgt_id = int(tgt_id)
-                    # room mapping
-                    if tgt_name.lower() in room_mapping:
-                        tgt_name = room_mapping[tgt_name.lower()]
-
-                    if k == 'location':
-                        assert Room.has_value(tgt_name)
 
                     src_id = objects_in_script[(src_name.lower().replace(' ', '_'), src_id)]
                     tgt_id = objects_in_script[(tgt_name.lower().replace(' ', '_'), tgt_id)]
@@ -341,7 +364,6 @@ class graph_dict_helper(object):
                     graph_dict['edges'].append({'relation_type': relation_script_precond_simulator[k], 'from_id': src_id, 'to_id': tgt_id})
                     if k == 'atreach':
                         graph_dict['edges'].append({'relation_type': relation_script_precond_simulator[k], 'from_id': tgt_id, 'to_id': src_id})
-                    
                 elif k in states_script_precond_simulator:
                     obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]
                     for node in graph_dict['nodes']:
@@ -358,6 +380,15 @@ class graph_dict_helper(object):
                                 if "SITTING" not in node["states"]: node["states"].append("SITTING")
                             elif k == 'lying':
                                 if "LYING" not in node["states"]: node["states"].append("LYING")
+                            break
+                elif k in ["occupied", "free"]:
+                    obj_id = objects_in_script[(v[0].lower().replace(' ', '_'), int(v[1]))]
+                    for node in graph_dict['nodes']:
+                        if node['id'] == obj_id:
+                            if k == 'free':
+                                self._change_to_totally_free(node, graph_dict)
+                            elif k == 'occupied':
+                                self._change_to_occupied(node, graph_dict, objects_to_place)
                             break
 
     def add_random_objs_graph_dict(self, graph_dict, n):
@@ -385,79 +416,100 @@ class graph_dict_helper(object):
                     self._add_missing_node(graph_dict, self.random_objects_id, src_name, "placable_objects")
                     graph_dict["edges"].append({'relation_type': "INSIDE", "from_id": self.random_objects_id, "to_id": random.choice(rooms_id)})
                     graph_dict["edges"].append({'relation_type': relation_placing_simulator[tgt_name["relation"].lower()], "from_id": self.random_objects_id, "to_id": tgt_id})
+                    graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": self.random_objects_id, "to_id": tgt_id})
+                    graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": tgt_id, "to_id": self.random_objects_id})
                     self.random_objects_id += 1
                     n -= 1
                     break
 
-    def random_change_object_state(self, objects_in_script, graph_dict):
+    def random_change_object_state(self, objects_in_script, graph_dict, id_checker):
 
         open_closed = self.open_closed
         on_off = self.on_off
         clean_dirty = self.clean_dirty
         plugged_in_out = self.plugged_in_out
-        object_placing = self.object_placing
         object_states = self.object_states
-        objects_to_place = list(object_placing.keys())
         states_mapping = self.states_mapping
 
-        object_id_in_program = [i for i in objects_in_script.values()]
         available_states = ['dirty', 'clean', 'open', 'closed', 'free', 'occupied', 'plugged', 'unplugged', 'on', 'off']
         for node in graph_dict["nodes"]:
-            if node["id"] in object_id_in_program:
-                continue
+            if id_checker(node["id"]):
+                if node["class_name"] in object_states:
+                    possible_states = object_states[node["class_name"]]
+                    possible_states = [i for i in filter(lambda v: v in available_states, possible_states)]
+                    if len(possible_states) == 0:
+                        continue
 
-            if node["class_name"] in object_states:
-                possible_states = object_states[node["class_name"]]
-                possible_states = [i for i in filter(lambda v: v in available_states, possible_states)]
-                if len(possible_states) == 0:
-                    continue
+                    state = random.choice(possible_states)
+                    if state in ['free', 'occupied']:
+                        # implemeted with `add_random_objs_graph_dict`
+                        pass
+                    else:
+                        state = states_mapping[state]
+                        if state in ['dirty', 'clean']:
+                            clean_dirty.sample_state(node)
+                        elif state in ['on', 'off']:
+                            on_off.sample_state(node)
+                        elif state in ['open', 'closed']:
+                            open_closed.sample_state(node)
+                        elif state in ['plugged_in', 'plugged_out']:
+                            plugged_in_out.sample_state(node)
 
-                state = random.choice(possible_states)
-                if state in ['free', 'occupied']:
-                    if node["class_name"] in SitExecutor._MAX_OCCUPANCIES:
-                        max_occupancy = SitExecutor._MAX_OCCUPANCIES[node["class_name"]]
-                        occupied_nodes = [node for node in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
-                        current_state = 'free' if len(occupied_nodes) < max_occupancy else "occupied"
-                        if current_state != state:
-                            if state == 'occupied':
-                                number_objects_to_add = max_occupancy - len(occupied_nodes)
-                                self._change_to_occupied(node, graph_dict, number_objects_to_add, objects_to_place)
-                            else:
-                                self._change_to_totally_free(node, graph_dict)
-                else:
-                    state = states_mapping[state]
-                    if state in ['dirty', 'clean']:
-                        clean_dirty.sample_state(node)
-                    elif state in ['on', 'off']:
-                        on_off.sample_state(node)
-                    elif state in ['open', 'closed']:
-                        open_closed.sample_state(node)
-                    elif state in ['plugged_in', 'plugged_out']:
-                        plugged_in_out.sample_state(node)
+    def _remove_one_random_nodes(self, graph_dict):
+        start_id = 2000
+        random_nodes_ids = [node["id"] for node in filter(lambda v: v["id"] >= start_id, graph_dict["nodes"])]
+        
+        if len(random_nodes_ids) != 0:
+            remove_id = np.min(random_nodes_ids)
+            graph_dict["nodes"] = [node for node in filter(lambda v: v["id"] != remove_id, graph_dict["nodes"])]
+            graph_dict["edges"] = [edge for edge in filter(lambda v: v["from_id"] != remove_id and v["to_id"] != remove_id, graph_dict["edges"])]
 
-    def _change_to_occupied(self, node, graph_dict, number_objects_to_add, objects_to_place):
+    def _change_to_occupied(self, node, graph_dict, objects_to_place):
 
-        object_placing = self.object_placing
-        random.shuffle(objects_to_place)
-                                    
-        for src_name in objects_to_place:
-            tgt_names = object_placing[src_name]
-            if node["class_name"] in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
-                self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
-                graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
-                self.random_objects_id += 1
-                number_objects_to_add -= 0
-                if number_objects_to_add <= 0:
-                    break
+        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES or node["class_name"] in LieExecutor._MAX_OCCUPANCIES:
+            name = node["class_name"]
+            max_occupancy = SitExecutor._MAX_OCCUPANCIES[name] if name in SitExecutor._MAX_OCCUPANCIES else LieExecutor._MAX_OCCUPANCIES[name]
+            occupied_edges = [_edge for _edge in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
+            current_state = 'free' if len(occupied_edges) < max(max_occupancy-1, 1) else "occupied"
+
+            if current_state != "occupied":
+                number_objects_to_add = max_occupancy - len(occupied_edges)
+                
+                object_placing = self.object_placing
+                random.shuffle(objects_to_place)
+
+                for src_name in objects_to_place:
+                    tgt_names = object_placing[src_name]
+                    if name in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
+                        self._remove_one_random_nodes(graph_dict)
+                        self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
+                        graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
+                        graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": self.random_objects_id, "to_id": node["id"]})
+                        graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": node["id"], "to_id": self.random_objects_id})
+                        self.random_objects_id += 1
+                        number_objects_to_add -= 0
+                        if number_objects_to_add <= 0:
+                            break
 
     def _change_to_totally_free(self, node, graph_dict):
-        removed_edges = [edge for edge in filter(lambda v: v["relation_type"] == 'ON' and v["to_id"] == node["id"], graph_dict["edges"])]
-        remove_object_id = [edge["from_id"] for edge in removed_edges]
 
-        for edge in removed_edges:
-            graph_dict["edges"].remove(edge)
-                                
-        floor_id = [node["id"] for node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
-        for obj_id in remove_object_id:
-            to_id = random.choice(floor_id)
-            graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
+        if node["class_name"] in SitExecutor._MAX_OCCUPANCIES or node["class_name"] in LieExecutor._MAX_OCCUPANCIES:
+
+            occupied_edges = [_edge for _edge in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == node["id"] , graph_dict["edges"])]
+
+            occupied_nodes_id = [_edge["from_id"] for _edge in occupied_edges]
+            removed_edges = []
+
+            for occupied_node_id in occupied_nodes_id:
+                removed_edges += [edge for edge in filter(lambda v: v["from_id"] == occupied_node_id and v["to_id"] == node["id"], graph_dict["edges"])]
+                removed_edges += [edge for edge in filter(lambda v: v["from_id"] == node["id"] and v["to_id"] == occupied_node_id, graph_dict["edges"])]
+
+            for edge in removed_edges:
+                graph_dict["edges"].remove(edge)
+                                    
+            floor_id = [_node["id"] for _node in filter(lambda v: v["class_name"] == 'floor', graph_dict["nodes"])]
+            for obj_id in occupied_nodes_id:
+                to_id = random.choice(floor_id)
+                graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
+                graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": obj_id, "to_id": to_id})
+                graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": to_id, "to_id": obj_id})

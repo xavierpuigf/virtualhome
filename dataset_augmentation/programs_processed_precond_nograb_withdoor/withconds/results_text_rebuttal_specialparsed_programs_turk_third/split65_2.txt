@@ -1,0 +1,12 @@
+2
+location: ('HANGER', '1') --> ('BEDROOM', '1'), ('CLOTHES_JACKET', '1') --> ('BEDROOM', '1')
+nearby: ('HANGER', '1') --> 
+Hang up jacket
+Upon entering, remove coat and utilize coatrack/hook to store coat by neatly hanging coat on hook.
+
+
+[Walk] <BEDROOM> (1)
+[PutOff] <CLOTHES_JACKET> (1)
+[Grab] <CLOTHES_JACKET> (1)
+[Find] <HANGER> (1)
+[PutBack] <CLOTHES_JACKET> (1) <HANGER> (1)

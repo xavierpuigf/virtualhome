@@ -1,0 +1,9 @@
+0
+Come in and leave home
+When I leave. I get my shoes, walk in and out.
+
+
+[Find] <SHOES> (1)
+[Grab] <SHOES> (1)
+[PutOn] <SHOES> (1)
+[Walk] <ENTRANCE HALL> (1)

@@ -1,0 +1,17 @@
+Feed me
+Take fork. Dig fork into food. Place fork full of food into your mouth.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <FOOD_FOOD> (1)
+[Grab] <FOOD_FOOD> (1)
+[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
+[Find] <FOOD_FOOD> (2)
+[Grab] <FOOD_FOOD> (2)
+[PutBack] <FOOD_FOOD> (2) <PLATE> (1)
+[Find] <FORK> (1)
+[Grab] <FORK> (1)
+[Eat] <PLATE> (1)
+[Eat] <PLATE> (1)

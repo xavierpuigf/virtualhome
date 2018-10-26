@@ -1,0 +1,16 @@
+Drink
+Sit down on a couch and enjoy a cup of coffee
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFEE CUP> (1)
+[Grab] <COFFEE CUP> (1)
+[Walk] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[Find] <COFFEE> (1)
+[Pour] <COFFEE> (1) <COFFEE CUP> (1)
+[PutObjBack] <COFFEE POT> (1)
+[Walk] <LIVING ROOM> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Drink] <COFFEE CUP> (1)

@@ -1,0 +1,11 @@
+Drink
+drink water from a cup of water
+
+
+[Walk] <KITCHEN> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Run] <SINK> (1)
+[Pull] <SINK> (1)
+[Push] <SINK> (1)
+[Drink] <CUP> (1)

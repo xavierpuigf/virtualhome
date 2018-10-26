@@ -1,0 +1,1 @@
+[{"location": [["COIN", "1"], ["BEDROOM", "1"]]}, {"location": [["CUP", "1"], ["BEDROOM", "1"]]}, {"location": [["COIN", "3"], ["BEDROOM", "1"]]}, {"location": [["DRESSER", "1"], ["BEDROOM", "1"]]}, {"location": [["COIN", "2"], ["BEDROOM", "1"]]}, {"in": [["COIN", "1"], ["DRESSER", "1"]]}, {"in": [["COIN", "3"], ["DRESSER", "1"]]}, {"in": [["COIN", "2"], ["DRESSER", "1"]]}]

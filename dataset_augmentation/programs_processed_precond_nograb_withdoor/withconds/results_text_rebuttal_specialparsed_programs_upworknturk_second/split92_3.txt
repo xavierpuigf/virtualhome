@@ -1,0 +1,18 @@
+2
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('CELLPHONE', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+Talk on phone
+Sit at the desk and talk on the phone
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <CELLPHONE> (1)
+[Grab] <CELLPHONE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[LookAt] <CELLPHONE> (1)
+[Touch] <CELLPHONE> (1)
+[Call] <CELLPHONE> (1)
+[Talk]

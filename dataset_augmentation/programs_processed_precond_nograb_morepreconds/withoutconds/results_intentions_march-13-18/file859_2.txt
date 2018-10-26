@@ -1,0 +1,17 @@
+Go to toilet
+walk to bathroom, look at the toilet, open the toilet, grab the pant, pull the toilet paper after finished, cut the paper as per our required, flush the toilet, close the toilet
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <TOILET> (1)
+[Find] <TOILET> (1)
+[TurnTo] <TOILET> (1)
+[LookAt] <TOILET> (1)
+[Open] <TOILET> (1)
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Find] <TOILET PAPER> (1)
+[Pull] <TOILET PAPER> (1)
+[Cut] <TOILET PAPER> (1)
+[Flush] <TOILET> (1)
+[Close] <TOILET> (1)

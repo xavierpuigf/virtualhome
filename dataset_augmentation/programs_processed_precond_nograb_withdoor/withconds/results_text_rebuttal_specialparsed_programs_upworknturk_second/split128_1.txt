@@ -1,0 +1,31 @@
+4
+is_off: ('VACUUM CLEANER', '1') --> 
+inside: ('REMOTE CONTROL', '1') --> ('CABINET', '1'), ('TOY', '1') --> ('CABINET', '1'), ('VACUUM CLEANER', '1') --> ('CABINET', '1')
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('FLOOR', '1') --> ('LIVING ROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1')
+nearby: ('BOOK', '1') --> , ('FLOOR', '1') --> , ('CABINET', '1') --> 
+Vacuum
+Pick up anything on the floor that would damage the vacuum or is too big to be sucked up by the vacuum.  Vacuum the floor.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <BOOK> (1)
+[Grab] <BOOK> (1)
+[Find] <CABINET> (1)
+[Open] <CABINET> (1)
+[PutBack] <BOOK> (1) <CABINET> (1)
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[PutBack] <REMOTE CONTROL> (1) <CABINET> (1)
+[Find] <TOY> (1)
+[Grab] <TOY> (1)
+[PutBack] <TOY> (1) <CABINET> (1)
+[Find] <VACUUM CLEANER> (1)
+[Grab] <VACUUM CLEANER> (1)
+[Walk] <ELECTRICAL OUTLET> (1)
+[PlugIn] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Find] <FLOOR> (1)
+[Vacuum] <FLOOR> (1)
+[SwitchOff] <VACUUM CLEANER> (1)
+[PlugOut] <VACUUM CLEANER> (1)
+[PutObjBack] <VACUUM CLEANER> (1)

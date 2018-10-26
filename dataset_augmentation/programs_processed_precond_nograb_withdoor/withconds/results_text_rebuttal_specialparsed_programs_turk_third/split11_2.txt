@@ -1,0 +1,13 @@
+1
+nearby: ('CHILD', '1') --> 
+Wake kids up
+Get the children up and ready for the day
+
+
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (1)
+[Wash] <CHILD> (1)
+[LookAt] <CHILD> (1)
+[Touch] <CHILD> (1)
+[Walk] <CHILD> (1)

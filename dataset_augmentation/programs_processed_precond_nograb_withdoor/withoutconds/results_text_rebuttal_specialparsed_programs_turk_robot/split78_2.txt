@@ -1,0 +1,9 @@
+Plug in nightlight
+Pick up the nightlight from the dresser. Plug it into the wall socket.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <DRESSER> (1)
+[Find] <LIGHT> (1)
+[Walk] <ELECTRICAL OUTLET> (1)
+[PlugIn] <LIGHT> (1)

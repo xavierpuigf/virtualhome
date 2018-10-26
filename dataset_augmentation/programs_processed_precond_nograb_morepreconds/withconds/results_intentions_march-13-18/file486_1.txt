@@ -1,0 +1,21 @@
+3
+is_off: ('COMPUTER', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('KEYBOARD', '1') --> ('COMPUTER', '1'), ('MOUSE', '1') --> ('COMPUTER', '1')
+Browse internet
+Go to office. Turn on computer. Pull out chair. Sit in chair. Use keyboard and mouse.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)
+[Find] <MOUSE> (1)
+[Grab] <MOUSE> (1)

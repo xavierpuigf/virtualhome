@@ -1,0 +1,17 @@
+Clean
+I pick up clothes from my floor, I gather any trash and dispose of it and I vacuum and dust.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <CLOTHES_DRESS> (1)
+[Grab] <CLOTHES_DRESS> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[PutBack] <CLOTHES_DRESS> (1) <CLOSET> (1)
+[Close] <CLOSET> (1)
+[Walk] <TRASHCAN> (1)
+[Find] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[Find] <FLOOR> (1)
+[Vacuum] <FLOOR> (1)
+[SwitchOff] <VACUUM CLEANER> (1)

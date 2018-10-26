@@ -1,0 +1,25 @@
+3
+is_off: ('WASHING MACHINE', '1') --> 
+inside: ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1')
+closed: ('WASHING MACHINE', '1') --> 
+Wash clothes
+Grab clothes. Carry them to washing machine. Load clothes into washing machine. Load detergent into washing machine. Turn on washing machine.
+
+
+[Find] <CLOTHES_PANTS> (1)
+[Grab] <CLOTHES_PANTS> (1)
+[Find] <CLOTHES_SHIRT> (1)
+[Grab] <CLOTHES_SHIRT> (1)
+[Find] <CLOTHES_UNDERWEAR> (1)
+[Grab] <CLOTHES_UNDERWEAR> (1)
+[Find] <WASHING MACHINE> (1)
+[Open] <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
+[PutBack] <CLOTHES_UNDERWEAR> (1) <WASHING MACHINE> (1)
+[Find] <LAUNDRY DETERGENT> (1)
+[Grab] <LAUNDRY DETERGENT> (1)
+[PutBack] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
+[Find] <WASHING MACHINE> (1)
+[Close] <WASHING MACHINE> (1)
+[SwitchOn] <WASHING MACHINE> (1)

@@ -1,0 +1,19 @@
+Sweep floor
+Take the broom. Sweep the floor. Sweep up debri into dust pan. Dump dust pan.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <BROOM> (1)
+[Grab] <BROOM> (1)
+[Find] <FLOOR> (1)
+[Sweep] <FLOOR> (1)
+[Find] <DUSTPAN> (1)
+[Grab] <DUSTPAN> (1)
+[Find] <DIRT> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <DUSTPAN> (1)
+[Walk] <GARBAGE CAN> (1)
+[Grab] <DIRT> (1)
+[PutBack] <DIRT> (1) <GARBAGE CAN> (1)
+[PutObjBack] <BROOM> (1)
+[PutObjBack] <DUSTPAN> (1)

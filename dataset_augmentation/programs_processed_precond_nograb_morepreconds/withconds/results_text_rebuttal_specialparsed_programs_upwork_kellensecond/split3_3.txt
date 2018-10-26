@@ -1,0 +1,12 @@
+4
+location: ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+atreach: ('TELEVISION', '1') --> ('TELEVISION', '1')
+is_on: ('TELEVISION', '1') --> 
+plugged: ('TELEVISION', '1') --> 
+Turn off TV
+Walk over to tv and press power button
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[SwitchOff] <TELEVISION> (1)

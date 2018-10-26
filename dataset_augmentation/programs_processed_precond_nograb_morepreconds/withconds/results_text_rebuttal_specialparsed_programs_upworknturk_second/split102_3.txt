@@ -1,0 +1,32 @@
+5
+inside: ('SHEETS', '2') --> ('CLOSET', '1'), ('BLANKET', '2') --> ('CLOSET', '1')
+in: ('BLANKET', '1') --> ('BED', '1'), ('BLANKET', '2') --> ('CLOSET', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+atreach: ('BED', '1') --> ('BED', '1'), ('BLANKET', '1') --> ('BED', '1'), ('BLANKET', '2') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('BED', '1'), ('SHEETS', '2') --> ('CLOSET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('BASKET FOR CLOTHES', '1') --> ('BED', '1')
+Change bedding
+Take off old bedding i.E. Sheets, blankets, pillow cases. Replace the bedding with fresh clean linens and blankets.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BED> (1)
+[Find] <BLANKET> (1)
+[Grab] <BLANKET> (1)
+[Find] <BASKET FOR CLOTHES> (1)
+[PutBack] <BLANKET> (1) <BASKET FOR CLOTHES> (1)
+[Find] <SHEETS> (1)
+[Grab] <SHEETS> (1)
+[PutBack] <SHEETS> (1) <BASKET FOR CLOTHES> (1)
+[Walk] <CLOSET> (1)
+[Open] <CLOSET> (1)
+[Find] <SHEETS> (2)
+[Grab] <SHEETS> (2)
+[Walk] <BED> (1)
+[Cover] <BED> (1) <SHEETS> (2)
+[Walk] <CLOSET> (1)
+[Walk] <CLOSET> (1)
+[Find] <BLANKET> (2)
+[Grab] <BLANKET> (2)
+[Close] <CLOSET> (1)
+[Walk] <BED> (1)
+[Cover] <BED> (1) <BLANKET> (2)

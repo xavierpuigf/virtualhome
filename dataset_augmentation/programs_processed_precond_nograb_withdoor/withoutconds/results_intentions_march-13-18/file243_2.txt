@@ -1,0 +1,18 @@
+Make coffee
+Go to kitchen, find coffee table, ground coffee, sugar, coffee pot and make coffee, Stir it well and drink coffee.
+
+
+[Walk] <KITCHEN> (1)
+[Find] <COFFEE TABLE> (1)
+[Find] <COFFEE POT> (1)
+[Grab] <COFFEE POT> (1)
+[PutBack] <COFFEE POT> (1) <COFFEE TABLE> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <COFFEE POT> (1)
+[Find] <GROUND COFFEE> (1)
+[Stir] <WATER> (1)
+[Find] <FOOD_SUGAR> (1)
+[Find] <COFFEE CUP> (1)
+[Pour] <FOOD_SUGAR> (1) <COFFEE CUP> (1)
+[Find] <COFFEE CUP> (1)
+[Drink] <COFFEE CUP> (1)

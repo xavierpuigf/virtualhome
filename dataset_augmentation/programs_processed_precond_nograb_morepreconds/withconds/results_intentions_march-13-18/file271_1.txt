@@ -1,0 +1,31 @@
+3
+in: ('CUP', '1') --> ('BATHROOM COUNTER', '1')
+location: ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('CUP', '1') --> ('BATHROOM', '1'), ('BATHROOM COUNTER', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+atreach: ('WATER', '1') --> ('WATER', '1'), ('TEETH', '1') --> ('WATER', '1'), ('TOWEL', '1') --> ('WATER', '1'), ('TOOTHBRUSH', '1') --> ('WATER', '1'), ('CUP', '1') --> ('BATHROOM COUNTER', '1'), ('SINK', '1') --> ('WATER', '1'), ('TOOTH PASTE', '1') --> ('WATER', '1')
+Brush teeth
+walk to bathroom, grab cup from bathroom counter, pour water into cup, grab toothpaste and toothbrush, spread toothpaste onto toothbrush, drink water and spit to sink, brush teeth, drink water and spit to sink, dry mouth by towel
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <BATHROOM COUNTER> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Walk] <WATER> (1)
+[Find] <WATER> (1)
+[Grab] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Drink] <WATER> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Drink] <WATER> (1)
+[Spit] <SINK> (1)
+[Rinse] <TOOTHBRUSH> (1)
+[Find] <TOWEL> (1)
+[Wipe] <TOWEL> (1)

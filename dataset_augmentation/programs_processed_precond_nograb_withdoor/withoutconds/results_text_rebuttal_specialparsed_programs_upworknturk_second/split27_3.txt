@@ -1,0 +1,12 @@
+Write story
+Pull out laptop. Turn on laptop. Open Microsoft Word. Start typing story.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <LAPTOP> (1)
+[Grab] <LAPTOP> (1)
+[Find] <COUCH> (1)
+[Sit] <COUCH> (1)
+[SwitchOn] <LAPTOP> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

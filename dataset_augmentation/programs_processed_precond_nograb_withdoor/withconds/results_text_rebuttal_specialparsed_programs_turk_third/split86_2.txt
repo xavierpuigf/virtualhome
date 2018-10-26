@@ -1,0 +1,27 @@
+3
+nearby: ('TABLE', '1') --> , ('TEXTBOOK', '1') --> , ('NOTEBOOK', '1') --> , ('NOTES', '1') --> , ('PEN', '1') --> , ('CHAIR', '1') --> 
+location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('TEXTBOOK', '1') --> ('DINING ROOM', '1'), ('NOTEBOOK', '1') --> ('DINING ROOM', '1'), ('NOTES', '1') --> ('DINING ROOM', '1'), ('PEN', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('TEXTBOOK', '1')
+Do homework
+I sometimes use the dining room table as a place to do my homework.
+
+
+[Walk] <DINING ROOM> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <TEXTBOOK> (1)
+[Grab] <TEXTBOOK> (1)
+[Find] <TABLE> (1)
+[PutBack] <TEXTBOOK> (1) <TABLE> (1)
+[Grab] <TEXTBOOK> (1)
+[Read] <TEXTBOOK> (1)
+[Find] <NOTEBOOK> (1)
+[Grab] <NOTEBOOK> (1)
+[PutBack] <NOTEBOOK> (1) <TABLE> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <NOTEBOOK> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)
+[PutObjBack] <PEN> (1)

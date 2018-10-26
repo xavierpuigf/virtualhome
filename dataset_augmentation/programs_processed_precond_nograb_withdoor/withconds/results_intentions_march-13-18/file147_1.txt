@@ -1,0 +1,17 @@
+2
+location: ('PLATE', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('DISH SOAP', '1') --> ('KITCHEN', '1')
+nearby: ('SINK', '1') --> 
+Wash dishes by hand
+put dirty dishes in sink, put water and dish soap to dishes, rinse with enough water
+
+
+[Walk] <KITCHEN> (1)
+[Find] <DISH SOAP> (1)
+[Find] <PLATE> (1)
+[Grab] <PLATE> (1)
+[Find] <SINK> (1)
+[PutBack] <PLATE> (1) <SINK> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <PLATE> (1)
+[Pour] <DISH SOAP> (1) <PLATE> (1)
+[Rinse] <PLATE> (1)

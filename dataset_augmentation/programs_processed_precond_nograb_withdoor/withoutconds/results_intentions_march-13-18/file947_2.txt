@@ -1,0 +1,18 @@
+Write an email
+Walk to office.  Open door to office.  Sit at desk and use computer to write an email.
+
+
+[Walk] <HOME OFFICE> (1)
+[Find] <DOOR> (1)
+[Open] <DOOR> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <KEYBOARD> (1)
+[Touch] <KEYBOARD> (1)
+[Find] <MAIL> (1)
+[Write] <MAIL> (1)

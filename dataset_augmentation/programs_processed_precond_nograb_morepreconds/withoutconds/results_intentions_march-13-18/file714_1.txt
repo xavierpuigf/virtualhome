@@ -1,0 +1,9 @@
+Pick up phone
+I will walk in the living room, find the table and grab the phone.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[Find] <PHONE> (1)
+[Grab] <PHONE> (1)

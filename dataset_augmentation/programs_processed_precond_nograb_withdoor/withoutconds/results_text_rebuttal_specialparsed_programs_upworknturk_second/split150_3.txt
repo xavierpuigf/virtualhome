@@ -1,0 +1,10 @@
+Watch TV
+Turn TV on to TV channel and sit down on the couch and watch TV.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Watch] <TELEVISION> (1)

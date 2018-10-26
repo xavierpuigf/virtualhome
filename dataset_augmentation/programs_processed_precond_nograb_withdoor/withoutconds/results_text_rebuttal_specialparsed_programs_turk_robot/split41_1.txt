@@ -1,0 +1,16 @@
+Organize files
+Open file cabinets and read the label on each drawer. Read each file tag and place corresponding pages into those files.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <FOLDER> (1)
+[Grab] <FOLDER> (1)
+[LookAt] <FOLDER> (1)
+[Find] <FOLDER> (2)
+[Grab] <FOLDER> (2)
+[LookAt] <FOLDER> (2)
+[Walk] <FILING CABINET> (1)
+[Open] <FILING CABINET> (1)
+[PutBack] <FOLDER> (1) <FILING CABINET> (1)
+[PutBack] <FOLDER> (2) <FILING CABINET> (1)

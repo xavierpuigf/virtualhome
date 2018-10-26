@@ -1,0 +1,12 @@
+1
+location: ('DOOR', '1') --> ('ENTRANCE HALL', '1')
+Open front door
+Walk over to the front door, turn the knob, and open the door.
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <DOOR> (1)
+[LookAt] <DOOR> (1)
+[Grab] <DOOR> (1)
+[Pull] <DOOR> (1)
+[Open] <DOOR> (1)

@@ -1,0 +1,25 @@
+Wash teeth
+Brushing teeth with toothbrush and tooth paste
+
+
+[Walk] <BATHROOM> (1)
+[Find] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[TurnTo] <TEETH> (1)
+[Brush] <TEETH> (1)
+[Spit] <SINK> (1)
+[Find] <DRINKING GLASS> (1)
+[Grab] <DRINKING GLASS> (1)
+[PutBack] <DRINKING GLASS> (1) <SINK> (1)
+[Grab] <DRINKING GLASS> (1)
+[Drink] <DRINKING GLASS> (1)
+[Rinse] <TEETH> (1)
+[Spit] <SINK> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[PutBack] <TOOTHBRUSH> (1) <TOOTHBRUSH HOLDER> (1)
+[SwitchOff] <FAUCET> (1)
+[Walk] <BEDROOM> (1)

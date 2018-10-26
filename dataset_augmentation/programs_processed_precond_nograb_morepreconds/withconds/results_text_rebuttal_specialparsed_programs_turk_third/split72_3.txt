@@ -1,0 +1,24 @@
+5
+is_off: ('BLOW DRYER', '1') --> 
+atreach: ('BLOW DRYER', '1') --> ('BLOW DRYER', '1'), ('ELECTRICAL OUTLET', '1') --> ('BLOW DRYER', '1'), ('HAIR', '1') --> ('BLOW DRYER', '1')
+location: ('BLOW DRYER', '1') --> ('BEDROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('BEDROOM', '1'), ('HAIR', '1') --> ('BEDROOM', '1')
+unplugged: ('BLOW DRYER', '1') --> 
+plugged: ('BLOW DRYER', '1') --> 
+Curled hair
+I heated my curling iron.  I then proceeded to curl my hair.
+
+
+[Walk] <BEDROOM> (1)
+[Walk] <BLOW DRYER> (1)
+[Find] <BLOW DRYER> (1)
+[Grab] <BLOW DRYER> (1)
+[Find] <ELECTRICAL OUTLET> (1)
+[PlugIn] <BLOW DRYER> (1)
+[SwitchOn] <BLOW DRYER> (1)
+[TurnTo] <BLOW DRYER> (1)
+[PointAt] <BLOW DRYER> (1)
+[Find] <HAIR> (1)
+[Stretch] <HAIR> (1)
+[SwitchOff] <BLOW DRYER> (1)
+[PlugOut] <BLOW DRYER> (1)
+[PutObjBack] <BLOW DRYER> (1)

@@ -1,0 +1,20 @@
+5
+is_off: ('COMPUTER', '1') --> 
+in: ('COMPUTER', '1') --> ('TABLE', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('TABLE', '1') --> ('HOME OFFICE', '1'), ('MAIL', '1') --> ('HOME OFFICE', '1')
+closed: ('MAIL', '1') --> 
+atreach: ('COMPUTER', '1') --> ('TABLE', '1'), ('TABLE', '1') --> ('TABLE', '1'), ('MAIL', '1') --> ('TABLE', '1')
+Write an email
+To writing down email to my friend. Walk to the home office. Grab the computer and switch on it. Open browser and type the mailer site address. After opening mailer site enter id and password to open my mail account. Click email window to open. Start writing email to my friend.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <TABLE> (1)
+[Find] <TABLE> (1)
+[Find] <COMPUTER> (1)
+[TurnTo] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[Find] <MAIL> (1)
+[Open] <MAIL> (1)
+[Write] <MAIL> (1)

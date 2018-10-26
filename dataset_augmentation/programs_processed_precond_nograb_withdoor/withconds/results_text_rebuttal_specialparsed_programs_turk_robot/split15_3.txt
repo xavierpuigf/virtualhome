@@ -1,0 +1,12 @@
+3
+location: ('LIGHT', '1') --> ('BEDROOM', '1')
+is_on: ('LIGHT', '1') --> 
+nearby: ('LIGHT', '1') --> 
+Turn off light
+Grasp light switch, flip light switch.
+
+
+[Walk] <BEDROOM> (1)
+[Find] <LIGHT> (1)
+[TurnTo] <LIGHT> (1)
+[SwitchOff] <LIGHT> (1)

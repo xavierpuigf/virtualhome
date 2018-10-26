@@ -1,0 +1,13 @@
+2
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('MAN', '1') --> ('LIVING ROOM', '1')
+atreach: ('SOFA', '1') --> ('MAN', '1')
+Have conversation with boyfriend
+Sit on sofa, talk
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <SOFA> (1)
+[Walk] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Find] <MAN> (1)
+[Greet] <MAN> (1)

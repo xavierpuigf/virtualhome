@@ -1,0 +1,9 @@
+Relax on sofa
+I sit on the sofa. I put my legs on the sofa and recline.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <SOFA> (1)
+[Find] <SOFA> (1)
+[Sit] <SOFA> (1)
+[Lie] <SOFA> (1)

@@ -1,0 +1,14 @@
+Wash teeth
+Wash the teeth
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <FAUCET> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[Find] <WATER> (1)
+[TurnTo] <WATER> (1)
+[PointAt] <WATER> (1)
+[Find] <TEETH> (1)
+[Wash] <TEETH> (1)
+[SwitchOff] <FAUCET> (1)

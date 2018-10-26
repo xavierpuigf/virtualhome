@@ -1,0 +1,29 @@
+4
+is_off: ('FAUCET', '1') --> 
+in: ('FAUCET', '1') --> ('SINK', '1')
+location: ('CLEANING SOLUTION', '1') --> ('KITCHEN', '1'), ('FAUCET', '1') --> ('KITCHEN', '1'), ('MOP BUCKET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('MOP', '1') --> ('KITCHEN', '1')
+nearby: ('MOP', '1') --> , ('FAUCET', '1') --> 
+Mop floor
+Mopping the floor so when mopping floor i add water to the bucket little bit of fresh lemon and lime very hot water.Put mop in bucket and soak a few time then rinse off mop and start moping floor
+
+
+[Walk] <KITCHEN> (1)
+[Find] <MOP BUCKET> (1)
+[Grab] <MOP BUCKET> (1)
+[Walk] <SINK> (1)
+[Find] <FAUCET> (1)
+[SwitchOn] <FAUCET> (1)
+[PutBack] <MOP BUCKET> (1) <SINK> (1)
+[Grab] <MOP BUCKET> (1)
+[SwitchOff] <FAUCET> (1)
+[Find] <CLEANING SOLUTION> (1)
+[Grab] <CLEANING SOLUTION> (1)
+[Pour] <CLEANING SOLUTION> (1) <MOP BUCKET> (1)
+[PutObjBack] <CLEANING SOLUTION> (1)
+[Find] <MOP> (1)
+[Grab] <MOP> (1)
+[Soak] <MOP> (1) <MOP BUCKET> (1)
+[Squeeze] <MOP> (1)
+[Rinse] <MOP> (1)
+[PutObjBack] <MOP> (1)
+[PutObjBack] <MOP BUCKET> (1)

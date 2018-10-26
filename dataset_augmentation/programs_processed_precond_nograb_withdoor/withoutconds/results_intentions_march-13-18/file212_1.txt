@@ -1,0 +1,9 @@
+Take shower
+walk to bathroom, walk to shower, get into shower, get out of shower, use towel
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Leave] <SHOWER> (1)
+[Find] <TOWEL> (1)

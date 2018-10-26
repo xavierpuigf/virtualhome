@@ -1,0 +1,14 @@
+2
+is_off: ('TELEVISION', '1') --> 
+nearby: ('REMOTE CONTROL', '1') --> , ('TELEVISION', '1') --> 
+Turn on TV
+If TV is turned off, pick up/obtain the TV remote and press the green button with the 'I/O' marking.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[PointAt] <TELEVISION> (1)
+[Push] <REMOTE CONTROL> (1)
+[SwitchOn] <TELEVISION> (1)
+[Watch] <TELEVISION> (1)

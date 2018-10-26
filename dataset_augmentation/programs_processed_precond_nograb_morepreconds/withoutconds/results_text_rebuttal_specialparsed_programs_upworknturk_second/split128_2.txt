@@ -1,0 +1,14 @@
+Write book
+Writing a book
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <CHAIR> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <NOTE PAD> (1)
+[Grab] <NOTE PAD> (1)
+[Open] <NOTE PAD> (1)
+[Find] <PEN> (1)
+[Grab] <PEN> (1)
+[Write] <NOTE PAD> (1)

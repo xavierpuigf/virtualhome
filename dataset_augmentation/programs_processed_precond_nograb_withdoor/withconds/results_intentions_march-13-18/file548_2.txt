@@ -1,0 +1,11 @@
+1
+is_off: ('TELEVISION', '1') --> 
+Watch TV
+go to living room.Turn on TV with remote. Watch TV.
+
+
+[Find] <REMOTE CONTROL> (1)
+[Grab] <REMOTE CONTROL> (1)
+[Find] <TELEVISION> (1)
+[SwitchOn] <TELEVISION> (1)
+[LookAt] <TELEVISION> (1)

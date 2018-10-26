@@ -1,0 +1,21 @@
+Play games
+Gather people in your family or guests.  Choose a board game that you want to play.  Read the directions if unfamiliar with the game.  Distribute the pieces and begin playing.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <CHILD> (2)
+[Greet] <CHILD> (2)
+[Find] <BOARD GAME> (1)
+[Grab] <BOARD GAME> (1)
+[Walk] <TABLE> (1)
+[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Find] <CHAIR> (1)
+[Pull] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Uncover] <BOARD GAME> (1)
+[LookAt] <CHILD> (1)
+[LookAt] <CHILD> (2)
+[Touch] <BOARD GAME> (1)
+[Play] <BOARD GAME> (1)

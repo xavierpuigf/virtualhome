@@ -1,0 +1,17 @@
+0
+Take shower
+I take a shower
+
+
+[Find] <SHOWER> (1)
+[Enter] <SHOWER> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Find] <CUP> (1)
+[Grab] <CUP> (1)
+[Run] <SHOWER> (1)
+[Find] <SOAP> (1)
+[Grab] <SOAP> (1)
+[PutObjBack] <SOAP> (1)
+[Find] <TOWEL> (1)
+[Scrub] <TOWEL> (1)

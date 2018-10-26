@@ -1,0 +1,28 @@
+Laugh
+I sit and watch my husband tickle the grandkids.
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <COUCH> (1)
+[Sit] <COUCH> (1)
+[Find] <CHILD> (1)
+[TurnTo] <CHILD> (1)
+[LookAt] <CHILD> (1)
+[Greet] <CHILD> (1)
+[Find] <MAN> (1)
+[TurnTo] <MAN> (1)
+[LookAt] <MAN> (1)
+[Greet] <MAN> (1)
+[Find] <CHILD> (2)
+[TurnTo] <CHILD> (2)
+[LookAt] <CHILD> (2)
+[Greet] <CHILD> (2)
+[TurnTo] <CHILD> (1)
+[PointAt] <CHILD> (1)
+[Laugh]
+[TurnTo] <CHILD> (2)
+[PointAt] <CHILD> (2)
+[Laugh]
+[TurnTo] <MAN> (1)
+[PointAt] <MAN> (1)
+[Laugh]

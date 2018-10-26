@@ -1,0 +1,11 @@
+Take shower
+Cleanse ones body in the shower
+
+
+[Find] <TOWEL> (1)
+[TurnTo] <TOWEL> (1)
+[PointAt] <TOWEL> (1)
+[Wash] <TOWEL> (1)
+[TurnTo] <TOWEL> (1)
+[LookAt] <TOWEL> (1)
+[Fold] <TOWEL> (1)

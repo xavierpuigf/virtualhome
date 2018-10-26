@@ -1,0 +1,13 @@
+1
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
+Watch TV
+Walk to living room.  Find remote control.  Find television.  Point remote at television.  Press "on" button.  Watch.
+
+
+[Walk] <LIVING ROOM> (1)
+[Find] <TELEVISION> (1)
+[Find] <REMOTE CONTROL> (1)
+[PointAt] <TELEVISION> (1)
+[Find] <BUTTON> (1)
+[Push] <BUTTON> (1)
+[Watch] <TELEVISION> (1)

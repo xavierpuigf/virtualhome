@@ -1,0 +1,22 @@
+2
+location: ('TABLE', '1') --> ('ENTRANCE HALL', '1'), ('CENTERPIECE', '1') --> ('ENTRANCE HALL', '1'), ('PAINTING', '2') --> ('ENTRANCE HALL', '1'), ('WALL', '1') --> ('ENTRANCE HALL', '1'), ('PAINTING', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('CENTERPIECE', '1') --> ('CENTERPIECE', '1'), ('PAINTING', '2') --> ('TABLE', '1'), ('WALL', '1') --> ('TABLE', '1'), ('PAINTING', '1') --> ('TABLE', '1')
+Decorate it
+Bring decorating pictures, flowers and frames, hang picture frames on walls, decorate entrance hall with welcome decorations and big flower vases
+
+
+[Walk] <ENTRANCE HALL> (1)
+[Walk] <CENTERPIECE> (1)
+[Find] <CENTERPIECE> (1)
+[Grab] <CENTERPIECE> (1)
+[Walk] <TABLE> (1)
+[PutBack] <CENTERPIECE> (1) <TABLE> (1)
+[Find] <PAINTING> (1)
+[Grab] <PAINTING> (1)
+[Find] <WALL> (1)
+[TurnTo] <WALL> (1)
+[PutBack] <PAINTING> (1) <WALL> (1)
+[Find] <PAINTING> (2)
+[Grab] <PAINTING> (2)
+[TurnTo] <WALL> (1)
+[PutBack] <PAINTING> (2) <WALL> (1)

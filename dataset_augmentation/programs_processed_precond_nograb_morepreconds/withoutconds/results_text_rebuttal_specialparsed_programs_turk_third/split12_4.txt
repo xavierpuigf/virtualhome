@@ -1,0 +1,12 @@
+Clean
+Wipe down sink and tub, scrub toilet
+
+
+[Find] <SINK> (1)
+[TurnTo] <SINK> (1)
+[PointAt] <SINK> (1)
+[Wash] <SINK> (1)
+[TurnTo] <SINK> (1)
+[LookAt] <SINK> (1)
+[Find] <BATHROOM> (1)
+[Crawl] <BATHROOM> (1)

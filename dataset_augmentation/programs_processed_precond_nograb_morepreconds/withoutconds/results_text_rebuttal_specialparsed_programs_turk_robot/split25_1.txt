@@ -1,0 +1,9 @@
+Vacuum
+Keep my keyboard vacuumed and free of debris.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <COMPUTER> (1)
+[Find] <VACUUM CLEANER> (1)
+[SwitchOn] <VACUUM CLEANER> (1)
+[SwitchOff] <VACUUM CLEANER> (1)

@@ -1,0 +1,12 @@
+2
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('PHONE', '1') --> ('LIVING ROOM', '1')
+atreach: ('CHAIR', '1') --> ('PHONE', '1')
+Pick up phone
+first when i hear the ringing sound i will run to my living room and picks up and i will say hello
+
+
+[Run] <LIVING ROOM> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <PHONE> (1)
+[Grab] <PHONE> (1)

@@ -1,0 +1,12 @@
+3
+is_off: ('ELECTRICAL OUTLET', '2') --> 
+location: ('ELECTRICAL OUTLET', '2') --> ('LIVING ROOM', '1')
+atreach: ('ELECTRICAL OUTLET', '2') --> ('ELECTRICAL OUTLET', '2')
+Turn on light
+walk to living room ,find electrical outlet , switch on eletrical outlet
+
+
+[Walk] <LIVING ROOM> (1)
+[Walk] <ELECTRICAL OUTLET> (2)
+[Find] <ELECTRICAL OUTLET> (2)
+[SwitchOn] <ELECTRICAL OUTLET> (2)

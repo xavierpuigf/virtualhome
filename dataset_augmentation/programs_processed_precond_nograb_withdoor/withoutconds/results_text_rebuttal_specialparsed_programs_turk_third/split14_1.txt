@@ -1,0 +1,10 @@
+Use computer
+Drink mouthwash.  Swish it. Spit it out.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <MOUTHWASH> (1)
+[Grab] <MOUTHWASH> (1)
+[PutObjBack] <MOUTHWASH> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)

@@ -1,0 +1,10 @@
+Cook some food
+I walk to the stove. I turn on the stove. I put a pan on the stove. I put food in the pan.
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <STOVE> (1)
+[Find] <FRYINGPAN> (1)
+[Grab] <FRYINGPAN> (1)
+[PutBack] <FRYINGPAN> (1) <STOVE> (1)
+[Eat] <FRYINGPAN> (1)

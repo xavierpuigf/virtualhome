@@ -1,0 +1,29 @@
+3
+in: ('TOOTHBRUSH', '1') --> ('SINK', '1')
+location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TEETH', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('CUP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
+nearby: ('FAUCET', '1') --> , ('WATER', '1') --> , ('TEETH', '1') --> 
+Brush teeth
+Collect toothbrush and apply toothpaste, turn water on to get it wet, proceed to brush teeth. Spit when finished, fill small cup with water and rinse out mouth.
+
+
+[Walk] <BATHROOM> (1)
+[Walk] <SINK> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Grab] <TOOTH PASTE> (1)
+[Open] <TOOTH PASTE> (1)
+[Find] <FAUCET> (1)
+[Pull] <FAUCET> (1)
+[PutBack] <TOOTHBRUSH> (1) <SINK> (1)
+[Push] <FAUCET> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[Spit] <SINK> (1)
+[Find] <CUP> (1)
+[Pull] <FAUCET> (1)
+[Find] <WATER> (1)
+[Pour] <WATER> (1) <CUP> (1)
+[Push] <FAUCET> (1)
+[Rinse] <TEETH> (1)
+[Spit] <SINK> (1)

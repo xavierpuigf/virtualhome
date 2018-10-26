@@ -1,0 +1,21 @@
+4
+is_off: ('COMPUTER', '1') --> 
+nearby: ('COMPUTER', '1') --> , ('CHAIR', '1') --> ('DESK', '1'), ('KEYBOARD', '1') --> , ('NOTES', '1') --> 
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('NOTES', '1') --> ('HOME OFFICE', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1')
+Do homework
+I do my online homework on the computer.  I use Pearson My Math Lab for math class and excel for my engineering class.
+
+
+[Walk] <HOME OFFICE> (1)
+[Walk] <DESK> (1)
+[Find] <CHAIR> (1)
+[Sit] <CHAIR> (1)
+[Find] <COMPUTER> (1)
+[SwitchOn] <COMPUTER> (1)
+[LookAt] <COMPUTER> (1)
+[Find] <NOTES> (1)
+[Grab] <NOTES> (1)
+[Read] <NOTES> (1)
+[Find] <KEYBOARD> (1)
+[Type] <KEYBOARD> (1)

@@ -1,0 +1,20 @@
+3
+is_off: ('LIGHT', '3') --> , ('LIGHT', '1') --> , ('LIGHT', '2') --> 
+location: ('LIGHT', '3') --> ('DINING ROOM', '1'), ('LIGHT', '1') --> ('KITCHEN', '1'), ('LIGHT', '2') --> ('LIVING ROOM', '1')
+atreach: ('LIGHT', '3') --> ('LIGHT', '3'), ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT', '2') --> ('LIGHT', '2')
+Turn on light
+Turn on the lights in the house
+
+
+[Walk] <KITCHEN> (1)
+[Walk] <LIGHT> (1)
+[Find] <LIGHT> (1)
+[SwitchOn] <LIGHT> (1)
+[Walk] <LIVING ROOM> (1)
+[Walk] <LIGHT> (2)
+[Find] <LIGHT> (2)
+[SwitchOn] <LIGHT> (2)
+[Walk] <DINING ROOM> (1)
+[Walk] <LIGHT> (3)
+[Find] <LIGHT> (3)
+[SwitchOn] <LIGHT> (3)

@@ -1,0 +1,19 @@
+Wash teeth
+Go to the bathroom. Find the toothbrush & toothpaste. Put toothpaste on the toothbrush, brush teeth, rinse with water, and spit into the sink.
+
+
+[Walk] <BATHROOM> (1)
+[Find] <TOOTHBRUSH HOLDER> (1)
+[LookAt] <TOOTHBRUSH HOLDER> (1)
+[Find] <TOOTHBRUSH> (1)
+[Grab] <TOOTHBRUSH> (1)
+[Find] <TOOTH PASTE> (1)
+[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Find] <TEETH> (1)
+[Scrub] <TEETH> (1)
+[PutObjBack] <TOOTHBRUSH> (1)
+[Find] <WATER GLASS> (1)
+[Grab] <WATER GLASS> (1)
+[Rinse] <TEETH> (1)
+[Find] <SINK> (1)
+[Spit] <SINK> (1)
