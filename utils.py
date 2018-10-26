@@ -149,8 +149,9 @@ class graph_dict_helper(object):
         }
 
     def initialize(self, graph_dict):
-        script_object_ids = [id for id in filter(lambda v: v["id"] >= 1000 and v["id"] < 2000, graph_dict["nodes"])]
-        random_object_ids = [id for id in filter(lambda v: v["id"] >= 2000, graph_dict["nodes"])]
+        script_object_ids = [node["id"] for node in filter(lambda v: v["id"] >= 1000 and v["id"] < 2000, graph_dict["nodes"])]
+        random_object_ids = [node["id"] for node in filter(lambda v: v["id"] >= 2000, graph_dict["nodes"])]
+
         self.script_objects_id = max(script_object_ids) if len(script_object_ids) != 0 else 1000
         self.random_objects_id = max(random_object_ids) if len(random_object_ids) != 0 else 2000
 
@@ -238,11 +239,15 @@ class graph_dict_helper(object):
         available_rooms.remove(first_room)
         return random.choice(available_rooms)
 
-    def modify_script_with_specified_id(self, script, id_mapping):
+    def modify_script_with_specified_id(self, script, id_mapping, room_mapping):
 
         # change the id in script
         for script_line in script:
             for parameter in script_line.parameters:
+                if parameter.name in self.possible_rooms:
+                    parameter.name = room_mapping[parameter.name]
+
+                assert (parameter.name, parameter.instance) in id_mapping, ipdb.set_trace()
                 parameter.instance = id_mapping[(parameter.name, parameter.instance)]
 
     def add_missing_object_from_script(self, script, precond, graph_dict, id_mapping):
@@ -355,7 +360,7 @@ class graph_dict_helper(object):
             for parameter in script_line.parameters:
                 parameter.instance = objects_in_script[(parameter.name, parameter.instance)]
                 
-        return objects_in_script, first_room
+        return objects_in_script, first_room, room_mapping
 
     def prepare_from_precondition(self, precond, objects_in_script, graph_dict):
 
