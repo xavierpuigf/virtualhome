@@ -111,11 +111,16 @@ class WalkExecutor(ActionExecutor):
         if State.SITTING in char_node.states or State.LYING in char_node.states:
             info.error('{} is sitting', char_node)
             return False
-        # char_room = _get_room_node(state, char_node)
-        # node_room = _get_room_node(state, node)
-        # if not _check_closed_doors(state, char_room, node_room):
-        #     info.error('Doors between {} and {} are closed', char_room, node_room)
-        #     return False
+        char_room = _get_room_node(state, char_node)
+        node_room = _get_room_node(state, node)
+        closed_doors = _check_closed_doors(state, char_room, node_room)
+        if closed_doors is None:
+            info.error('No path between between {} and {}', char_room, node_room)
+            return False
+        if len(closed_doors) > 0:
+            info.error("Door(s) {} between {} and {} is (are) closed", ', '.join([str(d) for d in closed_doors]),
+                       char_room, node_room)
+            return False
         return True
 
 
@@ -1109,21 +1114,32 @@ def _create_walkable_graph(state: EnvironmentState):
 
 def _check_closed_doors(state: EnvironmentState, room1: GraphNode, room2: GraphNode):
     graph_adj_lists = _create_walkable_graph(state)
-    bfs_prev = BFS(state, graph_adj_lists, room1.id)
-    return room2.id in bfs_prev
+    bfs_prev = BFS(graph_adj_lists, room1.id)
+    if room2.id not in bfs_prev:
+        return None  # No path!
+    closed_between = []
+    current_id = room2.id
+    while current_id != room1.id:
+        next_id, door_id = bfs_prev[current_id]
+        if next_id is None:
+            break
+        door_node = state.get_node(door_id)
+        if State.CLOSED in door_node.states:
+            closed_between.append(door_node)
+        current_id = next_id
+    return closed_between
 
 
-def BFS(state: EnvironmentState, adj_lists: dict, s):
+def BFS(adj_lists: dict, s):
     prev = {}
-    prev[s] = None
+    prev[s] = (None, None)
     q = queue.Queue()
     q.put(s)
     while not q.empty():
         v = q.get()
         for u, d in adj_lists[v]:
-            door_node = state.get_node(d)
-            if State.CLOSED not in door_node.states and u not in prev:
-                prev[u] = v
+            if u not in prev:
+                prev[u] = (v, d)
                 q.put(u)
     return prev
 
