@@ -42,6 +42,34 @@ function obtainProg(prog_lines, indices){
     prog_str += '</table>';
     return prog_str;
 }
+function obtainPreconds(conds){
+    var str_func = '<ul>';
+    console.log(conds)
+    for (var it = 0; it < conds.length; it += 1){
+        keycond = Object.keys(conds[it])[0]
+        str_func += '<li> '+keycond+':' + conds[it][keycond] +'</li>';
+    }
+    str_func += '</ul>';
+    return str_func;
+}
+function showOriginal(it){
+    var res = data[programs[it]][3];
+
+    
+}
+function showStats(it, prog_type){
+    var res = data[programs[it]][2][prog_type][current_display[it][prog_type]][3];
+    result_html = obtainPreconds(res);
+    console.log(result_html)
+    if ($("#stats"+it+"_"+prog_type).is(':empty')){
+        $("#stats"+it+"_"+prog_type).append(result_html);
+    }
+    else {
+        $("#stats"+it+"_"+prog_type).empty()
+
+    }
+    
+}
 function displayProg(it, prog_type){
     var progs = Object.keys(data);
     var res = data[progs[it]][2][prog_type];
@@ -155,7 +183,9 @@ $( document ).ready(function() {
                     var str2 = '<button onclick="nextProg('+it+', \''+augment[au_id]+'\')"> Next </button>';
                     var str3 = '<button onclick="firstProg('+it+', \''+augment[au_id]+'\')"> First </button>'
                     var str4 = '<button onclick="lastProg('+it+', \''+augment[au_id]+'\')"> Last </button>'
-                    buttons.push(str1+str2+str3+str4)
+                    var str5 = '<button onclick="showStats('+it+', \''+augment[au_id]+'\')"> Precond </button>'
+                    var str6 = '<div id="stats'+it+'_'+augment[au_id]+'"></div>';
+                    buttons.push(str1+str2+str3+str4+str5+str6)
                 }
                 else {
                     buttons.push('');

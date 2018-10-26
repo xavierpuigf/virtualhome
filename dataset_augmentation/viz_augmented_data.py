@@ -102,6 +102,7 @@ if True:
             lines = f.readlines()
             title = lines[0]
             program = lines[4:]
+        preconds = json.load(open(program_name.replace('.txt', '.json').replace('withoutconds', 'initstate/'), 'r'))
         
         indices_to_collect_stats = [0]
         if is_executable: indices_to_collect_stats.append(1)
@@ -122,8 +123,11 @@ if True:
                 with open(new_prog, 'r') as f:
                     lines = f.readlines()
                     newprogram = lines[4:]
+                cond_file = new_prog.replace('withoutconds', 'initstate').replace('txt', 'json')
+                print(cond_file)
+                newcond = json.load(open(cond_file, 'r'))
                 lcs, match = computeLCS(program, newprogram)
-                script_similar[name].append([lcs, match, newprogram])
+                script_similar[name].append([lcs, match, newprogram, newcond])
             script_similar[name] = sorted(script_similar[name], key=lambda x: -x[0])
 
             for nm in ['total', name]:
@@ -135,7 +139,7 @@ if True:
                     stats['LCS'][nm][indi] += [ss[0] for ss in script_similar[name]]
 
 
-        program_sim[program_name] = [title, program, script_similar, is_executable]
+        program_sim[program_name] = [title, program, script_similar, is_executable, preconds]
 
     with open(sim_file, 'w+') as f:
         f.write(json.dumps(program_sim, indent=4))
@@ -149,10 +153,10 @@ for nm in names+['total', 'initial']:
         elems = sorted(elems, key=lambda x: -x[1])
         elems = elems[:25]
         conts = [x[1] for x in elems]
-        names = [x[0] for x in elems]
+        tnames = [x[0] for x in elems]
         plt.figure()
-        plt.plot(names, conts)
-        plt.xticks(range(len(names)), names, rotation='vertical')
+        plt.plot(tnames, conts)
+        plt.xticks(range(len(tnames)), tnames, rotation='vertical')
         plt.tight_layout()
 
 
@@ -171,9 +175,9 @@ for nm in names:
 
 sim_info = json.load(open(sim_file, 'r')) 
 nprogs = {}
-for it, st in stats['Distr'].iteritems():
-    tuples = [(-t, name, t) for name, t in stats['Distr'][it][0].iteritems()]
-    tuples_exec = [(-t, name, t) for name, t in stats['Distr'][it][1].iteritems()]
+for it, st in stats['Distr'].items():
+    tuples = [(-t, name, t) for name, t in stats['Distr'][it][0].items()]
+    tuples_exec = [(-t, name, t) for name, t in stats['Distr'][it][1].items()]
     progs = 0 
     for t in tuples:
         progs += t[2]
@@ -188,5 +192,8 @@ stats = {
     'distr': stats
 }
 with open('data.js', 'w+') as f:
-    f.write('var stats = {};\n var data = {}'.format(json.dumps(stats), json.dumps(sim_info, indent=4)))
+    f.write('var stats = {};\n var data = {}'.format(
+        json.dumps(stats), 
+        json.dumps({x: sim_info[x] for x in list(sim_info)[::5]}, indent=4)))
+
 

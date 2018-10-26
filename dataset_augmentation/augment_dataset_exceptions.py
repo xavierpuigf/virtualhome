@@ -75,7 +75,7 @@ def write_precond(ori_path, all_new_preconds):
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        new_f.write(new_precond)
+        new_f.write(str(new_precond).replace('\'', '\"'))
         new_f.close()   
 
 def to_hash(precond_list):
