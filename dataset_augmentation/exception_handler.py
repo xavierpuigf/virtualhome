@@ -51,14 +51,17 @@ def printProgramWithLine(program, lines=[]):
 
 def parseException(exception_str, verbose=True):
     split_exception = exception_str.replace('> (', '>(').split(',')
-    exception_name = split_exception[2]
+    exception_name = ' '.join(split_exception[2:])
     exception_split = exception_name.split('when executing')
     exception_name = exception_split[0]
-    
-    instruction = exception_split[1][1:-1]
+    try:
+        instruction = exception_split[1][1:-1]
+    except:
+        pdb.set_trace()
+
 
     exception_name = exception_name.split()[2:]
-    argument = [x for x in exception_name if ')' in x]
+    argument = [x for x in exception_name if '>(' in x]
     
     for it_arg, argu in enumerate(argument):
         obji = argu.split('>')[0][1:]
@@ -82,23 +85,18 @@ def parseException(exception_str, verbose=True):
     return None
 
 def getidperobject(object_name, id_env, id_mapping):
-    print('--')
-    print(id_env)
-    print(id_mapping)
     # Given an object name and an id in the environment returns a script id
     object_name = object_name.lower().replace(' ', '_')
     cont_object = 0
     for elem, id_en in id_mapping.items():
-        if id_en == id_env:
+        if id_en == int(id_env):
             return int(elem[1])
         if elem[0] == object_name:
             cont_object += 1
     
     # update the script2env mapping
     id_object = cont_object + 1
-    id_mapping[(object_name, id_object)] = id_env
-    print(id_mapping)
-    print('!!!')
+    id_mapping[(object_name, id_object)] = int(id_env)
     return id_object
 
 def correctedProgram(input_program, init_state, final_state, exception_str, verbose=True, id_mapping={}):
@@ -171,13 +169,22 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.DOOR_CLOSED:
-        pdb.set_trace()
-        object_name = 'Door'
         id_object_env = argument_exception[0][1]
-        id_object = getidperobject(object_name, id_object_env, id_mapping)
+        object_name = 'door'
+        try:
+            id_object = getidperobject(object_name, id_object_env, id_mapping)
+        except:
+            pdb.set_trace()
+        # print(id_object_env, id_object, 'door')
+        print('-----')
+        print(exception_str)
+        print(instructions_program)
         insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
+        corrected_instructions = insertInstructions(insert_in, instructions_program)
+        print('\n'.join(corrected_instructions))
+        print('--!!--')
     if exception == ProgramException.OCCUPIED:
        
         node_state_dict = final_state.to_dict()['nodes']

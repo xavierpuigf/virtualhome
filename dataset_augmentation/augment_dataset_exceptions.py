@@ -26,13 +26,13 @@ if write_augment_data:
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-prog_folder = '../programs_processed_precond_nograb_morepreconds'
+prog_folder = 'programs_processed_precond_nograb_morepreconds'
 programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
 
 with open('../executable_info.json', 'r') as f:
     executable_info = json.load(f)
 # Select only exec programs
-programs = [x for x in programs if x.replace('../', '') in executable_info and 'Script is executable' in executable_info[x.replace('../', '')]]
+programs = [x for x in programs if 'dataset_augmentation/'+x in executable_info and 'Script is executable' in executable_info['dataset_augmentation/'+x]]
 
 
 cont = 0
@@ -181,9 +181,8 @@ def augment_dataset(d, programs):
                         init_state, 
                         '../example_graphs/TrimmedTestScene6_graph.json',
                         input_graph,
-                        id_mapping, 
+                        id_mapping,
                         info)
-                print('CHECK')
                 if False:
                     print('Error reading', lines_program)
                     lines_program = None
@@ -213,7 +212,7 @@ def augment_dataset(d, programs):
                 augmented_progs_i.append(lines_program)
             elif not executable:
                 if verbose:
-                    print(colored('Program not solved', 'red'))
+                    print(colored('Program not solved, {} iterations tried'.format(max_iter), 'red'))
                     if lines_program:
                         print(''.join(lines_program_orig))
                         print('---')

@@ -8,7 +8,8 @@ def hasProperty(obj_name, property_name):
     return property_name in object_properties[obj_name_corrected]
 
 
-def insertInstructions(insert_in, content):
+def insertInstructions(insert_in, contentold):
+    content = contentold.copy()
     acum = 0
     for insertval in insert_in:
         content.insert(insertval[0]+acum, insertval[1])
