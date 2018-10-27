@@ -118,15 +118,17 @@ class WalkExecutor(ActionExecutor):
         
 
         # walk to doors
+
+        char_room = _get_room_node(state, char_node)
+        node_room = _get_room_node(state, node)
+
         doors = state.get_nodes_by_attr('class_name', 'door')
         doorjambs = state.get_nodes_by_attr('class_name', 'doorjamb')
         if node in (doors + doorjambs):
             # door that connect the char_room
-            if state.evaluate(ExistsRelation(NodeInstance(node), Relation.BETWEEN, NodeInstanceFilter(char_node))):
+            if state.evaluate(ExistsRelation(NodeInstance(node), Relation.BETWEEN, NodeInstanceFilter(char_room))):
                 return True
 
-        char_room = _get_room_node(state, char_node)
-        node_room = _get_room_node(state, node)
         closed_doors = _check_closed_doors(state, char_room, node_room)
         if closed_doors is None:
             info.error('No path between between {} and {}', char_room, node_room)
