@@ -171,21 +171,22 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.DOOR_CLOSED:
-        id_object_env = argument_exception[0][1]
+        # get the latests door
+        door_argument = [arg for arg in argument_exception if arg[0] == 'door']
+        id_object_env = door_argument[-1][1]
         object_name = 'door'
         try:
             id_object = getidperobject(object_name, id_object_env, id_mapping)
         except:
             print('Door used')
             print('Previous program')
-            print('\n'.join(instructions_program))
-            print(exception_str)
-            pdb.set_trace()
         # print(id_object_env, id_object, 'door')
         insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
         corrected_instructions = insertInstructions(insert_in, instructions_program)
+        print('\n'.join(corrected_instructions))
+        print(exception_str)
     if exception == ProgramException.OCCUPIED:
        
         node_state_dict = final_state.to_dict()['nodes']
