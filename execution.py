@@ -367,6 +367,7 @@ class OpenExecutor(ActionExecutor):
 
         if not self.close and State.ON in node.states:
             info.error('{} is still on'.format(node))
+            return False
         return True
 
 
