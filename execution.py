@@ -116,6 +116,15 @@ class WalkExecutor(ActionExecutor):
             info.error('{} is sitting', char_node)
             return False
         
+
+        # walk to doors
+        doors = state.get_nodes_by_attr('class_name', 'door')
+        doorjambs = state.get_nodes_by_attr('class_name', 'doorjamb')
+        if node in (doors + doorjambs):
+            # door that connect the char_room
+            if state.evaluate(ExistsRelation(NodeInstance(node), Relation.BETWEEN, NodeInstanceFilter(char_node))):
+                return True
+
         char_room = _get_room_node(state, char_node)
         node_room = _get_room_node(state, node)
         closed_doors = _check_closed_doors(state, char_room, node_room)
