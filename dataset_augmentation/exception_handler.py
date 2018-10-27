@@ -90,6 +90,8 @@ def getidperobject(object_name, id_env, id_mapping):
     cont_object = 0
     for elem, id_en in id_mapping.items():
         if id_en == int(id_env):
+            if object_name == 'door':
+                raise ValueError
             return int(elem[1])
         if elem[0] == object_name:
             cont_object += 1
@@ -174,19 +176,16 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         try:
             id_object = getidperobject(object_name, id_object_env, id_mapping)
         except:
+            print('Door used')
+            print('Previous program')
+            print('\n'.join(instructions_program))
+            print(exception_str)
             pdb.set_trace()
         # print(id_object_env, id_object, 'door')
-        print('-----')
-        print(exception_str)
-        print('\n'.join(instructions_program))
-        print('....')
         insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
         corrected_instructions = insertInstructions(insert_in, instructions_program)
-        print('\n'.join(corrected_instructions))
-        print('--!!--')
-        pdb.set_trace()
     if exception == ProgramException.OCCUPIED:
        
         node_state_dict = final_state.to_dict()['nodes']
@@ -207,9 +206,7 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         for object_occupied in node_interest:
             object_name = object_occupied['class_name']
             id_object_env = object_occupied['id']
-            id_object = getidperobject(object_name, id_object_env,id_mapping)
-            print('newidenv', id_object_env)
-           
+            id_object = getidperobject(object_name, id_object_env,id_mapping) 
             # TODO: we may want to pick objects with 2 hands
             insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
             insert_in.append([line_exception, '[Grab] <{}> ({})'.format(object_name, id_object)])
