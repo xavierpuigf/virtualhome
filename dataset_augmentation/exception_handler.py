@@ -178,13 +178,15 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         # print(id_object_env, id_object, 'door')
         print('-----')
         print(exception_str)
-        print(instructions_program)
+        print('\n'.join(instructions_program))
+        print('....')
         insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
         corrected_instructions = insertInstructions(insert_in, instructions_program)
         print('\n'.join(corrected_instructions))
         print('--!!--')
+        pdb.set_trace()
     if exception == ProgramException.OCCUPIED:
        
         node_state_dict = final_state.to_dict()['nodes']

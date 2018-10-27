@@ -116,27 +116,33 @@ class WalkExecutor(ActionExecutor):
             info.error('{} is sitting', char_node)
             return False
         
-
-        # walk to doors
-
         char_room = _get_room_node(state, char_node)
         node_room = _get_room_node(state, node)
 
         doors = state.get_nodes_by_attr('class_name', 'door')
         doorjambs = state.get_nodes_by_attr('class_name', 'doorjamb')
+
+        assert char_room is not None and node_room is not None
         if node in (doors + doorjambs):
             # door that connect the char_room
-            if state.evaluate(ExistsRelation(NodeInstance(node), Relation.BETWEEN, NodeInstanceFilter(char_room))):
+            if state.evaluate(ExistsRelation(NodeInstance(node), Relation.BETWEEN, NodeInstanceFilter(char_room))) or \
+                state.evaluate(ExistsRelation(NodeInstance(char_room), Relation.BETWEEN, NodeInstanceFilter(node))):
                 return True
 
+        state.get_nodes_by_attr
+
+        # the return list is in reverse orders, living room --> door.1 --> dining room --> door.181 --> bathroom --> door.16 --> living room
+        # suppose all the doors are closed, the return list would be like [door.16, door.181, door.1]
         closed_doors = _check_closed_doors(state, char_room, node_room)
         if closed_doors is None:
             info.error('No path between between {} and {}', char_room, node_room)
             return False
         if len(closed_doors) > 0:
-            info.error("Door(s) {} between {} and {} is (are) closed", ', '.join([str(d) for d in closed_doors]),
-                       char_room, node_room)
-            return False
+            # walk to the nearest closed door is fine
+            if node.id != closed_doors[-1].id:
+                info.error("Door(s) {} between {} and {} is (are) closed", ', '.join([str(d) for d in closed_doors]),
+                            char_room, node_room)
+                return False
 
         return True
 
