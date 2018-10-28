@@ -245,6 +245,8 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
                 prev_obj[ob_mod] += 1
         for object_occupied in node_interest:
             object_name = object_occupied['class_name']
+            if object_name == 'character':
+                continue
             id_object_env = object_occupied['id']
             id_object = getidperobject(object_name, id_object_env,id_mapping) 
             # TODO: we may want to pick objects with 2 hands
