@@ -155,6 +155,13 @@ class graph_dict_helper(object):
         self.script_objects_id = max(script_object_ids) if len(script_object_ids) != 0 else 1000
         self.random_objects_id = max(random_object_ids) if len(random_object_ids) != 0 else 2000
 
+    def open_all_doors(self, graph_dict):
+
+        open_closed = self.open_closed
+        for node in graph_dict["nodes"]:
+            if node["class_name"] == "door":
+                open_closed.set_node_state(node, "OPEN")
+                
     def set_to_default_state(self, graph_dict, first_room, id_checker):
         
         open_closed = self.open_closed
