@@ -115,7 +115,7 @@ def parse_script_line(string, index):
     params = []
 
     patt_action = r'^\[(\w+)\]'
-    patt_params = r'<([\w\s]+)>\s*\((\d+)\)'
+    patt_params = r'\<(.+?)\>\s*\((.+?)\)'
 
     action_match = re.search(patt_action, string.strip())
     if not action_match:
