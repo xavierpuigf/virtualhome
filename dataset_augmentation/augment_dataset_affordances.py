@@ -137,7 +137,7 @@ for elem in object_replace:
         object_replace_dict[object_name.lower().replace(' ', '_')] = elem
 
 # For every program, check the objects that can be replaced
-program_dir = 'programs_processed_precond_nograb_morepreconds'
+program_dir = '../programs_processed_precond_nograb_morepreconds'
 files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
 
 

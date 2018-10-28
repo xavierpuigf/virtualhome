@@ -3,7 +3,7 @@ from utils_preconds import *
 import script_utils
 from termcolor import colored
 import ipdb
-
+import random
 actions_2_object =  ['PUTBACK', 'POUR', 'THROW', 'COVER', 'WRAP', 'SOAK', 'SPREAD']
 
 
@@ -22,6 +22,8 @@ class ProgramException(Enum):
     UNPLUGGED = 12 # need to check
     STILL_ON = 13
     DOOR_CLOSED = 14
+    INSIDE_CLOSED = 15
+    FREE_HAND = 16
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -39,7 +41,9 @@ message_to_exception = {
     'many things on': ProgramException.OCCUPIED,
     'on the': ProgramException.OCCUPIED,
     'is still on': ProgramException.STILL_ON,
-    'between and is closed': ProgramException.DOOR_CLOSED
+    'between and is closed': ProgramException.DOOR_CLOSED,
+    'is inside other closed thing':  ProgramException.INSIDE_CLOSED,
+    'does not have a free hand': ProgramException.FREE_HAND
 }
 
 def printProgramWithLine(program, lines=[]):
@@ -137,17 +141,20 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     
     if exception == ProgramException.NOT_SITTING:
         if action.upper() != 'STANDUP':
+            if action.upper() in ['SLEEP', 'WAKEUP']:
+                return (None, exception_str)
             insert_in.append([line_exception, '[Sit] <{}> ({})'.format(objects[0], ids[0])]) 
             corrected_instructions = insertInstructions(insert_in, instructions_program)
-            ipdb.set_trace()
         else:
             corrected_instructions = removeInstructions([line_exception], instructions_program)
     
     if exception == ProgramException.NOT_LYING:
         if action.upper() != 'STANDUP':
+            if action.upper() in ['SLEEP', 'WAKEUP']:
+                return (None, exception_str)
             insert_in.append([line_exception, '[Lie] <{}> ({})'.format(objects[0], ids[0])])
             corrected_instructions = insertInstructions(insert_in, instructions_program)
-            ipdb.set_trace()
+
         else:
             corrected_instructions = removeInstructions([line_exception], instructions_program)
 
@@ -254,8 +261,38 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
             insert_in.append([line_exception, '[Grab] <{}> ({})'.format(object_name, id_object)])
             insert_in.append([line_exception, '[Release] <{}> ({})'.format(object_name, id_object)])
         corrected_instructions = insertInstructions(insert_in, instructions_program)
-        #corrected_instructions = removeInstructions([line_exception], instructions_program)
+    
+    if exception == ProgramException.INSIDE_CLOSED:
+        print("CASE!!")
 
+        node_state_dict = final_state.to_dict()['nodes']
+        edge_state_dict = final_state.to_dict()['edges']
+        id_object_env = id_mapping[(objects[0], int(ids[0]))]
+        
+        edge_interest = [edge_graph['to_id'] for edge_graph in edge_state_dict if (edge_graph['from_id'] == id_object_env
+                    and edge_graph['relation_type'] in ['INSIDE'])]
+        
+        node_interest = [node_graph for node_graph in node_state_dict if node_graph['id'] in edge_interest]
+        return (None, exception_str)
+
+
+    if exception == ProgramException.FREE_HAND:
+        if action.upper() != 'GRAB':
+            node_state_dict = final_state.to_dict()['nodes']
+            edge_state_dict = final_state.to_dict()['edges']
+            edge_graph_grabbed = [edge_graph['to_id'] for edge_graph in edge_state_dict if 'holds_lh' in edge_graph['relation_type'].lower()]
+            edge_graph_grabbed += [edge_graph['to_id'] for edge_graph in edge_state_dict if 'holds_rh' in edge_graph['relation_type'].lower()]
+            elem = random.randrange(len(edge_graph_grabbed))
+            edge_interest = edge_graph_grabbed[elem]
+            node_interest = [node_graph for node_graph in node_state_dict if node_graph['id'] == edge_interest][0]
+            id_object_env = node_interest['id']
+            object_name = node_interest['class_name']
+            id_object = getidperobject(node_interest['class_name'], node_interest['id'] ,id_mapping) 
+            insert_in.append([line_exception, '[Release] <{}> ({})'.format(object_name, id_object)])
+            insert_in.append([line_exception+1, '[Grab] <{}> ({})'.format(object_name, id_object)])
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+        else:
+            return (None, exception_str)
     #print('\n')
     #print(colored('Corrected', 'green'))
     #printProgramWithLine(corrected_instructions)

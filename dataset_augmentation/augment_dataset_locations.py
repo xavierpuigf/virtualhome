@@ -47,7 +47,7 @@ def recursiveSelection(cont, it, curr_list):
 # For every program, check the objects that can be replaced
 #program_dir = 'programs_processed_precond_nograb_morepreconds'
 #files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
-program_dir = 'programs_processed_precond_nograb_morepreconds'
+program_dir = '../programs_processed_precond_nograb_morepreconds'
 files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
 
 print(len(files))
