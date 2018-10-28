@@ -16,6 +16,9 @@ from termcolor import colored
 sys.path.append('..')
 import check_programs
 
+random.seed(123)
+np.random.seed(123)
+
 verbose = True
 thres = 300
 write_augment_data = False
@@ -31,8 +34,9 @@ programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
 
 with open('../executable_info.json', 'r') as f:
     executable_info = json.load(f)
+
 # Select only exec programs
-programs = [x for x in programs if 'dataset_augmentation/'+x in executable_info and 'Script is executable' in executable_info['dataset_augmentation/'+x]]
+programs = [x for x in programs if x.replace('../', '') in executable_info and 'Script is executable' in executable_info[x.replace('../', '')]]
 
 
 cont = 0
@@ -46,6 +50,7 @@ objects_occupied = [
     'toilet',
     'pianobench',
     'bench']
+
 
 def write_data(ori_path, all_new_progs):
     
@@ -78,6 +83,7 @@ def write_precond(ori_path, all_new_preconds):
         new_f.write(str(new_precond).replace('\'', '\"'))
         new_f.close()   
 
+
 def to_hash(precond_list):
     pr_list = precond_list.copy()
     for it, elem in enumerate(pr_list):
@@ -92,6 +98,7 @@ def to_hash(precond_list):
         pr_list[it] = tuple_dict
     return tuple(sorted(pr_list))
 
+
 def from_hash(precond_tuple):
     precond_list = list(precond_tuple)
     for it, elem in enumerate(precond_list):
@@ -102,6 +109,7 @@ def from_hash(precond_tuple):
                 values[v_id] = list(v)
         precond_list[it] = {key_elem: values}
     return precond_list
+
 
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
