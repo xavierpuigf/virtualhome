@@ -2,7 +2,7 @@ from enum import Enum
 from utils_preconds import *
 import script_utils
 from termcolor import colored
-
+import ipdb
 
 actions_2_object =  ['PUTBACK', 'POUR', 'THROW', 'COVER', 'WRAP', 'SOAK', 'SPREAD']
 
@@ -19,7 +19,7 @@ class ProgramException(Enum):
     NOT_ON = 9
     NOT_PLUGGED_OUT = 10
     OCCUPIED = 11
-    UNPLUGGED = 12
+    UNPLUGGED = 12 # need to check
     STILL_ON = 13
     DOOR_CLOSED = 14
 
@@ -31,6 +31,7 @@ message_to_exception = {
     'is not lying or sitting': ProgramException.NOT_SITTING,
     'is not close to': ProgramException.NOT_CLOSE,
     'is not facing': ProgramException.NOT_FACING,
+    'does not face': ProgramException.NOT_FACING,
     'is not off': ProgramException.NOT_OFF,
     'is not on': ProgramException.NOT_ON,
     'is not plugged_out': ProgramException.NOT_PLUGGED_OUT,
@@ -86,7 +87,7 @@ def parseException(exception_str, verbose=True):
 
 def getidperobject(object_name, id_env, id_mapping):
     # Given an object name and an id in the environment returns a script id
-    object_name = object_name.lower().replace(' ', '_')
+    object_name = object_name.lower().replace(' ex', '_')
     cont_object = 0
     for elem, id_en in id_mapping.items():
         if id_en == int(id_env):
@@ -117,45 +118,82 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     
     corrected_instructions = instructions_program
     insert_in = []
-    if exception == ProgramException.NOT_CLOSED:
-        corrected_instructions = removeInstructions([line_exception], instructions_program)
+    action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
+    if exception == ProgramException.NOT_CLOSED: 
+        if action.upper() != 'OPEN':
+            insert_in.append([line_exception, '[Close] <{}> ({})'.format(objects[0], ids[0])]) 
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
+
+    if exception == ProgramException.NOT_OPEN:
+        if action.upper() != 'CLOSE':
+            insert_in.append([line_exception, '[Open] <{}> ({})'.format(objects[0], ids[0])]) 
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
     
     if exception == ProgramException.NOT_SITTING:
-        corrected_instructions = removeInstructions([line_exception], instructions_program)
+        if action.upper() != 'STANDUP':
+            insert_in.append([line_exception, '[Sit] <{}> ({})'.format(objects[0], ids[0])]) 
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
     
     if exception == ProgramException.NOT_LYING:
-        corrected_instructions = removeInstructions([line_exception], instructions_program)
+        if action.upper() != 'STANDUP':
+            insert_in.append([line_exception, '[Lie] <{}> ({})'.format(objects[0], ids[0])])
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     if exception == ProgramException.NOT_CLOSE:
-        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
-        if action.upper() in  actions_2_object:
-            insert_in.append([line_exception, '[Walk] <{}> ({})'.format(objects[1], ids[1])])
-
-        else:      
-            insert_in.append([line_exception, '[Walk] <{}> ({})'.format(objects[0], ids[0])])
-        
+        object_name, id_object_env = argument_exception[0]
+        id_object = getidperobject(object_name, id_object_env, id_mapping)
+        insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)]) 
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.NOT_FACING:
-        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
         insert_in.append([line_exception, '[TurnTo] <{}> ({})'.format(objects[0], ids[0])])           
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.SITTING:
-        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
-        insert_in.append([line_exception, '[StandUp]'])      
-        corrected_instructions = insertInstructions(insert_in, instructions_program)
+        if action.upper() == 'SIT':
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
+            ipdb.set_trace()
+        else:
+            insert_in.append([line_exception, '[StandUp]'])      
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
         
         #printProgramWithLine(corrected_instructions)     
 
-    if exception == ProgramException.NOT_OFF:
-        corrected_instructions = removeInstructions([line_exception], instructions_program)
+    if exception == ProgramException.NOT_ON:
+        if action.upper() != 'SWITCHOFF':
+            insert_in.append([line_exception, '[SwitchOn] <{}> ({})'.format(objects[0], ids[0])]) 
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     if exception == ProgramException.NOT_OFF:
-        corrected_instructions = removeInstructions([line_exception], instructions_program)
+        if action.upper() != 'SWITCHON':
+            insert_in.append([line_exception, '[SwitchOff] <{}> ({})'.format(objects[0], ids[0])]) 
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     if exception == ProgramException.NOT_PLUGGED_OUT:
-        corrected_instructions = removeInstructions([line_exception], instructions_program)
+        if action.upper() != 'PLUGIN':
+            insert_in.append([line_exception, '[PlugOut] <{}> ({})'.format(objects[0], ids[0])]) 
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
+            ipdb.set_trace()
+        else:
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
 
     if exception == ProgramException.STILL_ON:
         # TODO: check that we are actually switching it on afterwards
@@ -165,13 +203,16 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.UNPLUGGED:
-        action, objects, ids = script_utils.parseStrBlock(instructions_program[line_exception])
-        insert_in.append(
-                [line_exception, '[PlugIn] <{}> ({})'.format(objects[0], ids[0])])           
-        corrected_instructions = insertInstructions(insert_in, instructions_program)
+        if action.upper() == 'PLUGOUT':
+            corrected_instructions = removeInstructions([line_exception], instructions_program)
+        else:
+            insert_in.append(
+                    [line_exception, '[PlugIn] <{}> ({})'.format(objects[0], ids[0])])           
+            corrected_instructions = insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.DOOR_CLOSED:
         # get the latests door
+        
         door_argument = [arg for arg in argument_exception if arg[0] == 'door']
         id_object_env = door_argument[-1][1]
         object_name = 'door'
@@ -185,8 +226,6 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
         corrected_instructions = insertInstructions(insert_in, instructions_program)
-        print('\n'.join(corrected_instructions))
-        print(exception_str)
     if exception == ProgramException.OCCUPIED:
        
         node_state_dict = final_state.to_dict()['nodes']
@@ -219,5 +258,4 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
     #print(colored('Corrected', 'green'))
     #printProgramWithLine(corrected_instructions)
     output_program = program_header + corrected_instructions
-    print(id_mapping)
     return output_program
