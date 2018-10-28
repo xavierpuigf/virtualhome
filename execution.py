@@ -134,6 +134,7 @@ class WalkExecutor(ActionExecutor):
         # the return list is in reverse orders, living room --> door.1 --> dining room --> door.181 --> bathroom --> door.16 --> living room
         # suppose all the doors are closed, the return list would be like [door.16, door.181, door.1]
         closed_doors = _check_closed_doors(state, char_room, node_room)
+
         if closed_doors is None:
             info.error('No path between between {} and {}', char_room, node_room)
             return False
@@ -240,7 +241,9 @@ class SitExecutor(ActionExecutor):
         elif self.check_sittable(state, node, info):
             char_node = _get_character_node(state)
             new_char_node = char_node.copy()
+            new_char_node.states.discard(State.LYING)
             new_char_node.states.add(State.SITTING)
+            
             yield state.change_state(
                 [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
                  AddEdges(CharacterNode(), Relation.FACING, RelationFrom(node, Relation.FACING)),
@@ -273,9 +276,10 @@ class StandUpExecutor(ActionExecutor):
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
         info.set_current_line(script[0])
         char_node = _get_character_node(state)
-        if State.SITTING in char_node.states:
+        if State.SITTING in char_node.states or State.LYING in char_node.states:
             new_char_node = char_node.copy()
-            new_char_node.states.remove(State.SITTING)
+            new_char_node.states.discard(State.SITTING)
+            new_char_node.states.discard(State.LYING)
             yield state.change_state([ChangeNode(new_char_node)])
         else:
             info.error('{} is not sitting', char_node)
@@ -718,6 +722,7 @@ class LieExecutor(ActionExecutor):
         elif self.check_lieable(state, node, info):
             char_node = _get_character_node(state)
             new_char_node = char_node.copy()
+            new_char_node.states.discard(State.SITTING)
             new_char_node.states.add(State.LYING)
             yield state.change_state(
                 [AddEdges(CharacterNode(), Relation.ON, NodeInstance(node)),
@@ -831,7 +836,7 @@ class WatchExecutor(ActionExecutor):
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
             return False
-        if node.class_name != 'computer' and State.SITTING in char_node.states and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
+        if node.class_name != 'computer' and (State.SITTING in char_node.states or State.LYING in char_node.states) and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
             info.error('{} is not facing {} while sitting', char_node, node)
             return False
         if _is_inside(state, node):

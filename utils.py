@@ -427,6 +427,16 @@ class graph_dict_helper(object):
         random.shuffle(objects_to_place)
         rooms_id = [node["id"] for node in filter(lambda v: v['class_name'] in self.possible_rooms, graph_dict["nodes"])]
 
+        def _add_node(src_name, tgt_node, tgt_name):
+            tgt_id = tgt_node["id"]
+            self._add_missing_node(graph_dict, self.random_objects_id, src_name, "placable_objects")
+            specified_room_id = [edge["to_id"] for edge in filter(lambda v: v["from_id"] == tgt_id and v["relation_type"] == "INSIDE" and v["to_id"] in rooms_id, graph_dict["edges"])][0]
+            graph_dict["edges"].append({'relation_type': "INSIDE", "from_id": self.random_objects_id, "to_id": specified_room_id})
+            graph_dict["edges"].append({'relation_type': relation_placing_simulator[tgt_name["relation"].lower()], "from_id": self.random_objects_id, "to_id": tgt_id})
+            graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": self.random_objects_id, "to_id": tgt_id})
+            graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": tgt_id, "to_id": self.random_objects_id})
+            self.random_objects_id += 1
+            
         while n > 0:
 
             src_name = random.choice(objects_to_place)
@@ -435,19 +445,27 @@ class graph_dict_helper(object):
             for tgt_name in tgt_names:
 
                 tgt_nodes = [i for i in filter(lambda v: v["class_name"] == tgt_name['destination'], graph_dict["nodes"])]
+                if len(tgt_nodes) != 0:
 
-                if len(tgt_nodes) > 0:
-                    tgt_node = tgt_nodes[0]
-                    tgt_id = tgt_node["id"]
+                    max_occupancies = max(SitExecutor._MAX_OCCUPANCIES.get(tgt_name['destination'], 0), LieExecutor._MAX_OCCUPANCIES.get(tgt_name['destination'], 0))
+                    if max_occupancies == 0:
+                        tgt_node = random.choice(tgt_nodes)
+                        _add_node(src_name, tgt_node, tgt_name)
+                        n -= 1
+                        break
+                    else:
+                        # find node with available space
+                        free_tgt_nodes = []
+                        for tgt_node in tgt_nodes:
+                            occupied_edges = [_edge for _edge in filter(lambda v: v["relation_type"] == "ON" and v["to_id"] == tgt_node["id"] , graph_dict["edges"])]
+                            if len(occupied_edges) < max_occupancies:
+                                free_tgt_nodes.append(tgt_node)
 
-                    self._add_missing_node(graph_dict, self.random_objects_id, src_name, "placable_objects")
-                    graph_dict["edges"].append({'relation_type': "INSIDE", "from_id": self.random_objects_id, "to_id": random.choice(rooms_id)})
-                    graph_dict["edges"].append({'relation_type': relation_placing_simulator[tgt_name["relation"].lower()], "from_id": self.random_objects_id, "to_id": tgt_id})
-                    graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": self.random_objects_id, "to_id": tgt_id})
-                    graph_dict["edges"].append({'relation_type': "CLOSE", "from_id": tgt_id, "to_id": self.random_objects_id})
-                    self.random_objects_id += 1
-                    n -= 1
-                    break
+                        if len(free_tgt_nodes) != 0:
+                            tgt_node = random.choice(free_tgt_nodes)
+                            _add_node(src_name, tgt_node, tgt_name)
+                            n -= 1
+                            break
 
     def random_change_object_state(self, objects_in_script, graph_dict, id_checker):
 
@@ -501,6 +519,8 @@ class graph_dict_helper(object):
 
             if current_state != "occupied":
                 number_objects_to_add = max_occupancy - len(occupied_edges)
+                if number_objects_to_add < 0:
+                    ipdb.set_trace()
                 
                 object_placing = self.object_placing
                 random.shuffle(objects_to_place)
