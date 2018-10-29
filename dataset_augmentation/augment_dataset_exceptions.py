@@ -69,7 +69,7 @@ def write_data(ori_path, all_new_progs):
         new_f.close()    
 
 def write_graph(ori_path, graph_init, graph_end):
-    sub_dir = ori_path.split('/')[-1]
+    sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'init_and_final_graphs', sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()

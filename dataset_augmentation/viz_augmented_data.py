@@ -102,7 +102,10 @@ if True:
             lines = f.readlines()
             title = lines[0]
             program = lines[4:]
-        preconds = json.load(open(program_name.replace('.txt', '.json').replace('withoutconds', 'initstate/'), 'r'))
+        with open(program_name.replace('.txt', '.json').replace('withoutconds', 'initstate/'), 'r') as f:
+            pconds_st = ''.join(f.readlines()).replace('u"', '"')
+
+        preconds = json.loads(pconds_st)
         
         indices_to_collect_stats = [0]
         if is_executable: indices_to_collect_stats.append(1)
@@ -124,8 +127,9 @@ if True:
                     lines = f.readlines()
                     newprogram = lines[4:]
                 cond_file = new_prog.replace('withoutconds', 'initstate').replace('txt', 'json')
-                print(cond_file)
-                newcond = json.load(open(cond_file, 'r'))
+                with open(cond_file, 'r') as f:
+                    nconds = ''.join(f.readlines()).replace('u"', '"')
+                newcond = json.loads(nconds)
                 lcs, match = computeLCS(program, newprogram)
                 script_similar[name].append([lcs, match, newprogram, newcond])
             script_similar[name] = sorted(script_similar[name], key=lambda x: -x[0])

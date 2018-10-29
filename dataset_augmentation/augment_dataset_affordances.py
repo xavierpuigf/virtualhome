@@ -251,7 +251,8 @@ for file_name in tqdm(files):
                 precond_modif = precond_modif.replace('[u\"{}\", u\"{}\"]'.format(orign_object, idi), '[u\"{}\", u\"{}\"]'.format(object_new, idi))
 
             augmented_progs_i.append(new_lines)         
-            augmented_preconds_i.append(precond_modif)
+            import ast
+            augmented_preconds_i.append(ast.literal_eval(precond_modif))
             npgs += 1
             all_conts += all_cont
             
