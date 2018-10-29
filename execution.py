@@ -283,7 +283,7 @@ class StandUpExecutor(ActionExecutor):
             yield state.change_state([ChangeNode(new_char_node)])
         else:
             info.error('{} is not sitting', char_node)
-
+            
 
 class GrabExecutor(ActionExecutor):
 
@@ -298,7 +298,7 @@ class GrabExecutor(ActionExecutor):
             if new_relation is not None:
                 char_node = _get_character_node(state)
                 char_room = _get_room_node(state, char_node)
-                changes = [DeleteEdges(NodeInstance(node), Relation.all(), AnyNode(), delete_reverse=True),
+                changes = [DeleteEdges(NodeInstance(node), [Relation.FACING, Relation.ON, Relation.INSIDE, Relation.CLOSE], AnyNode(), delete_reverse=True),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node)), 
                            AddEdges(NodeInstance(node), Relation.INSIDE, NodeInstance(char_room))]
