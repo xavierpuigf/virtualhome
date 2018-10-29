@@ -3,6 +3,7 @@ import json
 import utils
 import glob
 import random
+import numpy as np
 from tqdm import tqdm
 from shutil import copyfile
 from joblib import Parallel, delayed
@@ -15,7 +16,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = False
+verbose = True
 dump = False
 max_nodes = 300
 
@@ -228,27 +229,30 @@ def check_whole_set(dir_path, graph_path):
     #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file784_2.txt')]
     #iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
 
-    print("Running on simulators")
-    joblib_inputs = [[txt_file, graph_path] for txt_file in program_txt_files]
-    results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
+    joblib_inputs = []
+    n = len(program_txt_files) // 30
+    program_txt_files = np.array(program_txt_files)
+    for txt_files in np.array_split(program_txt_files, n):
+        joblib_inputs = [[f, graph_path] for f in txt_files]
+        
+        print("Running on simulators")
+        results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
+        joblib_inputs = []
+        for txt_file, result in zip(txt_files, results):
+            script, message, executable, _, _ = result
+            if script is None:
+                not_parsable_programs += 1
+                continue
 
-    print("Interpreting the results")
-    for txt_file, result in zip(program_txt_files, results):
-        script, message, executable, _, _ = result
+            if executable:
+                executable_programs += 1
+                executable_program_length.append(len(script))
+            else:
+                not_executable_program_length.append(len(script))
 
-        if script is None:
-            not_parsable_programs += 1
-            continue
-
-        if executable:
-            executable_programs += 1
-            executable_program_length.append(len(script))
-        else:
-            not_executable_program_length.append(len(script))
-
-        if verbose:
-            print(message)
-        info.update({txt_file: message})
+            if verbose:
+                print(message)
+            info.update({txt_file: message})
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
