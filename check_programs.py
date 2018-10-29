@@ -3,8 +3,10 @@ import json
 import utils
 import glob
 import random
+import numpy as np
 from tqdm import tqdm
 from shutil import copyfile
+from joblib import Parallel, delayed
 
 from execution import Relation, State
 from scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
@@ -14,7 +16,7 @@ import ipdb
 
 
 random.seed(123)
-verbose = False
+verbose = True
 dump = False
 max_nodes = 300
 
@@ -185,54 +187,72 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     return message, executable, final_state, graph_state_list, id_mapping, info
 
 
-def check_whole_set(dir_path, graph_path):
-    """Use precondition to modify the environment graphs
-    """
+def joblib_one_iter(inp):
 
-    info = {}
-
-    program_dir = os.path.join(dir_path, 'withoutconds')
-    program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
+    txt_file, graph_path = inp
+    
     properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
     object_states = json.load(open('resources/object_states.json'))
     object_placing = json.load(open('resources/object_script_placing.json'))
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
+    
+    try:
+        script = read_script(txt_file)
+    except ScriptParseException:
+        return None, None, None, None, None
+
+    precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
+    precond = json.load(open(precond_path))
+
+    graph_dict = utils.load_graph_dict(graph_path)
+
+    message, executable, _, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
+    if executable and dump:
+        dump_one_data(txt_file, script, graph_state_list, id_mapping)
+
+    return script, message, executable, graph_state_list, id_mapping
+
+
+def check_whole_set(dir_path, graph_path):
+    """Use precondition to modify the environment graphs
+    """
+
+    program_dir = os.path.join(dir_path, 'withoutconds')
+    program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
+    
     executable_programs = 0
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
+    info = {}
     #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file784_2.txt')]
+    #iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
 
-    iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
-    for j, txt_file in iterators:
-
-        try:
-            script = read_script(txt_file)
-        except ScriptParseException:
-            not_parsable_programs += 1            
-            continue
-
-        precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
-        precond = json.load(open(precond_path))
-
-        graph_dict = utils.load_graph_dict(graph_path)
-
-        message, executable, final_state, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
+    joblib_inputs = []
+    n = len(program_txt_files) // 30
+    program_txt_files = np.array(program_txt_files)
+    for txt_files in np.array_split(program_txt_files, n):
+        joblib_inputs = [[f, graph_path] for f in txt_files]
         
-        if executable:
-            if dump:
-                dump_one_data(txt_file, script, graph_state_list, id_mapping)
-            executable_program_length.append(len(script))
-            executable_programs += 1
-            if verbose:
-                print(message)
-        else:
-            not_executable_program_length.append(len(script))
-            if verbose:
-                print(message)
+        print("Running on simulators")
+        results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
+        joblib_inputs = []
+        for txt_file, result in zip(txt_files, results):
+            script, message, executable, _, _ = result
+            if script is None:
+                not_parsable_programs += 1
+                continue
 
-        info.update({txt_file: message})
+            if executable:
+                executable_programs += 1
+                executable_program_length.append(len(script))
+            else:
+                not_executable_program_length.append(len(script))
+
+            if verbose:
+                print(message)
+            info.update({txt_file: message})
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
