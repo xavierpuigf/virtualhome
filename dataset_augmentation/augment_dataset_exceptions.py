@@ -18,18 +18,17 @@ import check_programs
 
 random.seed(123)
 np.random.seed(123)
-
 verbose = True
 thres = 300
-write_augment_data = False
-multi_process = False
+write_augment_data = True
+multi_process = True
 
 if write_augment_data:
     augmented_data_dir = 'augmented_program_exception'
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-prog_folder = 'programs_processed_precond_nograb_morepreconds'
+prog_folder = '../programs_processed_precond_nograb_morepreconds'
 programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
 
 with open('../executable_info.json', 'r') as f:
@@ -115,6 +114,10 @@ def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
     exceptions_not_found = []
     for program_name in programs:
+        if 'results_text_rebuttal_specialparsed_programs_turk_robot/split19_2.tx' not in program_name:
+            continue
+        
+
         augmented_progs_i = []
         augmented_preconds_i = []
         augmented_precond_candidates = []
@@ -175,6 +178,7 @@ def augment_dataset(d, programs):
         
         # back to dict
         augmented_precond_candidates = [from_hash(hp) for hp in augmented_precond_candidates]
+        maximum_iters = 20
         for j, init_state in enumerate(augmented_precond_candidates):
             lines_program = lines_program_orig.copy()
             executable = False
@@ -182,8 +186,9 @@ def augment_dataset(d, programs):
             input_graph = None
             id_mapping = {}
             info = {}
-
-            while not executable and max_iter < 10 and lines_program is not None:        
+            message_acum = []
+            program_acum = []
+            while not executable and max_iter < maximum_iters and lines_program is not None:        
                 message, final_state, input_graph, id_mapping, info = check_programs.check_script(
                         lines_program, 
                         init_state, 
@@ -191,11 +196,14 @@ def augment_dataset(d, programs):
                         input_graph,
                         id_mapping,
                         info)
+                message_acum.append(message)
+                program_acum.append(lines_program)
                 if False:
                     print('Error reading', lines_program)
                     lines_program = None
                     continue
                 if message is None:
+                    ipdb.set_trace()
                     lines_program = None
                     continue
                 lines_program = [x.strip() for x in lines_program]
@@ -213,18 +221,22 @@ def augment_dataset(d, programs):
 
             if executable and max_iter > 0:
                 # if verbose:
-                print(colored(
-                    'Program modified in {} exceptions'.format(max_iter), 
-                    'green'))        
+                #if verbose:
+                    #print(colored(
+                    #    'Program modified in {} exceptions'.format(max_iter), 
+                    #    'green'))        
                 augmented_preconds_i.append(str(init_state))
                 augmented_progs_i.append(lines_program)
+            
             elif not executable:
+                print(max_iter, program_name)
                 if verbose:
                     print(colored('Program not solved, {} iterations tried'.format(max_iter), 'red'))
-                    if lines_program:
-                        print(''.join(lines_program_orig))
-                        print('---')
-                        print('\n'.join(lines_program))
+                    print('\n'.join(message_acum))
+                    # if lines_program:
+                    #     print(''.join(lines_program_orig))
+                    #     print('---')
+                    #     print('\n'.join(lines_program))
 
         if write_augment_data:
             write_data(program_name, augmented_progs_i)
