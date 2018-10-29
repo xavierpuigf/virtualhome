@@ -22,6 +22,7 @@ verbose = True
 thres = 300
 write_augment_data = True
 multi_process = True
+num_processes = 100
 
 if write_augment_data:
     augmented_data_dir = 'augmented_program_exception'
@@ -67,6 +68,18 @@ def write_data(ori_path, all_new_progs):
             new_f.write(lines)
         new_f.close()    
 
+def write_graph(ori_path, graph_init, graph_end):
+    sub_dir = ori_path.split('/')[-1]
+    old_name = ori_path.split('/')[-1].split('.')[0]
+    new_dir = os.path.join(augmented_data_dir, 'init_and_final_graphs', sub_dir, old_name)
+    assert not os.path.exists(new_dir), ipdb.set_trace()
+    os.makedirs(new_dir)
+    for j in range(len(graph_init)):
+        new_f = open('{}/{}.json'.format(new_dir, j), 'w')
+        json.dump(
+                {"init_graph": graph_init[j], 
+                 "final_graph": graph_end[j].to_dict()}, new_f)
+        new_f.close()
 
 def write_precond(ori_path, all_new_preconds):
     
@@ -79,7 +92,7 @@ def write_precond(ori_path, all_new_preconds):
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        new_f.write(str(new_precond).replace('\'', '\"'))
+        json.dump(new_precond, new_f)
         new_f.close()   
 
 
@@ -114,12 +127,11 @@ def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
     exceptions_not_found = []
     for program_name in programs:
-        if 'results_text_rebuttal_specialparsed_programs_turk_robot/split19_2.tx' not in program_name:
-            continue
-        
 
         augmented_progs_i = []
         augmented_preconds_i = []
+        init_graph_i = []
+        end_graph_i = []
         augmented_precond_candidates = []
         if program_name in d.keys(): 
             continue
@@ -227,6 +239,8 @@ def augment_dataset(d, programs):
                     #    'green'))        
                 augmented_preconds_i.append(str(init_state))
                 augmented_progs_i.append(lines_program)
+                init_graph_i.append(input_graph)
+                end_graph_i.append(final_state)
             
             elif not executable:
                 print(max_iter, program_name)
@@ -241,9 +255,9 @@ def augment_dataset(d, programs):
         if write_augment_data:
             write_data(program_name, augmented_progs_i)
             write_precond(program_name, augmented_preconds_i)
+            write_graph(program_name, init_graph_i, end_graph_i)
         #print('\n'.join(exceptions_not_found))
 
-num_processes = 100
 processes = []
 if multi_process:
     manager = Manager()
