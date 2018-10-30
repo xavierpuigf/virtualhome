@@ -70,12 +70,16 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success'], json.loads(response['message'])
 
-    def expand_scene(self, new_graph):
+    def expand_scene(self, new_graph, randomize=False, random_seed=-1):
         """
-        Expands scene with the given graph
+        Expands scene with the given graph.
+        To use randomization set randomize to True.
+        To set random seed set random_seed to a non-negative value >= 0,
+        random_seed < 0 means that seed is not set
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'expand_scene', 'stringParams':
-                                      [json.dumps(new_graph)]})
+        response = self.post_command({'id': str(time.time()), 'action': 'expand_scene',
+                                      'stringParams': [json.dumps(new_graph)],
+                                      'intParams': [int(randomize), random_seed]})
         return response['success'], json.loads(response['message'])
 
 
