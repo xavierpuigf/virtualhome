@@ -182,8 +182,8 @@ for file_name in tqdm(files):
             orign_object, idi = obj_and_id
             object_new = object_replace_map[obj_and_id][rec_id[iti]]
             new_lines = [x.replace('<{}> ({})'.format(orign_object, idi), 
-                                   '<{}> ({})'.format(object_new, idi)) for x in new_lines]
-            precond_modif = precond_modif.replace('[u\"{}\", u\"{}\"]'.format(orign_object, idi), '[u\"{}\", u\"{}\"]'.format(object_new, idi))
+                               '<{}> ({})'.format(object_new.lower().replace(' ', '_'), idi)) for x in new_lines]
+            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(orign_object, idi), '[\"{}\", \"{}\"]'.format(object_new.lower().replace(' ', '_'), idi))
 
         augmented_progs_i.append(new_lines)         
         import ast
