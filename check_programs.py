@@ -21,10 +21,16 @@ dump = False
 max_nodes = 300
 
 
-def dump_one_data(txt_file, script, graph_state_list, id_mapping):
+def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
 
     new_path = txt_file.replace('withoutconds', 'executable_programs')
+    graph_sub_dir = graph_path.split('/')[-1].replace('.json', '')
+    new_path = new_path.split('/')
+    j = new_path.index('executable_programs') + 1
+    new_path = new_path[:j] + [graph_sub_dir] + new_path[j:]
+    new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
+    
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
 
@@ -55,6 +61,11 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping):
         new_f.write('\n')
 
     new_path = txt_file.replace('withoutconds', 'init_and_final_graphs').replace('txt', 'json')
+    graph_sub_dir = graph_path.split('/')[-1].replace('.json', '')
+    new_path = new_path.split('/')
+    j = new_path.index('init_and_final_graphs') + 1
+    new_path = new_path[:j] + [graph_sub_dir] + new_path[j:]
+    new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
@@ -161,13 +172,15 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
         ## place the random objects (id from 2000)
-        helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
+        max_node_to_place = max_nodes - len(graph_dict["nodes"])
+        n = random.randint(max_node_to_place - 20, max_node_to_place)
+        helper.add_random_objs_graph_dict(graph_dict, n=max(n, 0))
         helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, id_mapping, graph_dict)
         helper.open_all_doors(graph_dict)
-        #assert len(graph_dict["nodes"]) == max_nodes
+        assert len(graph_dict["nodes"]) <= max_nodes
     
     elif len(id_mapping) != 0:
         # Assume that object mapping specify all the objects in the scripts
@@ -210,7 +223,7 @@ def joblib_one_iter(inp):
     precond = json.load(open(precond_path))
     message, executable, _, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
     if executable and dump:
-        dump_one_data(txt_file, script, graph_state_list, id_mapping)
+        dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path)
 
     return script, message, executable, graph_state_list, id_mapping
 
@@ -251,7 +264,6 @@ def check_whole_set(dir_path, graph_path):
         
         print("Running on simulators")
         results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
-
         for k, (input, result) in enumerate(zip(joblib_inputs, results)):
             i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
