@@ -82,6 +82,10 @@ class UnityCommunication(object):
                                       'intParams': [int(randomize), random_seed]})
         return response['success'], json.loads(response['message'])
 
+    def point_cloud(self):
+        response = self.post_command({'id': str(time.time()), 'action': 'point_cloud'})
+        return response['success'], json.loads(response['message'])
+
 
 def _decode_image(img_string):
     img_bytes = base64.b64decode(img_string)
