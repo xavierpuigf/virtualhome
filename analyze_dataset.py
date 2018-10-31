@@ -21,6 +21,97 @@ graph_dir_name = 'init_and_final_graphs'
 patt_number = '\((.+?)\)'
 
 
+def check_unique_progs():
+
+    all_progs_path = 'train_progs_precond.json'
+    train_dataset = json.load(open(all_progs_path))
+    train_paths = list(train_dataset.keys())
+    graph_paths = ['TrimmedTestScene{}_graph'.format(i+1) for i in range(6)]
+
+    unique_paths = []
+    for p in train_paths:
+        for g in graph_paths:
+            if g in p:
+                unique_paths.append(p.replace('/'+g, ''))
+
+    unique_paths = list(set(unique_paths))
+    f = open('train_unique_progs_paths.txt', 'w')
+    for p in unique_paths:
+        f.write(p)
+        f.write('\n')
+    f.close()
+
+
+def check_prog_unity():
+
+    f = open('train_unique_progs_paths.txt')
+    unique_paths = f.read().split('\n')
+    unique_paths.pop()
+
+    
+    unique_progs_and_path = []
+    train_dataset = json.load(open('train_progs_precond.json'))
+    for path in unique_paths:
+        for data_path in train_dataset:
+            if data_path.endswith('/'.join(path.split('/')[-2:])):
+                unique_progs_and_path.append([train_dataset[data_path], data_path])
+                break
+
+
+    object_prefabs = json.load(open('resources/object_prefabs.json'))
+    available_obs = [k.lower().replace(' ', '_') for k in object_prefabs.keys()]
+    class_name_equivalence = json.load(open('resources/class_name_equivalence.json'))
+    static_objects = ['bathroom', 'floor', 'wall', 'ceiling', 'rug', 'curtains', 'ceiling_lamp', 'wall_lamp', 
+                        'bathroom_counter', 'bathtub', 'towel_rack', 'wall_shelf', 'stall', 'bathroom_cabinet', 
+                        'toilet', 'shelf', 'door', 'doorjamb', 'window', 'lightswitch', 'bedroom', 'table_lamp', 
+                        'chair', 'bookshelf', 'nightstand', 'bed', 'closet', 'coatrack', 'coffee_table', 
+                        'pillow', 'hanger', 'character', 'kitchen', 'maindoor', 'tv_stand', 'kitchen_table', 
+                        'bench', 'kitchen_counter', 'sink', 'power_socket', 'tv', 'clock', 'wall_phone', 
+                        'cutting_board', 'stove', 'oventray', 'toaster', 'fridge', 'coffeemaker', 'microwave', 
+                        'livingroom', 'sofa', 'coffee_table', 'desk', 'cabinet', 'standing_mirror', 'globe', 
+                        'mouse', 'mousemat', 'cpu_screen', 'cpu_case', 'keyboard', 'ceilingfan', 
+                        'kitchen_cabinets', 'dishwasher', 'cookingpot', 'wallpictureframe', 'vase', 'knifeblock', 
+                        'stovefan', 'orchid', 'long_board', 'garbage_can', 'photoframe', 'balance_ball', 'closet_drawer']
+    
+    patt_objs = '\<(.+?)\>'
+    valid_paths = []
+    for prog, path in unique_progs_and_path:
+        object_match = re.search(patt_objs, prog)
+        objs = []
+        while object_match:
+            objs.append(object_match.group(1))
+            object_match = re.search(patt_objs, object_match.string[object_match.end(1):])
+
+        objs = list(set(objs))
+        valid = True
+        for obj in objs:
+            if obj in class_name_equivalence:
+                all_alias = class_name_equivalence[obj] + [obj]
+            else:
+                all_alias = [obj]
+
+            if not any([o.lower().replace(' ', '_') in available_obs or o.lower().replace(' ', '_') in static_objects for o in all_alias]):
+                valid = False
+                break
+
+        if valid:
+            valid_paths.append(path)
+
+
+    graph_paths = ['TrimmedTestScene{}_graph'.format(i+1) for i in range(6)]
+    unique_paths = []
+    for p in valid_paths:
+        for g in graph_paths:
+            if g in p:
+                unique_paths.append(p.replace('/'+g, ''))
+
+    f = open('train_unique_unity_progs_paths.txt', 'w')
+    for p in unique_paths:
+        f.write(p)
+        f.write('\n')
+    f.close()
+
+
 def check_number_of_objects():
 
     program_txt_paths = glob(os.path.join(root_dirs, program_dir_name, '*/*.txt'))
@@ -222,6 +313,8 @@ def check_title():
 
 
 if __name__ == '__main__':
-    check_title()
+    #check_title()
     #check_graph_init_and_final_state()
     #check_number_of_objects()
+    #check_unique_progs()
+    check_prog_unity()
