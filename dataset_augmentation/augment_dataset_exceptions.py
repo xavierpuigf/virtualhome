@@ -15,12 +15,13 @@ from termcolor import colored
 
 sys.path.append('..')
 import check_programs
+import utils
 
 random.seed(123)
 np.random.seed(123)
 verbose = True
 thres = 300
-write_augment_data = True
+write_augment_data = False
 multi_process = True
 num_processes = 100
 
@@ -52,12 +53,12 @@ objects_occupied = [
     'bench']
 
 
-def write_data(ori_path, all_new_progs):
+def write_data(ori_path, all_new_progs, namedir='withoutconds'):
     
     # make_dirs
     sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, 'withoutconds', sub_dir, old_name)
+    new_dir = os.path.join(augmented_data_dir, namedir, sub_dir, old_name)
     assert not os.path.exists(new_dir), ipdb.set_trace()
     os.makedirs(new_dir)
 
@@ -129,6 +130,7 @@ def augment_dataset(d, programs):
     for program_name in programs:
 
         augmented_progs_i = []
+        augmented_progs_i_new_inst = []
         augmented_preconds_i = []
         init_graph_i = []
         end_graph_i = []
@@ -149,7 +151,7 @@ def augment_dataset(d, programs):
             init_state = json.load(f)
 
         hprev_state = to_hash(init_state.copy())
-        modified_state = init_state
+        
 
         program = lines_program[4:]
         objects_program = []
@@ -160,6 +162,7 @@ def augment_dataset(d, programs):
         
         prob_modif = 0.7
         for _ in range(thres):
+            modified_state = init_state.copy()
             # Remove sitting
             modified_state = [x for x in modified_state if list(x)[0] != 'sitting' or random.random() > prob_modif] 
             # Remove at reach
@@ -190,6 +193,7 @@ def augment_dataset(d, programs):
         
         # back to dict
         augmented_precond_candidates = [from_hash(hp) for hp in augmented_precond_candidates]
+        print('Candidates: {}'.format(len(augmented_precond_candidates)))
         maximum_iters = 20
         for j, init_state in enumerate(augmented_precond_candidates):
             lines_program = lines_program_orig.copy()
@@ -201,7 +205,8 @@ def augment_dataset(d, programs):
             message_acum = []
             program_acum = []
             while not executable and max_iter < maximum_iters and lines_program is not None:        
-                message, final_state, input_graph, id_mapping, info = check_programs.check_script(
+                (message, final_state, input_graph, 
+                id_mapping, info, graph_helper) = check_programs.check_script(
                         lines_program, 
                         init_state, 
                         '../example_graphs/TrimmedTestScene6_graph.json',
@@ -236,7 +241,23 @@ def augment_dataset(d, programs):
                 #if verbose:
                     #print(colored(
                     #    'Program modified in {} exceptions'.format(max_iter), 
-                    #    'green'))        
+                    #    'green'))   
+
+                # Convert the program
+                lines_program_newinst = lines_program[:4]
+                for lp in lines_program[4:]:
+                    action, objects, indx = script_utils.parseStrBlock(lp.strip())
+                    instruction = '[{}]'.format(action)
+                    for obj, idis in zip(objects, indx):
+                        idi = int(idis)
+                        obj_name = obj
+                        if (obj_name in graph_helper.possible_rooms and 
+                            (obj_name, idi) not in id_mapping):
+                            obj_name = graph_helper.equivalent_rooms[obj_name]
+                        graphid = id_mapping[(obj_name, idi)]
+                        instruction += ' <{}> ({}.{})'.format(obj_name, idi, graphid)
+                    lines_program_newinst.append(instruction)
+                augmented_progs_i_new_inst.append(lines_program_newinst)
                 augmented_preconds_i.append(str(init_state))
                 augmented_progs_i.append(lines_program)
                 init_graph_i.append(input_graph)
@@ -254,6 +275,7 @@ def augment_dataset(d, programs):
 
         if write_augment_data:
             write_data(program_name, augmented_progs_i)
+            write_data(program_name, augmented_progs_i_new_inst, 'executable_programs')
             write_precond(program_name, augmented_preconds_i)
             write_graph(program_name, init_graph_i, end_graph_i)
         #print('\n'.join(exceptions_not_found))
