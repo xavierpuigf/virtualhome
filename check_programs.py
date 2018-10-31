@@ -148,7 +148,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
     message, executable, final_state, graph_state_list, id_mapping, info = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
 
-    return message, final_state, graph_dict, id_mapping, info
+    return message, final_state, graph_dict, id_mapping, info, helper
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
