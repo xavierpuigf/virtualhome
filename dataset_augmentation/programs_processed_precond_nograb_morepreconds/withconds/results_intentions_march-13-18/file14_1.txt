@@ -1,14 +1,14 @@
 2
-location: ('BUTTON', '1') --> ('LIVING ROOM', '1'), ('RADIO', '1') --> ('LIVING ROOM', '1')
-atreach: ('BUTTON', '1') --> ('RADIO', '1'), ('RADIO', '1') --> ('RADIO', '1')
+atreach: ('RADIO', '1') --> ('RADIO', '1'), ('BUTTON', '1') --> ('RADIO', '1')
+location: ('RADIO', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
 Listen to music
 Walk into living room, look for radio, grab on button
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RADIO> (1)
-[Find] <RADIO> (1)
-[TurnTo] <RADIO> (1)
-[LookAt] <RADIO> (1)
-[Find] <BUTTON> (1)
-[Grab] <BUTTON> (1)
+[Walk] <living_room> (1)
+[Walk] <radio> (1)
+[Find] <radio> (1)
+[TurnTo] <radio> (1)
+[LookAt] <radio> (1)
+[Find] <button> (1)
+[Grab] <button> (1)

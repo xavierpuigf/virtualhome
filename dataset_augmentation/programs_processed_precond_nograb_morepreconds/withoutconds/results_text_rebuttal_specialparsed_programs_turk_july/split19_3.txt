@@ -2,12 +2,12 @@ Use computer
 Type on computer for work.
 
 
-[Find] <LAPTOP> (1)
-[Grab] <LAPTOP> (1)
-[Run] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <DESK> (1)
-[Open] <DESK> (1)
-[PutBack] <LAPTOP> (1) <DESK> (1)
-[SwitchOn] <LAPTOP> (1)
-[Touch] <LAPTOP> (1)
+[Find] <laptop> (1)
+[Grab] <laptop> (1)
+[Run] <chair> (1)
+[Sit] <chair> (1)
+[Find] <desk> (1)
+[Open] <desk> (1)
+[PutBack] <laptop> (1) <desk> (1)
+[SwitchOn] <laptop> (1)
+[Touch] <laptop> (1)

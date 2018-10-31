@@ -1,0 +1,16 @@
+Dust
+Dust the home office furniture
+
+
+[WALK] <living_room> (1.243)
+[WALK] <paper_towel> (1.1000)
+[FIND] <paper_towel> (1.1000)
+[GRAB] <paper_towel> (1.1000)
+[WALK] <desk> (1.1001)
+[WIPE] <desk> (1.1001)
+[FIND] <chair> (1.1002)
+[WIPE] <chair> (1.1002)
+[FIND] <filing_cabinet> (1.1003)
+[WIPE] <filing_cabinet> (1.1003)
+[WALK] <trashcan> (1.1004)
+[PUTBACK] <paper_towel> (1.1000) <trashcan> (1.1004)

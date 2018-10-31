@@ -2,11 +2,11 @@ Drink
 drink water from a cup of water
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CUP> (1)
-[Find] <CUP> (1)
-[Grab] <CUP> (1)
-[Run] <SINK> (1)
-[Pull] <SINK> (1)
-[Push] <SINK> (1)
-[Drink] <CUP> (1)
+[Walk] <kitchen> (1)
+[Walk] <cup> (1)
+[Find] <cup> (1)
+[Grab] <cup> (1)
+[Run] <sink> (1)
+[Pull] <sink> (1)
+[Push] <sink> (1)
+[Drink] <cup> (1)

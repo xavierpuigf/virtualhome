@@ -1,18 +1,18 @@
 2
-location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('POT', '1') --> ('KITCHEN', '1')
-atreach: ('WATER GLASS', '1') --> ('WATER GLASS', '1'), ('WATER', '1') --> ('WATER', '1'), ('POT', '1') --> ('WATER GLASS', '1')
+atreach: ('WATER GLASS', '1') --> ('WATER GLASS', '1'), ('POT', '1') --> ('WATER GLASS', '1'), ('WATER', '1') --> ('WATER', '1')
+location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('POT', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1')
 Drink
 Go and drink water in a kitchen
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <WATER GLASS> (1)
-[Find] <WATER GLASS> (1)
-[Grab] <WATER GLASS> (1)
-[Find] <POT> (1)
-[Uncover] <POT> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Grab] <WATER> (1)
-[Pour] <WATER> (1) <WATER GLASS> (1)
-[Drink] <WATER GLASS> (1)
+[Walk] <kitchen> (1)
+[Walk] <water_glass> (1)
+[Find] <water_glass> (1)
+[Grab] <water_glass> (1)
+[Find] <pot> (1)
+[Uncover] <pot> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Grab] <water> (1)
+[Pour] <water> (1) <water_glass> (1)
+[Drink] <water_glass> (1)

@@ -1,1 +1,1 @@
-[{"location": [["HAIR", "1"], ["BEDROOM", "1"]]}, {"location": [["FACE", "1"], ["BEDROOM", "1"]]}, {"location": [["TOWEL", "1"], ["BEDROOM", "1"]]}, {"atreach": [["HAIR", "1"], ["TOWEL", "1"]]}, {"atreach": [["FACE", "1"], ["TOWEL", "1"]]}, {"atreach": [["TOWEL", "1"], ["TOWEL", "1"]]}]
+[{"atreach": [["towel", "1"], ["towel", "1"]]}, {"atreach": [["face", "1"], ["towel", "1"]]}, {"atreach": [["hair", "1"], ["towel", "1"]]}, {"location": [["towel", "1"], ["bedroom", "1"]]}, {"location": [["face", "1"], ["bedroom", "1"]]}, {"location": [["hair", "1"], ["bedroom", "1"]]}]

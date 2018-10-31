@@ -1,0 +1,11 @@
+Wash dishes by hand
+go into the kitchen, walk to the sink. Turn on the water and rinse of a plate and clean them off fully with a sponge.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1000)
+[FIND] <plate> (1.1001)
+[RINSE] <plate> (1.1001)
+[FIND] <sponge> (1.1002)
+[GRAB] <sponge> (1.1002)
+[WASH] <plate> (1.1001)

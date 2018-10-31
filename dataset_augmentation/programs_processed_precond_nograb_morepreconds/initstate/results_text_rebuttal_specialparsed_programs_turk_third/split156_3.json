@@ -1,1 +1,1 @@
-[{"location": [["MAIL", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["MAIL", "2"], ["ENTRANCE HALL", "1"]]}, {"location": [["TABLE", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["MAIL", "1"], ["MAIL", "1"]]}, {"atreach": [["MAIL", "2"], ["MAIL", "1"]]}]
+[{"atreach": [["mail", "1"], ["mail", "1"]]}, {"atreach": [["mail", "2"], ["mail", "1"]]}, {"location": [["mail", "1"], ["entrance_hall", "1"]]}, {"location": [["mail", "2"], ["entrance_hall", "1"]]}, {"location": [["table", "1"], ["entrance_hall", "1"]]}]

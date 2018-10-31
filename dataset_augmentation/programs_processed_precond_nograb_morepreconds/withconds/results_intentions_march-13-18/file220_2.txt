@@ -1,12 +1,12 @@
 2
-location: ('CAT', '1') --> ('LIVING ROOM', '1')
 atreach: ('CAT', '1') --> ('CAT', '1')
+location: ('CAT', '1') --> ('LIVING ROOM', '1')
 Pet cat
 First I need to find the cat in the living room. Then I walk over to the cat and pet it gently.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CAT> (1)
-[Find] <CAT> (1)
-[Walk] <CAT> (1)
-[Touch] <CAT> (1)
+[Walk] <living_room> (1)
+[Walk] <cat> (1)
+[Find] <cat> (1)
+[Walk] <cat> (1)
+[Touch] <cat> (1)

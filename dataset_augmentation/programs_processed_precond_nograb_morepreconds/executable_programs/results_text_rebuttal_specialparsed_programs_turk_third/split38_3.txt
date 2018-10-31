@@ -1,0 +1,11 @@
+Spread table with appropriate supplies
+Spread table cloth and table runner, put table mats in front of every seat, put dinner plates, quarter plates, cutlery on table mats
+
+
+[FIND] <table> (1.187)
+[TURNTO] <table> (1.187)
+[POINTAT] <table> (1.187)
+[WASH] <table> (1.187)
+[TURNTO] <table> (1.187)
+[LOOKAT] <table> (1.187)
+[TOUCH] <table> (1.187)

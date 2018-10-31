@@ -1,0 +1,6 @@
+Listen to music
+I am bored or feeling bummed out. I want  to listen to some good music.
+
+
+[FIND] <cellphone> (1.1000)
+[PLUGIN] <cellphone> (1.1000)

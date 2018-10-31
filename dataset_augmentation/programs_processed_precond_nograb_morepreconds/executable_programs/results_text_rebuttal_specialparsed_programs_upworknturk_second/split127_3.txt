@@ -1,0 +1,13 @@
+Study
+Study norwegian
+
+
+[WALK] <living_room> (1.243)
+[WALK] <lamp> (1.1000)
+[FIND] <lamp> (1.1000)
+[SWITCHON] <lamp> (1.1000)
+[FIND] <book> (1.1001)
+[GRAB] <book> (1.1001)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[READ] <book> (1.1001)

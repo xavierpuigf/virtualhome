@@ -1,0 +1,20 @@
+Dust
+Obtain a clean dusting cloth and get the furniture polish from it's storage area. Spray the furniture with the polish and wipe with a clean cloth. You will want to move objects out of the way to obtain a nice clean finish. Put the dusting cloth in the laundry basket and the furniture polishvback in it's storage area.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cabinet> (1.1000)
+[FIND] <cabinet> (1.1000)
+[OPEN] <cabinet> (1.1000)
+[FIND] <cleaning_solution> (1.1001)
+[GRAB] <cleaning_solution> (1.1001)
+[FIND] <rag> (1.1002)
+[GRAB] <rag> (1.1002)
+[CLOSE] <cabinet> (1.1000)
+[POUR] <cleaning_solution> (1.1001) <rag> (1.1002)
+[FIND] <table> (1.1003)
+[WIPE] <table> (1.1003)
+[FIND] <basket_for_clothes> (1.1004)
+[PUTBACK] <rag> (1.1002) <basket_for_clothes> (1.1004)
+[OPEN] <cabinet> (1.1000)
+[PUTBACK] <cleaning_solution> (1.1001) <cabinet> (1.1000)

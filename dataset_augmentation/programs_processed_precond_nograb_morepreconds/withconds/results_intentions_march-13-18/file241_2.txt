@@ -1,16 +1,16 @@
 3
+sitting: ('Character', 1) --> 
 atreach: ('BOOK', '1') --> ('BOOK', '1')
 location: ('BOOK', '1') --> ('HOME OFFICE', '1')
-sitting: ('Character', 1) --> 
 Read book
 Find book. Pick up book. Open book. Read the book.
 
 
 [StandUp]
-[Walk] <HOME OFFICE> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[TurnTo] <BOOK> (1)
-[LookAt] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <home_office> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[TurnTo] <book> (1)
+[LookAt] <book> (1)
+[Read] <book> (1)

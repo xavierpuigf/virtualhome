@@ -1,0 +1,8 @@
+Turn on light
+I walk into the dining room and turn on the lights
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <lighting> (1.60)
+[FIND] <lighting> (1.60)
+[SWITCHON] <lighting> (1.60)

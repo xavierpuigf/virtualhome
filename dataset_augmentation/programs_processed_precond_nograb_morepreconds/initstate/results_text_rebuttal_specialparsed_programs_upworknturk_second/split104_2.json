@@ -1,1 +1,1 @@
-[{"in": [["BOOK", "1"], ["BOOKSHELF", "1"]]}, {"atreach": [["BOOK", "1"], ["BOOKSHELF", "1"]]}, {"atreach": [["CHAIR", "1"], ["BOOKSHELF", "1"]]}]
+[{"atreach": [["book", "1"], ["bookshelf", "1"]]}, {"atreach": [["chair", "1"], ["bookshelf", "1"]]}, {"in": [["book", "1"], ["bookshelf", "1"]]}, {"free": ["chair", "1"]}]

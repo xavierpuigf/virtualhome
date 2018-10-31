@@ -1,0 +1,13 @@
+Write story
+Pull out laptop. Turn on laptop. Open Microsoft Word. Start typing story.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <laptop> (1.1000)
+[FIND] <laptop> (1.1000)
+[GRAB] <laptop> (1.1000)
+[FIND] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[SWITCHON] <laptop> (1.1000)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)

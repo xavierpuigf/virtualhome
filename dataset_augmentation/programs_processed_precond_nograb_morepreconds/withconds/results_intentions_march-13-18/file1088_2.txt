@@ -1,26 +1,28 @@
-5
-is_off: ('ALARM CLOCK', '1') --> , ('LIGHT', '1') --> 
-atreach: ('ALARM CLOCK', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('CLOTHES_SHIRT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('LIGHT', '1'), ('CLOTHES_PANTS', '1') --> ('LIGHT', '1')
-in: ('CLOTHES_PANTS', '1') --> ('BED', '1')
-location: ('ALARM CLOCK', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BEDROOM', '1')
+7
+is_off: ('LIGHT', '1') --> , ('ALARM CLOCK', '1') --> 
+plugged: ('LIGHT', '1') --> , ('ALARM CLOCK', '1') --> 
 sitting: ('Character', 1) --> 
+atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('LIGHT', '1'), ('CLOTHES_PANTS', '1') --> ('LIGHT', '1'), ('CLOTHES_SHIRT', '1') --> ('LIGHT', '1'), ('ALARM CLOCK', '1') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BEDROOM', '1'), ('CLOTHES_SHIRT', '1') --> ('BEDROOM', '1'), ('ALARM CLOCK', '1') --> ('BEDROOM', '1')
+in: ('CLOTHES_PANTS', '1') --> ('BED', '1')
+free: ('BED', '1') --> 
 Go to sleep
 I make the bed, I put on my bed clothes, I set my alarm clock, I turn off the lights, and go to bed.
 
 
 [StandUp]
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <BED> (1)
-[TurnTo] <BED> (1)
-[LookAt] <BED> (1)
-[Find] <CLOTHES_PANTS> (1)
-[PutOn] <CLOTHES_PANTS> (1)
-[Find] <CLOTHES_SHIRT> (1)
-[PutOn] <CLOTHES_SHIRT> (1)
-[Find] <ALARM CLOCK> (1)
-[SwitchOn] <ALARM CLOCK> (1)
-[SwitchOff] <LIGHT> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <bed> (1)
+[TurnTo] <bed> (1)
+[LookAt] <bed> (1)
+[Find] <clothes_pants> (1)
+[PutOn] <clothes_pants> (1)
+[Find] <clothes_shirt> (1)
+[PutOn] <clothes_shirt> (1)
+[Find] <alarm_clock> (1)
+[SwitchOn] <alarm_clock> (1)
+[SwitchOff] <light> (1)
 [Sleep]

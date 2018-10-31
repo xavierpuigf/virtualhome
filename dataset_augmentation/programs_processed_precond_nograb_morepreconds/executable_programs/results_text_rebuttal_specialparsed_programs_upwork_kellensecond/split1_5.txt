@@ -1,0 +1,11 @@
+Read newspaper
+Pull out dining room chair. Sit in dining room chair. Open newspaper to section you'd like to read. Read section. Keep reading all sections you'd like.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <newspaper> (1.1000)
+[FIND] <newspaper> (1.1000)
+[GRAB] <newspaper> (1.1000)
+[FIND] <chair> (1.1001)
+[SIT] <chair> (1.1001)
+[READ] <newspaper> (1.1000)

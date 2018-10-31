@@ -1,0 +1,14 @@
+Turn on light
+I need to turn on the lights in the kitchen so I can make dinner.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[TURNTO] <light> (1.1000)
+[LOOKAT] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[WALK] <light> (2.1001)
+[SWITCHON] <light> (2.1001)
+[WALK] <light> (3.1002)
+[SWITCHON] <light> (3.1002)

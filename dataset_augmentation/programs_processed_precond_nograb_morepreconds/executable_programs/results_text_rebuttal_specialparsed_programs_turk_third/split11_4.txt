@@ -1,0 +1,12 @@
+Style hair
+Towel dry hair. Apply chosen product, in this case leave in conditioner and root spray.  Work product through the hair.  Comb to appropriate part.  Dry hair upside down, working on each section of hair to give lift.  When hair is almost dry, begin to round brush hair using hair dryer on specific parts to create style.  When satisfied with curl, brush through and spray.
+
+
+[FIND] <towel> (1.1000)
+[TURNTO] <towel> (1.1000)
+[POINTAT] <towel> (1.1000)
+[WASH] <towel> (1.1000)
+[TURNTO] <towel> (1.1000)
+[LOOKAT] <towel> (1.1000)
+[SQUEEZE] <towel> (1.1000)
+[WALK] <bathroom> (1.1)

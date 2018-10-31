@@ -1,0 +1,11 @@
+Vacuum
+Plug in the vacuum. Turn on vacuum. Push the vacuum around the rug in the bedroom until all the dirt and debris is gone. Unplug the vacuum and put it away.
+
+
+[FIND] <vacuum_cleaner> (1.1000)
+[PUSH] <vacuum_cleaner> (1.1000)
+[WALK] <bedroom> (1.62)
+[WALK] <vacuum_cleaner> (1.1000)
+[PLUGIN] <vacuum_cleaner> (1.1000)
+[SWITCHOFF] <vacuum_cleaner> (1.1000)
+[PLUGOUT] <vacuum_cleaner> (1.1000)

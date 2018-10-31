@@ -1,23 +1,23 @@
 4
-atreach: ('TABLE', '1') --> ('KNIFE', '1'), ('MAIL', '1') --> ('MAIL', '1'), ('KNIFE', '1') --> ('KNIFE', '1')
-location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('MAIL', '1') --> ('ENTRANCE HALL', '1'), ('KNIFE', '1') --> ('LIVING ROOM', '1')
-closed: ('MAIL', '1') --> 
 sitting: ('Character', 1) --> 
+atreach: ('MAIL', '1') --> ('MAIL', '1'), ('KNIFE', '1') --> ('KNIFE', '1'), ('TABLE', '1') --> ('KNIFE', '1')
+location: ('MAIL', '1') --> ('ENTRANCE HALL', '1'), ('KNIFE', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
+closed: ('MAIL', '1') --> 
 Set up table
 I go to the entrance, I get my package, I take the table and the arm
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <MAIL> (1)
-[Find] <MAIL> (1)
-[Grab] <MAIL> (1)
-[Walk] <LIVING ROOM> (1)
-[Drop] <MAIL> (1)
-[Walk] <KNIFE> (1)
-[Find] <KNIFE> (1)
-[Grab] <KNIFE> (1)
-[Open] <MAIL> (1)
-[Drop] <KNIFE> (1)
-[Find] <TABLE> (1)
-[Uncover] <TABLE> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <mail> (1)
+[Find] <mail> (1)
+[Grab] <mail> (1)
+[Walk] <living_room> (1)
+[Drop] <mail> (1)
+[Walk] <knife> (1)
+[Find] <knife> (1)
+[Grab] <knife> (1)
+[Open] <mail> (1)
+[Drop] <knife> (1)
+[Find] <table> (1)
+[Uncover] <table> (1)
 [StandUp]

@@ -1,0 +1,15 @@
+Go to toilet
+When I need to use the restroom I walk to the bathroom, sit on the toilet, do my business, wipe with toilet paper, stand up and flush. Then wash my hands.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <toilet> (1.1000)
+[FIND] <toilet> (1.1000)
+[SIT] <toilet> (1.1000)
+[FIND] <toilet_paper> (1.1001)
+[GRAB] <toilet_paper> (1.1001)
+[WIPE] <toilet_paper> (1.1001)
+[STANDUP]
+[WALK] <sink> (1.1002)
+[FIND] <soap> (1.1003)
+[WASH] <soap> (1.1003)

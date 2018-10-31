@@ -1,13 +1,14 @@
-3
+4
 is_off: ('LIGHT', '1') --> 
-location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1')
+plugged: ('LIGHT', '1') --> 
 atreach: ('LIGHT', '1') --> ('ELECTRICAL OUTLET', '1')
+location: ('ELECTRICAL OUTLET', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1')
 Turn on light
 I walk to the living room. I find the electric outlet. I switch on the light.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <ELECTRICAL OUTLET> (1)
-[Find] <ELECTRICAL OUTLET> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
+[Walk] <living_room> (1)
+[Walk] <electrical_outlet> (1)
+[Find] <electrical_outlet> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)

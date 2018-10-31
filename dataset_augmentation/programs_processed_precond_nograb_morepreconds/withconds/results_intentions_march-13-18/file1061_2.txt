@@ -4,7 +4,7 @@ Browse internet
 I walk to the home office and find the computer. I switch on the computer and open the browser. I type in Google and press search.
 
 
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)

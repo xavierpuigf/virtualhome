@@ -1,23 +1,25 @@
-3
+5
 is_off: ('LIGHT', '1') --> 
-location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('LIGHT', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
-atreach: ('HANDS_BOTH', '1') --> ('LIGHT', '1'), ('TOILET', '1') --> ('TOILET PAPER', '1'), ('SINK', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('TOILET PAPER', '1') --> ('LIGHT', '1')
+plugged: ('LIGHT', '1') --> 
+atreach: ('TOILET', '1') --> ('TOILET PAPER', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('TOILET PAPER', '1') --> ('LIGHT', '1'), ('SINK', '1') --> ('LIGHT', '1'), ('HANDS_BOTH', '1') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1')
+free: ('TOILET', '1') --> 
 Go to toilet
 I walk to the bathroom and turn the lights on. I lift the toilet lid and sit. After I'm done with my business I take a piece of toilet paper to wipe with. Then I stand up and go wash my hands on the sink.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <TOILET> (1)
-[Sit] <TOILET> (1)
-[Find] <TOILET PAPER> (1)
-[Grab] <TOILET PAPER> (1)
-[Cut] <TOILET PAPER> (1)
-[PutObjBack] <TOILET PAPER> (1)
-[Flush] <TOILET> (1)
-[Find] <SINK> (1)
-[TurnTo] <SINK> (1)
-[Find] <HANDS_BOTH> (1)
-[Wash] <HANDS_BOTH> (1)
+[Walk] <bathroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <toilet> (1)
+[Sit] <toilet> (1)
+[Find] <toilet_paper> (1)
+[Grab] <toilet_paper> (1)
+[Cut] <toilet_paper> (1)
+[PutObjBack] <toilet_paper> (1)
+[Flush] <toilet> (1)
+[Find] <sink> (1)
+[TurnTo] <sink> (1)
+[Find] <hands_both> (1)
+[Wash] <hands_both> (1)

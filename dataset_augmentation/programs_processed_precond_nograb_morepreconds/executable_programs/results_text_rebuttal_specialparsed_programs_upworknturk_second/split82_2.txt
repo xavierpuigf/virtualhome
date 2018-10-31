@@ -1,0 +1,7 @@
+Walk through
+Walk through the hallway.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <dining_room> (1.161)
+[WALK] <living_room> (1.243)

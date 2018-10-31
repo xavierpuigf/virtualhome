@@ -1,10 +1,11 @@
-0
+1
+free: ('CHAIR', '1') --> 
 Read book
 Read a book
 
 
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Read] <BOOK> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Read] <book> (1)

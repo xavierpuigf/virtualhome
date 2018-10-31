@@ -1,16 +1,17 @@
-2
+3
 is_off: ('COMPUTER', '1') --> 
 atreach: ('CHAIR', '1') --> ('KEYBOARD', '1')
+free: ('CHAIR', '1') --> 
 Work
 I turn on the computer, sit down in front of it, and then log in using the keyboard. Then I open up whatever I'm working on, as well as my email so I can check it for work-related things. Then I start working and typing.
 
 
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
-[Find] <MOUSE> (1)
-[Touch] <MOUSE> (1)
-[Type] <KEYBOARD> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <keyboard> (1)
+[Type] <keyboard> (1)
+[Find] <mouse> (1)
+[Touch] <mouse> (1)
+[Type] <keyboard> (1)

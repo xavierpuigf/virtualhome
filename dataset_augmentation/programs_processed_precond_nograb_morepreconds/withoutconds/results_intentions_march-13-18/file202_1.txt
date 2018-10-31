@@ -2,7 +2,7 @@ Pet cat
 Pet cat No. 2 in the living room.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CAT> (2)
-[Find] <CAT> (2)
-[Wipe] <CAT> (2)
+[Walk] <living_room> (1)
+[Walk] <cat> (2)
+[Find] <cat> (2)
+[Wipe] <cat> (2)

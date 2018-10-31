@@ -1,20 +1,21 @@
-2
-location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('RAG', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('INSTRUMENT_PIANO', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
-atreach: ('TELEVISION', '1') --> ('RAG', '1'), ('RAG', '1') --> ('RAG', '1'), ('COUCH', '1') --> ('RAG', '1'), ('INSTRUMENT_PIANO', '1') --> ('RAG', '1'), ('COFFEE TABLE', '1') --> ('RAG', '1')
+3
+atreach: ('RAG', '1') --> ('RAG', '1'), ('COFFEE TABLE', '1') --> ('RAG', '1'), ('COUCH', '1') --> ('RAG', '1'), ('TELEVISION', '1') --> ('RAG', '1'), ('INSTRUMENT_PIANO', '1') --> ('RAG', '1')
+location: ('RAG', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('INSTRUMENT_PIANO', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Clean room
 Tidy the room
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Find] <COFFEE TABLE> (1)
-[Wipe] <COFFEE TABLE> (1)
-[Find] <COUCH> (1)
-[Wipe] <COUCH> (1)
-[Find] <TELEVISION> (1)
-[Wipe] <TELEVISION> (1)
-[Find] <INSTRUMENT_PIANO> (1)
-[Wipe] <INSTRUMENT_PIANO> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <living_room> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Find] <coffee_table> (1)
+[Wipe] <coffee_table> (1)
+[Find] <couch> (1)
+[Wipe] <couch> (1)
+[Find] <television> (1)
+[Wipe] <television> (1)
+[Find] <instrument_piano> (1)
+[Wipe] <instrument_piano> (1)
+[PutObjBack] <rag> (1)

@@ -1,0 +1,14 @@
+Greet people
+Say HI to those that come in.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <woman> (1.1000)
+[FIND] <woman> (1.1000)
+[GREET] <woman> (1.1000)
+[FIND] <woman> (2.1001)
+[GREET] <woman> (2.1001)
+[FIND] <man> (1.1002)
+[GREET] <man> (1.1002)
+[FIND] <man> (2.1003)
+[GREET] <man> (2.1003)

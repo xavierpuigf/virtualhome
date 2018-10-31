@@ -1,12 +1,12 @@
 2
-location: ('BOOK', '2') --> ('LIVING ROOM', '1')
 atreach: ('BOOK', '2') --> ('BOOK', '2')
+location: ('BOOK', '2') --> ('LIVING ROOM', '1')
 Read book
 walk to living room ,find a book ,open the book ,read the book
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOK> (2)
-[Find] <BOOK> (2)
-[Grab] <BOOK> (2)
-[Read] <BOOK> (2)
+[Walk] <living_room> (1)
+[Walk] <book> (2)
+[Find] <book> (2)
+[Grab] <book> (2)
+[Read] <book> (2)

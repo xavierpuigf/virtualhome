@@ -1,16 +1,17 @@
-2
+3
+atreach: ('SOFA', '1') --> ('TABLE', '1'), ('CHESSBOARD', '1') --> ('CHESSBOARD', '1'), ('TABLE', '1') --> ('CHESSBOARD', '1')
 location: ('CHESSBOARD', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
-atreach: ('CHESSBOARD', '1') --> ('CHESSBOARD', '1'), ('SOFA', '1') --> ('TABLE', '1'), ('TABLE', '1') --> ('CHESSBOARD', '1')
+free: ('SOFA', '1') --> 
 Play games
 Set up board game and play
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHESSBOARD> (1)
-[Find] <CHESSBOARD> (1)
-[Grab] <CHESSBOARD> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <TABLE> (1)
-[PutBack] <CHESSBOARD> (1) <TABLE> (1)
+[Walk] <living_room> (1)
+[Walk] <chessboard> (1)
+[Find] <chessboard> (1)
+[Grab] <chessboard> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <table> (1)
+[PutBack] <chessboard> (1) <table> (1)
 [Play]

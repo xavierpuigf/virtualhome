@@ -2,6 +2,6 @@ Walk through
 Walk through the hallway.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <KITCHEN> (1)
-[Walk] <LIVING ROOM> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <kitchen> (1)
+[Walk] <living_room> (1)

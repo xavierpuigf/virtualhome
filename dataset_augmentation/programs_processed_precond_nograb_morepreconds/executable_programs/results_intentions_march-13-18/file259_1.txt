@@ -1,0 +1,16 @@
+Watch TV
+stand up, walk to living room, find remote control, grab remote control, find couch, walk to couch, sit in couch, find television, lift remote control, switch on television, look at television
+
+
+[STANDUP]
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <couch> (1.1001)
+[WALK] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[FIND] <television> (1.1002)
+[SWITCHON] <television> (1.1002)
+[TURNTO] <television> (1.1002)
+[LOOKAT] <television> (1.1002)

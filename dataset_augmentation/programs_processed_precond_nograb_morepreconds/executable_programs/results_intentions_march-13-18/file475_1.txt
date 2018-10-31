@@ -1,0 +1,12 @@
+Wash clothes
+I grab basket for clothes. I walk into the kitchen. I put clothes in washing machine. I turn on washing machine.
+
+
+[FIND] <basket_for_clothes> (1.1000)
+[GRAB] <basket_for_clothes> (1.1000)
+[WALK] <dining_room> (1.161)
+[WALK] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[PUTBACK] <basket_for_clothes> (1.1000) <washing_machine> (1.1001)
+[CLOSE] <washing_machine> (1.1001)
+[SWITCHON] <washing_machine> (1.1001)

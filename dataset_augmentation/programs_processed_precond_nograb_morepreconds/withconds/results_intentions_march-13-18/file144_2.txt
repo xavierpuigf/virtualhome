@@ -1,13 +1,14 @@
-2
-location: ('BED', '1') --> ('BEDROOM', '1'), ('PAJAMAS', '1') --> ('BEDROOM', '1')
-atreach: ('BED', '1') --> ('PAJAMAS', '1'), ('PAJAMAS', '1') --> ('PAJAMAS', '1')
+3
+atreach: ('PAJAMAS', '1') --> ('PAJAMAS', '1'), ('BED', '1') --> ('PAJAMAS', '1')
+location: ('PAJAMAS', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Go to sleep
 go to bedroom, put pajamas on, lie in bed, sleep
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <PAJAMAS> (1)
-[Find] <PAJAMAS> (1)
-[PutOn] <PAJAMAS> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <pajamas> (1)
+[Find] <pajamas> (1)
+[PutOn] <pajamas> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)

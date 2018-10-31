@@ -2,13 +2,13 @@ Getting  dresses
 Putting on undergarments  and clothes
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CLOSET> (1)
-[Find] <CLOSET> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <CLOTHES_PANTS> (1)
-[PutOn] <CLOTHES_PANTS> (1)
-[Find] <CLOTHES_SHIRT> (1)
-[PutOn] <CLOTHES_SHIRT> (1)
-[Close] <CLOSET> (1)
+[Walk] <bedroom> (1)
+[Walk] <closet> (1)
+[Find] <closet> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Find] <clothes_pants> (1)
+[PutOn] <clothes_pants> (1)
+[Find] <clothes_shirt> (1)
+[PutOn] <clothes_shirt> (1)
+[Close] <closet> (1)

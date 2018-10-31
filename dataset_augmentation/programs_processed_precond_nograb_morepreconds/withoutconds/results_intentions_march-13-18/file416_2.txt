@@ -2,6 +2,6 @@ Pick up phone
 I am going to answer the phone.
 
 
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)
-[PutObjBack] <PHONE> (1)
+[Find] <phone> (1)
+[Grab] <phone> (1)
+[PutObjBack] <phone> (1)

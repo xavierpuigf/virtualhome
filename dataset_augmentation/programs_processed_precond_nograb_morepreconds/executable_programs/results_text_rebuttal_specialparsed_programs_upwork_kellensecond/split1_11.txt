@@ -1,0 +1,11 @@
+Get toilet paper
+There are extra toilet papers in the bottom cabinet.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <bathroom_cabinet> (1.1000)
+[FIND] <bathroom_cabinet> (1.1000)
+[OPEN] <bathroom_cabinet> (1.1000)
+[FIND] <toilet_paper> (1.1001)
+[GRAB] <toilet_paper> (1.1001)
+[CLOSE] <bathroom_cabinet> (1.1000)

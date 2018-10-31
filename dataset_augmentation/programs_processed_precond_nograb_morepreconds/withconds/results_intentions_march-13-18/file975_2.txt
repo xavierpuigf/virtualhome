@@ -4,8 +4,8 @@ Take shower
 find the dresses, find the towel, walk to bathroom, find the shower, open the shower and take a shower
 
 
-[Find] <CLOTHES_DRESS> (1)
-[Find] <TOWEL> (1)
-[Walk] <BATHROOM> (1)
-[Walk] <SHOWER> (1)
-[Find] <SHOWER> (1)
+[Find] <clothes_dress> (1)
+[Find] <towel> (1)
+[Walk] <bathroom> (1)
+[Walk] <shower> (1)
+[Find] <shower> (1)

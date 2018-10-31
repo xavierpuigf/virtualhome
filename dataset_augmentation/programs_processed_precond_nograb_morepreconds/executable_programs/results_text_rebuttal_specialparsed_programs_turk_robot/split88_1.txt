@@ -1,0 +1,5 @@
+Close door
+Push the door shut until it latches.
+
+
+[RUN] <living_room> (1.243)

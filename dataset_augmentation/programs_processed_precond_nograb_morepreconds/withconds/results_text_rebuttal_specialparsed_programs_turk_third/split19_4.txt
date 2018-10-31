@@ -1,13 +1,14 @@
-2
+3
+atreach: ('COUCH', '1') --> ('FEET_BOTH', '1'), ('FEET_BOTH', '1') --> ('COUCH', '1')
 in: ('COUCH', '1') --> ('COFFEE TABLE', '1')
-atreach: ('FEET_BOTH', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('FEET_BOTH', '1')
+free: ('COUCH', '1') --> 
 Put up feet
 Put feet on coffee table.
 
 
-[Walk] <COFFEE TABLE> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <FEET_BOTH> (1)
-[PutBack] <FEET_BOTH> (1) <COFFEE TABLE> (1)
+[Walk] <coffee_table> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[Find] <feet_both> (1)
+[PutBack] <feet_both> (1) <coffee_table> (1)
 [Sleep]

@@ -1,0 +1,13 @@
+Wash clothes
+Put dirty clothes in the washing machine. When cycle is done, put in dryer. When cycle is done, remove and put away clothes.
+
+
+[FIND] <clothes_underwear> (1.1000)
+[GRAB] <clothes_underwear> (1.1000)
+[FIND] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[PUTBACK] <clothes_underwear> (1.1000) <washing_machine> (1.1001)
+[FIND] <washing_machine> (1.1001)
+[CLOSE] <washing_machine> (1.1001)
+[SWITCHON] <washing_machine> (1.1001)
+[RINSE] <clothes_underwear> (1.1000)

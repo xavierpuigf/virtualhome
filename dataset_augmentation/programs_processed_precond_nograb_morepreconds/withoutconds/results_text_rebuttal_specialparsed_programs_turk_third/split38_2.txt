@@ -2,10 +2,10 @@ Prepare Dinner
 Prepare meals for the family
 
 
-[Find] <STOVE> (1)
-[TurnTo] <STOVE> (1)
-[PointAt] <STOVE> (1)
-[Rinse] <STOVE> (1)
-[TurnTo] <STOVE> (1)
-[LookAt] <STOVE> (1)
-[SwitchOff] <STOVE> (1)
+[Find] <stove> (1)
+[TurnTo] <stove> (1)
+[PointAt] <stove> (1)
+[Rinse] <stove> (1)
+[TurnTo] <stove> (1)
+[LookAt] <stove> (1)
+[SwitchOff] <stove> (1)

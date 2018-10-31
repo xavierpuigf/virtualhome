@@ -1,30 +1,30 @@
 7
-inside: ('VACUUM CLEANER', '1') --> ('DRESSER', '1')
-atreach: ('TOY', '1') --> ('BED', '1'), ('VACUUM CLEANER', '1') --> ('BED', '1'), ('DRESSER', '1') --> ('BED', '1'), ('BED', '1') --> ('BED', '1')
-location: ('TOY', '1') --> ('BEDROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
-closed: ('DRESSER', '1') --> 
-is_off: ('VACUUM CLEANER', '1') --> 
-plugged: ('VACUUM CLEANER', '1') --> 
 unplugged: ('VACUUM CLEANER', '1') --> 
+is_off: ('VACUUM CLEANER', '1') --> 
+atreach: ('BED', '1') --> ('BED', '1'), ('TOY', '1') --> ('BED', '1'), ('DRESSER', '1') --> ('BED', '1'), ('VACUUM CLEANER', '1') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('TOY', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('VACUUM CLEANER', '1') --> ('BEDROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('BEDROOM', '1')
+closed: ('DRESSER', '1') --> 
+inside: ('VACUUM CLEANER', '1') --> ('DRESSER', '1')
+free: ('BED', '1') --> 
 Clean
 Pull the bed away from the wall. Remove all garbage and toys from the side of the bed. Vacuum the area and move bed back.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Pull] <BED> (1)
-[Find] <TOY> (1)
-[Grab] <TOY> (1)
-[Find] <DRESSER> (1)
-[Open] <DRESSER> (1)
-[PutBack] <TOY> (1) <DRESSER> (1)
-[Find] <VACUUM CLEANER> (1)
-[Grab] <VACUUM CLEANER> (1)
-[Walk] <ELECTRICAL OUTLET> (1)
-[PlugIn] <VACUUM CLEANER> (1)
-[SwitchOn] <VACUUM CLEANER> (1)
-[Push] <VACUUM CLEANER> (1)
-[SwitchOff] <VACUUM CLEANER> (1)
-[PlugOut] <VACUUM CLEANER> (1)
-[Push] <BED> (1)
-[PutObjBack] <VACUUM CLEANER> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Pull] <bed> (1)
+[Find] <toy> (1)
+[Grab] <toy> (1)
+[Find] <dresser> (1)
+[Open] <dresser> (1)
+[PutBack] <toy> (1) <dresser> (1)
+[Find] <vacuum_cleaner> (1)
+[Grab] <vacuum_cleaner> (1)
+[Walk] <electrical_outlet> (1)
+[PlugIn] <vacuum_cleaner> (1)
+[SwitchOn] <vacuum_cleaner> (1)
+[Push] <vacuum_cleaner> (1)
+[SwitchOff] <vacuum_cleaner> (1)
+[PlugOut] <vacuum_cleaner> (1)
+[Push] <bed> (1)
+[PutObjBack] <vacuum_cleaner> (1)

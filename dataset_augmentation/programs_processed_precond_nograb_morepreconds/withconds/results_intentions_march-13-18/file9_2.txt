@@ -1,16 +1,17 @@
-2
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('BUTTON', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
-atreach: ('COMPUTER', '1') --> ('BUTTON', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('BUTTON', '1') --> ('BUTTON', '1')
+3
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('BUTTON', '1') --> ('BUTTON', '1'), ('COMPUTER', '1') --> ('BUTTON', '1')
+location: ('BUTTON', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Work
 I walk to the office. I push the on button on the computer. I sit down in the chair. I work on the computer.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <BUTTON> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <button> (1)
+[Find] <button> (1)
+[Push] <button> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)

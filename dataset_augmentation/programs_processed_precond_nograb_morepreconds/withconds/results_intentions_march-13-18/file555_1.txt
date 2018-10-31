@@ -3,10 +3,10 @@ Pick up phone
 After hearing my phone ring, I locate it. Then I grab it, take the cover off and check who's calling. Then I push a button to answer.
 
 
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[Uncover] <CELLPHONE> (1)
-[TurnTo] <CELLPHONE> (1)
-[LookAt] <CELLPHONE> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[Uncover] <cellphone> (1)
+[TurnTo] <cellphone> (1)
+[LookAt] <cellphone> (1)
+[Find] <button> (1)
+[Push] <button> (1)

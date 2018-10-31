@@ -2,7 +2,7 @@ Sleep
 Relax for the night or during the day, lying on the bed.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Lie] <bed> (1)
 [Sleep]

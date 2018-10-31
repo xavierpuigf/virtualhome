@@ -2,12 +2,12 @@ Sleep
 Watching a movie, eyes get heavy. I just give in a take a nap.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Walk] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Watch] <TELEVISION> (1)
-[Lie] <SOFA> (1)
+[Walk] <living_room> (1)
+[Walk] <television> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Walk] <sofa> (1)
+[Sit] <sofa> (1)
+[Watch] <television> (1)
+[Lie] <sofa> (1)
 [Sleep]

@@ -2,7 +2,7 @@ Take shower
 Walk to the bathroom and wash with the shower.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SHOWER> (1)
-[Find] <SHOWER> (1)
-[Wash] <SHOWER> (1)
+[Walk] <bathroom> (1)
+[Walk] <shower> (1)
+[Find] <shower> (1)
+[Wash] <shower> (1)

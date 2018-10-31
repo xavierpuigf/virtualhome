@@ -2,10 +2,10 @@ Play guitar
 Grab guitar.  Pluck strings.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CABINET> (1)
-[Open] <CABINET> (1)
-[Find] <INSTRUMENT_GUITAR> (1)
-[Grab] <INSTRUMENT_GUITAR> (1)
-[Close] <CABINET> (1)
-[Play] <INSTRUMENT_GUITAR> (1)
+[Walk] <living_room> (1)
+[Walk] <cabinet> (1)
+[Open] <cabinet> (1)
+[Find] <instrument_guitar> (1)
+[Grab] <instrument_guitar> (1)
+[Close] <cabinet> (1)
+[Play] <instrument_guitar> (1)

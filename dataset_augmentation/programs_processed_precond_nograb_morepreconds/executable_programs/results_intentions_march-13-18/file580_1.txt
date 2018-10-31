@@ -1,0 +1,21 @@
+Wash hands
+I go to the bathroom and locate the sink. I turn the faucet so that water is running, and rinse my hands briefly. Then I grab the soap and squeeze some onto my hands. I spend a few minutes rubbing my hands together, then I rinse them again. Finally, I turn the faucet off and wipe my hands on a towel.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <sink> (1.1000)
+[FIND] <sink> (1.1000)
+[TURNTO] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <hands_both> (1.1002)
+[RINSE] <hands_both> (1.1002)
+[FIND] <soap> (1.1003)
+[GRAB] <soap> (1.1003)
+[SQUEEZE] <soap> (1.1003)
+[WASH] <hands_both> (1.1002)
+[RINSE] <hands_both> (1.1002)
+[SWITCHOFF] <faucet> (1.1001)
+[FIND] <towel> (1.1004)
+[GRAB] <towel> (1.1004)
+[WIPE] <hands_both> (1.1002)

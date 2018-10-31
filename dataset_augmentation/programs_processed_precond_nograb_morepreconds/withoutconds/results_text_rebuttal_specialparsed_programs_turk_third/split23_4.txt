@@ -2,11 +2,11 @@ Trick or treat
 Leave candy in a basket on a table in the hall.  When the doorbell rings, walk to the table, take the basket, open the door and hand out candy.
 
 
-[Find] <TABLE> (1)
-[TurnTo] <TABLE> (1)
-[PointAt] <TABLE> (1)
-[Wipe] <TABLE> (1)
-[TurnTo] <TABLE> (1)
-[LookAt] <TABLE> (1)
-[Touch] <TABLE> (1)
-[Walk] <ENTRANCE HALL> (1)
+[Find] <table> (1)
+[TurnTo] <table> (1)
+[PointAt] <table> (1)
+[Wipe] <table> (1)
+[TurnTo] <table> (1)
+[LookAt] <table> (1)
+[Touch] <table> (1)
+[Walk] <entrance_hall> (1)

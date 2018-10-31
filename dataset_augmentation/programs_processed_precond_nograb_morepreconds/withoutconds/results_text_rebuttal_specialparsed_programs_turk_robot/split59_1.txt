@@ -4,16 +4,16 @@ Robot would use cleaning chemicals and scrub down the top of the stove.
 
 [WakeUp]
 [StandUp]
-[Walk] <KITCHEN> (1)
-[Walk] <STOVE> (1)
-[Find] <STOVE> (1)
-[Find] <CLEANING SOLUTION> (1)
-[Find] <SPONGE> (1)
-[Pour] <CLEANING SOLUTION> (1) <SPONGE> (1)
-[Scrub] <STOVE> (1)
-[Find] <DIRT> (1)
-[Grab] <DIRT> (1)
-[TurnTo] <STOVE> (1)
-[LookAt] <STOVE> (1)
+[Walk] <kitchen> (1)
+[Walk] <stove> (1)
+[Find] <stove> (1)
+[Find] <cleaning_solution> (1)
+[Find] <sponge> (1)
+[Pour] <cleaning_solution> (1) <sponge> (1)
+[Scrub] <stove> (1)
+[Find] <dirt> (1)
+[Grab] <dirt> (1)
+[TurnTo] <stove> (1)
+[LookAt] <stove> (1)
 [Dance]
 [Sleep]

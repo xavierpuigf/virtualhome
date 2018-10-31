@@ -1,0 +1,19 @@
+Do dishes
+Turn on water, rinse off dishes, put in dishwasher.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1000)
+[FIND] <sink> (1.1000)
+[TURNTO] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <plate> (1.1002)
+[GRAB] <plate> (1.1002)
+[RINSE] <plate> (1.1002)
+[SWITCHOFF] <faucet> (1.1001)
+[FIND] <dishwasher> (1.1003)
+[OPEN] <dishwasher> (1.1003)
+[PUTBACK] <plate> (1.1002) <dishwasher> (1.1003)
+[CLOSE] <dishwasher> (1.1003)
+[SWITCHON] <dishwasher> (1.1003)

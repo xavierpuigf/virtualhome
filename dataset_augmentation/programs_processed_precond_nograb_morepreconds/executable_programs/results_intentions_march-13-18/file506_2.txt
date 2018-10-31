@@ -1,0 +1,22 @@
+Cook some food
+Walk into kitchen. Open fridge. Take food from fridge. Close fridge. Put food on kitchen counter. Prepare food. Turn on stove. Open kitchen cabinet. Take pot. Close cabinet. Put food in pot. Put pot on stove. Cook food.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <fridge> (1.1000)
+[FIND] <fridge> (1.1000)
+[OPEN] <fridge> (1.1000)
+[FIND] <food_food> (1.1001)
+[GRAB] <food_food> (1.1001)
+[FIND] <kitchen_counter> (1.1002)
+[PUTBACK] <food_food> (1.1001) <kitchen_counter> (1.1002)
+[CLOSE] <fridge> (1.1000)
+[FIND] <kitchen_cabinet> (1.1003)
+[OPEN] <kitchen_cabinet> (1.1003)
+[FIND] <fryingpan> (1.1004)
+[GRAB] <fryingpan> (1.1004)
+[CLOSE] <kitchen_cabinet> (1.1003)
+[FIND] <stove> (1.1005)
+[PUTBACK] <fryingpan> (1.1004) <stove> (1.1005)
+[GRAB] <food_food> (1.1001)
+[PUTBACK] <food_food> (1.1001) <stove> (1.1005)

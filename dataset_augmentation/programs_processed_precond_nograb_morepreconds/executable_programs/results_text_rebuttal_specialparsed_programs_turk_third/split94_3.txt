@@ -1,0 +1,17 @@
+Hang up jacket
+I put clothes on hangers and hang them in the closet
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <clothes_dress> (1.1000)
+[FIND] <clothes_dress> (1.1000)
+[GRAB] <clothes_dress> (1.1000)
+[WALK] <closet> (1.1001)
+[FIND] <hanger> (1.282)
+[OPEN] <closet> (1.1001)
+[PUTBACK] <clothes_dress> (1.1000) <closet> (1.1001)
+[FIND] <clothes_dress> (2.1002)
+[GRAB] <clothes_dress> (2.1002)
+[WALK] <closet> (1.1001)
+[PUTBACK] <clothes_dress> (2.1002) <closet> (1.1001)
+[CLOSE] <closet> (1.1001)

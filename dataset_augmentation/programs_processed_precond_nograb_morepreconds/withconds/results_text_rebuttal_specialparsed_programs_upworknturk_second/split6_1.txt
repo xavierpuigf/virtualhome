@@ -1,24 +1,24 @@
 5
+atreach: ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1'), ('CABINET', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_DRESS', '2') --> ('BASKET FOR CLOTHES', '1')
+location: ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('CABINET', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '2') --> ('BEDROOM', '1')
+closed: ('CABINET', '1') --> 
 inside: ('CLOTHES_DRESS', '2') --> ('CABINET', '1')
 in: ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1')
-location: ('CABINET', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
-closed: ('CABINET', '1') --> 
-atreach: ('CABINET', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_DRESS', '2') --> ('BASKET FOR CLOTHES', '1')
 Put away clothes
 Take clothes out of a laundry basket. Fold clothes. Put folded clothes in a drawer. Hang other clothes up.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BASKET FOR CLOTHES> (1)
-[Find] <BASKET FOR CLOTHES> (1)
-[Find] <CLOTHES_DRESS> (1)
-[Grab] <CLOTHES_DRESS> (1)
-[Fold] <CLOTHES_DRESS> (1)
-[Find] <CABINET> (1)
-[Open] <CABINET> (1)
-[PutBack] <CLOTHES_DRESS> (1) <CABINET> (1)
-[Find] <CLOTHES_DRESS> (2)
-[Grab] <CLOTHES_DRESS> (2)
-[Fold] <CLOTHES_DRESS> (2)
-[PutBack] <CLOTHES_DRESS> (2) <CABINET> (1)
-[Close] <CABINET> (1)
+[Walk] <bedroom> (1)
+[Walk] <basket_for_clothes> (1)
+[Find] <basket_for_clothes> (1)
+[Find] <clothes_dress> (1)
+[Grab] <clothes_dress> (1)
+[Fold] <clothes_dress> (1)
+[Find] <cabinet> (1)
+[Open] <cabinet> (1)
+[PutBack] <clothes_dress> (1) <cabinet> (1)
+[Find] <clothes_dress> (2)
+[Grab] <clothes_dress> (2)
+[Fold] <clothes_dress> (2)
+[PutBack] <clothes_dress> (2) <cabinet> (1)
+[Close] <cabinet> (1)

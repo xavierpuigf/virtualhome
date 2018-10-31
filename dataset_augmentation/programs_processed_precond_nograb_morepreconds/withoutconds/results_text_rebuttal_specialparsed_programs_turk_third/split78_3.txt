@@ -2,13 +2,13 @@ Play games
 Get out a board game.  Play it.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CUPBOARD> (1)
-[Find] <CUPBOARD> (1)
-[Open] <CUPBOARD> (1)
-[Find] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Close] <CUPBOARD> (1)
-[Find] <TABLE> (1)
-[Sit] <TABLE> (1)
-[Play] <BOARD GAME> (1)
+[Walk] <living_room> (1)
+[Walk] <cupboard> (1)
+[Find] <cupboard> (1)
+[Open] <cupboard> (1)
+[Find] <board_game> (1)
+[Grab] <board_game> (1)
+[Close] <cupboard> (1)
+[Find] <table> (1)
+[Sit] <table> (1)
+[Play] <board_game> (1)

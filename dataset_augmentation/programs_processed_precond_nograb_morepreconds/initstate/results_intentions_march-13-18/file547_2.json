@@ -1,1 +1,1 @@
-[{"location": [["RADIO", "1"], ["BEDROOM", "1"]]}, {"atreach": [["RADIO", "1"], ["RADIO", "1"]]}]
+[{"atreach": [["radio", "1"], ["radio", "1"]]}, {"location": [["radio", "1"], ["bedroom", "1"]]}]

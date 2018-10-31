@@ -2,13 +2,13 @@ Listen to music
 go to the living room, turn on the radio, sit on the sofa, use my cell phone
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RADIO> (1)
-[Find] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
-[TurnTo] <RADIO> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <CELLPHONE> (1)
-[TurnTo] <CELLPHONE> (1)
-[LookAt] <CELLPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <radio> (1)
+[Find] <radio> (1)
+[SwitchOn] <radio> (1)
+[TurnTo] <radio> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <cellphone> (1)
+[TurnTo] <cellphone> (1)
+[LookAt] <cellphone> (1)

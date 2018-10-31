@@ -1,0 +1,13 @@
+Listen to music
+Put iPhone into speaker holder, open up the Pandora app, listen to music.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <phone> (1.202)
+[FIND] <phone> (1.202)
+[GRAB] <phone> (1.202)
+[WALK] <radio> (1.1000)
+[PLUGIN] <phone> (1.202)
+[SWITCHON] <radio> (1.1000)
+[FIND] <bed> (1.1001)
+[SIT] <bed> (1.1001)

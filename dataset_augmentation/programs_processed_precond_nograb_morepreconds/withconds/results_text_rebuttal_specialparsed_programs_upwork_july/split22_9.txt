@@ -1,14 +1,15 @@
-2
-location: ('NEWSPAPER', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+3
 atreach: ('NEWSPAPER', '1') --> ('NEWSPAPER', '1'), ('COUCH', '1') --> ('NEWSPAPER', '1')
+location: ('NEWSPAPER', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Read newspaper
 Read the newspaper on the couch
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <NEWSPAPER> (1)
-[Find] <NEWSPAPER> (1)
-[Grab] <NEWSPAPER> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Read] <NEWSPAPER> (1)
+[Walk] <living_room> (1)
+[Walk] <newspaper> (1)
+[Find] <newspaper> (1)
+[Grab] <newspaper> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Read] <newspaper> (1)

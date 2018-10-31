@@ -1,14 +1,14 @@
 2
-location: ('DUSTER', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1')
 atreach: ('DUSTER', '1') --> ('DUSTER', '1'), ('FILING CABINET', '1') --> ('DUSTER', '1')
+location: ('DUSTER', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1')
 Dust
 Apply duster to shelves and clean them until dust is gone
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <DUSTER> (1)
-[Find] <DUSTER> (1)
-[Grab] <DUSTER> (1)
-[Find] <FILING CABINET> (1)
-[Wipe] <FILING CABINET> (1)
-[PutObjBack] <DUSTER> (1)
+[Walk] <home_office> (1)
+[Walk] <duster> (1)
+[Find] <duster> (1)
+[Grab] <duster> (1)
+[Find] <filing_cabinet> (1)
+[Wipe] <filing_cabinet> (1)
+[PutObjBack] <duster> (1)

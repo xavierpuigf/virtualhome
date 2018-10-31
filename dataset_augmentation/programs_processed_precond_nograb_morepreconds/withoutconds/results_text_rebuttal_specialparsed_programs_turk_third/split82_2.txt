@@ -2,11 +2,11 @@ Sleep
 Going to bed
 
 
-[Find] <BED> (1)
-[TurnTo] <BED> (1)
-[PointAt] <BED> (1)
-[Wash] <BED> (1)
-[TurnTo] <BED> (1)
-[LookAt] <BED> (1)
-[Touch] <BED> (1)
-[Sit] <BED> (1)
+[Find] <bed> (1)
+[TurnTo] <bed> (1)
+[PointAt] <bed> (1)
+[Wash] <bed> (1)
+[TurnTo] <bed> (1)
+[LookAt] <bed> (1)
+[Touch] <bed> (1)
+[Sit] <bed> (1)

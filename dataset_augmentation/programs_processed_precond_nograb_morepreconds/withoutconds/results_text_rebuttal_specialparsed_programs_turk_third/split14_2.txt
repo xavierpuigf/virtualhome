@@ -2,13 +2,13 @@ Greet people
 Say HI to those that come in.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <WOMAN> (1)
-[Find] <WOMAN> (1)
-[Greet] <WOMAN> (1)
-[Find] <WOMAN> (2)
-[Greet] <WOMAN> (2)
-[Find] <MAN> (1)
-[Greet] <MAN> (1)
-[Find] <MAN> (2)
-[Greet] <MAN> (2)
+[Walk] <entrance_hall> (1)
+[Walk] <woman> (1)
+[Find] <woman> (1)
+[Greet] <woman> (1)
+[Find] <woman> (2)
+[Greet] <woman> (2)
+[Find] <man> (1)
+[Greet] <man> (1)
+[Find] <man> (2)
+[Greet] <man> (2)

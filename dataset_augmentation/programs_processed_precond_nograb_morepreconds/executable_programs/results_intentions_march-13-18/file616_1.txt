@@ -1,0 +1,6 @@
+Turn on light
+flip the switch and turn on the lights
+
+
+[WALK] <light> (1.1000)
+[SWITCHON] <light> (1.1000)

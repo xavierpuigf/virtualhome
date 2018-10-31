@@ -1,0 +1,12 @@
+Browse internet
+Find Computer and in the chair in from of him. Switch on the computer. Look at it and browse typing addresses with the keyboard.
+
+
+[FIND] <computer> (1.318)
+[FIND] <chair> (1.280)
+[SIT] <chair> (1.280)
+[SWITCHON] <computer> (1.318)
+[TURNTO] <chair> (1.280)
+[LOOKAT] <chair> (1.280)
+[FIND] <keyboard> (1.319)
+[TYPE] <keyboard> (1.319)

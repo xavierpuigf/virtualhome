@@ -2,12 +2,12 @@ Go to toilet
 Walk to the Bathroom. Find the toilet. Sit on toilet. Stand up. Grab the toilet paper. Wipe the toilet. Flush the toilet.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
-[Sit] <TOILET> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)
+[Sit] <toilet> (1)
 [StandUp]
-[Find] <TOILET PAPER> (1)
-[Grab] <TOILET PAPER> (1)
-[Wipe] <TOILET> (1)
-[Flush] <TOILET> (1)
+[Find] <toilet_paper> (1)
+[Grab] <toilet_paper> (1)
+[Wipe] <toilet> (1)
+[Flush] <toilet> (1)

@@ -1,0 +1,11 @@
+Listen to music
+Walk into living room, look for radio, grab on button
+
+
+[WALK] <living_room> (1.243)
+[WALK] <radio> (1.1000)
+[FIND] <radio> (1.1000)
+[TURNTO] <radio> (1.1000)
+[LOOKAT] <radio> (1.1000)
+[FIND] <button> (1.1001)
+[GRAB] <button> (1.1001)

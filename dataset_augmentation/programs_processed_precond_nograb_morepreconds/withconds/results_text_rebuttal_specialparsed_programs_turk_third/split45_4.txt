@@ -3,11 +3,11 @@ Clean
 Spray cleaner, wipe with sponge, rinse with water
 
 
-[Find] <SPONGE> (1)
-[TurnTo] <SPONGE> (1)
-[PointAt] <SPONGE> (1)
-[Rinse] <SPONGE> (1)
-[TurnTo] <SPONGE> (1)
-[LookAt] <SPONGE> (1)
-[Find] <BATHROOM> (1)
-[Crawl] <BATHROOM> (1)
+[Find] <sponge> (1)
+[TurnTo] <sponge> (1)
+[PointAt] <sponge> (1)
+[Rinse] <sponge> (1)
+[TurnTo] <sponge> (1)
+[LookAt] <sponge> (1)
+[Find] <bathroom> (1)
+[Crawl] <bathroom> (1)

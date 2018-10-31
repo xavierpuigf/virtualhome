@@ -1,14 +1,15 @@
-2
-location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
-atreach: ('BOOK', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('BOOK', '1')
+3
+atreach: ('COUCH', '1') --> ('BOOK', '1'), ('BOOK', '1') --> ('COUCH', '1')
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Read book
 Walk to the couch in the living room, sit on ti and read the book
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)

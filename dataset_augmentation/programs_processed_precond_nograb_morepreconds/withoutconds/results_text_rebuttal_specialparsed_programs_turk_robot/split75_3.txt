@@ -2,11 +2,11 @@ Clean
 Scrub the grout between tiles and seals the sink and tub. Use an appropriate cleaner.
 
 
-[Find] <SINK> (1)
-[TurnTo] <SINK> (1)
-[PointAt] <SINK> (1)
-[Wash] <SINK> (1)
-[TurnTo] <SINK> (1)
-[LookAt] <SINK> (1)
-[Find] <BATHROOM> (1)
-[Crawl] <BATHROOM> (1)
+[Find] <sink> (1)
+[TurnTo] <sink> (1)
+[PointAt] <sink> (1)
+[Wash] <sink> (1)
+[TurnTo] <sink> (1)
+[LookAt] <sink> (1)
+[Find] <bathroom> (1)
+[Crawl] <bathroom> (1)

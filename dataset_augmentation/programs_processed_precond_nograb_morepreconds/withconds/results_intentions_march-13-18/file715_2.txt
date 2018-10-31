@@ -1,19 +1,18 @@
-5
-is_off: ('LIGHT', '1') --> , ('FLOOR LAMP', '1') --> 
+4
+unplugged: ('LIGHT', '1') --> 
+is_off: ('FLOOR LAMP', '1') --> , ('LIGHT', '1') --> 
 atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('FLOOR LAMP', '1') --> ('LIGHT', '1')
 location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('FLOOR LAMP', '1') --> ('LIVING ROOM', '1')
-unplugged: ('LIGHT', '1') --> 
-plugged: ('LIGHT', '1') --> 
 Turn on light
 walk to wall, find light switch, turn on lights
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[PlugIn] <LIGHT> (1)
-[Find] <FLOOR LAMP> (1)
-[SwitchOn] <FLOOR LAMP> (1)
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
+[Walk] <living_room> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[PlugIn] <light> (1)
+[Find] <floor_lamp> (1)
+[SwitchOn] <floor_lamp> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[SwitchOn] <light> (1)

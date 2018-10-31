@@ -2,5 +2,5 @@ Pick up phone
 I look for my telephone and grab it.
 
 
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)

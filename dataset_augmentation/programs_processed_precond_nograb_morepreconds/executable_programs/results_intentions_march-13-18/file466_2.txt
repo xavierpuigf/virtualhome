@@ -1,0 +1,11 @@
+Wash dishes by hand
+I walk into the kitchen to the sink. I put dishes in sink and wash them with my hands
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <plate> (1.1000)
+[FIND] <plate> (1.1000)
+[GRAB] <plate> (1.1000)
+[FIND] <sink> (1.1001)
+[PUTBACK] <plate> (1.1000) <sink> (1.1001)
+[WASH] <plate> (1.1000)

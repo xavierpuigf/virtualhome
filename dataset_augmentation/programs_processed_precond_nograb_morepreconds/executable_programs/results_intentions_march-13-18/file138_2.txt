@@ -1,0 +1,17 @@
+Wash clothes
+Washing pants with washing machine
+
+
+[FIND] <clothes_pants> (1.1000)
+[GRAB] <clothes_pants> (1.1000)
+[WALK] <bathroom> (1.1)
+[WALK] <washing_machine> (1.1001)
+[FIND] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[PUTBACK] <clothes_pants> (1.1000) <washing_machine> (1.1001)
+[WALK] <laundry_detergent> (1.1002)
+[FIND] <laundry_detergent> (1.1002)
+[GRAB] <laundry_detergent> (1.1002)
+[POUR] <laundry_detergent> (1.1002) <washing_machine> (1.1001)
+[CLOSE] <washing_machine> (1.1001)
+[SWITCHON] <washing_machine> (1.1001)

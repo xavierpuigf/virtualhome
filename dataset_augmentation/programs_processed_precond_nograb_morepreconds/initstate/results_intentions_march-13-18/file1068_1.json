@@ -1,1 +1,1 @@
-[{"is_off": ["COMPUTER", "2"]}, {"location": [["COMPUTER", "2"], ["HOME OFFICE", "1"]]}, {"atreach": [["COMPUTER", "2"], ["COMPUTER", "2"]]}]
+[{"is_off": ["computer", "2"]}, {"atreach": [["computer", "2"], ["computer", "2"]]}, {"location": [["computer", "2"], ["home_office", "1"]]}]

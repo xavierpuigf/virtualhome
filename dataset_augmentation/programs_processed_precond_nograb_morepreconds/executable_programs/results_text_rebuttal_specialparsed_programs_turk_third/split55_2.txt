@@ -1,0 +1,10 @@
+Greet guests
+Answer the door. Smile and give a warm hello, or other appropriate greeting. With newcomers to your home, offer your hand to be shook. With old friends it is appropriate to hug, or kiss one another on the cheek.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <man> (1.1000)
+[FIND] <man> (1.1000)
+[GREET] <man> (1.1000)
+[FIND] <woman> (1.1001)
+[GREET] <woman> (1.1001)

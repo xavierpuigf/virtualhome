@@ -2,10 +2,10 @@ Enjoy view out window
 Sitting in teak deck chair, gaze out window at the view.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <WINDOW> (1)
-[TurnTo] <WINDOW> (1)
-[LookAt] <WINDOW> (1)
+[Walk] <living_room> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <window> (1)
+[TurnTo] <window> (1)
+[LookAt] <window> (1)

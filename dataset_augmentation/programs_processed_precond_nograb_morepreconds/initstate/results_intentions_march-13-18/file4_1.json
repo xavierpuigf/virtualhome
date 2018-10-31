@@ -1,1 +1,1 @@
-[{"closed": ["FRIDGE", "1"]}, {"atreach": [["FRIDGE", "1"], ["GROCERIES", "1"]]}, {"atreach": [["GROCERIES", "1"], ["GROCERIES", "1"]]}]
+[{"atreach": [["groceries", "1"], ["groceries", "1"]]}, {"atreach": [["fridge", "1"], ["groceries", "1"]]}, {"closed": ["fridge", "1"]}]

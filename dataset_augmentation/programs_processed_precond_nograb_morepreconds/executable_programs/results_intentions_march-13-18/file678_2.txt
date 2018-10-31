@@ -1,0 +1,7 @@
+Pet cat
+Find a cat, Pet a cat
+
+
+[FIND] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

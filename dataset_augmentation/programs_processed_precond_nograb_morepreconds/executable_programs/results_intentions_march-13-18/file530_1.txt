@@ -1,0 +1,7 @@
+Change TV channel
+Pick up the remote. Press the remote to change the channel.
+
+
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[PUSH] <remote_control> (1.1000)

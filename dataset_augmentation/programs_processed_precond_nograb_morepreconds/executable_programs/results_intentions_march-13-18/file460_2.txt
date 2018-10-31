@@ -1,0 +1,8 @@
+Pet cat
+Buy a cat from a shop. Give food to cat. Pet the cat.
+
+
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

@@ -2,11 +2,11 @@ Put away keys
 Return keys into a bag
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <KEYS> (1)
-[Find] <KEYS> (1)
-[Grab] <KEYS> (1)
-[Find] <BAG> (1)
-[Open] <BAG> (1)
-[PutBack] <KEYS> (1) <BAG> (1)
-[Close] <BAG> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <keys> (1)
+[Find] <keys> (1)
+[Grab] <keys> (1)
+[Find] <bag> (1)
+[Open] <bag> (1)
+[PutBack] <keys> (1) <bag> (1)
+[Close] <bag> (1)

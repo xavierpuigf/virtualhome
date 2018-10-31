@@ -1,23 +1,24 @@
-4
-inside: ('BOOK', '1') --> ('CABINET', '1')
-location: ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('CABINET', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1')
+5
+atreach: ('CHILD', '1') --> ('CHILD', '1'), ('CHILD', '2') --> ('CHILD', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('BOOK', '1') --> ('CABINET', '1'), ('BED', '1') --> ('BED', '1')
+location: ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('CABINET', '1') --> ('KIDS BEDROOM', '1'), ('BOOK', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1')
 closed: ('CABINET', '1') --> 
-atreach: ('BOOK', '1') --> ('CABINET', '1'), ('CHILD', '2') --> ('CHILD', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('CHILD', '1') --> ('CHILD', '1'), ('BED', '1') --> ('BED', '1')
+inside: ('BOOK', '1') --> ('CABINET', '1')
+free: ('BED', '1') --> 
 Read book
 Read story to children
 
 
-[Walk] <KIDS BEDROOM> (1)
-[Walk] <CHILD> (1)
-[Find] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <CHILD> (2)
-[Greet] <CHILD> (2)
-[Walk] <CABINET> (1)
-[Open] <CABINET> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Close] <CABINET> (1)
-[Walk] <BED> (1)
-[Sit] <BED> (1)
-[Read] <BOOK> (1)
+[Walk] <kids_bedroom> (1)
+[Walk] <child> (1)
+[Find] <child> (1)
+[Greet] <child> (1)
+[Find] <child> (2)
+[Greet] <child> (2)
+[Walk] <cabinet> (1)
+[Open] <cabinet> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Close] <cabinet> (1)
+[Walk] <bed> (1)
+[Sit] <bed> (1)
+[Read] <book> (1)

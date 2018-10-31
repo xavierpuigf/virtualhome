@@ -1,0 +1,9 @@
+Pet cat
+First I need to find the cat. Walk to the cat and the pet the cat.
+
+
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[WALK] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

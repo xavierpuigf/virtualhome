@@ -2,10 +2,10 @@ Collect napkin rings
 Collect all the napkin rings. Place them in the basket.
 
 
-[Find] <BASKET FOR CLOTHES> (1)
-[TurnTo] <BASKET FOR CLOTHES> (1)
-[PointAt] <BASKET FOR CLOTHES> (1)
-[Wash] <BASKET FOR CLOTHES> (1)
-[TurnTo] <BASKET FOR CLOTHES> (1)
-[LookAt] <BASKET FOR CLOTHES> (1)
-[TurnTo] <BASKET FOR CLOTHES> (1)
+[Find] <basket_for_clothes> (1)
+[TurnTo] <basket_for_clothes> (1)
+[PointAt] <basket_for_clothes> (1)
+[Wash] <basket_for_clothes> (1)
+[TurnTo] <basket_for_clothes> (1)
+[LookAt] <basket_for_clothes> (1)
+[TurnTo] <basket_for_clothes> (1)

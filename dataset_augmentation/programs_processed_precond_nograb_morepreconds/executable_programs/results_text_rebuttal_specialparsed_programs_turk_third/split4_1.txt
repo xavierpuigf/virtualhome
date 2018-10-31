@@ -1,0 +1,23 @@
+vacuum carpet
+I bring my vacuum cleaner into the living room.  I plug it into the wall.  I press the on switch on the vacuum cleaner.  I push the vacuum cleaner back and forth over the length and width of the carpet until I have vacuumed the entire carpet.  I turn the vacuum cleaner off.  I take the vacuum cleaner back to the hall closet.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <closet> (1.1000)
+[OPEN] <closet> (1.1000)
+[FIND] <vacuum_cleaner> (1.1001)
+[GRAB] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PLUGIN] <vacuum_cleaner> (1.1001)
+[SWITCHON] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[SWITCHOFF] <vacuum_cleaner> (1.1001)
+[PLUGOUT] <vacuum_cleaner> (1.1001)
+[WALK] <closet> (1.1000)
+[PUTBACK] <vacuum_cleaner> (1.1001) <closet> (1.1000)
+[CLOSE] <closet> (1.1000)

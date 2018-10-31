@@ -2,15 +2,15 @@ Throw away paper
 Crumple the paper.  Get up from the desk.  Walk to the trash can.  Toss the paper in the trash can.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <DESK> (1)
-[Find] <DESK> (1)
-[TurnTo] <DESK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <PAPER> (1)
-[Grab] <PAPER> (1)
-[Squeeze] <PAPER> (1)
+[Walk] <home_office> (1)
+[Walk] <desk> (1)
+[Find] <desk> (1)
+[TurnTo] <desk> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <paper> (1)
+[Grab] <paper> (1)
+[Squeeze] <paper> (1)
 [StandUp]
-[Walk] <TRASHCAN> (1)
-[PutBack] <PAPER> (1) <TRASHCAN> (1)
+[Walk] <trashcan> (1)
+[PutBack] <paper> (1) <trashcan> (1)

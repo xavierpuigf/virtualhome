@@ -2,12 +2,12 @@ Pet cat
 Go into the living room and pet the cat
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CAT> (1)
-[Find] <CAT> (1)
-[Walk] <CAT> (1)
-[TurnTo] <CAT> (1)
-[LookAt] <CAT> (1)
-[Touch] <CAT> (1)
-[Touch] <CAT> (1)
-[Touch] <CAT> (1)
+[Walk] <living_room> (1)
+[Walk] <cat> (1)
+[Find] <cat> (1)
+[Walk] <cat> (1)
+[TurnTo] <cat> (1)
+[LookAt] <cat> (1)
+[Touch] <cat> (1)
+[Touch] <cat> (1)
+[Touch] <cat> (1)

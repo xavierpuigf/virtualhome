@@ -1,0 +1,14 @@
+Work
+Sit down on chair in front of computer, turn on computer, find mouse.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.94)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <computer> (1.1000)
+[SWITCHON] <computer> (1.1000)
+[FIND] <mouse> (1.1001)
+[GRAB] <mouse> (1.1001)
+[TURNTO] <computer> (1.1000)
+[LOOKAT] <computer> (1.1000)

@@ -1,9 +1,10 @@
-1
+2
 is_off: ('CD PLAYER', '1') --> 
+plugged: ('CD PLAYER', '1') --> 
 Listen to music
 I find CD player. I turn on CD player. I press play.
 
 
-[Find] <CD PLAYER> (1)
-[SwitchOn] <CD PLAYER> (1)
-[Touch] <CD PLAYER> (1)
+[Find] <cd_player> (1)
+[SwitchOn] <cd_player> (1)
+[Touch] <cd_player> (1)

@@ -1,16 +1,17 @@
-3
+4
 is_off: ('COMPUTER', '1') --> 
-location: ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('MOUSE', '1') --> ('LIVING ROOM', '1')
-atreach: ('COMPUTER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('MOUSE', '1') --> ('CHAIR', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('COMPUTER', '1') --> ('CHAIR', '1'), ('MOUSE', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('MOUSE', '1') --> ('LIVING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Browse internet
 I walk in the living room, find the computer and sit down on a chair. I turn on the computer. I grab the computer mouse.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
+[Walk] <living_room> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)

@@ -1,23 +1,24 @@
-2
+3
+atreach: ('CHAIR', '1') --> ('BOOKMARK', '1'), ('BOOK', '1') --> ('BOOK', '1'), ('BOOKMARK', '1') --> ('CHAIR', '1'), ('FLOOR', '1') --> ('CHAIR', '1')
 location: ('BOOK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('BOOKMARK', '1') --> ('HOME OFFICE', '1'), ('FLOOR', '1') --> ('HOME OFFICE', '1')
-atreach: ('BOOK', '1') --> ('BOOK', '1'), ('CHAIR', '1') --> ('BOOKMARK', '1'), ('BOOKMARK', '1') --> ('CHAIR', '1'), ('FLOOR', '1') --> ('CHAIR', '1')
+free: ('CHAIR', '1') --> 
 Read book
 Go to home office and read a book
 
 
-[Run] <HOME OFFICE> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Walk] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <BOOKMARK> (1)
-[Grab] <BOOKMARK> (1)
-[Find] <FLOOR> (1)
-[PutBack] <BOOKMARK> (1) <FLOOR> (1)
-[TurnTo] <BOOK> (1)
-[LookAt] <BOOK> (1)
-[Read] <BOOK> (1)
-[TurnTo] <BOOK> (1)
-[LookAt] <BOOK> (1)
-[Read] <BOOK> (1)
+[Run] <home_office> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Walk] <chair> (1)
+[Sit] <chair> (1)
+[Find] <bookmark> (1)
+[Grab] <bookmark> (1)
+[Find] <floor> (1)
+[PutBack] <bookmark> (1) <floor> (1)
+[TurnTo] <book> (1)
+[LookAt] <book> (1)
+[Read] <book> (1)
+[TurnTo] <book> (1)
+[LookAt] <book> (1)
+[Read] <book> (1)

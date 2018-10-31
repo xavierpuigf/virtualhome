@@ -3,8 +3,8 @@ Clean
 Pull all the hair from the hairbrush. Throw the hair in the garbage.
 
 
-[Find] <HAIRBRUSH> (1)
-[TurnTo] <HAIRBRUSH> (1)
-[PointAt] <HAIRBRUSH> (1)
-[Wash] <HAIRBRUSH> (1)
-[Uncover] <HAIRBRUSH> (1)
+[Find] <hairbrush> (1)
+[TurnTo] <hairbrush> (1)
+[PointAt] <hairbrush> (1)
+[Wash] <hairbrush> (1)
+[Uncover] <hairbrush> (1)

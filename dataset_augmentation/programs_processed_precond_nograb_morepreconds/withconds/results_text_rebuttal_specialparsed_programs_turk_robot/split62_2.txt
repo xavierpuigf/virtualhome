@@ -1,12 +1,12 @@
 3
 is_off: ('LAMP', '1') --> 
-location: ('LAMP', '1') --> ('LIVING ROOM', '1')
 atreach: ('LAMP', '1') --> ('LAMP', '1')
+location: ('LAMP', '1') --> ('LIVING ROOM', '1')
 Turn on light
 Twist the lamp switch until the light goes on.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LAMP> (1)
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
+[Walk] <living_room> (1)
+[Walk] <lamp> (1)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)

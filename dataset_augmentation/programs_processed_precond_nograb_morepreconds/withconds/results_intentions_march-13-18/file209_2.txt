@@ -1,13 +1,13 @@
 3
-in: ('BOOK', '1') --> ('TABLE', '1')
-location: ('BOOK', '1') --> ('HOME OFFICE', '1'), ('TABLE', '1') --> ('HOME OFFICE', '1')
 atreach: ('BOOK', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('HOME OFFICE', '1'), ('BOOK', '1') --> ('HOME OFFICE', '1')
+in: ('BOOK', '1') --> ('TABLE', '1')
 Read book
 Walk to Home Office. Walk to Table. Grab Book. Open Book and read.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <TABLE> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <home_office> (1)
+[Walk] <table> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)

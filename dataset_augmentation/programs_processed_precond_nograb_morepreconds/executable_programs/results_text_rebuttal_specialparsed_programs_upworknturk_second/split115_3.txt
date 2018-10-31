@@ -1,0 +1,12 @@
+Greet guests
+Go to the kitchen, greet your family members
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <child> (1.1000)
+[FIND] <child> (1.1000)
+[GREET] <child> (1.1000)
+[FIND] <woman> (1.1001)
+[GREET] <woman> (1.1001)
+[FIND] <chair> (1.1002)
+[SIT] <chair> (1.1002)

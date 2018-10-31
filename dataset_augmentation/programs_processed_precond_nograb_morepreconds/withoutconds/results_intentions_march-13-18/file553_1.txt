@@ -2,6 +2,6 @@ Pick up phone
 Walk into the living room, walk over to phone, grab the phone, put it to your ear .
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <PHONE> (1)
-[Grab] <PHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <phone> (1)
+[Grab] <phone> (1)

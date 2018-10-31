@@ -1,1 +1,1 @@
-[{"is_off": ["TELEVISION", "1"]}, {"is_on": ["LIGHTING", "1"]}, {"plugged": ["LIGHTING", "1"]}]
+[{"is_on": ["lighting", "1"]}, {"plugged": ["lighting", "1"]}, {"plugged": ["television", "1"]}, {"is_off": ["television", "1"]}, {"free": ["sofa", "1"]}]

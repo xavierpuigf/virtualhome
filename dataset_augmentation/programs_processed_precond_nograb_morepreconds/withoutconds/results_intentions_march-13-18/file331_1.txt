@@ -2,16 +2,16 @@ Go to sleep
 falling asleep
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <PAJAMAS> (1)
-[Find] <PAJAMAS> (1)
-[PutOn] <PAJAMAS> (1)
-[Walk] <BED> (1)
-[Uncover] <BED> (1)
-[Sit] <BED> (1)
-[Find] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
-[Lie] <BED> (1)
-[Find] <BLANKET> (1)
-[Cover] <BED> (1) <BLANKET> (1)
+[Walk] <bedroom> (1)
+[Walk] <pajamas> (1)
+[Find] <pajamas> (1)
+[PutOn] <pajamas> (1)
+[Walk] <bed> (1)
+[Uncover] <bed> (1)
+[Sit] <bed> (1)
+[Find] <light> (1)
+[SwitchOff] <light> (1)
+[Lie] <bed> (1)
+[Find] <blanket> (1)
+[Cover] <bed> (1) <blanket> (1)
 [Sleep]

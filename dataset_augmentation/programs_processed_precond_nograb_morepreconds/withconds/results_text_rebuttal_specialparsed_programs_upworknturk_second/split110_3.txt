@@ -1,15 +1,16 @@
-2
-location: ('BLANKET', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+3
 atreach: ('BLANKET', '1') --> ('BLANKET', '1'), ('COUCH', '1') --> ('COUCH', '1')
+location: ('BLANKET', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Take nap
 Sleep under blanket on couch
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BLANKET> (1)
-[Find] <BLANKET> (1)
-[Grab] <BLANKET> (1)
-[Walk] <COUCH> (1)
-[Lie] <COUCH> (1)
-[Cover] <BLANKET> (1)
+[Walk] <living_room> (1)
+[Walk] <blanket> (1)
+[Find] <blanket> (1)
+[Grab] <blanket> (1)
+[Walk] <couch> (1)
+[Lie] <couch> (1)
+[Cover] <blanket> (1)
 [Sleep]

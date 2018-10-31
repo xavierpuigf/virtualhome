@@ -1,0 +1,17 @@
+Look in refrigerator
+Approach the refrigerator. Use the handle to open the refrigerator door. Look at each shelf of the refrigerator. Look in each refrigerator drawer. Close the refrigerator door.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <fridge> (1.1000)
+[FIND] <fridge> (1.1000)
+[TURNTO] <fridge> (1.1000)
+[WALK] <fridge> (1.1000)
+[OPEN] <fridge> (1.1000)
+[TURNTO] <fridge> (1.1000)
+[LOOKAT] <fridge> (1.1000)
+[FIND] <kitchen_cabinet> (1.1001)
+[OPEN] <kitchen_cabinet> (1.1001)
+[FIND] <food_food> (2.1002)
+[CLOSE] <kitchen_cabinet> (1.1001)
+[CLOSE] <fridge> (1.1000)

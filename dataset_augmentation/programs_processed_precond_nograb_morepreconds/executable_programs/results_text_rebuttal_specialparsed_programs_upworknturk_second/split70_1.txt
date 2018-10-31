@@ -1,0 +1,17 @@
+Read book
+Take books off the book shelf and read.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <bookshelf> (1.192)
+[FIND] <bookshelf> (1.192)
+[OPEN] <bookshelf> (1.192)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[READ] <book> (1.1000)
+[PUTOBJBACK] <book> (1.1000)
+[FIND] <book> (2.1001)
+[GRAB] <book> (2.1001)
+[FIND] <sofa> (1.1002)
+[SIT] <sofa> (1.1002)
+[READ] <book> (2.1001)

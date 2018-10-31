@@ -1,0 +1,20 @@
+Make coffee
+Open coffee maker, put in a coffee filter, open coffee grounds container, reach in, grasp scoop, scoop out portion of coffee, place coffee into coffee filter, set down scoop, add one cup of water to coffee, press coffee start button, put scoop back in container, close container, wait for coffee.
+
+
+[FIND] <coffee_filter> (1.1000)
+[GRAB] <coffee_filter> (1.1000)
+[FIND] <coffe_maker> (1.233)
+[OPEN] <coffe_maker> (1.233)
+[PUTBACK] <coffee_filter> (1.1000) <coffe_maker> (1.233)
+[FIND] <coffee> (1.1001)
+[GRAB] <coffee> (1.1001)
+[PUTBACK] <coffee> (1.1001) <coffe_maker> (1.233)
+[WALK] <water> (1.1002)
+[FIND] <water> (1.1002)
+[GRAB] <water> (1.1002)
+[POUR] <water> (1.1002) <coffe_maker> (1.233)
+[FIND] <button> (1.1003)
+[PUSH] <button> (1.1003)
+[TURNTO] <coffe_maker> (1.233)
+[LOOKAT] <coffe_maker> (1.233)

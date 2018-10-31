@@ -2,13 +2,13 @@ Listen to music
 I walk to my bedroom.  I locate my stereo and turn it on.  I put on my headphones and sit to listen.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <STEREO> (1)
-[Find] <STEREO> (1)
-[Walk] <STEREO> (1)
-[SwitchOn] <STEREO> (1)
-[Find] <HEADSET> (1)
-[Grab] <HEADSET> (1)
-[PutOn] <HEADSET> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Walk] <bedroom> (1)
+[Walk] <stereo> (1)
+[Find] <stereo> (1)
+[Walk] <stereo> (1)
+[SwitchOn] <stereo> (1)
+[Find] <headset> (1)
+[Grab] <headset> (1)
+[PutOn] <headset> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)

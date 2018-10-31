@@ -1,0 +1,16 @@
+Playing video game
+Playing  video games  on various video game  systems such as wii u  and  xbox
+
+
+[WALK] <living_room> (1.243)
+[WALK] <video_game_console> (1.1000)
+[FIND] <video_game_console> (1.1000)
+[SWITCHON] <video_game_console> (1.1000)
+[FIND] <video_game_controller> (1.1001)
+[GRAB] <video_game_controller> (1.1001)
+[PUTOBJBACK] <video_game_controller> (1.1001)
+[SWITCHOFF] <video_game_console> (1.1000)
+[FIND] <video_game_console> (2.1002)
+[SWITCHON] <video_game_console> (2.1002)
+[FIND] <video_game_controller> (2.1003)
+[GRAB] <video_game_controller> (2.1003)

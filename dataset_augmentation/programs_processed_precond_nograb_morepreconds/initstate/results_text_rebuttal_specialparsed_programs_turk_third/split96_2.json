@@ -1,1 +1,1 @@
-[{"location": [["HANGER", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["CLOTHES_SCARF", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["HANGER", "1"], ["HANGER", "1"]]}, {"atreach": [["CLOTHES_SCARF", "1"], ["HANGER", "1"]]}]
+[{"atreach": [["hanger", "1"], ["hanger", "1"]]}, {"atreach": [["clothes_scarf", "1"], ["hanger", "1"]]}, {"location": [["hanger", "1"], ["entrance_hall", "1"]]}, {"location": [["clothes_scarf", "1"], ["entrance_hall", "1"]]}]

@@ -1,0 +1,17 @@
+Wash hands
+Washing hands
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <faucet> (1.1000)
+[FIND] <faucet> (1.1000)
+[SWITCHON] <faucet> (1.1000)
+[FIND] <hands_both> (1.1001)
+[RINSE] <hands_both> (1.1001)
+[SWITCHOFF] <faucet> (1.1000)
+[FIND] <cleaning_solution> (1.1002)
+[SQUEEZE] <cleaning_solution> (1.1002)
+[SCRUB] <hands_both> (1.1001)
+[SWITCHON] <faucet> (1.1000)
+[RINSE] <hands_both> (1.1001)
+[SWITCHOFF] <faucet> (1.1000)

@@ -1,0 +1,8 @@
+Listen to music
+I go to my bedroom, and then I switch on the radio
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <radio> (1.1000)
+[FIND] <radio> (1.1000)
+[SWITCHON] <radio> (1.1000)

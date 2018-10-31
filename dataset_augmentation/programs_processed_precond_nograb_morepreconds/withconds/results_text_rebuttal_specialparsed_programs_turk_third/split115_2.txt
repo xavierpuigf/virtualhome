@@ -1,23 +1,24 @@
-5
+6
+atreach: ('BED', '1') --> ('SPECTACLES', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('BOOK', '1') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('BED', '1'), ('SPECTACLES', '1') --> ('BED', '1')
+location: ('CLOSET', '1') --> ('BEDROOM', '1'), ('BOOK', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1'), ('SPECTACLES', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
 inside: ('BOOK', '1') --> ('CLOSET', '1'), ('SPECTACLES', '1') --> ('CLOSET', '1')
 in: ('SHEETS', '1') --> ('BED', '1')
-location: ('SHEETS', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
-closed: ('CLOSET', '1') --> 
-atreach: ('BOOK', '1') --> ('CLOSET', '1'), ('SPECTACLES', '1') --> ('BED', '1'), ('BED', '1') --> ('BED', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('SHEETS', '1') --> ('BED', '1')
+free: ('BED', '1') --> 
 Read book
 Pull back cover, get in bed, put on glasses, open book, read
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Walk] <BED> (1)
-[Find] <SHEETS> (1)
-[Pull] <SHEETS> (1)
-[Lie] <BED> (1)
-[Find] <SPECTACLES> (1)
-[Grab] <SPECTACLES> (1)
-[PutOn] <SPECTACLES> (1)
-[Read] <BOOK> (1)
+[Walk] <bedroom> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Walk] <bed> (1)
+[Find] <sheets> (1)
+[Pull] <sheets> (1)
+[Lie] <bed> (1)
+[Find] <spectacles> (1)
+[Grab] <spectacles> (1)
+[PutOn] <spectacles> (1)
+[Read] <book> (1)

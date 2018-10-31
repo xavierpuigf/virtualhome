@@ -1,0 +1,15 @@
+Get glass of milk
+Get an empty glass. Take milk from refrigerator and open it. Pour milk into glass.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <glass> (1.1000)
+[FIND] <glass> (1.1000)
+[GRAB] <glass> (1.1000)
+[WALK] <fridge> (1.1001)
+[OPEN] <fridge> (1.1001)
+[FIND] <milk> (1.1002)
+[GRAB] <milk> (1.1002)
+[POUR] <milk> (1.1002) <glass> (1.1000)
+[PUTOBJBACK] <milk> (1.1002)
+[CLOSE] <fridge> (1.1001)

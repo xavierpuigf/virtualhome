@@ -1,0 +1,11 @@
+Read book
+Grab a book from the bookshelf. Sit down on a chair or couch. Open book and start reading the book.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <bookshelf> (1.95)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[WALK] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[READ] <book> (1.1000)

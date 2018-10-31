@@ -1,0 +1,18 @@
+Read book
+Sitting and  reading a hardcover book in a recliner
+
+
+[RUN] <living_room> (1.243)
+[WALK] <book> (1.1000)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[RUN] <chair> (1.1001)
+[SIT] <chair> (1.1001)
+[FIND] <bookmark> (1.1002)
+[GRAB] <bookmark> (1.1002)
+[DROP] <bookmark> (1.1002)
+[TURNTO] <book> (1.1000)
+[LOOKAT] <book> (1.1000)
+[READ] <book> (1.1000)
+[READ] <book> (1.1000)
+[READ] <book> (1.1000)

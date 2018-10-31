@@ -1,20 +1,22 @@
-3
+5
 is_off: ('TELEVISION', '1') --> 
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
-atreach: ('REMOTE CONTROL', '1') --> ('COUCH', '1'), ('TELEVISION', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('REMOTE CONTROL', '1'), ('COFFEE TABLE', '1') --> ('COUCH', '1')
+plugged: ('TELEVISION', '1') --> 
+atreach: ('COUCH', '1') --> ('REMOTE CONTROL', '1'), ('REMOTE CONTROL', '1') --> ('COUCH', '1'), ('TELEVISION', '1') --> ('COUCH', '1'), ('COFFEE TABLE', '1') --> ('COUCH', '1')
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Watch TV
 I walk into the living room and sit on the couch. I pick up the remote to turn on the television. I put down the remote on the coffee table and look at the television.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <COFFEE TABLE> (1)
-[PutBack] <REMOTE CONTROL> (1) <COFFEE TABLE> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Find] <coffee_table> (1)
+[PutBack] <remote_control> (1) <coffee_table> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)

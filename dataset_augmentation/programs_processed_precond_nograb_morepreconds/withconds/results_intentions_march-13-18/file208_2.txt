@@ -1,15 +1,15 @@
 3
 is_off: ('LAMP', '1') --> 
-location: ('BOOK', '1') --> ('BEDROOM', '1'), ('LAMP', '1') --> ('BEDROOM', '1')
-atreach: ('BOOK', '1') --> ('LAMP', '1'), ('LAMP', '1') --> ('LAMP', '1')
+atreach: ('LAMP', '1') --> ('LAMP', '1'), ('BOOK', '1') --> ('LAMP', '1')
+location: ('LAMP', '1') --> ('BEDROOM', '1'), ('BOOK', '1') --> ('BEDROOM', '1')
 Read book
 Turn a light on and read a book in the bedroom.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LAMP> (1)
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <bedroom> (1)
+[Walk] <lamp> (1)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)

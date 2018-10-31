@@ -1,0 +1,11 @@
+Watch TV
+I walk to the living room and sit on the couch.  I grab the TV remote.  I press the power button on the TV remote and the TV turns on.  I grab the surround sound remote.  I press the power button on the surround sound remote and the system turns on.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[PUSH] <remote_control> (1.1000)
+[FIND] <remote_control> (2.1001)
+[PUSH] <remote_control> (2.1001)

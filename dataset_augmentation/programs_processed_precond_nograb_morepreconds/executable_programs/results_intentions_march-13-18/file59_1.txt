@@ -1,0 +1,12 @@
+Listen to music
+walk to living room. grab cellphone. grab headset. put on headset. type with cellphone.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cellphone> (1.1000)
+[FIND] <cellphone> (1.1000)
+[GRAB] <cellphone> (1.1000)
+[FIND] <headset> (1.1001)
+[GRAB] <headset> (1.1001)
+[PUTON] <headset> (1.1001)
+[TYPE] <cellphone> (1.1000)

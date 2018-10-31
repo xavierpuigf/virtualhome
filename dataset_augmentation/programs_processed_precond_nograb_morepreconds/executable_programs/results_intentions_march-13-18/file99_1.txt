@@ -1,0 +1,10 @@
+Turn on light
+Turn on lights in Entrance Hall
+
+
+[FIND] <lighting> (1.103)
+[TURNTO] <lighting> (1.103)
+[LOOKAT] <lighting> (1.103)
+[FIND] <light> (1.1000)
+[WALK] <light> (1.1000)
+[SWITCHON] <light> (1.1000)

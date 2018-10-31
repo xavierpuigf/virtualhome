@@ -1,0 +1,9 @@
+Gaze out window
+Look at the yard from the window
+
+
+[WALK] <living_room> (1.243)
+[WALK] <window> (1.1000)
+[FIND] <window> (1.1000)
+[TURNTO] <window> (1.1000)
+[LOOKAT] <window> (1.1000)

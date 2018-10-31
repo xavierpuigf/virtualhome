@@ -1,0 +1,18 @@
+Wash clothes
+Walk to laundry room. Find laundry basket. Grab laundry basket. Find washing machine. Walk to washing machine. Open washing machine. Find detergent. Grab detergent. Put in detergent. Put in clothes. Close washing machine. Turn on machine.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <basket_for_clothes> (1.1000)
+[FIND] <basket_for_clothes> (1.1000)
+[GRAB] <basket_for_clothes> (1.1000)
+[FIND] <washing_machine> (1.1001)
+[WALK] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[FIND] <laundry_detergent> (1.1002)
+[GRAB] <laundry_detergent> (1.1002)
+[POUR] <laundry_detergent> (1.1002) <washing_machine> (1.1001)
+[PUTOBJBACK] <laundry_detergent> (1.1002)
+[PUTBACK] <basket_for_clothes> (1.1000) <washing_machine> (1.1001)
+[CLOSE] <washing_machine> (1.1001)
+[SWITCHON] <washing_machine> (1.1001)

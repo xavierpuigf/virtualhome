@@ -2,12 +2,12 @@ Tabletop game
 Play a tabletop game with the family.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOARD GAME> (1)
-[Find] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Find] <TABLE> (1)
-[PutBack] <BOARD GAME> (1) <TABLE> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Play] <BOARD GAME> (1)
+[Walk] <living_room> (1)
+[Walk] <board_game> (1)
+[Find] <board_game> (1)
+[Grab] <board_game> (1)
+[Find] <table> (1)
+[PutBack] <board_game> (1) <table> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Play] <board_game> (1)

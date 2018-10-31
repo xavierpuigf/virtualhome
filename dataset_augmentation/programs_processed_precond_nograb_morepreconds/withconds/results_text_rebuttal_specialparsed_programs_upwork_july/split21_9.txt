@@ -1,29 +1,30 @@
-4
-is_off: ('PRINTER', '1') --> , ('LAPTOP', '1') --> 
-location: ('PRINTING PAPER', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1'), ('LAPTOP', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('PRINTER', '1') --> ('HOME OFFICE', '1'), ('FOLDER', '1') --> ('HOME OFFICE', '1')
+5
+is_off: ('LAPTOP', '1') --> , ('PRINTER', '1') --> 
+plugged: ('LAPTOP', '1') --> , ('PRINTER', '1') --> 
+atreach: ('LAPTOP', '1') --> ('LAPTOP', '1'), ('PRINTING PAPER', '1') --> ('LAPTOP', '1'), ('PRINTER', '1') --> ('PRINTER', '1'), ('MOUSE', '1') --> ('PRINTER', '1'), ('DOCUMENT', '1') --> ('PRINTER', '1'), ('FOLDER', '1') --> ('PRINTER', '1')
+location: ('LAPTOP', '1') --> ('HOME OFFICE', '1'), ('PRINTING PAPER', '1') --> ('HOME OFFICE', '1'), ('PRINTER', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('FOLDER', '1') --> ('HOME OFFICE', '1')
 closed: ('FOLDER', '1') --> 
-atreach: ('PRINTING PAPER', '1') --> ('LAPTOP', '1'), ('MOUSE', '1') --> ('PRINTER', '1'), ('LAPTOP', '1') --> ('LAPTOP', '1'), ('DOCUMENT', '1') --> ('PRINTER', '1'), ('PRINTER', '1') --> ('PRINTER', '1'), ('FOLDER', '1') --> ('PRINTER', '1')
 Print documents
 I open a word document, click the image of a printer, check the size, and then hit print. I gather my documents and put them in a folder.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <LAPTOP> (1)
-[Find] <LAPTOP> (1)
-[SwitchOn] <LAPTOP> (1)
-[Find] <PRINTING PAPER> (1)
-[Grab] <PRINTING PAPER> (1)
-[Walk] <PRINTER> (1)
-[SwitchOn] <PRINTER> (1)
-[PutBack] <PRINTING PAPER> (1) <PRINTER> (1)
-[TurnTo] <LAPTOP> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
-[TurnTo] <PRINTER> (1)
-[Find] <DOCUMENT> (1)
-[Grab] <DOCUMENT> (1)
-[Find] <FOLDER> (1)
-[Grab] <FOLDER> (1)
-[Open] <FOLDER> (1)
-[PutBack] <DOCUMENT> (1) <FOLDER> (1)
-[Close] <FOLDER> (1)
+[Walk] <home_office> (1)
+[Walk] <laptop> (1)
+[Find] <laptop> (1)
+[SwitchOn] <laptop> (1)
+[Find] <printing_paper> (1)
+[Grab] <printing_paper> (1)
+[Walk] <printer> (1)
+[SwitchOn] <printer> (1)
+[PutBack] <printing_paper> (1) <printer> (1)
+[TurnTo] <laptop> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)
+[TurnTo] <printer> (1)
+[Find] <document> (1)
+[Grab] <document> (1)
+[Find] <folder> (1)
+[Grab] <folder> (1)
+[Open] <folder> (1)
+[PutBack] <document> (1) <folder> (1)
+[Close] <folder> (1)

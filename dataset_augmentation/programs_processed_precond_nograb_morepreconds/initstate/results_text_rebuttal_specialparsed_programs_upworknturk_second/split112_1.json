@@ -1,1 +1,1 @@
-[{"location": [["BATHTUB", "1"], ["BATHROOM", "1"]]}, {"location": [["MAT", "1"], ["BATHROOM", "1"]]}, {"atreach": [["MAT", "1"], ["BATHTUB", "1"]]}]
+[{"atreach": [["mat", "1"], ["bathtub", "1"]]}, {"location": [["bathtub", "1"], ["bathroom", "1"]]}, {"location": [["mat", "1"], ["bathroom", "1"]]}]

@@ -1,0 +1,23 @@
+Wash clothes
+I will load the dirty clothes into the washing machine.
+
+
+[FIND] <washing_machine> (1.1000)
+[OPEN] <washing_machine> (1.1000)
+[FIND] <clothes_pants> (1.1001)
+[GRAB] <clothes_pants> (1.1001)
+[PUTBACK] <clothes_pants> (1.1001) <washing_machine> (1.1000)
+[FIND] <clothes_pants> (2.1002)
+[GRAB] <clothes_pants> (2.1002)
+[PUTBACK] <clothes_pants> (2.1002) <washing_machine> (1.1000)
+[FIND] <clothes_shirt> (1.1003)
+[GRAB] <clothes_shirt> (1.1003)
+[PUTBACK] <clothes_shirt> (1.1003) <washing_machine> (1.1000)
+[FIND] <clothes_shirt> (2.1004)
+[GRAB] <clothes_shirt> (2.1004)
+[PUTBACK] <clothes_shirt> (2.1004) <washing_machine> (1.1000)
+[FIND] <soap> (1.1005)
+[GRAB] <soap> (1.1005)
+[PUTBACK] <soap> (1.1005) <washing_machine> (1.1000)
+[CLOSE] <washing_machine> (1.1000)
+[SWITCHON] <washing_machine> (1.1000)

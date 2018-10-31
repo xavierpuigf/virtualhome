@@ -1,0 +1,5 @@
+Shut front door
+Close the storm door. Lock the storm door.
+
+
+[WALK] <living_room> (1.243)

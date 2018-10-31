@@ -2,10 +2,10 @@ Spread table with appropriate supplies
 Spread table cloth and table runner, put table mats in front of every seat, put dinner plates, quarter plates, cutlery on table mats
 
 
-[Find] <TABLE> (1)
-[TurnTo] <TABLE> (1)
-[PointAt] <TABLE> (1)
-[Wash] <TABLE> (1)
-[TurnTo] <TABLE> (1)
-[LookAt] <TABLE> (1)
-[Touch] <TABLE> (1)
+[Find] <table> (1)
+[TurnTo] <table> (1)
+[PointAt] <table> (1)
+[Wash] <table> (1)
+[TurnTo] <table> (1)
+[LookAt] <table> (1)
+[Touch] <table> (1)

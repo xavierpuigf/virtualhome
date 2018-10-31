@@ -3,11 +3,11 @@ Pick up
 Pick up toys and place them into the toy box.  Put books back onto the shelves.  Put shoes into a shoe rack in the closet.  Hang up clothing in the closet.  Make the beds.
 
 
-[Find] <TOY> (1)
-[TurnTo] <TOY> (1)
-[PointAt] <TOY> (1)
-[Wash] <TOY> (1)
-[TurnTo] <TOY> (1)
-[LookAt] <TOY> (1)
-[Touch] <TOY> (1)
-[Walk] <KIDS BEDROOM> (1)
+[Find] <toy> (1)
+[TurnTo] <toy> (1)
+[PointAt] <toy> (1)
+[Wash] <toy> (1)
+[TurnTo] <toy> (1)
+[LookAt] <toy> (1)
+[Touch] <toy> (1)
+[Walk] <kids_bedroom> (1)

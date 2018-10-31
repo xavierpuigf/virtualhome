@@ -1,0 +1,10 @@
+Turn on light
+Walk into the dining room. Switch on light number 1. Switch on light number 2.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[FIND] <light> (2.1001)
+[SWITCHON] <light> (2.1001)

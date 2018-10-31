@@ -1,21 +1,21 @@
 3
-location: ('FOOD_FOOD', '2') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
-closed: ('KITCHEN CABINET', '1') --> , ('FRIDGE', '1') --> 
-atreach: ('FOOD_FOOD', '2') --> ('FRIDGE', '1'), ('KITCHEN CABINET', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1')
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('KITCHEN CABINET', '1') --> ('FRIDGE', '1'), ('FOOD_FOOD', '2') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '2') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> , ('KITCHEN CABINET', '1') --> 
 Look in refrigerator
 Approach the refrigerator. Use the handle to open the refrigerator door. Look at each shelf of the refrigerator. Look in each refrigerator drawer. Close the refrigerator door.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Find] <FRIDGE> (1)
-[TurnTo] <FRIDGE> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[TurnTo] <FRIDGE> (1)
-[LookAt] <FRIDGE> (1)
-[Find] <KITCHEN CABINET> (1)
-[Open] <KITCHEN CABINET> (1)
-[Find] <FOOD_FOOD> (2)
-[Close] <KITCHEN CABINET> (1)
-[Close] <FRIDGE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Find] <fridge> (1)
+[TurnTo] <fridge> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[TurnTo] <fridge> (1)
+[LookAt] <fridge> (1)
+[Find] <kitchen_cabinet> (1)
+[Open] <kitchen_cabinet> (1)
+[Find] <food_food> (2)
+[Close] <kitchen_cabinet> (1)
+[Close] <fridge> (1)

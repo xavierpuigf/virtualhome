@@ -1,1 +1,1 @@
-[{"is_off": ["CD PLAYER", "1"]}, {"location": [["CD PLAYER", "1"], ["LIVING ROOM", "1"]]}, {"location": [["MUSIC STAND", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["CD PLAYER", "1"], ["MUSIC STAND", "1"]]}, {"atreach": [["MUSIC STAND", "1"], ["MUSIC STAND", "1"]]}]
+[{"is_off": ["cd_player", "1"]}, {"plugged": ["cd_player", "1"]}, {"atreach": [["music_stand", "1"], ["music_stand", "1"]]}, {"atreach": [["cd_player", "1"], ["music_stand", "1"]]}, {"location": [["music_stand", "1"], ["living_room", "1"]]}, {"location": [["cd_player", "1"], ["living_room", "1"]]}]

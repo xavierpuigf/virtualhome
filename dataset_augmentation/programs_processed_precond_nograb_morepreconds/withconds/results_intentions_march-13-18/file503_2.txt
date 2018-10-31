@@ -1,13 +1,15 @@
-2
+4
 is_off: ('CD PLAYER', '1') --> 
-atreach: ('REMOTE CONTROL', '1') --> ('CD PLAYER', '1'), ('CHAIR', '1') --> ('REMOTE CONTROL', '1'), ('CD PLAYER', '1') --> ('CD PLAYER', '1')
+plugged: ('CD PLAYER', '1') --> 
+atreach: ('CHAIR', '1') --> ('REMOTE CONTROL', '1'), ('CD PLAYER', '1') --> ('CD PLAYER', '1'), ('REMOTE CONTROL', '1') --> ('CD PLAYER', '1')
+free: ('CHAIR', '1') --> 
 Listen to music
 Walk to CD player and turn it on then go and sit in a chair and turn the remote control on and then listen to some music.
 
 
-[Walk] <CD PLAYER> (1)
-[SwitchOn] <CD PLAYER> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <REMOTE CONTROL> (1)
-[Touch] <REMOTE CONTROL> (1)
+[Walk] <cd_player> (1)
+[SwitchOn] <cd_player> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <remote_control> (1)
+[Touch] <remote_control> (1)

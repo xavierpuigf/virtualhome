@@ -1,10 +1,11 @@
-1
+2
 is_off: ('STEREO', '1') --> 
+plugged: ('STEREO', '1') --> 
 Listen to music
 Push play button to start music.
 
 
-[Find] <STEREO> (1)
-[SwitchOn] <STEREO> (1)
+[Find] <stereo> (1)
+[SwitchOn] <stereo> (1)
 [Dance]
-[SwitchOff] <STEREO> (1)
+[SwitchOff] <stereo> (1)

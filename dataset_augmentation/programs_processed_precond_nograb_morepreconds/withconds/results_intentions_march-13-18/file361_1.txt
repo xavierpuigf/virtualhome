@@ -1,16 +1,17 @@
-4
+5
 is_off: ('COMPUTER', '1') --> 
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('DESK', '1') --> ('CHAIR', '1'), ('COMPUTER', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1')
 nearby: ('CHAIR', '1') --> ('DESK', '1')
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
-atreach: ('COMPUTER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('DESK', '1') --> ('CHAIR', '1')
+free: ('CHAIR', '1') --> 
 Work
 Get work done on a personal computer
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Find] <DESK> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Find] <desk> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)

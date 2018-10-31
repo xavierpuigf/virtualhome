@@ -1,0 +1,8 @@
+Greet guests
+Say hi
+
+
+[WALK] <living_room> (1.243)
+[WALK] <child> (1.1000)
+[FIND] <child> (1.1000)
+[GREET] <child> (1.1000)

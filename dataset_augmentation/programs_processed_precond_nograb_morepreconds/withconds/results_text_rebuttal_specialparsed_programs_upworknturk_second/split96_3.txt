@@ -1,17 +1,17 @@
 2
-location: ('HAIR', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1'), ('HAIRBRUSH', '1') --> ('BATHROOM', '1')
-atreach: ('HAIR', '1') --> ('HAIRBRUSH', '1'), ('MIRROR', '1') --> ('HAIRBRUSH', '1'), ('HAIRBRUSH', '1') --> ('HAIRBRUSH', '1')
+atreach: ('HAIRBRUSH', '1') --> ('HAIRBRUSH', '1'), ('MIRROR', '1') --> ('HAIRBRUSH', '1'), ('HAIR', '1') --> ('HAIRBRUSH', '1')
+location: ('HAIRBRUSH', '1') --> ('BATHROOM', '1'), ('MIRROR', '1') --> ('BATHROOM', '1'), ('HAIR', '1') --> ('BATHROOM', '1')
 Style hair
 I use a brush on my hair every day to style my hair.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <HAIRBRUSH> (1)
-[Find] <HAIRBRUSH> (1)
-[Grab] <HAIRBRUSH> (1)
-[Find] <MIRROR> (1)
-[TurnTo] <MIRROR> (1)
-[LookAt] <MIRROR> (1)
-[Find] <HAIR> (1)
-[Brush] <HAIR> (1)
-[PutObjBack] <HAIRBRUSH> (1)
+[Walk] <bathroom> (1)
+[Walk] <hairbrush> (1)
+[Find] <hairbrush> (1)
+[Grab] <hairbrush> (1)
+[Find] <mirror> (1)
+[TurnTo] <mirror> (1)
+[LookAt] <mirror> (1)
+[Find] <hair> (1)
+[Brush] <hair> (1)
+[PutObjBack] <hairbrush> (1)

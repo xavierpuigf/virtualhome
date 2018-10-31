@@ -2,8 +2,8 @@ Take nap
 Sleep for a short amount of time during the day
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)
 [Sleep]

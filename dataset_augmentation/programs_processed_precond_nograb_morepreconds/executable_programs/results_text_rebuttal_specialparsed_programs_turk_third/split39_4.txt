@@ -1,0 +1,12 @@
+Entertain
+Entertain guests when they are over, gather for drinks etc
+
+
+[FIND] <drinking_glass> (1.1000)
+[TURNTO] <drinking_glass> (1.1000)
+[POINTAT] <drinking_glass> (1.1000)
+[WASH] <drinking_glass> (1.1000)
+[TURNTO] <drinking_glass> (1.1000)
+[LOOKAT] <drinking_glass> (1.1000)
+[GRAB] <drinking_glass> (1.1000)
+[WALK] <dining_room> (1.161)

@@ -1,19 +1,20 @@
-2
-location: ('TEXTBOOK', '2') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1'), ('TEXTBOOK', '1') --> ('BEDROOM', '1')
-atreach: ('TEXTBOOK', '2') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('TEXTBOOK', '1'), ('TEXTBOOK', '1') --> ('CHAIR', '1')
+3
+atreach: ('CHAIR', '1') --> ('TEXTBOOK', '1'), ('TEXTBOOK', '1') --> ('CHAIR', '1'), ('TEXTBOOK', '2') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('BEDROOM', '1'), ('TEXTBOOK', '1') --> ('BEDROOM', '1'), ('TEXTBOOK', '2') --> ('BEDROOM', '1')
+free: ('CHAIR', '1') --> 
 Study
 Do homework or read books while sitting on the chair.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <TEXTBOOK> (1)
-[Grab] <TEXTBOOK> (1)
-[Read] <TEXTBOOK> (1)
-[PutObjBack] <TEXTBOOK> (1)
-[Find] <TEXTBOOK> (2)
-[Grab] <TEXTBOOK> (2)
-[Read] <TEXTBOOK> (2)
-[PutObjBack] <TEXTBOOK> (2)
+[Walk] <bedroom> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <textbook> (1)
+[Grab] <textbook> (1)
+[Read] <textbook> (1)
+[PutObjBack] <textbook> (1)
+[Find] <textbook> (2)
+[Grab] <textbook> (2)
+[Read] <textbook> (2)
+[PutObjBack] <textbook> (2)

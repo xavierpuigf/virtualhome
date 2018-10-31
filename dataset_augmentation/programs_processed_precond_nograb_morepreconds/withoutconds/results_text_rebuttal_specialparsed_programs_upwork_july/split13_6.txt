@@ -2,12 +2,12 @@ Eat donuts
 Get donuts, open the box. Put them in your mouth and chew.
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <FOOD_DONUT> (1)
-[Find] <FOOD_DONUT> (1)
-[Grab] <FOOD_DONUT> (1)
-[Find] <BOX> (1)
-[Open] <BOX> (1)
-[Find] <PLATE> (1)
-[PutBack] <FOOD_DONUT> (1) <PLATE> (1)
-[Eat] <PLATE> (1)
+[Walk] <dining_room> (1)
+[Walk] <food_donut> (1)
+[Find] <food_donut> (1)
+[Grab] <food_donut> (1)
+[Find] <box> (1)
+[Open] <box> (1)
+[Find] <plate> (1)
+[PutBack] <food_donut> (1) <plate> (1)
+[Eat] <plate> (1)

@@ -1,0 +1,23 @@
+Sweep hallway please
+Vacuum all the way up and down the hallway.  Get all the dirt and crumbs out of carpet please.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <closet> (1.1000)
+[OPEN] <closet> (1.1000)
+[FIND] <vacuum_cleaner> (1.1001)
+[GRAB] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PLUGIN] <vacuum_cleaner> (1.1001)
+[SWITCHON] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[SWITCHOFF] <vacuum_cleaner> (1.1001)
+[PLUGOUT] <vacuum_cleaner> (1.1001)
+[WALK] <closet> (1.1000)
+[PUTBACK] <vacuum_cleaner> (1.1001) <closet> (1.1000)
+[CLOSE] <closet> (1.1000)

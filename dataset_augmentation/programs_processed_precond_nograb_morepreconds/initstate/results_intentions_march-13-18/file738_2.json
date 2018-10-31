@@ -1,1 +1,1 @@
-[{"is_off": ["COMPUTER", "1"]}, {"unplugged": ["KEYBOARD", "1"]}]
+[{"unplugged": ["keyboard", "1"]}, {"is_off": ["computer", "1"]}]

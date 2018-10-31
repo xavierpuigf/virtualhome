@@ -1,0 +1,18 @@
+Read book
+walk to home office, look at the light switch board, switch on the light, find the book, grap the book, sit in the chair, put the book into table, open the book, now read the book
+
+
+[WALK] <living_room> (1.243)
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[TURNTO] <light> (1.1000)
+[LOOKAT] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[FIND] <book> (1.1001)
+[GRAB] <book> (1.1001)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <table> (1.1002)
+[PUTBACK] <book> (1.1001) <table> (1.1002)
+[GRAB] <book> (1.1001)
+[READ] <book> (1.1001)

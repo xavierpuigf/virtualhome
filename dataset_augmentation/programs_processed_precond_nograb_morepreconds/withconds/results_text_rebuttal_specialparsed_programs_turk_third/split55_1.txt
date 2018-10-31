@@ -1,25 +1,26 @@
-3
+4
 is_off: ('TELEVISION', '1') --> 
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('ARMS_BOTH', '1') --> ('LIVING ROOM', '1'), ('FLOOR', '1') --> ('LIVING ROOM', '1'), ('LEGS_BOTH', '1') --> ('LIVING ROOM', '1')
-atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1'), ('ARMS_BOTH', '1') --> ('REMOTE CONTROL', '1'), ('FLOOR', '1') --> ('REMOTE CONTROL', '1'), ('LEGS_BOTH', '1') --> ('REMOTE CONTROL', '1')
+plugged: ('TELEVISION', '1') --> 
+atreach: ('FLOOR', '1') --> ('TELEVISION', '1'), ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1'), ('ARMS_BOTH', '1') --> ('REMOTE CONTROL', '1'), ('LEGS_BOTH', '1') --> ('REMOTE CONTROL', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('FLOOR', '1') --> ('LIVING ROOM', '1'), ('ARMS_BOTH', '1') --> ('LIVING ROOM', '1'), ('LEGS_BOTH', '1') --> ('LIVING ROOM', '1')
 Exercise
 Exercise on the floor while watching video, tv.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[PutObjBack] <REMOTE CONTROL> (1)
-[Find] <FLOOR> (1)
-[Lie] <FLOOR> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
-[Find] <ARMS_BOTH> (1)
-[Stretch] <ARMS_BOTH> (1)
-[Find] <LEGS_BOTH> (1)
-[Stretch] <LEGS_BOTH> (1)
+[Walk] <living_room> (1)
+[Walk] <remote_control> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[PutObjBack] <remote_control> (1)
+[Find] <floor> (1)
+[Lie] <floor> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)
+[Find] <arms_both> (1)
+[Stretch] <arms_both> (1)
+[Find] <legs_both> (1)
+[Stretch] <legs_both> (1)
 [StandUp]
 [Jump]

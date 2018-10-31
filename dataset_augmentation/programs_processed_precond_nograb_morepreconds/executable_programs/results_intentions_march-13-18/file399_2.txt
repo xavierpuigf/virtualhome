@@ -1,0 +1,7 @@
+Listen to music
+Walk into the living room. Walk up to the radio. Turn on the radio. Listen to the radio.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <radio> (1.1000)
+[SWITCHON] <radio> (1.1000)

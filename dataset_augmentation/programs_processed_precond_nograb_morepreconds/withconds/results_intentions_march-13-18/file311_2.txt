@@ -1,19 +1,19 @@
 3
+atreach: ('SOAP', '1') --> ('SINK', '1'), ('HANDS_BOTH', '1') --> ('SINK', '1')
+location: ('SINK', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1')
 in: ('SOAP', '1') --> ('SINK', '1')
-location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
-atreach: ('HANDS_BOTH', '1') --> ('SINK', '1'), ('SOAP', '1') --> ('SINK', '1')
 Wash hands
 I cooking finish and i have to clean my hands with soap
 
 
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[Find] <TABLE> (1)
-[PutBack] <PLATE> (1) <TABLE> (1)
-[Walk] <BATHROOM> (1)
-[Walk] <SINK> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Find] <HANDS_BOTH> (1)
-[Scrub] <HANDS_BOTH> (1)
-[Rinse] <HANDS_BOTH> (1)
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[Find] <table> (1)
+[PutBack] <plate> (1) <table> (1)
+[Walk] <bathroom> (1)
+[Walk] <sink> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Find] <hands_both> (1)
+[Scrub] <hands_both> (1)
+[Rinse] <hands_both> (1)

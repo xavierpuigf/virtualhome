@@ -1,1 +1,1 @@
-[{"location": [["CHAIR", "1"], ["HOME OFFICE", "1"]]}, {"location": [["CELLPHONE", "1"], ["HOME OFFICE", "1"]]}, {"location": [["DESK", "1"], ["HOME OFFICE", "1"]]}, {"atreach": [["CHAIR", "1"], ["DESK", "1"]]}, {"atreach": [["CELLPHONE", "1"], ["CELLPHONE", "1"]]}]
+[{"atreach": [["cellphone", "1"], ["cellphone", "1"]]}, {"atreach": [["chair", "1"], ["desk", "1"]]}, {"location": [["cellphone", "1"], ["home_office", "1"]]}, {"location": [["desk", "1"], ["home_office", "1"]]}, {"location": [["chair", "1"], ["home_office", "1"]]}, {"free": ["chair", "1"]}]

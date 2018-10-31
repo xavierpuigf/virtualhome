@@ -1,20 +1,21 @@
-3
+4
 is_off: ('COMPUTER', '1') --> 
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
-atreach: ('COMPUTER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('KEYBOARD', '1') --> ('CHAIR', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('COMPUTER', '1') --> ('CHAIR', '1'), ('KEYBOARD', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Speaking on headset in skype or some form of voip for business call
 A person at a computer desk with a headset on discussing business over a VOIP call. The person seems relaxed and in charge, leading the conversation.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Find] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
-[Dial] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Find] <keyboard> (1)
+[Type] <keyboard> (1)
+[Dial] <computer> (1)
 [Talk]

@@ -1,0 +1,11 @@
+Drink
+walk to kitchen, look at the water glass, grab that glass, find the water cane, open the water cane tap, drink water
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <water_glass> (1.1000)
+[FIND] <water_glass> (1.1000)
+[TURNTO] <water_glass> (1.1000)
+[LOOKAT] <water_glass> (1.1000)
+[GRAB] <water_glass> (1.1000)
+[FIND] <water> (1.1001)

@@ -1,0 +1,20 @@
+Find dictionary
+Move towards the bookshelf, scan the bookshelf for the dictionary, when the dictionary is found, pick up the dictionary.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <bookshelf> (1.192)
+[TURNTO] <bookshelf> (1.192)
+[LOOKAT] <bookshelf> (1.192)
+[TURNTO] <bookshelf> (1.192)
+[LOOKAT] <bookshelf> (1.192)
+[TURNTO] <bookshelf> (1.192)
+[LOOKAT] <bookshelf> (1.192)
+[TURNTO] <bookshelf> (1.192)
+[LOOKAT] <bookshelf> (1.192)
+[TURNTO] <bookshelf> (1.192)
+[LOOKAT] <bookshelf> (1.192)
+[TURNTO] <bookshelf> (1.192)
+[LOOKAT] <bookshelf> (1.192)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)

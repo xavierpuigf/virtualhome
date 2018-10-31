@@ -1,18 +1,18 @@
 2
-closed: ('CLOSET', '1') --> 
 in: ('SHOES', '1') --> ('Character', 1)
+closed: ('CLOSET', '1') --> 
 Take off shoes
 Take people's shoes off their feet and put them in the closet neatly
 
 
-[Find] <WOMAN> (1)
-[Greet] <WOMAN> (1)
-[Find] <CLOSET> (1)
-[Find] <SHOES> (1)
-[Grab] <SHOES> (1)
-[Find] <SHOES> (1)
-[Find] <SHOES> (1)
-[PutOff] <SHOES> (1)
-[TurnTo] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[PutBack] <SHOES> (1) <CLOSET> (1)
+[Find] <woman> (1)
+[Greet] <woman> (1)
+[Find] <closet> (1)
+[Find] <shoes> (1)
+[Grab] <shoes> (1)
+[Find] <shoes> (1)
+[Find] <shoes> (1)
+[PutOff] <shoes> (1)
+[TurnTo] <closet> (1)
+[Open] <closet> (1)
+[PutBack] <shoes> (1) <closet> (1)

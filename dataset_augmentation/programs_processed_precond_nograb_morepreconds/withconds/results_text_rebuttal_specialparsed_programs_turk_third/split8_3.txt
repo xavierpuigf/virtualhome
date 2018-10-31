@@ -3,8 +3,8 @@ Prepare Dinner
 Walk in.Cut on lights.Gather ingredients.Get out dishes.Cups.Silverware.Go to fridge.Get out food.Start to cook
 
 
-[Find] <BOWL> (1)
-[TurnTo] <BOWL> (1)
-[PointAt] <BOWL> (1)
-[Wash] <BOWL> (1)
-[Crawl] <BOWL> (1)
+[Find] <bowl> (1)
+[TurnTo] <bowl> (1)
+[PointAt] <bowl> (1)
+[Wash] <bowl> (1)
+[Crawl] <bowl> (1)

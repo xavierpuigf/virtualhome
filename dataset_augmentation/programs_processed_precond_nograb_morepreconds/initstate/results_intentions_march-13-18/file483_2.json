@@ -1,1 +1,1 @@
-[{"location": [["MAIL", "3"], ["HOME OFFICE", "1"]]}, {"location": [["COMPUTER", "2"], ["HOME OFFICE", "1"]]}, {"atreach": [["MAIL", "3"], ["COMPUTER", "2"]]}]
+[{"atreach": [["mail", "3"], ["computer", "2"]]}, {"location": [["computer", "2"], ["home_office", "1"]]}, {"location": [["mail", "3"], ["home_office", "1"]]}]

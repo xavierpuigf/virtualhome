@@ -2,9 +2,9 @@ Read book
 Read a book
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
-[PutObjBack] <BOOK> (1)
+[Walk] <home_office> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)
+[PutObjBack] <book> (1)

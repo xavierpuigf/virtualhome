@@ -1,15 +1,15 @@
 2
-location: ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
 atreach: ('TOOTHBRUSH', '1') --> ('TOOTHBRUSH', '1'), ('TOOTH PASTE', '1') --> ('TOOTH PASTE', '1')
+location: ('TOOTHBRUSH', '1') --> ('BATHROOM', '1'), ('TOOTH PASTE', '1') --> ('BATHROOM', '1')
 Brush teeth
 go to the bathroom and brush your teeth
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOOTHBRUSH> (1)
-[Find] <TOOTHBRUSH> (1)
-[Grab] <TOOTHBRUSH> (1)
-[Walk] <TOOTH PASTE> (1)
-[Find] <TOOTH PASTE> (1)
-[Grab] <TOOTH PASTE> (1)
-[Pour] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
+[Walk] <bathroom> (1)
+[Walk] <toothbrush> (1)
+[Find] <toothbrush> (1)
+[Grab] <toothbrush> (1)
+[Walk] <tooth_paste> (1)
+[Find] <tooth_paste> (1)
+[Grab] <tooth_paste> (1)
+[Pour] <tooth_paste> (1) <toothbrush> (1)

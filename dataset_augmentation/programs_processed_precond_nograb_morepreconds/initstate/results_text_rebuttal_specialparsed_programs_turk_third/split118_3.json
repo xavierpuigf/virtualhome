@@ -1,1 +1,1 @@
-[{"inside": [["BRUSH", "1"], ["CLOSET", "1"]]}, {"location": [["CLOSET", "1"], ["HOME OFFICE", "1"]]}, {"closed": ["CLOSET", "1"]}, {"atreach": [["CLOSET", "1"], ["CLOSET", "1"]]}, {"atreach": [["BRUSH", "1"], ["CLOSET", "1"]]}]
+[{"atreach": [["closet", "1"], ["closet", "1"]]}, {"atreach": [["brush", "1"], ["closet", "1"]]}, {"location": [["closet", "1"], ["home_office", "1"]]}, {"location": [["brush", "1"], ["home_office", "1"]]}, {"closed": ["closet", "1"]}, {"inside": [["brush", "1"], ["closet", "1"]]}]

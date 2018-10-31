@@ -1,0 +1,12 @@
+Apply lotion
+Pick up bottle of lotion. Depress plunger or squeeze bottle to dispense lotion. Apply generous amount to desired areas of body. Rub lotion until it is mostly absorbed.
+
+
+[FIND] <bed> (1.97)
+[TURNTO] <bed> (1.97)
+[POINTAT] <bed> (1.97)
+[WASH] <bed> (1.97)
+[TURNTO] <bed> (1.97)
+[LOOKAT] <bed> (1.97)
+[PUSH] <bed> (1.97)
+[SIT] <bed> (1.97)

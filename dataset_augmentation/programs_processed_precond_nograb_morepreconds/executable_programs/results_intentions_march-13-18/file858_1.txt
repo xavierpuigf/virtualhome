@@ -1,0 +1,12 @@
+Watch TV
+I go to the the living room, sit down on the sofa, and then I switch on the TV with the TV remote
+
+
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <sofa> (1.1001)
+[SIT] <sofa> (1.1001)
+[FIND] <television> (1.1002)
+[SWITCHON] <television> (1.1002)

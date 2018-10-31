@@ -1,0 +1,8 @@
+Set mail on table
+Put the mail on the table in a pile. Leave it there.
+
+
+[FIND] <mail> (1.1000)
+[GRAB] <mail> (1.1000)
+[WALK] <table> (1.187)
+[DROP] <mail> (1.1000)

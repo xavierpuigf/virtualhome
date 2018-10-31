@@ -1,0 +1,12 @@
+Take off shoes
+I untie shoe laces then I take the shoes off.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <shoes> (1.1000)
+[FIND] <shoes> (1.1000)
+[FIND] <shoes> (1.1000)
+[PUTOFF] <shoes> (1.1000)
+[GRAB] <shoes> (1.1000)
+[FIND] <floor> (1.63)
+[PUTBACK] <shoes> (1.1000) <floor> (1.63)

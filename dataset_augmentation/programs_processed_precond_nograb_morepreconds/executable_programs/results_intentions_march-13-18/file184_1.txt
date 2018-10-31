@@ -1,0 +1,10 @@
+Turn on light
+Turn on two lamps in the living room.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <lamp> (1.1000)
+[FIND] <lamp> (1.1000)
+[SWITCHON] <lamp> (1.1000)
+[FIND] <lamp> (2.1001)
+[SWITCHON] <lamp> (2.1001)

@@ -1,9 +1,10 @@
-2
+3
 is_off: ('RADIO', '1') --> 
+plugged: ('RADIO', '1') --> 
 atreach: ('RADIO', '1') --> ('RADIO', '1')
 Listen to music
 go to radio. run on radio.
 
 
-[Walk] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
+[Walk] <radio> (1)
+[SwitchOn] <radio> (1)

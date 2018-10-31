@@ -1,14 +1,14 @@
 4
 is_off: ('LAMP', '1') --> 
-in: ('LAMP', '1') --> ('DRESSER', '1')
-location: ('LAMP', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1')
 atreach: ('LAMP', '1') --> ('DRESSER', '1')
+location: ('DRESSER', '1') --> ('BEDROOM', '1'), ('LAMP', '1') --> ('BEDROOM', '1')
+in: ('LAMP', '1') --> ('DRESSER', '1')
 Turn night light on
 I walk to the dresser and in the middle Io to small battery operated lamp and switch it on
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DRESSER> (1)
-[Find] <LAMP> (1)
-[TurnTo] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
+[Walk] <bedroom> (1)
+[Walk] <dresser> (1)
+[Find] <lamp> (1)
+[TurnTo] <lamp> (1)
+[SwitchOn] <lamp> (1)

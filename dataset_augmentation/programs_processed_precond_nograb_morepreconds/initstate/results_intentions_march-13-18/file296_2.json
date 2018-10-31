@@ -1,1 +1,1 @@
-[{"in": [["BOWL", "1"], ["SINK", "1"]]}, {"closed": ["DISHWASHER", "1"]}, {"atreach": [["DISHWASHER", "1"], ["SINK", "1"]]}, {"atreach": [["BOWL", "1"], ["SINK", "1"]]}]
+[{"atreach": [["bowl", "1"], ["sink", "1"]]}, {"atreach": [["dishwasher", "1"], ["sink", "1"]]}, {"closed": ["dishwasher", "1"]}, {"in": [["bowl", "1"], ["sink", "1"]]}]

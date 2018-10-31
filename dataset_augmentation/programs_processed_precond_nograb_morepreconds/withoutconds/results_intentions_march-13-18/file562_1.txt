@@ -2,10 +2,10 @@ Wash hands
 I turn on faucet. I hold out my hands. I get my hands wet.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <FAUCET> (1)
-[Find] <FAUCET> (1)
-[TurnTo] <FAUCET> (1)
-[Find] <WATER> (1)
-[Find] <HANDS_BOTH> (1)
-[Pour] <WATER> (1) <HANDS_BOTH> (1)
+[Walk] <bathroom> (1)
+[Walk] <faucet> (1)
+[Find] <faucet> (1)
+[TurnTo] <faucet> (1)
+[Find] <water> (1)
+[Find] <hands_both> (1)
+[Pour] <water> (1) <hands_both> (1)

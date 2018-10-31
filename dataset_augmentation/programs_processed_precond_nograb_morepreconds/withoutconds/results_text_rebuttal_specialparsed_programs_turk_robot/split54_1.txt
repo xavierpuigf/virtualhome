@@ -2,11 +2,11 @@ Pull hair out of drain
 I would like him to use a long attachment with a hook and pull hair out of the drain.
 
 
-[Find] <SHAMPOO> (1)
-[TurnTo] <SHAMPOO> (1)
-[PointAt] <SHAMPOO> (1)
-[Wash] <SHAMPOO> (1)
-[TurnTo] <SHAMPOO> (1)
-[LookAt] <SHAMPOO> (1)
-[Shake] <SHAMPOO> (1)
-[Walk] <BATHROOM> (1)
+[Find] <shampoo> (1)
+[TurnTo] <shampoo> (1)
+[PointAt] <shampoo> (1)
+[Wash] <shampoo> (1)
+[TurnTo] <shampoo> (1)
+[LookAt] <shampoo> (1)
+[Shake] <shampoo> (1)
+[Walk] <bathroom> (1)

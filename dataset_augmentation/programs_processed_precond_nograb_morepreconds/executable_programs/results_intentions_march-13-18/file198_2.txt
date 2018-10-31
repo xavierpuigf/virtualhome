@@ -1,0 +1,19 @@
+Change TV channel
+Go to the living room, find the remote control on the coffee table, and change the TV channel.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <coffee_table> (1.101)
+[FIND] <coffee_table> (1.101)
+[WALK] <coffee_table> (1.101)
+[TURNTO] <coffee_table> (1.101)
+[LOOKAT] <coffee_table> (1.101)
+[FIND] <remote_control> (1.1000)
+[TOUCH] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <television> (1.1001)
+[TURNTO] <television> (1.1001)
+[POINTAT] <television> (1.1001)
+[FIND] <button> (1.1002)
+[TOUCH] <button> (1.1002)
+[PUSH] <button> (1.1002)

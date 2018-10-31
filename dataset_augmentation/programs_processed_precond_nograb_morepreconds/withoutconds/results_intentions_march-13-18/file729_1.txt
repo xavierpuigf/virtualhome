@@ -2,9 +2,9 @@ Change TV channel
 walk to living room ,find television ,find remote control ,switch on remote control and change the channel
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (2)
-[Find] <TELEVISION> (2)
-[Find] <REMOTE CONTROL> (3)
-[TurnTo] <REMOTE CONTROL> (3)
-[SwitchOn] <REMOTE CONTROL> (3)
+[Walk] <living_room> (1)
+[Walk] <television> (2)
+[Find] <television> (2)
+[Find] <remote_control> (3)
+[TurnTo] <remote_control> (3)
+[SwitchOn] <remote_control> (3)

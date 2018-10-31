@@ -1,13 +1,14 @@
-3
+4
 is_off: ('LIGHT', '1') --> 
-location: ('LIGHT', '1') --> ('BEDROOM', '1')
+plugged: ('LIGHT', '1') --> 
 atreach: ('LIGHT', '1') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('BEDROOM', '1')
 Turn on light
 Walk to the bedroom and use the button on the wall, next to the door to turn on the lights.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Walk] <LIVING ROOM> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Walk] <living_room> (1)

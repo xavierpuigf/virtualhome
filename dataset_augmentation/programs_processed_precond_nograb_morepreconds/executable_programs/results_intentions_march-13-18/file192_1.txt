@@ -1,0 +1,9 @@
+Read book
+Take a book from the shelf, sit on sofa and start reading.
+
+
+[FIND] <sofa> (1.1000)
+[SIT] <sofa> (1.1000)
+[FIND] <book> (1.1001)
+[GRAB] <book> (1.1001)
+[READ] <book> (1.1001)

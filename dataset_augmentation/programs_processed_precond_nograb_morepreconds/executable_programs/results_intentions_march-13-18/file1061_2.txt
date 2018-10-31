@@ -1,0 +1,8 @@
+Browse internet
+I walk to the home office and find the computer. I switch on the computer and open the browser. I type in Google and press search.
+
+
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)
+[TURNTO] <computer> (1.318)
+[LOOKAT] <computer> (1.318)

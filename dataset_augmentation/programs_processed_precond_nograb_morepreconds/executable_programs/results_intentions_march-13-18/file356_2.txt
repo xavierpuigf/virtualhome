@@ -1,0 +1,7 @@
+Pick up phone
+Find the phone.Grab the phone.Touch phone to answer.Say Hello.
+
+
+[FIND] <phone> (1.202)
+[GRAB] <phone> (1.202)
+[TOUCH] <phone> (1.202)

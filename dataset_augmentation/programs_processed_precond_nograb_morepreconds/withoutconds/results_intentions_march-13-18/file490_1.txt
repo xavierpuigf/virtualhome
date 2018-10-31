@@ -2,6 +2,6 @@ Relax on sofa
 walk to living room, walk to sofa, sit in sofa
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Sit] <SOFA> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Sit] <sofa> (1)

@@ -1,1 +1,1 @@
-[{"location": [["DISHWASHER", "1"], ["KITCHEN", "1"]]}, {"closed": ["DISHWASHER", "1"]}, {"atreach": [["DISHWASHER", "1"], ["DISHWASHER", "1"]]}]
+[{"atreach": [["dishwasher", "1"], ["dishwasher", "1"]]}, {"location": [["dishwasher", "1"], ["kitchen", "1"]]}, {"closed": ["dishwasher", "1"]}]

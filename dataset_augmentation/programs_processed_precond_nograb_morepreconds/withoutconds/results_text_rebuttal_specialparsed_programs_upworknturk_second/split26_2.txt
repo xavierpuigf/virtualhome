@@ -2,11 +2,11 @@ Read book
 Sit down in recliner.  Pick up novel off of coffee table.  Open novel to last read page.  Begin reading
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COFFEE TABLE> (1)
-[Find] <NOVEL> (1)
-[Grab] <NOVEL> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <BOOKMARK> (1)
-[Read] <NOVEL> (1)
+[Walk] <living_room> (1)
+[Walk] <coffee_table> (1)
+[Find] <novel> (1)
+[Grab] <novel> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <bookmark> (1)
+[Read] <novel> (1)

@@ -1,24 +1,25 @@
-5
+6
 is_off: ('WASHING MACHINE', '1') --> 
-inside: ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1')
-location: ('LAUNDRY DETERGENT', '1') --> ('BATHROOM', '1'), ('WASHING MACHINE', '1') --> ('BATHROOM', '1')
+plugged: ('WASHING MACHINE', '1') --> 
+atreach: ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1'), ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1')
+location: ('WASHING MACHINE', '1') --> ('BATHROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BATHROOM', '1'), ('LAUNDRY DETERGENT', '1') --> ('BATHROOM', '1')
 closed: ('WASHING MACHINE', '1') --> 
-atreach: ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1'), ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1')
+inside: ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1')
 Wash clothes
 Walk into laundry room. Open washing machine door. Put dirty clothes into washing machine. Measure laundry detergent and place into washing machine. Turn dial to appropriate wash setting. Power on.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <WASHING MACHINE> (1)
-[Find] <WASHING MACHINE> (1)
-[Open] <WASHING MACHINE> (1)
-[Find] <CLOTHES_PANTS> (1)
-[Grab] <CLOTHES_PANTS> (1)
-[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
-[Close] <WASHING MACHINE> (1)
-[Find] <LAUNDRY DETERGENT> (1)
-[Grab] <LAUNDRY DETERGENT> (1)
-[Open] <WASHING MACHINE> (1)
-[PutBack] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
-[Close] <WASHING MACHINE> (1)
-[SwitchOn] <WASHING MACHINE> (1)
+[Walk] <bathroom> (1)
+[Walk] <washing_machine> (1)
+[Find] <washing_machine> (1)
+[Open] <washing_machine> (1)
+[Find] <clothes_pants> (1)
+[Grab] <clothes_pants> (1)
+[PutBack] <clothes_pants> (1) <washing_machine> (1)
+[Close] <washing_machine> (1)
+[Find] <laundry_detergent> (1)
+[Grab] <laundry_detergent> (1)
+[Open] <washing_machine> (1)
+[PutBack] <laundry_detergent> (1) <washing_machine> (1)
+[Close] <washing_machine> (1)
+[SwitchOn] <washing_machine> (1)

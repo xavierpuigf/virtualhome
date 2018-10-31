@@ -1,0 +1,16 @@
+Wash clothes
+I get my dirty dress from my bedroom, I bring my dirty dress the the bathroom, I open the washer door, I put the dirty dress in the washer, I get the laundry detergent bottle from the cabinet, I fill the cap of the laundry detergent bottle with laundry detergent, I dump the laundry detergent into the washer, I close the washer door, I turn the washer on.
+
+
+[FIND] <clothes_dress> (1.1000)
+[GRAB] <clothes_dress> (1.1000)
+[WALK] <bathroom> (1.1)
+[WALK] <washing_machine> (1.1001)
+[FIND] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[DROP] <clothes_dress> (1.1000)
+[FIND] <laundry_detergent> (1.1002)
+[GRAB] <laundry_detergent> (1.1002)
+[POUR] <laundry_detergent> (1.1002) <washing_machine> (1.1001)
+[CLOSE] <washing_machine> (1.1001)
+[SWITCHON] <washing_machine> (1.1001)

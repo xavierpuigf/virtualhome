@@ -1,16 +1,16 @@
 2
-location: ('MAIL', '1') --> ('ENTRANCE HALL', '1'), ('MAIL', '2') --> ('ENTRANCE HALL', '1'), ('TABLE', '1') --> ('ENTRANCE HALL', '1')
 atreach: ('MAIL', '1') --> ('MAIL', '1'), ('MAIL', '2') --> ('MAIL', '1')
+location: ('MAIL', '1') --> ('ENTRANCE HALL', '1'), ('MAIL', '2') --> ('ENTRANCE HALL', '1'), ('TABLE', '1') --> ('ENTRANCE HALL', '1')
 Put mail in mail organizer
 I bring in the mail from the mail box an put it in the mail organizer located in the entrance hall.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <MAIL> (1)
-[Find] <MAIL> (1)
-[Grab] <MAIL> (1)
-[Find] <MAIL> (2)
-[Grab] <MAIL> (2)
-[Walk] <TABLE> (1)
-[PutBack] <MAIL> (1) <TABLE> (1)
-[PutBack] <MAIL> (2) <TABLE> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <mail> (1)
+[Find] <mail> (1)
+[Grab] <mail> (1)
+[Find] <mail> (2)
+[Grab] <mail> (2)
+[Walk] <table> (1)
+[PutBack] <mail> (1) <table> (1)
+[PutBack] <mail> (2) <table> (1)

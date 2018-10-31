@@ -1,1 +1,1 @@
-[{"atreach": [["COUCH", "1"], ["COUCH", "1"]]}, {"atreach": [["LEGS_BOTH", "1"], ["COUCH", "1"]]}]
+[{"atreach": [["couch", "1"], ["legs_both", "1"]]}, {"atreach": [["legs_both", "1"], ["couch", "1"]]}, {"free": ["couch", "1"]}]

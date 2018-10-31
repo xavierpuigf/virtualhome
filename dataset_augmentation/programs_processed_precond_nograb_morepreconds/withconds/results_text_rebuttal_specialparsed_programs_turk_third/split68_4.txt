@@ -1,25 +1,26 @@
-4
-nearby: ('CHAIR', '1') --> ('DESK', '1')
-location: ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('PEN', '1') --> ('HOME OFFICE', '1')
+5
+atreach: ('CHAIR', '1') --> ('DOCUMENT', '1'), ('DOCUMENT', '1') --> ('DESK', '1'), ('PEN', '1') --> ('DESK', '1'), ('FILING CABINET', '1') --> ('FILING CABINET', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('PEN', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1')
 closed: ('FILING CABINET', '1') --> 
-atreach: ('DOCUMENT', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('DOCUMENT', '1'), ('FILING CABINET', '1') --> ('FILING CABINET', '1'), ('PEN', '1') --> ('DESK', '1')
+nearby: ('CHAIR', '1') --> ('DESK', '1')
+free: ('CHAIR', '1') --> 
 File documents
 I use a pen to write down information on various forms
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <DESK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <DOCUMENT> (1)
-[Grab] <DOCUMENT> (1)
-[TurnTo] <DOCUMENT> (1)
-[LookAt] <DOCUMENT> (1)
-[Find] <PEN> (1)
-[Grab] <PEN> (1)
-[Write] <DOCUMENT> (1)
-[PutObjBack] <PEN> (1)
+[Walk] <home_office> (1)
+[Walk] <desk> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <document> (1)
+[Grab] <document> (1)
+[TurnTo] <document> (1)
+[LookAt] <document> (1)
+[Find] <pen> (1)
+[Grab] <pen> (1)
+[Write] <document> (1)
+[PutObjBack] <pen> (1)
 [StandUp]
-[Walk] <FILING CABINET> (1)
-[Open] <FILING CABINET> (1)
-[PutBack] <DOCUMENT> (1) <FILING CABINET> (1)
+[Walk] <filing_cabinet> (1)
+[Open] <filing_cabinet> (1)
+[PutBack] <document> (1) <filing_cabinet> (1)

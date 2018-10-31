@@ -2,9 +2,9 @@ Scrubbing living room tile floor is once week activity for me
 I will scrub the floor with a mop and floor cleaner. I place hot water in the pail and add Mr. Clean.  I must move by furniture to mop under and around it.  After the floor dries, I will empty the dirty water from the pail, and after the floor dries, I will place the furnish back where it belongs.
 
 
-[Find] <MOP> (1)
-[TurnTo] <MOP> (1)
-[PointAt] <MOP> (1)
-[Wash] <MOP> (1)
-[TurnTo] <MOP> (1)
-[LookAt] <MOP> (1)
+[Find] <mop> (1)
+[TurnTo] <mop> (1)
+[PointAt] <mop> (1)
+[Wash] <mop> (1)
+[TurnTo] <mop> (1)
+[LookAt] <mop> (1)

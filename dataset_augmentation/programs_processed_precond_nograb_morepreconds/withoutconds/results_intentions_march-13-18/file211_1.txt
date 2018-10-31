@@ -2,5 +2,5 @@ Pick up phone
 I walk over to the phone and pick it up.
 
 
-[Walk] <PHONE> (1)
-[Grab] <PHONE> (1)
+[Walk] <phone> (1)
+[Grab] <phone> (1)

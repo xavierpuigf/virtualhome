@@ -1,21 +1,21 @@
 3
 is_off: ('LASER POINTER', '1') --> 
-location: ('LASER POINTER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CAT', '1') --> ('HOME OFFICE', '1')
-atreach: ('LASER POINTER', '1') --> ('DESK', '1'), ('DESK', '1') --> ('DESK', '1'), ('CAT', '1') --> ('DESK', '1')
+atreach: ('DESK', '1') --> ('DESK', '1'), ('LASER POINTER', '1') --> ('DESK', '1'), ('CAT', '1') --> ('DESK', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('LASER POINTER', '1') --> ('HOME OFFICE', '1'), ('CAT', '1') --> ('HOME OFFICE', '1')
 Pet cat
 Find your laser pointer on your desk.  When your cat comes in, point it near him and randomly move it around.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <DESK> (1)
-[Find] <DESK> (1)
-[TurnTo] <DESK> (1)
-[Find] <LASER POINTER> (1)
-[Grab] <LASER POINTER> (1)
-[SwitchOn] <LASER POINTER> (1)
-[Find] <CAT> (1)
-[TurnTo] <CAT> (1)
-[LookAt] <CAT> (1)
-[TurnTo] <LASER POINTER> (1)
-[PointAt] <LASER POINTER> (1) <CAT> (1)
-[Shake] <LASER POINTER> (1)
+[Walk] <home_office> (1)
+[Walk] <desk> (1)
+[Find] <desk> (1)
+[TurnTo] <desk> (1)
+[Find] <laser_pointer> (1)
+[Grab] <laser_pointer> (1)
+[SwitchOn] <laser_pointer> (1)
+[Find] <cat> (1)
+[TurnTo] <cat> (1)
+[LookAt] <cat> (1)
+[TurnTo] <laser_pointer> (1)
+[PointAt] <laser_pointer> (1) <cat> (1)
+[Shake] <laser_pointer> (1)

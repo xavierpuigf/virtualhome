@@ -1,14 +1,15 @@
-2
-location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
+3
 atreach: ('BOOK', '1') --> ('BOOK', '1'), ('CHAIR', '1') --> ('BOOK', '1')
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Read book
 I walk into the living room. I pick up a book. I sit down in a chair and read the book.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Read] <book> (1)

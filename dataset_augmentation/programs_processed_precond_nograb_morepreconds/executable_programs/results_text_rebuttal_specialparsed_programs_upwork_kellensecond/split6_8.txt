@@ -1,0 +1,14 @@
+Push all chairs in
+Go around the dining room table, going to each chair, and push all the chairs in neatly.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <table> (1.1000)
+[FIND] <chair> (1.1001)
+[PUSH] <chair> (1.1001)
+[FIND] <chair> (2.1002)
+[PUSH] <chair> (2.1002)
+[FIND] <chair> (3.1003)
+[PUSH] <chair> (3.1003)
+[FIND] <chair> (4.1004)
+[PUSH] <chair> (4.1004)

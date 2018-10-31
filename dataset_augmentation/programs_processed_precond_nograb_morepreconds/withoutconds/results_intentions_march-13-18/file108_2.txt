@@ -2,11 +2,11 @@ Pick up phone
 Pick up the ringing phone
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TABLE> (1)
-[Find] <TABLE> (1)
-[TurnTo] <TABLE> (1)
-[PointAt] <TABLE> (1)
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
-[PutObjBack] <TELEPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <table> (1)
+[Find] <table> (1)
+[TurnTo] <table> (1)
+[PointAt] <table> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)
+[PutObjBack] <telephone> (1)

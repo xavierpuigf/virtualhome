@@ -1,0 +1,18 @@
+Put away groceries
+Unpack grocery bags, put away all items where they belong, put away reusable bags and discard disposable bags.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <kitchen_cabinet> (1.1000)
+[FIND] <kitchen_cabinet> (1.1000)
+[OPEN] <kitchen_cabinet> (1.1000)
+[FIND] <groceries> (1.1001)
+[GRAB] <groceries> (1.1001)
+[PUTBACK] <groceries> (1.1001) <kitchen_cabinet> (1.1000)
+[CLOSE] <kitchen_cabinet> (1.1000)
+[WALK] <fridge> (1.1002)
+[OPEN] <fridge> (1.1002)
+[FIND] <groceries> (2.1003)
+[GRAB] <groceries> (2.1003)
+[PUTBACK] <groceries> (2.1003) <fridge> (1.1002)
+[CLOSE] <fridge> (1.1002)

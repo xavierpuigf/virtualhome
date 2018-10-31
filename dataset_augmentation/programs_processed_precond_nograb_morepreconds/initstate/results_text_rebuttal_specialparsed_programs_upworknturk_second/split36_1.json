@@ -1,1 +1,1 @@
-[{"location": [["WINDOW", "1"], ["LIVING ROOM", "1"]]}, {"closed": ["WINDOW", "1"]}, {"atreach": [["WINDOW", "1"], ["WINDOW", "1"]]}]
+[{"atreach": [["window", "1"], ["window", "1"]]}, {"location": [["window", "1"], ["living_room", "1"]]}, {"closed": ["window", "1"]}]

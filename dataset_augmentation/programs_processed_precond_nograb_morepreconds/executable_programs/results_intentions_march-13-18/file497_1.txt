@@ -1,0 +1,8 @@
+Pick up phone
+Walk to home office 1. Walk over to phone 1 on table 1.  Grab phone 1.  lift phone 1.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <phone> (1.1000)
+[FIND] <phone> (1.1000)
+[GRAB] <phone> (1.1000)

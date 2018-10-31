@@ -1,17 +1,18 @@
-3
+4
 is_off: ('RADIO', '1') --> 
-location: ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('RADIO', '1') --> ('KIDS BEDROOM', '1')
-atreach: ('CHILD', '2') --> ('CHILD', '1'), ('CHILD', '1') --> ('CHILD', '1'), ('RADIO', '1') --> ('CHILD', '1')
+plugged: ('RADIO', '1') --> 
+atreach: ('CHILD', '1') --> ('CHILD', '1'), ('CHILD', '2') --> ('CHILD', '1'), ('RADIO', '1') --> ('CHILD', '1')
+location: ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '2') --> ('KIDS BEDROOM', '1'), ('RADIO', '1') --> ('KIDS BEDROOM', '1')
 Listen to music
 Turn on the radio.  Listen and dance with kids to the music.
 
 
-[Walk] <KIDS BEDROOM> (1)
-[Walk] <CHILD> (1)
-[Find] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <CHILD> (2)
-[Greet] <CHILD> (2)
-[Find] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
+[Walk] <kids_bedroom> (1)
+[Walk] <child> (1)
+[Find] <child> (1)
+[Greet] <child> (1)
+[Find] <child> (2)
+[Greet] <child> (2)
+[Find] <radio> (1)
+[SwitchOn] <radio> (1)
 [Dance]

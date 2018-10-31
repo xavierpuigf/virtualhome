@@ -1,12 +1,12 @@
 3
 is_off: ('COMPUTER', '1') --> 
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1')
 atreach: ('COMPUTER', '1') --> ('COMPUTER', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1')
 Browse internet
 Walk to the Home Office.  Find the computer.  Turn on the computer.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)

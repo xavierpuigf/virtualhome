@@ -1,19 +1,20 @@
-3
+4
 is_off: ('TELEVISION', '1') --> 
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+plugged: ('TELEVISION', '1') --> 
 atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
 Watch TV
 I grab the remote.  I find the red power circular button. I point the remote at the television.   I push button down and TV screen lights up. I sit and watch.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[TurnTo] <REMOTE CONTROL> (1)
-[LookAt] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[TurnTo] <TELEVISION> (1)
-[PointAt] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[PutObjBack] <REMOTE CONTROL> (1)
+[Walk] <living_room> (1)
+[Walk] <remote_control> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[TurnTo] <remote_control> (1)
+[LookAt] <remote_control> (1)
+[Find] <television> (1)
+[TurnTo] <television> (1)
+[PointAt] <television> (1)
+[SwitchOn] <television> (1)
+[PutObjBack] <remote_control> (1)

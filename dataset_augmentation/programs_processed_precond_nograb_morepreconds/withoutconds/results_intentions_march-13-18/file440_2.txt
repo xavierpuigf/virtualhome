@@ -2,12 +2,12 @@ Relax on sofa
 I get home from work and walk into the living room. I see the couch and go to sit on it.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[TurnTo] <COUCH> (1)
-[LookAt] <COUCH> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Lie] <COUCH> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[TurnTo] <couch> (1)
+[LookAt] <couch> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[Lie] <couch> (1)

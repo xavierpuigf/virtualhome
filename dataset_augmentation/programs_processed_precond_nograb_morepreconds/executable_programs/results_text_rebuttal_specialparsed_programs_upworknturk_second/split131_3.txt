@@ -1,0 +1,28 @@
+Wash dishes
+Turn water on and run over dishes while scrubbing with a soapy sponge.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <dish_soap> (1.1002)
+[GRAB] <dish_soap> (1.1002)
+[FIND] <sponge> (1.1003)
+[GRAB] <sponge> (1.1003)
+[POUR] <dish_soap> (1.1002) <sponge> (1.1003)
+[PUTOBJBACK] <dish_soap> (1.1002)
+[FIND] <plate> (1.1004)
+[GRAB] <plate> (1.1004)
+[SCRUB] <plate> (1.1004)
+[RINSE] <plate> (1.1004)
+[FIND] <dishrack> (1.1005)
+[PUTBACK] <plate> (1.1004) <dishrack> (1.1005)
+[FIND] <plate> (2.1006)
+[GRAB] <plate> (2.1006)
+[SCRUB] <plate> (2.1006)
+[RINSE] <plate> (2.1006)
+[PUTBACK] <plate> (2.1006) <dishrack> (1.1005)
+[RINSE] <sponge> (1.1003)
+[PUTOBJBACK] <sponge> (1.1003)
+[SWITCHOFF] <faucet> (1.1001)

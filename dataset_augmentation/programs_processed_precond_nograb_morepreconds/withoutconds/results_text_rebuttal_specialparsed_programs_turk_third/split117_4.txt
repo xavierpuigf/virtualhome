@@ -2,9 +2,9 @@ Read
 I read in my chair at night before going to bed.
 
 
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Walk] <BEDROOM> (1)
-[Walk] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Read] <BOOK> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Walk] <bedroom> (1)
+[Walk] <chair> (1)
+[Sit] <chair> (1)
+[Read] <book> (1)

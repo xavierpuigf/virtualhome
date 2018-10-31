@@ -1,15 +1,15 @@
 3
-in: ('PLATE', '1') --> ('SINK', '1')
-location: ('PLATE', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
 atreach: ('PLATE', '1') --> ('SINK', '1'), ('SPONGE', '1') --> ('SINK', '1')
+location: ('SINK', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('SPONGE', '1') --> ('KITCHEN', '1')
+in: ('PLATE', '1') --> ('SINK', '1')
 Wash dishes by hand
 go into the kitchen, walk to the sink. Turn on the water and rinse of a plate and clean them off fully with a sponge.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <SINK> (1)
-[Find] <PLATE> (1)
-[Rinse] <PLATE> (1)
-[Find] <SPONGE> (1)
-[Grab] <SPONGE> (1)
-[Wash] <PLATE> (1)
+[Walk] <kitchen> (1)
+[Walk] <sink> (1)
+[Find] <plate> (1)
+[Rinse] <plate> (1)
+[Find] <sponge> (1)
+[Grab] <sponge> (1)
+[Wash] <plate> (1)

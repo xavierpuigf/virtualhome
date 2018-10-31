@@ -1,22 +1,22 @@
 4
-inside: ('MOP', '1') --> ('CABINET', '1')
-location: ('BROOM', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('FLOOR', '1') --> ('LIVING ROOM', '1'), ('MOP BUCKET', '1') --> ('LIVING ROOM', '1')
+atreach: ('BROOM', '1') --> ('BROOM', '1'), ('FLOOR', '1') --> ('BROOM', '1'), ('CABINET', '1') --> ('BROOM', '1'), ('MOP', '1') --> ('BROOM', '1'), ('MOP BUCKET', '1') --> ('BROOM', '1')
+location: ('BROOM', '1') --> ('LIVING ROOM', '1'), ('FLOOR', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('MOP', '1') --> ('LIVING ROOM', '1'), ('MOP BUCKET', '1') --> ('LIVING ROOM', '1')
 closed: ('CABINET', '1') --> 
-atreach: ('MOP', '1') --> ('BROOM', '1'), ('BROOM', '1') --> ('BROOM', '1'), ('CABINET', '1') --> ('BROOM', '1'), ('FLOOR', '1') --> ('BROOM', '1'), ('MOP BUCKET', '1') --> ('BROOM', '1')
+inside: ('MOP', '1') --> ('CABINET', '1')
 Clean
 Sweep, mop, tidy
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BROOM> (1)
-[Find] <BROOM> (1)
-[Grab] <BROOM> (1)
-[Find] <FLOOR> (1)
-[Sweep] <FLOOR> (1)
-[Find] <CABINET> (1)
-[Open] <CABINET> (1)
-[PutBack] <BROOM> (1) <CABINET> (1)
-[Find] <MOP> (1)
-[Grab] <MOP> (1)
-[Find] <MOP BUCKET> (1)
-[Soak] <MOP> (1) <MOP BUCKET> (1)
+[Walk] <living_room> (1)
+[Walk] <broom> (1)
+[Find] <broom> (1)
+[Grab] <broom> (1)
+[Find] <floor> (1)
+[Sweep] <floor> (1)
+[Find] <cabinet> (1)
+[Open] <cabinet> (1)
+[PutBack] <broom> (1) <cabinet> (1)
+[Find] <mop> (1)
+[Grab] <mop> (1)
+[Find] <mop_bucket> (1)
+[Soak] <mop> (1) <mop_bucket> (1)

@@ -1,1 +1,1 @@
-[{"in": [["SPECTACLES", "1"], ["DRESSER", "1"]]}, {"location": [["SPECTACLES", "1"], ["BEDROOM", "1"]]}, {"location": [["DRESSER", "1"], ["BEDROOM", "1"]]}, {"atreach": [["SPECTACLES", "1"], ["DRESSER", "1"]]}]
+[{"atreach": [["spectacles", "1"], ["dresser", "1"]]}, {"location": [["dresser", "1"], ["bedroom", "1"]]}, {"location": [["spectacles", "1"], ["bedroom", "1"]]}, {"in": [["spectacles", "1"], ["dresser", "1"]]}]

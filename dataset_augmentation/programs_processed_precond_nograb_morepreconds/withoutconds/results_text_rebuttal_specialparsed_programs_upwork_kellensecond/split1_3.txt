@@ -2,10 +2,10 @@ Turn on lights
 Walk to your lamp, switch it on, and lay on your bed
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LAMP> (1)
-[Find] <LAMP> (1)
-[TurnTo] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <lamp> (1)
+[Find] <lamp> (1)
+[TurnTo] <lamp> (1)
+[SwitchOn] <lamp> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)

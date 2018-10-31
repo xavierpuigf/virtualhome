@@ -1,0 +1,12 @@
+Watch TV
+walk into the living room walk to the remote pick it up and turn in the tv and watch
+
+
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <television> (1.1001)
+[TURNTO] <television> (1.1001)
+[POINTAT] <television> (1.1001)
+[SWITCHON] <television> (1.1001)
+[WATCH] <television> (1.1001)

@@ -1,0 +1,12 @@
+Pick up phone
+Walk to the living room and turn to the coffee table. Look at the phone and grab it.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <coffee_table> (1.101)
+[FIND] <coffee_table> (1.101)
+[TURNTO] <coffee_table> (1.101)
+[FIND] <phone> (1.1000)
+[TURNTO] <phone> (1.1000)
+[LOOKAT] <phone> (1.1000)
+[GRAB] <phone> (1.1000)

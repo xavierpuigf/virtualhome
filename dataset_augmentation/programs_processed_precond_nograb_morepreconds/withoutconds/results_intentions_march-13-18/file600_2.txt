@@ -2,7 +2,7 @@ Listen to music
 walk to living room ,find radio ,switch on radio ,listen to music 4
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RADIO> (2)
-[Find] <RADIO> (2)
-[SwitchOn] <RADIO> (2)
+[Walk] <living_room> (1)
+[Walk] <radio> (2)
+[Find] <radio> (2)
+[SwitchOn] <radio> (2)

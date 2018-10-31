@@ -2,7 +2,7 @@ Relax on sofa
 walk to living room ,find sofa ,sit on sofa
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (2)
-[Find] <SOFA> (2)
-[Sit] <SOFA> (2)
+[Walk] <living_room> (1)
+[Walk] <sofa> (2)
+[Find] <sofa> (2)
+[Sit] <sofa> (2)

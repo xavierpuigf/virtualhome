@@ -1,18 +1,19 @@
-2
-location: ('CHAIR', '1') --> ('BEDROOM', '1'), ('TABLE', '1') --> ('BEDROOM', '1'), ('DUSTER', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1')
-atreach: ('CHAIR', '1') --> ('DUSTER', '1'), ('TABLE', '1') --> ('DUSTER', '1'), ('DUSTER', '1') --> ('DUSTER', '1'), ('DRESSER', '1') --> ('DUSTER', '1')
+3
+atreach: ('DUSTER', '1') --> ('DUSTER', '1'), ('CHAIR', '1') --> ('DUSTER', '1'), ('TABLE', '1') --> ('DUSTER', '1'), ('DRESSER', '1') --> ('DUSTER', '1')
+location: ('DUSTER', '1') --> ('BEDROOM', '1'), ('CHAIR', '1') --> ('BEDROOM', '1'), ('TABLE', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1')
+free: ('CHAIR', '1') --> 
 Dust
 Get the duster and use it to remove all the dust from off my furniture.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DUSTER> (1)
-[Find] <DUSTER> (1)
-[Grab] <DUSTER> (1)
-[Find] <CHAIR> (1)
-[Wipe] <CHAIR> (1)
-[Find] <TABLE> (1)
-[Wipe] <TABLE> (1)
-[Find] <DRESSER> (1)
-[Wipe] <DRESSER> (1)
-[PutObjBack] <DUSTER> (1)
+[Walk] <bedroom> (1)
+[Walk] <duster> (1)
+[Find] <duster> (1)
+[Grab] <duster> (1)
+[Find] <chair> (1)
+[Wipe] <chair> (1)
+[Find] <table> (1)
+[Wipe] <table> (1)
+[Find] <dresser> (1)
+[Wipe] <dresser> (1)
+[PutObjBack] <duster> (1)

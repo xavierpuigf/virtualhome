@@ -1,1 +1,1 @@
-[{"location": [["WATER GLASS", "3"], ["KITCHEN", "1"]]}, {"location": [["FRIDGE", "2"], ["KITCHEN", "1"]]}, {"closed": ["FRIDGE", "2"]}, {"atreach": [["WATER GLASS", "3"], ["FRIDGE", "2"]]}, {"atreach": [["FRIDGE", "2"], ["FRIDGE", "2"]]}]
+[{"atreach": [["fridge", "2"], ["fridge", "2"]]}, {"atreach": [["water_glass", "3"], ["fridge", "2"]]}, {"location": [["fridge", "2"], ["kitchen", "1"]]}, {"location": [["water_glass", "3"], ["kitchen", "1"]]}, {"closed": ["fridge", "2"]}]

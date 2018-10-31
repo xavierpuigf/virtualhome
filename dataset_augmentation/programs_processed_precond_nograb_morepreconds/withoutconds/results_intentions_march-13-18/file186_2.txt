@@ -2,10 +2,10 @@ Go to toilet
 Find the seat open the lid finish and flush
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <TOILET PAPER> (1)
-[Find] <TOILET PAPER> (1)
-[Grab] <TOILET PAPER> (1)
-[Find] <TOILET> (1)
-[Crawl] <TOILET> (1)
-[Flush] <TOILET> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <toilet_paper> (1)
+[Find] <toilet_paper> (1)
+[Grab] <toilet_paper> (1)
+[Find] <toilet> (1)
+[Crawl] <toilet> (1)
+[Flush] <toilet> (1)

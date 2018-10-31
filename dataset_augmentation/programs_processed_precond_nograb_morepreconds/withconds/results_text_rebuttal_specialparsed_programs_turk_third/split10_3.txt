@@ -3,10 +3,10 @@ Clean
 I get the cleaning sprays and enter the home office. I spray the desk and computer and wipe it gently with a paper towel until it dries.
 
 
-[Find] <TOWEL> (1)
-[TurnTo] <TOWEL> (1)
-[PointAt] <TOWEL> (1)
-[Rinse] <TOWEL> (1)
-[TurnTo] <TOWEL> (1)
-[LookAt] <TOWEL> (1)
-[Squeeze] <TOWEL> (1)
+[Find] <towel> (1)
+[TurnTo] <towel> (1)
+[PointAt] <towel> (1)
+[Rinse] <towel> (1)
+[TurnTo] <towel> (1)
+[LookAt] <towel> (1)
+[Squeeze] <towel> (1)

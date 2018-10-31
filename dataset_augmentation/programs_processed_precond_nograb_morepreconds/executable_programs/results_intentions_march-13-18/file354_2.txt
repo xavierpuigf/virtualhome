@@ -1,0 +1,20 @@
+Relax on sofa
+Go to the living room and relax on the sofa with a book
+
+
+[RUN] <living_room> (1.243)
+[WALK] <book> (1.1000)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[WALK] <sofa> (1.1001)
+[SIT] <sofa> (1.1001)
+[TURNTO] <book> (1.1000)
+[LOOKAT] <book> (1.1000)
+[FIND] <bookmark> (1.1002)
+[GRAB] <bookmark> (1.1002)
+[DROP] <bookmark> (1.1002)
+[TURNTO] <book> (1.1000)
+[LOOKAT] <book> (1.1000)
+[READ] <book> (1.1000)
+[READ] <book> (1.1000)
+[READ] <book> (1.1000)

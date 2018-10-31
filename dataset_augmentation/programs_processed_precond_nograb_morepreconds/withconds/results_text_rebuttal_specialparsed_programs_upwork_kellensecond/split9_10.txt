@@ -1,16 +1,16 @@
 3
-location: ('CLOSET', '1') --> ('ENTRANCE HALL', '1'), ('SHOES', '1') --> ('ENTRANCE HALL', '1')
+atreach: ('SHOES', '1') --> ('SHOES', '1'), ('CLOSET', '1') --> ('SHOES', '1')
+location: ('SHOES', '1') --> ('ENTRANCE HALL', '1'), ('CLOSET', '1') --> ('ENTRANCE HALL', '1')
 closed: ('CLOSET', '1') --> 
-atreach: ('CLOSET', '1') --> ('SHOES', '1'), ('SHOES', '1') --> ('SHOES', '1')
 Put away shoes
 Pick up shoes from entry hall. Open entry way closet. Put shoes in closet. Close closet door.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Grab] <SHOES> (1)
-[Find] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[PutBack] <SHOES> (1) <CLOSET> (1)
-[Close] <CLOSET> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Grab] <shoes> (1)
+[Find] <closet> (1)
+[Open] <closet> (1)
+[PutBack] <shoes> (1) <closet> (1)
+[Close] <closet> (1)

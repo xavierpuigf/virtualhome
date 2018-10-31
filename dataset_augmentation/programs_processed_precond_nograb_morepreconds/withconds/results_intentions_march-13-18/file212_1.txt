@@ -1,12 +1,12 @@
 2
-location: ('SHOWER', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
 atreach: ('SHOWER', '1') --> ('SHOWER', '1'), ('TOWEL', '1') --> ('SHOWER', '1')
+location: ('SHOWER', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
 Take shower
 walk to bathroom, walk to shower, get into shower, get out of shower, use towel
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SHOWER> (1)
-[Enter] <SHOWER> (1)
-[Leave] <SHOWER> (1)
-[Find] <TOWEL> (1)
+[Walk] <bathroom> (1)
+[Walk] <shower> (1)
+[Enter] <shower> (1)
+[Leave] <shower> (1)
+[Find] <towel> (1)

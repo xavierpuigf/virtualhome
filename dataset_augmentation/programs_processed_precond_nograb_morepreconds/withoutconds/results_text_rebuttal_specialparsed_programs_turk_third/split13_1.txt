@@ -2,10 +2,10 @@ Hang up jacket
 Setting the coat on the proper hook
 
 
-[Find] <DRESSER> (1)
-[TurnTo] <DRESSER> (1)
-[PointAt] <DRESSER> (1)
-[Wash] <DRESSER> (1)
-[TurnTo] <DRESSER> (1)
-[LookAt] <DRESSER> (1)
-[Open] <DRESSER> (1)
+[Find] <dresser> (1)
+[TurnTo] <dresser> (1)
+[PointAt] <dresser> (1)
+[Wash] <dresser> (1)
+[TurnTo] <dresser> (1)
+[LookAt] <dresser> (1)
+[Open] <dresser> (1)

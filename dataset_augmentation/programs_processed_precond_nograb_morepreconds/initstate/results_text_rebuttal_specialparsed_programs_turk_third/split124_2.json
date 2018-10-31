@@ -1,1 +1,1 @@
-[{"is_off": ["TELEVISION", "1"]}, {"is_off": ["CD PLAYER", "1"]}]
+[{"is_off": ["television", "1"]}, {"is_off": ["cd_player", "1"]}, {"plugged": ["television", "1"]}, {"plugged": ["cd_player", "1"]}]

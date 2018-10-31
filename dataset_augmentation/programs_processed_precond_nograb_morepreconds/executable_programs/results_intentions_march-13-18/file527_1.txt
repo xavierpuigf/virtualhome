@@ -1,0 +1,7 @@
+Turn on light
+I walk to wall. I put my hand on the switch. I push the button. I turn on the lights.
+
+
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[SWITCHON] <light> (1.1000)

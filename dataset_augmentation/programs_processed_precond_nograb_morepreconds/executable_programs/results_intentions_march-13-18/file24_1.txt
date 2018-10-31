@@ -1,0 +1,15 @@
+Drink
+You walk to the kitchen and open the kitchen cabinet and grab a drinking glass. You find the water and pour the water into the drinking glass. You drink the water from the glass.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <kitchen_cabinet> (1.1000)
+[FIND] <kitchen_cabinet> (1.1000)
+[OPEN] <kitchen_cabinet> (1.1000)
+[FIND] <drinking_glass> (1.1001)
+[GRAB] <drinking_glass> (1.1001)
+[WALK] <water> (1.1002)
+[FIND] <water> (1.1002)
+[GRAB] <water> (1.1002)
+[POUR] <water> (1.1002) <drinking_glass> (1.1001)
+[DRINK] <drinking_glass> (1.1001)

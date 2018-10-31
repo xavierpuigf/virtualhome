@@ -2,7 +2,7 @@ Browse internet
 Walk to the Home Office.  Find the computer.  Turn on the computer.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)

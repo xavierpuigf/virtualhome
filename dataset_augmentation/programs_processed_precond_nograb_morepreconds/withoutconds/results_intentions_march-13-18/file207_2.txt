@@ -2,10 +2,10 @@ Watch TV
 I sit down on the couch in the living room. I grab the remote control. I press the power button on the remote control, which turns on the TV. I watch TV.
 
 
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Watch] <television> (1)

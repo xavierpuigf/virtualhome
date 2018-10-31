@@ -1,19 +1,19 @@
 3
+atreach: ('WATER', '1') --> ('SINK', '1'), ('HANDS_BOTH', '1') --> ('SINK', '1'), ('SOAP', '1') --> ('SINK', '1'), ('TOWEL', '1') --> ('SINK', '1')
+location: ('SINK', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
 in: ('WATER', '1') --> ('SINK', '1')
-location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
-atreach: ('HANDS_BOTH', '1') --> ('SINK', '1'), ('WATER', '1') --> ('SINK', '1'), ('SOAP', '1') --> ('SINK', '1'), ('TOWEL', '1') --> ('SINK', '1')
 Wash hands
 I go the bathroom, go to the sink, pour water on my hands, use soap, scrub them and rinse them. Then, I dry them with a towel.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SINK> (1)
-[Find] <WATER> (1)
-[Find] <HANDS_BOTH> (1)
-[Pour] <WATER> (1) <HANDS_BOTH> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Pour] <WATER> (1) <HANDS_BOTH> (1)
-[Pour] <WATER> (1) <HANDS_BOTH> (1)
-[Find] <TOWEL> (1)
-[Grab] <TOWEL> (1)
+[Walk] <bathroom> (1)
+[Walk] <sink> (1)
+[Find] <water> (1)
+[Find] <hands_both> (1)
+[Pour] <water> (1) <hands_both> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Pour] <water> (1) <hands_both> (1)
+[Pour] <water> (1) <hands_both> (1)
+[Find] <towel> (1)
+[Grab] <towel> (1)

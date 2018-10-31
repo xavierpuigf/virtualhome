@@ -1,1 +1,1 @@
-[{"in": [["CENTERPIECE", "1"], ["TABLE", "1"]]}, {"location": [["TABLE", "1"], ["LIVING ROOM", "1"]]}, {"location": [["CENTERPIECE", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["CENTERPIECE", "1"], ["TABLE", "1"]]}]
+[{"atreach": [["centerpiece", "1"], ["table", "1"]]}, {"location": [["table", "1"], ["living_room", "1"]]}, {"location": [["centerpiece", "1"], ["living_room", "1"]]}, {"in": [["centerpiece", "1"], ["table", "1"]]}]

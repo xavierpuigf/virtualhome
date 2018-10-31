@@ -1,16 +1,17 @@
-3
+4
 is_off: ('LIGHT', '1') --> , ('LIGHT', '2') --> 
-location: ('CONTROLLER', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '2') --> ('LIVING ROOM', '1'), ('CONTROLLER', '2') --> ('LIVING ROOM', '1')
-atreach: ('LIGHT', '1') --> ('CONTROLLER', '1'), ('LIGHT', '2') --> ('CONTROLLER', '1'), ('CONTROLLER', '2') --> ('CONTROLLER', '1')
+plugged: ('LIGHT', '1') --> , ('LIGHT', '2') --> 
+atreach: ('CONTROLLER', '2') --> ('CONTROLLER', '1'), ('LIGHT', '1') --> ('CONTROLLER', '1'), ('LIGHT', '2') --> ('CONTROLLER', '1')
+location: ('CONTROLLER', '1') --> ('LIVING ROOM', '1'), ('CONTROLLER', '2') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '2') --> ('LIVING ROOM', '1')
 Turn on light
 Go to the living room, find the switches (buttons or controllers) for light 1 and light 2 and switch on both the lights one by one.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CONTROLLER> (1)
-[Find] <CONTROLLER> (1)
-[Find] <CONTROLLER> (2)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <LIGHT> (2)
-[SwitchOn] <LIGHT> (2)
+[Walk] <living_room> (1)
+[Walk] <controller> (1)
+[Find] <controller> (1)
+[Find] <controller> (2)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <light> (2)
+[SwitchOn] <light> (2)

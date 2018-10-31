@@ -2,11 +2,11 @@ Watch TV
 turn tv on, watch TV
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <REMOTE CONTROL> (1)
-[TurnTo] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <remote_control> (1)
+[TurnTo] <remote_control> (1)
+[Find] <television> (1)
+[Watch] <television> (1)

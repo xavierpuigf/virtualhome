@@ -1,1 +1,1 @@
-[{"is_off": ["LIGHTING", "1"]}, {"atreach": [["LIGHTING", "1"], ["LIGHTING", "1"]]}]
+[{"is_off": ["lighting", "1"]}, {"plugged": ["lighting", "1"]}, {"atreach": [["lighting", "1"], ["lighting", "1"]]}]

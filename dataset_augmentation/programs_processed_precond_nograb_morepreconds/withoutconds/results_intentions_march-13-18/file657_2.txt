@@ -2,13 +2,13 @@ Drink
 go to kitchen, get a glass, turn on faucet, fill glass, turn off faucet, drink water from glass, put glass back
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <WATER GLASS> (1)
-[Find] <WATER GLASS> (1)
-[Grab] <WATER GLASS> (1)
-[Find] <FAUCET> (1)
-[SwitchOn] <FAUCET> (1)
-[Rinse] <WATER GLASS> (1)
-[SwitchOff] <FAUCET> (1)
-[Drink] <WATER GLASS> (1)
-[PutObjBack] <WATER GLASS> (1)
+[Walk] <kitchen> (1)
+[Walk] <water_glass> (1)
+[Find] <water_glass> (1)
+[Grab] <water_glass> (1)
+[Find] <faucet> (1)
+[SwitchOn] <faucet> (1)
+[Rinse] <water_glass> (1)
+[SwitchOff] <faucet> (1)
+[Drink] <water_glass> (1)
+[PutObjBack] <water_glass> (1)

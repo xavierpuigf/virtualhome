@@ -1,17 +1,17 @@
 2
-location: ('GROUND COFFEE', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1')
-atreach: ('GROUND COFFEE', '1') --> ('WATER', '1'), ('WATER', '1') --> ('WATER', '1'), ('COFFEE POT', '1') --> ('WATER', '1')
+atreach: ('COFFEE POT', '1') --> ('WATER', '1'), ('WATER', '1') --> ('WATER', '1'), ('GROUND COFFEE', '1') --> ('WATER', '1')
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1'), ('GROUND COFFEE', '1') --> ('KITCHEN', '1')
 Make coffee
 I pour coffee grounds into coffee maker. I turn on coffee maker. I pour water into coffee maker.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Find] <COFFEE POT> (1)
-[Pour] <WATER> (1) <COFFEE POT> (1)
-[Find] <GROUND COFFEE> (1)
-[Grab] <GROUND COFFEE> (1)
-[Drop] <GROUND COFFEE> (1)
-[Find] <COFFEE POT> (1)
-[TurnTo] <COFFEE POT> (1)
+[Walk] <kitchen> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Find] <coffee_pot> (1)
+[Pour] <water> (1) <coffee_pot> (1)
+[Find] <ground_coffee> (1)
+[Grab] <ground_coffee> (1)
+[Drop] <ground_coffee> (1)
+[Find] <coffee_pot> (1)
+[TurnTo] <coffee_pot> (1)

@@ -1,13 +1,14 @@
-2
+3
 is_off: ('LIGHT', '1') --> , ('LIGHT', '2') --> 
+plugged: ('LIGHT', '1') --> , ('LIGHT', '2') --> 
 atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT', '2') --> ('LIGHT', '1')
 Turn on light
 for i = 1 to n, where n is the number of lights: locate light i, move to light i, switch on light i
 
 
-[Find] <LIGHT> (1)
-[Walk] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <LIGHT> (2)
-[Walk] <LIGHT> (2)
-[SwitchOn] <LIGHT> (2)
+[Find] <light> (1)
+[Walk] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <light> (2)
+[Walk] <light> (2)
+[SwitchOn] <light> (2)

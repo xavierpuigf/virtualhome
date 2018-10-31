@@ -1,1 +1,1 @@
-[{"is_off": ["VACUUM CLEANER", "1"]}, {"atreach": [["VACUUM CLEANER", "1"], ["ELECTRICAL OUTLET", "1"]]}, {"atreach": [["CARPET", "1"], ["ELECTRICAL OUTLET", "1"]]}]
+[{"is_off": ["vacuum_cleaner", "1"]}, {"plugged": ["vacuum_cleaner", "1"]}, {"atreach": [["vacuum_cleaner", "1"], ["electrical_outlet", "1"]]}, {"atreach": [["carpet", "1"], ["electrical_outlet", "1"]]}]

@@ -1,0 +1,18 @@
+Check appearance in mirror
+Walk to full-length mirror. Look in mirror. Make sure everything about your appearance is adequate. Adjust clothes as needed.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <mirror> (1.1000)
+[FIND] <mirror> (1.1000)
+[TURNTO] <mirror> (1.1000)
+[LOOKAT] <mirror> (1.1000)
+[FIND] <face> (1.1001)
+[TURNTO] <face> (1.1001)
+[LOOKAT] <face> (1.1001)
+[FIND] <hair> (1.1002)
+[TURNTO] <hair> (1.1002)
+[LOOKAT] <hair> (1.1002)
+[FIND] <clothes_dress> (1.1003)
+[TURNTO] <clothes_dress> (1.1003)
+[LOOKAT] <clothes_dress> (1.1003)

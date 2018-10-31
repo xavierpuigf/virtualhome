@@ -1,13 +1,14 @@
-0
+1
+free: ('CHAIR', '1') --> 
 Physical therapy
 Put a chair on one end of the hall.  Sit down.  Practice getting up and walking down the hall using a cane.  Time the walk down the hall.  Do this three times.  Sit and rest.
 
 
-[Find] <CHAIR> (1)
-[TurnTo] <CHAIR> (1)
-[PointAt] <CHAIR> (1)
-[Wipe] <CHAIR> (1)
-[TurnTo] <CHAIR> (1)
-[LookAt] <CHAIR> (1)
-[Touch] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Find] <chair> (1)
+[TurnTo] <chair> (1)
+[PointAt] <chair> (1)
+[Wipe] <chair> (1)
+[TurnTo] <chair> (1)
+[LookAt] <chair> (1)
+[Touch] <chair> (1)
+[Sit] <chair> (1)

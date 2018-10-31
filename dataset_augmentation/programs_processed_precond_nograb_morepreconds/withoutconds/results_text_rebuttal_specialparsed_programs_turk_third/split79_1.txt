@@ -2,9 +2,9 @@ Read
 Read books to my kids
 
 
-[Find] <BOOK> (1)
-[Write] <BOOK> (1)
-[TurnTo] <BOOK> (1)
-[PointAt] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
+[Find] <book> (1)
+[Write] <book> (1)
+[TurnTo] <book> (1)
+[PointAt] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)

@@ -1,0 +1,11 @@
+Listen to music
+Find telephone and grab it. Find headset and put on your head. Connect it to the telephone. Look at your telephone and listen to music.
+
+
+[FIND] <telephone> (1.1000)
+[FIND] <headset> (1.1001)
+[GRAB] <headset> (1.1001)
+[FIND] <headset> (1.1001)
+[PUTON] <headset> (1.1001)
+[TURNTO] <telephone> (1.1000)
+[LOOKAT] <telephone> (1.1000)

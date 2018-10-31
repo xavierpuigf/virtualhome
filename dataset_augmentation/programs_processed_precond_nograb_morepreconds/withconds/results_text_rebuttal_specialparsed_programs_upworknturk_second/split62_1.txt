@@ -1,16 +1,17 @@
-2
-location: ('ARMS_BOTH', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('LEGS_BOTH', '1') --> ('BEDROOM', '1')
-atreach: ('ARMS_BOTH', '1') --> ('BED', '1'), ('BED', '1') --> ('BED', '1'), ('LEGS_BOTH', '1') --> ('BED', '1')
+3
+atreach: ('BED', '1') --> ('ARMS_BOTH', '1'), ('ARMS_BOTH', '1') --> ('BED', '1'), ('LEGS_BOTH', '1') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('ARMS_BOTH', '1') --> ('BEDROOM', '1'), ('LEGS_BOTH', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Stretch
 As soon as I wake up, before I get out of bed, I do 3 min. Of stretching my legs
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
-[Find] <ARMS_BOTH> (1)
-[Stretch] <ARMS_BOTH> (1)
-[Find] <LEGS_BOTH> (1)
-[Stretch] <LEGS_BOTH> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)
+[Find] <arms_both> (1)
+[Stretch] <arms_both> (1)
+[Find] <legs_both> (1)
+[Stretch] <legs_both> (1)
 [StandUp]

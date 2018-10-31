@@ -1,0 +1,14 @@
+Change TV channel
+go to living room. grab remote control. sit on couch. point remote at tv. push buttons.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[TURNTO] <remote_control> (1.1000)
+[POINTAT] <remote_control> (1.1000)
+[FIND] <button> (1.1002)
+[PUSH] <button> (1.1002)

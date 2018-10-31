@@ -1,0 +1,14 @@
+Bring dirty plate to sink
+Stand up from the table.  Pick up dirty plate.  Walk to sink.  Put plate in sink.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <table> (1.1000)
+[FIND] <table> (1.1000)
+[TURNTO] <table> (1.1000)
+[FIND] <plate> (1.1001)
+[GRAB] <plate> (1.1001)
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1002)
+[FIND] <sink> (1.1002)
+[PUTBACK] <plate> (1.1001) <sink> (1.1002)

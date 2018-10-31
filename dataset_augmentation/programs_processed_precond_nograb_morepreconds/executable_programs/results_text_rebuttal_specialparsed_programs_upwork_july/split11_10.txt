@@ -1,0 +1,12 @@
+Put away groceries
+Place groceries in refrigerator from shopping at the grocery store.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <fridge> (1.1000)
+[FIND] <fridge> (1.1000)
+[OPEN] <fridge> (1.1000)
+[FIND] <groceries> (1.1001)
+[GRAB] <groceries> (1.1001)
+[PUTBACK] <groceries> (1.1001) <fridge> (1.1000)
+[CLOSE] <fridge> (1.1000)

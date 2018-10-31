@@ -1,23 +1,24 @@
-2
-location: ('TABLE', '1') --> ('DINING ROOM', '1'), ('PLATE', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1'), ('KNIFE', '1') --> ('DINING ROOM', '1')
-atreach: ('CHAIR', '1') --> ('FORK', '1'), ('PLATE', '1') --> ('TABLE', '1'), ('FORK', '1') --> ('TABLE', '1'), ('FOOD_FOOD', '1') --> ('FOOD_FOOD', '1'), ('KNIFE', '1') --> ('TABLE', '1')
+3
+atreach: ('CHAIR', '1') --> ('FORK', '1'), ('FOOD_FOOD', '1') --> ('FOOD_FOOD', '1'), ('FORK', '1') --> ('TABLE', '1'), ('KNIFE', '1') --> ('TABLE', '1'), ('PLATE', '1') --> ('TABLE', '1')
+location: ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1'), ('FORK', '1') --> ('DINING ROOM', '1'), ('KNIFE', '1') --> ('DINING ROOM', '1'), ('PLATE', '1') --> ('DINING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Eat
 I get my prepared dinner set on the dining table, sit down on chair, pick up utensils, eat food
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FOOD_FOOD> (1)
-[Find] <FOOD_FOOD> (1)
-[Grab] <FOOD_FOOD> (1)
-[Walk] <DINING ROOM> (1)
-[Walk] <TABLE> (1)
-[Find] <TABLE> (1)
-[PutBack] <FOOD_FOOD> (1) <TABLE> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <FORK> (1)
-[Grab] <FORK> (1)
-[Find] <KNIFE> (1)
-[Grab] <KNIFE> (1)
-[Find] <PLATE> (1)
-[Eat] <PLATE> (1)
+[Walk] <kitchen> (1)
+[Walk] <food_food> (1)
+[Find] <food_food> (1)
+[Grab] <food_food> (1)
+[Walk] <dining_room> (1)
+[Walk] <table> (1)
+[Find] <table> (1)
+[PutBack] <food_food> (1) <table> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <fork> (1)
+[Grab] <fork> (1)
+[Find] <knife> (1)
+[Grab] <knife> (1)
+[Find] <plate> (1)
+[Eat] <plate> (1)

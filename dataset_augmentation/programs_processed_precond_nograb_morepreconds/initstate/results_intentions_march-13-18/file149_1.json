@@ -1,1 +1,1 @@
-[{"atreach": [["PHONE", "1"], ["TABLE", "1"]]}, {"in": [["PHONE", "1"], ["TABLE", "1"]]}, {"location": [["PHONE", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["TABLE", "1"], ["ENTRANCE HALL", "1"]]}, {"sitting": ["Character", 1]}]
+[{"sitting": ["character", 1]}, {"atreach": [["phone", "1"], ["table", "1"]]}, {"location": [["phone", "1"], ["entrance_hall", "1"]]}, {"location": [["table", "1"], ["entrance_hall", "1"]]}, {"in": [["phone", "1"], ["table", "1"]]}]

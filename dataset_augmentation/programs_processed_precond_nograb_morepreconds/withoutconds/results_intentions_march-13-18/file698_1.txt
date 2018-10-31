@@ -2,6 +2,6 @@ Browse internet
 Walk to home office. Walk to computer. Switch on Computer.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <computer> (1)
+[SwitchOn] <computer> (1)

@@ -1,15 +1,15 @@
 4
-inside: ('PLATE', '1') --> ('CUPBOARD', '1')
-location: ('CUPBOARD', '1') --> ('KITCHEN', '1')
+atreach: ('CUPBOARD', '1') --> ('CUPBOARD', '1'), ('PLATE', '1') --> ('CUPBOARD', '1')
+location: ('CUPBOARD', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1')
 closed: ('CUPBOARD', '1') --> 
-atreach: ('PLATE', '1') --> ('CUPBOARD', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+inside: ('PLATE', '1') --> ('CUPBOARD', '1')
 Get out dish
 Open cupboard.  Get out the dish.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CUPBOARD> (1)
-[Open] <CUPBOARD> (1)
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[Close] <CUPBOARD> (1)
+[Walk] <kitchen> (1)
+[Walk] <cupboard> (1)
+[Open] <cupboard> (1)
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[Close] <cupboard> (1)

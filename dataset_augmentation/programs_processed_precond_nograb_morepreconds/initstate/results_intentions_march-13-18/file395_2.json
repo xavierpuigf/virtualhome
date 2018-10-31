@@ -1,1 +1,1 @@
-[{"in": [["PLATE", "1"], ["SINK", "1"]]}, {"atreach": [["PLATE", "1"], ["SINK", "1"]]}, {"atreach": [["FORK", "1"], ["SINK", "1"]]}, {"atreach": [["RAG", "1"], ["SINK", "1"]]}, {"atreach": [["DISHRACK", "1"], ["SINK", "1"]]}, {"atreach": [["DISH SOAP", "1"], ["SINK", "1"]]}]
+[{"atreach": [["plate", "1"], ["sink", "1"]]}, {"atreach": [["fork", "1"], ["sink", "1"]]}, {"atreach": [["dish_soap", "1"], ["sink", "1"]]}, {"atreach": [["rag", "1"], ["sink", "1"]]}, {"atreach": [["dishrack", "1"], ["sink", "1"]]}, {"in": [["plate", "1"], ["sink", "1"]]}]

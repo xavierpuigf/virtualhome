@@ -1,0 +1,26 @@
+Chop vegetables
+Cut up veggies with knife
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <kitchen_cabinet> (1.1000)
+[FIND] <kitchen_cabinet> (1.1000)
+[OPEN] <kitchen_cabinet> (1.1000)
+[FIND] <knife> (1.1001)
+[GRAB] <knife> (1.1001)
+[FIND] <cutting_board> (1.1002)
+[GRAB] <cutting_board> (1.1002)
+[CLOSE] <kitchen_cabinet> (1.1000)
+[WALK] <table> (1.1003)
+[PUTBACK] <knife> (1.1001) <table> (1.1003)
+[PUTBACK] <cutting_board> (1.1002) <table> (1.1003)
+[WALK] <fridge> (1.1004)
+[OPEN] <fridge> (1.1004)
+[FIND] <food_vegetable> (1.1005)
+[GRAB] <food_vegetable> (1.1005)
+[CLOSE] <fridge> (1.1004)
+[WALK] <table> (1.1003)
+[PUTBACK] <food_vegetable> (1.1005) <cutting_board> (1.1002)
+[GRAB] <knife> (1.1001)
+[CUT] <food_vegetable> (1.1005)
+[PUTOBJBACK] <knife> (1.1001)

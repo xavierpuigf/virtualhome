@@ -1,0 +1,10 @@
+Change TV channel
+Lift right arm to grab the remote control with right hand, aim the remote control at the television using right hand and arm, use right hand to click the correct button on the remote control and change the channel.
+
+
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <television> (1.199)
+[TURNTO] <television> (1.199)
+[POINTAT] <television> (1.199)
+[SWITCHON] <television> (1.199)

@@ -1,0 +1,28 @@
+Wash dishes
+Fill sink with warm, sudsy water. Place dirty dishes in soapy water. With a washcloth or sponge scrub dishes clean. Rinse under clean warm water. Place in dish rack to dry.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <dish_soap> (1.1002)
+[GRAB] <dish_soap> (1.1002)
+[POUR] <dish_soap> (1.1002) <sink> (1.1000)
+[PUTOBJBACK] <dish_soap> (1.1002)
+[FIND] <sponge> (1.1003)
+[GRAB] <sponge> (1.1003)
+[FIND] <bowl> (1.1004)
+[GRAB] <bowl> (1.1004)
+[SCRUB] <bowl> (1.1004)
+[RINSE] <bowl> (1.1004)
+[FIND] <dishrack> (1.1005)
+[PUTBACK] <bowl> (1.1004) <dishrack> (1.1005)
+[FIND] <bowl> (2.1006)
+[GRAB] <bowl> (2.1006)
+[SCRUB] <bowl> (2.1006)
+[RINSE] <bowl> (2.1006)
+[PUTBACK] <bowl> (2.1006) <dishrack> (1.1005)
+[RINSE] <sponge> (1.1003)
+[SWITCHOFF] <faucet> (1.1001)
+[PUTOBJBACK] <sponge> (1.1003)

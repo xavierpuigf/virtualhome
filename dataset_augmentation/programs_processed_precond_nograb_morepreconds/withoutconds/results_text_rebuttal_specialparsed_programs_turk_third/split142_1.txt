@@ -2,13 +2,13 @@ Clean mirror
 First spray the mirrors with Windex or window type spray.  Take paper towels and wipe until sparkly clean.  If they have streaks, repeat the process.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <BATHROOM CABINET> (1)
-[Open] <BATHROOM CABINET> (1)
-[Find] <PAPER TOWEL> (1)
-[Grab] <PAPER TOWEL> (1)
-[Close] <BATHROOM CABINET> (1)
-[Walk] <MIRROR> (1)
-[Find] <CLEANING SOLUTION> (1)
-[Rinse] <CLEANING SOLUTION> (1)
-[Wipe] <MIRROR> (1)
+[Walk] <bathroom> (1)
+[Walk] <bathroom_cabinet> (1)
+[Open] <bathroom_cabinet> (1)
+[Find] <paper_towel> (1)
+[Grab] <paper_towel> (1)
+[Close] <bathroom_cabinet> (1)
+[Walk] <mirror> (1)
+[Find] <cleaning_solution> (1)
+[Rinse] <cleaning_solution> (1)
+[Wipe] <mirror> (1)

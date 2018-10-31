@@ -1,0 +1,18 @@
+Prepare pot of boiling water
+Place a large pot of water on the stove and heat until boiling
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <pot> (1.1000)
+[FIND] <pot> (1.1000)
+[GRAB] <pot> (1.1000)
+[WALK] <sink> (1.1001)
+[FIND] <faucet> (1.1002)
+[SWITCHON] <faucet> (1.1002)
+[PUTBACK] <pot> (1.1000) <sink> (1.1001)
+[GRAB] <pot> (1.1000)
+[SWITCHOFF] <faucet> (1.1002)
+[GRAB] <pot> (1.1000)
+[WALK] <stove> (1.1003)
+[PUTBACK] <pot> (1.1000) <stove> (1.1003)
+[SWITCHON] <stove> (1.1003)

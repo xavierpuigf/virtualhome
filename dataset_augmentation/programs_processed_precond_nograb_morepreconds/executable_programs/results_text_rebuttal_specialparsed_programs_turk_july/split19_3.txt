@@ -1,0 +1,13 @@
+Use computer
+Type on computer for work.
+
+
+[FIND] <laptop> (1.1000)
+[GRAB] <laptop> (1.1000)
+[RUN] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <desk> (1.1001)
+[OPEN] <desk> (1.1001)
+[PUTBACK] <laptop> (1.1000) <desk> (1.1001)
+[SWITCHON] <laptop> (1.1000)
+[TOUCH] <laptop> (1.1000)

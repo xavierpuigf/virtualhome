@@ -1,1 +1,1 @@
-[{"is_off": ["TELEPHONE", "1"]}, {"location": [["TELEPHONE", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["TELEPHONE", "1"], ["TELEPHONE", "1"]]}]
+[{"is_off": ["telephone", "1"]}, {"plugged": ["telephone", "1"]}, {"atreach": [["telephone", "1"], ["telephone", "1"]]}, {"location": [["telephone", "1"], ["living_room", "1"]]}]

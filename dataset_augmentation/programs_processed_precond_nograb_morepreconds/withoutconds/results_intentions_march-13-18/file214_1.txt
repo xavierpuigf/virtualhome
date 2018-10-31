@@ -2,9 +2,9 @@ Wash hands
 walk to bathroom, find sink, turn on faucet, put soap in hands, wash and rinse hands,
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SINK> (1)
-[Find] <SINK> (1)
-[Find] <SOAP> (1)
-[Wash] <SOAP> (1)
-[Rinse] <SOAP> (1)
+[Walk] <bathroom> (1)
+[Walk] <sink> (1)
+[Find] <sink> (1)
+[Find] <soap> (1)
+[Wash] <soap> (1)
+[Rinse] <soap> (1)

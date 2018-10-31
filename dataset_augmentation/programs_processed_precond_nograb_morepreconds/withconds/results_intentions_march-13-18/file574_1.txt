@@ -1,18 +1,20 @@
-2
+4
 is_on: ('LIGHT', '1') --> 
 plugged: ('LIGHT', '1') --> 
+atreach: ('BED', '1') --> ('PILLOW', '1')
+free: ('BED', '1') --> 
 Go to sleep
 I go into my bedroom. I turn off the light. I get into my bed and lay my head on a pillow. I cover up from my toes to my chin with blankets. I close my eyes.
 
 
-[Find] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
-[Find] <BED> (1)
-[Climb] <BED> (1)
-[Lie] <BED> (1)
-[Find] <PILLOW> (1)
-[Grab] <PILLOW> (1)
-[PutBack] <PILLOW> (1) <BED> (1)
-[Find] <BLANKET> (1)
-[Cover] <BED> (1) <BLANKET> (1)
+[Find] <light> (1)
+[SwitchOff] <light> (1)
+[Find] <bed> (1)
+[Climb] <bed> (1)
+[Lie] <bed> (1)
+[Find] <pillow> (1)
+[Grab] <pillow> (1)
+[PutBack] <pillow> (1) <bed> (1)
+[Find] <blanket> (1)
+[Cover] <bed> (1) <blanket> (1)
 [Sleep]

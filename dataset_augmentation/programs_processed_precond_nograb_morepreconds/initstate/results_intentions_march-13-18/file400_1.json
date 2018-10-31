@@ -1,1 +1,1 @@
-[{"in": [["TELEPHONE", "1"], ["TABLE", "1"]]}, {"location": [["TABLE", "1"], ["LIVING ROOM", "1"]]}, {"location": [["TELEPHONE", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["TELEPHONE", "1"], ["TABLE", "1"]]}]
+[{"atreach": [["telephone", "1"], ["table", "1"]]}, {"location": [["table", "1"], ["living_room", "1"]]}, {"location": [["telephone", "1"], ["living_room", "1"]]}, {"in": [["telephone", "1"], ["table", "1"]]}]

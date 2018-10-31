@@ -1,0 +1,28 @@
+Clean dishes
+Clean the dishes from the sink.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1000)
+[FIND] <sponge> (1.1001)
+[GRAB] <sponge> (1.1001)
+[FIND] <dish_soap> (1.1002)
+[GRAB] <dish_soap> (1.1002)
+[POUR] <dish_soap> (1.1002) <sponge> (1.1001)
+[PUTOBJBACK] <dish_soap> (1.1002)
+[FIND] <faucet> (1.1003)
+[SWITCHON] <faucet> (1.1003)
+[FIND] <drinking_glass> (1.1004)
+[GRAB] <drinking_glass> (1.1004)
+[SCRUB] <drinking_glass> (1.1004)
+[RINSE] <drinking_glass> (1.1004)
+[FIND] <dishrack> (1.1005)
+[PUTBACK] <drinking_glass> (1.1004) <dishrack> (1.1005)
+[FIND] <cup> (1.1006)
+[GRAB] <cup> (1.1006)
+[SCRUB] <cup> (1.1006)
+[RINSE] <cup> (1.1006)
+[PUTBACK] <cup> (1.1006) <dishrack> (1.1005)
+[RINSE] <sponge> (1.1001)
+[PUTOBJBACK] <sponge> (1.1001)
+[SWITCHOFF] <faucet> (1.1003)

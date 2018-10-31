@@ -1,14 +1,14 @@
 2
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('RAG', '1') --> ('HOME OFFICE', '1')
-atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('RAG', '1') --> ('RAG', '1')
+atreach: ('RAG', '1') --> ('RAG', '1'), ('COMPUTER', '1') --> ('COMPUTER', '1')
+location: ('RAG', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1')
 Clean screen
 Use a soft rag to wipe the screen until there are no marks on it.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Walk] <COMPUTER> (1)
-[Wipe] <COMPUTER> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <home_office> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Walk] <computer> (1)
+[Wipe] <computer> (1)
+[PutObjBack] <rag> (1)

@@ -1,20 +1,20 @@
 4
-inside: ('GROCERIES', '1') --> ('FRIDGE', '1')
-location: ('KITCHEN COUNTER', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+atreach: ('GROCERIES', '1') --> ('GROCERIES', '1'), ('KITCHEN COUNTER', '1') --> ('GROCERIES', '1'), ('FRIDGE', '1') --> ('GROCERIES', '1')
+location: ('GROCERIES', '1') --> ('KITCHEN', '1'), ('KITCHEN COUNTER', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
 closed: ('FRIDGE', '1') --> 
-atreach: ('KITCHEN COUNTER', '1') --> ('GROCERIES', '1'), ('FRIDGE', '1') --> ('GROCERIES', '1'), ('GROCERIES', '1') --> ('GROCERIES', '1')
+inside: ('GROCERIES', '1') --> ('FRIDGE', '1')
 Put groceries in Fridge
 walk to the kitchen, place groceries on counter top, open the fridge, neatly place groceries in the fridge, close the fridge
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <GROCERIES> (1)
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[Find] <KITCHEN COUNTER> (1)
-[PutBack] <GROCERIES> (1) <KITCHEN COUNTER> (1)
-[Find] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Grab] <GROCERIES> (1)
-[PutBack] <GROCERIES> (1) <FRIDGE> (1)
-[Close] <FRIDGE> (1)
+[Walk] <kitchen> (1)
+[Walk] <groceries> (1)
+[Find] <groceries> (1)
+[Grab] <groceries> (1)
+[Find] <kitchen_counter> (1)
+[PutBack] <groceries> (1) <kitchen_counter> (1)
+[Find] <fridge> (1)
+[Open] <fridge> (1)
+[Grab] <groceries> (1)
+[PutBack] <groceries> (1) <fridge> (1)
+[Close] <fridge> (1)

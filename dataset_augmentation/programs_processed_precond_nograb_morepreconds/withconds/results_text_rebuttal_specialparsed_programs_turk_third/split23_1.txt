@@ -3,11 +3,11 @@ Put washed clothes in almirah
 Bring washed and cleaned kids clothes in the room, put them in the hangers and hang them in the almirah.
 
 
-[Find] <HANGER> (1)
-[TurnTo] <HANGER> (1)
-[PointAt] <HANGER> (1)
-[Wipe] <HANGER> (1)
-[TurnTo] <HANGER> (1)
-[LookAt] <HANGER> (1)
-[Touch] <HANGER> (1)
-[Walk] <HANGER> (1)
+[Find] <hanger> (1)
+[TurnTo] <hanger> (1)
+[PointAt] <hanger> (1)
+[Wipe] <hanger> (1)
+[TurnTo] <hanger> (1)
+[LookAt] <hanger> (1)
+[Touch] <hanger> (1)
+[Walk] <hanger> (1)

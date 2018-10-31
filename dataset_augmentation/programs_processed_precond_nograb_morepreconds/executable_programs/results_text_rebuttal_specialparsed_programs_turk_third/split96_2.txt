@@ -1,0 +1,11 @@
+Put on coat
+I remove my scarf from a coat peg in the entrance hall.  I wrap the scarf around my neck
+
+
+[WALK] <living_room> (1.243)
+[WALK] <hanger> (1.100)
+[TURNTO] <hanger> (1.100)
+[LOOKAT] <hanger> (1.100)
+[FIND] <clothes_scarf> (1.1000)
+[GRAB] <clothes_scarf> (1.1000)
+[PUTON] <clothes_scarf> (1.1000)

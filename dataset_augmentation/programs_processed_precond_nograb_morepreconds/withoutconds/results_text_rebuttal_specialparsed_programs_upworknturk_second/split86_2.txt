@@ -2,8 +2,8 @@ Gaze out window
 Look at the yard from the window
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <WINDOW> (1)
-[Find] <WINDOW> (1)
-[TurnTo] <WINDOW> (1)
-[LookAt] <WINDOW> (1)
+[Walk] <living_room> (1)
+[Walk] <window> (1)
+[Find] <window> (1)
+[TurnTo] <window> (1)
+[LookAt] <window> (1)

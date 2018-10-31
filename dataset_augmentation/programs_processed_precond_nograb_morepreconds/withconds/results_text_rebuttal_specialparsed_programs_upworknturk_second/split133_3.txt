@@ -1,20 +1,21 @@
-2
-location: ('TOILET', '1') --> ('BATHROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
+3
 atreach: ('TOILET', '1') --> ('TOILET PAPER', '1'), ('CLOTHES_PANTS', '1') --> ('TOILET', '1'), ('TOILET PAPER', '1') --> ('TOILET', '1')
+location: ('TOILET', '1') --> ('BATHROOM', '1'), ('CLOTHES_PANTS', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
+free: ('TOILET', '1') --> 
 Use toilet
 Sit on toilet, use it, flush
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <CLOTHES_PANTS> (1)
-[Grab] <CLOTHES_PANTS> (1)
-[Drop] <CLOTHES_PANTS> (1)
-[Sit] <TOILET> (1)
-[Find] <TOILET PAPER> (1)
-[Grab] <TOILET PAPER> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <clothes_pants> (1)
+[Grab] <clothes_pants> (1)
+[Drop] <clothes_pants> (1)
+[Sit] <toilet> (1)
+[Find] <toilet_paper> (1)
+[Grab] <toilet_paper> (1)
 [Wipe]
-[PutBack] <TOILET PAPER> (1) <TOILET> (1)
+[PutBack] <toilet_paper> (1) <toilet> (1)
 [StandUp]
-[PutOn] <CLOTHES_PANTS> (1)
-[Flush] <TOILET> (1)
+[PutOn] <clothes_pants> (1)
+[Flush] <toilet> (1)

@@ -1,0 +1,19 @@
+Drink
+Walk into kitchen, look for cup, walk to cup, look for refrigerator, walk to refrigerator, open door, grab water, pour water into cup
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <cup> (1.1000)
+[FIND] <cup> (1.1000)
+[TURNTO] <cup> (1.1000)
+[LOOKAT] <cup> (1.1000)
+[WALK] <cup> (1.1000)
+[FIND] <fridge> (1.1001)
+[TURNTO] <fridge> (1.1001)
+[LOOKAT] <fridge> (1.1001)
+[WALK] <fridge> (1.1001)
+[GRAB] <cup> (1.1000)
+[WALK] <water> (1.1002)
+[FIND] <water> (1.1002)
+[GRAB] <water> (1.1002)
+[POUR] <water> (1.1002) <cup> (1.1000)

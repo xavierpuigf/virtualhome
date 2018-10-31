@@ -1,0 +1,16 @@
+Wash clothes
+find the laundry basket, grab the clothes from basket, find washing machine, put the clothes in the washing machine, find laundry detergent, put  laundry detergent to washing machine, close the washing machine lid, put the detergent back , switch the machine on.
+
+
+[FIND] <basket_for_clothes> (1.1000)
+[GRAB] <basket_for_clothes> (1.1000)
+[FIND] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[PUTBACK] <basket_for_clothes> (1.1000) <washing_machine> (1.1001)
+[FIND] <laundry_detergent> (1.1002)
+[GRAB] <laundry_detergent> (1.1002)
+[PUTBACK] <laundry_detergent> (1.1002) <washing_machine> (1.1001)
+[CLOSE] <washing_machine> (1.1001)
+[GRAB] <laundry_detergent> (1.1002)
+[PUTOBJBACK] <laundry_detergent> (1.1002)
+[SWITCHON] <washing_machine> (1.1001)

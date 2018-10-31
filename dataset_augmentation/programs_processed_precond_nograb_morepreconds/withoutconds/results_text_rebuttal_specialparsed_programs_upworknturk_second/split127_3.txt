@@ -2,12 +2,12 @@ Study
 Study norwegian
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <LAMP> (1)
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Read] <BOOK> (1)
+[Walk] <home_office> (1)
+[Walk] <lamp> (1)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Read] <book> (1)

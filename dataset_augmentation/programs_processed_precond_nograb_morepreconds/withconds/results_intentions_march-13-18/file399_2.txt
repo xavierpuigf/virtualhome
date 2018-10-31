@@ -1,11 +1,12 @@
-3
+4
 is_off: ('RADIO', '1') --> 
-location: ('RADIO', '1') --> ('LIVING ROOM', '1')
+plugged: ('RADIO', '1') --> 
 atreach: ('RADIO', '1') --> ('RADIO', '1')
+location: ('RADIO', '1') --> ('LIVING ROOM', '1')
 Listen to music
 Walk into the living room. Walk up to the radio. Turn on the radio. Listen to the radio.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
+[Walk] <living_room> (1)
+[Walk] <radio> (1)
+[SwitchOn] <radio> (1)

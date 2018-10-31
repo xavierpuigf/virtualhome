@@ -2,17 +2,17 @@ Listen to music
 listen to music
 
 
-[Run] <HOME OFFICE> (1)
-[Walk] <CD PLAYER> (1)
-[Find] <CD PLAYER> (1)
-[PlugIn] <CD PLAYER> (1)
-[SwitchOn] <CD PLAYER> (1)
-[Walk] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[TurnTo] <CD PLAYER> (1)
-[LookAt] <CD PLAYER> (1)
+[Run] <home_office> (1)
+[Walk] <cd_player> (1)
+[Find] <cd_player> (1)
+[PlugIn] <cd_player> (1)
+[SwitchOn] <cd_player> (1)
+[Walk] <chair> (1)
+[Sit] <chair> (1)
+[TurnTo] <cd_player> (1)
+[LookAt] <cd_player> (1)
 [StandUp]
 [Dance]
-[TurnTo] <CD PLAYER> (1)
-[PointAt] <CD PLAYER> (1)
+[TurnTo] <cd_player> (1)
+[PointAt] <cd_player> (1)
 [Dance]

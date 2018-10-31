@@ -1,1 +1,1 @@
-[{"is_off": ["STEREO", "1"]}, {"location": [["STEREO", "1"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"atreach": [["STEREO", "1"], ["STEREO", "1"]]}, {"atreach": [["BED", "1"], ["STEREO", "1"]]}]
+[{"is_off": ["stereo", "1"]}, {"plugged": ["stereo", "1"]}, {"atreach": [["stereo", "1"], ["stereo", "1"]]}, {"atreach": [["bed", "1"], ["stereo", "1"]]}, {"location": [["stereo", "1"], ["bedroom", "1"]]}, {"location": [["bed", "1"], ["bedroom", "1"]]}, {"free": ["bed", "1"]}]

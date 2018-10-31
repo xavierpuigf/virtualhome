@@ -3,8 +3,8 @@ The person will stand , walk to the bathroom, and this case look at the toilet i
 
 
 [StandUp]
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
-[TurnTo] <TOILET> (1)
-[LookAt] <TOILET> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)
+[TurnTo] <toilet> (1)
+[LookAt] <toilet> (1)

@@ -1,0 +1,12 @@
+Wash dishes with dishwasher
+walk to kitchen, find the dishwasher, apply dish soap into vessels or dishwasher, wash the dishes with a dishwasher
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <dishwasher> (1.1000)
+[FIND] <dishwasher> (1.1000)
+[FIND] <dish_soap> (1.1001)
+[GRAB] <dish_soap> (1.1001)
+[OPEN] <dishwasher> (1.1000)
+[PUTBACK] <dish_soap> (1.1001) <dishwasher> (1.1000)
+[WASH] <dishwasher> (1.1000)

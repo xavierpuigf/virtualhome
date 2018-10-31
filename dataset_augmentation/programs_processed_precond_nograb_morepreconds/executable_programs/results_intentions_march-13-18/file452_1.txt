@@ -1,0 +1,16 @@
+Wash dishes by hand
+go to the kitchen, put soap on sponge, wash dirty dish, hang on drying basket.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <dish_soap> (1.1000)
+[FIND] <dish_soap> (1.1000)
+[GRAB] <dish_soap> (1.1000)
+[FIND] <plate> (1.1001)
+[PUTBACK] <dish_soap> (1.1000) <plate> (1.1001)
+[FIND] <plate> (1.1001)
+[GRAB] <plate> (1.1001)
+[WASH] <plate> (1.1001)
+[RINSE] <plate> (1.1001)
+[FIND] <dishrack> (1.1002)
+[PUTBACK] <plate> (1.1001) <dishrack> (1.1002)

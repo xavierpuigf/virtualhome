@@ -1,0 +1,21 @@
+Wash hands
+I go into the bathroom, get my hands wet, add soap, suds up my hands, rinse the soap off, turn the faucet off, dry my hands.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <faucet> (1.1000)
+[FIND] <faucet> (1.1000)
+[SWITCHON] <faucet> (1.1000)
+[FIND] <hands_both> (1.1001)
+[RINSE] <hands_both> (1.1001)
+[FIND] <soap> (1.1002)
+[GRAB] <soap> (1.1002)
+[SCRUB] <soap> (1.1002)
+[PUTOBJBACK] <soap> (1.1002)
+[SCRUB] <hands_both> (1.1001)
+[RINSE] <hands_both> (1.1001)
+[SWITCHOFF] <faucet> (1.1000)
+[FIND] <towel> (1.1003)
+[GRAB] <towel> (1.1003)
+[WIPE] <hands_both> (1.1001)
+[PUTOBJBACK] <towel> (1.1003)

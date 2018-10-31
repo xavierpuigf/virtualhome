@@ -1,0 +1,18 @@
+Manage emails
+Check the email account for new mails or sending to others.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <computer> (1.1001)
+[SWITCHON] <computer> (1.1001)
+[FIND] <chair> (1.1002)
+[SIT] <chair> (1.1002)
+[TURNTO] <computer> (1.1001)
+[LOOKAT] <computer> (1.1001)
+[FIND] <mail> (1.1003)
+[GRAB] <mail> (1.1003)
+[READ] <mail> (1.1003)
+[FIND] <keyboard> (1.1004)
+[TYPE] <keyboard> (1.1004)
+[SWITCHOFF] <computer> (1.1001)

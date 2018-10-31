@@ -1,16 +1,16 @@
 2
-location: ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('MOUSE', '1') --> ('LIVING ROOM', '1')
 atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('MOUSE', '1') --> ('COMPUTER', '1')
+location: ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('MOUSE', '1') --> ('LIVING ROOM', '1')
 Browse internet
 walk into Living room, look for computer, walk to computer, turn on computer, grab mouse, click mouse
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Walk] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
+[Walk] <living_room> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Walk] <computer> (1)
+[TurnTo] <computer> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)

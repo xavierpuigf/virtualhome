@@ -1,22 +1,23 @@
-5
+6
+atreach: ('CHAIR', '1') --> ('PEN', '1'), ('PAPER', '1') --> ('FILING CABINET', '1'), ('DESK', '1') --> ('FILING CABINET', '1'), ('PEN', '1') --> ('FILING CABINET', '1')
+location: ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('PAPER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('PEN', '1') --> ('HOME OFFICE', '1')
+closed: ('DESK', '1') --> 
 inside: ('PEN', '1') --> ('DESK', '1')
 in: ('PAPER', '1') --> ('FILING CABINET', '1')
-location: ('PAPER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1')
-closed: ('DESK', '1') --> 
-atreach: ('PAPER', '1') --> ('FILING CABINET', '1'), ('CHAIR', '1') --> ('PEN', '1'), ('DESK', '1') --> ('FILING CABINET', '1'), ('PEN', '1') --> ('FILING CABINET', '1')
+free: ('CHAIR', '1') --> 
 Work
 Walk into home office. Sit down in a chair at a desk. Pull out a drawer and take out paper and a pen. Begin writing lesson plans.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <FILING CABINET> (1)
-[Find] <PAPER> (1)
-[Grab] <PAPER> (1)
-[Find] <DESK> (1)
-[Open] <DESK> (1)
-[PutBack] <PAPER> (1) <DESK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <PEN> (1)
-[Grab] <PEN> (1)
-[Write] <PAPER> (1)
+[Walk] <home_office> (1)
+[Walk] <filing_cabinet> (1)
+[Find] <paper> (1)
+[Grab] <paper> (1)
+[Find] <desk> (1)
+[Open] <desk> (1)
+[PutBack] <paper> (1) <desk> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <pen> (1)
+[Grab] <pen> (1)
+[Write] <paper> (1)

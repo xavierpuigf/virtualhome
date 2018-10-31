@@ -1,0 +1,9 @@
+Pet cat
+I look for my cat and start petting it.
+
+
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[FIND] <face> (1.1001)
+[TOUCH] <face> (1.1001)

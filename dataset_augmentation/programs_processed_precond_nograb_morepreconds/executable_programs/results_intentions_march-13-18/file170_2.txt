@@ -1,0 +1,15 @@
+Wash dishes by hand
+Go to kitchen sink, turn on water, plug drain, put soap in sink, put dirty dishes in sink, wash dishes, use clean water to rinse, put dishes on drying rack
+
+
+[FIND] <sink> (1.191)
+[TURNTO] <sink> (1.191)
+[LOOKAT] <sink> (1.191)
+[FIND] <plate> (1.1000)
+[GRAB] <plate> (1.1000)
+[SCRUB] <plate> (1.1000)
+[RINSE] <plate> (1.1000)
+[FIND] <dishrack> (1.1001)
+[TURNTO] <dishrack> (1.1001)
+[LOOKAT] <dishrack> (1.1001)
+[DROP] <plate> (1.1000)

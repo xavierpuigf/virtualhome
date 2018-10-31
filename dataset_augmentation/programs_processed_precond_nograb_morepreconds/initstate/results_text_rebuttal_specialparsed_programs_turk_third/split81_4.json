@@ -1,1 +1,1 @@
-[{"inside": [["CLOTHES_PANTS", "1"], ["DRESSER", "1"]]}, {"inside": [["CLOTHES_SHIRT", "1"], ["DRESSER", "1"]]}, {"closed": ["DRESSER", "1"]}]
+[{"closed": ["dresser", "1"]}, {"inside": [["clothes_pants", "1"], ["dresser", "1"]]}, {"inside": [["clothes_shirt", "1"], ["dresser", "1"]]}]

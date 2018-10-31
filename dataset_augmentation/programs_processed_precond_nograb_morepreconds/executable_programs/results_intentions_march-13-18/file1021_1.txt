@@ -1,0 +1,15 @@
+Wash dishes with dishwasher
+Wash dishes with a dishwasher
+
+
+[FIND] <dishwasher> (1.1000)
+[OPEN] <dishwasher> (1.1000)
+[FIND] <plate> (1.1001)
+[GRAB] <plate> (1.1001)
+[PUTBACK] <plate> (1.1001) <dishwasher> (1.1000)
+[WALK] <dish_soap> (1.1002)
+[FIND] <dish_soap> (1.1002)
+[GRAB] <dish_soap> (1.1002)
+[POUR] <dish_soap> (1.1002) <plate> (1.1001)
+[CLOSE] <dishwasher> (1.1000)
+[SWITCHON] <dishwasher> (1.1000)

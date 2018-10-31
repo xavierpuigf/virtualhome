@@ -3,7 +3,7 @@ Scrub bottom of feet
 Scrub the bottom of my feet in the shower while i sit down
 
 
-[Find] <SHOWER> (1)
-[TurnTo] <SHOWER> (1)
-[LookAt] <SHOWER> (1)
-[Enter] <SHOWER> (1)
+[Find] <shower> (1)
+[TurnTo] <shower> (1)
+[LookAt] <shower> (1)
+[Enter] <shower> (1)

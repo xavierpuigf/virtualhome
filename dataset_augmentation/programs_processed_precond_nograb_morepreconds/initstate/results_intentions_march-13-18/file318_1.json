@@ -1,1 +1,1 @@
-[{"in": [["PLATE", "4"], ["TABLE", "1"]]}, {"atreach": [["PLATE", "4"], ["TABLE", "1"]]}, {"atreach": [["SPOON", "4"], ["TABLE", "1"]]}, {"atreach": [["FORK", "4"], ["TABLE", "1"]]}]
+[{"atreach": [["plate", "4"], ["table", "1"]]}, {"atreach": [["fork", "4"], ["table", "1"]]}, {"atreach": [["spoon", "4"], ["table", "1"]]}, {"in": [["plate", "4"], ["table", "1"]]}]

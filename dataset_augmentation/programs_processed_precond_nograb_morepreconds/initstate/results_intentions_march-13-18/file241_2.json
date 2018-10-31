@@ -1,1 +1,1 @@
-[{"atreach": [["BOOK", "1"], ["BOOK", "1"]]}, {"location": [["BOOK", "1"], ["HOME OFFICE", "1"]]}, {"sitting": ["Character", 1]}]
+[{"sitting": ["character", 1]}, {"atreach": [["book", "1"], ["book", "1"]]}, {"location": [["book", "1"], ["home_office", "1"]]}]

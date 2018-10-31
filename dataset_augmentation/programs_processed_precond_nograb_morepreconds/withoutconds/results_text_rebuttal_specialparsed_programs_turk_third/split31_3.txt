@@ -2,11 +2,11 @@ Put up towel
 Take a towel off the ground.  Put on rack.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <TOWEL> (1)
-[Find] <TOWEL> (1)
-[Grab] <TOWEL> (1)
-[Fold] <TOWEL> (1)
-[Find] <CABINET> (1)
-[Open] <CABINET> (1)
-[PutBack] <TOWEL> (1) <CABINET> (1)
+[Walk] <bedroom> (1)
+[Walk] <towel> (1)
+[Find] <towel> (1)
+[Grab] <towel> (1)
+[Fold] <towel> (1)
+[Find] <cabinet> (1)
+[Open] <cabinet> (1)
+[PutBack] <towel> (1) <cabinet> (1)

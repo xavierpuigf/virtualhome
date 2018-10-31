@@ -2,10 +2,10 @@ Juggling
 The robot would catch any items thrown at it and immediately start to juggle them at a pro level. It would have a max of 6 items it can juggle at once. That would be awesome to watch.
 
 
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[PointAt] <COMPUTER> (1)
-[Watch] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Touch] <COMPUTER> (1)
-[Walk] <COMPUTER> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[PointAt] <computer> (1)
+[Watch] <computer> (1)
+[SwitchOn] <computer> (1)
+[Touch] <computer> (1)
+[Walk] <computer> (1)

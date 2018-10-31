@@ -2,7 +2,7 @@ Pick up phone
 walk to phone, grab phone, pick up phone, put to ear
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <TELEPHONE> (1)
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
+[Walk] <home_office> (1)
+[Walk] <telephone> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)

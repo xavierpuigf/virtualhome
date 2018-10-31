@@ -2,7 +2,7 @@ Pick up phone
 Walk to the living room, Find Phone stand. Find Phone. Pickup the receiver to attend the call.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <PHONE> (1)
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <phone> (1)
+[Find] <phone> (1)
+[Grab] <phone> (1)

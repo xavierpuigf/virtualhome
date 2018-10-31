@@ -2,13 +2,13 @@ Cook some food
 walk to the kitchen, pick up some bread, butter the bread, put turkey on the bread, put sandwich on plate
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FOOD_BREAD> (1)
-[Find] <FOOD_BREAD> (1)
-[Grab] <FOOD_BREAD> (1)
-[Find] <FOOD_TURKEY> (1)
-[Grab] <FOOD_TURKEY> (1)
-[Find] <PLATE> (1)
-[PutBack] <FOOD_TURKEY> (1) <PLATE> (1)
-[Find] <PLATE> (1)
-[Eat] <PLATE> (1)
+[Walk] <kitchen> (1)
+[Walk] <food_bread> (1)
+[Find] <food_bread> (1)
+[Grab] <food_bread> (1)
+[Find] <food_turkey> (1)
+[Grab] <food_turkey> (1)
+[Find] <plate> (1)
+[PutBack] <food_turkey> (1) <plate> (1)
+[Find] <plate> (1)
+[Eat] <plate> (1)

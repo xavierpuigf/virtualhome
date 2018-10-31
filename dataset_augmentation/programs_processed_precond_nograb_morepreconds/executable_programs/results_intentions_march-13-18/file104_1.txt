@@ -1,0 +1,11 @@
+Read book
+Reading book , Its free time hobby for relaxing
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.1000)
+[SIT] <chair> (1.1000)
+[FIND] <book> (1.1001)
+[TOUCH] <book> (1.1001)
+[GRAB] <book> (1.1001)
+[READ] <book> (1.1001)

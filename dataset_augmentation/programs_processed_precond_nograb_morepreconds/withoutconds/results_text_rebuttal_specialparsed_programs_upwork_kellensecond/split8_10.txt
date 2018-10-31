@@ -2,11 +2,11 @@ Read magazine
 Get magazine off coffee table. Sit in arm chair. Open magazine to first page. Read until finished.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COFFEE TABLE> (1)
-[Find] <MAGAZINE> (1)
-[Grab] <MAGAZINE> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Read] <MAGAZINE> (1)
-[PutBack] <MAGAZINE> (1) <COFFEE TABLE> (1)
+[Walk] <living_room> (1)
+[Walk] <coffee_table> (1)
+[Find] <magazine> (1)
+[Grab] <magazine> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Read] <magazine> (1)
+[PutBack] <magazine> (1) <coffee_table> (1)

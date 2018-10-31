@@ -2,8 +2,8 @@ Watch TV
 Walk to living room. Sit on sofa. Switch on Television and start watching.
 
 
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Watch] <television> (1)

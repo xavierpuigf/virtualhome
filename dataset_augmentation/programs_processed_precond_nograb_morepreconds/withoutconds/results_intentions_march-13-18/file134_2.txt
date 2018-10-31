@@ -2,15 +2,15 @@ Take shower
 Go to shower
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <BATHTUB> (1)
-[Find] <SHOWER> (1)
-[Pull] <SHOWER> (1)
-[Find] <FACE SOAP> (1)
-[Scrub] <FACE SOAP> (1)
-[Rinse] <FACE SOAP> (1)
-[Push] <SHOWER> (1)
+[Walk] <bathroom> (1)
+[Walk] <bathtub> (1)
+[Find] <shower> (1)
+[Pull] <shower> (1)
+[Find] <face_soap> (1)
+[Scrub] <face_soap> (1)
+[Rinse] <face_soap> (1)
+[Push] <shower> (1)
 [StandUp]
-[Find] <TOWEL> (1)
-[Cover] <TOWEL> (1)
-[Walk] <BEDROOM> (1)
+[Find] <towel> (1)
+[Cover] <towel> (1)
+[Walk] <bedroom> (1)

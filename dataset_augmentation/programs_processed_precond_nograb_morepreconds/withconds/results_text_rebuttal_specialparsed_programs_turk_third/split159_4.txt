@@ -1,17 +1,19 @@
-3
-is_off: ('LAPTOP', '1') --> , ('LIGHT', '1') --> 
-location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('LIGHT', '1') --> ('HOME OFFICE', '1'), ('LAPTOP', '1') --> ('HOME OFFICE', '1')
+5
+is_off: ('LIGHT', '1') --> , ('LAPTOP', '1') --> 
+plugged: ('LIGHT', '1') --> , ('LAPTOP', '1') --> 
 atreach: ('CHAIR', '1') --> ('LAPTOP', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('LAPTOP', '1') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('LAPTOP', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Work
 I walk in. Turn on the light. Set in my chair. Turn on lap top. And start to work.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <LAPTOP> (1)
-[Grab] <LAPTOP> (1)
-[SwitchOn] <LAPTOP> (1)
+[Walk] <home_office> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <laptop> (1)
+[Grab] <laptop> (1)
+[SwitchOn] <laptop> (1)

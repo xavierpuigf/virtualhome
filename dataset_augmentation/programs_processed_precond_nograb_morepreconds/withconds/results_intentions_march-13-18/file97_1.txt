@@ -1,18 +1,18 @@
 4
-inside: ('DRINKING GLASS', '1') --> ('FRIDGE', '1')
-location: ('FRIDGE', '1') --> ('KITCHEN', '1')
-closed: ('FRIDGE', '1') --> 
 atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('DRINKING GLASS', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> 
+inside: ('DRINKING GLASS', '1') --> ('FRIDGE', '1')
 Drink
 Robot Drinks the water
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Find] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <DRINKING GLASS> (1)
-[Grab] <DRINKING GLASS> (1)
-[Drink] <DRINKING GLASS> (1)
-[PutObjBack] <DRINKING GLASS> (1)
-[Close] <FRIDGE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Find] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <drinking_glass> (1)
+[Grab] <drinking_glass> (1)
+[Drink] <drinking_glass> (1)
+[PutObjBack] <drinking_glass> (1)
+[Close] <fridge> (1)

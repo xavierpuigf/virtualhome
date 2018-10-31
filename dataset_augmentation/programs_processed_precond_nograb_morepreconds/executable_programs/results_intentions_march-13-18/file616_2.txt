@@ -1,0 +1,6 @@
+Pick up phone
+walk over and pick up the phone
+
+
+[WALK] <phone> (1.202)
+[GRAB] <phone> (1.202)

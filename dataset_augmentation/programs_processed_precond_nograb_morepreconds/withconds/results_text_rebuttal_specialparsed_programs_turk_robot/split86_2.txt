@@ -1,15 +1,15 @@
 2
-location: ('CAT', '2') --> ('BEDROOM', '1'), ('CAT', '1') --> ('BEDROOM', '1')
-atreach: ('CAT', '2') --> ('CAT', '1'), ('CAT', '1') --> ('CAT', '1')
+atreach: ('CAT', '1') --> ('CAT', '1'), ('CAT', '2') --> ('CAT', '1')
+location: ('CAT', '1') --> ('BEDROOM', '1'), ('CAT', '2') --> ('BEDROOM', '1')
 Keep cats out of room
 Stand in the doorway and create a loud noise so the cats will stay out.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CAT> (1)
-[Find] <CAT> (1)
-[TurnTo] <CAT> (1)
-[LookAt] <CAT> (1)
-[Find] <CAT> (2)
-[TurnTo] <CAT> (2)
-[LookAt] <CAT> (2)
+[Walk] <bedroom> (1)
+[Walk] <cat> (1)
+[Find] <cat> (1)
+[TurnTo] <cat> (1)
+[LookAt] <cat> (1)
+[Find] <cat> (2)
+[TurnTo] <cat> (2)
+[LookAt] <cat> (2)

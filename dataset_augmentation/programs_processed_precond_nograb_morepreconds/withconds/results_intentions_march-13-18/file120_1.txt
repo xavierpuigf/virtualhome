@@ -1,18 +1,19 @@
-3
-is_off: ('LAMP', '1') --> , ('LIGHTING', '2') --> , ('LIGHTING', '1') --> 
-location: ('LAMP', '1') --> ('LIVING ROOM', '1'), ('LIGHTING', '2') --> ('LIVING ROOM', '1'), ('LIGHTING', '1') --> ('KITCHEN', '1')
-atreach: ('LAMP', '1') --> ('LIGHTING', '2'), ('LIGHTING', '2') --> ('LIGHTING', '2'), ('LIGHTING', '1') --> ('LIGHTING', '1')
+4
+is_off: ('LIGHTING', '1') --> , ('LIGHTING', '2') --> , ('LAMP', '1') --> 
+plugged: ('LIGHTING', '1') --> , ('LIGHTING', '2') --> 
+atreach: ('LIGHTING', '1') --> ('LIGHTING', '1'), ('LIGHTING', '2') --> ('LIGHTING', '2'), ('LAMP', '1') --> ('LIGHTING', '2')
+location: ('LIGHTING', '1') --> ('KITCHEN', '1'), ('LIGHTING', '2') --> ('LIVING ROOM', '1'), ('LAMP', '1') --> ('LIVING ROOM', '1')
 Turn on light
 Go to the kitchen and living room and turn on the lights.
 
 
-[Run] <KITCHEN> (1)
-[Walk] <LIGHTING> (1)
-[Find] <LIGHTING> (1)
-[SwitchOn] <LIGHTING> (1)
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHTING> (2)
-[Find] <LIGHTING> (2)
-[SwitchOn] <LIGHTING> (2)
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
+[Run] <kitchen> (1)
+[Walk] <lighting> (1)
+[Find] <lighting> (1)
+[SwitchOn] <lighting> (1)
+[Walk] <living_room> (1)
+[Walk] <lighting> (2)
+[Find] <lighting> (2)
+[SwitchOn] <lighting> (2)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)

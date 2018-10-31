@@ -1,11 +1,12 @@
-1
-atreach: ('COUCH', '1') --> ('COUCH', '1'), ('LEGS_BOTH', '1') --> ('COUCH', '1')
+2
+atreach: ('COUCH', '1') --> ('LEGS_BOTH', '1'), ('LEGS_BOTH', '1') --> ('COUCH', '1')
+free: ('COUCH', '1') --> 
 Relax
 Sit on the couch and unwind
 
 
-[Find] <COUCH> (1)
-[Walk] <COUCH> (1)
-[Lie] <COUCH> (1)
-[Find] <LEGS_BOTH> (1)
-[Stretch] <LEGS_BOTH> (1)
+[Find] <couch> (1)
+[Walk] <couch> (1)
+[Lie] <couch> (1)
+[Find] <legs_both> (1)
+[Stretch] <legs_both> (1)

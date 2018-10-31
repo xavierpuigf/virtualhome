@@ -1,0 +1,12 @@
+Put groceries in Fridge
+Find groceries. Grab groceries. Walk to refrigerator. Open refrigerator door. Place groceries into refrigerator. Close refrigerator door.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <groceries> (1.1000)
+[FIND] <groceries> (1.1000)
+[GRAB] <groceries> (1.1000)
+[WALK] <fridge> (1.1001)
+[OPEN] <fridge> (1.1001)
+[PUTBACK] <groceries> (1.1000) <fridge> (1.1001)
+[CLOSE] <fridge> (1.1001)

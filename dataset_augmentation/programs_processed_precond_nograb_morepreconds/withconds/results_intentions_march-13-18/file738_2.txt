@@ -1,14 +1,14 @@
 2
-is_off: ('COMPUTER', '1') --> 
 unplugged: ('KEYBOARD', '1') --> 
+is_off: ('COMPUTER', '1') --> 
 Work
 Switch on computer. Plug in keyboard. Type with keyboard. Plug out keyboard. Switch off computer.
 
 
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <KEYBOARD> (1)
-[PlugIn] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
-[PlugOut] <KEYBOARD> (1)
-[SwitchOff] <COMPUTER> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <keyboard> (1)
+[PlugIn] <keyboard> (1)
+[Type] <keyboard> (1)
+[PlugOut] <keyboard> (1)
+[SwitchOff] <computer> (1)

@@ -2,11 +2,11 @@ Sew
 Using  the sewing machine  to  fix  and make  clothes
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <CLOTHES_DRESS> (1)
-[Grab] <CLOTHES_DRESS> (1)
-[Close] <CLOSET> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Walk] <bedroom> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Find] <clothes_dress> (1)
+[Grab] <clothes_dress> (1)
+[Close] <closet> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)

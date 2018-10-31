@@ -1,14 +1,16 @@
-3
+5
 is_off: ('RADIO', '1') --> 
-location: ('BED', '1') --> ('BEDROOM', '1'), ('RADIO', '1') --> ('BEDROOM', '1')
-atreach: ('BED', '1') --> ('RADIO', '1'), ('RADIO', '1') --> ('RADIO', '1')
+plugged: ('RADIO', '1') --> 
+atreach: ('RADIO', '1') --> ('RADIO', '1'), ('BED', '1') --> ('RADIO', '1')
+location: ('RADIO', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Listen to music
 Turn on radio, put on favorite channel, listen to music.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <RADIO> (1)
-[Find] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <radio> (1)
+[Find] <radio> (1)
+[SwitchOn] <radio> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)

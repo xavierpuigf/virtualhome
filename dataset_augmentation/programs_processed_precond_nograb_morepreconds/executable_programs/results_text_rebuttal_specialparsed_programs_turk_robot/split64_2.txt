@@ -1,0 +1,15 @@
+Read magazine
+Please sit on the couch and read a magazine
+
+
+[WALK] <living_room> (1.243)
+[WALK] <magazine> (1.1000)
+[FIND] <magazine> (1.1000)
+[GRAB] <magazine> (1.1000)
+[WALK] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[TURNTO] <magazine> (1.1000)
+[LOOKAT] <magazine> (1.1000)
+[READ] <magazine> (1.1000)
+[READ] <magazine> (1.1000)
+[READ] <magazine> (1.1000)

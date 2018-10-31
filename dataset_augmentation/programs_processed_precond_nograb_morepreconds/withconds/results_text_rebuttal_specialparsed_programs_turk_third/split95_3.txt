@@ -1,13 +1,14 @@
-2
-location: ('BOOK', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
-atreach: ('BOOK', '1') --> ('BED', '1'), ('BED', '1') --> ('BED', '1')
+3
+atreach: ('BED', '1') --> ('BED', '1'), ('BOOK', '1') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('BOOK', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Read
 I climb onto my bed and grab my Bible. I open the cover and begin reading.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Climb] <BED> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Climb] <bed> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)

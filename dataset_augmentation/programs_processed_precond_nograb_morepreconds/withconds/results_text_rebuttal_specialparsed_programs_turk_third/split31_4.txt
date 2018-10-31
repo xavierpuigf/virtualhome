@@ -1,17 +1,18 @@
-2
-location: ('WOMAN', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('WOMAN', '2') --> ('LIVING ROOM', '1')
-atreach: ('WOMAN', '1') --> ('WOMAN', '1'), ('COUCH', '1') --> ('WOMAN', '1'), ('WOMAN', '2') --> ('WOMAN', '1')
+3
+atreach: ('COUCH', '1') --> ('WOMAN', '1'), ('WOMAN', '1') --> ('WOMAN', '1'), ('WOMAN', '2') --> ('WOMAN', '1')
+location: ('WOMAN', '1') --> ('LIVING ROOM', '1'), ('WOMAN', '2') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Hang out
 Sit on couch.  Talk with people
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <WOMAN> (1)
-[Find] <WOMAN> (1)
-[Greet] <WOMAN> (1)
-[Find] <WOMAN> (2)
-[Greet] <WOMAN> (2)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Talk] <WOMAN> (1)
-[Talk] <WOMAN> (2)
+[Walk] <living_room> (1)
+[Walk] <woman> (1)
+[Find] <woman> (1)
+[Greet] <woman> (1)
+[Find] <woman> (2)
+[Greet] <woman> (2)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Talk] <woman> (1)
+[Talk] <woman> (2)

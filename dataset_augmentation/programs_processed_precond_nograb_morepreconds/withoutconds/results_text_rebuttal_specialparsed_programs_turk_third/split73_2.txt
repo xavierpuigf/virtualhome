@@ -2,13 +2,13 @@ Homework
 I'm a college student, I do most of my homework on my bed
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <BOOK> (2)
-[Grab] <BOOK> (2)
-[Find] <PENCIL> (1)
-[Grab] <PENCIL> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <book> (2)
+[Grab] <book> (2)
+[Find] <pencil> (1)
+[Grab] <pencil> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)

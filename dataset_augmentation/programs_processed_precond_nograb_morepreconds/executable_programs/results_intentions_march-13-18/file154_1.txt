@@ -1,0 +1,12 @@
+Pick up phone
+I would walk to my room where my phone is plugged in, pick up the phone, press the answer button, and lift the phone to my ear.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <cellphone> (1.1000)
+[FIND] <cellphone> (1.1000)
+[GRAB] <cellphone> (1.1000)
+[TURNTO] <cellphone> (1.1000)
+[LOOKAT] <cellphone> (1.1000)
+[FIND] <button> (1.1001)
+[PUSH] <button> (1.1001)

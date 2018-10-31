@@ -1,21 +1,21 @@
 3
 is_off: ('LIGHTER', '1') --> 
-location: ('CANDLE', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('LIGHTER', '1') --> ('LIVING ROOM', '1')
 atreach: ('CANDLE', '1') --> ('CANDLE', '1'), ('TABLE', '1') --> ('CANDLE', '1'), ('LIGHTER', '1') --> ('CANDLE', '1')
+location: ('CANDLE', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('LIGHTER', '1') --> ('LIVING ROOM', '1')
 Light candle
 Press the button on a lighter to make a flame. Touch the flame to the candle wick.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CANDLE> (1)
-[Find] <CANDLE> (1)
-[Grab] <CANDLE> (1)
-[Find] <TABLE> (1)
-[PutBack] <CANDLE> (1) <TABLE> (1)
-[Find] <LIGHTER> (1)
-[Grab] <LIGHTER> (1)
-[SwitchOn] <LIGHTER> (1)
-[PutBack] <LIGHTER> (1) <CANDLE> (1)
-[SwitchOff] <LIGHTER> (1)
-[Grab] <LIGHTER> (1)
-[PutObjBack] <LIGHTER> (1)
+[Walk] <living_room> (1)
+[Walk] <candle> (1)
+[Find] <candle> (1)
+[Grab] <candle> (1)
+[Find] <table> (1)
+[PutBack] <candle> (1) <table> (1)
+[Find] <lighter> (1)
+[Grab] <lighter> (1)
+[SwitchOn] <lighter> (1)
+[PutBack] <lighter> (1) <candle> (1)
+[SwitchOff] <lighter> (1)
+[Grab] <lighter> (1)
+[PutObjBack] <lighter> (1)

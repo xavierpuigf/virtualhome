@@ -2,9 +2,9 @@ Relax on sofa
 Walk to the living room, find the sofa and sit in the sofa and find pillow. lie down in sofa.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <PILLOW> (1)
-[Lie] <SOFA> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <pillow> (1)
+[Lie] <sofa> (1)

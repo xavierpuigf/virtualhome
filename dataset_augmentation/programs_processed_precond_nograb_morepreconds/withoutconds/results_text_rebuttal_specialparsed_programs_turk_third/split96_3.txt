@@ -2,14 +2,14 @@ Sleep
 Go to the bedroom at night, lie on the bed, spread bed spread and sleep
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
-[Walk] <BED> (1)
-[Lie] <BED> (1)
-[Find] <BLANKET> (1)
-[Grab] <BLANKET> (1)
-[Cover] <BED> (1) <BLANKET> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[SwitchOff] <light> (1)
+[Walk] <bed> (1)
+[Lie] <bed> (1)
+[Find] <blanket> (1)
+[Grab] <blanket> (1)
+[Cover] <bed> (1) <blanket> (1)
 [Sleep]
 [Sleep]
 [Sleep]

@@ -1,0 +1,11 @@
+Watch youtube
+Grab phone.  Turn on youtube.
+
+
+[FIND] <cellphone> (1.1000)
+[GRAB] <cellphone> (1.1000)
+[RUN] <living_room> (1.243)
+[TURNTO] <cellphone> (1.1000)
+[LOOKAT] <cellphone> (1.1000)
+[TURNTO] <cellphone> (1.1000)
+[POINTAT] <cellphone> (1.1000)

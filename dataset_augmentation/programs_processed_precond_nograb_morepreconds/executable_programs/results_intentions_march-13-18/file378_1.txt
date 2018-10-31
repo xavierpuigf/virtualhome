@@ -1,0 +1,19 @@
+Wash dishes with dishwasher
+wipe loose dirt, place in the dishwasher, turn on the dishwasher
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <faucet> (1.1000)
+[FIND] <faucet> (1.1000)
+[SWITCHON] <faucet> (1.1000)
+[FIND] <dishwasher> (1.1001)
+[OPEN] <dishwasher> (1.1001)
+[FIND] <drinking_glass> (1.1002)
+[GRAB] <drinking_glass> (1.1002)
+[FIND] <paper_towel> (1.1003)
+[GRAB] <paper_towel> (1.1003)
+[WIPE] <drinking_glass> (1.1002)
+[RINSE] <drinking_glass> (1.1002)
+[PUTBACK] <drinking_glass> (1.1002) <dishwasher> (1.1001)
+[CLOSE] <dishwasher> (1.1001)
+[SWITCHON] <dishwasher> (1.1001)

@@ -1,0 +1,14 @@
+Turn on light
+Walk to living room, go to a light switch button, press button, confirm the light is on, go to next light switch button, press button, confirm the light is on
+
+
+[WALK] <living_room> (1.243)
+[WALK] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[FIND] <light> (1.1000)
+[TURNTO] <light> (1.1000)
+[LOOKAT] <light> (1.1000)
+[FIND] <light> (2.1001)
+[SWITCHON] <light> (2.1001)
+[TURNTO] <light> (2.1001)
+[LOOKAT] <light> (2.1001)

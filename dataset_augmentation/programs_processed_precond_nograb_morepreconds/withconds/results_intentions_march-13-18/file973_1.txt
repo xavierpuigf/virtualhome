@@ -1,10 +1,10 @@
 2
-location: ('PHONE', '1') --> ('HOME OFFICE', '1')
 atreach: ('PHONE', '1') --> ('PHONE', '1')
+location: ('PHONE', '1') --> ('HOME OFFICE', '1')
 Pick up phone
 Enter the Home office, then walk to the phone, pickup the phone.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <PHONE> (1)
-[Grab] <PHONE> (1)
+[Walk] <home_office> (1)
+[Walk] <phone> (1)
+[Grab] <phone> (1)

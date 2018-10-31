@@ -1,0 +1,6 @@
+Pick up phone
+Find the phone. Pick it up.
+
+
+[FIND] <phone> (1.202)
+[GRAB] <phone> (1.202)

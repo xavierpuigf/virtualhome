@@ -1,22 +1,23 @@
-4
+5
+atreach: ('BED', '1') --> ('SHOES', '1'), ('SHOES', '1') --> ('BED', '1'), ('CLOSET', '1') --> ('CLOSET', '1')
 in: ('SHOES', '1') --> ('Character', 1)
 location: ('BED', '1') --> ('BEDROOM', '1'), ('SHOES', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
 closed: ('CLOSET', '1') --> 
-atreach: ('BED', '1') --> ('SHOES', '1'), ('SHOES', '1') --> ('BED', '1'), ('CLOSET', '1') --> ('CLOSET', '1')
+free: ('BED', '1') --> 
 Take off shoes
 Before going further into the house, take off your shoes. If necessary, untie them, then remove them and place them by the door on the shoe rack.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[Sit] <BED> (1)
-[Find] <SHOES> (1)
-[Find] <SHOES> (1)
-[PutOff] <SHOES> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[Sit] <bed> (1)
+[Find] <shoes> (1)
+[Find] <shoes> (1)
+[PutOff] <shoes> (1)
 [StandUp]
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Grab] <SHOES> (1)
-[PutBack] <SHOES> (1) <CLOSET> (1)
-[Close] <CLOSET> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Grab] <shoes> (1)
+[PutBack] <shoes> (1) <closet> (1)
+[Close] <closet> (1)

@@ -1,20 +1,21 @@
-4
-inside: ('BOARD GAME', '1') --> ('CABINET', '1')
-location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
+5
+atreach: ('SOFA', '1') --> ('TABLE', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('BOARD GAME', '1') --> ('CABINET', '1'), ('TABLE', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('LIVING ROOM', '1'), ('BOARD GAME', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
 closed: ('CABINET', '1') --> 
-atreach: ('SOFA', '1') --> ('TABLE', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('TABLE', '1') --> ('CABINET', '1'), ('BOARD GAME', '1') --> ('CABINET', '1')
+inside: ('BOARD GAME', '1') --> ('CABINET', '1')
+free: ('SOFA', '1') --> 
 Play games
 Pick a board game from a shelf. Take out board game. Set up board game. Play board game.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CABINET> (1)
-[Open] <CABINET> (1)
-[Find] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Close] <CABINET> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <TABLE> (1)
-[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Walk] <living_room> (1)
+[Walk] <cabinet> (1)
+[Open] <cabinet> (1)
+[Find] <board_game> (1)
+[Grab] <board_game> (1)
+[Close] <cabinet> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <table> (1)
+[PutBack] <board_game> (1) <table> (1)
 [Play]

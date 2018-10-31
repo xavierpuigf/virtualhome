@@ -1,0 +1,16 @@
+Make coffee
+Walk to the kitchen at the coffee maker, grab coffee, pour coffee into coffee maker, put coffee into coffee maker, push coffee maker's button, wait to complete, grab coffee cup
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <coffe_maker> (1.1000)
+[FIND] <coffee> (1.1001)
+[GRAB] <coffee> (1.1001)
+[OPEN] <coffe_maker> (1.1000)
+[POUR] <coffee> (1.1001) <coffe_maker> (1.1000)
+[FIND] <coffee_cup> (1.1002)
+[GRAB] <coffee_cup> (1.1002)
+[PUTBACK] <coffee_cup> (1.1002) <coffe_maker> (1.1000)
+[FIND] <button> (1.1003)
+[PUSH] <button> (1.1003)
+[GRAB] <coffee_cup> (1.1002)

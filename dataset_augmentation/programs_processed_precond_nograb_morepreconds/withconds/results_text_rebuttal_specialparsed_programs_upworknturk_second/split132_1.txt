@@ -1,14 +1,14 @@
 2
-location: ('RAG', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
 atreach: ('RAG', '1') --> ('RAG', '1'), ('SINK', '1') --> ('SINK', '1')
+location: ('RAG', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
 Wipe down sink
 Use a cloth to wipe the edge of the sink. Then wipe the bowl of the sink as well.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Walk] <SINK> (1)
-[Wipe] <SINK> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <kitchen> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Walk] <sink> (1)
+[Wipe] <sink> (1)
+[PutObjBack] <rag> (1)

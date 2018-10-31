@@ -1,13 +1,13 @@
 2
-location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('BUTTON', '1') --> ('BEDROOM', '1')
 atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('BUTTON', '1') --> ('REMOTE CONTROL', '1')
+location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('BUTTON', '1') --> ('BEDROOM', '1')
 Change TV channel
 I pick up the remote. I press button on remote.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
+[Walk] <bedroom> (1)
+[Walk] <remote_control> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <button> (1)
+[Push] <button> (1)

@@ -1,23 +1,24 @@
-3
+4
+atreach: ('SHEETS', '1') --> ('CABINET', '1'), ('BED', '1') --> ('CABINET', '1'), ('COMFORTER', '1') --> ('CABINET', '1'), ('PILLOW', '1') --> ('CABINET', '1'), ('TOY', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('COMFORTER', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1'), ('TOY', '1') --> ('BEDROOM', '1')
 in: ('SHEETS', '1') --> ('CABINET', '1')
-location: ('BED', '1') --> ('BEDROOM', '1'), ('COMFORTER', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1'), ('TOY', '1') --> ('BEDROOM', '1'), ('CABINET', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
-atreach: ('TOY', '1') --> ('CABINET', '1'), ('COMFORTER', '1') --> ('CABINET', '1'), ('SHEETS', '1') --> ('CABINET', '1'), ('PILLOW', '1') --> ('CABINET', '1'), ('BED', '1') --> ('CABINET', '1')
+free: ('BED', '1') --> 
 Make bed
 Pull up the sheets. Pull up the comforter. Arrange pillows on the bed. Arrange stuffed animals on the bed.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CABINET> (1)
-[Find] <SHEETS> (1)
-[Grab] <SHEETS> (1)
-[Find] <BED> (1)
-[PutBack] <SHEETS> (1) <BED> (1)
-[Find] <COMFORTER> (1)
-[Grab] <COMFORTER> (1)
-[PutBack] <COMFORTER> (1) <BED> (1)
-[Find] <PILLOW> (1)
-[Grab] <PILLOW> (1)
-[PutBack] <PILLOW> (1) <BED> (1)
-[Find] <TOY> (1)
-[Grab] <TOY> (1)
-[PutBack] <TOY> (1) <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <cabinet> (1)
+[Find] <sheets> (1)
+[Grab] <sheets> (1)
+[Find] <bed> (1)
+[PutBack] <sheets> (1) <bed> (1)
+[Find] <comforter> (1)
+[Grab] <comforter> (1)
+[PutBack] <comforter> (1) <bed> (1)
+[Find] <pillow> (1)
+[Grab] <pillow> (1)
+[PutBack] <pillow> (1) <bed> (1)
+[Find] <toy> (1)
+[Grab] <toy> (1)
+[PutBack] <toy> (1) <bed> (1)

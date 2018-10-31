@@ -2,6 +2,6 @@ Go to toilet
 Travel through the house and locate the bathroom, and proceed to the toilet.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)

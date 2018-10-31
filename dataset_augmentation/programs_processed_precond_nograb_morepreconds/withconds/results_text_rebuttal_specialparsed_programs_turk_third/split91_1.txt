@@ -3,4 +3,4 @@ Lock door
 Turn the lock.
 
 
-[Walk] <BEDROOM> (1)
+[Walk] <bedroom> (1)

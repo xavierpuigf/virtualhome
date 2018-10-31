@@ -2,13 +2,13 @@ Write in your diary
 Pick up and open your diary to the first blank page.  Write in it with a pen about whatever you did that day.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DIARY> (1)
-[Find] <DIARY> (1)
-[Grab] <DIARY> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Open] <DIARY> (1)
-[Find] <PEN> (1)
-[Grab] <PEN> (1)
-[Write] <DIARY> (1)
+[Walk] <bedroom> (1)
+[Walk] <diary> (1)
+[Find] <diary> (1)
+[Grab] <diary> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Open] <diary> (1)
+[Find] <pen> (1)
+[Grab] <pen> (1)
+[Write] <diary> (1)

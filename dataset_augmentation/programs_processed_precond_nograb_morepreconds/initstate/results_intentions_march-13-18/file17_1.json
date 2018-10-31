@@ -1,1 +1,1 @@
-[{"in": [["WATER GLASS", "1"], ["TABLE", "1"]]}, {"location": [["WATER GLASS", "1"], ["KITCHEN", "1"]]}, {"location": [["TABLE", "1"], ["KITCHEN", "1"]]}, {"atreach": [["WATER GLASS", "1"], ["TABLE", "1"]]}]
+[{"atreach": [["water_glass", "1"], ["table", "1"]]}, {"location": [["table", "1"], ["kitchen", "1"]]}, {"location": [["water_glass", "1"], ["kitchen", "1"]]}, {"in": [["water_glass", "1"], ["table", "1"]]}]

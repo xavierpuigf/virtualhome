@@ -1,25 +1,26 @@
-4
-inside: ('BOOK', '1') --> ('CUPBOARD', '1'), ('SPECTACLES', '1') --> ('CUPBOARD', '1')
-location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1')
+5
+atreach: ('SOFA', '1') --> ('COFFEE TABLE', '1'), ('BOOK', '1') --> ('BOOK', '1'), ('COFFEE TABLE', '1') --> ('BOOK', '1'), ('SPECTACLES', '1') --> ('BOOK', '1')
 closed: ('CUPBOARD', '1') --> 
-atreach: ('BOOK', '1') --> ('BOOK', '1'), ('SPECTACLES', '1') --> ('BOOK', '1'), ('SOFA', '1') --> ('COFFEE TABLE', '1'), ('COFFEE TABLE', '1') --> ('BOOK', '1')
+location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('COFFEE TABLE', '1') --> ('LIVING ROOM', '1'), ('SPECTACLES', '1') --> ('LIVING ROOM', '1')
+inside: ('BOOK', '1') --> ('CUPBOARD', '1'), ('SPECTACLES', '1') --> ('CUPBOARD', '1')
+free: ('SOFA', '1') --> 
 Read book
 I finish of washes dishes, go to the living room, pick my book and read a while
 
 
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[Find] <CUPBOARD> (1)
-[Open] <CUPBOARD> (1)
-[PutBack] <PLATE> (1) <CUPBOARD> (1)
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <COFFEE TABLE> (1)
-[Touch] <COFFEE TABLE> (1)
-[Find] <SPECTACLES> (1)
-[Grab] <SPECTACLES> (1)
-[Read] <BOOK> (1)
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[Find] <cupboard> (1)
+[Open] <cupboard> (1)
+[PutBack] <plate> (1) <cupboard> (1)
+[Walk] <living_room> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <coffee_table> (1)
+[Touch] <coffee_table> (1)
+[Find] <spectacles> (1)
+[Grab] <spectacles> (1)
+[Read] <book> (1)

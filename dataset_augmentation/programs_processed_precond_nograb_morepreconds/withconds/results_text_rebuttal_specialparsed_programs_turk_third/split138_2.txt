@@ -1,12 +1,12 @@
 3
+atreach: ('DISHWASHER', '1') --> ('DISHWASHER', '1')
 location: ('DISHWASHER', '1') --> ('KITCHEN', '1')
 closed: ('DISHWASHER', '1') --> 
-atreach: ('DISHWASHER', '1') --> ('DISHWASHER', '1')
 Take dishes out of dishwasher
 Take clean dishes out of the dishwasher and put away
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <DISHWASHER> (1)
-[Open] <DISHWASHER> (1)
-[Close] <DISHWASHER> (1)
+[Walk] <kitchen> (1)
+[Walk] <dishwasher> (1)
+[Open] <dishwasher> (1)
+[Close] <dishwasher> (1)

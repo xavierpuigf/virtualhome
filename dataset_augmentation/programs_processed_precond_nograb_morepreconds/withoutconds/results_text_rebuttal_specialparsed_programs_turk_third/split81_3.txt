@@ -2,11 +2,11 @@ Put up coat
 Take off coat.  Put them on the rack.
 
 
-[Find] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <CLOTHES_SHIRT> (1)
-[Find] <CLOTHES_SHIRT> (1)
-[PutOff] <CLOTHES_SHIRT> (1)
-[Grab] <CLOTHES_SHIRT> (1)
-[PutBack] <CLOTHES_SHIRT> (1) <CLOSET> (1)
-[Close] <CLOSET> (1)
+[Find] <closet> (1)
+[Open] <closet> (1)
+[Find] <clothes_shirt> (1)
+[Find] <clothes_shirt> (1)
+[PutOff] <clothes_shirt> (1)
+[Grab] <clothes_shirt> (1)
+[PutBack] <clothes_shirt> (1) <closet> (1)
+[Close] <closet> (1)

@@ -2,11 +2,11 @@ Greet guests
 Go to the kitchen, greet your family members
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CHILD> (1)
-[Find] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <WOMAN> (1)
-[Greet] <WOMAN> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Walk] <kitchen> (1)
+[Walk] <child> (1)
+[Find] <child> (1)
+[Greet] <child> (1)
+[Find] <woman> (1)
+[Greet] <woman> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)

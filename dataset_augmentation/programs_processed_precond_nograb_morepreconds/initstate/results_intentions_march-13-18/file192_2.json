@@ -1,1 +1,1 @@
-[{"is_off": ["LAPTOP", "1"]}, {"atreach": [["CHAIR", "1"], ["LAPTOP", "1"]]}, {"atreach": [["COUCH", "1"], ["KEYBOARD", "1"]]}]
+[{"is_off": ["laptop", "1"]}, {"plugged": ["laptop", "1"]}, {"atreach": [["chair", "1"], ["laptop", "1"]]}, {"atreach": [["couch", "1"], ["keyboard", "1"]]}, {"free": ["chair", "1"]}, {"free": ["couch", "1"]}]

@@ -1,0 +1,12 @@
+Sleep
+Put on a pair of comfortable pajamas. Position your pillows on the bed where you can rest your head.  Pull back the bed covers and lay down in bed with your head on the pillows. Close your eyes and relax your breathing. Think pleasant thoughts.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <pajamas> (1.1000)
+[FIND] <pajamas> (1.1000)
+[GRAB] <pajamas> (1.1000)
+[PUTON] <pajamas> (1.1000)
+[WALK] <bed> (1.1001)
+[LIE] <bed> (1.1001)
+[SLEEP]

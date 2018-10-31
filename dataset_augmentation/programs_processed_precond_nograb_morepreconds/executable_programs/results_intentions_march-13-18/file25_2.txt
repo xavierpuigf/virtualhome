@@ -1,0 +1,6 @@
+Pick up phone
+I find the phone, lift the receiver to my ear, and say hello.
+
+
+[FIND] <telephone> (1.1000)
+[GRAB] <telephone> (1.1000)

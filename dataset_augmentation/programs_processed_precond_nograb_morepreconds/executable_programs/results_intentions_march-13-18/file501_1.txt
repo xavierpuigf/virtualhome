@@ -1,0 +1,10 @@
+Listen to music
+I walk in the living room, then I go the the stereo and the cd player and turn them on.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <stereo> (1.1000)
+[FIND] <stereo> (1.1000)
+[SWITCHON] <stereo> (1.1000)
+[FIND] <cd_player> (1.1001)
+[SWITCHON] <cd_player> (1.1001)

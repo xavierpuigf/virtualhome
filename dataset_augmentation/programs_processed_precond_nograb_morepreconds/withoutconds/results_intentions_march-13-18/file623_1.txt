@@ -2,5 +2,5 @@ Listen to music
 I am bored or feeling bummed out. I want  to listen to some good music.
 
 
-[Find] <CELLPHONE> (1)
-[PlugIn] <CELLPHONE> (1)
+[Find] <cellphone> (1)
+[PlugIn] <cellphone> (1)

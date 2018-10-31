@@ -1,1 +1,1 @@
-[{"location": [["CLOSET", "1"], ["BATHROOM", "1"]]}, {"location": [["TOILET PAPER", "1"], ["BATHROOM", "1"]]}, {"closed": ["CLOSET", "1"]}, {"atreach": [["CLOSET", "1"], ["CLOSET", "1"]]}, {"atreach": [["TOILET PAPER", "1"], ["CLOSET", "1"]]}]
+[{"atreach": [["closet", "1"], ["closet", "1"]]}, {"atreach": [["toilet_paper", "1"], ["closet", "1"]]}, {"location": [["closet", "1"], ["bathroom", "1"]]}, {"location": [["toilet_paper", "1"], ["bathroom", "1"]]}, {"closed": ["closet", "1"]}]

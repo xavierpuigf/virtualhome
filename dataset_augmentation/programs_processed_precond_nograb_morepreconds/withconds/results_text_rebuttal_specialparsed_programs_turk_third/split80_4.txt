@@ -1,26 +1,27 @@
-6
-inside: ('DOCUMENT', '1') --> ('FOLDER', '1')
-atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('KEYBOARD', '1') --> ('DESK', '1'), ('DOCUMENT', '1') --> ('DESK', '1'), ('FOLDER', '1') --> ('DESK', '1')
-location: ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('FOLDER', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
-closed: ('FOLDER', '1') --> 
+7
 is_off: ('COMPUTER', '1') --> 
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('COMPUTER', '1') --> ('DESK', '1'), ('FOLDER', '1') --> ('DESK', '1'), ('DOCUMENT', '1') --> ('DESK', '1'), ('KEYBOARD', '1') --> ('DESK', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('FOLDER', '1') --> ('HOME OFFICE', '1'), ('DOCUMENT', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+closed: ('FOLDER', '1') --> 
+inside: ('DOCUMENT', '1') --> ('FOLDER', '1')
 nearby: ('CHAIR', '1') --> ('DESK', '1')
+free: ('CHAIR', '1') --> 
 Work
 I work from home on my computer
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <DESK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Find] <FOLDER> (1)
-[Open] <FOLDER> (1)
-[Find] <DOCUMENT> (1)
-[Grab] <DOCUMENT> (1)
-[Read] <DOCUMENT> (1)
-[Find] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
+[Walk] <home_office> (1)
+[Walk] <desk> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Find] <folder> (1)
+[Open] <folder> (1)
+[Find] <document> (1)
+[Grab] <document> (1)
+[Read] <document> (1)
+[Find] <keyboard> (1)
+[Type] <keyboard> (1)

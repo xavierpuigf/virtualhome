@@ -1,1 +1,1 @@
-[{"location": [["WOMAN", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["MAN", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["WOMAN", "1"], ["WOMAN", "1"]]}, {"atreach": [["MAN", "1"], ["WOMAN", "1"]]}]
+[{"atreach": [["woman", "1"], ["woman", "1"]]}, {"atreach": [["man", "1"], ["woman", "1"]]}, {"location": [["woman", "1"], ["entrance_hall", "1"]]}, {"location": [["man", "1"], ["entrance_hall", "1"]]}]

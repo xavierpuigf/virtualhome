@@ -1,0 +1,26 @@
+Wash dishes with dishwasher
+put forks, spoons, plates, knife in dishwasher, add dish soap, turn diswaser on
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <dishwasher> (1.1000)
+[FIND] <dishwasher> (1.1000)
+[OPEN] <dishwasher> (1.1000)
+[FIND] <dish_soap> (1.1001)
+[GRAB] <dish_soap> (1.1001)
+[PUTBACK] <dish_soap> (1.1001) <dishwasher> (1.1000)
+[FIND] <fork> (1.1002)
+[GRAB] <fork> (1.1002)
+[FIND] <dishrack> (1.1003)
+[PUTBACK] <fork> (1.1002) <dishrack> (1.1003)
+[FIND] <plate> (1.1004)
+[GRAB] <plate> (1.1004)
+[PUTBACK] <plate> (1.1004) <dishrack> (1.1003)
+[FIND] <spoon> (1.1005)
+[GRAB] <spoon> (1.1005)
+[PUTBACK] <spoon> (1.1005) <dishrack> (1.1003)
+[FIND] <knife> (1.1006)
+[GRAB] <knife> (1.1006)
+[PUTBACK] <knife> (1.1006) <dishrack> (1.1003)
+[CLOSE] <dishwasher> (1.1000)
+[SWITCHON] <dishwasher> (1.1000)

@@ -1,0 +1,6 @@
+Pet cat
+lift hand, pet cat
+
+
+[FIND] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

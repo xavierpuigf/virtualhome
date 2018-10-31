@@ -1,0 +1,14 @@
+Get dressed
+Pick out the clothes you are going to wear and put them on your body
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <closet> (1.1000)
+[OPEN] <closet> (1.1000)
+[FIND] <clothes_pants> (1.1001)
+[GRAB] <clothes_pants> (1.1001)
+[PUTON] <clothes_pants> (1.1001)
+[FIND] <clothes_shirt> (1.1002)
+[GRAB] <clothes_shirt> (1.1002)
+[PUTON] <clothes_shirt> (1.1002)
+[CLOSE] <closet> (1.1000)

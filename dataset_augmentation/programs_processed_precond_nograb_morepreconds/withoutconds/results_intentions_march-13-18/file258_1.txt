@@ -2,11 +2,11 @@ Pick up phone
 go to the kitchen. look at the phone located on its base. Extend arm so that hand and place fingers around the handset. lift up to pick phone up from cradle.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <TELEPHONE> (1)
-[Find] <TELEPHONE> (1)
-[TurnTo] <TELEPHONE> (1)
-[LookAt] <TELEPHONE> (1)
-[Find] <ARMS_RIGHT> (1)
-[Stretch] <ARMS_RIGHT> (1)
-[Grab] <TELEPHONE> (1)
+[Walk] <kitchen> (1)
+[Walk] <telephone> (1)
+[Find] <telephone> (1)
+[TurnTo] <telephone> (1)
+[LookAt] <telephone> (1)
+[Find] <arms_right> (1)
+[Stretch] <arms_right> (1)
+[Grab] <telephone> (1)

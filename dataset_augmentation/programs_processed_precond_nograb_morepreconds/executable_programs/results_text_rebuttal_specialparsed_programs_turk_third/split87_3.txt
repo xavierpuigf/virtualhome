@@ -1,0 +1,18 @@
+Wash sink
+I spray some cleaner and wait a minte or so then wipe it out.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <cleaning_solution> (1.1000)
+[FIND] <cleaning_solution> (1.1000)
+[GRAB] <cleaning_solution> (1.1000)
+[WALK] <sink> (1.1001)
+[POUR] <cleaning_solution> (1.1000) <sink> (1.1001)
+[PUTOBJBACK] <cleaning_solution> (1.1000)
+[FIND] <rag> (1.1002)
+[GRAB] <rag> (1.1002)
+[WALK] <sink> (1.1001)
+[WIPE] <sink> (1.1001)
+[WIPE] <sink> (1.1001)
+[WIPE] <sink> (1.1001)
+[PUTOBJBACK] <rag> (1.1002)

@@ -2,14 +2,14 @@ Sleep
 Getting my bed put my pajamas on and go to sleep
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CLOSET> (1)
-[Find] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <PAJAMAS> (1)
-[Grab] <PAJAMAS> (1)
-[PutOn] <PAJAMAS> (1)
-[Close] <CLOSET> (1)
-[Walk] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <closet> (1)
+[Find] <closet> (1)
+[Open] <closet> (1)
+[Find] <pajamas> (1)
+[Grab] <pajamas> (1)
+[PutOn] <pajamas> (1)
+[Close] <closet> (1)
+[Walk] <bed> (1)
+[Lie] <bed> (1)
 [Sleep]

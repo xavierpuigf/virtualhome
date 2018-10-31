@@ -1,0 +1,11 @@
+Write an email
+I open Mail on my phone. I start to type an email. Then I select a receiver and click Send.
+
+
+[FIND] <cellphone> (1.1000)
+[GRAB] <cellphone> (1.1000)
+[TYPE] <cellphone> (1.1000)
+[FIND] <address_book> (1.1001)
+[TYPE] <cellphone> (1.1000)
+[FIND] <button> (1.1002)
+[PUSH] <button> (1.1002)

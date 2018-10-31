@@ -1,0 +1,9 @@
+Do work
+Sit on computer chair. Log in to computer. Do whatever work is required.
+
+
+[FIND] <book> (1.1000)
+[TURNTO] <book> (1.1000)
+[POINTAT] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[READ] <book> (1.1000)

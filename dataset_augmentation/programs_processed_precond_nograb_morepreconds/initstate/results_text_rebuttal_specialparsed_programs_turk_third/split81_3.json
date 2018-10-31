@@ -1,1 +1,1 @@
-[{"closed": ["CLOSET", "1"]}, {"in": [["CLOTHES_SHIRT", "1"], ["Character", 1]]}]
+[{"in": [["clothes_shirt", "1"], ["character", 1]]}, {"closed": ["closet", "1"]}]

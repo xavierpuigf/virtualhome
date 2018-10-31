@@ -1,11 +1,11 @@
 2
-location: ('BOOK', '1') --> ('BEDROOM', '1')
 atreach: ('BOOK', '1') --> ('BOOK', '1')
+location: ('BOOK', '1') --> ('BEDROOM', '1')
 Read book
 pick up  the book open the book and read
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <bedroom> (1)
+[Walk] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)

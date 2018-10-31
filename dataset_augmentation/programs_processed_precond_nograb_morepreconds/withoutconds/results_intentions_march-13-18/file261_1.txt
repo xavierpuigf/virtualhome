@@ -2,9 +2,9 @@ Go to sleep
 Go to bedroom, lie down on bed and sleep.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[Climb] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[Climb] <bed> (1)
+[Lie] <bed> (1)
 [Sleep]

@@ -1,0 +1,10 @@
+Put groceries in Fridge
+I put my groceries into the fridge.
+
+
+[WALK] <groceries> (1.1000)
+[GRAB] <groceries> (1.1000)
+[FIND] <fridge> (1.1001)
+[OPEN] <fridge> (1.1001)
+[PUTBACK] <groceries> (1.1000) <fridge> (1.1001)
+[CLOSE] <fridge> (1.1001)

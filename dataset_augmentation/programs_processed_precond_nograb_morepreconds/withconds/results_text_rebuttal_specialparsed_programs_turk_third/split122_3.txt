@@ -1,25 +1,26 @@
-4
-inside: ('BRUSH', '1') --> ('TOILET', '1')
-location: ('CLEANING SOLUTION', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1')
-closed: ('TOILET', '1') --> 
+5
 atreach: ('CLEANING SOLUTION', '1') --> ('CLEANING SOLUTION', '1'), ('TOILET', '1') --> ('TOILET', '1'), ('BRUSH', '1') --> ('TOILET', '1')
+location: ('CLEANING SOLUTION', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1'), ('BRUSH', '1') --> ('BATHROOM', '1')
+closed: ('TOILET', '1') --> 
+inside: ('BRUSH', '1') --> ('TOILET', '1')
+free: ('TOILET', '1') --> 
 Clean toilet
 Scrubbing   toilet  with a brush  and chemicals
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <CLEANING SOLUTION> (1)
-[Find] <CLEANING SOLUTION> (1)
-[Grab] <CLEANING SOLUTION> (1)
-[Walk] <TOILET> (1)
-[Open] <TOILET> (1)
-[Pour] <CLEANING SOLUTION> (1) <TOILET> (1)
-[PutObjBack] <CLEANING SOLUTION> (1)
-[Find] <BRUSH> (1)
-[Grab] <BRUSH> (1)
-[Walk] <TOILET> (1)
-[Scrub] <TOILET> (1)
-[Scrub] <TOILET> (1)
-[Scrub] <TOILET> (1)
-[Close] <TOILET> (1)
-[PutObjBack] <BRUSH> (1)
+[Walk] <bathroom> (1)
+[Walk] <cleaning_solution> (1)
+[Find] <cleaning_solution> (1)
+[Grab] <cleaning_solution> (1)
+[Walk] <toilet> (1)
+[Open] <toilet> (1)
+[Pour] <cleaning_solution> (1) <toilet> (1)
+[PutObjBack] <cleaning_solution> (1)
+[Find] <brush> (1)
+[Grab] <brush> (1)
+[Walk] <toilet> (1)
+[Scrub] <toilet> (1)
+[Scrub] <toilet> (1)
+[Scrub] <toilet> (1)
+[Close] <toilet> (1)
+[PutObjBack] <brush> (1)

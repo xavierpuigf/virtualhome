@@ -1,0 +1,14 @@
+Browse internet
+I sat on the chair in front of computer.I switch on the computer.Type the topic in the search bar using keyboard and grab mouse to click.look at the computer to select the first search result.
+
+
+[FIND] <chair> (1.280)
+[SIT] <chair> (1.280)
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)
+[FIND] <keyboard> (1.319)
+[TYPE] <keyboard> (1.319)
+[FIND] <mouse> (1.315)
+[GRAB] <mouse> (1.315)
+[TURNTO] <computer> (1.318)
+[LOOKAT] <computer> (1.318)

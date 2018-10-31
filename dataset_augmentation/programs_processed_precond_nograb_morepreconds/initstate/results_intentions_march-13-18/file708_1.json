@@ -1,1 +1,1 @@
-[{"is_off": ["LIGHT", "3"]}, {"is_off": ["LIGHT", "2"]}, {"location": [["LIGHT", "3"], ["LIVING ROOM", "1"]]}, {"location": [["LIGHT", "2"], ["BEDROOM", "2"]]}, {"atreach": [["LIGHT", "3"], ["LIGHT", "3"]]}, {"atreach": [["LIGHT", "2"], ["LIGHT", "2"]]}]
+[{"is_off": ["light", "3"]}, {"is_off": ["light", "2"]}, {"plugged": ["light", "3"]}, {"plugged": ["light", "2"]}, {"atreach": [["light", "3"], ["light", "3"]]}, {"atreach": [["light", "2"], ["light", "2"]]}, {"location": [["light", "3"], ["living_room", "1"]]}, {"location": [["light", "2"], ["bedroom", "2"]]}]

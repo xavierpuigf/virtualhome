@@ -2,10 +2,10 @@ Have conversation with boyfriend
 Sit on sofa, talk
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Walk] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <MAN> (1)
-[Greet] <MAN> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Walk] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <man> (1)
+[Greet] <man> (1)

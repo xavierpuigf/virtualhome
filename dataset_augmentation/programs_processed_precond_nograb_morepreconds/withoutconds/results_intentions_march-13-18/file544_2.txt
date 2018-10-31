@@ -2,13 +2,13 @@ Cook some food
 go to the kitchen and cook some thing to eat
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FREEZER> (1)
-[Find] <FREEZER> (1)
-[Open] <FREEZER> (1)
-[Find] <OVEN> (1)
-[Open] <OVEN> (1)
-[Find] <FOOD_PIZZA> (1)
-[Grab] <FOOD_PIZZA> (1)
-[PutBack] <FOOD_PIZZA> (1) <OVEN> (1)
-[SwitchOn] <OVEN> (1)
+[Walk] <kitchen> (1)
+[Walk] <freezer> (1)
+[Find] <freezer> (1)
+[Open] <freezer> (1)
+[Find] <oven> (1)
+[Open] <oven> (1)
+[Find] <food_pizza> (1)
+[Grab] <food_pizza> (1)
+[PutBack] <food_pizza> (1) <oven> (1)
+[SwitchOn] <oven> (1)

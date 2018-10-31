@@ -1,18 +1,18 @@
 5
+unplugged: ('STEREO', '1') --> 
 is_off: ('STEREO', '1') --> , ('CD PLAYER', '1') --> 
+plugged: ('CD PLAYER', '1') --> 
 atreach: ('STEREO', '1') --> ('STEREO', '1'), ('CD PLAYER', '1') --> ('STEREO', '1')
 location: ('STEREO', '1') --> ('LIVING ROOM', '1'), ('CD PLAYER', '1') --> ('LIVING ROOM', '1')
-unplugged: ('STEREO', '1') --> 
-plugged: ('STEREO', '1') --> 
 Listen to music
 Walk to living room, switch on stereo, switch on cd player, dance
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <STEREO> (1)
-[Find] <STEREO> (1)
-[PlugIn] <STEREO> (1)
-[SwitchOn] <STEREO> (1)
-[Find] <CD PLAYER> (1)
-[SwitchOn] <CD PLAYER> (1)
+[Walk] <living_room> (1)
+[Walk] <stereo> (1)
+[Find] <stereo> (1)
+[PlugIn] <stereo> (1)
+[SwitchOn] <stereo> (1)
+[Find] <cd_player> (1)
+[SwitchOn] <cd_player> (1)
 [Dance]

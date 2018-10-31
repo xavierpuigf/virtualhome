@@ -1,0 +1,8 @@
+Clean
+To clean the home office I do dusting first, then do vacuum clean the carpet, rearrange all chairs and furniture (if needed)
+
+
+[FIND] <duster> (1.1000)
+[WASH] <duster> (1.1000)
+[TURNTO] <duster> (1.1000)
+[LOOKAT] <duster> (1.1000)

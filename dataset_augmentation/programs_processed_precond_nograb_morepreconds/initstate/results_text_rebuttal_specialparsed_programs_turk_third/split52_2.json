@@ -1,1 +1,1 @@
-[{"is_off": ["LAMP", "1"]}, {"in": [["LAMP", "1"], ["DRESSER", "1"]]}, {"location": [["LAMP", "1"], ["BEDROOM", "1"]]}, {"location": [["DRESSER", "1"], ["BEDROOM", "1"]]}, {"atreach": [["LAMP", "1"], ["DRESSER", "1"]]}]
+[{"is_off": ["lamp", "1"]}, {"atreach": [["lamp", "1"], ["dresser", "1"]]}, {"location": [["dresser", "1"], ["bedroom", "1"]]}, {"location": [["lamp", "1"], ["bedroom", "1"]]}, {"in": [["lamp", "1"], ["dresser", "1"]]}]

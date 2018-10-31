@@ -1,35 +1,36 @@
-6
-sitting: ('Character', 1) --> 
-inside: ('FOOD_FOOD', '1') --> ('OVEN', '1')
-atreach: ('TABLE', '1') --> ('FOOD_FOOD', '1'), ('PLATE', '1') --> ('FOOD_FOOD', '1'), ('OVEN', '1') --> ('FOOD_FOOD', '1'), ('FOOD_FOOD', '1') --> ('FOOD_FOOD', '1')
-location: ('TABLE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('OVEN', '1') --> ('KITCHEN', '1')
-closed: ('OVEN', '1') --> 
+7
 is_off: ('OVEN', '1') --> 
+plugged: ('OVEN', '1') --> 
+sitting: ('Character', 1) --> 
+atreach: ('PLATE', '1') --> ('FOOD_FOOD', '1'), ('OVEN', '1') --> ('FOOD_FOOD', '1'), ('FOOD_FOOD', '1') --> ('FOOD_FOOD', '1'), ('TABLE', '1') --> ('FOOD_FOOD', '1')
+location: ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('OVEN', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1')
+closed: ('OVEN', '1') --> 
+inside: ('FOOD_FOOD', '1') --> ('OVEN', '1')
 Prepare Dinner
 THE ROBOT WOULD PREPARE A MEAL BASED ON A RECIPE LOADED INTO IT'S DATABASE
 
 
 [WakeUp]
 [StandUp]
-[Walk] <KITCHEN> (1)
-[Walk] <FOOD_FOOD> (1)
-[Find] <FOOD_FOOD> (1)
-[Find] <PLATE> (1)
-[Find] <OVEN> (1)
-[Grab] <PLATE> (1)
-[Find] <FOOD_FOOD> (1)
-[Grab] <FOOD_FOOD> (1)
-[SwitchOn] <OVEN> (1)
-[Open] <OVEN> (1)
-[PutBack] <FOOD_FOOD> (1) <OVEN> (1)
-[Close] <OVEN> (1)
-[TurnTo] <FOOD_FOOD> (1)
-[LookAt] <FOOD_FOOD> (1)
-[Open] <OVEN> (1)
-[Grab] <FOOD_FOOD> (1)
-[Close] <OVEN> (1)
-[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
-[Find] <TABLE> (1)
-[PutBack] <PLATE> (1) <TABLE> (1)
-[Eat] <PLATE> (1)
+[Walk] <kitchen> (1)
+[Walk] <food_food> (1)
+[Find] <food_food> (1)
+[Find] <plate> (1)
+[Find] <oven> (1)
+[Grab] <plate> (1)
+[Find] <food_food> (1)
+[Grab] <food_food> (1)
+[SwitchOn] <oven> (1)
+[Open] <oven> (1)
+[PutBack] <food_food> (1) <oven> (1)
+[Close] <oven> (1)
+[TurnTo] <food_food> (1)
+[LookAt] <food_food> (1)
+[Open] <oven> (1)
+[Grab] <food_food> (1)
+[Close] <oven> (1)
+[PutBack] <food_food> (1) <plate> (1)
+[Find] <table> (1)
+[PutBack] <plate> (1) <table> (1)
+[Eat] <plate> (1)
 [Sleep]

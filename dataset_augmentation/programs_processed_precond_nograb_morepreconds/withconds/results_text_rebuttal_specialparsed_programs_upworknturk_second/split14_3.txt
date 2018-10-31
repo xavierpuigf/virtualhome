@@ -1,14 +1,14 @@
 3
-in: ('PRINTING PAPER', '1') --> ('DESK', '1')
-location: ('PRINTING PAPER', '1') --> ('HOME OFFICE', '1'), ('PRINTER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
 atreach: ('PRINTING PAPER', '1') --> ('DESK', '1')
+location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('PRINTING PAPER', '1') --> ('HOME OFFICE', '1'), ('PRINTER', '1') --> ('HOME OFFICE', '1')
+in: ('PRINTING PAPER', '1') --> ('DESK', '1')
 Add paper to printer
 Take a stack of paper, about 25 pieces. Place carefully in the paper tray.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <DESK> (1)
-[Find] <PRINTING PAPER> (1)
-[Grab] <PRINTING PAPER> (1)
-[Walk] <PRINTER> (1)
-[PutBack] <PRINTING PAPER> (1) <PRINTER> (1)
+[Walk] <home_office> (1)
+[Walk] <desk> (1)
+[Find] <printing_paper> (1)
+[Grab] <printing_paper> (1)
+[Walk] <printer> (1)
+[PutBack] <printing_paper> (1) <printer> (1)

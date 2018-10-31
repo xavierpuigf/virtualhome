@@ -1,25 +1,24 @@
-4
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('NAPKIN', '1') --> ('HOME OFFICE', '1'), ('BRUSH', '1') --> ('HOME OFFICE', '1')
-atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('NAPKIN', '1') --> ('COMPUTER', '1'), ('BRUSH', '1') --> ('COMPUTER', '1')
+3
 is_on: ('COMPUTER', '1') --> 
-plugged: ('COMPUTER', '1') --> 
+atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('BRUSH', '1') --> ('COMPUTER', '1'), ('NAPKIN', '1') --> ('COMPUTER', '1')
+location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('BRUSH', '1') --> ('HOME OFFICE', '1'), ('NAPKIN', '1') --> ('HOME OFFICE', '1')
 Wash monitor
 Clean the grime off of my monitor screen when not in use
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[SwitchOff] <COMPUTER> (1)
-[Find] <BRUSH> (1)
-[TurnTo] <BRUSH> (1)
-[LookAt] <BRUSH> (1)
-[Grab] <BRUSH> (1)
-[Wipe] <COMPUTER> (1)
-[Drop] <BRUSH> (1)
-[Find] <NAPKIN> (1)
-[Grab] <NAPKIN> (1)
-[Wash] <NAPKIN> (1)
-[Wipe] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[SwitchOff] <computer> (1)
+[Find] <brush> (1)
+[TurnTo] <brush> (1)
+[LookAt] <brush> (1)
+[Grab] <brush> (1)
+[Wipe] <computer> (1)
+[Drop] <brush> (1)
+[Find] <napkin> (1)
+[Grab] <napkin> (1)
+[Wash] <napkin> (1)
+[Wipe] <computer> (1)

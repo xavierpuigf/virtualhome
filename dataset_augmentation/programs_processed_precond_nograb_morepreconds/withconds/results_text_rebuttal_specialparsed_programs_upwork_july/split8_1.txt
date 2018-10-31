@@ -1,15 +1,16 @@
-2
-location: ('FEET_BOTH', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('SHOES', '1') --> ('HOME OFFICE', '1')
-atreach: ('FEET_BOTH', '1') --> ('SHOES', '1'), ('CHAIR', '1') --> ('FEET_BOTH', '1'), ('SHOES', '1') --> ('SHOES', '1')
+3
+atreach: ('CHAIR', '1') --> ('FEET_BOTH', '1'), ('SHOES', '1') --> ('SHOES', '1'), ('FEET_BOTH', '1') --> ('SHOES', '1')
+location: ('SHOES', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('FEET_BOTH', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Put on your shoes
 Sit on a chair with your shoes in front of you.  Put them on one at a time.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Grab] <SHOES> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <FEET_BOTH> (1)
-[PutBack] <SHOES> (1) <FEET_BOTH> (1)
+[Walk] <home_office> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Grab] <shoes> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <feet_both> (1)
+[PutBack] <shoes> (1) <feet_both> (1)

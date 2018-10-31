@@ -1,17 +1,18 @@
-3
-closed: ('MUSIC STAND', '1') --> 
+4
 unplugged: ('CELLPHONE', '1') --> 
 atreach: ('SOFA', '1') --> ('CELLPHONE', '1')
+closed: ('MUSIC STAND', '1') --> 
+free: ('SOFA', '1') --> 
 Listen to music
 Walk to living room. open your smartphone. wear headphones. select a song and play music.
 
 
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[PlugIn] <CELLPHONE> (1)
-[Find] <HEADSET> (1)
-[PutOn] <HEADSET> (1)
-[Find] <MUSIC STAND> (1)
-[Open] <MUSIC STAND> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[PlugIn] <cellphone> (1)
+[Find] <headset> (1)
+[PutOn] <headset> (1)
+[Find] <music_stand> (1)
+[Open] <music_stand> (1)

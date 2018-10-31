@@ -1,31 +1,32 @@
-5
-is_off: ('TELEVISION', '1') --> , ('VIDEO GAME CONSOLE', '1') --> 
-atreach: ('TELEVISION', '1') --> ('TELEVISION', '1'), ('VIDEO GAME CONSOLE', '1') --> ('VIDEO GAME CONSOLE', '1'), ('COUCH', '1') --> ('TELEVISION', '1'), ('VIDEO GAME CONTROLLER', '1') --> ('TELEVISION', '1')
-location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONSOLE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONTROLLER', '1') --> ('LIVING ROOM', '1')
+6
 unplugged: ('VIDEO GAME CONSOLE', '1') --> 
-plugged: ('VIDEO GAME CONSOLE', '1') --> 
+is_off: ('TELEVISION', '1') --> , ('VIDEO GAME CONSOLE', '1') --> 
+plugged: ('TELEVISION', '1') --> 
+atreach: ('COUCH', '1') --> ('TELEVISION', '1'), ('VIDEO GAME CONSOLE', '1') --> ('VIDEO GAME CONSOLE', '1'), ('TELEVISION', '1') --> ('TELEVISION', '1'), ('VIDEO GAME CONTROLLER', '1') --> ('TELEVISION', '1')
+location: ('VIDEO GAME CONSOLE', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONTROLLER', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Play games
 Be my partner for video games on the television
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <VIDEO GAME CONSOLE> (1)
-[Find] <VIDEO GAME CONSOLE> (1)
-[Grab] <VIDEO GAME CONSOLE> (1)
-[Walk] <TELEVISION> (1)
-[PlugIn] <VIDEO GAME CONSOLE> (1)
-[SwitchOn] <TELEVISION> (1)
-[SwitchOn] <VIDEO GAME CONSOLE> (1)
-[Find] <VIDEO GAME CONTROLLER> (1)
-[Grab] <VIDEO GAME CONTROLLER> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
-[Touch] <VIDEO GAME CONTROLLER> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
-[Touch] <VIDEO GAME CONTROLLER> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
-[Touch] <VIDEO GAME CONTROLLER> (1)
+[Walk] <living_room> (1)
+[Walk] <video_game_console> (1)
+[Find] <video_game_console> (1)
+[Grab] <video_game_console> (1)
+[Walk] <television> (1)
+[PlugIn] <video_game_console> (1)
+[SwitchOn] <television> (1)
+[SwitchOn] <video_game_console> (1)
+[Find] <video_game_controller> (1)
+[Grab] <video_game_controller> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)
+[Touch] <video_game_controller> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)
+[Touch] <video_game_controller> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)
+[Touch] <video_game_controller> (1)

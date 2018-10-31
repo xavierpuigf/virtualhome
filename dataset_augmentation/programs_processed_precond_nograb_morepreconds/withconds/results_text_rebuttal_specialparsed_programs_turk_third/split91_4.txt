@@ -1,22 +1,22 @@
 4
-inside: ('FOOD_VEGETABLE', '1') --> ('FRIDGE', '1'), ('KNIFE', '1') --> ('FRIDGE', '1'), ('BOWL', '1') --> ('FRIDGE', '1')
-location: ('CABINET', '1') --> ('DINING ROOM', '1'), ('FRIDGE', '1') --> ('DINING ROOM', '1')
-closed: ('CABINET', '1') --> , ('FRIDGE', '1') --> 
-atreach: ('FOOD_VEGETABLE', '1') --> ('FRIDGE', '1'), ('CABINET', '1') --> ('CABINET', '1'), ('KNIFE', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('BOWL', '1') --> ('FRIDGE', '1')
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('FOOD_VEGETABLE', '1') --> ('FRIDGE', '1'), ('BOWL', '1') --> ('FRIDGE', '1'), ('KNIFE', '1') --> ('FRIDGE', '1'), ('CABINET', '1') --> ('CABINET', '1')
+location: ('FRIDGE', '1') --> ('DINING ROOM', '1'), ('FOOD_VEGETABLE', '1') --> ('DINING ROOM', '1'), ('BOWL', '1') --> ('DINING ROOM', '1'), ('KNIFE', '1') --> ('DINING ROOM', '1'), ('CABINET', '1') --> ('DINING ROOM', '1')
+closed: ('FRIDGE', '1') --> , ('CABINET', '1') --> 
+inside: ('FOOD_VEGETABLE', '1') --> ('FRIDGE', '1'), ('BOWL', '1') --> ('FRIDGE', '1'), ('KNIFE', '1') --> ('FRIDGE', '1')
 Cook some food
 Get all of the salad produce from the refrigerator in the other room and bring it into the kitchen area.  Wash the lettuce and other produce, like carrots, bell peppers and cucumbers.  Get out big blue glass salad bowl.  Assemble salad by chopping veggies.  Sprinkle with olive oil, squeezed fresh lime juice, and soya sauce.  Find a pair of chopsticks in utensils draw.
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <FOOD_VEGETABLE> (1)
-[Grab] <FOOD_VEGETABLE> (1)
-[Wash] <FOOD_VEGETABLE> (1)
-[Find] <BOWL> (1)
-[Grab] <BOWL> (1)
-[Find] <KNIFE> (1)
-[Grab] <KNIFE> (1)
-[Cut] <FOOD_VEGETABLE> (1)
-[Walk] <CABINET> (1)
-[Open] <CABINET> (1)
+[Walk] <dining_room> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <food_vegetable> (1)
+[Grab] <food_vegetable> (1)
+[Wash] <food_vegetable> (1)
+[Find] <bowl> (1)
+[Grab] <bowl> (1)
+[Find] <knife> (1)
+[Grab] <knife> (1)
+[Cut] <food_vegetable> (1)
+[Walk] <cabinet> (1)
+[Open] <cabinet> (1)

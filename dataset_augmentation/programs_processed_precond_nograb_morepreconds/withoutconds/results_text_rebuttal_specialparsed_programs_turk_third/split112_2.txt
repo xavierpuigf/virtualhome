@@ -2,8 +2,8 @@ Put on glasses
 Put on glasses.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DRESSER> (1)
-[Find] <DRESSER> (1)
-[Find] <SPECTACLES> (1)
-[PutOn] <SPECTACLES> (1)
+[Walk] <bedroom> (1)
+[Walk] <dresser> (1)
+[Find] <dresser> (1)
+[Find] <spectacles> (1)
+[PutOn] <spectacles> (1)

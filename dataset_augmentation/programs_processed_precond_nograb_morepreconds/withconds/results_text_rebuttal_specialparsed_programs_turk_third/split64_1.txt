@@ -3,11 +3,11 @@ Sort mail
 Look at mail that is received
 
 
-[Find] <MAIL> (1)
-[Write] <MAIL> (1)
-[TurnTo] <MAIL> (1)
-[PointAt] <MAIL> (1)
-[Grab] <MAIL> (1)
-[Read] <MAIL> (1)
-[Find] <HOME OFFICE> (1)
-[Crawl] <HOME OFFICE> (1)
+[Find] <mail> (1)
+[Write] <mail> (1)
+[TurnTo] <mail> (1)
+[PointAt] <mail> (1)
+[Grab] <mail> (1)
+[Read] <mail> (1)
+[Find] <home_office> (1)
+[Crawl] <home_office> (1)

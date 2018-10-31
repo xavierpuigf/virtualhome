@@ -1,0 +1,12 @@
+Hang up jacket
+Upon entering, remove coat and utilize coatrack/hook to store coat by neatly hanging coat on hook.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <clothes_jacket> (1.1000)
+[FIND] <clothes_jacket> (1.1000)
+[FIND] <clothes_jacket> (1.1000)
+[PUTOFF] <clothes_jacket> (1.1000)
+[GRAB] <clothes_jacket> (1.1000)
+[FIND] <hanger> (1.1001)
+[PUTBACK] <clothes_jacket> (1.1000) <hanger> (1.1001)

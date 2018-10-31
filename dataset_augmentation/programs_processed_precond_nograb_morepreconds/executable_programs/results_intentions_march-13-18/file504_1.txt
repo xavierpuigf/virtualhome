@@ -1,0 +1,6 @@
+Pet cat
+I first look for may cat in the room, then I pick the cat up and then I pet it.
+
+
+[FIND] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

@@ -1,31 +1,32 @@
-2
-location: ('CHILD', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('MAN', '1') --> ('LIVING ROOM', '1'), ('CHILD', '2') --> ('LIVING ROOM', '1')
-atreach: ('CHILD', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('CHILD', '1'), ('MAN', '1') --> ('COUCH', '1'), ('CHILD', '2') --> ('COUCH', '1')
+3
+atreach: ('COUCH', '1') --> ('CHILD', '1'), ('CHILD', '1') --> ('COUCH', '1'), ('MAN', '1') --> ('COUCH', '1'), ('CHILD', '2') --> ('COUCH', '1')
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CHILD', '1') --> ('LIVING ROOM', '1'), ('MAN', '1') --> ('LIVING ROOM', '1'), ('CHILD', '2') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Laugh
 I sit and watch my husband tickle the grandkids.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <CHILD> (1)
-[TurnTo] <CHILD> (1)
-[LookAt] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <MAN> (1)
-[TurnTo] <MAN> (1)
-[LookAt] <MAN> (1)
-[Greet] <MAN> (1)
-[Find] <CHILD> (2)
-[TurnTo] <CHILD> (2)
-[LookAt] <CHILD> (2)
-[Greet] <CHILD> (2)
-[TurnTo] <CHILD> (1)
-[PointAt] <CHILD> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[Find] <child> (1)
+[TurnTo] <child> (1)
+[LookAt] <child> (1)
+[Greet] <child> (1)
+[Find] <man> (1)
+[TurnTo] <man> (1)
+[LookAt] <man> (1)
+[Greet] <man> (1)
+[Find] <child> (2)
+[TurnTo] <child> (2)
+[LookAt] <child> (2)
+[Greet] <child> (2)
+[TurnTo] <child> (1)
+[PointAt] <child> (1)
 [Laugh]
-[TurnTo] <CHILD> (2)
-[PointAt] <CHILD> (2)
+[TurnTo] <child> (2)
+[PointAt] <child> (2)
 [Laugh]
-[TurnTo] <MAN> (1)
-[PointAt] <MAN> (1)
+[TurnTo] <man> (1)
+[PointAt] <man> (1)
 [Laugh]

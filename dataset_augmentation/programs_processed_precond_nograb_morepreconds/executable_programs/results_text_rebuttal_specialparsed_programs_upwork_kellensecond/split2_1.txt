@@ -1,0 +1,12 @@
+Put away keys
+Return keys into a bag
+
+
+[WALK] <living_room> (1.243)
+[WALK] <keys> (1.1000)
+[FIND] <keys> (1.1000)
+[GRAB] <keys> (1.1000)
+[FIND] <bag> (1.1001)
+[OPEN] <bag> (1.1001)
+[PUTBACK] <keys> (1.1000) <bag> (1.1001)
+[CLOSE] <bag> (1.1001)

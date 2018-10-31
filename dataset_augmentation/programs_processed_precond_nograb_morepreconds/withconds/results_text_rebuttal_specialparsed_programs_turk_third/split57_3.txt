@@ -3,11 +3,11 @@ Make coffee
 Fill coffee pot with desired amount of water from kitchen sink. Insert coffee filter. Add desired amount of coffee equal to the amount of water added. Switch power on coffee pot.
 
 
-[Find] <SPOON> (1)
-[TurnTo] <SPOON> (1)
-[PointAt] <SPOON> (1)
-[Wash] <SPOON> (1)
-[TurnTo] <SPOON> (1)
-[LookAt] <SPOON> (1)
-[Grab] <SPOON> (1)
-[Walk] <KITCHEN> (1)
+[Find] <spoon> (1)
+[TurnTo] <spoon> (1)
+[PointAt] <spoon> (1)
+[Wash] <spoon> (1)
+[TurnTo] <spoon> (1)
+[LookAt] <spoon> (1)
+[Grab] <spoon> (1)
+[Walk] <kitchen> (1)

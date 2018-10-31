@@ -2,5 +2,5 @@ Pick up phone
 I find the phone, lift the receiver to my ear, and say hello.
 
 
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)

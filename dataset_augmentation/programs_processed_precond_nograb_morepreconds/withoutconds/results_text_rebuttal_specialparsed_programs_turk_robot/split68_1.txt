@@ -2,7 +2,7 @@ Dance
 Turn on the music and dance
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
+[Walk] <living_room> (1)
+[Walk] <radio> (1)
+[SwitchOn] <radio> (1)
 [Dance]

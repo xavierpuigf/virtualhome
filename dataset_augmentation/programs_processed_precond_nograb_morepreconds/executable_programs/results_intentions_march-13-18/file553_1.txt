@@ -1,0 +1,7 @@
+Pick up phone
+Walk into the living room, walk over to phone, grab the phone, put it to your ear .
+
+
+[WALK] <living_room> (1.243)
+[WALK] <phone> (1.1000)
+[GRAB] <phone> (1.1000)

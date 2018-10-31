@@ -1,22 +1,23 @@
-4
-inside: ('BOOK', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('BOOKSHELF', '1')
-location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('BOOKSHELF', '1') --> ('LIVING ROOM', '1')
+5
+atreach: ('BOOKSHELF', '1') --> ('BOOKSHELF', '1'), ('BOOK', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('BOOKSHELF', '1'), ('SOFA', '1') --> ('BOOKSHELF', '1')
+location: ('BOOKSHELF', '1') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1'), ('BOOK', '2') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
 closed: ('BOOKSHELF', '1') --> 
-atreach: ('BOOK', '1') --> ('BOOKSHELF', '1'), ('SOFA', '1') --> ('BOOKSHELF', '1'), ('BOOKSHELF', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('BOOKSHELF', '1')
+inside: ('BOOK', '1') --> ('BOOKSHELF', '1'), ('BOOK', '2') --> ('BOOKSHELF', '1')
+free: ('SOFA', '1') --> 
 Read book
 Take books off the book shelf and read.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOKSHELF> (1)
-[Find] <BOOKSHELF> (1)
-[Open] <BOOKSHELF> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
-[PutObjBack] <BOOK> (1)
-[Find] <BOOK> (2)
-[Grab] <BOOK> (2)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Read] <BOOK> (2)
+[Walk] <living_room> (1)
+[Walk] <bookshelf> (1)
+[Find] <bookshelf> (1)
+[Open] <bookshelf> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)
+[PutObjBack] <book> (1)
+[Find] <book> (2)
+[Grab] <book> (2)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Read] <book> (2)

@@ -4,7 +4,7 @@ Browse internet
 OPEN THE BROWSER ON YOUR COMPUTER
 
 
-[Find] <CABINET> (1)
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
+[Find] <cabinet> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)

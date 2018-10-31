@@ -1,0 +1,15 @@
+Read book
+Walk to home office. Find book. Grab book. Walk to table. Find chair. Sit in chair. Put book on table. Open book. Find bookmark. Read book.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <book> (1.1000)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[WALK] <table> (1.1001)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[PUTBACK] <book> (1.1000) <table> (1.1001)
+[FIND] <bookmark> (1.1002)
+[GRAB] <book> (1.1000)
+[READ] <book> (1.1000)

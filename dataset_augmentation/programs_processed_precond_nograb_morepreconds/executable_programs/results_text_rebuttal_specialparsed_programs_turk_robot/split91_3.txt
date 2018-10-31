@@ -1,0 +1,10 @@
+Wipe down baseboards please
+Use a rag to get all the dust off the baseboards please.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <rag> (1.1000)
+[FIND] <rag> (1.1000)
+[GRAB] <rag> (1.1000)
+[WALK] <wall> (1.9)
+[PUTOBJBACK] <rag> (1.1000)

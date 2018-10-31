@@ -1,1 +1,1 @@
-[{"is_off": ["FAUCET", "1"]}, {"location": [["FAUCET", "1"], ["KITCHEN", "1"]]}, {"location": [["CUP", "1"], ["KITCHEN", "1"]]}, {"location": [["SINK", "1"], ["KITCHEN", "1"]]}, {"atreach": [["FAUCET", "1"], ["CUP", "1"]]}, {"atreach": [["CUP", "1"], ["CUP", "1"]]}]
+[{"is_off": ["faucet", "1"]}, {"atreach": [["cup", "1"], ["cup", "1"]]}, {"atreach": [["faucet", "1"], ["cup", "1"]]}, {"location": [["cup", "1"], ["kitchen", "1"]]}, {"location": [["faucet", "1"], ["kitchen", "1"]]}, {"location": [["sink", "1"], ["kitchen", "1"]]}]

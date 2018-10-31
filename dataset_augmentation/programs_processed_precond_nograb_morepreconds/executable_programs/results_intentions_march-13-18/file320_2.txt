@@ -1,0 +1,17 @@
+Wash teeth
+Walk into to bathroom, grab toothpaste and a tooth brush, clean teeth. Then return all item after rinsing teeth.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <tooth_paste> (1.1000)
+[FIND] <tooth_paste> (1.1000)
+[GRAB] <tooth_paste> (1.1000)
+[FIND] <toothbrush> (1.1001)
+[GRAB] <toothbrush> (1.1001)
+[FIND] <teeth> (1.1002)
+[WASH] <teeth> (1.1002)
+[RINSE] <teeth> (1.1002)
+[RINSE] <toothbrush> (1.1001)
+[FIND] <toothbrush_holder> (1.1003)
+[PUTBACK] <toothbrush> (1.1001) <toothbrush_holder> (1.1003)
+[PUTOBJBACK] <tooth_paste> (1.1000)

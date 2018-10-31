@@ -2,10 +2,10 @@ Clean
 Use a rag to wipe the dust from the edges of the baseboard.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Walk] <WALL> (1)
-[Shake] <RAG> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <bedroom> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Walk] <wall> (1)
+[Shake] <rag> (1)
+[PutObjBack] <rag> (1)

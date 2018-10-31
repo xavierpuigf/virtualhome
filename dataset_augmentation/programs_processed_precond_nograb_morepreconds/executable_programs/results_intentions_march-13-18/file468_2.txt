@@ -1,0 +1,15 @@
+Wash dishes with dishwasher
+I put dish in the dishwasher. I put soap in the dishwasher. I start the dishwasher.
+
+
+[FIND] <plate> (1.1000)
+[GRAB] <plate> (1.1000)
+[FIND] <dishwasher> (1.1001)
+[OPEN] <dishwasher> (1.1001)
+[PUTBACK] <plate> (1.1000) <dishwasher> (1.1001)
+[FIND] <dish_soap> (1.1002)
+[GRAB] <dish_soap> (1.1002)
+[PUTBACK] <dish_soap> (1.1002) <dishwasher> (1.1001)
+[FIND] <dishwasher> (1.1001)
+[TURNTO] <dishwasher> (1.1001)
+[WASH] <plate> (1.1000)

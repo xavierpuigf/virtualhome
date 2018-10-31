@@ -1,19 +1,20 @@
-3
+4
 is_off: ('PRINTER', '1') --> 
-location: ('PRINTER', '1') --> ('HOME OFFICE', '1'), ('PRINTING PAPER', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
+plugged: ('PRINTER', '1') --> 
 atreach: ('PRINTER', '1') --> ('PRINTER', '1'), ('PRINTING PAPER', '1') --> ('PRINTER', '1'), ('COMPUTER', '1') --> ('PRINTER', '1'), ('MOUSE', '1') --> ('PRINTER', '1')
+location: ('PRINTER', '1') --> ('HOME OFFICE', '1'), ('PRINTING PAPER', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1')
 Print out papers
 Turn on printer and fill with blank paper. Use computer to click on printing option. Take printed page out of print.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <PRINTER> (1)
-[Find] <PRINTER> (1)
-[SwitchOn] <PRINTER> (1)
-[Find] <PRINTING PAPER> (1)
-[Grab] <PRINTING PAPER> (1)
-[PutBack] <PRINTING PAPER> (1) <PRINTER> (1)
-[Find] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
-[Grab] <PRINTING PAPER> (1)
+[Walk] <home_office> (1)
+[Walk] <printer> (1)
+[Find] <printer> (1)
+[SwitchOn] <printer> (1)
+[Find] <printing_paper> (1)
+[Grab] <printing_paper> (1)
+[PutBack] <printing_paper> (1) <printer> (1)
+[Find] <computer> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)
+[Grab] <printing_paper> (1)

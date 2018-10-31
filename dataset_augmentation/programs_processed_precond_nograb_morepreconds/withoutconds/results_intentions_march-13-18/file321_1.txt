@@ -2,9 +2,9 @@ Relax on sofa
 Drink a glass of water in the sofa
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Find] <WATER GLASS> (1)
-[Drink] <WATER GLASS> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Find] <water_glass> (1)
+[Drink] <water_glass> (1)

@@ -2,7 +2,7 @@ Listen to music
 I reach out arm. I put hand on radio. I turn on radio. I pick a station.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <RADIO> (1)
-[Touch] <RADIO> (1)
-[TurnTo] <RADIO> (1)
+[Walk] <bedroom> (1)
+[Walk] <radio> (1)
+[Touch] <radio> (1)
+[TurnTo] <radio> (1)

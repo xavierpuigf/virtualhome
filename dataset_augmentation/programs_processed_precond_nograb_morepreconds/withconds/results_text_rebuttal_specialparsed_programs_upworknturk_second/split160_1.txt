@@ -1,20 +1,21 @@
-2
-location: ('BOOK', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1')
-atreach: ('BOOK', '1') --> ('CHILD', '1'), ('CHILD', '1') --> ('CHILD', '1'), ('BED', '1') --> ('CHILD', '1')
+3
+atreach: ('BED', '1') --> ('CHILD', '1'), ('CHILD', '1') --> ('CHILD', '1'), ('BOOK', '1') --> ('CHILD', '1')
+location: ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('BOOK', '1') --> ('KIDS BEDROOM', '1'), ('BED', '1') --> ('KIDS BEDROOM', '1')
+free: ('BED', '1') --> 
 Story reading time
 Sit on bed with child, open mother goose, pick story, read book, point at the pretty pictures
 
 
-[Walk] <KIDS BEDROOM> (1)
-[Walk] <CHILD> (1)
-[Find] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <BED> (1)
-[Sit] <BED> (1)
-[TurnTo] <CHILD> (1)
-[LookAt] <CHILD> (1)
-[TurnTo] <BOOK> (1)
-[PointAt] <BOOK> (1)
-[Read] <BOOK> (1)
+[Walk] <kids_bedroom> (1)
+[Walk] <child> (1)
+[Find] <child> (1)
+[Greet] <child> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <bed> (1)
+[Sit] <bed> (1)
+[TurnTo] <child> (1)
+[LookAt] <child> (1)
+[TurnTo] <book> (1)
+[PointAt] <book> (1)
+[Read] <book> (1)

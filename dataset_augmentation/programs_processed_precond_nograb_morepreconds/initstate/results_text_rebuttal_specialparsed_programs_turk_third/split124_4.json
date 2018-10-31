@@ -1,1 +1,1 @@
-[{"is_off": ["COFFE MAKER", "1"]}, {"atreach": [["TEA BAG", "1"], ["WATER", "1"]]}, {"atreach": [["WATER", "1"], ["WATER", "1"]]}]
+[{"is_off": ["coffe_maker", "1"]}, {"plugged": ["coffe_maker", "1"]}, {"atreach": [["water", "1"], ["water", "1"]]}, {"atreach": [["tea_bag", "1"], ["water", "1"]]}]

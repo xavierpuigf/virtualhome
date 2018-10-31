@@ -1,0 +1,6 @@
+Turn on light
+Find light switch. switch on
+
+
+[FIND] <light> (1.1000)
+[SWITCHON] <light> (1.1000)

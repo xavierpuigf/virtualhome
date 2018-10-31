@@ -2,10 +2,10 @@ Do homework
 Sit on the couch in the Living room and pick u some papers
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <PAPER> (1)
-[Grab] <PAPER> (1)
-[Drop] <PAPER> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <paper> (1)
+[Grab] <paper> (1)
+[Drop] <paper> (1)

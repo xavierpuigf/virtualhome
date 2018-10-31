@@ -1,0 +1,23 @@
+Cook some food
+Walk to the kitchen and open the fridge. From the fridge take some chicken and close the fridge. Walk to the table and put the chicken on the table. Plug in oven and put the chicken into the oven.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <fridge> (1.1000)
+[FIND] <fridge> (1.1000)
+[OPEN] <fridge> (1.1000)
+[FIND] <food_chicken> (1.1001)
+[GRAB] <food_chicken> (1.1001)
+[CLOSE] <fridge> (1.1000)
+[WALK] <table> (1.1002)
+[PUTBACK] <food_chicken> (1.1001) <table> (1.1002)
+[FIND] <kitchen_cabinet> (1.1003)
+[OPEN] <kitchen_cabinet> (1.1003)
+[FIND] <fryingpan> (1.1004)
+[GRAB] <fryingpan> (1.1004)
+[PUTBACK] <fryingpan> (1.1004) <table> (1.1002)
+[FIND] <oven> (1.1005)
+[PLUGIN] <oven> (1.1005)
+[OPEN] <oven> (1.1005)
+[GRAB] <food_chicken> (1.1001)
+[PUTBACK] <food_chicken> (1.1001) <oven> (1.1005)

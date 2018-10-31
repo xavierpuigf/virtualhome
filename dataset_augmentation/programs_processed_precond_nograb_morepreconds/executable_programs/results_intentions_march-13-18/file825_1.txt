@@ -1,0 +1,7 @@
+Work
+I go into my home office to pay my bills on my computer.
+
+
+[FIND] <computer> (2.1000)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)

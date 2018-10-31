@@ -1,14 +1,14 @@
 2
-location: ('MAN', '1') --> ('KITCHEN', '1')
 atreach: ('MAN', '1') --> ('MAN', '1')
+location: ('MAN', '1') --> ('KITCHEN', '1')
 Tell jokes
 Locate an intelligent being in the kitchen. Approach and turn to the being. Tell the joke. Do not laugh at your own joke.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <MAN> (1)
-[Find] <MAN> (1)
-[TurnTo] <MAN> (1)
-[LookAt] <MAN> (1)
-[Greet] <MAN> (1)
-[Talk] <MAN> (1)
+[Walk] <kitchen> (1)
+[Walk] <man> (1)
+[Find] <man> (1)
+[TurnTo] <man> (1)
+[LookAt] <man> (1)
+[Greet] <man> (1)
+[Talk] <man> (1)

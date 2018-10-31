@@ -1,17 +1,17 @@
 3
+atreach: ('RAG', '1') --> ('RAG', '1'), ('COMPUTER', '1') --> ('DESK', '1'), ('DESK', '1') --> ('DESK', '1')
+location: ('RAG', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1')
 in: ('COMPUTER', '1') --> ('DESK', '1')
-location: ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('RAG', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
-atreach: ('COMPUTER', '1') --> ('DESK', '1'), ('RAG', '1') --> ('RAG', '1'), ('DESK', '1') --> ('DESK', '1')
 Clean
 Wipe down computer desk and monitor
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Walk] <DESK> (1)
-[Find] <COMPUTER> (1)
-[Wipe] <COMPUTER> (1)
-[Wipe] <DESK> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <home_office> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Walk] <desk> (1)
+[Find] <computer> (1)
+[Wipe] <computer> (1)
+[Wipe] <desk> (1)
+[PutObjBack] <rag> (1)

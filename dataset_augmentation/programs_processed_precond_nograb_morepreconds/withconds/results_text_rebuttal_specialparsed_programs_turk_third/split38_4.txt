@@ -3,10 +3,10 @@ Take shower
 Cleanse ones body in the shower
 
 
-[Find] <TOWEL> (1)
-[TurnTo] <TOWEL> (1)
-[PointAt] <TOWEL> (1)
-[Wash] <TOWEL> (1)
-[TurnTo] <TOWEL> (1)
-[LookAt] <TOWEL> (1)
-[Fold] <TOWEL> (1)
+[Find] <towel> (1)
+[TurnTo] <towel> (1)
+[PointAt] <towel> (1)
+[Wash] <towel> (1)
+[TurnTo] <towel> (1)
+[LookAt] <towel> (1)
+[Fold] <towel> (1)

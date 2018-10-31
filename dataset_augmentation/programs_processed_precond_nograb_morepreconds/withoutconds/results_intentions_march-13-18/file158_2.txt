@@ -3,10 +3,10 @@ In this the person will walk to the bathroom , and look at the sink(as if turnin
 
 
 [StandUp]
-[Walk] <BATHROOM> (1)
-[Walk] <SINK> (1)
-[Find] <SINK> (1)
-[TurnTo] <SINK> (1)
-[LookAt] <SINK> (1)
-[Find] <TEETH> (1)
-[Wash] <TEETH> (1)
+[Walk] <bathroom> (1)
+[Walk] <sink> (1)
+[Find] <sink> (1)
+[TurnTo] <sink> (1)
+[LookAt] <sink> (1)
+[Find] <teeth> (1)
+[Wash] <teeth> (1)

@@ -1,0 +1,11 @@
+Wash hands
+walk to bathroom, look at the water, wash hands
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <water> (1.1000)
+[FIND] <water> (1.1000)
+[TURNTO] <water> (1.1000)
+[LOOKAT] <water> (1.1000)
+[FIND] <hands_both> (1.1001)
+[WASH] <hands_both> (1.1001)

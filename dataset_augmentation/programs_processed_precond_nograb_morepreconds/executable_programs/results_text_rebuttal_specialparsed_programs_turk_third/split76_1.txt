@@ -1,0 +1,12 @@
+Hang up jacket
+I take off my coat and hang it on a hook on the clothing hook by the front door.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <clothes_jacket> (1.1000)
+[FIND] <clothes_jacket> (1.1000)
+[FIND] <clothes_jacket> (1.1000)
+[PUTOFF] <clothes_jacket> (1.1000)
+[GRAB] <clothes_jacket> (1.1000)
+[FIND] <hanger> (1.1001)
+[PUTBACK] <clothes_jacket> (1.1000) <hanger> (1.1001)

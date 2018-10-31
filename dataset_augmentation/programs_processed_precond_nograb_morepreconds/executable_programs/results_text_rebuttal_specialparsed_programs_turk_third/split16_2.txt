@@ -1,0 +1,11 @@
+Eat cereal
+Sit in chair. Put spoon in cereal bowl. Scoop up cereal. Eat.
+
+
+[FIND] <chair> (1.94)
+[TURNTO] <chair> (1.94)
+[POINTAT] <chair> (1.94)
+[WASH] <chair> (1.94)
+[TURNTO] <chair> (1.94)
+[LOOKAT] <chair> (1.94)
+[SIT] <chair> (1.94)

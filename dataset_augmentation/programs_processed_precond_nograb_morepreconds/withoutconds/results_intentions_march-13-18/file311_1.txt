@@ -2,7 +2,7 @@ Turn on light
 I go home and it's dark so I can not see anything
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <LAMP> (1)
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <lamp> (1)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)

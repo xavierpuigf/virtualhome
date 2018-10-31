@@ -2,10 +2,10 @@ Play games
 I either bring out monopoly, uno, chess, checkers or playing cards and lay them out on the dining room table. We then play the games for a couple of hours.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOARD GAME> (1)
-[Find] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Walk] <DINING ROOM> (1)
-[Walk] <TABLE> (1)
-[PutBack] <BOARD GAME> (1) <TABLE> (1)
+[Walk] <living_room> (1)
+[Walk] <board_game> (1)
+[Find] <board_game> (1)
+[Grab] <board_game> (1)
+[Walk] <dining_room> (1)
+[Walk] <table> (1)
+[PutBack] <board_game> (1) <table> (1)

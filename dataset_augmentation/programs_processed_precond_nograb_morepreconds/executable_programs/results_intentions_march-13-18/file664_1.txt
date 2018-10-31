@@ -1,0 +1,9 @@
+Change TV channel
+I take the remote control and press button to change TV channel
+
+
+[FIND] <remote_control> (1.1000)
+[TURNTO] <remote_control> (1.1000)
+[POINTAT] <remote_control> (1.1000)
+[FIND] <button> (1.1001)
+[TOUCH] <button> (1.1001)

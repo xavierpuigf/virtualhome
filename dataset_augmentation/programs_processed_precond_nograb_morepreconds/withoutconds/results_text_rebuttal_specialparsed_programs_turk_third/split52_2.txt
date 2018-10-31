@@ -2,8 +2,8 @@ Turn night light on
 I walk to the dresser and in the middle Io to small battery operated lamp and switch it on
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DRESSER> (1)
-[Find] <LAMP> (1)
-[TurnTo] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
+[Walk] <bedroom> (1)
+[Walk] <dresser> (1)
+[Find] <lamp> (1)
+[TurnTo] <lamp> (1)
+[SwitchOn] <lamp> (1)

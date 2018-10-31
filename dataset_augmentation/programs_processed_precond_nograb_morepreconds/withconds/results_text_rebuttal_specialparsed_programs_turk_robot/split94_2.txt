@@ -1,12 +1,12 @@
 2
-location: ('CARPET', '1') --> ('LIVING ROOM', '1')
 atreach: ('CARPET', '1') --> ('CARPET', '1')
+location: ('CARPET', '1') --> ('LIVING ROOM', '1')
 Lay down on floor and say, i'm rug
 Lay down on the floor and repeat, I am a rug until I tell it to stop.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CARPET> (1)
-[Find] <CARPET> (1)
-[Lie] <CARPET> (1)
+[Walk] <living_room> (1)
+[Walk] <carpet> (1)
+[Find] <carpet> (1)
+[Lie] <carpet> (1)
 [Speak]

@@ -1,0 +1,9 @@
+Dust
+Get a broom or duster with long handle. Dust blades of ceiling fan.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <duster> (1.1000)
+[FIND] <duster> (1.1000)
+[GRAB] <duster> (1.1000)
+[PUTOBJBACK] <duster> (1.1000)

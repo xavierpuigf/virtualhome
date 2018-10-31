@@ -1,0 +1,17 @@
+Clean  mirror
+GET CLEANING CLOTH, SPRAY CLEANER ON CLOTH, CLEAN MIRROR
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <cleaning_solution> (1.1000)
+[FIND] <cleaning_solution> (1.1000)
+[GRAB] <cleaning_solution> (1.1000)
+[FIND] <rag> (1.1001)
+[GRAB] <rag> (1.1001)
+[POUR] <cleaning_solution> (1.1000) <rag> (1.1001)
+[PUTOBJBACK] <cleaning_solution> (1.1000)
+[WALK] <mirror> (1.1002)
+[WIPE] <mirror> (1.1002)
+[WIPE] <mirror> (1.1002)
+[WIPE] <mirror> (1.1002)
+[PUTOBJBACK] <rag> (1.1001)

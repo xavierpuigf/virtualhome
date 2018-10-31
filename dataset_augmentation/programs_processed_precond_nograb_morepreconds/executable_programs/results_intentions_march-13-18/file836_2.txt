@@ -1,0 +1,9 @@
+Pet cat
+Find a cat in the kitchen and touch it
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <cat> (1.1000)
+[FIND] <cat> (1.1000)
+[WALK] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

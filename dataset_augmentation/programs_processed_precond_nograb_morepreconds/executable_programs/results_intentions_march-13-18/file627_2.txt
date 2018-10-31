@@ -1,0 +1,17 @@
+Wash clothes
+Go to kitchen, find washing machine, find laundry, put laundry in washing machine, find soap, put soap in washing machine, turn on.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <washing_machine> (1.1000)
+[FIND] <washing_machine> (1.1000)
+[FIND] <basket_for_clothes> (1.1001)
+[GRAB] <basket_for_clothes> (1.1001)
+[OPEN] <washing_machine> (1.1000)
+[PUTBACK] <basket_for_clothes> (1.1001) <washing_machine> (1.1000)
+[WALK] <laundry_detergent> (1.1002)
+[FIND] <laundry_detergent> (1.1002)
+[GRAB] <laundry_detergent> (1.1002)
+[POUR] <laundry_detergent> (1.1002) <washing_machine> (1.1000)
+[CLOSE] <washing_machine> (1.1000)
+[SWITCHON] <washing_machine> (1.1000)

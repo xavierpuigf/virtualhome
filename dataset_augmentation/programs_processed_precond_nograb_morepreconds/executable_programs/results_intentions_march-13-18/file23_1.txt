@@ -1,0 +1,8 @@
+Listen to music
+I walk into the living room. I find the stereo and turn it on, and I listen to the music.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <stereo> (1.1000)
+[FIND] <stereo> (1.1000)
+[SWITCHON] <stereo> (1.1000)

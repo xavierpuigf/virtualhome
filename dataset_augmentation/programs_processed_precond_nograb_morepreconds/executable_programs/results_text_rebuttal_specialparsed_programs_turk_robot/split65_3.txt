@@ -1,0 +1,19 @@
+Use laptop
+Sit down on a couch and perform tasks such as navigating the internet on a laptop
+
+
+[WALK] <living_room> (1.243)
+[WALK] <couch> (1.1000)
+[FIND] <couch> (1.1000)
+[SIT] <couch> (1.1000)
+[FIND] <laptop> (1.1001)
+[SWITCHON] <laptop> (1.1001)
+[TURNTO] <laptop> (1.1001)
+[LOOKAT] <laptop> (1.1001)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)
+[TURNTO] <keyboard> (1.1002)
+[LOOKAT] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)
+[TURNTO] <laptop> (1.1001)
+[LOOKAT] <laptop> (1.1001)

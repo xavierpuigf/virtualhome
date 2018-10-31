@@ -1,0 +1,13 @@
+Take shower
+Walk to Bathroom. Open the Bathroom Cabinet. Grab a Towel. Close the Bathroom Cabinet. Rinse the Shower.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <bathroom_cabinet> (1.1000)
+[FIND] <bathroom_cabinet> (1.1000)
+[OPEN] <bathroom_cabinet> (1.1000)
+[FIND] <towel> (1.1001)
+[GRAB] <towel> (1.1001)
+[CLOSE] <bathroom_cabinet> (1.1000)
+[FIND] <shower> (1.1002)
+[RINSE] <shower> (1.1002)

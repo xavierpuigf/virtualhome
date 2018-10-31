@@ -1,0 +1,14 @@
+Cook some food
+I walk into the kitchen. I put pasta in a pan and add water
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <dry_pasta> (1.1000)
+[FIND] <dry_pasta> (1.1000)
+[GRAB] <dry_pasta> (1.1000)
+[FIND] <sauce_pan> (1.1001)
+[PUTBACK] <dry_pasta> (1.1000) <sauce_pan> (1.1001)
+[FIND] <sauce_pan> (1.1001)
+[GRAB] <sauce_pan> (1.1001)
+[FIND] <stove> (1.1002)
+[PUTBACK] <sauce_pan> (1.1001) <stove> (1.1002)

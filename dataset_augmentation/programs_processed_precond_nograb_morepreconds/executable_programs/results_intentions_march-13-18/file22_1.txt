@@ -1,0 +1,14 @@
+Write an email
+I open the laptop, and launch the email application.  I click "Compose New Email".  I enter the recipient's email address in the To line, and a summary of the email in the Subject line.  I enter the content of the email in the Body field, and when complete, I click send.
+
+
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)
+[FIND] <mouse> (1.315)
+[GRAB] <mouse> (1.315)
+[PUTOBJBACK] <mouse> (1.315)
+[FIND] <keyboard> (1.319)
+[TYPE] <keyboard> (1.319)
+[GRAB] <mouse> (1.315)
+[PUTOBJBACK] <mouse> (1.315)
+[SWITCHOFF] <computer> (1.318)

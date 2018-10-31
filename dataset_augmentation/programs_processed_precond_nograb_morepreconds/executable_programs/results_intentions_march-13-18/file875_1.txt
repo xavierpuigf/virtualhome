@@ -1,0 +1,15 @@
+Go to sleep
+walk to bedroom, look at the pillow, put pillow into bed, lie down in bed, sleep well
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <pillow> (1.307)
+[FIND] <pillow> (1.307)
+[GRAB] <pillow> (1.307)
+[TURNTO] <pillow> (1.307)
+[LOOKAT] <pillow> (1.307)
+[FIND] <bed> (1.1000)
+[PUTBACK] <pillow> (1.307) <bed> (1.1000)
+[FIND] <bed> (1.1000)
+[LIE] <bed> (1.1000)
+[SLEEP]

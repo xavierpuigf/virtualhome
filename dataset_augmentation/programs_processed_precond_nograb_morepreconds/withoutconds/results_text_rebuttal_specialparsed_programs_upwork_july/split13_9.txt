@@ -3,8 +3,8 @@ After I wake up in the morning, I like to check my email with my smartphone.
 
 
 [WakeUp]
-[Walk] <LIVING ROOM> (1)
-[Walk] <CELLPHONE> (1)
-[Find] <CELLPHONE> (1)
-[TurnTo] <CELLPHONE> (1)
-[LookAt] <CELLPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <cellphone> (1)
+[Find] <cellphone> (1)
+[TurnTo] <cellphone> (1)
+[LookAt] <cellphone> (1)

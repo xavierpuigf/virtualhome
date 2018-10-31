@@ -1,0 +1,17 @@
+Wash clothes
+Walk to bathroom. Open washing maschine. Grab pants and put it into washing maschine. Pour laundry detergent into washing machine and close the washing maschine. Plug in washing machine.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <washing_machine> (1.1000)
+[FIND] <washing_machine> (1.1000)
+[OPEN] <washing_machine> (1.1000)
+[FIND] <clothes_pants> (1.1001)
+[GRAB] <clothes_pants> (1.1001)
+[PUTBACK] <clothes_pants> (1.1001) <washing_machine> (1.1000)
+[WALK] <laundry_detergent> (1.1002)
+[FIND] <laundry_detergent> (1.1002)
+[GRAB] <laundry_detergent> (1.1002)
+[POUR] <laundry_detergent> (1.1002) <washing_machine> (1.1000)
+[CLOSE] <washing_machine> (1.1000)
+[PLUGIN] <washing_machine> (1.1000)

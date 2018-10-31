@@ -1,0 +1,10 @@
+Greet guests
+When someone knocks I n the door walk through the hallway and greet them.
+
+
+[RUN] <living_room> (1.243)
+[WALK] <man> (1.1000)
+[FIND] <man> (1.1000)
+[GREET] <man> (1.1000)
+[FIND] <man> (2.1001)
+[GREET] <man> (2.1001)

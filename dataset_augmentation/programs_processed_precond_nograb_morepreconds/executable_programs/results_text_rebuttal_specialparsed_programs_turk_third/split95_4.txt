@@ -1,0 +1,22 @@
+Arrange folders
+Go through all my folders and re-arrange in alfabetaical order and put on computer desk
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <folder> (1.1001)
+[GRAB] <folder> (1.1001)
+[OPEN] <desk> (1.1000)
+[PUTBACK] <folder> (1.1001) <desk> (1.1000)
+[FIND] <folder> (2.1002)
+[GRAB] <folder> (2.1002)
+[PUTBACK] <folder> (2.1002) <desk> (1.1000)
+[FIND] <folder> (3.1003)
+[GRAB] <folder> (3.1003)
+[PUTBACK] <folder> (3.1003) <desk> (1.1000)
+[FIND] <folder> (4.1004)
+[GRAB] <folder> (4.1004)
+[PUTBACK] <folder> (4.1004) <desk> (1.1000)
+[FIND] <folder> (5.1005)
+[GRAB] <folder> (5.1005)
+[PUTBACK] <folder> (5.1005) <desk> (1.1000)
