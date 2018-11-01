@@ -1,0 +1,8 @@
+Work
+walk to home office ,find computer ,switch on computer and work
+
+
+[WALK] <living_room> (1.243)
+[WALK] <computer> (2.1000)
+[FIND] <computer> (2.1000)
+[SWITCHON] <computer> (2.1000)

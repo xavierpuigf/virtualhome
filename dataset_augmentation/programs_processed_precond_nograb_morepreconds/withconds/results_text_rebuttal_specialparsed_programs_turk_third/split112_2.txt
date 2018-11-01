@@ -1,13 +1,13 @@
 3
-in: ('SPECTACLES', '1') --> ('DRESSER', '1')
-location: ('SPECTACLES', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1')
 atreach: ('SPECTACLES', '1') --> ('DRESSER', '1')
+location: ('DRESSER', '1') --> ('BEDROOM', '1'), ('SPECTACLES', '1') --> ('BEDROOM', '1')
+in: ('SPECTACLES', '1') --> ('DRESSER', '1')
 Put on glasses
 Put on glasses.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DRESSER> (1)
-[Find] <DRESSER> (1)
-[Find] <SPECTACLES> (1)
-[PutOn] <SPECTACLES> (1)
+[Walk] <bedroom> (1)
+[Walk] <dresser> (1)
+[Find] <dresser> (1)
+[Find] <spectacles> (1)
+[PutOn] <spectacles> (1)

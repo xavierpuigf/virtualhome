@@ -1,20 +1,21 @@
-3
-is_off: ('LIGHT', '3') --> , ('LIGHT', '1') --> , ('LIGHT', '2') --> 
-location: ('LIGHT', '3') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '2') --> ('LIVING ROOM', '1')
-atreach: ('LIGHT', '3') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT', '2') --> ('LIGHT', '1')
+4
+is_off: ('LIGHT', '1') --> , ('LIGHT', '2') --> , ('LIGHT', '3') --> 
+plugged: ('LIGHT', '1') --> , ('LIGHT', '2') --> , ('LIGHT', '3') --> 
+atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT', '2') --> ('LIGHT', '1'), ('LIGHT', '3') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '2') --> ('LIVING ROOM', '1'), ('LIGHT', '3') --> ('LIVING ROOM', '1')
 Turn on light
 walk to living room, find the light and also switch board, switch on the first light, look at the next light switch, again switch on the second light, look at the next light switch, again switch on the third light
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <LIGHT> (2)
-[TurnTo] <LIGHT> (2)
-[LookAt] <LIGHT> (2)
-[SwitchOn] <LIGHT> (2)
-[Find] <LIGHT> (3)
-[TurnTo] <LIGHT> (3)
-[LookAt] <LIGHT> (3)
-[SwitchOn] <LIGHT> (3)
+[Walk] <living_room> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <light> (2)
+[TurnTo] <light> (2)
+[LookAt] <light> (2)
+[SwitchOn] <light> (2)
+[Find] <light> (3)
+[TurnTo] <light> (3)
+[LookAt] <light> (3)
+[SwitchOn] <light> (3)

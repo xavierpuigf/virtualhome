@@ -1,0 +1,10 @@
+Wash teeth
+Walk to bathroom.  Find mouthwash or turn on water.  Put mouthwash or water in mouth.  Swish around for 30 seconds.  Spit mouthwash out.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <faucet> (1.1000)
+[FIND] <faucet> (1.1000)
+[SWITCHON] <faucet> (1.1000)
+[FIND] <teeth> (1.1001)
+[RINSE] <teeth> (1.1001)

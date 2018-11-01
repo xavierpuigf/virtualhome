@@ -2,11 +2,11 @@ Pet dog
 Pet my dog on the couch
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <HANDS_BOTH> (1)
-[Stretch] <HANDS_BOTH> (1)
-[Find] <DOG> (1)
-[Touch] <DOG> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <hands_both> (1)
+[Stretch] <hands_both> (1)
+[Find] <dog> (1)
+[Touch] <dog> (1)

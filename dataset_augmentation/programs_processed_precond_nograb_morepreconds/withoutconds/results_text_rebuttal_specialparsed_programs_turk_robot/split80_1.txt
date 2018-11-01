@@ -2,8 +2,8 @@ Close shower curtain
 Pull the curtain across the curtain rod until closed.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SHOWER> (1)
-[Find] <CURTAIN> (1)
-[Pull] <CURTAIN> (1)
-[Close] <CURTAIN> (1)
+[Walk] <bathroom> (1)
+[Walk] <shower> (1)
+[Find] <curtain> (1)
+[Pull] <curtain> (1)
+[Close] <curtain> (1)

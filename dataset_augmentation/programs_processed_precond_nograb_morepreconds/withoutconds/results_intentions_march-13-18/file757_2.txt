@@ -2,9 +2,9 @@ Work
 Find the computer. Turn it on by pressing the on button. Wait for it to load. Use the mouse and keyboard to perform your tasks on screen.
 
 
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Touch] <MOUSE> (1)
-[Find] <KEYBOARD> (1)
-[Touch] <KEYBOARD> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <mouse> (1)
+[Touch] <mouse> (1)
+[Find] <keyboard> (1)
+[Touch] <keyboard> (1)

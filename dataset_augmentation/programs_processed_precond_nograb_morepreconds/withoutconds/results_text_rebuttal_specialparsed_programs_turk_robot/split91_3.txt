@@ -2,9 +2,9 @@ Wipe down baseboards please
 Use a rag to get all the dust off the baseboards please.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Walk] <WALL> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <living_room> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Walk] <wall> (1)
+[PutObjBack] <rag> (1)

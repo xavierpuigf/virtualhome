@@ -2,9 +2,9 @@ Watch TV
 Watch the tv without lighting
 
 
-[Find] <LIGHTING> (1)
-[SwitchOff] <LIGHTING> (1)
-[Find] <SOFA> (1)
-[Crawl] <SOFA> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
+[Find] <lighting> (1)
+[SwitchOff] <lighting> (1)
+[Find] <sofa> (1)
+[Crawl] <sofa> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)

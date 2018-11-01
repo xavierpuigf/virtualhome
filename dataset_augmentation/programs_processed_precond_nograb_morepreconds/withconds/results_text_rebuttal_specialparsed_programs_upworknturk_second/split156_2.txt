@@ -1,21 +1,24 @@
-4
-is_off: ('TELEVISION', '1') --> , ('LIGHT', '1') --> 
+7
+is_off: ('LIGHT', '1') --> , ('TELEVISION', '1') --> 
+plugged: ('LIGHT', '1') --> , ('TELEVISION', '1') --> 
+atreach: ('BED', '1') --> ('TELEVISION', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('REMOTE CONTROL', '1') --> ('DRESSER', '1'), ('TELEVISION', '1') --> ('BED', '1')
+location: ('LIGHT', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('TELEVISION', '1') --> ('BEDROOM', '1')
 in: ('REMOTE CONTROL', '1') --> ('DRESSER', '1')
-location: ('REMOTE CONTROL', '1') --> ('BEDROOM', '1'), ('TELEVISION', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('DRESSER', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
-atreach: ('REMOTE CONTROL', '1') --> ('DRESSER', '1'), ('TELEVISION', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('LIGHT', '1'), ('BED', '1') --> ('TELEVISION', '1')
+facing: ('BED', '1') --> ('TELEVISION', '1')
+free: ('BED', '1') --> 
 Watch TV
 Grab television remote. Sit down on bed. Turn television on. Select channel to watch on.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Walk] <DRESSER> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Walk] <BED> (1)
-[Sit] <BED> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Walk] <dresser> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Walk] <bed> (1)
+[Sit] <bed> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Watch] <television> (1)

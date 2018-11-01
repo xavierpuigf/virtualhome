@@ -1,0 +1,12 @@
+Browse internet
+Sit at computer and surf the web
+
+
+[FIND] <chair> (1.280)
+[SIT] <chair> (1.280)
+[FIND] <mouse> (1.315)
+[GRAB] <mouse> (1.315)
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)
+[TURNTO] <computer> (1.318)
+[LOOKAT] <computer> (1.318)

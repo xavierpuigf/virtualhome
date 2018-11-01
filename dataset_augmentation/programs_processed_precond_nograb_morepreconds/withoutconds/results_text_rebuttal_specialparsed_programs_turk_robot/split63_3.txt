@@ -2,11 +2,11 @@ Wash back
 Wash my back for me when I'm in the shower.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SHOWER> (1)
-[Find] <SHOWER> (1)
-[Enter] <SHOWER> (1)
-[Find] <SPONGE> (1)
-[Grab] <SPONGE> (1)
-[PutObjBack] <SPONGE> (1)
-[Leave] <SHOWER> (1)
+[Walk] <bathroom> (1)
+[Walk] <shower> (1)
+[Find] <shower> (1)
+[Enter] <shower> (1)
+[Find] <sponge> (1)
+[Grab] <sponge> (1)
+[PutObjBack] <sponge> (1)
+[Leave] <shower> (1)

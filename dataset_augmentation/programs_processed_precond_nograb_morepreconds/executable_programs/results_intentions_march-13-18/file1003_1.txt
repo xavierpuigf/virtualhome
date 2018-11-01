@@ -1,0 +1,20 @@
+Set up table
+go to the kitchen and set (up) the table
+
+
+[RUN] <dining_room> (1.161)
+[WALK] <cup> (1.1000)
+[FIND] <cup> (1.1000)
+[GRAB] <cup> (1.1000)
+[FIND] <cup> (2.1001)
+[GRAB] <cup> (2.1001)
+[WALK] <table> (1.1002)
+[PUTBACK] <cup> (1.1000) <table> (1.1002)
+[PUTBACK] <cup> (2.1001) <table> (1.1002)
+[FIND] <plate> (1.1003)
+[GRAB] <plate> (1.1003)
+[FIND] <plate> (2.1004)
+[GRAB] <plate> (2.1004)
+[WALK] <table> (1.1002)
+[PUTBACK] <plate> (1.1003) <table> (1.1002)
+[PUTBACK] <plate> (2.1004) <table> (1.1002)

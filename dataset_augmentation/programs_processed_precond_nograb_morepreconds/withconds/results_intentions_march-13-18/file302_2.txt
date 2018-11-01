@@ -4,5 +4,5 @@ Turn on light
 walk to living room. switch on lights.
 
 
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)

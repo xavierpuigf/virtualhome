@@ -1,14 +1,14 @@
 2
-location: ('CURTAIN', '1') --> ('BATHROOM', '1'), ('SHOWER', '1') --> ('BATHROOM', '1')
-atreach: ('CURTAIN', '1') --> ('SHOWER', '1'), ('SHOWER', '1') --> ('SHOWER', '1')
+atreach: ('SHOWER', '1') --> ('SHOWER', '1'), ('CURTAIN', '1') --> ('SHOWER', '1')
+location: ('SHOWER', '1') --> ('BATHROOM', '1'), ('CURTAIN', '1') --> ('BATHROOM', '1')
 Change shower curtain
 Take the old shower curtain off the rail and rings. Put the new shower curtain on the same rail and rings.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SHOWER> (1)
-[Find] <SHOWER> (1)
-[TurnTo] <SHOWER> (1)
-[Find] <CURTAIN> (1)
-[Pull] <CURTAIN> (1)
-[Sew] <CURTAIN> (1)
+[Walk] <bathroom> (1)
+[Walk] <shower> (1)
+[Find] <shower> (1)
+[TurnTo] <shower> (1)
+[Find] <curtain> (1)
+[Pull] <curtain> (1)
+[Sew] <curtain> (1)

@@ -1,0 +1,12 @@
+Work
+I walk to the office. I sit down in the chair. I turn on the computer. I start typing on the keyboard.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.94)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <computer> (1.1000)
+[SWITCHON] <computer> (1.1000)
+[FIND] <keyboard> (1.1001)
+[TYPE] <keyboard> (1.1001)

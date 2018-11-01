@@ -1,0 +1,15 @@
+Drink
+I walk to the cabinet and find a glass, I switch on the faucet and pour water into the glass. I switch off the faucet and drink the water.
+
+
+[WALK] <cabinet> (1.1000)
+[FIND] <glass> (1.1001)
+[GRAB] <glass> (1.1001)
+[FIND] <faucet> (1.1002)
+[SWITCHON] <faucet> (1.1002)
+[FIND] <water> (1.1003)
+[FIND] <sink> (1.191)
+[PUTBACK] <glass> (1.1001) <sink> (1.191)
+[GRAB] <glass> (1.1001)
+[SWITCHOFF] <faucet> (1.1002)
+[DRINK] <glass> (1.1001)

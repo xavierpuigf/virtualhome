@@ -3,11 +3,11 @@ Wash dishes by hand
 Washing
 
 
-[Find] <DISH SOAP> (1)
-[Grab] <DISH SOAP> (1)
-[Find] <MUG> (1)
-[Grab] <MUG> (1)
-[Find] <DISHWASHER> (1)
-[Squeeze] <DISHWASHER> (1)
-[Wash] <MUG> (1)
-[Scrub] <DISHWASHER> (1)
+[Find] <dish_soap> (1)
+[Grab] <dish_soap> (1)
+[Find] <mug> (1)
+[Grab] <mug> (1)
+[Find] <dishwasher> (1)
+[Squeeze] <dishwasher> (1)
+[Wash] <mug> (1)
+[Scrub] <dishwasher> (1)

@@ -1,0 +1,17 @@
+Drink
+I go to the kitchen, take a glass from the cupboard, fill with water and drink
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <cupboard> (1.1000)
+[FIND] <cupboard> (1.1000)
+[OPEN] <cupboard> (1.1000)
+[FIND] <water_glass> (1.1001)
+[GRAB] <water_glass> (1.1001)
+[WALK] <water> (1.1002)
+[FIND] <water> (1.1002)
+[GRAB] <water> (1.1002)
+[POUR] <water> (1.1002) <water_glass> (1.1001)
+[DRINK] <water> (1.1002)
+[RINSE] <water_glass> (1.1001)
+[PUTBACK] <water_glass> (1.1001) <cupboard> (1.1000)

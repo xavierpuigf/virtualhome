@@ -1,0 +1,9 @@
+Take shower
+find the dresses, find the towel, walk to bathroom, find the shower, open the shower and take a shower
+
+
+[FIND] <clothes_dress> (1.1000)
+[FIND] <towel> (1.1001)
+[WALK] <bathroom> (1.1)
+[WALK] <shower> (1.1002)
+[FIND] <shower> (1.1002)

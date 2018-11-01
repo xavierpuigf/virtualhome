@@ -3,7 +3,7 @@ Find the light circuit breaker in the kitchen
 
 
 [StandUp]
-[Walk] <KITCHEN> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
+[Walk] <kitchen> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)

@@ -2,11 +2,11 @@ Cook some food
 Walk Into Kitchen. Open Refrigerator. Grab Food. Walk to Microwave. Insert food into microwave. Cook until warm.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <FOOD_FOOD> (1)
-[Close] <FRIDGE> (1)
-[Walk] <MICROWAVE> (1)
-[SwitchOn] <MICROWAVE> (1)
-[SwitchOff] <MICROWAVE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <food_food> (1)
+[Close] <fridge> (1)
+[Walk] <microwave> (1)
+[SwitchOn] <microwave> (1)
+[SwitchOff] <microwave> (1)

@@ -1,0 +1,7 @@
+Read book
+Find a book, pick up the book, open the book, and read it.
+
+
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[READ] <book> (1.1000)

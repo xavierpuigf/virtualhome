@@ -1,0 +1,8 @@
+Listen to music
+walk into living room, walk to stereo, turn on stereo, listen to music
+
+
+[WALK] <living_room> (1.243)
+[WALK] <stereo> (1.1000)
+[FIND] <stereo> (1.1000)
+[SWITCHON] <stereo> (1.1000)

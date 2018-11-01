@@ -1,15 +1,15 @@
 2
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
 atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('REMOTE CONTROL', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
 Change TV channel
 I find the remote then I push the button to switch it to the tv channel i want to watch
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[TurnTo] <TELEVISION> (1)
-[PointAt] <TELEVISION> (1)
-[Push] <REMOTE CONTROL> (1)
+[Walk] <living_room> (1)
+[Walk] <remote_control> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <television> (1)
+[TurnTo] <television> (1)
+[PointAt] <television> (1)
+[Push] <remote_control> (1)

@@ -2,10 +2,10 @@ Check self in mirror
 Look at self in the mirror to make sure everything matches, fits right, is buttoned, zipped, tucked, etc.
 
 
-[Find] <MIRROR> (1)
-[TurnTo] <MIRROR> (1)
-[PointAt] <MIRROR> (1)
-[TurnTo] <MIRROR> (1)
-[LookAt] <MIRROR> (1)
-[Find] <BEDROOM> (1)
-[Crawl] <BEDROOM> (1)
+[Find] <mirror> (1)
+[TurnTo] <mirror> (1)
+[PointAt] <mirror> (1)
+[TurnTo] <mirror> (1)
+[LookAt] <mirror> (1)
+[Find] <bedroom> (1)
+[Crawl] <bedroom> (1)

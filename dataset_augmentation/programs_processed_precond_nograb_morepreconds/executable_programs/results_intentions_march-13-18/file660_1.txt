@@ -1,0 +1,15 @@
+Wash hands
+Go to the bathroom and to the sink, turn the faucet on, push the bottle of soap onto your hands and scrub them. Then rinse your hands out and turn the faucet off.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <sink> (1.1000)
+[FIND] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <soap> (1.1002)
+[PUSH] <soap> (1.1002)
+[FIND] <hands_both> (1.1003)
+[SCRUB] <hands_both> (1.1003)
+[RINSE] <hands_both> (1.1003)
+[SWITCHOFF] <faucet> (1.1001)

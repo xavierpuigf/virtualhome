@@ -1,0 +1,14 @@
+Wash clothes
+I hold my clothes. I walk over to the washing machine. I put clothes in the washing machine. I wash the clothes.
+
+
+[FIND] <basket_for_clothes> (1.1000)
+[GRAB] <basket_for_clothes> (1.1000)
+[FIND] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[PUTBACK] <basket_for_clothes> (1.1000) <washing_machine> (1.1001)
+[FIND] <soap> (1.1002)
+[GRAB] <soap> (1.1002)
+[PUTBACK] <soap> (1.1002) <washing_machine> (1.1001)
+[FIND] <washing_machine> (1.1001)
+[TURNTO] <washing_machine> (1.1001)

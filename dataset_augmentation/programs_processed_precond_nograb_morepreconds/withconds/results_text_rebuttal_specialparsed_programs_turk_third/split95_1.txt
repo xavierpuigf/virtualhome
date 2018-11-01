@@ -1,18 +1,18 @@
 3
+atreach: ('BOWL', '1') --> ('TABLE', '1'), ('CLOTHES_PANTS', '1') --> ('TABLE', '1'), ('BILLS', '1') --> ('TABLE', '1'), ('CELLPHONE', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('ENTRANCE HALL', '1'), ('BOWL', '1') --> ('ENTRANCE HALL', '1'), ('CLOTHES_PANTS', '1') --> ('ENTRANCE HALL', '1'), ('BILLS', '1') --> ('ENTRANCE HALL', '1'), ('CELLPHONE', '1') --> ('ENTRANCE HALL', '1')
 in: ('BOWL', '1') --> ('TABLE', '1')
-location: ('BILLS', '1') --> ('ENTRANCE HALL', '1'), ('TABLE', '1') --> ('ENTRANCE HALL', '1'), ('CELLPHONE', '1') --> ('ENTRANCE HALL', '1'), ('CLOTHES_PANTS', '1') --> ('ENTRANCE HALL', '1'), ('BOWL', '1') --> ('ENTRANCE HALL', '1')
-atreach: ('BILLS', '1') --> ('TABLE', '1'), ('CELLPHONE', '1') --> ('TABLE', '1'), ('CLOTHES_PANTS', '1') --> ('TABLE', '1'), ('BOWL', '1') --> ('TABLE', '1')
 Unload various items from pockets and place them in bowl on table
 I remove my belongings from my pockets when I enter my home and place them in a bowl on a table near the door
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <TABLE> (1)
-[Find] <BOWL> (1)
-[Grab] <BOWL> (1)
-[PutBack] <BOWL> (1) <TABLE> (1)
-[Find] <CLOTHES_PANTS> (1)
-[Find] <BILLS> (1)
-[Grab] <BILLS> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <table> (1)
+[Find] <bowl> (1)
+[Grab] <bowl> (1)
+[PutBack] <bowl> (1) <table> (1)
+[Find] <clothes_pants> (1)
+[Find] <bills> (1)
+[Grab] <bills> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)

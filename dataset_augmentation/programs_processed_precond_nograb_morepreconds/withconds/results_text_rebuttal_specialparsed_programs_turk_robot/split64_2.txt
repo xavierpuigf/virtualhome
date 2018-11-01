@@ -1,18 +1,19 @@
-2
-location: ('MAGAZINE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+3
 atreach: ('MAGAZINE', '1') --> ('MAGAZINE', '1'), ('COUCH', '1') --> ('COUCH', '1')
+location: ('MAGAZINE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Read magazine
 Please sit on the couch and read a magazine
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <MAGAZINE> (1)
-[Find] <MAGAZINE> (1)
-[Grab] <MAGAZINE> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[TurnTo] <MAGAZINE> (1)
-[LookAt] <MAGAZINE> (1)
-[Read] <MAGAZINE> (1)
-[Read] <MAGAZINE> (1)
-[Read] <MAGAZINE> (1)
+[Walk] <living_room> (1)
+[Walk] <magazine> (1)
+[Find] <magazine> (1)
+[Grab] <magazine> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[TurnTo] <magazine> (1)
+[LookAt] <magazine> (1)
+[Read] <magazine> (1)
+[Read] <magazine> (1)
+[Read] <magazine> (1)

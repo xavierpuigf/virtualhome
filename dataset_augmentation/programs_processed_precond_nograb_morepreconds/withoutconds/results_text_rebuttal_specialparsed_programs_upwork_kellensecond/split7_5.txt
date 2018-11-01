@@ -2,12 +2,12 @@ Fluff pillow
 Walk to bed.  Pick up pillow.  Scrunch pillow together.  Straighten pillow out.  Put pillow on the bed.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[TurnTo] <BED> (1)
-[Find] <PILLOW> (1)
-[Grab] <PILLOW> (1)
-[Shake] <PILLOW> (1)
-[Squeeze] <PILLOW> (1)
-[PutBack] <PILLOW> (1) <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[TurnTo] <bed> (1)
+[Find] <pillow> (1)
+[Grab] <pillow> (1)
+[Shake] <pillow> (1)
+[Squeeze] <pillow> (1)
+[PutBack] <pillow> (1) <bed> (1)

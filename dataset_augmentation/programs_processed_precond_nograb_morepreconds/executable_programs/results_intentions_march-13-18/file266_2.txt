@@ -1,0 +1,10 @@
+Pet cat
+Find Cat in living room.  Walk to cat.  Pet cat.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cat> (1.1000)
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

@@ -1,0 +1,15 @@
+Hang keys
+Remove keys from purse, pocket or hand.  Place in designated area (bowl, or on hook). Leave area
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <dresser> (1.1000)
+[FIND] <purse> (1.1001)
+[GRAB] <purse> (1.1001)
+[OPEN] <purse> (1.1001)
+[FIND] <keys> (1.1002)
+[GRAB] <keys> (1.1002)
+[FIND] <bowl> (1.1003)
+[PUTBACK] <keys> (1.1002) <bowl> (1.1003)
+[CLOSE] <purse> (1.1001)
+[PUTOBJBACK] <purse> (1.1001)

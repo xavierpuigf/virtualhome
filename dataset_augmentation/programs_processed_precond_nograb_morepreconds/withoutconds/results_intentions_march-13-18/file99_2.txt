@@ -2,8 +2,8 @@ Pick up phone
 Pick up phone
 
 
-[Walk] <TABLE> (1)
-[Find] <PHONE> (1)
-[TurnTo] <PHONE> (1)
-[LookAt] <PHONE> (1)
-[Grab] <PHONE> (1)
+[Walk] <table> (1)
+[Find] <phone> (1)
+[TurnTo] <phone> (1)
+[LookAt] <phone> (1)
+[Grab] <phone> (1)

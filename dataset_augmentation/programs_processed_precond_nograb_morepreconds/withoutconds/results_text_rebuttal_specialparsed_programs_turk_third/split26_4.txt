@@ -2,6 +2,6 @@ Relax
 Lie down on the couch.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Lie] <COUCH> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Lie] <couch> (1)

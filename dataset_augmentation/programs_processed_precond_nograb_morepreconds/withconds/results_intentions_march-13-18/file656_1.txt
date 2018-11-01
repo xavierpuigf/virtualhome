@@ -1,14 +1,14 @@
 3
-inside: ('GROCERIES', '1') --> ('FRIDGE', '1')
-closed: ('FRIDGE', '1') --> 
 atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('GROCERIES', '1') --> ('FRIDGE', '1')
+closed: ('FRIDGE', '1') --> 
+inside: ('GROCERIES', '1') --> ('FRIDGE', '1')
 Put groceries in Fridge
 Walk to kitchen. Open fridge. Put groceries in fridge.
 
 
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[PutBack] <GROCERIES> (1) <FRIDGE> (1)
-[Close] <FRIDGE> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <groceries> (1)
+[Grab] <groceries> (1)
+[PutBack] <groceries> (1) <fridge> (1)
+[Close] <fridge> (1)

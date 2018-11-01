@@ -1,12 +1,13 @@
-2
-location: ('CAT', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
-atreach: ('CAT', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('CAT', '1')
+3
+atreach: ('COUCH', '1') --> ('CAT', '1'), ('CAT', '1') --> ('COUCH', '1')
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CAT', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Pet cat
 I would walk into the living room. Then sit on the couch and pet the cat.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <CAT> (1)
-[Touch] <CAT> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[Find] <cat> (1)
+[Touch] <cat> (1)

@@ -1,12 +1,12 @@
 2
-location: ('SHOES', '1') --> ('ENTRANCE HALL', '1')
 in: ('SHOES', '1') --> ('Character', 1)
+location: ('SHOES', '1') --> ('ENTRANCE HALL', '1')
 Take shoes off
 Take off your shoes by the door
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Find] <SHOES> (1)
-[PutOff] <SHOES> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Find] <shoes> (1)
+[PutOff] <shoes> (1)

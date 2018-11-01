@@ -1,14 +1,14 @@
 2
-location: ('CELLPHONE', '1') --> ('LIVING ROOM', '1')
 atreach: ('CELLPHONE', '1') --> ('CELLPHONE', '1')
+location: ('CELLPHONE', '1') --> ('LIVING ROOM', '1')
 Browse internet
 I pick up my phone. I touch it to navigate to the web browser. I can swipe and tap the screen to visit different websites. Then I read or watch the content within those websites.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CELLPHONE> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[Touch] <CELLPHONE> (1)
-[TurnTo] <CELLPHONE> (1)
-[LookAt] <CELLPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <cellphone> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[Touch] <cellphone> (1)
+[TurnTo] <cellphone> (1)
+[LookAt] <cellphone> (1)

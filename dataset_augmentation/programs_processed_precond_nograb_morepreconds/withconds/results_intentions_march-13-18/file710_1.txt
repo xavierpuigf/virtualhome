@@ -1,16 +1,16 @@
 3
+atreach: ('WATER', '1') --> ('SINK', '1'), ('SOAP', '1') --> ('SINK', '1'), ('HANDS_BOTH', '1') --> ('SINK', '1')
+location: ('SINK', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1')
 in: ('WATER', '1') --> ('SINK', '1')
-location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('WATER', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
-atreach: ('HANDS_BOTH', '1') --> ('SINK', '1'), ('WATER', '1') --> ('SINK', '1'), ('SOAP', '1') --> ('SINK', '1')
 Wash hands
 Walk to bathroom. Walk to sink and turn on the water. Grab the soap and wash the hands.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SINK> (1)
-[Find] <WATER> (1)
-[TurnTo] <WATER> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Find] <HANDS_BOTH> (1)
-[Wash] <HANDS_BOTH> (1)
+[Walk] <bathroom> (1)
+[Walk] <sink> (1)
+[Find] <water> (1)
+[TurnTo] <water> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Find] <hands_both> (1)
+[Wash] <hands_both> (1)

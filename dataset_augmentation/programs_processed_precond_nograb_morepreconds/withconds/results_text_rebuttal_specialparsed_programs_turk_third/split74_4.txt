@@ -1,20 +1,21 @@
-3
-is_off: ('VIDEO GAME CONSOLE', '2') --> , ('VIDEO GAME CONSOLE', '1') --> 
-location: ('VIDEO GAME CONTROLLER', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONSOLE', '2') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONSOLE', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONTROLLER', '2') --> ('LIVING ROOM', '1')
-atreach: ('VIDEO GAME CONTROLLER', '1') --> ('VIDEO GAME CONSOLE', '1'), ('VIDEO GAME CONSOLE', '2') --> ('VIDEO GAME CONSOLE', '1'), ('VIDEO GAME CONSOLE', '1') --> ('VIDEO GAME CONSOLE', '1'), ('VIDEO GAME CONTROLLER', '2') --> ('VIDEO GAME CONSOLE', '1')
+4
+is_off: ('VIDEO GAME CONSOLE', '1') --> , ('VIDEO GAME CONSOLE', '2') --> 
+plugged: ('VIDEO GAME CONSOLE', '1') --> , ('VIDEO GAME CONSOLE', '2') --> 
+atreach: ('VIDEO GAME CONSOLE', '1') --> ('VIDEO GAME CONSOLE', '1'), ('VIDEO GAME CONTROLLER', '1') --> ('VIDEO GAME CONSOLE', '1'), ('VIDEO GAME CONSOLE', '2') --> ('VIDEO GAME CONSOLE', '1'), ('VIDEO GAME CONTROLLER', '2') --> ('VIDEO GAME CONSOLE', '1')
+location: ('VIDEO GAME CONSOLE', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONTROLLER', '1') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONSOLE', '2') --> ('LIVING ROOM', '1'), ('VIDEO GAME CONTROLLER', '2') --> ('LIVING ROOM', '1')
 Playing video game
 Playing  video games  on various video game  systems such as wii u  and  xbox
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <VIDEO GAME CONSOLE> (1)
-[Find] <VIDEO GAME CONSOLE> (1)
-[SwitchOn] <VIDEO GAME CONSOLE> (1)
-[Find] <VIDEO GAME CONTROLLER> (1)
-[Grab] <VIDEO GAME CONTROLLER> (1)
-[PutObjBack] <VIDEO GAME CONTROLLER> (1)
-[SwitchOff] <VIDEO GAME CONSOLE> (1)
-[Find] <VIDEO GAME CONSOLE> (2)
-[SwitchOn] <VIDEO GAME CONSOLE> (2)
-[Find] <VIDEO GAME CONTROLLER> (2)
-[Grab] <VIDEO GAME CONTROLLER> (2)
+[Walk] <living_room> (1)
+[Walk] <video_game_console> (1)
+[Find] <video_game_console> (1)
+[SwitchOn] <video_game_console> (1)
+[Find] <video_game_controller> (1)
+[Grab] <video_game_controller> (1)
+[PutObjBack] <video_game_controller> (1)
+[SwitchOff] <video_game_console> (1)
+[Find] <video_game_console> (2)
+[SwitchOn] <video_game_console> (2)
+[Find] <video_game_controller> (2)
+[Grab] <video_game_controller> (2)

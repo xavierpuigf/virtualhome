@@ -1,31 +1,32 @@
-6
-inside: ('CREDITCARD', '1') --> ('DESK', '1')
-atreach: ('KEYBOARD', '1') --> ('FILING CABINET', '1'), ('COMPUTER', '1') --> ('FILING CABINET', '1'), ('BILLS', '1') --> ('FILING CABINET', '1'), ('DESK', '1') --> ('FILING CABINET', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('CREDITCARD', '1') --> ('FILING CABINET', '1')
-location: ('DESK', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('BILLS', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1')
-closed: ('DESK', '1') --> 
-in: ('BILLS', '1') --> ('FILING CABINET', '1')
+7
 is_off: ('COMPUTER', '1') --> 
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('BILLS', '1') --> ('FILING CABINET', '1'), ('COMPUTER', '1') --> ('FILING CABINET', '1'), ('DESK', '1') --> ('FILING CABINET', '1'), ('CREDITCARD', '1') --> ('FILING CABINET', '1'), ('KEYBOARD', '1') --> ('FILING CABINET', '1')
+location: ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('BILLS', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CREDITCARD', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1')
+closed: ('DESK', '1') --> 
+inside: ('CREDITCARD', '1') --> ('DESK', '1')
+in: ('BILLS', '1') --> ('FILING CABINET', '1')
+free: ('CHAIR', '1') --> 
 Pay bills
 Pay my my bills that are due
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <FILING CABINET> (1)
-[Find] <BILLS> (1)
-[Grab] <BILLS> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <BILLS> (1)
-[LookAt] <BILLS> (1)
-[Find] <DESK> (1)
-[Open] <DESK> (1)
-[PutBack] <BILLS> (1) <DESK> (1)
-[Find] <CREDITCARD> (1)
-[Grab] <CREDITCARD> (1)
-[TurnTo] <CREDITCARD> (1)
-[LookAt] <CREDITCARD> (1)
-[Find] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
-[PutObjBack] <CREDITCARD> (1)
+[Walk] <home_office> (1)
+[Walk] <filing_cabinet> (1)
+[Find] <bills> (1)
+[Grab] <bills> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <bills> (1)
+[LookAt] <bills> (1)
+[Find] <desk> (1)
+[Open] <desk> (1)
+[PutBack] <bills> (1) <desk> (1)
+[Find] <creditcard> (1)
+[Grab] <creditcard> (1)
+[TurnTo] <creditcard> (1)
+[LookAt] <creditcard> (1)
+[Find] <keyboard> (1)
+[Type] <keyboard> (1)
+[PutObjBack] <creditcard> (1)

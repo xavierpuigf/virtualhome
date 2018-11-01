@@ -3,9 +3,9 @@ Clean
 Vacuum tile floor, then wash with warm water and mop. Dry with clean cloth.
 
 
-[Find] <WATER> (1)
-[Wash] <WATER> (1)
-[Drink] <WATER> (1)
-[TurnTo] <WATER> (1)
-[LookAt] <WATER> (1)
-[Touch] <WATER> (1)
+[Find] <water> (1)
+[Wash] <water> (1)
+[Drink] <water> (1)
+[TurnTo] <water> (1)
+[LookAt] <water> (1)
+[Touch] <water> (1)

@@ -1,0 +1,23 @@
+Wash dishes with dishwasher
+I went to the kitchen and collected the dishes and put them into the dish washer and wiped them with towel and put back into cabinet..
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <kitchen_cabinet> (1.1000)
+[FIND] <kitchen_cabinet> (1.1000)
+[OPEN] <kitchen_cabinet> (1.1000)
+[FIND] <plate> (1.1001)
+[GRAB] <plate> (1.1001)
+[FIND] <dishwasher> (1.1002)
+[OPEN] <dishwasher> (1.1002)
+[PUTBACK] <plate> (1.1001) <dishwasher> (1.1002)
+[FIND] <dish_soap> (1.1003)
+[GRAB] <dish_soap> (1.1003)
+[PUTBACK] <dish_soap> (1.1003) <dishwasher> (1.1002)
+[CLOSE] <dishwasher> (1.1002)
+[SWITCHON] <dishwasher> (1.1002)
+[GRAB] <plate> (1.1001)
+[WIPE] <plate> (1.1001)
+[FIND] <dishrack> (1.1004)
+[GRAB] <dishrack> (1.1004)
+[PUTOBJBACK] <dishrack> (1.1004)

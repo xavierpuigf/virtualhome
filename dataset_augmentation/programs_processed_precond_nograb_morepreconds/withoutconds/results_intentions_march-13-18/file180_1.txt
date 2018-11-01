@@ -3,9 +3,9 @@ Find the phone
 
 
 [StandUp]
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)
-[Touch] <PHONE> (1)
-[PlugIn] <PHONE> (1)
-[TurnTo] <PHONE> (1)
-[PointAt] <PHONE> (1)
+[Find] <phone> (1)
+[Grab] <phone> (1)
+[Touch] <phone> (1)
+[PlugIn] <phone> (1)
+[TurnTo] <phone> (1)
+[PointAt] <phone> (1)

@@ -1,1 +1,1 @@
-[{"atreach": [["HOMEWORK", "2"], ["CHAIR", "1"]]}, {"atreach": [["CHAIR", "1"], ["CHAIR", "2"]]}, {"atreach": [["CHAIR", "2"], ["TABLE", "1"]]}, {"atreach": [["HOMEWORK", "1"], ["CHAIR", "1"]]}]
+[{"atreach": [["chair", "1"], ["chair", "2"]]}, {"atreach": [["chair", "2"], ["table", "1"]]}, {"atreach": [["homework", "1"], ["chair", "1"]]}, {"atreach": [["homework", "2"], ["chair", "1"]]}, {"free": ["chair", "1"]}, {"free": ["chair", "2"]}]

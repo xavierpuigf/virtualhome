@@ -1,0 +1,18 @@
+Clean bathroom
+I'm going to clean the bathroom, take the brush, wash and rinse the toilet and shower
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <brush> (1.1000)
+[FIND] <brush> (1.1000)
+[GRAB] <brush> (1.1000)
+[FIND] <detergent> (1.1001)
+[GRAB] <detergent> (1.1001)
+[FIND] <toilet> (1.1002)
+[PUTBACK] <detergent> (1.1001) <toilet> (1.1002)
+[FIND] <toilet> (1.1002)
+[SCRUB] <toilet> (1.1002)
+[RINSE] <toilet> (1.1002)
+[FIND] <shower> (1.1003)
+[SCRUB] <shower> (1.1003)
+[RINSE] <shower> (1.1003)

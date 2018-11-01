@@ -1,0 +1,16 @@
+Wash clothes
+Walk to bathroom. Open washer. Put clothes in washer. Put soap in washer. Close washer. Turn washer on.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <washing_machine> (1.1000)
+[FIND] <washing_machine> (1.1000)
+[OPEN] <washing_machine> (1.1000)
+[FIND] <clothes_underwear> (1.1001)
+[GRAB] <clothes_underwear> (1.1001)
+[PUTBACK] <clothes_underwear> (1.1001) <washing_machine> (1.1000)
+[FIND] <soap> (1.1002)
+[GRAB] <soap> (1.1002)
+[PUTBACK] <soap> (1.1002) <washing_machine> (1.1000)
+[CLOSE] <washing_machine> (1.1000)
+[SWITCHON] <washing_machine> (1.1000)

@@ -1,26 +1,25 @@
-5
-is_off: ('BLOW DRYER', '1') --> , ('ELECTRICAL OUTLET', '1') --> 
+4
+unplugged: ('BLOW DRYER', '1') --> 
+is_off: ('ELECTRICAL OUTLET', '1') --> , ('BLOW DRYER', '1') --> 
 atreach: ('BLOW DRYER', '1') --> ('BLOW DRYER', '1'), ('ELECTRICAL OUTLET', '1') --> ('ELECTRICAL OUTLET', '1'), ('HAIR', '1') --> ('ELECTRICAL OUTLET', '1')
 location: ('BLOW DRYER', '1') --> ('BATHROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('BATHROOM', '1'), ('HAIR', '1') --> ('BATHROOM', '1')
-unplugged: ('BLOW DRYER', '1') --> 
-plugged: ('BLOW DRYER', '1') --> 
 Dry hair
 Use blow dryer to dry hair
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <BLOW DRYER> (1)
-[Find] <BLOW DRYER> (1)
-[Grab] <BLOW DRYER> (1)
-[Walk] <ELECTRICAL OUTLET> (1)
-[PlugIn] <BLOW DRYER> (1)
-[SwitchOn] <ELECTRICAL OUTLET> (1)
-[SwitchOn] <BLOW DRYER> (1)
-[Find] <HAIR> (1)
-[TurnTo] <HAIR> (1)
-[PointAt] <HAIR> (1)
-[Shake] <BLOW DRYER> (1)
-[SwitchOff] <BLOW DRYER> (1)
-[SwitchOff] <ELECTRICAL OUTLET> (1)
-[PlugOut] <BLOW DRYER> (1)
-[PutObjBack] <BLOW DRYER> (1)
+[Walk] <bathroom> (1)
+[Walk] <blow_dryer> (1)
+[Find] <blow_dryer> (1)
+[Grab] <blow_dryer> (1)
+[Walk] <electrical_outlet> (1)
+[PlugIn] <blow_dryer> (1)
+[SwitchOn] <electrical_outlet> (1)
+[SwitchOn] <blow_dryer> (1)
+[Find] <hair> (1)
+[TurnTo] <hair> (1)
+[PointAt] <hair> (1)
+[Shake] <blow_dryer> (1)
+[SwitchOff] <blow_dryer> (1)
+[SwitchOff] <electrical_outlet> (1)
+[PlugOut] <blow_dryer> (1)
+[PutObjBack] <blow_dryer> (1)

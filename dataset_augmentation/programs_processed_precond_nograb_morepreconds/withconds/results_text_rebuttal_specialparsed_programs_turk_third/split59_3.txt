@@ -3,7 +3,7 @@ Clean
 To clean the home office I do dusting first, then do vacuum clean the carpet, rearrange all chairs and furniture (if needed)
 
 
-[Find] <DUSTER> (1)
-[Wash] <DUSTER> (1)
-[TurnTo] <DUSTER> (1)
-[LookAt] <DUSTER> (1)
+[Find] <duster> (1)
+[Wash] <duster> (1)
+[TurnTo] <duster> (1)
+[LookAt] <duster> (1)

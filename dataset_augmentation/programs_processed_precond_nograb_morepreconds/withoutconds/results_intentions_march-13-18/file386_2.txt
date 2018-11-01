@@ -2,10 +2,10 @@ Go to toilet
 Find bathroom. Walk to bathroom. Find toilet. Walk to toilet. Pull down pants. Sit on toilet. Use the toilet. Use toilet paper to wipe.
 
 
-[Find] <TOILET> (1)
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Sit] <TOILET> (1)
-[Find] <TOILET PAPER> (1)
-[Wipe] <TOILET PAPER> (1)
-[Flush] <TOILET> (1)
+[Find] <toilet> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Sit] <toilet> (1)
+[Find] <toilet_paper> (1)
+[Wipe] <toilet_paper> (1)
+[Flush] <toilet> (1)

@@ -1,12 +1,11 @@
-4
-location: ('LAMP', '1') --> ('BEDROOM', '1')
-atreach: ('LAMP', '1') --> ('LAMP', '1')
+3
 is_on: ('LAMP', '1') --> 
-plugged: ('LAMP', '1') --> 
+atreach: ('LAMP', '1') --> ('LAMP', '1')
+location: ('LAMP', '1') --> ('BEDROOM', '1')
 Turn off light
 Walk to the lamp.  Find the switch.  Click the switch off.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LAMP> (1)
-[SwitchOff] <LAMP> (1)
+[Walk] <bedroom> (1)
+[Walk] <lamp> (1)
+[SwitchOff] <lamp> (1)

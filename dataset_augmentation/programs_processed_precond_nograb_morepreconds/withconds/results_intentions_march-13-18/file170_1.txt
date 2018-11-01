@@ -1,15 +1,17 @@
-2
+4
 is_off: ('TELEVISION', '1') --> 
+plugged: ('TELEVISION', '1') --> 
 atreach: ('COUCH', '1') --> ('TELEVISION', '1')
+free: ('COUCH', '1') --> 
 Watch TV
 find the TV remote, Use the remote to turn on the TV, sit on the couch, watch te
 
 
-[Find] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <TELEVISION> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
+[Find] <remote_control> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <television> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)

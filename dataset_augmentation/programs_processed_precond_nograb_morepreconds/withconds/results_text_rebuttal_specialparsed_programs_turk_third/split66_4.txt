@@ -1,12 +1,13 @@
-0
+1
+free: ('BED', '1') --> 
 Make bed
 Straighten the pillows. Shake the duvet and place it over the entire bed. Smooth out any wrinkles. Fold the extra blanket. Place it at the foot of the bed.
 
 
-[Find] <BED> (1)
-[TurnTo] <BED> (1)
-[PointAt] <BED> (1)
-[Wipe] <BED> (1)
-[TurnTo] <BED> (1)
-[LookAt] <BED> (1)
-[Sit] <BED> (1)
+[Find] <bed> (1)
+[TurnTo] <bed> (1)
+[PointAt] <bed> (1)
+[Wipe] <bed> (1)
+[TurnTo] <bed> (1)
+[LookAt] <bed> (1)
+[Sit] <bed> (1)

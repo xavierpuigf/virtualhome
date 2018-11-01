@@ -2,12 +2,12 @@ Raise blinds
 Pull the string down and to the right until the blinds are up. Release string.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CURTAIN> (1)
-[Find] <CURTAIN> (1)
-[Pull] <CURTAIN> (1)
-[Open] <CURTAIN> (1)
-[Walk] <CURTAIN> (2)
-[Find] <CURTAIN> (2)
-[Pull] <CURTAIN> (2)
-[Open] <CURTAIN> (2)
+[Walk] <home_office> (1)
+[Walk] <curtain> (1)
+[Find] <curtain> (1)
+[Pull] <curtain> (1)
+[Open] <curtain> (1)
+[Walk] <curtain> (2)
+[Find] <curtain> (2)
+[Pull] <curtain> (2)
+[Open] <curtain> (2)

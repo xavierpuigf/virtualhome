@@ -1,0 +1,16 @@
+Watch TV
+watching TV from sofa
+
+
+[WALK] <living_room> (1.243)
+[WALK] <television> (1.199)
+[FIND] <television> (1.199)
+[PLUGIN] <television> (1.199)
+[SWITCHON] <television> (1.199)
+[FIND] <sofa> (1.1000)
+[SIT] <sofa> (1.1000)
+[FIND] <remote_control> (1.1001)
+[GRAB] <remote_control> (1.1001)
+[DROP] <remote_control> (1.1001)
+[TURNTO] <television> (1.199)
+[LOOKAT] <television> (1.199)

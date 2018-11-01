@@ -4,9 +4,9 @@ Change TV channel
 I find the remote control. I pick it up. I push the button on the remote to switch channels. I put the remote down again.
 
 
-[Find] <LIVING ROOM> (1)
-[Crawl] <LIVING ROOM> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Push] <REMOTE CONTROL> (1)
-[PutObjBack] <REMOTE CONTROL> (1)
+[Find] <living_room> (1)
+[Crawl] <living_room> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Push] <remote_control> (1)
+[PutObjBack] <remote_control> (1)

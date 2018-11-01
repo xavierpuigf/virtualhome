@@ -2,12 +2,12 @@ Research
 I read different articles online to gain a better understanding of a particular business, industry, method, terminology, etc.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Find] <DOCUMENT> (1)
-[Grab] <DOCUMENT> (1)
-[Read] <DOCUMENT> (1)
+[Walk] <home_office> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Find] <document> (1)
+[Grab] <document> (1)
+[Read] <document> (1)

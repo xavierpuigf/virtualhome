@@ -1,22 +1,22 @@
 4
-inside: ('WATER GLASS', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('CUPBOARD', '1')
-location: ('CUPBOARD', '1') --> ('KITCHEN', '1')
+atreach: ('CUPBOARD', '1') --> ('CUPBOARD', '1'), ('WATER GLASS', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('WATER', '1')
+location: ('CUPBOARD', '1') --> ('KITCHEN', '1'), ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1')
 closed: ('CUPBOARD', '1') --> 
-atreach: ('WATER GLASS', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('WATER', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
+inside: ('WATER GLASS', '1') --> ('CUPBOARD', '1'), ('WATER', '1') --> ('CUPBOARD', '1')
 Drink
 I go to the kitchen, take a glass from the cupboard, fill with water and drink
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CUPBOARD> (1)
-[Find] <CUPBOARD> (1)
-[Open] <CUPBOARD> (1)
-[Find] <WATER GLASS> (1)
-[Grab] <WATER GLASS> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Grab] <WATER> (1)
-[Pour] <WATER> (1) <WATER GLASS> (1)
-[Drink] <WATER> (1)
-[Rinse] <WATER GLASS> (1)
-[PutBack] <WATER GLASS> (1) <CUPBOARD> (1)
+[Walk] <kitchen> (1)
+[Walk] <cupboard> (1)
+[Find] <cupboard> (1)
+[Open] <cupboard> (1)
+[Find] <water_glass> (1)
+[Grab] <water_glass> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Grab] <water> (1)
+[Pour] <water> (1) <water_glass> (1)
+[Drink] <water> (1)
+[Rinse] <water_glass> (1)
+[PutBack] <water_glass> (1) <cupboard> (1)

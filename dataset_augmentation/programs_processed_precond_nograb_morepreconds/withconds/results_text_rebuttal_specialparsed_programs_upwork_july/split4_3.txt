@@ -1,23 +1,24 @@
-2
-location: ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('CLOTHES_SKIRT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1')
-atreach: ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_SKIRT', '1') --> ('BASKET FOR CLOTHES', '1'), ('BED', '1') --> ('BASKET FOR CLOTHES', '1'), ('BASKET FOR CLOTHES', '1') --> ('BASKET FOR CLOTHES', '1')
+3
+atreach: ('BASKET FOR CLOTHES', '1') --> ('BASKET FOR CLOTHES', '1'), ('BED', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_DRESS', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_SKIRT', '1') --> ('BASKET FOR CLOTHES', '1')
+location: ('BASKET FOR CLOTHES', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('CLOTHES_DRESS', '1') --> ('BEDROOM', '1'), ('CLOTHES_SKIRT', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Fold laundry
 I fold clean laundry on the bed.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BASKET FOR CLOTHES> (1)
-[Find] <BASKET FOR CLOTHES> (1)
-[Grab] <BASKET FOR CLOTHES> (1)
-[Find] <BED> (1)
-[PutBack] <BASKET FOR CLOTHES> (1) <BED> (1)
-[Find] <CLOTHES_DRESS> (1)
-[Grab] <CLOTHES_DRESS> (1)
-[Fold] <CLOTHES_DRESS> (1)
-[PutBack] <CLOTHES_DRESS> (1) <BED> (1)
-[Find] <CLOTHES_SKIRT> (1)
-[Grab] <CLOTHES_SKIRT> (1)
-[Fold] <CLOTHES_SKIRT> (1)
-[PutBack] <CLOTHES_SKIRT> (1) <BED> (1)
-[Grab] <BASKET FOR CLOTHES> (1)
-[PutObjBack] <BASKET FOR CLOTHES> (1)
+[Walk] <bedroom> (1)
+[Walk] <basket_for_clothes> (1)
+[Find] <basket_for_clothes> (1)
+[Grab] <basket_for_clothes> (1)
+[Find] <bed> (1)
+[PutBack] <basket_for_clothes> (1) <bed> (1)
+[Find] <clothes_dress> (1)
+[Grab] <clothes_dress> (1)
+[Fold] <clothes_dress> (1)
+[PutBack] <clothes_dress> (1) <bed> (1)
+[Find] <clothes_skirt> (1)
+[Grab] <clothes_skirt> (1)
+[Fold] <clothes_skirt> (1)
+[PutBack] <clothes_skirt> (1) <bed> (1)
+[Grab] <basket_for_clothes> (1)
+[PutObjBack] <basket_for_clothes> (1)

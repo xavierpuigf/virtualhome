@@ -1,14 +1,14 @@
 2
-location: ('TELEPHONE', '1') --> ('HOME OFFICE', '1')
 atreach: ('TELEPHONE', '1') --> ('TELEPHONE', '1')
+location: ('TELEPHONE', '1') --> ('HOME OFFICE', '1')
 Return phone calls
 Listen to the answering, write down the messages from the answering machine and return the calls made.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <TELEPHONE> (1)
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
-[Dial] <TELEPHONE> (1)
+[Walk] <home_office> (1)
+[Walk] <telephone> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)
+[Dial] <telephone> (1)
 [Talk]
-[PutObjBack] <TELEPHONE> (1)
+[PutObjBack] <telephone> (1)

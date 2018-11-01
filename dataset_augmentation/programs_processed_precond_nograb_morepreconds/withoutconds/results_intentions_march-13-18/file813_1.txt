@@ -2,11 +2,11 @@ Wash dishes by hand
 walk to kitchen, look at the dishwasher, climb plate using hands, wash plate
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <DISHWASHER> (1)
-[Find] <DISHWASHER> (1)
-[TurnTo] <DISHWASHER> (1)
-[LookAt] <DISHWASHER> (1)
-[Find] <PLATE> (1)
-[Climb] <PLATE> (1)
-[Wash] <PLATE> (1)
+[Walk] <kitchen> (1)
+[Walk] <dishwasher> (1)
+[Find] <dishwasher> (1)
+[TurnTo] <dishwasher> (1)
+[LookAt] <dishwasher> (1)
+[Find] <plate> (1)
+[Climb] <plate> (1)
+[Wash] <plate> (1)

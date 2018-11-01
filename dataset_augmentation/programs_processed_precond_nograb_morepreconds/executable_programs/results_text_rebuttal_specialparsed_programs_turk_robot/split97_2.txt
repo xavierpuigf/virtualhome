@@ -1,0 +1,17 @@
+Change light
+Unscrew bulb. Throw it away. Grab new bulb. Screw new bulb in.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <lamp> (1.1000)
+[FIND] <light_bulb> (1.1001)
+[PULL] <light_bulb> (1.1001)
+[GRAB] <light_bulb> (1.1001)
+[FIND] <trashcan> (1.1002)
+[PUTBACK] <light_bulb> (1.1001) <trashcan> (1.1002)
+[WALK] <cabinet> (1.1003)
+[OPEN] <cabinet> (1.1003)
+[FIND] <light_bulb> (2.1004)
+[GRAB] <light_bulb> (2.1004)
+[CLOSE] <cabinet> (1.1003)
+[WALK] <lamp> (1.1000)

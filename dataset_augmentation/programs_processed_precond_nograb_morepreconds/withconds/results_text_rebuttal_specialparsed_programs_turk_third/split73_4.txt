@@ -1,15 +1,15 @@
 4
-inside: ('FOOD_CHEESE', '1') --> ('FRIDGE', '1')
-location: ('FRIDGE', '1') --> ('KITCHEN', '1')
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('FOOD_CHEESE', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('FOOD_CHEESE', '1') --> ('KITCHEN', '1')
 closed: ('FRIDGE', '1') --> 
-atreach: ('FOOD_CHEESE', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1')
+inside: ('FOOD_CHEESE', '1') --> ('FRIDGE', '1')
 Eat cheese
 Open fridge.  Get cheese.  Eat it.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <FOOD_CHEESE> (1)
-[Grab] <FOOD_CHEESE> (1)
-[Eat] <FOOD_CHEESE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <food_cheese> (1)
+[Grab] <food_cheese> (1)
+[Eat] <food_cheese> (1)

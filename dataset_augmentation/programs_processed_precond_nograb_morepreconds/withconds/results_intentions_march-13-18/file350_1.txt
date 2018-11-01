@@ -1,16 +1,18 @@
-3
+5
 is_off: ('TELEVISION', '1') --> 
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CONDITIONER', '1') --> ('LIVING ROOM', '1')
-atreach: ('REMOTE CONTROL', '1') --> ('SOFA', '1'), ('TELEVISION', '1') --> ('SOFA', '1'), ('CONDITIONER', '1') --> ('SOFA', '1'), ('SOFA', '1') --> ('SOFA', '1')
+plugged: ('TELEVISION', '1') --> 
+atreach: ('CONDITIONER', '1') --> ('SOFA', '1'), ('REMOTE CONTROL', '1') --> ('SOFA', '1'), ('TELEVISION', '1') --> ('SOFA', '1'), ('SOFA', '1') --> ('SOFA', '1')
+location: ('SOFA', '1') --> ('LIVING ROOM', '1'), ('CONDITIONER', '1') --> ('LIVING ROOM', '1'), ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+free: ('SOFA', '1') --> 
 Relax on sofa
 For relaxing walk to living room. Find the sofa to relax. Arrange the sofa to relax. Sit on the sofa to relaxing.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Find] <CONDITIONER> (1)
-[Find] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Lie] <SOFA> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Find] <conditioner> (1)
+[Find] <remote_control> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Lie] <sofa> (1)

@@ -1,0 +1,6 @@
+Work
+Find the computer and  turn it on
+
+
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)

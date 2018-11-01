@@ -2,14 +2,14 @@ Play games
 Take a break from work, choose a game on your computer, use your mouse or keyboard to play the desired game
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
-[TurnTo] <COMPUTER> (1)
-[PointAt] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)
+[TurnTo] <computer> (1)
+[PointAt] <computer> (1)
 [Play]

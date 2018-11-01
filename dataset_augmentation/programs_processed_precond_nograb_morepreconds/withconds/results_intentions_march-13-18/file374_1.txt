@@ -1,25 +1,25 @@
 5
 is_off: ('STOVE', '1') --> 
-inside: ('FRYINGPAN', '1') --> ('KITCHEN CABINET', '1'), ('FOOD_CHICKEN', '1') --> ('FRIDGE', '1')
-location: ('STOVE', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
-closed: ('KITCHEN CABINET', '1') --> , ('FRIDGE', '1') --> 
-atreach: ('STOVE', '1') --> ('STOVE', '1'), ('KITCHEN CABINET', '1') --> ('FRIDGE', '1'), ('FRYINGPAN', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1'), ('FOOD_CHICKEN', '1') --> ('FRIDGE', '1')
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('FOOD_CHICKEN', '1') --> ('FRIDGE', '1'), ('KITCHEN CABINET', '1') --> ('FRIDGE', '1'), ('FRYINGPAN', '1') --> ('FRIDGE', '1'), ('STOVE', '1') --> ('STOVE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('FOOD_CHICKEN', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('FRYINGPAN', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1')
+closed: ('FRIDGE', '1') --> , ('KITCHEN CABINET', '1') --> 
+inside: ('FOOD_CHICKEN', '1') --> ('FRIDGE', '1'), ('FRYINGPAN', '1') --> ('KITCHEN CABINET', '1')
 Cook some food
 Walk into the kitchen. Open the fridge. Take out the chicken. Open the kitchen cabinet. Take out the frying pan. Put the chicken in the frying pan. Put the frying pan on the stove. Turn on the stove. Cook the chicken.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <FOOD_CHICKEN> (1)
-[Grab] <FOOD_CHICKEN> (1)
-[Close] <FRIDGE> (1)
-[Find] <KITCHEN CABINET> (1)
-[Open] <KITCHEN CABINET> (1)
-[Find] <FRYINGPAN> (1)
-[Grab] <FRYINGPAN> (1)
-[Close] <KITCHEN CABINET> (1)
-[Walk] <STOVE> (1)
-[PutBack] <FRYINGPAN> (1) <STOVE> (1)
-[PutBack] <FOOD_CHICKEN> (1) <STOVE> (1)
-[SwitchOn] <STOVE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <food_chicken> (1)
+[Grab] <food_chicken> (1)
+[Close] <fridge> (1)
+[Find] <kitchen_cabinet> (1)
+[Open] <kitchen_cabinet> (1)
+[Find] <fryingpan> (1)
+[Grab] <fryingpan> (1)
+[Close] <kitchen_cabinet> (1)
+[Walk] <stove> (1)
+[PutBack] <fryingpan> (1) <stove> (1)
+[PutBack] <food_chicken> (1) <stove> (1)
+[SwitchOn] <stove> (1)

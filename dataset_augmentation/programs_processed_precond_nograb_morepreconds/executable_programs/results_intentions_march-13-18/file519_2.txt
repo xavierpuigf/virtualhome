@@ -1,0 +1,14 @@
+Pick up phone
+My friend is calling and I want to pick up the phone and chat with him for a little while on the couch.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[FIND] <cellphone> (1.1001)
+[GRAB] <cellphone> (1.1001)
+[WALK] <couch> (1.1002)
+[SIT] <couch> (1.1002)
+[LIE] <couch> (1.1002)
+[TYPE] <cellphone> (1.1001)

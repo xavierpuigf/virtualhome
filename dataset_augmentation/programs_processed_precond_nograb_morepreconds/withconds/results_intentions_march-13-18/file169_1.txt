@@ -5,11 +5,11 @@ Find toothbrush and fill with paste
 
 
 [StandUp]
-[Find] <TOOTH PASTE> (1)
-[Grab] <TOOTH PASTE> (1)
-[Find] <TOOTHBRUSH HOLDER> (1)
-[Drop] <TOOTH PASTE> (1)
-[Find] <TOOTHBRUSH> (1)
-[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
-[Find] <TOOTHBRUSH> (1)
-[Rinse] <TOOTHBRUSH> (1)
+[Find] <tooth_paste> (1)
+[Grab] <tooth_paste> (1)
+[Find] <toothbrush_holder> (1)
+[Drop] <tooth_paste> (1)
+[Find] <toothbrush> (1)
+[Spread] <tooth_paste> (1) <toothbrush> (1)
+[Find] <toothbrush> (1)
+[Rinse] <toothbrush> (1)

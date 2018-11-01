@@ -1,0 +1,10 @@
+Add paper to printer
+Take a stack of paper, about 25 pieces. Place carefully in the paper tray.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <printing_paper> (1.1001)
+[GRAB] <printing_paper> (1.1001)
+[WALK] <printer> (1.1002)
+[PUTBACK] <printing_paper> (1.1001) <printer> (1.1002)

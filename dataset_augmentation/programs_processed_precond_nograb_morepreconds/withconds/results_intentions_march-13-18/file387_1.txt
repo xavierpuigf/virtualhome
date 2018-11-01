@@ -1,11 +1,12 @@
-2
-location: ('COUCH', '1') --> ('LIVING ROOM', '1')
+3
 atreach: ('COUCH', '1') --> ('COUCH', '1')
+location: ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Relax on sofa
 Walk to living room. Find couch. Sit on couch
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)

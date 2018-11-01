@@ -1,0 +1,6 @@
+Pet cat
+Find the cat. Touch the cat with your hands.
+
+
+[FIND] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

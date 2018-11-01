@@ -2,12 +2,12 @@ Watch TV
 Sit down and pick up the remote.  Turn on the tv and find a show you like
 
 
-[Walk] <KIDS BEDROOM> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <kids_bedroom> (1)
+[Walk] <remote_control> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Watch] <television> (1)

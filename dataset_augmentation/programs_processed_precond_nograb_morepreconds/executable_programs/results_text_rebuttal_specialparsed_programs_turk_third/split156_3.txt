@@ -1,0 +1,13 @@
+Put mail in mail organizer
+I bring in the mail from the mail box an put it in the mail organizer located in the entrance hall.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <mail> (1.1000)
+[FIND] <mail> (1.1000)
+[GRAB] <mail> (1.1000)
+[FIND] <mail> (2.1001)
+[GRAB] <mail> (2.1001)
+[WALK] <table> (1.1002)
+[PUTBACK] <mail> (1.1000) <table> (1.1002)
+[PUTBACK] <mail> (2.1001) <table> (1.1002)

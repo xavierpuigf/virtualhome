@@ -1,0 +1,13 @@
+Listen to music
+I go to the bedroom and sit at my desk. I turn my radio on and listen to music.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[WALK] <desk> (1.1001)
+[FIND] <chair> (1.1002)
+[SIT] <chair> (1.1002)
+[FIND] <radio> (1.1003)
+[SWITCHON] <radio> (1.1003)

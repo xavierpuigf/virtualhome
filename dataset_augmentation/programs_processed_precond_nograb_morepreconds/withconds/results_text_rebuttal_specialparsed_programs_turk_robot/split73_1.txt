@@ -1,25 +1,26 @@
-3
+4
 is_off: ('COMPUTER', '1') --> 
-location: ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('MOUSEPAD', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('SCRABBLE', '1') --> ('HOME OFFICE', '1')
-atreach: ('KEYBOARD', '1') --> ('CHAIR', '1'), ('MOUSE', '1') --> ('CHAIR', '1'), ('COMPUTER', '1') --> ('CHAIR', '1'), ('MOUSEPAD', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('SCRABBLE', '1') --> ('CHAIR', '1')
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('COMPUTER', '1') --> ('CHAIR', '1'), ('KEYBOARD', '1') --> ('CHAIR', '1'), ('SCRABBLE', '1') --> ('CHAIR', '1'), ('MOUSE', '1') --> ('CHAIR', '1'), ('MOUSEPAD', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('COMPUTER', '1') --> ('HOME OFFICE', '1'), ('KEYBOARD', '1') --> ('HOME OFFICE', '1'), ('SCRABBLE', '1') --> ('HOME OFFICE', '1'), ('MOUSE', '1') --> ('HOME OFFICE', '1'), ('MOUSEPAD', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Play games
 Turn on the computer, wait for the computer to start, Log In once the computer starts, Go to the start menu on the computer OS, type in the name of the game, wait for the search results, click on the the result, open the game, read the instructions, try to follow the instructions, and try to have fun.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Find] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
-[Find] <SCRABBLE> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
-[Find] <MOUSEPAD> (1)
-[PutBack] <MOUSE> (1) <MOUSEPAD> (1)
-[Push] <MOUSE> (1)
-[Play] <SCRABBLE> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Find] <keyboard> (1)
+[Type] <keyboard> (1)
+[Find] <scrabble> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)
+[Find] <mousepad> (1)
+[PutBack] <mouse> (1) <mousepad> (1)
+[Push] <mouse> (1)
+[Play] <scrabble> (1)

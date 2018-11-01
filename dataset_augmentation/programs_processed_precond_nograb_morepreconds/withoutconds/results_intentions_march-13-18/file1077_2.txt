@@ -2,13 +2,13 @@ Change TV channel
 walk to living room, look at the television, switch on the television, grab the remote control, press the channel button in remote control, now the tv channel is changed
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (1)
-[Find] <TELEVISION> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <BUTTON> (1)
-[Grab] <BUTTON> (1)
+[Walk] <living_room> (1)
+[Walk] <television> (1)
+[Find] <television> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)
+[SwitchOn] <television> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <button> (1)
+[Grab] <button> (1)

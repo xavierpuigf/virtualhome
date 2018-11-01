@@ -1,18 +1,19 @@
-3
-in: ('BLANKET', '1') --> ('BED', '1')
-location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1')
+4
 atreach: ('BLANKET', '1') --> ('BED', '1'), ('SHEETS', '1') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1'), ('SHEETS', '1') --> ('BEDROOM', '1')
+in: ('BLANKET', '1') --> ('BED', '1')
+free: ('BED', '1') --> 
 Make bed
 Neatly fold the covers over your bed
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BLANKET> (1)
-[Grab] <BLANKET> (1)
-[Fold] <BLANKET> (1)
-[PutBack] <BLANKET> (1) <BED> (1)
-[Find] <SHEETS> (1)
-[Grab] <SHEETS> (1)
-[Fold] <SHEETS> (1)
-[PutBack] <SHEETS> (1) <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <blanket> (1)
+[Grab] <blanket> (1)
+[Fold] <blanket> (1)
+[PutBack] <blanket> (1) <bed> (1)
+[Find] <sheets> (1)
+[Grab] <sheets> (1)
+[Fold] <sheets> (1)
+[PutBack] <sheets> (1) <bed> (1)

@@ -2,9 +2,9 @@ Read book
 I pick up a book. I sit in a chair. I open the book.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Walk] <living_room> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)

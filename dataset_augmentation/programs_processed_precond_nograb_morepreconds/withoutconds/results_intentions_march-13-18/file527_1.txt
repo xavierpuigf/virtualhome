@@ -2,6 +2,6 @@ Turn on light
 I walk to wall. I put my hand on the switch. I push the button. I turn on the lights.
 
 
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)

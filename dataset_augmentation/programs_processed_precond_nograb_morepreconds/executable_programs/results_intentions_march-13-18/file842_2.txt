@@ -1,0 +1,12 @@
+Wash teeth
+Walk to bathroom. Find tooth paste, tooth brush and water. Squeeze tooth paste on tooth brush. Wash teeth.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <tooth_paste> (1.1000)
+[FIND] <tooth_paste> (1.1000)
+[FIND] <toothbrush> (1.1001)
+[FIND] <water> (1.1002)
+[SQUEEZE] <tooth_paste> (1.1000)
+[FIND] <teeth> (1.1003)
+[WASH] <teeth> (1.1003)

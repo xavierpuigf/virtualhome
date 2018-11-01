@@ -2,12 +2,12 @@ Arrange furniture
 Move furniture where you want it.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COFFEE TABLE> (1)
-[Push] <COFFEE TABLE> (1)
-[Walk] <COUCH> (1)
-[Push] <COUCH> (1)
-[Walk] <COUCH> (2)
-[Push] <COUCH> (2)
-[Walk] <CABINET> (1)
-[Push] <CABINET> (1)
+[Walk] <living_room> (1)
+[Walk] <coffee_table> (1)
+[Push] <coffee_table> (1)
+[Walk] <couch> (1)
+[Push] <couch> (1)
+[Walk] <couch> (2)
+[Push] <couch> (2)
+[Walk] <cabinet> (1)
+[Push] <cabinet> (1)

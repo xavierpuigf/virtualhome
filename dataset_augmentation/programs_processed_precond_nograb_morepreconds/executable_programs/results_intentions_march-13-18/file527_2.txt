@@ -1,0 +1,10 @@
+Browse internet
+I turn on computer. I use keyboard to type. I open browser. I search.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <computer> (1.1000)
+[FIND] <keyboard> (1.1001)
+[TYPE] <keyboard> (1.1001)
+[TURNTO] <computer> (1.1000)
+[LOOKAT] <computer> (1.1000)

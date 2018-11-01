@@ -2,10 +2,10 @@ Read book
 I go to the living room, take a book from the shelf, sit in the sofa and read the book
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Read] <book> (1)

@@ -1,1 +1,1 @@
-[{"location": [["WATER", "1"], ["KITCHEN", "1"]]}, {"location": [["CUP", "1"], ["KITCHEN", "1"]]}, {"atreach": [["WATER", "1"], ["CUP", "1"]]}]
+[{"atreach": [["water", "1"], ["cup", "1"]]}, {"location": [["cup", "1"], ["kitchen", "1"]]}, {"location": [["water", "1"], ["kitchen", "1"]]}]

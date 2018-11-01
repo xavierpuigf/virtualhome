@@ -1,20 +1,20 @@
 4
-inside: ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1'), ('BASKET FOR CLOTHES', '1') --> ('WASHING MACHINE', '1')
-location: ('WASHING MACHINE', '1') --> ('KITCHEN', '1')
+atreach: ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('LAUNDRY DETERGENT', '1') --> ('LAUNDRY DETERGENT', '1'), ('BASKET FOR CLOTHES', '1') --> ('LAUNDRY DETERGENT', '1')
+location: ('WASHING MACHINE', '1') --> ('KITCHEN', '1'), ('LAUNDRY DETERGENT', '1') --> ('KITCHEN', '1'), ('BASKET FOR CLOTHES', '1') --> ('KITCHEN', '1')
 closed: ('WASHING MACHINE', '1') --> 
-atreach: ('LAUNDRY DETERGENT', '1') --> ('LAUNDRY DETERGENT', '1'), ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('BASKET FOR CLOTHES', '1') --> ('LAUNDRY DETERGENT', '1')
+inside: ('LAUNDRY DETERGENT', '1') --> ('WASHING MACHINE', '1'), ('BASKET FOR CLOTHES', '1') --> ('WASHING MACHINE', '1')
 Wash clothes
 go do the laundry
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <WASHING MACHINE> (1)
-[Find] <WASHING MACHINE> (1)
-[Open] <WASHING MACHINE> (1)
-[Walk] <LAUNDRY DETERGENT> (1)
-[Find] <LAUNDRY DETERGENT> (1)
-[Grab] <LAUNDRY DETERGENT> (1)
-[Pour] <LAUNDRY DETERGENT> (1) <WASHING MACHINE> (1)
-[Find] <BASKET FOR CLOTHES> (1)
-[Grab] <BASKET FOR CLOTHES> (1)
-[PutBack] <BASKET FOR CLOTHES> (1) <WASHING MACHINE> (1)
+[Walk] <kitchen> (1)
+[Walk] <washing_machine> (1)
+[Find] <washing_machine> (1)
+[Open] <washing_machine> (1)
+[Walk] <laundry_detergent> (1)
+[Find] <laundry_detergent> (1)
+[Grab] <laundry_detergent> (1)
+[Pour] <laundry_detergent> (1) <washing_machine> (1)
+[Find] <basket_for_clothes> (1)
+[Grab] <basket_for_clothes> (1)
+[PutBack] <basket_for_clothes> (1) <washing_machine> (1)

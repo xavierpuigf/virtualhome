@@ -3,5 +3,5 @@ Pet cat
 I find cat. I touch cat.
 
 
-[Find] <CAT> (1)
-[Touch] <CAT> (1)
+[Find] <cat> (1)
+[Touch] <cat> (1)

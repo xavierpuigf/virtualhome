@@ -1,0 +1,13 @@
+Go to sleep
+Walk to bedroom. Find sheets. Grab sheets. Walk to bed. Put sheets on bed. Sit on bed. Lie in bed. Sleep.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <sheets> (1.1000)
+[FIND] <sheets> (1.1000)
+[GRAB] <sheets> (1.1000)
+[WALK] <bed> (1.1001)
+[PUTBACK] <sheets> (1.1000) <bed> (1.1001)
+[SIT] <bed> (1.1001)
+[LIE] <bed> (1.1001)
+[SLEEP]

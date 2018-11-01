@@ -1,21 +1,21 @@
 4
-inside: ('SHOES', '1') --> ('CLOSET', '1')
-location: ('CLOSET', '1') --> ('ENTRANCE HALL', '1'), ('SHOES', '2') --> ('ENTRANCE HALL', '1')
+atreach: ('SHOES', '1') --> ('SHOES', '1'), ('SHOES', '2') --> ('SHOES', '1'), ('CLOSET', '1') --> ('CLOSET', '1')
+location: ('SHOES', '1') --> ('ENTRANCE HALL', '1'), ('SHOES', '2') --> ('ENTRANCE HALL', '1'), ('CLOSET', '1') --> ('ENTRANCE HALL', '1')
 closed: ('CLOSET', '1') --> 
-atreach: ('CLOSET', '1') --> ('CLOSET', '1'), ('SHOES', '1') --> ('SHOES', '1'), ('SHOES', '2') --> ('SHOES', '1')
+inside: ('SHOES', '1') --> ('CLOSET', '1')
 Put away shoes
 The robot will take any shoes left in the hall and organize them neatly in the closet.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Grab] <SHOES> (1)
-[Find] <SHOES> (2)
-[Grab] <SHOES> (2)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[PutBack] <SHOES> (1) <CLOSET> (1)
-[Grab] <SHOES> (1)
-[PutBack] <SHOES> (1) <CLOSET> (1)
-[Close] <CLOSET> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Grab] <shoes> (1)
+[Find] <shoes> (2)
+[Grab] <shoes> (2)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[PutBack] <shoes> (1) <closet> (1)
+[Grab] <shoes> (1)
+[PutBack] <shoes> (1) <closet> (1)
+[Close] <closet> (1)

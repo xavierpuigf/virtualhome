@@ -2,9 +2,9 @@ Read book
 Bring book, lie on the sofa, read book
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Walk] <SOFA> (1)
-[Lie] <SOFA> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <book> (1)
+[Grab] <book> (1)
+[Walk] <sofa> (1)
+[Lie] <sofa> (1)
+[Read] <book> (1)

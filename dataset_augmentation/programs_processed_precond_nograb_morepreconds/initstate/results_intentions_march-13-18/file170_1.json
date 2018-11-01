@@ -1,1 +1,1 @@
-[{"is_off": ["TELEVISION", "1"]}, {"atreach": [["COUCH", "1"], ["TELEVISION", "1"]]}]
+[{"is_off": ["television", "1"]}, {"plugged": ["television", "1"]}, {"atreach": [["couch", "1"], ["television", "1"]]}, {"free": ["couch", "1"]}]

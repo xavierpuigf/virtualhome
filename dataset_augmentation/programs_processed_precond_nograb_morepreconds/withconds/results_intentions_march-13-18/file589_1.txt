@@ -1,16 +1,16 @@
 2
-location: ('GLASS', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1')
 atreach: ('GLASS', '1') --> ('GLASS', '1'), ('WATER', '1') --> ('WATER', '1')
+location: ('GLASS', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1')
 Drink
 I go to the kitchen. I get a glass. I fill it with water. I take a drink from the glass.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <GLASS> (1)
-[Find] <GLASS> (1)
-[Grab] <GLASS> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Grab] <WATER> (1)
-[Pour] <WATER> (1) <GLASS> (1)
-[Drink] <GLASS> (1)
+[Walk] <kitchen> (1)
+[Walk] <glass> (1)
+[Find] <glass> (1)
+[Grab] <glass> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Grab] <water> (1)
+[Pour] <water> (1) <glass> (1)
+[Drink] <glass> (1)

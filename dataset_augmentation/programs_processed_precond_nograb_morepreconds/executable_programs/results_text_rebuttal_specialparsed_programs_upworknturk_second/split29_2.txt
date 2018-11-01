@@ -1,0 +1,8 @@
+Make coffee
+Making coffee
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <coffe_maker> (1.1000)
+[FIND] <coffe_maker> (1.1000)
+[SWITCHON] <coffe_maker> (1.1000)

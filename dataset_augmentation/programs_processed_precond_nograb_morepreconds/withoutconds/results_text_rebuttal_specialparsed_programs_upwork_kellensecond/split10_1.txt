@@ -2,12 +2,12 @@ Go to sleep
 Turn off the lights, lay down on your bed with a pillow, and cover yourself with sheets
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
-[Find] <SHEETS> (1)
-[Cover] <SHEETS> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOff] <light> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)
+[Find] <sheets> (1)
+[Cover] <sheets> (1)
 [Sleep]

@@ -1,15 +1,16 @@
-2
-location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('BOOKMARK', '1') --> ('LIVING ROOM', '1')
-atreach: ('BOOK', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('BOOK', '1'), ('BOOKMARK', '1') --> ('CHAIR', '1')
+3
+atreach: ('CHAIR', '1') --> ('BOOK', '1'), ('BOOK', '1') --> ('CHAIR', '1'), ('BOOKMARK', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1'), ('BOOKMARK', '1') --> ('LIVING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Read book
 i bought a book written by my favorite author and im so excited in reading this so i went to my living room and open the book without any disturbances im going to read it fullly
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <BOOKMARK> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <bookmark> (1)
+[Read] <book> (1)

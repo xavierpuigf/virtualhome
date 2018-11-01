@@ -2,16 +2,16 @@ Go to sleep
 First I walk into the bedroom. Then I lay on the bed, put the blanket over me, set my alarm, plug in my cell phone, turn the lamp off, then close my eyes and sleep.
 
 
-[Walk] <BED> (1)
-[Find] <BLANKET> (1)
-[Uncover] <BLANKET> (1)
-[Lie] <BED> (1)
-[Find] <WOMAN> (1)
-[Cover] <WOMAN> (1) <BLANKET> (1)
-[Find] <ALARM CLOCK> (1)
-[SwitchOn] <ALARM CLOCK> (1)
-[Find] <PHONE> (1)
-[PlugIn] <PHONE> (1)
-[Find] <LAMP> (1)
-[SwitchOff] <LAMP> (1)
+[Walk] <bed> (1)
+[Find] <blanket> (1)
+[Uncover] <blanket> (1)
+[Lie] <bed> (1)
+[Find] <woman> (1)
+[Cover] <woman> (1) <blanket> (1)
+[Find] <alarm_clock> (1)
+[SwitchOn] <alarm_clock> (1)
+[Find] <phone> (1)
+[PlugIn] <phone> (1)
+[Find] <lamp> (1)
+[SwitchOff] <lamp> (1)
 [Sleep]

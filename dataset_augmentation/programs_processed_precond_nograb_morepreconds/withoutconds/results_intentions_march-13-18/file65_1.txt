@@ -2,12 +2,12 @@ Wash hands
 walk to kitchen. look at sink. stretch hands both. wash water.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <SINK> (1)
-[Find] <SINK> (1)
-[TurnTo] <SINK> (1)
-[LookAt] <SINK> (1)
-[Find] <HANDS_BOTH> (1)
-[Stretch] <HANDS_BOTH> (1)
-[Find] <WATER> (1)
-[Wash] <WATER> (1)
+[Walk] <kitchen> (1)
+[Walk] <sink> (1)
+[Find] <sink> (1)
+[TurnTo] <sink> (1)
+[LookAt] <sink> (1)
+[Find] <hands_both> (1)
+[Stretch] <hands_both> (1)
+[Find] <water> (1)
+[Wash] <water> (1)

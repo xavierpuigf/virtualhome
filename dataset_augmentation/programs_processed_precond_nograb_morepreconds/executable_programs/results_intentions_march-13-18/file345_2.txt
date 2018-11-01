@@ -1,0 +1,14 @@
+Wash dishes by hand
+Walking towards sink and look at the leftover plates. Scrape dishes to remove leftover food - use a rubber spatula or paper towel. Fill sink or dishpan with clean, hot water. Then wash and rinse to removing residues. Finally leave it to dry.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <kitchen_counter> (1.1000)
+[FIND] <plate> (1.1001)
+[TURNTO] <plate> (1.1001)
+[LOOKAT] <plate> (1.1001)
+[GRAB] <plate> (1.1001)
+[SCRUB] <plate> (1.1001)
+[RINSE] <plate> (1.1001)
+[WASH] <plate> (1.1001)
+[PUTBACK] <plate> (1.1001) <kitchen_counter> (1.1000)

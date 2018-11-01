@@ -2,12 +2,12 @@ Write an email
 find laptop, open laptop, switch on the laptop.  open Email and write email
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <LAPTOP> (1)
-[SwitchOn] <LAPTOP> (1)
-[Find] <MAIL> (1)
-[Open] <MAIL> (1)
-[Write] <MAIL> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <laptop> (1)
+[SwitchOn] <laptop> (1)
+[Find] <mail> (1)
+[Open] <mail> (1)
+[Write] <mail> (1)

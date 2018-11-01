@@ -2,8 +2,8 @@ Flush toilet
 Place hand on the toilet handle. Press downwards.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
-[TurnTo] <TOILET> (1)
-[Flush] <TOILET> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)
+[TurnTo] <toilet> (1)
+[Flush] <toilet> (1)

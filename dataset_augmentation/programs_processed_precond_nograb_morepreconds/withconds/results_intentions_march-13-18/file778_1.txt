@@ -1,20 +1,22 @@
-3
+5
 is_off: ('ALARM CLOCK', '1') --> 
+plugged: ('ALARM CLOCK', '1') --> , ('LIGHT', '1') --> 
 is_on: ('LIGHT', '1') --> 
-plugged: ('LIGHT', '1') --> 
+atreach: ('BED', '1') --> ('ALARM CLOCK', '1')
+free: ('BED', '1') --> 
 Go to sleep
 I change to my pyjamas. I get into bed. I set the alarm clock for the next morning. Then I turn off the light and sleep.
 
 
-[Find] <CLOTHES_UNDERWEAR> (1)
-[PutOn] <CLOTHES_UNDERWEAR> (1)
-[Find] <BED> (1)
-[Climb] <BED> (1)
-[Lie] <BED> (1)
-[Find] <ALARM CLOCK> (1)
-[SwitchOn] <ALARM CLOCK> (1)
-[Find] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
-[Find] <BLANKET> (1)
-[Pull] <BLANKET> (1)
+[Find] <clothes_underwear> (1)
+[PutOn] <clothes_underwear> (1)
+[Find] <bed> (1)
+[Climb] <bed> (1)
+[Lie] <bed> (1)
+[Find] <alarm_clock> (1)
+[SwitchOn] <alarm_clock> (1)
+[Find] <light> (1)
+[SwitchOff] <light> (1)
+[Find] <blanket> (1)
+[Pull] <blanket> (1)
 [Sleep]

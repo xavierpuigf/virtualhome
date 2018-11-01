@@ -1,30 +1,31 @@
-6
-sitting: ('Character', 1) --> 
-inside: ('CLOTHES_UNDERWEAR', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
-atreach: ('CLOTHES_UNDERWEAR', '1') --> ('WASHING MACHINE', '1'), ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1'), ('BASKET FOR CLOTHES', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1')
-location: ('WASHING MACHINE', '1') --> ('KITCHEN', '1'), ('CLOTHES_PANTS', '1') --> ('KITCHEN', '1')
-closed: ('WASHING MACHINE', '1') --> 
+7
 is_off: ('WASHING MACHINE', '1') --> 
+plugged: ('WASHING MACHINE', '1') --> 
+sitting: ('Character', 1) --> 
+atreach: ('BASKET FOR CLOTHES', '1') --> ('BASKET FOR CLOTHES', '1'), ('CLOTHES_PANTS', '1') --> ('WASHING MACHINE', '1'), ('WASHING MACHINE', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_UNDERWEAR', '1') --> ('WASHING MACHINE', '1')
+location: ('WASHING MACHINE', '1') --> ('KITCHEN', '1'), ('CLOTHES_PANTS', '1') --> ('KITCHEN', '1'), ('CLOTHES_SHIRT', '1') --> ('KITCHEN', '1'), ('CLOTHES_UNDERWEAR', '1') --> ('KITCHEN', '1')
+closed: ('WASHING MACHINE', '1') --> 
+inside: ('CLOTHES_SHIRT', '1') --> ('WASHING MACHINE', '1'), ('CLOTHES_UNDERWEAR', '1') --> ('WASHING MACHINE', '1')
 Wash clothes
 Find basket of clothes, pick it up and find the washing machine. Take clothes (shirt, pants and underwear) out of basket and into the washing machine. Turn on washing machine.
 
 
-[Find] <BASKET FOR CLOTHES> (1)
-[Walk] <BASKET FOR CLOTHES> (1)
-[Grab] <BASKET FOR CLOTHES> (1)
+[Find] <basket_for_clothes> (1)
+[Walk] <basket_for_clothes> (1)
+[Grab] <basket_for_clothes> (1)
 [StandUp]
-[Walk] <KITCHEN> (1)
-[Walk] <WASHING MACHINE> (1)
-[Find] <WASHING MACHINE> (1)
-[Find] <CLOTHES_PANTS> (1)
-[Grab] <CLOTHES_PANTS> (1)
-[Open] <WASHING MACHINE> (1)
-[PutBack] <CLOTHES_PANTS> (1) <WASHING MACHINE> (1)
-[Find] <CLOTHES_SHIRT> (1)
-[Grab] <CLOTHES_SHIRT> (1)
-[PutBack] <CLOTHES_SHIRT> (1) <WASHING MACHINE> (1)
-[Find] <CLOTHES_UNDERWEAR> (1)
-[Grab] <CLOTHES_UNDERWEAR> (1)
-[PutBack] <CLOTHES_UNDERWEAR> (1) <WASHING MACHINE> (1)
-[Close] <WASHING MACHINE> (1)
-[SwitchOn] <WASHING MACHINE> (1)
+[Walk] <kitchen> (1)
+[Walk] <washing_machine> (1)
+[Find] <washing_machine> (1)
+[Find] <clothes_pants> (1)
+[Grab] <clothes_pants> (1)
+[Open] <washing_machine> (1)
+[PutBack] <clothes_pants> (1) <washing_machine> (1)
+[Find] <clothes_shirt> (1)
+[Grab] <clothes_shirt> (1)
+[PutBack] <clothes_shirt> (1) <washing_machine> (1)
+[Find] <clothes_underwear> (1)
+[Grab] <clothes_underwear> (1)
+[PutBack] <clothes_underwear> (1) <washing_machine> (1)
+[Close] <washing_machine> (1)
+[SwitchOn] <washing_machine> (1)

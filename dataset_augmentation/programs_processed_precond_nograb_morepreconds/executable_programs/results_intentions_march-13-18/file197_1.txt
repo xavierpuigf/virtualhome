@@ -1,0 +1,13 @@
+Turn on light
+first i will walk into my living room and then  i will go to the switch board and switch on the floor lamp and light
+
+
+[WALK] <living_room> (1.243)
+[WALK] <electrical_outlet> (1.1000)
+[FIND] <electrical_outlet> (1.1000)
+[TURNTO] <electrical_outlet> (1.1000)
+[LOOKAT] <electrical_outlet> (1.1000)
+[FIND] <floor_lamp> (1.1001)
+[SWITCHON] <floor_lamp> (1.1001)
+[FIND] <light> (1.1002)
+[SWITCHON] <light> (1.1002)

@@ -2,12 +2,12 @@ Cook some food
 I switch on the stove and cook my groceries there.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <STOVE> (1)
-[Find] <STOVE> (1)
-[SwitchOn] <STOVE> (1)
-[Find] <BOWL> (1)
-[Grab] <BOWL> (1)
-[PutBack] <BOWL> (1) <STOVE> (1)
-[Find] <GROCERIES> (1)
-[SwitchOff] <STOVE> (1)
+[Walk] <kitchen> (1)
+[Walk] <stove> (1)
+[Find] <stove> (1)
+[SwitchOn] <stove> (1)
+[Find] <bowl> (1)
+[Grab] <bowl> (1)
+[PutBack] <bowl> (1) <stove> (1)
+[Find] <groceries> (1)
+[SwitchOff] <stove> (1)

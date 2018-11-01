@@ -1,0 +1,6 @@
+Pet cat
+I walk to my cat, and I pet him
+
+
+[WALK] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

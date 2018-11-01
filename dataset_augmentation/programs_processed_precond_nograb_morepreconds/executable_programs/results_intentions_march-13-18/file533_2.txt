@@ -1,0 +1,16 @@
+Watch TV
+I go to the living room and sit on a chair. I take the remote control and point it at the tv. I turn the tv on with the remote control
+
+
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[WALK] <chair> (1.1001)
+[SIT] <chair> (1.1001)
+[FIND] <television> (1.1002)
+[TURNTO] <television> (1.1002)
+[LOOKAT] <television> (1.1002)
+[TOUCH] <remote_control> (1.1000)
+[SWITCHON] <television> (1.1002)
+[SLEEP]

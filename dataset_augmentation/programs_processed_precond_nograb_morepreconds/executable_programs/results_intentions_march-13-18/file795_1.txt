@@ -1,0 +1,12 @@
+Work
+I walk to the bedroom, then find the computer and sit in the chair ,next switch on the computer and finally type in the keyboard to start to work on it
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <computer> (1.1000)
+[FIND] <computer> (1.1000)
+[FIND] <chair> (1.1001)
+[SIT] <chair> (1.1001)
+[SWITCHON] <computer> (1.1000)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)

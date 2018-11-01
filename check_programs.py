@@ -21,10 +21,16 @@ dump = False
 max_nodes = 300
 
 
-def dump_one_data(txt_file, script, graph_state_list, id_mapping):
+def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
 
     new_path = txt_file.replace('withoutconds', 'executable_programs')
+    graph_sub_dir = graph_path.split('/')[-1].replace('.json', '')
+    new_path = new_path.split('/')
+    j = new_path.index('executable_programs') + 1
+    new_path = new_path[:j] + [graph_sub_dir] + new_path[j:]
+    new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
+    
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
 
@@ -55,6 +61,11 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping):
         new_f.write('\n')
 
     new_path = txt_file.replace('withoutconds', 'init_and_final_graphs').replace('txt', 'json')
+    graph_sub_dir = graph_path.split('/')[-1].replace('.json', '')
+    new_path = new_path.split('/')
+    j = new_path.index('init_and_final_graphs') + 1
+    new_path = new_path[:j] + [graph_sub_dir] + new_path[j:]
+    new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
     if not os.path.exists(new_dir):
         os.makedirs(new_dir)
@@ -137,7 +148,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
     message, executable, final_state, graph_state_list, id_mapping, info = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
 
-    return message, final_state, graph_dict, id_mapping, info
+    return message, final_state, graph_dict, id_mapping, info, helper
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
@@ -161,13 +172,15 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
         ## place the random objects (id from 2000)
-        helper.add_random_objs_graph_dict(graph_dict, n=max_nodes - len(graph_dict["nodes"]))
+        max_node_to_place = max_nodes - len(graph_dict["nodes"])
+        n = random.randint(max_node_to_place - 20, max_node_to_place)
+        helper.add_random_objs_graph_dict(graph_dict, n=max(n, 0))
         helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, id_mapping, graph_dict)
         helper.open_all_doors(graph_dict)
-        #assert len(graph_dict["nodes"]) == max_nodes
+        assert len(graph_dict["nodes"]) <= max_nodes
     
     elif len(id_mapping) != 0:
         # Assume that object mapping specify all the objects in the scripts
@@ -180,9 +193,9 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     executable, final_state, graph_state_list = executor.execute(script, w_graph_list=w_graph_list)
 
     if executable:
-        message = '{}, Script is executable'.format(0)
+        message = 'Script is executable'
     else:
-        message = '{}, Script is not executable, since {}'.format(0, executor.info.get_error_string())
+        message = 'Script is not executable, since {}'.format(executor.info.get_error_string())
 
     return message, executable, final_state, graph_state_list, id_mapping, info
 
@@ -203,18 +216,20 @@ def joblib_one_iter(inp):
         return None, None, None, None, None
 
     precond_path = txt_file.replace('withoutconds', 'initstate').replace('txt', 'json')
-    precond = json.load(open(precond_path))
+
 
     graph_dict = utils.load_graph_dict(graph_path)
 
+    precond = json.load(open(precond_path))
     message, executable, _, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
     if executable and dump:
-        dump_one_data(txt_file, script, graph_state_list, id_mapping)
+        dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path)
 
     return script, message, executable, graph_state_list, id_mapping
 
 
 def check_whole_set(dir_path, graph_path):
+
     """Use precondition to modify the environment graphs
     """
 
@@ -225,20 +240,32 @@ def check_whole_set(dir_path, graph_path):
     not_parsable_programs = 0
     executable_program_length = []
     not_executable_program_length = []
+    if isinstance(graph_path, list):
+        multiple_graphs = True
+        executable_scene_hist = {p: 0 for p in graph_path}
+    else: 
+        multiple_graphs = False
+
     info = {}
-    #program_txt_files = [os.path.join(program_dir, 'results_intentions_march-13-18/file784_2.txt')]
-    #iterators = enumerate(program_txt_files) if verbose else tqdm(enumerate(program_txt_files))
 
     joblib_inputs = []
     n = len(program_txt_files) // 30
     program_txt_files = np.array(program_txt_files)
     for txt_files in np.array_split(program_txt_files, n):
-        joblib_inputs = [[f, graph_path] for f in txt_files]
+        
+        if multiple_graphs:
+            joblib_inputs = []
+            for f in txt_files:
+                random.shuffle(graph_path)
+                for g in graph_path[:3]:
+                    joblib_inputs.append([f, g])
+        else:
+            joblib_inputs = [[f, graph_path] for f in txt_files]
         
         print("Running on simulators")
         results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
-        joblib_inputs = []
-        for txt_file, result in zip(txt_files, results):
+        for k, (input, result) in enumerate(zip(joblib_inputs, results)):
+            i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
             if script is None:
                 not_parsable_programs += 1
@@ -246,19 +273,30 @@ def check_whole_set(dir_path, graph_path):
 
             if executable:
                 executable_programs += 1
+                if multiple_graphs:
+                    executable_scene_hist[i_graph_path] += 1
                 executable_program_length.append(len(script))
             else:
                 not_executable_program_length.append(len(script))
 
             if verbose:
-                print(message)
-            info.update({txt_file: message})
+                print(k, message)
+
+            if i_txt_file not in info:
+                info[i_txt_file] = []
+            info[i_txt_file].append({"message": message, "graph_path": i_graph_path})
+
+    if multiple_graphs:
+        info['scene_hist'] = executable_scene_hist
+        print(executable_scene_hist)
 
     print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
     print("{} programs can not be parsed".format(not_parsable_programs))
 
     executable_program_length = sum(executable_program_length) / len(executable_program_length)
     not_executable_program_length = sum(not_executable_program_length) / len(not_executable_program_length)
+    info["executable_prog_len"] = executable_program_length
+    info["non_executable_prog_len"] = not_executable_program_length
     print("Executable program average length: {:.2f}, not executable program average length: {:.2f}".format(executable_program_length, not_executable_program_length))
     json.dump(info, open("executable_info.json", 'w'))
 
@@ -300,20 +338,9 @@ def modify_script(script):
     return ', '.join(modif_script)
 
 
-def example_check_executability():
-
-    script1 = '[watch] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>), [find] <food_sugar> (1) <<none>> (<none>)'
-    script2 = '[find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>), [find] <light> (1) <<none>> (<none>)'
-    
-    graph_dict = json.load(open('example_graphs/TrimmedTestScene6_graph.json'))
-    executability = check_executability(modify_script(script2), graph_dict)
-    print("Script is {}executable".format('' if executability else 'not '))
-
-
 if __name__ == '__main__':
-    
+
     #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
-    translated_path = 'example_graphs/TrimmedTestScene6_graph.json'
-    #check_whole_set('dataset_augmentation/augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
-    #check_whole_set('dataset_augmentation/perturb_augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    #translated_path = 'example_graphs/TrimmedTestScene7_graph.json'
+    translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
     check_whole_set('programs_processed_precond_nograb_morepreconds', graph_path=translated_path)

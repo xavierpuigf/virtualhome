@@ -1,1 +1,1 @@
-[{"is_off": ["STOVE", "1"]}, {"inside": [["DRY PASTA", "1"], ["FREEZER", "1"]]}, {"inside": [["FRYINGPAN", "1"], ["FREEZER", "1"]]}, {"closed": ["FREEZER", "1"]}, {"atreach": [["STOVE", "1"], ["SINK", "1"]]}, {"atreach": [["FRYINGPAN", "1"], ["SINK", "1"]]}]
+[{"is_off": ["stove", "1"]}, {"atreach": [["fryingpan", "1"], ["sink", "1"]]}, {"atreach": [["stove", "1"], ["sink", "1"]]}, {"closed": ["freezer", "1"]}, {"inside": [["dry_pasta", "1"], ["freezer", "1"]]}, {"inside": [["fryingpan", "1"], ["freezer", "1"]]}]

@@ -1,0 +1,15 @@
+Clean  mirror
+Spray Windex or glass and mirror cleaner onto mirror. Use paper towel to wipe off cleaner until mirror is dry and has no streaks.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <bathroom_cabinet> (1.1000)
+[FIND] <bathroom_cabinet> (1.1000)
+[OPEN] <bathroom_cabinet> (1.1000)
+[FIND] <paper_towel> (1.1001)
+[GRAB] <paper_towel> (1.1001)
+[CLOSE] <bathroom_cabinet> (1.1000)
+[WALK] <mirror> (1.1002)
+[WIPE] <mirror> (1.1002)
+[FIND] <trashcan> (1.1003)
+[PUTBACK] <paper_towel> (1.1001) <trashcan> (1.1003)

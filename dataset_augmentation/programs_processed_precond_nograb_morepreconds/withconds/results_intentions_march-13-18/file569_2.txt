@@ -1,14 +1,14 @@
 2
-location: ('SOAP', '1') --> ('KITCHEN', '1'), ('TOWEL', '1') --> ('KITCHEN', '1')
 atreach: ('SOAP', '1') --> ('SOAP', '1'), ('TOWEL', '1') --> ('SOAP', '1')
+location: ('SOAP', '1') --> ('KITCHEN', '1'), ('TOWEL', '1') --> ('KITCHEN', '1')
 Wash hands
 I walk to the kitchen and get the soap and wash my both hand using the soap and rinse my hands and use towel.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <SOAP> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Scrub] <SOAP> (1)
-[Find] <TOWEL> (1)
-[Rinse] <TOWEL> (1)
+[Walk] <kitchen> (1)
+[Walk] <soap> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Scrub] <soap> (1)
+[Find] <towel> (1)
+[Rinse] <towel> (1)

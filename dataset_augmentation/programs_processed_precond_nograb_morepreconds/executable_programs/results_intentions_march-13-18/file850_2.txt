@@ -1,0 +1,13 @@
+Drink
+I walk into the kitchen. I reach into the cabinet and pick up a water glass. Turn on the faucet and place the glass under the water stream. Bring the glass of water to lips and drink.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <kitchen_cabinet> (1.1000)
+[FIND] <kitchen_cabinet> (1.1000)
+[OPEN] <kitchen_cabinet> (1.1000)
+[FIND] <water_glass> (1.1001)
+[GRAB] <water_glass> (1.1001)
+[FIND] <faucet> (1.1002)
+[SWITCHON] <faucet> (1.1002)
+[DRINK] <water_glass> (1.1001)

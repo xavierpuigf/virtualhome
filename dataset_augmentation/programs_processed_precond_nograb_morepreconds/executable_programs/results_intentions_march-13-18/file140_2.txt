@@ -1,0 +1,11 @@
+Go to sleep
+Walk in to bed room. lay down on bed.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <bed> (1.1000)
+[FIND] <bed> (1.1000)
+[TURNTO] <bed> (1.1000)
+[LOOKAT] <bed> (1.1000)
+[SIT] <bed> (1.1000)
+[SLEEP]

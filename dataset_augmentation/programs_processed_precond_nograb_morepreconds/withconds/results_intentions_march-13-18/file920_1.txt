@@ -1,12 +1,13 @@
-2
+3
 is_off: ('TELEVISION', '1') --> 
+plugged: ('TELEVISION', '1') --> 
 atreach: ('TELEVISION', '1') --> ('TELEVISION', '1'), ('BUTTON', '1') --> ('TELEVISION', '1')
 Change TV channel
 Find TV. Walk to tv. Turn on tv. Change the channel.
 
 
-[Find] <TELEVISION> (1)
-[Walk] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
+[Find] <television> (1)
+[Walk] <television> (1)
+[SwitchOn] <television> (1)
+[Find] <button> (1)
+[Push] <button> (1)

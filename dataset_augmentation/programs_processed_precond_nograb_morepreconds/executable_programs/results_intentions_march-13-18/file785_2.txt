@@ -1,0 +1,28 @@
+Wash clothes
+I go to the bathroom and open the washing machine there. I take my laundry basket and put each item of laundry into the machine. Then I take the laundry detergent and pour some into the machine. Finally I close the machine and switch it on.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <washing_machine> (1.1000)
+[FIND] <washing_machine> (1.1000)
+[OPEN] <washing_machine> (1.1000)
+[FIND] <basket_for_clothes> (1.1001)
+[GRAB] <basket_for_clothes> (1.1001)
+[FIND] <clothes_pants> (1.1002)
+[GRAB] <clothes_pants> (1.1002)
+[PUTBACK] <clothes_pants> (1.1002) <washing_machine> (1.1000)
+[FIND] <clothes_shirt> (1.1003)
+[GRAB] <clothes_shirt> (1.1003)
+[PUTBACK] <clothes_shirt> (1.1003) <washing_machine> (1.1000)
+[FIND] <clothes_underwear> (1.1004)
+[GRAB] <clothes_underwear> (1.1004)
+[PUTBACK] <clothes_underwear> (1.1004) <washing_machine> (1.1000)
+[FIND] <clothes_socks> (1.1005)
+[GRAB] <clothes_socks> (1.1005)
+[PUTBACK] <clothes_socks> (1.1005) <washing_machine> (1.1000)
+[PUTOBJBACK] <basket_for_clothes> (1.1001)
+[FIND] <laundry_detergent> (1.1006)
+[GRAB] <laundry_detergent> (1.1006)
+[POUR] <laundry_detergent> (1.1006) <washing_machine> (1.1000)
+[CLOSE] <washing_machine> (1.1000)
+[SWITCHON] <washing_machine> (1.1000)

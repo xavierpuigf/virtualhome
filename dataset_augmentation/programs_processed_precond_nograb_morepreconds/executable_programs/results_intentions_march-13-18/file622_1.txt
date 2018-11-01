@@ -1,0 +1,15 @@
+Write an email
+Walk to the office, sit down on chair, attach keyboard to the computer, attach mouse to the computer, switch the computer on, type the email on the keyboard
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.1000)
+[FIND] <chair> (1.1000)
+[SIT] <chair> (1.1000)
+[FIND] <keyboard> (1.1001)
+[PLUGIN] <keyboard> (1.1001)
+[FIND] <mouse> (1.1002)
+[PLUGIN] <mouse> (1.1002)
+[FIND] <computer> (1.1003)
+[SWITCHON] <computer> (1.1003)
+[TYPE] <keyboard> (1.1001)

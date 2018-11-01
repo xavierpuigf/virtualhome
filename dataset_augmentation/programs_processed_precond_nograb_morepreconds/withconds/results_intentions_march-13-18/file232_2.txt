@@ -1,18 +1,19 @@
-3
-is_off: ('LIGHT', '3') --> , ('LIGHT', '1') --> , ('LIGHT', '2') --> 
-location: ('LIGHT', '3') --> ('KITCHEN', '1'), ('LIGHT', '1') --> ('KITCHEN', '1'), ('LIGHT', '2') --> ('KITCHEN', '1')
-atreach: ('LIGHT', '3') --> ('LIGHT', '3'), ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT', '2') --> ('LIGHT', '2')
+4
+is_off: ('LIGHT', '1') --> , ('LIGHT', '2') --> , ('LIGHT', '3') --> 
+plugged: ('LIGHT', '1') --> , ('LIGHT', '2') --> , ('LIGHT', '3') --> 
+atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('LIGHT', '2') --> ('LIGHT', '2'), ('LIGHT', '3') --> ('LIGHT', '3')
+location: ('LIGHT', '1') --> ('KITCHEN', '1'), ('LIGHT', '2') --> ('KITCHEN', '1'), ('LIGHT', '3') --> ('KITCHEN', '1')
 Turn on light
 I need to turn on the lights in the kitchen so I can make dinner.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[TurnTo] <LIGHT> (1)
-[LookAt] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Walk] <LIGHT> (2)
-[SwitchOn] <LIGHT> (2)
-[Walk] <LIGHT> (3)
-[SwitchOn] <LIGHT> (3)
+[Walk] <kitchen> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[TurnTo] <light> (1)
+[LookAt] <light> (1)
+[SwitchOn] <light> (1)
+[Walk] <light> (2)
+[SwitchOn] <light> (2)
+[Walk] <light> (3)
+[SwitchOn] <light> (3)

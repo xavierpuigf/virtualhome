@@ -2,12 +2,12 @@ Read book
 Grab book.  Read it.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Close] <CLOSET> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Close] <closet> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Read] <book> (1)

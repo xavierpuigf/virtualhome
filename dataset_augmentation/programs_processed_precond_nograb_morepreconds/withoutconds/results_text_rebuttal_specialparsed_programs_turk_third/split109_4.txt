@@ -2,11 +2,11 @@ Broom
 Sweep the floor.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BROOM> (1)
-[Find] <BROOM> (1)
-[Grab] <BROOM> (1)
-[Find] <DUSTPAN> (1)
-[Grab] <BROOM> (1)
-[Find] <FLOOR> (1)
-[Sweep] <FLOOR> (1)
+[Walk] <living_room> (1)
+[Walk] <broom> (1)
+[Find] <broom> (1)
+[Grab] <broom> (1)
+[Find] <dustpan> (1)
+[Grab] <broom> (1)
+[Find] <floor> (1)
+[Sweep] <floor> (1)

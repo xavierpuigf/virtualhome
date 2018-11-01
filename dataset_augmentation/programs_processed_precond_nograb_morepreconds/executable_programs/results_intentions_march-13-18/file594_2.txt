@@ -1,0 +1,12 @@
+Wash dishes by hand
+Make some dish water, grab a dish rag, put dishes in dish water and wash.
+
+
+[RUN] <sink> (1.191)
+[FIND] <dish_soap> (1.1000)
+[GRAB] <dish_soap> (1.1000)
+[FIND] <plate> (1.1001)
+[PUTBACK] <dish_soap> (1.1000) <plate> (1.1001)
+[RINSE] <dish_soap> (1.1000)
+[FIND] <plate> (1.1001)
+[WASH] <plate> (1.1001)

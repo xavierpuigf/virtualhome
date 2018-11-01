@@ -1,16 +1,16 @@
 2
-location: ('NAPKIN', '1') --> ('DINING ROOM', '1'), ('TRASHCAN', '1') --> ('DINING ROOM', '1'), ('PAPER TOWEL', '1') --> ('DINING ROOM', '1')
-atreach: ('NAPKIN', '1') --> ('PAPER TOWEL', '1'), ('TRASHCAN', '1') --> ('PAPER TOWEL', '1'), ('PAPER TOWEL', '1') --> ('PAPER TOWEL', '1')
+atreach: ('PAPER TOWEL', '1') --> ('PAPER TOWEL', '1'), ('TRASHCAN', '1') --> ('PAPER TOWEL', '1'), ('NAPKIN', '1') --> ('PAPER TOWEL', '1')
+location: ('PAPER TOWEL', '1') --> ('DINING ROOM', '1'), ('TRASHCAN', '1') --> ('DINING ROOM', '1'), ('NAPKIN', '1') --> ('DINING ROOM', '1')
 Pick up all trash
 Pick up each individual piece of trash from dinner the night before and put it in a trash bag
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <PAPER TOWEL> (1)
-[Find] <PAPER TOWEL> (1)
-[Grab] <PAPER TOWEL> (1)
-[Find] <TRASHCAN> (1)
-[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)
-[Find] <NAPKIN> (1)
-[Grab] <NAPKIN> (1)
-[PutBack] <NAPKIN> (1) <TRASHCAN> (1)
+[Walk] <dining_room> (1)
+[Walk] <paper_towel> (1)
+[Find] <paper_towel> (1)
+[Grab] <paper_towel> (1)
+[Find] <trashcan> (1)
+[PutBack] <paper_towel> (1) <trashcan> (1)
+[Find] <napkin> (1)
+[Grab] <napkin> (1)
+[PutBack] <napkin> (1) <trashcan> (1)

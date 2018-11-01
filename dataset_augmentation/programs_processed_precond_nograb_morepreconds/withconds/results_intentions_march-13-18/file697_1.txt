@@ -1,13 +1,13 @@
 2
-location: ('SOAP', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
 atreach: ('SOAP', '1') --> ('SOAP', '1'), ('TOWEL', '1') --> ('SOAP', '1')
+location: ('SOAP', '1') --> ('BATHROOM', '1'), ('TOWEL', '1') --> ('BATHROOM', '1')
 Wash hands
 BEFORE EATING
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SOAP> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Find] <TOWEL> (1)
-[Wipe] <TOWEL> (1)
+[Walk] <bathroom> (1)
+[Walk] <soap> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Find] <towel> (1)
+[Wipe] <towel> (1)

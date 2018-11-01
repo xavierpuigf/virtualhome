@@ -1,22 +1,21 @@
-5
+4
+unplugged: ('VACUUM CLEANER', '1') --> 
 is_off: ('VACUUM CLEANER', '1') --> 
 atreach: ('VACUUM CLEANER', '1') --> ('VACUUM CLEANER', '1'), ('ELECTRICAL OUTLET', '1') --> ('VACUUM CLEANER', '1'), ('CARPET', '1') --> ('CARPET', '1')
 location: ('VACUUM CLEANER', '1') --> ('ENTRANCE HALL', '1'), ('ELECTRICAL OUTLET', '1') --> ('ENTRANCE HALL', '1'), ('CARPET', '1') --> ('ENTRANCE HALL', '1')
-unplugged: ('VACUUM CLEANER', '1') --> 
-plugged: ('VACUUM CLEANER', '1') --> 
 Vacuum
 Plug in vacuum. Turn vacuum on. Run vacuum over the entry mat. Turn vacuum off. Unplug vacuum.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <VACUUM CLEANER> (1)
-[Find] <VACUUM CLEANER> (1)
-[Grab] <VACUUM CLEANER> (1)
-[Find] <ELECTRICAL OUTLET> (1)
-[PlugIn] <VACUUM CLEANER> (1)
-[SwitchOn] <VACUUM CLEANER> (1)
-[Walk] <CARPET> (1)
-[Vacuum] <CARPET> (1)
-[SwitchOff] <VACUUM CLEANER> (1)
-[PlugOut] <VACUUM CLEANER> (1)
-[PutObjBack] <VACUUM CLEANER> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <vacuum_cleaner> (1)
+[Find] <vacuum_cleaner> (1)
+[Grab] <vacuum_cleaner> (1)
+[Find] <electrical_outlet> (1)
+[PlugIn] <vacuum_cleaner> (1)
+[SwitchOn] <vacuum_cleaner> (1)
+[Walk] <carpet> (1)
+[Vacuum] <carpet> (1)
+[SwitchOff] <vacuum_cleaner> (1)
+[PlugOut] <vacuum_cleaner> (1)
+[PutObjBack] <vacuum_cleaner> (1)

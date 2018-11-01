@@ -1,0 +1,12 @@
+Work
+Walk into the office, sit at the desk, turn on the computer, begin work, finish work, log off computer, turn off computer, stand up, walk out of office
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.94)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <computer> (1.1000)
+[PUSH] <computer> (1.1000)
+[SWITCHOFF] <computer> (1.1000)
+[STANDUP]

@@ -1,17 +1,19 @@
-3
+5
 is_off: ('LAPTOP', '1') --> 
-closed: ('DESK', '1') --> 
+plugged: ('LAPTOP', '1') --> 
 atreach: ('CHAIR', '1') --> ('DESK', '1'), ('DESK', '1') --> ('CHAIR', '1'), ('LAPTOP', '1') --> ('CHAIR', '1')
+closed: ('DESK', '1') --> 
+free: ('CHAIR', '1') --> 
 Use computer
 Type on computer for work.
 
 
-[Find] <LAPTOP> (1)
-[Grab] <LAPTOP> (1)
-[Run] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <DESK> (1)
-[Open] <DESK> (1)
-[PutBack] <LAPTOP> (1) <DESK> (1)
-[SwitchOn] <LAPTOP> (1)
-[Touch] <LAPTOP> (1)
+[Find] <laptop> (1)
+[Grab] <laptop> (1)
+[Run] <chair> (1)
+[Sit] <chair> (1)
+[Find] <desk> (1)
+[Open] <desk> (1)
+[PutBack] <laptop> (1) <desk> (1)
+[SwitchOn] <laptop> (1)
+[Touch] <laptop> (1)

@@ -1,0 +1,11 @@
+Work
+I run to the home office. I sit down in a chair. I switch on the computer. I work on the computer.
+
+
+[RUN] <living_room> (1.243)
+[WALK] <chair> (1.94)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <computer> (1.1000)
+[SWITCHON] <computer> (1.1000)
+[TOUCH] <computer> (1.1000)

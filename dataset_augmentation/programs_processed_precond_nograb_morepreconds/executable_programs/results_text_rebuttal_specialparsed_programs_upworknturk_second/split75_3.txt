@@ -1,0 +1,15 @@
+Dust
+Using a duster clean the furniture
+
+
+[WALK] <living_room> (1.243)
+[WALK] <duster> (1.1000)
+[FIND] <duster> (1.1000)
+[GRAB] <duster> (1.1000)
+[FIND] <cabinet> (1.1001)
+[WIPE] <cabinet> (1.1001)
+[FIND] <couch> (1.1002)
+[WIPE] <couch> (1.1002)
+[FIND] <coffee_table> (1.1003)
+[WIPE] <coffee_table> (1.1003)
+[PUTOBJBACK] <duster> (1.1000)

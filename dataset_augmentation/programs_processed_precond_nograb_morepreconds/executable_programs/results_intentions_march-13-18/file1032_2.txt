@@ -1,0 +1,14 @@
+Browse internet
+open browser, type what you want search, click on link you want.
+
+
+[FIND] <computer> (1.318)
+[TURNTO] <computer> (1.318)
+[SWITCHON] <computer> (1.318)
+[FIND] <mouse> (1.315)
+[TURNTO] <mouse> (1.315)
+[POINTAT] <mouse> (1.315)
+[FIND] <keyboard> (1.319)
+[TYPE] <keyboard> (1.319)
+[TURNTO] <mouse> (1.315)
+[POINTAT] <mouse> (1.315)

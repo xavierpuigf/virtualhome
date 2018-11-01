@@ -1,21 +1,21 @@
 5
 is_off: ('STOVE', '1') --> 
-inside: ('COOKINGPOT', '1') --> ('FRIDGE', '1')
-location: ('STOVE', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('FOOD_FOOD', '1') --> ('FRIDGE', '1'), ('COOKINGPOT', '1') --> ('FRIDGE', '1'), ('STOVE', '1') --> ('FRIDGE', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('COOKINGPOT', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1')
 closed: ('FRIDGE', '1') --> 
-atreach: ('STOVE', '1') --> ('FRIDGE', '1'), ('COOKINGPOT', '1') --> ('FRIDGE', '1'), ('FOOD_FOOD', '1') --> ('FRIDGE', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1')
+inside: ('COOKINGPOT', '1') --> ('FRIDGE', '1')
 Cook some food
 walk to kitchen, find refrigerator, find food, put food in pot, put pot on stove, turn on stove
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <FOOD_FOOD> (1)
-[Find] <COOKINGPOT> (1)
-[Grab] <COOKINGPOT> (1)
-[Find] <STOVE> (1)
-[PutBack] <COOKINGPOT> (1) <STOVE> (1)
-[Unwrap] <FOOD_FOOD> (1)
-[Find] <STOVE> (1)
-[SwitchOn] <STOVE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <food_food> (1)
+[Find] <cookingpot> (1)
+[Grab] <cookingpot> (1)
+[Find] <stove> (1)
+[PutBack] <cookingpot> (1) <stove> (1)
+[Unwrap] <food_food> (1)
+[Find] <stove> (1)
+[SwitchOn] <stove> (1)

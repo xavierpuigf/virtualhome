@@ -1,0 +1,13 @@
+Clean
+Clean lamp
+
+
+[WALK] <living_room> (1.243)
+[WALK] <paper_towel> (1.1000)
+[FIND] <paper_towel> (1.1000)
+[GRAB] <paper_towel> (1.1000)
+[WALK] <lamp> (1.1001)
+[SWITCHOFF] <lamp> (1.1001)
+[WIPE] <lamp> (1.1001)
+[FIND] <trashcan> (1.1002)
+[PUTBACK] <paper_towel> (1.1000) <trashcan> (1.1002)

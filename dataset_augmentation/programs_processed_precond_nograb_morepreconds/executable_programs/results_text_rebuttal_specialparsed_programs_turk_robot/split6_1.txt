@@ -1,0 +1,20 @@
+Pick up spare change on dresser
+Locate all the coins on the dresser top. Pick them up.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <dresser> (1.1000)
+[FIND] <coin> (1.1001)
+[GRAB] <coin> (1.1001)
+[WALK] <cup> (1.1002)
+[PUTBACK] <coin> (1.1001) <cup> (1.1002)
+[WALK] <dresser> (1.1000)
+[FIND] <coin> (2.1003)
+[GRAB] <coin> (2.1003)
+[WALK] <cup> (1.1002)
+[PUTBACK] <coin> (2.1003) <cup> (1.1002)
+[WALK] <dresser> (1.1000)
+[FIND] <coin> (3.1004)
+[GRAB] <coin> (3.1004)
+[WALK] <cup> (1.1002)
+[PUTBACK] <coin> (3.1004) <cup> (1.1002)

@@ -1,1 +1,1 @@
-[{"location": [["WOMAN", "1"], ["LIVING ROOM", "1"]]}, {"location": [["CHAIR", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["WOMAN", "1"], ["WOMAN", "1"]]}, {"atreach": [["CHAIR", "1"], ["WOMAN", "1"]]}]
+[{"atreach": [["chair", "1"], ["woman", "1"]]}, {"atreach": [["woman", "1"], ["woman", "1"]]}, {"location": [["woman", "1"], ["living_room", "1"]]}, {"location": [["chair", "1"], ["living_room", "1"]]}, {"free": ["chair", "1"]}]

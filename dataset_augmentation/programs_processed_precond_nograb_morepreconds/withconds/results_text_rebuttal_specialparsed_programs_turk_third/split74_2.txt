@@ -1,13 +1,14 @@
-2
-location: ('TOILET', '1') --> ('BATHROOM', '1')
+3
 atreach: ('TOILET', '1') --> ('TOILET', '1')
+location: ('TOILET', '1') --> ('BATHROOM', '1')
+free: ('TOILET', '1') --> 
 Clean toilet
 Clean the toilet with a brush.
 
 
-[Find] <BRUSH> (1)
-[Grab] <BRUSH> (1)
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
-[Scrub] <TOILET> (1)
+[Find] <brush> (1)
+[Grab] <brush> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)
+[Scrub] <toilet> (1)

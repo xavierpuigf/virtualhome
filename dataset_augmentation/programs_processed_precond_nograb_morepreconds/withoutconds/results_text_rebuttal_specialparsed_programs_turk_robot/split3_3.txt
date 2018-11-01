@@ -2,10 +2,10 @@ Wash table
 Get a rag wet. Use it to clean off the top of the table.
 
 
-[Find] <RAG> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Grab] <WATER> (1)
-[Pour] <WATER> (1) <RAG> (1)
-[Find] <TABLE> (1)
-[Wipe] <TABLE> (1)
+[Find] <rag> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Grab] <water> (1)
+[Pour] <water> (1) <rag> (1)
+[Find] <table> (1)
+[Wipe] <table> (1)

@@ -1,0 +1,15 @@
+Turn on TV
+Sit in a chair.  Grab the remote control.  Point the remote at the television.  Press the power button.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.94)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <television> (1.1001)
+[TURNTO] <television> (1.1001)
+[POINTAT] <television> (1.1001)
+[SWITCHON] <television> (1.1001)
+[PUTOBJBACK] <remote_control> (1.1000)

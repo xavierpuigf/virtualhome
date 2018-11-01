@@ -2,12 +2,12 @@ Read book
 Walk over to the bookshelf. Pick storybook off the shelf. Sit on bed. Open storybook and read out loud.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BOOKSHELF> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[TurnTo] <BOOK> (1)
-[LookAt] <BOOK> (1)
-[Walk] <BED> (1)
-[Sit] <BED> (1)
-[Read] <BOOK> (1)
+[Walk] <bedroom> (1)
+[Walk] <bookshelf> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[TurnTo] <book> (1)
+[LookAt] <book> (1)
+[Walk] <bed> (1)
+[Sit] <bed> (1)
+[Read] <book> (1)

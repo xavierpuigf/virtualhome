@@ -2,6 +2,6 @@ Open window
 Unlock the latch at the top. Push the bottom half of the window upwards.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <WINDOW> (1)
-[Open] <WINDOW> (1)
+[Walk] <living_room> (1)
+[Walk] <window> (1)
+[Open] <window> (1)

@@ -1,20 +1,20 @@
 2
-location: ('WOMAN', '1') --> ('ENTRANCE HALL', '1'), ('MAN', '1') --> ('ENTRANCE HALL', '1')
-atreach: ('WOMAN', '1') --> ('WOMAN', '1'), ('MAN', '1') --> ('MAN', '1')
+atreach: ('MAN', '1') --> ('MAN', '1'), ('WOMAN', '1') --> ('WOMAN', '1')
+location: ('MAN', '1') --> ('ENTRANCE HALL', '1'), ('WOMAN', '1') --> ('ENTRANCE HALL', '1')
 Get in way of guests trying to leave
 Jokingly play with the guests by obstructing their path as they try to leave.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <MAN> (1)
-[TurnTo] <MAN> (1)
-[Pull] <MAN> (1)
-[Walk] <WOMAN> (1)
-[TurnTo] <WOMAN> (1)
-[Pull] <WOMAN> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <man> (1)
+[TurnTo] <man> (1)
+[Pull] <man> (1)
+[Walk] <woman> (1)
+[TurnTo] <woman> (1)
+[Pull] <woman> (1)
 [Jump]
 [Dance]
-[Crawl] <MAN> (1)
-[Pull] <MAN> (1)
-[Crawl] <WOMAN> (1)
-[Pull] <WOMAN> (1)
+[Crawl] <man> (1)
+[Pull] <man> (1)
+[Crawl] <woman> (1)
+[Pull] <woman> (1)

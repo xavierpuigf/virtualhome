@@ -2,10 +2,10 @@ Get ready for school
 Take clothes out of dressers and get dressed for school.
 
 
-[Walk] <KIDS BEDROOM> (1)
-[Walk] <DRESSER> (1)
-[Open] <DRESSER> (1)
-[Find] <CLOTHES_DRESS> (1)
-[Grab] <CLOTHES_DRESS> (1)
-[Close] <DRESSER> (1)
-[PutOn] <CLOTHES_DRESS> (1)
+[Walk] <kids_bedroom> (1)
+[Walk] <dresser> (1)
+[Open] <dresser> (1)
+[Find] <clothes_dress> (1)
+[Grab] <clothes_dress> (1)
+[Close] <dresser> (1)
+[PutOn] <clothes_dress> (1)

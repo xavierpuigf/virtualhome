@@ -1,1 +1,1 @@
-[{"location": [["CLEANING SOLUTION", "1"], ["KITCHEN", "1"]]}, {"location": [["RAG", "1"], ["KITCHEN", "1"]]}, {"atreach": [["CLEANING SOLUTION", "1"], ["CLEANING SOLUTION", "1"]]}, {"atreach": [["RAG", "1"], ["CLEANING SOLUTION", "1"]]}]
+[{"atreach": [["cleaning_solution", "1"], ["cleaning_solution", "1"]]}, {"atreach": [["rag", "1"], ["cleaning_solution", "1"]]}, {"location": [["cleaning_solution", "1"], ["kitchen", "1"]]}, {"location": [["rag", "1"], ["kitchen", "1"]]}]

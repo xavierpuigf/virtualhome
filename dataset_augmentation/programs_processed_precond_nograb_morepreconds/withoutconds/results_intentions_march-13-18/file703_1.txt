@@ -2,8 +2,8 @@ Relax on sofa
 getting finishing your work walk to living room and relax on a couch
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Lie] <SOFA> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Lie] <sofa> (1)
 [Sleep]

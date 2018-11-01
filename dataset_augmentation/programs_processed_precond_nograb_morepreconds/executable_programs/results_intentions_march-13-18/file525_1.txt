@@ -1,0 +1,11 @@
+Watch TV
+walk to living room, find couch, sit on couch, find remote control , turn on tv by pressing button
+
+
+[WALK] <living_room> (1.243)
+[WALK] <couch> (1.1000)
+[FIND] <couch> (1.1000)
+[SIT] <couch> (1.1000)
+[FIND] <remote_control> (1.1001)
+[FIND] <television> (1.199)
+[TURNTO] <television> (1.199)

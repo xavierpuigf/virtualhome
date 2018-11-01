@@ -1,0 +1,6 @@
+Pet cat
+Pick up cat. Rub hand on cat.
+
+
+[FIND] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

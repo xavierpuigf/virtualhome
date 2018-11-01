@@ -1,20 +1,21 @@
-4
+5
 is_off: ('TELEVISION', '1') --> 
+plugged: ('TELEVISION', '1') --> 
+atreach: ('CABINET', '1') --> ('CABINET', '1'), ('REMOTE CONTROL', '1') --> ('CABINET', '1'), ('TELEVISION', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('LIVING ROOM', '1'), ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
 in: ('REMOTE CONTROL', '1') --> ('CABINET', '1')
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1')
-atreach: ('REMOTE CONTROL', '1') --> ('CABINET', '1'), ('TELEVISION', '1') --> ('CABINET', '1'), ('CABINET', '1') --> ('CABINET', '1')
 Watch TV
 walk to living room. look at cabinet. grab remote control. switch on television. touch remote control. watch television.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CABINET> (1)
-[Find] <CABINET> (1)
-[TurnTo] <CABINET> (1)
-[LookAt] <CABINET> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Touch] <REMOTE CONTROL> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <cabinet> (1)
+[Find] <cabinet> (1)
+[TurnTo] <cabinet> (1)
+[LookAt] <cabinet> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Touch] <remote_control> (1)
+[Watch] <television> (1)

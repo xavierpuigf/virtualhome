@@ -3,8 +3,8 @@ Knock on door, wait for respondent, wait until respondent allows permission to e
 
 
 [StandUp]
-[Find] <WOMAN> (1)
-[Greet] <WOMAN> (1)
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <WOMAN> (1)
-[TurnTo] <WOMAN> (1)
+[Find] <woman> (1)
+[Greet] <woman> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <woman> (1)
+[TurnTo] <woman> (1)

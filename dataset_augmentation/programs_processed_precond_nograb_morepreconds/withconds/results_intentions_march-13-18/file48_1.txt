@@ -1,23 +1,25 @@
-5
+7
 is_off: ('LAPTOP', '1') --> 
-inside: ('MAIL', '1') --> ('MAIL', '1')
-location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('LAPTOP', '1') --> ('LIVING ROOM', '1')
+plugged: ('LAPTOP', '1') --> 
+atreach: ('CHAIR', '1') --> ('LAPTOP', '1'), ('LAPTOP', '1') --> ('CHAIR', '1'), ('MAIL', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('LAPTOP', '1') --> ('LIVING ROOM', '1'), ('MAIL', '1') --> ('LIVING ROOM', '1')
 closed: ('MAIL', '1') --> 
-atreach: ('CHAIR', '1') --> ('LAPTOP', '1'), ('MAIL', '1') --> ('CHAIR', '1'), ('LAPTOP', '1') --> ('CHAIR', '1')
+inside: ('MAIL', '1') --> ('MAIL', '1')
+free: ('CHAIR', '1') --> 
 Browse internet
 Read and write mail through internet
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <LAPTOP> (1)
-[SwitchOn] <LAPTOP> (1)
-[Find] <MAIL> (1)
-[Open] <MAIL> (1)
-[Grab] <MAIL> (1)
-[Read] <MAIL> (1)
-[Write] <MAIL> (1)
-[Close] <MAIL> (1)
-[SwitchOff] <LAPTOP> (1)
+[Walk] <living_room> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <laptop> (1)
+[SwitchOn] <laptop> (1)
+[Find] <mail> (1)
+[Open] <mail> (1)
+[Grab] <mail> (1)
+[Read] <mail> (1)
+[Write] <mail> (1)
+[Close] <mail> (1)
+[SwitchOff] <laptop> (1)

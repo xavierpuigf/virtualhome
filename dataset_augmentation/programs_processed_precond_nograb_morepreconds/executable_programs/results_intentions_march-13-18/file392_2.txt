@@ -1,0 +1,16 @@
+Cook some food
+find fridge. walk to fridge. open fridge. find food. grab food. close fridge door. find frying pan. walk to frying pan. grab frying pan. find stove. walk to stove. put frying pan on stove. put food in frying pan. switch on stove.
+
+
+[FIND] <fridge> (1.1000)
+[WALK] <fridge> (1.1000)
+[OPEN] <fridge> (1.1000)
+[FIND] <food_food> (1.1001)
+[PULL] <food_food> (1.1001)
+[FIND] <fryingpan> (1.1002)
+[WALK] <fryingpan> (1.1002)
+[GRAB] <fryingpan> (1.1002)
+[FIND] <stove> (1.1003)
+[WALK] <stove> (1.1003)
+[PUTBACK] <fryingpan> (1.1002) <stove> (1.1003)
+[SWITCHON] <stove> (1.1003)

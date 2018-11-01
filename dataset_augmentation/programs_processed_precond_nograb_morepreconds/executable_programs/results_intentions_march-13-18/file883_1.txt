@@ -1,0 +1,12 @@
+Listen to music
+I walk to my living room. Find CD player. Plugin the CD player to Power. Also find the remote control. Push the Botton
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cd_player> (1.1000)
+[FIND] <cd_player> (1.1000)
+[PLUGIN] <cd_player> (1.1000)
+[FIND] <remote_control> (1.1001)
+[GRAB] <remote_control> (1.1001)
+[FIND] <button> (1.1002)
+[PUSH] <button> (1.1002)

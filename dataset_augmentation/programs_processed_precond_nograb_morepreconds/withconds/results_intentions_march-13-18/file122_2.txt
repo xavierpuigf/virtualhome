@@ -1,20 +1,21 @@
-3
+4
 is_off: ('COMPUTER', '1') --> 
+atreach: ('CHAIR', '1') --> ('COMPUTER', '1'), ('COMPUTER', '1') --> ('COMPUTER', '1'), ('MOUSE', '1') --> ('COMPUTER', '1')
 location: ('COMPUTER', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('MOUSE', '1') --> ('LIVING ROOM', '1')
-atreach: ('COMPUTER', '1') --> ('COMPUTER', '1'), ('CHAIR', '1') --> ('COMPUTER', '1'), ('MOUSE', '1') --> ('COMPUTER', '1')
+free: ('CHAIR', '1') --> 
 Write an email
 go to the living room,find the computer,took the chair and place the chair to in front of the computer,sat on the chair,switch on the computer,open the email,and compose a new mail
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[TurnTo] <MOUSE> (1)
-[PointAt] <MOUSE> (1)
+[Walk] <living_room> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[Find] <mouse> (1)
+[TurnTo] <mouse> (1)
+[PointAt] <mouse> (1)

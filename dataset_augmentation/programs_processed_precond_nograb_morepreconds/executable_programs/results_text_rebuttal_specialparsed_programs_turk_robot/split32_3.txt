@@ -1,0 +1,25 @@
+Cook some food
+Make me eggs in the morning however I want them.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <fryingpan> (1.1000)
+[FIND] <fryingpan> (1.1000)
+[GRAB] <fryingpan> (1.1000)
+[WALK] <stove> (1.1001)
+[PUTBACK] <fryingpan> (1.1000) <stove> (1.1001)
+[WALK] <fridge> (1.1002)
+[OPEN] <fridge> (1.1002)
+[FIND] <food_egg> (1.1003)
+[GRAB] <food_egg> (1.1003)
+[FIND] <food_egg> (2.1004)
+[GRAB] <food_egg> (2.1004)
+[CLOSE] <fridge> (1.1002)
+[WALK] <stove> (1.1001)
+[SWITCHON] <stove> (1.1001)
+[PUTBACK] <food_egg> (1.1003) <fryingpan> (1.1000)
+[PUTBACK] <food_egg> (2.1004) <fryingpan> (1.1000)
+[GRAB] <fryingpan> (1.1000)
+[PULL] <fryingpan> (1.1000)
+[PUSH] <fryingpan> (1.1000)
+[SWITCHOFF] <stove> (1.1001)

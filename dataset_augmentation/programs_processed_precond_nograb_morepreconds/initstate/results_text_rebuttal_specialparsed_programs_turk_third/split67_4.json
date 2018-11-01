@@ -1,1 +1,1 @@
-[{"location": [["NOTEBOOK", "1"], ["HOME OFFICE", "1"]]}, {"location": [["NEWSPAPER", "1"], ["HOME OFFICE", "1"]]}, {"atreach": [["NOTEBOOK", "1"], ["NEWSPAPER", "1"]]}, {"atreach": [["NEWSPAPER", "1"], ["NEWSPAPER", "1"]]}]
+[{"atreach": [["newspaper", "1"], ["newspaper", "1"]]}, {"atreach": [["notebook", "1"], ["newspaper", "1"]]}, {"location": [["newspaper", "1"], ["home_office", "1"]]}, {"location": [["notebook", "1"], ["home_office", "1"]]}]

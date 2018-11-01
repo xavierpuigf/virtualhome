@@ -1,0 +1,11 @@
+Read
+We pick out a book from the bookshelf and read it.
+
+
+[WALK] <book> (1.1000)
+[WALK] <bookshelf> (1.95)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[READ] <book> (1.1000)

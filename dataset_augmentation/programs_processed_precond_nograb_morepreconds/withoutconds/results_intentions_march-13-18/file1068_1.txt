@@ -2,7 +2,7 @@ Work
 walk to home office ,find computer ,switch on computer and work
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <COMPUTER> (2)
-[Find] <COMPUTER> (2)
-[SwitchOn] <COMPUTER> (2)
+[Walk] <home_office> (1)
+[Walk] <computer> (2)
+[Find] <computer> (2)
+[SwitchOn] <computer> (2)

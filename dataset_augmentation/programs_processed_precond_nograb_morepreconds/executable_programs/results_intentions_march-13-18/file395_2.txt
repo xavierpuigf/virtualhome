@@ -1,0 +1,28 @@
+Wash dishes by hand
+Find sink. Walk to sink. Find plate. grab plate. put plate in sink. find fork. grab fork. put fork in sink. find dish soap. grab dish soap. pour some dish soap into sink. turn on sink faucet. turn off sink faucet. find rag. grab rag. wash plate. wash fork.
+
+
+[FIND] <sink> (1.191)
+[WALK] <sink> (1.191)
+[FIND] <plate> (1.1000)
+[GRAB] <plate> (1.1000)
+[PUTBACK] <plate> (1.1000) <sink> (1.191)
+[FIND] <fork> (1.1001)
+[GRAB] <fork> (1.1001)
+[PUTBACK] <fork> (1.1001) <sink> (1.191)
+[FIND] <dish_soap> (1.1002)
+[GRAB] <dish_soap> (1.1002)
+[POUR] <dish_soap> (1.1002) <sink> (1.191)
+[PUTOBJBACK] <dish_soap> (1.1002)
+[FIND] <rag> (1.1003)
+[GRAB] <rag> (1.1003)
+[WASH] <plate> (1.1000)
+[WASH] <fork> (1.1001)
+[RINSE] <plate> (1.1000)
+[RINSE] <fork> (1.1001)
+[PUTOBJBACK] <rag> (1.1003)
+[GRAB] <plate> (1.1000)
+[FIND] <dishrack> (1.1004)
+[PUTBACK] <plate> (1.1000) <dishrack> (1.1004)
+[GRAB] <fork> (1.1001)
+[PUTBACK] <fork> (1.1001) <dishrack> (1.1004)

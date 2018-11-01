@@ -1,0 +1,20 @@
+Pick up toys
+Grab toys off floor.  Put it in a container.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <toy> (1.1000)
+[FIND] <toy> (1.1000)
+[GRAB] <toy> (1.1000)
+[WALK] <cabinet> (1.1001)
+[OPEN] <cabinet> (1.1001)
+[PUTBACK] <toy> (1.1000) <cabinet> (1.1001)
+[FIND] <toy> (2.1002)
+[GRAB] <toy> (2.1002)
+[WALK] <cabinet> (1.1001)
+[PUTBACK] <toy> (2.1002) <cabinet> (1.1001)
+[FIND] <toy> (3.1003)
+[GRAB] <toy> (3.1003)
+[WALK] <cabinet> (1.1001)
+[PUTBACK] <toy> (3.1003) <cabinet> (1.1001)
+[CLOSE] <cabinet> (1.1001)

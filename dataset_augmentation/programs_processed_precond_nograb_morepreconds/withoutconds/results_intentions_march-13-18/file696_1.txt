@@ -2,9 +2,9 @@ Brush teeth
 EARLY MORNING AND BEFORE GOING TO BED
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOOTH PASTE> (1)
-[Find] <TOOTH PASTE> (1)
-[Grab] <TOOTH PASTE> (1)
-[Find] <TOOTHBRUSH> (1)
-[Grab] <TOOTHBRUSH> (1)
+[Walk] <bathroom> (1)
+[Walk] <tooth_paste> (1)
+[Find] <tooth_paste> (1)
+[Grab] <tooth_paste> (1)
+[Find] <toothbrush> (1)
+[Grab] <toothbrush> (1)

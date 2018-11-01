@@ -2,12 +2,12 @@ Clean
 Clean lamp
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <PAPER TOWEL> (1)
-[Find] <PAPER TOWEL> (1)
-[Grab] <PAPER TOWEL> (1)
-[Walk] <LAMP> (1)
-[SwitchOff] <LAMP> (1)
-[Wipe] <LAMP> (1)
-[Find] <TRASHCAN> (1)
-[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)
+[Walk] <living_room> (1)
+[Walk] <paper_towel> (1)
+[Find] <paper_towel> (1)
+[Grab] <paper_towel> (1)
+[Walk] <lamp> (1)
+[SwitchOff] <lamp> (1)
+[Wipe] <lamp> (1)
+[Find] <trashcan> (1)
+[PutBack] <paper_towel> (1) <trashcan> (1)

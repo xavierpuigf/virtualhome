@@ -1,0 +1,8 @@
+Restock
+Restock toothpaste, floss, Q-tips, toilet paper, towels, etc. As needed.
+
+
+[FIND] <bathtub> (1.28)
+[TURNTO] <bathtub> (1.28)
+[LOOKAT] <bathtub> (1.28)
+[TOUCH] <bathtub> (1.28)

@@ -1,25 +1,25 @@
 5
+unplugged: ('CONSOLE', '1') --> , ('MICROPHONE', '1') --> 
 is_off: ('TELEVISION', '1') --> , ('CONSOLE', '1') --> 
-atreach: ('TELEVISION', '1') --> ('TELEVISION', '1'), ('MICROPHONE', '1') --> ('TELEVISION', '1'), ('CONSOLE', '1') --> ('CONSOLE', '1')
-location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('MICROPHONE', '1') --> ('LIVING ROOM', '1'), ('CONSOLE', '1') --> ('LIVING ROOM', '1')
-unplugged: ('MICROPHONE', '1') --> , ('CONSOLE', '1') --> 
-plugged: ('CONSOLE', '1') --> 
+plugged: ('TELEVISION', '1') --> 
+atreach: ('CONSOLE', '1') --> ('CONSOLE', '1'), ('TELEVISION', '1') --> ('TELEVISION', '1'), ('MICROPHONE', '1') --> ('TELEVISION', '1')
+location: ('CONSOLE', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('MICROPHONE', '1') --> ('LIVING ROOM', '1')
 Sing karaoke
 Sing karaoke songs with me and my friends.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CONSOLE> (1)
-[Find] <CONSOLE> (1)
-[Grab] <CONSOLE> (1)
-[Walk] <TELEVISION> (1)
-[PlugIn] <CONSOLE> (1)
-[SwitchOn] <TELEVISION> (1)
-[SwitchOn] <CONSOLE> (1)
-[Find] <MICROPHONE> (1)
-[Grab] <MICROPHONE> (1)
-[Walk] <CONSOLE> (1)
-[PlugIn] <MICROPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <console> (1)
+[Find] <console> (1)
+[Grab] <console> (1)
+[Walk] <television> (1)
+[PlugIn] <console> (1)
+[SwitchOn] <television> (1)
+[SwitchOn] <console> (1)
+[Find] <microphone> (1)
+[Grab] <microphone> (1)
+[Walk] <console> (1)
+[PlugIn] <microphone> (1)
 [Sing]
 [Sing]
 [Sing]

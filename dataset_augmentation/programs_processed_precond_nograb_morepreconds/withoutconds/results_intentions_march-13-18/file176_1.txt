@@ -2,10 +2,10 @@ Wash hands
 Apply soap in hand over sink.
 
 
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Find] <SINK> (1)
-[TurnTo] <SINK> (1)
-[Find] <HANDS_BOTH> (1)
-[Wash] <HANDS_BOTH> (1)
-[Rinse] <HANDS_BOTH> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Find] <sink> (1)
+[TurnTo] <sink> (1)
+[Find] <hands_both> (1)
+[Wash] <hands_both> (1)
+[Rinse] <hands_both> (1)

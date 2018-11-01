@@ -1,19 +1,21 @@
-3
+5
 is_off: ('TELEVISION', '1') --> 
-location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
-atreach: ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('SOFA', '1'), ('SOFA', '1') --> ('REMOTE CONTROL', '1')
+plugged: ('TELEVISION', '1') --> 
+atreach: ('SOFA', '1') --> ('TELEVISION', '1'), ('REMOTE CONTROL', '1') --> ('REMOTE CONTROL', '1'), ('TELEVISION', '1') --> ('SOFA', '1')
+location: ('REMOTE CONTROL', '1') --> ('LIVING ROOM', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('TELEVISION', '1') --> ('LIVING ROOM', '1')
+free: ('SOFA', '1') --> 
 Relax on sofa
 walk into living room and go to sofa and turn on tv
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Find] <REMOTE CONTROL> (1)
-[Walk] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <SOFA> (1)
-[Walk] <SOFA> (1)
-[Lie] <SOFA> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Drop] <REMOTE CONTROL> (1)
+[Walk] <living_room> (1)
+[Walk] <remote_control> (1)
+[Find] <remote_control> (1)
+[Walk] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <sofa> (1)
+[Walk] <sofa> (1)
+[Lie] <sofa> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Drop] <remote_control> (1)

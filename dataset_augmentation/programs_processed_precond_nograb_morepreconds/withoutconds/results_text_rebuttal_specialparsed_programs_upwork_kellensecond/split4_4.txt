@@ -2,9 +2,9 @@ Shut off alarm
 Shutting of the alarm clock
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <ALARM CLOCK> (1)
-[Find] <ALARM CLOCK> (1)
-[Grab] <ALARM CLOCK> (1)
-[SwitchOff] <ALARM CLOCK> (1)
-[PutObjBack] <ALARM CLOCK> (1)
+[Walk] <bedroom> (1)
+[Walk] <alarm_clock> (1)
+[Find] <alarm_clock> (1)
+[Grab] <alarm_clock> (1)
+[SwitchOff] <alarm_clock> (1)
+[PutObjBack] <alarm_clock> (1)

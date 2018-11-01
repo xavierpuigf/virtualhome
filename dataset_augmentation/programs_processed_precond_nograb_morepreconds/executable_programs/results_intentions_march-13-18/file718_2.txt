@@ -1,0 +1,13 @@
+Wash dishes with dishwasher
+grab the vesseles and wash
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <bowl> (1.1000)
+[FIND] <bowl> (1.1000)
+[GRAB] <bowl> (1.1000)
+[WALK] <dining_room> (1.161)
+[WASH] <bowl> (1.1000)
+[WALK] <detergent> (1.1001)
+[FIND] <detergent> (1.1001)
+[RINSE] <detergent> (1.1001)

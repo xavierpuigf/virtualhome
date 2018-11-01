@@ -1,1 +1,1 @@
-[{"inside": [["GROCERIES", "1"], ["FREEZER", "1"]]}, {"location": [["FREEZER", "1"], ["DINING ROOM", "1"]]}, {"closed": ["FREEZER", "1"]}, {"atreach": [["FREEZER", "1"], ["FREEZER", "1"]]}, {"atreach": [["GROCERIES", "1"], ["FREEZER", "1"]]}]
+[{"atreach": [["freezer", "1"], ["freezer", "1"]]}, {"atreach": [["groceries", "1"], ["freezer", "1"]]}, {"location": [["freezer", "1"], ["dining_room", "1"]]}, {"location": [["groceries", "1"], ["dining_room", "1"]]}, {"closed": ["freezer", "1"]}, {"inside": [["groceries", "1"], ["freezer", "1"]]}]

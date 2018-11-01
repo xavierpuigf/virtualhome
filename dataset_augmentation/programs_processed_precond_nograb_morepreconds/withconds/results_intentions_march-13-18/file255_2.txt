@@ -1,17 +1,18 @@
-3
+4
+atreach: ('BED', '1') --> ('BUTTON', '2'), ('CD PLAYER', '1') --> ('BED', '1'), ('BUTTON', '1') --> ('BED', '1'), ('BUTTON', '2') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CD PLAYER', '1') --> ('BEDROOM', '1'), ('BUTTON', '1') --> ('BEDROOM', '1'), ('BUTTON', '2') --> ('BEDROOM', '1')
 in: ('CD PLAYER', '1') --> ('BED', '1')
-location: ('BUTTON', '1') --> ('BEDROOM', '1'), ('CD PLAYER', '1') --> ('BEDROOM', '1'), ('BUTTON', '2') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
-atreach: ('BUTTON', '1') --> ('BED', '1'), ('CD PLAYER', '1') --> ('BED', '1'), ('BUTTON', '2') --> ('BED', '1'), ('BED', '1') --> ('BED', '1')
+free: ('BED', '1') --> 
 Listen to music
 Find your CD player, click play button, enjoy it and click stop button
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[Find] <CD PLAYER> (1)
-[Find] <BUTTON> (1)
-[Touch] <BUTTON> (1)
-[Lie] <BED> (1)
-[Find] <BUTTON> (2)
-[Touch] <BUTTON> (2)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[Find] <cd_player> (1)
+[Find] <button> (1)
+[Touch] <button> (1)
+[Lie] <bed> (1)
+[Find] <button> (2)
+[Touch] <button> (2)

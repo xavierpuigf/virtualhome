@@ -1,0 +1,12 @@
+Pet cat
+I see my cat on the couch so I walk over, sit down and pet the cat.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cat> (1.1000)
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[FIND] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[TOUCH] <cat> (1.1000)

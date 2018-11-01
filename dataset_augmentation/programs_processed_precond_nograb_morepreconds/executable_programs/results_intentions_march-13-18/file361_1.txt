@@ -1,0 +1,11 @@
+Work
+Get work done on a personal computer
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.1000)
+[FIND] <chair> (1.1000)
+[FIND] <desk> (1.1001)
+[SIT] <chair> (1.1000)
+[FIND] <computer> (1.1002)
+[SWITCHON] <computer> (1.1002)

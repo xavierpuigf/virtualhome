@@ -2,11 +2,11 @@ Wipe feet
 I wipe my feet to make sure they are clean
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Find] <SHOES> (1)
-[PutOff] <SHOES> (1)
-[Walk] <CARPET> (1)
-[Find] <FEET_BOTH> (1)
-[Wipe] <FEET_BOTH> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Find] <shoes> (1)
+[PutOff] <shoes> (1)
+[Walk] <carpet> (1)
+[Find] <feet_both> (1)
+[Wipe] <feet_both> (1)

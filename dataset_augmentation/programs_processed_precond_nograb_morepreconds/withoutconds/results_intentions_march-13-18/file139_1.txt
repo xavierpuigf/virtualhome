@@ -2,12 +2,12 @@ Wash hands
 Walk to the bathroom, find sink. Open the faucet, place the hands in the flowing water. close the faucet and dry the hands with napkins.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SINK> (1)
-[Find] <FAUCET> (1)
-[SwitchOn] <FAUCET> (1)
-[Find] <HANDS_BOTH> (1)
-[Wash] <HANDS_BOTH> (1)
-[SwitchOff] <FAUCET> (1)
-[Find] <NAPKIN> (1)
-[Wipe] <HANDS_BOTH> (1)
+[Walk] <bathroom> (1)
+[Walk] <sink> (1)
+[Find] <faucet> (1)
+[SwitchOn] <faucet> (1)
+[Find] <hands_both> (1)
+[Wash] <hands_both> (1)
+[SwitchOff] <faucet> (1)
+[Find] <napkin> (1)
+[Wipe] <hands_both> (1)

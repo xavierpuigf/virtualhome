@@ -3,7 +3,7 @@ Set mail on table
 Put the mail on the table in a pile. Leave it there.
 
 
-[Find] <MAIL> (1)
-[Grab] <MAIL> (1)
-[Walk] <TABLE> (1)
-[Drop] <MAIL> (1)
+[Find] <mail> (1)
+[Grab] <mail> (1)
+[Walk] <table> (1)
+[Drop] <mail> (1)

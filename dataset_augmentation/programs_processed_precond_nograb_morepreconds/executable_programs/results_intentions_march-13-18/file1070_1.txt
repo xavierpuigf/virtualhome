@@ -1,0 +1,15 @@
+Wash teeth
+walk to bathroom, look at the toothbrush holder, grab the toothbrush from the toothbrush holder, find the toothpaste, squeeze the toothpaste into toothbrush, now wash the teeth
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <toothbrush_holder> (1.1000)
+[FIND] <toothbrush_holder> (1.1000)
+[TURNTO] <toothbrush_holder> (1.1000)
+[LOOKAT] <toothbrush_holder> (1.1000)
+[FIND] <toothbrush> (1.1001)
+[GRAB] <toothbrush> (1.1001)
+[FIND] <tooth_paste> (1.1002)
+[SQUEEZE] <tooth_paste> (1.1002)
+[FIND] <teeth> (1.1003)
+[WASH] <teeth> (1.1003)

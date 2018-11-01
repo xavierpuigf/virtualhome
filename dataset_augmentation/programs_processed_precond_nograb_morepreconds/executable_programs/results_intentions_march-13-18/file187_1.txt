@@ -1,0 +1,17 @@
+Take shower
+Apply shampoo and face soap and washing face and wipe with turkey.
+
+
+[FIND] <shampoo> (1.1000)
+[GRAB] <shampoo> (1.1000)
+[SQUEEZE] <shampoo> (1.1000)
+[FIND] <hair> (1.1001)
+[WASH] <hair> (1.1001)
+[FIND] <face_soap> (1.1002)
+[GRAB] <face_soap> (1.1002)
+[FIND] <face> (1.1003)
+[POUR] <face_soap> (1.1002) <face> (1.1003)
+[FIND] <face> (1.1003)
+[WASH] <face> (1.1003)
+[WIPE] <face> (1.1003)
+[PUTOBJBACK] <face_soap> (1.1002)

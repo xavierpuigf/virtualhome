@@ -2,9 +2,9 @@ Pick up phone
 Find the phone, take the phone in hand, press the answer button.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <PHONE> (1)
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)
-[Find] <BUTTON> (1)
-[Touch] <BUTTON> (1)
+[Walk] <home_office> (1)
+[Walk] <phone> (1)
+[Find] <phone> (1)
+[Grab] <phone> (1)
+[Find] <button> (1)
+[Touch] <button> (1)

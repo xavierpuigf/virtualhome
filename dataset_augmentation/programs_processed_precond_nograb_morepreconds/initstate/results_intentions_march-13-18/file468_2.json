@@ -1,1 +1,1 @@
-[{"inside": [["DISH SOAP", "1"], ["DISHWASHER", "1"]]}, {"closed": ["DISHWASHER", "1"]}]
+[{"closed": ["dishwasher", "1"]}, {"inside": [["dish_soap", "1"], ["dishwasher", "1"]]}]

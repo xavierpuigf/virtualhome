@@ -1,0 +1,10 @@
+Pick up phone
+I go to my home office. I walk towards my desk. I see the phone. I pick it up.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <phone> (1.1001)
+[TURNTO] <phone> (1.1001)
+[LOOKAT] <phone> (1.1001)
+[GRAB] <phone> (1.1001)

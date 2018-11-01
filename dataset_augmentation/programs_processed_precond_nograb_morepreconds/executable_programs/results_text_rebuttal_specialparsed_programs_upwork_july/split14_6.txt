@@ -1,0 +1,15 @@
+Make toast
+Place slices of bread in a toaster ,wait for the bread to pop up .Set aside.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <fridge> (1.1000)
+[FIND] <fridge> (1.1000)
+[OPEN] <fridge> (1.1000)
+[FIND] <food_bread> (1.1001)
+[GRAB] <food_bread> (1.1001)
+[CLOSE] <fridge> (1.1000)
+[FIND] <toaster> (1.1002)
+[PLUGIN] <toaster> (1.1002)
+[PUTBACK] <food_bread> (1.1001) <toaster> (1.1002)
+[SWITCHON] <toaster> (1.1002)

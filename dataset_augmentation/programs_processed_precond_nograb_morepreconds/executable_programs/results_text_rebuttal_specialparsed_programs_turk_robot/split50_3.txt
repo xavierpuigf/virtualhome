@@ -1,0 +1,8 @@
+Vacuum
+If there happens to be a spill while I'm watching television, the robot can clean it up
+
+
+[FIND] <television> (1.199)
+[WATCH] <television> (1.199)
+[PLUGIN] <television> (1.199)
+[PLUGOUT] <television> (1.199)

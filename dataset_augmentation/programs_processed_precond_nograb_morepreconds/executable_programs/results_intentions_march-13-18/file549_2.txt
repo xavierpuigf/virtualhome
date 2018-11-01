@@ -1,0 +1,12 @@
+Wash hands
+Go to the sink. Turn on the water, wash hands with soap. turn off the sink.
+
+
+[FIND] <sink> (1.191)
+[FIND] <hands_both> (1.1000)
+[WASH] <hands_both> (1.1000)
+[FIND] <soap> (1.1001)
+[GRAB] <soap> (1.1001)
+[SCRUB] <hands_both> (1.1000)
+[PUTOBJBACK] <soap> (1.1001)
+[RINSE] <hands_both> (1.1000)

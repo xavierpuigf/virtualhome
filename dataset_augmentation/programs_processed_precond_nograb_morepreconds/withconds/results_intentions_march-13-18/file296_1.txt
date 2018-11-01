@@ -1,16 +1,16 @@
 3
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1')
 location: ('FRIDGE', '1') --> ('LIVING ROOM', '1'), ('GROCERIES', '1') --> ('LIVING ROOM', '1')
 closed: ('FRIDGE', '1') --> 
-atreach: ('FRIDGE', '1') --> ('FRIDGE', '1')
 Put groceries in Fridge
 Collect groceries from kitchen table. Put it inside the fridge.
 
 
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[Walk] <LIVING ROOM> (1)
-[Walk] <FRIDGE> (1)
-[Find] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[PutObjBack] <GROCERIES> (1)
-[Close] <FRIDGE> (1)
+[Find] <groceries> (1)
+[Grab] <groceries> (1)
+[Walk] <living_room> (1)
+[Walk] <fridge> (1)
+[Find] <fridge> (1)
+[Open] <fridge> (1)
+[PutObjBack] <groceries> (1)
+[Close] <fridge> (1)

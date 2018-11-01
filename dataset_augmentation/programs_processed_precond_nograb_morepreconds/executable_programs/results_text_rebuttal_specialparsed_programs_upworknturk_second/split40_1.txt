@@ -1,0 +1,16 @@
+Straighten pictures on wall
+Move the pictures/paintings until they are straight.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <painting> (1.1000)
+[FIND] <painting> (1.1000)
+[TURNTO] <painting> (1.1000)
+[LOOKAT] <painting> (1.1000)
+[TOUCH] <painting> (1.1000)
+[PUSH] <painting> (1.1000)
+[FIND] <painting> (2.1001)
+[TURNTO] <painting> (2.1001)
+[LOOKAT] <painting> (2.1001)
+[TOUCH] <painting> (2.1001)
+[PUSH] <painting> (2.1001)

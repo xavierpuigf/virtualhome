@@ -1,0 +1,10 @@
+Write an email
+I turn on computer. I type on keyboard. I enter email account. I type email.
+
+
+[FIND] <computer> (1.318)
+[TURNTO] <computer> (1.318)
+[FIND] <keyboard> (1.319)
+[TYPE] <keyboard> (1.319)
+[TURNTO] <computer> (1.318)
+[LOOKAT] <computer> (1.318)

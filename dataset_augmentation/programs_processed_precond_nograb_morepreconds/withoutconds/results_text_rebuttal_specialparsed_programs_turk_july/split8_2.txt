@@ -2,17 +2,17 @@ Hold coats and umbrellas
 Ask to hold onto the coats and umbrellas for guests.  Give witty banter while performing.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <MAN> (1)
-[Find] <MAN> (1)
-[Greet] <MAN> (1)
-[Find] <WOMAN> (1)
-[Greet] <WOMAN> (1)
-[Find] <CLOTHES_JACKET> (1)
-[Grab] <CLOTHES_JACKET> (1)
-[Find] <CLOTHES_JACKET> (2)
-[Grab] <CLOTHES_JACKET> (2)
+[Walk] <entrance_hall> (1)
+[Walk] <man> (1)
+[Find] <man> (1)
+[Greet] <man> (1)
+[Find] <woman> (1)
+[Greet] <woman> (1)
+[Find] <clothes_jacket> (1)
+[Grab] <clothes_jacket> (1)
+[Find] <clothes_jacket> (2)
+[Grab] <clothes_jacket> (2)
 [Dance]
-[Greet] <MAN> (1)
-[Greet] <WOMAN> (1)
+[Greet] <man> (1)
+[Greet] <woman> (1)
 [Dance]

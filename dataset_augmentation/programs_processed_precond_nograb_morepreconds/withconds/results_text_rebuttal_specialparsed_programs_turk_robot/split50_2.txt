@@ -3,8 +3,8 @@ Organise paperwork
 Pick up paperwork, sort into piles according to category, put each pile in a separate folder on the desk. Label folder with category name, put folder on shelf.
 
 
-[Find] <PAPER> (1)
-[Write] <PAPER> (1)
-[TurnTo] <PAPER> (1)
-[LookAt] <PAPER> (1)
-[Fold] <PAPER> (1)
+[Find] <paper> (1)
+[Write] <paper> (1)
+[TurnTo] <paper> (1)
+[LookAt] <paper> (1)
+[Fold] <paper> (1)

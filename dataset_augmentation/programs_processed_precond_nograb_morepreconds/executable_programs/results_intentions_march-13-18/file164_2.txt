@@ -1,0 +1,11 @@
+Drink
+First take the Drinking glass from the kitchen and then fill it up with water then drink it.
+
+
+[FIND] <drinking_glass> (1.1000)
+[GRAB] <drinking_glass> (1.1000)
+[WALK] <water> (1.1001)
+[FIND] <water> (1.1001)
+[GRAB] <water> (1.1001)
+[POUR] <water> (1.1001) <drinking_glass> (1.1000)
+[DRINK] <water> (1.1001)

@@ -1,12 +1,13 @@
-3
+4
 is_off: ('LIGHTING', '1') --> 
-location: ('LIGHTING', '1') --> ('DINING ROOM', '1')
+plugged: ('LIGHTING', '1') --> 
 atreach: ('LIGHTING', '1') --> ('LIGHTING', '1')
+location: ('LIGHTING', '1') --> ('DINING ROOM', '1')
 Turn on light
 I walk into the dining room and turn on the lights
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <LIGHTING> (1)
-[Find] <LIGHTING> (1)
-[SwitchOn] <LIGHTING> (1)
+[Walk] <dining_room> (1)
+[Walk] <lighting> (1)
+[Find] <lighting> (1)
+[SwitchOn] <lighting> (1)

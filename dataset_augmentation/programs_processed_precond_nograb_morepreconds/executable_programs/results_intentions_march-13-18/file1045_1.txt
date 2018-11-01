@@ -1,0 +1,12 @@
+Wash teeth
+Upon entering the restroom, walk to the sink. Take a toothbrush and apply enough toothpaste so that 1/4 of the brush is covered (this is the appropriate amount). Proceed to "brush" your teeth using an up and down motion with the brush in your mouth. Brush for 2 minutes covering all areas of the teeth. Rinse with water and clean toothbrush with water too.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <tooth_paste> (1.1000)
+[FIND] <tooth_paste> (1.1000)
+[SCRUB] <tooth_paste> (1.1000)
+[FIND] <toothbrush> (1.1001)
+[WASH] <toothbrush> (1.1001)
+[FIND] <sink> (1.191)
+[RINSE] <sink> (1.191)

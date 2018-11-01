@@ -1,0 +1,14 @@
+Write an email
+I go to my bed room and sit on the chair and in front of me is my desktop computer and start writing an email.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <chair> (1.1000)
+[FIND] <chair> (1.1000)
+[SIT] <chair> (1.1000)
+[FIND] <computer> (1.1001)
+[SWITCHON] <computer> (1.1001)
+[TURNTO] <computer> (1.1001)
+[LOOKAT] <computer> (1.1001)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)

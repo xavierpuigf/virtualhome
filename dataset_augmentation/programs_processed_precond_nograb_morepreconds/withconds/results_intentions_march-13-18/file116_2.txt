@@ -1,21 +1,21 @@
 4
-inside: ('COFFEE CUP', '1') --> ('COFFE MAKER', '1')
-location: ('COFFEE', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1'), ('BUTTON', '1') --> ('KITCHEN', '1')
+atreach: ('COFFEE', '1') --> ('COFFE MAKER', '1'), ('COFFE MAKER', '1') --> ('COFFE MAKER', '1'), ('COFFEE CUP', '1') --> ('COFFE MAKER', '1'), ('BUTTON', '1') --> ('COFFE MAKER', '1')
+location: ('COFFE MAKER', '1') --> ('KITCHEN', '1'), ('COFFEE', '1') --> ('KITCHEN', '1'), ('COFFEE CUP', '1') --> ('KITCHEN', '1'), ('BUTTON', '1') --> ('KITCHEN', '1')
 closed: ('COFFE MAKER', '1') --> 
-atreach: ('COFFEE', '1') --> ('COFFE MAKER', '1'), ('COFFE MAKER', '1') --> ('COFFE MAKER', '1'), ('BUTTON', '1') --> ('COFFE MAKER', '1'), ('COFFEE CUP', '1') --> ('COFFE MAKER', '1')
+inside: ('COFFEE CUP', '1') --> ('COFFE MAKER', '1')
 Make coffee
 Walk to the kitchen at the coffee maker, grab coffee, pour coffee into coffee maker, put coffee into coffee maker, push coffee maker's button, wait to complete, grab coffee cup
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <COFFE MAKER> (1)
-[Find] <COFFEE> (1)
-[Grab] <COFFEE> (1)
-[Open] <COFFE MAKER> (1)
-[Pour] <COFFEE> (1) <COFFE MAKER> (1)
-[Find] <COFFEE CUP> (1)
-[Grab] <COFFEE CUP> (1)
-[PutBack] <COFFEE CUP> (1) <COFFE MAKER> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
-[Grab] <COFFEE CUP> (1)
+[Walk] <kitchen> (1)
+[Walk] <coffe_maker> (1)
+[Find] <coffee> (1)
+[Grab] <coffee> (1)
+[Open] <coffe_maker> (1)
+[Pour] <coffee> (1) <coffe_maker> (1)
+[Find] <coffee_cup> (1)
+[Grab] <coffee_cup> (1)
+[PutBack] <coffee_cup> (1) <coffe_maker> (1)
+[Find] <button> (1)
+[Push] <button> (1)
+[Grab] <coffee_cup> (1)

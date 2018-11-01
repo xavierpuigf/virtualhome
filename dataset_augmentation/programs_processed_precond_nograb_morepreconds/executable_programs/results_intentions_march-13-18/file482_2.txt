@@ -1,0 +1,8 @@
+Pick up phone
+I walk to the kitchen and find the phone. I pick up the phone. I hold it to my ear.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <telephone> (1.1000)
+[FIND] <telephone> (1.1000)
+[GRAB] <telephone> (1.1000)

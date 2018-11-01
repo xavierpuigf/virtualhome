@@ -1,0 +1,20 @@
+Read book
+Go to home office and read a book
+
+
+[RUN] <living_room> (1.243)
+[WALK] <book> (1.1000)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[WALK] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <bookmark> (1.1001)
+[GRAB] <bookmark> (1.1001)
+[FIND] <floor> (1.63)
+[PUTBACK] <bookmark> (1.1001) <floor> (1.63)
+[TURNTO] <book> (1.1000)
+[LOOKAT] <book> (1.1000)
+[READ] <book> (1.1000)
+[TURNTO] <book> (1.1000)
+[LOOKAT] <book> (1.1000)
+[READ] <book> (1.1000)

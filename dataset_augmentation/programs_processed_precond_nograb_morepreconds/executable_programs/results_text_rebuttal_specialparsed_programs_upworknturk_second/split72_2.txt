@@ -1,0 +1,13 @@
+Watch TV
+I sit on the couch and watch TV.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <television> (1.1000)
+[FIND] <television> (1.1000)
+[SWITCHON] <television> (1.1000)
+[FIND] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[TURNTO] <television> (1.1000)
+[LOOKAT] <television> (1.1000)
+[WATCH] <television> (1.1000)

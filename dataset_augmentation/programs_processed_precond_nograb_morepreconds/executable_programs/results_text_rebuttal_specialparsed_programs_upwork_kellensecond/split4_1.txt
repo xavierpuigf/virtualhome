@@ -1,0 +1,10 @@
+Put down bags
+When walking into the house, putting down the things i am carrying
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <groceries> (1.1000)
+[FIND] <groceries> (1.1000)
+[GRAB] <groceries> (1.1000)
+[FIND] <table> (1.1001)
+[PUTBACK] <groceries> (1.1000) <table> (1.1001)

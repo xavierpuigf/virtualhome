@@ -1,1 +1,1 @@
-[{"location": [["TOILET", "2"], ["BATHROOM", "1"]]}]
+[{"location": [["toilet", "2"], ["bathroom", "1"]]}, {"free": ["toilet", "2"]}]

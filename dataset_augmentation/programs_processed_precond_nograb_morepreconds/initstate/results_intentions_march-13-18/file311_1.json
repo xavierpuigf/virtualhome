@@ -1,1 +1,1 @@
-[{"is_off": ["LAMP", "1"]}, {"location": [["LAMP", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["LAMP", "1"], ["LAMP", "1"]]}]
+[{"is_off": ["lamp", "1"]}, {"atreach": [["lamp", "1"], ["lamp", "1"]]}, {"location": [["lamp", "1"], ["entrance_hall", "1"]]}]

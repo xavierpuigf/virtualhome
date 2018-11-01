@@ -2,7 +2,7 @@ Vacuum
 If there happens to be a spill while I'm watching television, the robot can clean it up
 
 
-[Find] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
-[PlugIn] <TELEVISION> (1)
-[PlugOut] <TELEVISION> (1)
+[Find] <television> (1)
+[Watch] <television> (1)
+[PlugIn] <television> (1)
+[PlugOut] <television> (1)

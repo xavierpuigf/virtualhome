@@ -1,0 +1,17 @@
+Check email
+Turn on laptop.  Connect to Internet.  Type in the url.  Check for new email messages.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.1000)
+[FIND] <chair> (1.1000)
+[SIT] <chair> (1.1000)
+[FIND] <laptop> (1.1001)
+[SWITCHON] <laptop> (1.1001)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)
+[TURNTO] <laptop> (1.1001)
+[LOOKAT] <laptop> (1.1001)
+[FIND] <mail> (1.1003)
+[GRAB] <mail> (1.1003)
+[READ] <mail> (1.1003)

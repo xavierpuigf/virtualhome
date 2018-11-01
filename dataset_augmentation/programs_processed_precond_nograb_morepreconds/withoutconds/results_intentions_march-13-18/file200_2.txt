@@ -2,13 +2,13 @@ Brush teeth
 Brush your teeth in the bathroom.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOOTHBRUSH> (1)
-[Find] <TOOTHBRUSH> (1)
-[Find] <TOOTH PASTE> (1)
-[Grab] <TOOTH PASTE> (1)
-[Squeeze] <TOOTH PASTE> (1)
-[Spread] <TOOTH PASTE> (1) <TOOTHBRUSH> (1)
-[Grab] <TOOTHBRUSH> (1)
-[Find] <TEETH> (1)
-[Brush] <TEETH> (1)
+[Walk] <bathroom> (1)
+[Walk] <toothbrush> (1)
+[Find] <toothbrush> (1)
+[Find] <tooth_paste> (1)
+[Grab] <tooth_paste> (1)
+[Squeeze] <tooth_paste> (1)
+[Spread] <tooth_paste> (1) <toothbrush> (1)
+[Grab] <toothbrush> (1)
+[Find] <teeth> (1)
+[Brush] <teeth> (1)

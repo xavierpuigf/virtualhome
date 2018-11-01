@@ -1,17 +1,17 @@
 2
-inside: ('SOAP', '1') --> ('WASHING MACHINE', '1')
 closed: ('WASHING MACHINE', '1') --> 
+inside: ('SOAP', '1') --> ('WASHING MACHINE', '1')
 Wash clothes
 I hold my clothes. I walk over to the washing machine. I put clothes in the washing machine. I wash the clothes.
 
 
-[Find] <BASKET FOR CLOTHES> (1)
-[Grab] <BASKET FOR CLOTHES> (1)
-[Find] <WASHING MACHINE> (1)
-[Open] <WASHING MACHINE> (1)
-[PutBack] <BASKET FOR CLOTHES> (1) <WASHING MACHINE> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[PutBack] <SOAP> (1) <WASHING MACHINE> (1)
-[Find] <WASHING MACHINE> (1)
-[TurnTo] <WASHING MACHINE> (1)
+[Find] <basket_for_clothes> (1)
+[Grab] <basket_for_clothes> (1)
+[Find] <washing_machine> (1)
+[Open] <washing_machine> (1)
+[PutBack] <basket_for_clothes> (1) <washing_machine> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[PutBack] <soap> (1) <washing_machine> (1)
+[Find] <washing_machine> (1)
+[TurnTo] <washing_machine> (1)

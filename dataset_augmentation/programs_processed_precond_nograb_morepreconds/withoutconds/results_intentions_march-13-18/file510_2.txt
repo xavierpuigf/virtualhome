@@ -2,11 +2,11 @@ Watch TV
 I walk to the living room. I reach for the remote. I push the on button on the remote. I sit down on the couch and watch television.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BUTTON> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <button> (1)
+[Find] <button> (1)
+[Push] <button> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <television> (1)
+[Watch] <television> (1)

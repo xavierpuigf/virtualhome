@@ -1,0 +1,12 @@
+Brush teeth
+I pull up my online classes on the computer to look at what the assigned reading is. I get my textbook, notebook, and mechanical pencil. As I'm reading, I take notes over important points. I then use those notes to complete the assignment for the week. Frequently that involves writing a post on an online discussion board that answers a question related to things from the reading.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <brush> (1.1000)
+[FIND] <brush> (1.1000)
+[GRAB] <brush> (1.1000)
+[FIND] <tooth_paste> (1.1001)
+[SQUEEZE] <tooth_paste> (1.1001)
+[FIND] <water> (1.1002)
+[WASH] <water> (1.1002)

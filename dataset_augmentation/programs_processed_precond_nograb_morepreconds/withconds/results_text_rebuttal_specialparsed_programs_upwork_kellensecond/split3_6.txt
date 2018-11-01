@@ -1,17 +1,18 @@
-2
-location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('NEWSPAPER', '1') --> ('HOME OFFICE', '1')
+3
 atreach: ('CHAIR', '1') --> ('NEWSPAPER', '1'), ('NEWSPAPER', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('NEWSPAPER', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Read newspaper
 Sit on chair. Unfold newspaper. Browse articles and begin reading.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <NEWSPAPER> (1)
-[Grab] <NEWSPAPER> (1)
-[Unfold] <NEWSPAPER> (1)
-[TurnTo] <NEWSPAPER> (1)
-[LookAt] <NEWSPAPER> (1)
-[Read] <NEWSPAPER> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <newspaper> (1)
+[Grab] <newspaper> (1)
+[Unfold] <newspaper> (1)
+[TurnTo] <newspaper> (1)
+[LookAt] <newspaper> (1)
+[Read] <newspaper> (1)

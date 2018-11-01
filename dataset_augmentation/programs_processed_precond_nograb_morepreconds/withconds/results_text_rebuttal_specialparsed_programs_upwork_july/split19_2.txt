@@ -1,23 +1,22 @@
-5
+4
+unplugged: ('HAIRDRYER', '1') --> 
 is_off: ('HAIRDRYER', '1') --> 
 atreach: ('HAIRDRYER', '1') --> ('HAIRDRYER', '1'), ('ELECTRICAL OUTLET', '1') --> ('HAIRDRYER', '1'), ('HAIR', '1') --> ('HAIRDRYER', '1')
 location: ('HAIRDRYER', '1') --> ('BATHROOM', '1'), ('ELECTRICAL OUTLET', '1') --> ('BATHROOM', '1'), ('HAIR', '1') --> ('BATHROOM', '1')
-unplugged: ('HAIRDRYER', '1') --> 
-plugged: ('HAIRDRYER', '1') --> 
 Dry hair
 Plug in the hairdryer and switch it on to desired speed and temperature. Point toward wet hair and continuously move back and forth over wet hair to prevent burning head. Continue this action until hair is no longer wet.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <HAIRDRYER> (1)
-[Find] <HAIRDRYER> (1)
-[Grab] <HAIRDRYER> (1)
-[Find] <ELECTRICAL OUTLET> (1)
-[PlugIn] <HAIRDRYER> (1)
-[SwitchOn] <HAIRDRYER> (1)
-[Find] <HAIR> (1)
-[TurnTo] <HAIRDRYER> (1)
-[PointAt] <HAIRDRYER> (1) <HAIR> (1)
-[SwitchOff] <HAIRDRYER> (1)
-[PlugOut] <HAIRDRYER> (1)
-[PutObjBack] <HAIRDRYER> (1)
+[Walk] <bathroom> (1)
+[Walk] <hairdryer> (1)
+[Find] <hairdryer> (1)
+[Grab] <hairdryer> (1)
+[Find] <electrical_outlet> (1)
+[PlugIn] <hairdryer> (1)
+[SwitchOn] <hairdryer> (1)
+[Find] <hair> (1)
+[TurnTo] <hairdryer> (1)
+[PointAt] <hairdryer> (1) <hair> (1)
+[SwitchOff] <hairdryer> (1)
+[PlugOut] <hairdryer> (1)
+[PutObjBack] <hairdryer> (1)

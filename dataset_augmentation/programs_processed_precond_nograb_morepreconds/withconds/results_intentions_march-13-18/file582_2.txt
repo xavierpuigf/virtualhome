@@ -1,15 +1,16 @@
-2
+3
 is_off: ('COFFE MAKER', '1') --> 
+plugged: ('COFFE MAKER', '1') --> 
 closed: ('COFFE MAKER', '1') --> 
 Make coffee
 SWITCH ON THE COFFEE MAKER
 
 
-[Find] <COFFE MAKER> (1)
-[SwitchOn] <COFFE MAKER> (1)
-[Find] <COFFEE> (1)
-[Grab] <COFFEE> (1)
-[Open] <COFFE MAKER> (1)
-[PutBack] <COFFEE> (1) <COFFE MAKER> (1)
-[Find] <COFFEE CUP> (1)
-[Pour] <COFFEE> (1) <COFFEE CUP> (1)
+[Find] <coffe_maker> (1)
+[SwitchOn] <coffe_maker> (1)
+[Find] <coffee> (1)
+[Grab] <coffee> (1)
+[Open] <coffe_maker> (1)
+[PutBack] <coffee> (1) <coffe_maker> (1)
+[Find] <coffee_cup> (1)
+[Pour] <coffee> (1) <coffee_cup> (1)

@@ -1,1 +1,1 @@
-[{"location": [["MAGAZINE", "1"], ["LIVING ROOM", "1"]]}, {"location": [["LOVE SEAT", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["MAGAZINE", "1"], ["MAGAZINE", "1"]]}, {"atreach": [["LOVE SEAT", "1"], ["MAGAZINE", "1"]]}]
+[{"atreach": [["magazine", "1"], ["magazine", "1"]]}, {"atreach": [["love_seat", "1"], ["magazine", "1"]]}, {"location": [["magazine", "1"], ["living_room", "1"]]}, {"location": [["love_seat", "1"], ["living_room", "1"]]}]

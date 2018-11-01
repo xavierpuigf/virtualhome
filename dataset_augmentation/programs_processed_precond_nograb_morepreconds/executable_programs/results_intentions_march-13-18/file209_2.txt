@@ -1,0 +1,9 @@
+Read book
+Walk to Home Office. Walk to Table. Grab Book. Open Book and read.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <table> (1.1000)
+[FIND] <book> (1.1001)
+[GRAB] <book> (1.1001)
+[READ] <book> (1.1001)

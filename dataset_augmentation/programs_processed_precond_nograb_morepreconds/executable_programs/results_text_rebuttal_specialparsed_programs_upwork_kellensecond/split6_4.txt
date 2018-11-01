@@ -1,0 +1,15 @@
+Play on laptop
+Sit down on the couch. Place laptop on lap. Open laptop. Turn on laptop. Choose selected program. Play selected program. Close game. Close laptop.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <laptop> (1.1000)
+[FIND] <laptop> (1.1000)
+[GRAB] <laptop> (1.1000)
+[FIND] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[SWITCHON] <laptop> (1.1000)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)
+[SWITCHOFF] <laptop> (1.1000)
+[PUTOBJBACK] <laptop> (1.1000)

@@ -1,0 +1,10 @@
+Wash hands
+BEFORE EATING
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <soap> (1.1000)
+[FIND] <soap> (1.1000)
+[GRAB] <soap> (1.1000)
+[FIND] <towel> (1.1001)
+[WIPE] <towel> (1.1001)

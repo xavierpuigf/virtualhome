@@ -1,0 +1,10 @@
+Watch TV
+go to living room.Turn on TV with remote. Watch TV.
+
+
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[FIND] <television> (1.199)
+[SWITCHON] <television> (1.199)
+[TURNTO] <television> (1.199)
+[LOOKAT] <television> (1.199)

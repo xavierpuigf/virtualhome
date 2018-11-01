@@ -4,11 +4,11 @@ Watch TV
 I sit and watch television.
 
 
-[Find] <TELEVISION> (1)
-[TurnTo] <TELEVISION> (1)
-[PointAt] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
-[PlugIn] <TELEVISION> (1)
-[PlugOut] <TELEVISION> (1)
-[Find] <BEDROOM> (1)
-[Crawl] <BEDROOM> (1)
+[Find] <television> (1)
+[TurnTo] <television> (1)
+[PointAt] <television> (1)
+[Watch] <television> (1)
+[PlugIn] <television> (1)
+[PlugOut] <television> (1)
+[Find] <bedroom> (1)
+[Crawl] <bedroom> (1)

@@ -1,0 +1,11 @@
+Pick up phone
+find the phone and pick it up
+
+
+[FIND] <table> (1.187)
+[TURNTO] <table> (1.187)
+[LOOKAT] <table> (1.187)
+[FIND] <phone> (1.202)
+[TURNTO] <phone> (1.202)
+[LOOKAT] <phone> (1.202)
+[GRAB] <phone> (1.202)

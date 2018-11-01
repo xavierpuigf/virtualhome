@@ -1,13 +1,13 @@
 4
-location: ('LIGHT', '1') --> ('KITCHEN', '1')
-atreach: ('LIGHT', '1') --> ('LIGHT', '1')
 is_on: ('LIGHT', '1') --> 
 plugged: ('LIGHT', '1') --> 
+atreach: ('LIGHT', '1') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('KITCHEN', '1')
 Turn light off
 Put the light switch into the down, or off, position.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
+[Walk] <kitchen> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOff] <light> (1)

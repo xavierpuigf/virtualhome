@@ -2,13 +2,13 @@ Work
 I walk to the living room. I find the computer and turn it on. I look at the computer screen. I move and click the mouse to select buttons on the screen.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Push] <MOUSE> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
+[Walk] <living_room> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)
+[Find] <mouse> (1)
+[Push] <mouse> (1)
+[Find] <button> (1)
+[Push] <button> (1)

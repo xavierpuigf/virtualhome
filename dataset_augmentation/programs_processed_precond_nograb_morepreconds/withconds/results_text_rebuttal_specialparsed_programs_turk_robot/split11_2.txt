@@ -3,11 +3,11 @@ Wipe room down with lysol
 Spray the room with lysol then wipe all the areas that the kids touch.
 
 
-[Find] <DRESSER> (1)
-[TurnTo] <DRESSER> (1)
-[PointAt] <DRESSER> (1)
-[Wipe] <DRESSER> (1)
-[TurnTo] <DRESSER> (1)
-[LookAt] <DRESSER> (1)
-[Touch] <DRESSER> (1)
-[Walk] <DRESSER> (1)
+[Find] <dresser> (1)
+[TurnTo] <dresser> (1)
+[PointAt] <dresser> (1)
+[Wipe] <dresser> (1)
+[TurnTo] <dresser> (1)
+[LookAt] <dresser> (1)
+[Touch] <dresser> (1)
+[Walk] <dresser> (1)

@@ -1,1 +1,1 @@
-[{"atreach": [["PLATE", "1"], ["DISH SOAP", "1"]]}, {"atreach": [["SPONGE", "1"], ["DISH SOAP", "1"]]}, {"atreach": [["DISHRACK", "1"], ["DISH SOAP", "1"]]}, {"atreach": [["DISH SOAP", "1"], ["DISH SOAP", "1"]]}]
+[{"atreach": [["dish_soap", "1"], ["dish_soap", "1"]]}, {"atreach": [["sponge", "1"], ["dish_soap", "1"]]}, {"atreach": [["plate", "1"], ["dish_soap", "1"]]}, {"atreach": [["dishrack", "1"], ["dish_soap", "1"]]}]

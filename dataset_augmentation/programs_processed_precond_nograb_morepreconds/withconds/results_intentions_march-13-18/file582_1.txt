@@ -1,17 +1,18 @@
-2
-location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
+3
 atreach: ('BLANKET', '1') --> ('BLANKET', '1'), ('BED', '1') --> ('BLANKET', '1'), ('PILLOW', '1') --> ('BLANKET', '1')
+location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Go to sleep
 GO TO BEDROOM
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BLANKET> (1)
-[Find] <BLANKET> (1)
-[Grab] <BLANKET> (1)
-[Find] <BED> (1)
-[PutBack] <BLANKET> (1) <BED> (1)
-[Find] <PILLOW> (1)
-[Grab] <PILLOW> (1)
-[PutBack] <PILLOW> (1) <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <blanket> (1)
+[Find] <blanket> (1)
+[Grab] <blanket> (1)
+[Find] <bed> (1)
+[PutBack] <blanket> (1) <bed> (1)
+[Find] <pillow> (1)
+[Grab] <pillow> (1)
+[PutBack] <pillow> (1) <bed> (1)
 [Sleep]

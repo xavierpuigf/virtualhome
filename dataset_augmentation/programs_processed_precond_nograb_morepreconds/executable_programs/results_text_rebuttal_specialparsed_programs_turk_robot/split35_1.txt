@@ -1,0 +1,11 @@
+Keep cats inside while door is open
+Prevent the cats from running out of the house while the door is open.
+
+
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[POINTAT] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[PULL] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)

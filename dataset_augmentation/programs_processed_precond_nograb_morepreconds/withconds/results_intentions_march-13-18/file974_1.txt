@@ -1,12 +1,12 @@
 2
-location: ('TELEPHONE', '1') --> ('ENTRANCE HALL', '1')
 atreach: ('TELEPHONE', '1') --> ('TELEPHONE', '1')
+location: ('TELEPHONE', '1') --> ('ENTRANCE HALL', '1')
 Pick up phone
 Walk to the entrance hall. Find the telephone. Grab the telephone.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <TELEPHONE> (1)
-[Find] <TELEPHONE> (1)
-[Walk] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <telephone> (1)
+[Find] <telephone> (1)
+[Walk] <telephone> (1)
+[Grab] <telephone> (1)

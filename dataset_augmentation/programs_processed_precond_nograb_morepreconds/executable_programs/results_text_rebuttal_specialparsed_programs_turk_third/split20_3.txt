@@ -1,0 +1,13 @@
+Arrange furniture
+Move furniture where you want it.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <coffee_table> (1.101)
+[PUSH] <coffee_table> (1.101)
+[WALK] <couch> (1.1000)
+[PUSH] <couch> (1.1000)
+[WALK] <couch> (2.1001)
+[PUSH] <couch> (2.1001)
+[WALK] <cabinet> (1.1002)
+[PUSH] <cabinet> (1.1002)

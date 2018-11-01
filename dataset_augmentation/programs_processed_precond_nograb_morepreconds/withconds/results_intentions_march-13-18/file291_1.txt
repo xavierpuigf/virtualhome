@@ -1,17 +1,18 @@
-2
-location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1'), ('WATER', '1') --> ('KITCHEN', '1')
-atreach: ('WATER GLASS', '1') --> ('WATER', '1'), ('SOFA', '1') --> ('SOFA', '1'), ('WATER', '1') --> ('WATER', '1')
+3
+atreach: ('WATER GLASS', '1') --> ('WATER', '1'), ('WATER', '1') --> ('WATER', '1'), ('SOFA', '1') --> ('SOFA', '1')
+location: ('WATER', '1') --> ('KITCHEN', '1'), ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('SOFA', '1') --> ('LIVING ROOM', '1')
+free: ('SOFA', '1') --> 
 Drink
 GOING TO DRINK WATER IN KITCHEN
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Find] <WATER GLASS> (1)
-[Pour] <WATER> (1) <WATER GLASS> (1)
-[Drink] <WATER GLASS> (1)
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
+[Walk] <kitchen> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Find] <water_glass> (1)
+[Pour] <water> (1) <water_glass> (1)
+[Drink] <water_glass> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)

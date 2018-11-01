@@ -1,15 +1,15 @@
 2
+atreach: ('DISH SOAP', '1') --> ('SINK', '1'), ('PLATE', '1') --> ('SINK', '1')
 in: ('DISH SOAP', '1') --> ('SINK', '1')
-atreach: ('PLATE', '1') --> ('SINK', '1'), ('DISH SOAP', '1') --> ('SINK', '1')
 Wash dishes by hand
 Make some dish water, grab a dish rag, put dishes in dish water and wash.
 
 
-[Run] <SINK> (1)
-[Find] <DISH SOAP> (1)
-[Grab] <DISH SOAP> (1)
-[Find] <PLATE> (1)
-[PutBack] <DISH SOAP> (1) <PLATE> (1)
-[Rinse] <DISH SOAP> (1)
-[Find] <PLATE> (1)
-[Wash] <PLATE> (1)
+[Run] <sink> (1)
+[Find] <dish_soap> (1)
+[Grab] <dish_soap> (1)
+[Find] <plate> (1)
+[PutBack] <dish_soap> (1) <plate> (1)
+[Rinse] <dish_soap> (1)
+[Find] <plate> (1)
+[Wash] <plate> (1)

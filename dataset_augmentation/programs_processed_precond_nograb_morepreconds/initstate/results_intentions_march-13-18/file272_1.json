@@ -1,1 +1,1 @@
-[{"is_off": ["COMPUTER", "1"]}, {"atreach": [["TOILET", "1"], ["TOILET", "1"]]}, {"atreach": [["TOILET PAPER", "1"], ["TOILET", "1"]]}, {"location": [["TOILET", "1"], ["BATHROOM", "1"]]}, {"location": [["TOILET PAPER", "1"], ["BATHROOM", "1"]]}, {"sitting": ["Character", 1]}]
+[{"is_off": ["computer", "1"]}, {"sitting": ["character", 1]}, {"atreach": [["toilet", "1"], ["toilet", "1"]]}, {"atreach": [["toilet_paper", "1"], ["toilet", "1"]]}, {"location": [["toilet", "1"], ["bathroom", "1"]]}, {"location": [["toilet_paper", "1"], ["bathroom", "1"]]}, {"free": ["toilet", "1"]}]

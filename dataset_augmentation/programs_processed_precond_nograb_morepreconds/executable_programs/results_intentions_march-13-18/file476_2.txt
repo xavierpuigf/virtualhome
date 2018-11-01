@@ -1,0 +1,12 @@
+Pet cat
+touch cat in loving mannor
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cat> (1.1000)
+[FIND] <cat> (1.1000)
+[FIND] <toy> (1.1001)
+[GRAB] <toy> (1.1001)
+[FIND] <chair> (1.1002)
+[PUTBACK] <toy> (1.1001) <chair> (1.1002)
+[TOUCH] <cat> (1.1000)

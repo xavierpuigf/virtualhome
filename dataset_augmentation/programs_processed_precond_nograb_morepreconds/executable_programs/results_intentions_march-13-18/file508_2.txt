@@ -1,0 +1,9 @@
+Read book
+go to bedroom, sit down, pick up book, read
+
+
+[WALK] <living_room> (1.243)
+[WALK] <book> (1.1000)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[READ] <book> (1.1000)

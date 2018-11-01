@@ -1,1 +1,1 @@
-[{"location": [["TABLE", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["CENTERPIECE", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["CENTERPIECE", "1"], ["CENTERPIECE", "1"]]}]
+[{"atreach": [["centerpiece", "1"], ["centerpiece", "1"]]}, {"location": [["centerpiece", "1"], ["entrance_hall", "1"]]}, {"location": [["table", "1"], ["entrance_hall", "1"]]}]

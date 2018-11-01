@@ -2,11 +2,11 @@ Relax
 Read a book, surf the internet, watch videos, lie down, play games
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <STEREO> (1)
-[Find] <STEREO> (1)
-[SwitchOn] <STEREO> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
-[Find] <LEGS_BOTH> (1)
-[Stretch] <LEGS_BOTH> (1)
+[Walk] <bedroom> (1)
+[Walk] <stereo> (1)
+[Find] <stereo> (1)
+[SwitchOn] <stereo> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)
+[Find] <legs_both> (1)
+[Stretch] <legs_both> (1)

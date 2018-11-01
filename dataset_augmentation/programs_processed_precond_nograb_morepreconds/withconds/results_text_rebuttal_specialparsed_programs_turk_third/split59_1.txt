@@ -1,9 +1,10 @@
-0
+1
+free: ('TOILET', '1') --> 
 Use toilet
 Pull my pants down. Sit on toilet. Release contents. Wipe bottom. Flush. Pull up pants
 
 
-[Find] <TOILET> (1)
-[Wash] <TOILET> (1)
-[TurnTo] <TOILET> (1)
-[LookAt] <TOILET> (1)
+[Find] <toilet> (1)
+[Wash] <toilet> (1)
+[TurnTo] <toilet> (1)
+[LookAt] <toilet> (1)

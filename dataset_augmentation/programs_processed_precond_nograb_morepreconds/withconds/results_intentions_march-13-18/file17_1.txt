@@ -1,14 +1,14 @@
 3
-in: ('WATER GLASS', '1') --> ('TABLE', '1')
-location: ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1')
 atreach: ('WATER GLASS', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('KITCHEN', '1'), ('WATER GLASS', '1') --> ('KITCHEN', '1')
+in: ('WATER GLASS', '1') --> ('TABLE', '1')
 Drink
 walk to kitchen, walk to table, grab water glass and drink water
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <TABLE> (1)
-[Find] <WATER GLASS> (1)
-[Grab] <WATER GLASS> (1)
-[Drink] <WATER GLASS> (1)
-[PutBack] <WATER GLASS> (1) <TABLE> (1)
+[Walk] <kitchen> (1)
+[Walk] <table> (1)
+[Find] <water_glass> (1)
+[Grab] <water_glass> (1)
+[Drink] <water_glass> (1)
+[PutBack] <water_glass> (1) <table> (1)

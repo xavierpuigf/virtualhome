@@ -1,24 +1,24 @@
 6
-inside: ('GLASS', '1') --> ('KITCHEN CABINET', '1')
-atreach: ('FAUCET', '1') --> ('SINK', '1'), ('GLASS', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1')
-location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1')
-closed: ('KITCHEN CABINET', '1') --> 
-in: ('FAUCET', '1') --> ('SINK', '1')
 is_off: ('FAUCET', '1') --> 
+atreach: ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('GLASS', '1') --> ('KITCHEN CABINET', '1'), ('FAUCET', '1') --> ('SINK', '1')
+location: ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('GLASS', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('FAUCET', '1') --> ('KITCHEN', '1')
+closed: ('KITCHEN CABINET', '1') --> 
+inside: ('GLASS', '1') --> ('KITCHEN CABINET', '1')
+in: ('FAUCET', '1') --> ('SINK', '1')
 Get glass of water
 Get a glass from a cabinet. Hold it under the sink and turn the cold water on. Fill the glass. Turn off the water.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <KITCHEN CABINET> (1)
-[Find] <KITCHEN CABINET> (1)
-[Open] <KITCHEN CABINET> (1)
-[Find] <GLASS> (1)
-[Grab] <GLASS> (1)
-[Close] <KITCHEN CABINET> (1)
-[Walk] <SINK> (1)
-[Find] <FAUCET> (1)
-[SwitchOn] <FAUCET> (1)
-[PutBack] <GLASS> (1) <SINK> (1)
-[Grab] <GLASS> (1)
-[SwitchOff] <FAUCET> (1)
+[Walk] <kitchen> (1)
+[Walk] <kitchen_cabinet> (1)
+[Find] <kitchen_cabinet> (1)
+[Open] <kitchen_cabinet> (1)
+[Find] <glass> (1)
+[Grab] <glass> (1)
+[Close] <kitchen_cabinet> (1)
+[Walk] <sink> (1)
+[Find] <faucet> (1)
+[SwitchOn] <faucet> (1)
+[PutBack] <glass> (1) <sink> (1)
+[Grab] <glass> (1)
+[SwitchOff] <faucet> (1)

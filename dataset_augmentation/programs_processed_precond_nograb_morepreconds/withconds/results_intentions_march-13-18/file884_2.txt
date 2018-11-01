@@ -1,11 +1,11 @@
 2
-location: ('CAT', '1') --> ('ENTRANCE HALL', '1')
 atreach: ('CAT', '1') --> ('CAT', '1')
+location: ('CAT', '1') --> ('ENTRANCE HALL', '1')
 Pet cat
 find the cat, go near the cat and pet the cat
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <CAT> (1)
-[Find] <CAT> (1)
-[Touch] <CAT> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <cat> (1)
+[Find] <cat> (1)
+[Touch] <cat> (1)

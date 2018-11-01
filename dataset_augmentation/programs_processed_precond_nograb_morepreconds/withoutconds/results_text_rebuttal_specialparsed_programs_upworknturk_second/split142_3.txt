@@ -2,6 +2,6 @@ Turn light off
 Put the light switch into the down, or off, position.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[SwitchOff] <light> (1)

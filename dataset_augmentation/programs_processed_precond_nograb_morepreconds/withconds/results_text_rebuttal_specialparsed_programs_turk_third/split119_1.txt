@@ -1,22 +1,22 @@
 5
-inside: ('SPOON', '1') --> ('KITCHEN CABINET', '1'), ('GLASS', '1') --> ('KITCHEN CABINET', '1'), ('MILK', '1') --> ('KITCHEN CABINET', '1')
-in: ('SPOON', '1') --> ('KITCHEN CABINET', '1')
-location: ('KITCHEN CABINET', '1') --> ('KITCHEN', '1')
+atreach: ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('GLASS', '1') --> ('KITCHEN CABINET', '1'), ('MILK', '1') --> ('MILK', '1'), ('SPOON', '1') --> ('KITCHEN CABINET', '1')
+location: ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('GLASS', '1') --> ('KITCHEN', '1'), ('MILK', '1') --> ('KITCHEN', '1'), ('SPOON', '1') --> ('KITCHEN', '1')
 closed: ('KITCHEN CABINET', '1') --> 
-atreach: ('SPOON', '1') --> ('KITCHEN CABINET', '1'), ('GLASS', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('MILK', '1') --> ('MILK', '1')
+inside: ('GLASS', '1') --> ('KITCHEN CABINET', '1'), ('MILK', '1') --> ('KITCHEN CABINET', '1'), ('SPOON', '1') --> ('KITCHEN CABINET', '1')
+in: ('SPOON', '1') --> ('KITCHEN CABINET', '1')
 Make drink
 Pour milk into glass and add chocolate syrup. Stir for about 15 seconds with spoon.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <KITCHEN CABINET> (1)
-[Open] <KITCHEN CABINET> (1)
-[Find] <GLASS> (1)
-[Grab] <GLASS> (1)
-[Walk] <MILK> (1)
-[Find] <MILK> (1)
-[Grab] <MILK> (1)
-[Pour] <MILK> (1) <GLASS> (1)
-[Walk] <KITCHEN CABINET> (1)
-[Find] <SPOON> (1)
-[Grab] <SPOON> (1)
+[Walk] <kitchen> (1)
+[Walk] <kitchen_cabinet> (1)
+[Open] <kitchen_cabinet> (1)
+[Find] <glass> (1)
+[Grab] <glass> (1)
+[Walk] <milk> (1)
+[Find] <milk> (1)
+[Grab] <milk> (1)
+[Pour] <milk> (1) <glass> (1)
+[Walk] <kitchen_cabinet> (1)
+[Find] <spoon> (1)
+[Grab] <spoon> (1)

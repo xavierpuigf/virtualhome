@@ -1,0 +1,13 @@
+Work
+I walk to the office. I push the on button on the computer. I sit down in the chair. I work on the computer.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <button> (1.1000)
+[FIND] <button> (1.1000)
+[PUSH] <button> (1.1000)
+[FIND] <chair> (1.1001)
+[SIT] <chair> (1.1001)
+[FIND] <computer> (1.1002)
+[TURNTO] <computer> (1.1002)
+[LOOKAT] <computer> (1.1002)

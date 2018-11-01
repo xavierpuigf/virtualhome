@@ -1,0 +1,11 @@
+Pick up phone
+Go to the phone and pick it up.
+
+
+[RUN] <living_room> (1.243)
+[RUN] <table> (1.1000)
+[FIND] <phone> (1.1001)
+[GRAB] <phone> (1.1001)
+[WALK] <couch> (1.1002)
+[SIT] <couch> (1.1002)
+[TOUCH] <phone> (1.1001)

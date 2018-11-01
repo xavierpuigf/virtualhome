@@ -1,0 +1,6 @@
+Pick up phone
+When the phone is ringing, find the phone and lift it to pick it up
+
+
+[FIND] <phone> (1.202)
+[GRAB] <phone> (1.202)

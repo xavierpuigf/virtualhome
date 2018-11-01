@@ -1,8 +1,9 @@
-1
+2
 is_off: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
 Turn on light
 Find light switch. Flip the light switch on.
 
 
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)

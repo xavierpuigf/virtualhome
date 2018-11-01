@@ -1,0 +1,10 @@
+Pet cat
+I walk around the house and find the cat. I walk up to the cat. I gently put my hand on the cat. I gently rub my hand back and forth over the cat.
+
+
+[FIND] <cat> (1.1000)
+[WALK] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)
+[SCRUB] <cat> (1.1000)

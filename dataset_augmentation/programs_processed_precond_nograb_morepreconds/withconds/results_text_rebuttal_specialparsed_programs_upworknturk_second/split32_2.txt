@@ -1,26 +1,27 @@
-6
+7
 is_on: ('LIGHT', '1') --> 
-inside: ('PAJAMAS', '1') --> ('CLOSET', '1')
-atreach: ('BLANKET', '1') --> ('BED', '1'), ('LIGHT', '1') --> ('CLOSET', '1'), ('BED', '1') --> ('BED', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('PAJAMAS', '1') --> ('CLOSET', '1')
-location: ('BLANKET', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('CLOSET', '1') --> ('BEDROOM', '1')
-closed: ('CLOSET', '1') --> 
 plugged: ('LIGHT', '1') --> 
+atreach: ('BED', '1') --> ('BLANKET', '1'), ('CLOSET', '1') --> ('CLOSET', '1'), ('PAJAMAS', '1') --> ('CLOSET', '1'), ('LIGHT', '1') --> ('CLOSET', '1'), ('BLANKET', '1') --> ('BED', '1')
+location: ('CLOSET', '1') --> ('BEDROOM', '1'), ('PAJAMAS', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1'), ('BLANKET', '1') --> ('BEDROOM', '1')
+closed: ('CLOSET', '1') --> 
+inside: ('PAJAMAS', '1') --> ('CLOSET', '1')
+free: ('BED', '1') --> 
 Go to sleep
 Put on pajamas. Turn off lights. Enter bed. Put pillow under head. Put blanket on top of body. Close eyes. Go to sleep.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <CLOSET> (1)
-[Find] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <PAJAMAS> (1)
-[Grab] <PAJAMAS> (1)
-[Close] <CLOSET> (1)
-[PutOn] <PAJAMAS> (1)
-[Find] <LIGHT> (1)
-[SwitchOff] <LIGHT> (1)
-[Walk] <BED> (1)
-[Lie] <BED> (1)
-[Find] <BLANKET> (1)
-[Cover] <BLANKET> (1)
+[Walk] <bedroom> (1)
+[Walk] <closet> (1)
+[Find] <closet> (1)
+[Open] <closet> (1)
+[Find] <pajamas> (1)
+[Grab] <pajamas> (1)
+[Close] <closet> (1)
+[PutOn] <pajamas> (1)
+[Find] <light> (1)
+[SwitchOff] <light> (1)
+[Walk] <bed> (1)
+[Lie] <bed> (1)
+[Find] <blanket> (1)
+[Cover] <blanket> (1)
 [Sleep]

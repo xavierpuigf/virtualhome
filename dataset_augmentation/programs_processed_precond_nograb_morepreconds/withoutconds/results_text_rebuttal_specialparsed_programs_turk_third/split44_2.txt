@@ -2,13 +2,13 @@ Talk on phone
 Lay in the sofa, turn phone on, make phone call, talk
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Find] <SOFA> (1)
-[TurnTo] <SOFA> (1)
-[Lie] <SOFA> (1)
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
-[Dial] <TELEPHONE> (1)
-[Talk] <TELEPHONE> (1)
-[PutObjBack] <TELEPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <sofa> (1)
+[Find] <sofa> (1)
+[TurnTo] <sofa> (1)
+[Lie] <sofa> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)
+[Dial] <telephone> (1)
+[Talk] <telephone> (1)
+[PutObjBack] <telephone> (1)

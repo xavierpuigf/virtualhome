@@ -1,0 +1,10 @@
+Clean room
+Pick up toys, pick up dirty clothes, throw away garbage, straighten surfaces like desks and dresser, straighten closets, clean surfaces with cleaner, vacuum.
+
+
+[FIND] <toy> (1.311)
+[GRAB] <toy> (1.311)
+[FIND] <clothes_dress> (1.1000)
+[GRAB] <clothes_dress> (1.1000)
+[FIND] <vacuum_cleaner> (1.1001)
+[WIPE] <vacuum_cleaner> (1.1001)

@@ -2,9 +2,9 @@ Put groceries in Fridge
 walk to kitchen, walk to fridge, look at bags, grab groceries, put groceries in fridge.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[Open] <FRIDGE> (1)
-[PutBack] <GROCERIES> (1) <FRIDGE> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Find] <groceries> (1)
+[Grab] <groceries> (1)
+[Open] <fridge> (1)
+[PutBack] <groceries> (1) <fridge> (1)

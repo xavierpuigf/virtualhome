@@ -2,13 +2,13 @@ Take off shoes
 Untie one shoe and slip it off. Untie the other shoe and slip it off as well. Place the shoes off to the side.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Find] <SHOES> (1)
-[PutOff] <SHOES> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Grab] <SHOES> (1)
-[PutBack] <SHOES> (1) <CLOSET> (1)
-[Close] <CLOSET> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Find] <shoes> (1)
+[PutOff] <shoes> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Grab] <shoes> (1)
+[PutBack] <shoes> (1) <closet> (1)
+[Close] <closet> (1)

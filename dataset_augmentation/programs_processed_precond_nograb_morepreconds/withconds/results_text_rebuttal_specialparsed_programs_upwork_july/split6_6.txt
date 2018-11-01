@@ -1,19 +1,20 @@
-4
-inside: ('PEN', '1') --> ('DIARY', '1')
-location: ('SOFA', '1') --> ('BEDROOM', '1'), ('DIARY', '1') --> ('BEDROOM', '1')
+5
+atreach: ('SOFA', '1') --> ('PEN', '1'), ('DIARY', '1') --> ('DIARY', '1'), ('PEN', '1') --> ('DIARY', '1')
+location: ('DIARY', '1') --> ('BEDROOM', '1'), ('SOFA', '1') --> ('BEDROOM', '1'), ('PEN', '1') --> ('BEDROOM', '1')
 closed: ('DIARY', '1') --> 
-atreach: ('PEN', '1') --> ('DIARY', '1'), ('SOFA', '1') --> ('PEN', '1'), ('DIARY', '1') --> ('DIARY', '1')
+inside: ('PEN', '1') --> ('DIARY', '1')
+free: ('SOFA', '1') --> 
 Write in your diary
 Pick up and open your diary to the first blank page.  Write in it with a pen about whatever you did that day.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DIARY> (1)
-[Find] <DIARY> (1)
-[Grab] <DIARY> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)
-[Open] <DIARY> (1)
-[Find] <PEN> (1)
-[Grab] <PEN> (1)
-[Write] <DIARY> (1)
+[Walk] <bedroom> (1)
+[Walk] <diary> (1)
+[Find] <diary> (1)
+[Grab] <diary> (1)
+[Find] <sofa> (1)
+[Sit] <sofa> (1)
+[Open] <diary> (1)
+[Find] <pen> (1)
+[Grab] <pen> (1)
+[Write] <diary> (1)

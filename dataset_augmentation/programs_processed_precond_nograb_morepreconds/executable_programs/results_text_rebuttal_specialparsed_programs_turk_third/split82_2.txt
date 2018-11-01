@@ -1,0 +1,12 @@
+Sleep
+Going to bed
+
+
+[FIND] <bed> (1.97)
+[TURNTO] <bed> (1.97)
+[POINTAT] <bed> (1.97)
+[WASH] <bed> (1.97)
+[TURNTO] <bed> (1.97)
+[LOOKAT] <bed> (1.97)
+[TOUCH] <bed> (1.97)
+[SIT] <bed> (1.97)

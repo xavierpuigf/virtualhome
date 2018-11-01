@@ -1,0 +1,8 @@
+Work
+Open up the laptop and turn on computer, go to worker website and open my work tasks. begin to work on tasks from computer.
+
+
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)
+[TURNTO] <computer> (1.318)
+[LOOKAT] <computer> (1.318)

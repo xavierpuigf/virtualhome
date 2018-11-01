@@ -1,1 +1,1 @@
-[{"location": [["SHOES", "1"], ["ENTRANCE HALL", "1"]]}, {"in": [["SHOES", "1"], ["Character", 1]]}]
+[{"in": [["shoes", "1"], ["character", 1]]}, {"location": [["shoes", "1"], ["entrance_hall", "1"]]}]

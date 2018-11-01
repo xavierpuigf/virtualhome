@@ -1,13 +1,13 @@
 2
-location: ('BUTTON', '1') --> ('LIVING ROOM', '1'), ('CELLPHONE', '1') --> ('LIVING ROOM', '1')
-atreach: ('BUTTON', '1') --> ('CELLPHONE', '1'), ('CELLPHONE', '1') --> ('CELLPHONE', '1')
+atreach: ('CELLPHONE', '1') --> ('CELLPHONE', '1'), ('BUTTON', '1') --> ('CELLPHONE', '1')
+location: ('CELLPHONE', '1') --> ('LIVING ROOM', '1'), ('BUTTON', '1') --> ('LIVING ROOM', '1')
 Pick up phone
 I walk to the living room.  I find the phone and pick it up.  I press the button to answer it.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CELLPHONE> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
+[Walk] <living_room> (1)
+[Walk] <cellphone> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[Find] <button> (1)
+[Push] <button> (1)

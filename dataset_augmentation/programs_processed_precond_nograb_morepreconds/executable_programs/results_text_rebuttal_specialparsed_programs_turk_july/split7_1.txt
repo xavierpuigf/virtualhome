@@ -1,0 +1,19 @@
+Change TV channels
+Take remote. Change to desired channel by you.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <remote_control> (1.1000)
+[FIND] <remote_control> (1.1000)
+[GRAB] <remote_control> (1.1000)
+[WALK] <couch> (1.1001)
+[SIT] <couch> (1.1001)
+[TOUCH] <remote_control> (1.1000)
+[TOUCH] <remote_control> (1.1000)
+[TOUCH] <remote_control> (1.1000)
+[FIND] <television> (1.1002)
+[TURNTO] <television> (1.1002)
+[LOOKAT] <television> (1.1002)
+[WATCH] <television> (1.1002)
+[WATCH] <television> (1.1002)
+[WATCH] <television> (1.1002)

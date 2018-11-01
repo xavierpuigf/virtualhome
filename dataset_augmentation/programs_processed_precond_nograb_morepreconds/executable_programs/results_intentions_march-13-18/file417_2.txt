@@ -1,0 +1,23 @@
+Wash dishes with dishwasher
+I will load the dishes into the dishwasher and start it.
+
+
+[FIND] <dishwasher> (1.1000)
+[OPEN] <dishwasher> (1.1000)
+[FIND] <drinking_glass> (1.1001)
+[GRAB] <drinking_glass> (1.1001)
+[PUTBACK] <drinking_glass> (1.1001) <dishwasher> (1.1000)
+[FIND] <drinking_glass> (2.1002)
+[GRAB] <drinking_glass> (2.1002)
+[PUTBACK] <drinking_glass> (2.1002) <dishwasher> (1.1000)
+[FIND] <plate> (1.1003)
+[GRAB] <plate> (1.1003)
+[PUTBACK] <plate> (1.1003) <dishwasher> (1.1000)
+[FIND] <fork> (1.1004)
+[GRAB] <fork> (1.1004)
+[PUTBACK] <fork> (1.1004) <dishwasher> (1.1000)
+[FIND] <dish_soap> (1.1005)
+[GRAB] <dish_soap> (1.1005)
+[PUTBACK] <dish_soap> (1.1005) <dishwasher> (1.1000)
+[CLOSE] <dishwasher> (1.1000)
+[SWITCHON] <dishwasher> (1.1000)

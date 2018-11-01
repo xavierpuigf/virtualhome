@@ -1,14 +1,14 @@
 3
-in: ('TELEPHONE', '1') --> ('TABLE', '1')
-location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('TELEPHONE', '1') --> ('LIVING ROOM', '1')
 atreach: ('TELEPHONE', '1') --> ('TABLE', '1')
+location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('TELEPHONE', '1') --> ('LIVING ROOM', '1')
+in: ('TELEPHONE', '1') --> ('TABLE', '1')
 Pick up phone
 Walk to Living Room. Find table. Walk to table. Find telephone. Lift telephone.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TABLE> (1)
-[Find] <TABLE> (1)
-[Walk] <TABLE> (1)
-[Find] <TELEPHONE> (1)
-[Grab] <TELEPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <table> (1)
+[Find] <table> (1)
+[Walk] <table> (1)
+[Find] <telephone> (1)
+[Grab] <telephone> (1)

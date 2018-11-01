@@ -2,11 +2,11 @@ Drink
 I walk to the kitchen. Take a glass out of the cabinet. Then I walk to the sink and turn the water on and fill the glass. Then I take a drink.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <WATER> (1)
-[Find] <WATER> (1)
-[Find] <DRINKING GLASS> (1)
-[Pour] <WATER> (1) <DRINKING GLASS> (1)
-[Find] <DRINKING GLASS> (1)
-[Grab] <DRINKING GLASS> (1)
-[Drink] <WATER> (1)
+[Walk] <kitchen> (1)
+[Walk] <water> (1)
+[Find] <water> (1)
+[Find] <drinking_glass> (1)
+[Pour] <water> (1) <drinking_glass> (1)
+[Find] <drinking_glass> (1)
+[Grab] <drinking_glass> (1)
+[Drink] <water> (1)

@@ -1,15 +1,18 @@
-3
+6
 is_off: ('TELEVISION', '1') --> 
+plugged: ('TELEVISION', '1') --> 
+atreach: ('COUCH', '1') --> ('TELEVISION', '1'), ('TELEVISION', '1') --> ('TELEVISION', '1')
 location: ('TELEVISION', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
-atreach: ('TELEVISION', '1') --> ('TELEVISION', '1'), ('COUCH', '1') --> ('TELEVISION', '1')
+facing: ('COUCH', '1') --> ('TELEVISION', '1')
+free: ('COUCH', '1') --> 
 Watch TV
 Sit on the couch or the chair or the floor and watch cable, movies, or netflix.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <television> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Watch] <television> (1)

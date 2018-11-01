@@ -1,0 +1,16 @@
+Re arrange office
+Walk in.Turn on light.Move furniture. Change the room
+
+
+[WALK] <living_room> (1.243)
+[WALK] <light> (1.1000)
+[FIND] <light> (1.1000)
+[SWITCHON] <light> (1.1000)
+[WALK] <desk> (1.1001)
+[PUSH] <desk> (1.1001)
+[WALK] <chair> (1.1002)
+[PUSH] <chair> (1.1002)
+[WALK] <sofa> (1.1003)
+[PUSH] <sofa> (1.1003)
+[WALK] <filing_cabinet> (1.1004)
+[PUSH] <filing_cabinet> (1.1004)

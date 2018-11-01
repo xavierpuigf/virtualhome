@@ -2,12 +2,12 @@ Watch TV
 I sit on the couch and watch TV.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[TurnTo] <TELEVISION> (1)
-[LookAt] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <television> (1)
+[Find] <television> (1)
+[SwitchOn] <television> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[TurnTo] <television> (1)
+[LookAt] <television> (1)
+[Watch] <television> (1)

@@ -2,9 +2,9 @@ Pet cat
 I go looking for the cat in the living room where he usually sleeps. Once I find the cat I just pet him for a few minutes.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CAT> (1)
-[Find] <CAT> (1)
-[TurnTo] <CAT> (1)
-[LookAt] <CAT> (1)
-[Touch] <CAT> (1)
+[Walk] <living_room> (1)
+[Walk] <cat> (1)
+[Find] <cat> (1)
+[TurnTo] <cat> (1)
+[LookAt] <cat> (1)
+[Touch] <cat> (1)

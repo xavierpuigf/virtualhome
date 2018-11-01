@@ -1,1 +1,1 @@
-[{"location": [["SOAP", "1"], ["KITCHEN", "1"]]}, {"location": [["TOWEL", "1"], ["KITCHEN", "1"]]}, {"atreach": [["SOAP", "1"], ["SOAP", "1"]]}, {"atreach": [["TOWEL", "1"], ["SOAP", "1"]]}]
+[{"atreach": [["soap", "1"], ["soap", "1"]]}, {"atreach": [["towel", "1"], ["soap", "1"]]}, {"location": [["soap", "1"], ["kitchen", "1"]]}, {"location": [["towel", "1"], ["kitchen", "1"]]}]

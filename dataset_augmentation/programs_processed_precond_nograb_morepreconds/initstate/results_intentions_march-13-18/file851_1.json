@@ -1,1 +1,1 @@
-[{"is_off": ["COFFE MAKER", "1"]}, {"inside": [["GROUND COFFEE", "1"], ["COFFE MAKER", "1"]]}, {"inside": [["COFFEE POT", "1"], ["COFFE MAKER", "1"]]}, {"closed": ["COFFE MAKER", "1"]}, {"unplugged": ["COFFE MAKER", "1"]}, {"plugged": ["COFFE MAKER", "1"]}]
+[{"unplugged": ["coffe_maker", "1"]}, {"is_off": ["coffe_maker", "1"]}, {"closed": ["coffe_maker", "1"]}, {"inside": [["ground_coffee", "1"], ["coffe_maker", "1"]]}, {"inside": [["coffee_pot", "1"], ["coffe_maker", "1"]]}]

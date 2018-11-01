@@ -1,0 +1,10 @@
+Go to sleep
+Enter bedroom, turn on the light, and shut door. Change into night clothes. Turn off light. Turn down comforter, climb into bed, lay head on pillow, and cover up with comforter. Close eyes and drift off to sleep.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <bed> (1.1000)
+[FIND] <bed> (1.1000)
+[LIE] <bed> (1.1000)
+[FIND] <comforter> (1.1001)
+[PULL] <comforter> (1.1001)

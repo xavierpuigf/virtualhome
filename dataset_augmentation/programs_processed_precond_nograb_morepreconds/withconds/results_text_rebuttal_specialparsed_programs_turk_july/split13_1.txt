@@ -1,12 +1,13 @@
-1
-atreach: ('BED', '1') --> ('BED', '1')
+2
+atreach: ('BED', '1') --> ('BLANKET', '1')
+free: ('BED', '1') --> 
 Sleep
 Lay in my bed, wrap myself in a blanket, close my eyes and drift off into unconsciousness.
 
 
-[Find] <BED> (1)
-[Sit] <BED> (1)
-[Lie] <BED> (1)
-[Find] <BLANKET> (1)
-[Cover] <BLANKET> (1) <BLANKET> (1)
+[Find] <bed> (1)
+[Sit] <bed> (1)
+[Lie] <bed> (1)
+[Find] <blanket> (1)
+[Cover] <blanket> (1) <blanket> (1)
 [Sleep]

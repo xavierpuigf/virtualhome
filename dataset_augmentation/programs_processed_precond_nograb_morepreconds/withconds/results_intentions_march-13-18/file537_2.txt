@@ -1,21 +1,22 @@
-4
+5
 is_off: ('COFFE MAKER', '1') --> 
-location: ('MUG', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1'), ('COFFEE', '1') --> ('KITCHEN', '1')
+plugged: ('COFFE MAKER', '1') --> 
+atreach: ('MUG', '1') --> ('MUG', '1'), ('COFFEE', '1') --> ('MUG', '1'), ('COFFE MAKER', '1') --> ('MUG', '1')
+location: ('MUG', '1') --> ('KITCHEN', '1'), ('COFFEE', '1') --> ('KITCHEN', '1'), ('COFFE MAKER', '1') --> ('KITCHEN', '1')
 closed: ('COFFE MAKER', '1') --> 
-atreach: ('MUG', '1') --> ('MUG', '1'), ('COFFE MAKER', '1') --> ('MUG', '1'), ('COFFEE', '1') --> ('MUG', '1')
 Make coffee
 I walk to the Kitchen.  I grab a mug.  I grab a bag of coffee.   I put the coffee grounds into the coffee maker.  I place the mug in the coffee maker.  I turn on the coffee maker.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <MUG> (1)
-[Find] <MUG> (1)
-[Grab] <MUG> (1)
-[Find] <COFFEE> (1)
-[Grab] <COFFEE> (1)
-[Find] <COFFE MAKER> (1)
-[Open] <COFFE MAKER> (1)
-[PutBack] <COFFEE> (1) <COFFE MAKER> (1)
-[PutBack] <MUG> (1) <COFFE MAKER> (1)
-[Find] <COFFE MAKER> (1)
-[SwitchOn] <COFFE MAKER> (1)
+[Walk] <kitchen> (1)
+[Walk] <mug> (1)
+[Find] <mug> (1)
+[Grab] <mug> (1)
+[Find] <coffee> (1)
+[Grab] <coffee> (1)
+[Find] <coffe_maker> (1)
+[Open] <coffe_maker> (1)
+[PutBack] <coffee> (1) <coffe_maker> (1)
+[PutBack] <mug> (1) <coffe_maker> (1)
+[Find] <coffe_maker> (1)
+[SwitchOn] <coffe_maker> (1)

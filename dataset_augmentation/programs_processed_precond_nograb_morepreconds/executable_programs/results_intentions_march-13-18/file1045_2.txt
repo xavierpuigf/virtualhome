@@ -1,0 +1,14 @@
+Wash clothes
+Enter the laundry room to clean your clothes. Bring your dirty clothes with you. Place the dirty clothes into the washer and add one dose of soap to the unit. Upon adding the soap and closing the door to the washer, place the setting on normal wash. After roughly 45 minutes, when the wash is complete, add laundry to the dryer. Add 2 dryer sheets and dry on normal.
+
+
+[STANDUP]
+[WALK] <bathroom> (1.1)
+[WALK] <laundry_detergent> (1.1000)
+[FIND] <laundry_detergent> (1.1000)
+[GRAB] <laundry_detergent> (1.1000)
+[FIND] <washing_machine> (1.1001)
+[OPEN] <washing_machine> (1.1001)
+[FIND] <sheets> (1.1002)
+[GRAB] <sheets> (1.1002)
+[PUTBACK] <sheets> (1.1002) <washing_machine> (1.1001)

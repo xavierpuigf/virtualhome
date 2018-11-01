@@ -1,0 +1,13 @@
+Drink
+Pick up glass. Carry it to the sink. turn the cold water on, put the glass under the water to fill it. put the cup to your mouth and drink it. Place the cup on the counter
+
+
+[FIND] <cup> (1.1000)
+[GRAB] <cup> (1.1000)
+[WALK] <sink> (1.191)
+[RUN] <cup> (1.1000)
+[WALK] <water> (1.1001)
+[FIND] <water> (1.1001)
+[GRAB] <water> (1.1001)
+[POUR] <water> (1.1001) <cup> (1.1000)
+[DRINK] <water> (1.1001)

@@ -1,0 +1,7 @@
+Set up table
+Find the table, pick up the table, take table to kitchen, place table face up.
+
+
+[FIND] <table> (1.1000)
+[PULL] <table> (1.1000)
+[WALK] <dining_room> (1.161)

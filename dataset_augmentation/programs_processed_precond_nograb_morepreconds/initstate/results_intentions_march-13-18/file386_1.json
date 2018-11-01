@@ -1,1 +1,1 @@
-[{"is_off": ["TELEVISION", "1"]}, {"atreach": [["CHAIR", "1"], ["TELEVISION", "1"]]}, {"atreach": [["TELEVISION", "1"], ["TELEVISION", "1"]]}]
+[{"is_off": ["television", "1"]}, {"plugged": ["television", "1"]}, {"atreach": [["chair", "1"], ["television", "1"]]}, {"atreach": [["television", "1"], ["television", "1"]]}, {"facing": [["chair", "1"], ["television", "1"]]}, {"free": ["chair", "1"]}]

@@ -2,6 +2,6 @@ Turn on light
 walk into living room, walk to light, turn on light switch.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
+[Walk] <living_room> (1)
+[Walk] <light> (1)
+[SwitchOn] <light> (1)

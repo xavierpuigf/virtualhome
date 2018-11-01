@@ -1,0 +1,13 @@
+Wash dishes with dishwasher
+I walk to the kitchen. I take plate. I open the dishwasher. I put plate in the dishwasher. I switch on the dishwasher.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <plate> (1.1000)
+[FIND] <plate> (1.1000)
+[GRAB] <plate> (1.1000)
+[WALK] <dishwasher> (1.1001)
+[OPEN] <dishwasher> (1.1001)
+[PUTBACK] <plate> (1.1000) <dishwasher> (1.1001)
+[CLOSE] <dishwasher> (1.1001)
+[SWITCHON] <dishwasher> (1.1001)

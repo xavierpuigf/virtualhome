@@ -1,23 +1,24 @@
-2
-location: ('TABLE', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('PLATE', '1') --> ('KITCHEN', '1'), ('FORK', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('CHAIR', '1') --> ('KITCHEN', '1')
-atreach: ('CHAIR', '1') --> ('FORK', '1'), ('PLATE', '1') --> ('PLATE', '1'), ('FORK', '1') --> ('TABLE', '1'), ('FOOD_FOOD', '1') --> ('STOVE', '1')
+3
+atreach: ('CHAIR', '1') --> ('FORK', '1'), ('PLATE', '1') --> ('PLATE', '1'), ('FOOD_FOOD', '1') --> ('STOVE', '1'), ('FORK', '1') --> ('TABLE', '1')
+location: ('PLATE', '1') --> ('KITCHEN', '1'), ('STOVE', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('TABLE', '1') --> ('KITCHEN', '1'), ('CHAIR', '1') --> ('KITCHEN', '1'), ('FORK', '1') --> ('KITCHEN', '1')
+free: ('CHAIR', '1') --> 
 Eat dinner
 Put food (on a plate) on the table. Sit in a chair at the table. Pick up a fork. Stab the food with the fork. Bring the fork and food to the mouth. Open mouth. Put food in. Chew. Swallow. Repeat.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <PLATE> (1)
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[Walk] <STOVE> (1)
-[Find] <FOOD_FOOD> (1)
-[Uncover] <FOOD_FOOD> (1)
-[Grab] <FOOD_FOOD> (1)
-[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
-[Walk] <TABLE> (1)
-[PutBack] <PLATE> (1) <TABLE> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <FORK> (1)
-[Grab] <FORK> (1)
-[Eat] <PLATE> (1)
+[Walk] <kitchen> (1)
+[Walk] <plate> (1)
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[Walk] <stove> (1)
+[Find] <food_food> (1)
+[Uncover] <food_food> (1)
+[Grab] <food_food> (1)
+[PutBack] <food_food> (1) <plate> (1)
+[Walk] <table> (1)
+[PutBack] <plate> (1) <table> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <fork> (1)
+[Grab] <fork> (1)
+[Eat] <plate> (1)

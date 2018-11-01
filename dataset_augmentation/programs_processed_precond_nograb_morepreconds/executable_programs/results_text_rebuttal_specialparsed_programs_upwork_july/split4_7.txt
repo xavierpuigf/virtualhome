@@ -1,0 +1,18 @@
+Hand washing
+Turn on the faucet. Soap up your hands. Then rinse under the running water of the faucet. Turn off faucet and dry hands.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <soap> (1.1002)
+[GRAB] <soap> (1.1002)
+[FIND] <hands_both> (1.1003)
+[SCRUB] <hands_both> (1.1003)
+[PUTOBJBACK] <soap> (1.1002)
+[WASH] <hands_both> (1.1003)
+[SWITCHOFF] <faucet> (1.1001)
+[FIND] <towel> (1.1004)
+[GRAB] <towel> (1.1004)
+[WIPE] <hands_both> (1.1003)

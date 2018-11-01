@@ -1,0 +1,10 @@
+Turn on light
+Waking up early in the morning from my bed I walked in dark towards switch board and switch on the lights.
+
+
+[WAKEUP]
+[STANDUP]
+[WALK] <lamp> (1.1000)
+[FIND] <light> (1.1001)
+[SWITCHON] <light> (1.1001)
+[SWITCHOFF] <light> (1.1001)

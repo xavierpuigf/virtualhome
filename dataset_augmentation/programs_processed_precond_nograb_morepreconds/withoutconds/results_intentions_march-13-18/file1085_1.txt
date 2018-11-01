@@ -2,7 +2,7 @@ Cook some food
 Go kitchen and make something for eat
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <FOOD_FOOD> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <food_food> (1)

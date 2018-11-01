@@ -2,11 +2,11 @@ Entertain
 Give guests wine, cheese, crackers and sit and talk
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <FOOD_CHEESE> (1)
-[Find] <FOOD_CHEESE> (1)
-[Find] <CRACKERS> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <WINE GLASS> (1)
-[Drink] <WINE GLASS> (1)
+[Walk] <living_room> (1)
+[Walk] <food_cheese> (1)
+[Find] <food_cheese> (1)
+[Find] <crackers> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <wine_glass> (1)
+[Drink] <wine_glass> (1)

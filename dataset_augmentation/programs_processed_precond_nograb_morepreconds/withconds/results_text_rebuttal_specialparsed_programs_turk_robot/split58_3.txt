@@ -1,12 +1,13 @@
-0
+1
+free: ('BED', '1') --> 
 Make bed
 Change the sheets. Put the cover on. Put the bedspread over the covers.
 
 
-[Find] <BED> (1)
-[Uncover] <BED> (1)
-[Find] <SHEETS> (1)
-[Grab] <SHEETS> (1)
-[Find] <SHEETS> (2)
-[Cover] <BED> (1) <SHEETS> (2)
-[Lie] <BED> (1)
+[Find] <bed> (1)
+[Uncover] <bed> (1)
+[Find] <sheets> (1)
+[Grab] <sheets> (1)
+[Find] <sheets> (2)
+[Cover] <bed> (1) <sheets> (2)
+[Lie] <bed> (1)

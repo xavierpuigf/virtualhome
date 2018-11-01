@@ -4,5 +4,5 @@ Put umbrella away
 Place the umbrella in the umbrella bucket point first.
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <MOP BUCKET> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <mop_bucket> (1)

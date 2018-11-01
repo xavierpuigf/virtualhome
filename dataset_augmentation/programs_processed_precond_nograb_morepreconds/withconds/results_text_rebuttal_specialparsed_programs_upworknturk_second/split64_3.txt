@@ -1,23 +1,24 @@
-2
-location: ('TABLE CLOTH', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('PLATE', '1') --> ('LIVING ROOM', '1'), ('FOOD_FOOD', '1') --> ('LIVING ROOM', '1')
-atreach: ('TABLE CLOTH', '1') --> ('TABLE CLOTH', '1'), ('CHAIR', '1') --> ('TABLE', '1'), ('TABLE', '1') --> ('TABLE', '1'), ('PLATE', '1') --> ('TABLE', '1'), ('FOOD_FOOD', '1') --> ('TABLE', '1')
+3
+atreach: ('CHAIR', '1') --> ('TABLE', '1'), ('TABLE CLOTH', '1') --> ('TABLE CLOTH', '1'), ('TABLE', '1') --> ('TABLE', '1'), ('PLATE', '1') --> ('TABLE', '1'), ('FOOD_FOOD', '1') --> ('TABLE', '1')
+location: ('TABLE CLOTH', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('PLATE', '1') --> ('LIVING ROOM', '1'), ('FOOD_FOOD', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Eat
 Grab folding table. Unfold it. Put prepared food on top. Eat.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TABLE CLOTH> (1)
-[Find] <TABLE CLOTH> (1)
-[Grab] <TABLE CLOTH> (1)
-[Walk] <TABLE> (1)
-[Unfold] <TABLE CLOTH> (1)
-[Cover] <TABLE> (1) <TABLE CLOTH> (1)
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[PutBack] <PLATE> (1) <TABLE> (1)
-[Find] <FOOD_FOOD> (1)
-[Grab] <FOOD_FOOD> (1)
-[PutBack] <FOOD_FOOD> (1) <PLATE> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Eat] <PLATE> (1)
+[Walk] <living_room> (1)
+[Walk] <table_cloth> (1)
+[Find] <table_cloth> (1)
+[Grab] <table_cloth> (1)
+[Walk] <table> (1)
+[Unfold] <table_cloth> (1)
+[Cover] <table> (1) <table_cloth> (1)
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[PutBack] <plate> (1) <table> (1)
+[Find] <food_food> (1)
+[Grab] <food_food> (1)
+[PutBack] <food_food> (1) <plate> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Eat] <plate> (1)

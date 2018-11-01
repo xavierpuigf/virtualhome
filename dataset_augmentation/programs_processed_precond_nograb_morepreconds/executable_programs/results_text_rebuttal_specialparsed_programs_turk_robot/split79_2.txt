@@ -1,0 +1,18 @@
+Rearrange photo frames
+Place all the photo frames in a different order.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <wall> (1.169)
+[FIND] <picture> (1.1000)
+[TURNTO] <picture> (1.1000)
+[LOOKAT] <picture> (1.1000)
+[GRAB] <picture> (1.1000)
+[WALK] <wall> (2.170)
+[PUTBACK] <picture> (1.1000) <wall> (2.170)
+[FIND] <picture> (2.1001)
+[TURNTO] <picture> (2.1001)
+[LOOKAT] <picture> (2.1001)
+[GRAB] <picture> (2.1001)
+[WALK] <wall> (1.169)
+[PUTBACK] <picture> (2.1001) <wall> (1.169)

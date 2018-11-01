@@ -2,13 +2,13 @@ Get dressed
 Find dresser, grab pants, grab shirt, put on pants, put on shirt
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DRESSER> (1)
-[Open] <DRESSER> (1)
-[Find] <CLOTHES_PANTS> (1)
-[Grab] <CLOTHES_PANTS> (1)
-[PutOn] <CLOTHES_PANTS> (1)
-[Find] <CLOTHES_SHIRT> (1)
-[Grab] <CLOTHES_SHIRT> (1)
-[PutOn] <CLOTHES_SHIRT> (1)
-[Close] <DRESSER> (1)
+[Walk] <bedroom> (1)
+[Walk] <dresser> (1)
+[Open] <dresser> (1)
+[Find] <clothes_pants> (1)
+[Grab] <clothes_pants> (1)
+[PutOn] <clothes_pants> (1)
+[Find] <clothes_shirt> (1)
+[Grab] <clothes_shirt> (1)
+[PutOn] <clothes_shirt> (1)
+[Close] <dresser> (1)

@@ -1,25 +1,25 @@
 5
 is_off: ('FAUCET', '1') --> 
-inside: ('WATER GLASS', '1') --> ('KITCHEN CABINET', '1')
-location: ('WATER', '1') --> ('KITCHEN', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('FAUCET', '1') --> ('KITCHEN', '1')
+atreach: ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('WATER GLASS', '1') --> ('KITCHEN CABINET', '1'), ('SINK', '1') --> ('KITCHEN CABINET', '1'), ('FAUCET', '1') --> ('KITCHEN CABINET', '1'), ('WATER', '1') --> ('KITCHEN CABINET', '1')
+location: ('KITCHEN CABINET', '1') --> ('KITCHEN', '1'), ('WATER GLASS', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('FAUCET', '1') --> ('KITCHEN', '1'), ('WATER', '1') --> ('KITCHEN', '1')
 closed: ('KITCHEN CABINET', '1') --> 
-atreach: ('WATER GLASS', '1') --> ('KITCHEN CABINET', '1'), ('WATER', '1') --> ('KITCHEN CABINET', '1'), ('KITCHEN CABINET', '1') --> ('KITCHEN CABINET', '1'), ('SINK', '1') --> ('KITCHEN CABINET', '1'), ('FAUCET', '1') --> ('KITCHEN CABINET', '1')
+inside: ('WATER GLASS', '1') --> ('KITCHEN CABINET', '1')
 Drink
 Opening the kitchen cabinet to grab water glass and pour water from the faucet into it to drink.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <KITCHEN CABINET> (1)
-[Find] <KITCHEN CABINET> (1)
-[Open] <KITCHEN CABINET> (1)
-[Find] <WATER GLASS> (1)
-[Grab] <WATER GLASS> (1)
-[Close] <KITCHEN CABINET> (1)
-[Find] <SINK> (1)
-[PutBack] <WATER GLASS> (1) <SINK> (1)
-[Find] <FAUCET> (1)
-[SwitchOn] <FAUCET> (1)
-[SwitchOff] <FAUCET> (1)
-[Grab] <WATER GLASS> (1)
-[Find] <WATER> (1)
-[Drink] <WATER> (1)
+[Walk] <kitchen> (1)
+[Walk] <kitchen_cabinet> (1)
+[Find] <kitchen_cabinet> (1)
+[Open] <kitchen_cabinet> (1)
+[Find] <water_glass> (1)
+[Grab] <water_glass> (1)
+[Close] <kitchen_cabinet> (1)
+[Find] <sink> (1)
+[PutBack] <water_glass> (1) <sink> (1)
+[Find] <faucet> (1)
+[SwitchOn] <faucet> (1)
+[SwitchOff] <faucet> (1)
+[Grab] <water_glass> (1)
+[Find] <water> (1)
+[Drink] <water> (1)

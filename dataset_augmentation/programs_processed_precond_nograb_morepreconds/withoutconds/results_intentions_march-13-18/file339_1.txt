@@ -4,6 +4,6 @@ Anything that has been identified as a room light should be turned from the off 
 
 [WakeUp]
 [StandUp]
-[Walk] <KITCHEN> (1)
-[Walk] <LIGHTING> (1)
-[TurnTo] <LIGHTING> (1)
+[Walk] <kitchen> (1)
+[Walk] <lighting> (1)
+[TurnTo] <lighting> (1)

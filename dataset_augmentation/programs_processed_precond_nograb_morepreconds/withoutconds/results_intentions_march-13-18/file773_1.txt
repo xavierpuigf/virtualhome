@@ -2,5 +2,5 @@ Listen to music
 Find radio. Turn on radio. Find a station that you like by switching through the channels. Listen.
 
 
-[Find] <RADIO> (1)
-[SwitchOn] <RADIO> (1)
+[Find] <radio> (1)
+[SwitchOn] <radio> (1)

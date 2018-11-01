@@ -1,21 +1,22 @@
-4
-inside: ('PAPER', '1') --> ('DESK', '1'), ('PEN', '1') --> ('DESK', '1')
-location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1')
+5
+atreach: ('CHAIR', '1') --> ('DESK', '1'), ('DESK', '1') --> ('CHAIR', '1'), ('PAPER', '1') --> ('CHAIR', '1'), ('PEN', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('PAPER', '1') --> ('HOME OFFICE', '1'), ('PEN', '1') --> ('HOME OFFICE', '1')
 closed: ('DESK', '1') --> 
-atreach: ('PAPER', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('DESK', '1'), ('DESK', '1') --> ('CHAIR', '1'), ('PEN', '1') --> ('CHAIR', '1')
+inside: ('PAPER', '1') --> ('DESK', '1'), ('PEN', '1') --> ('DESK', '1')
+free: ('CHAIR', '1') --> 
 Draw picture
 Pick up a pad of paper and a pen.  Draw a picture.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <DESK> (1)
-[Open] <DESK> (1)
-[Find] <PAPER> (1)
-[Grab] <PAPER> (1)
-[PutBack] <PAPER> (1) <DESK> (1)
-[Find] <PEN> (1)
-[Grab] <PEN> (1)
-[Close] <DESK> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <desk> (1)
+[Open] <desk> (1)
+[Find] <paper> (1)
+[Grab] <paper> (1)
+[PutBack] <paper> (1) <desk> (1)
+[Find] <pen> (1)
+[Grab] <pen> (1)
+[Close] <desk> (1)

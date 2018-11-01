@@ -2,9 +2,9 @@ Browse internet
 I go to the living room, where my computer is. I locate it, switch it on and type desired URL adress in the web browser.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
+[Walk] <living_room> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <keyboard> (1)
+[Type] <keyboard> (1)

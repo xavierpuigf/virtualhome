@@ -1,0 +1,10 @@
+Put out flowers
+Place a flower centrepiece on the entrance hall table.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <centerpiece> (1.1000)
+[FIND] <centerpiece> (1.1000)
+[GRAB] <centerpiece> (1.1000)
+[WALK] <table> (1.1001)
+[PUTBACK] <centerpiece> (1.1000) <table> (1.1001)

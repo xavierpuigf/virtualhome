@@ -1,1 +1,1 @@
-[{"is_off": ["RADIO", "1"]}, {"location": [["TABLE", "1"], ["DINING ROOM", "1"]]}, {"location": [["RADIO", "1"], ["DINING ROOM", "1"]]}, {"atreach": [["RADIO", "1"], ["RADIO", "1"]]}]
+[{"is_off": ["radio", "1"]}, {"plugged": ["radio", "1"]}, {"atreach": [["radio", "1"], ["radio", "1"]]}, {"location": [["radio", "1"], ["dining_room", "1"]]}, {"location": [["table", "1"], ["dining_room", "1"]]}]

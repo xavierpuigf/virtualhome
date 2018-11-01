@@ -2,9 +2,9 @@ Read newspaper
 Take 'today's' newspaper of my liking, read it, browse for headlines, read financial pages, take notes.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <NEWSPAPER> (1)
-[Find] <NEWSPAPER> (1)
-[Grab] <NEWSPAPER> (1)
-[Find] <NOTEBOOK> (1)
-[Write] <NOTEBOOK> (1)
+[Walk] <home_office> (1)
+[Walk] <newspaper> (1)
+[Find] <newspaper> (1)
+[Grab] <newspaper> (1)
+[Find] <notebook> (1)
+[Write] <notebook> (1)

@@ -1,16 +1,17 @@
-2
-location: ('CELLPHONE', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
-atreach: ('CELLPHONE', '1') --> ('BED', '1'), ('BED', '1') --> ('CELLPHONE', '1')
+3
+atreach: ('BED', '1') --> ('CELLPHONE', '1'), ('CELLPHONE', '1') --> ('BED', '1')
+location: ('BED', '1') --> ('BEDROOM', '1'), ('CELLPHONE', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Text friend
 Sit down on bed. Take out cell phone out of purse. Open contacts. Start new text message. Text friend.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BED> (1)
-[Sit] <BED> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[TurnTo] <CELLPHONE> (1)
-[LookAt] <CELLPHONE> (1)
-[Text] <CELLPHONE> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <bed> (1)
+[Sit] <bed> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[TurnTo] <cellphone> (1)
+[LookAt] <cellphone> (1)
+[Text] <cellphone> (1)

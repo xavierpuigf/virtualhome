@@ -1,0 +1,12 @@
+Brush teeth
+go to the bathroom and brush your teeth
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <toothbrush> (1.1000)
+[FIND] <toothbrush> (1.1000)
+[GRAB] <toothbrush> (1.1000)
+[WALK] <tooth_paste> (1.1001)
+[FIND] <tooth_paste> (1.1001)
+[GRAB] <tooth_paste> (1.1001)
+[POUR] <tooth_paste> (1.1001) <toothbrush> (1.1000)

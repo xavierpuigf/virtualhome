@@ -1,0 +1,11 @@
+Wash teeth
+WALK TO THE BATHROOM USE PASTE AND BRUSH TO WASH YOUR TEETH
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <toothbrush_holder> (1.1000)
+[FIND] <toothbrush_holder> (1.1000)
+[FIND] <tooth_paste> (1.1001)
+[GRAB] <tooth_paste> (1.1001)
+[FIND] <toothbrush> (1.1002)
+[GRAB] <toothbrush> (1.1002)

@@ -1,0 +1,8 @@
+Write an email
+Sit up and type on the keyboard
+
+
+[FIND] <keyboard> (1.319)
+[GRAB] <keyboard> (1.319)
+[FIND] <computer> (1.318)
+[SWITCHON] <computer> (1.318)

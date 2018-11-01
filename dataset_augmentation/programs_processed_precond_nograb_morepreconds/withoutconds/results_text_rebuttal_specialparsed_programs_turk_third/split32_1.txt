@@ -2,12 +2,12 @@ Turn on TV with remote
 I pick up the remote from the table in front of the couch, I point the remote at the television and hit the red on button in the upper right corner.  This turns the television on.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TABLE> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)
-[Find] <TELEVISION> (1)
-[TurnTo] <TELEVISION> (1)
-[PointAt] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[PutObjBack] <REMOTE CONTROL> (1)
+[Walk] <living_room> (1)
+[Walk] <table> (1)
+[Find] <remote_control> (1)
+[Grab] <remote_control> (1)
+[Find] <television> (1)
+[TurnTo] <television> (1)
+[PointAt] <television> (1)
+[SwitchOn] <television> (1)
+[PutObjBack] <remote_control> (1)

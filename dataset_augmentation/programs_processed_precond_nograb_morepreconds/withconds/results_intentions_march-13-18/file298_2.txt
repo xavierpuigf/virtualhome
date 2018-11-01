@@ -1,15 +1,15 @@
 3
-location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('GROCERIES', '1') --> ('KITCHEN', '1')
+atreach: ('GROCERIES', '1') --> ('GROCERIES', '1'), ('FRIDGE', '1') --> ('GROCERIES', '1')
+location: ('GROCERIES', '1') --> ('KITCHEN', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
 closed: ('FRIDGE', '1') --> 
-atreach: ('FRIDGE', '1') --> ('GROCERIES', '1'), ('GROCERIES', '1') --> ('GROCERIES', '1')
 Put groceries in Fridge
 I leave the bags with groceries near the fridge, open the door and put the groceries in the shelves.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <GROCERIES> (1)
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[Find] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[PutBack] <GROCERIES> (1) <FRIDGE> (1)
+[Walk] <kitchen> (1)
+[Walk] <groceries> (1)
+[Find] <groceries> (1)
+[Grab] <groceries> (1)
+[Find] <fridge> (1)
+[Open] <fridge> (1)
+[PutBack] <groceries> (1) <fridge> (1)

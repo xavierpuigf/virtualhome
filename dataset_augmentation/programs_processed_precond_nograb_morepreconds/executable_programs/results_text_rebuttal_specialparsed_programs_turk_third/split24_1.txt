@@ -1,0 +1,10 @@
+Greet guests
+Greet people into my home
+
+
+[WALK] <living_room> (1.243)
+[WALK] <woman> (1.1000)
+[FIND] <woman> (1.1000)
+[GREET] <woman> (1.1000)
+[FIND] <woman> (2.1001)
+[GREET] <woman> (2.1001)

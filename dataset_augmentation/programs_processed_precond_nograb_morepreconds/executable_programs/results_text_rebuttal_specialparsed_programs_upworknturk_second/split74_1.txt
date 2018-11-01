@@ -1,0 +1,10 @@
+Listen to music
+Turn on radio, put on favorite channel, listen to music.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <radio> (1.1000)
+[FIND] <radio> (1.1000)
+[SWITCHON] <radio> (1.1000)
+[FIND] <bed> (1.1001)
+[LIE] <bed> (1.1001)

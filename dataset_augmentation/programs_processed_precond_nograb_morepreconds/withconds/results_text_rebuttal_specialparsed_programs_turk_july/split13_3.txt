@@ -1,12 +1,13 @@
-0
+1
+free: ('CHAIR', '1') --> 
 Play games
 Get a deck of cards and at least one other person. Sit at the table and take out the cards. Play a game with them.
 
 
-[Find] <CARDS> (1)
-[TurnTo] <CARDS> (1)
-[LookAt] <CARDS> (1)
-[Grab] <CARDS> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Shake] <CARDS> (1)
+[Find] <cards> (1)
+[TurnTo] <cards> (1)
+[LookAt] <cards> (1)
+[Grab] <cards> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Shake] <cards> (1)

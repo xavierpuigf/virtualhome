@@ -1,0 +1,9 @@
+Watch fly
+Look around for a fly, often on a wall or ceiling.  Follow it's movements.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <fly> (1.1000)
+[FIND] <fly> (1.1000)
+[TURNTO] <fly> (1.1000)
+[LOOKAT] <fly> (1.1000)

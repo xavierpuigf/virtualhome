@@ -1,0 +1,5 @@
+Lock door
+Turn the lock.
+
+
+[WALK] <bedroom> (1.62)

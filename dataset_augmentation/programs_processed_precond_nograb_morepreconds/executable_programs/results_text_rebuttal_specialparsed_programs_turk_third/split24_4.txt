@@ -1,0 +1,13 @@
+Settle in
+Remove shoes, sit down on the couch
+
+
+[WALK] <living_room> (1.243)
+[WALK] <shoes> (1.1000)
+[FIND] <shoes> (1.1000)
+[FIND] <shoes> (1.1000)
+[PUTOFF] <shoes> (1.1000)
+[WALK] <living_room> (1.243)
+[WALK] <couch> (1.1001)
+[FIND] <couch> (1.1001)
+[SIT] <couch> (1.1001)

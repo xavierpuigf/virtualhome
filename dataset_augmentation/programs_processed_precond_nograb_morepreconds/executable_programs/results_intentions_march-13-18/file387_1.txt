@@ -1,0 +1,8 @@
+Relax on sofa
+Walk to living room. Find couch. Sit on couch
+
+
+[WALK] <living_room> (1.243)
+[WALK] <couch> (1.1000)
+[FIND] <couch> (1.1000)
+[SIT] <couch> (1.1000)

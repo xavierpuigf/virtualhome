@@ -1,19 +1,18 @@
-6
+5
+unplugged: ('CD PLAYER', '1') --> 
+is_off: ('CD PLAYER', '1') --> 
 sitting: ('Character', 1) --> 
 atreach: ('HEADSET', '1') --> ('CD PLAYER', '1'), ('CD PLAYER', '1') --> ('CD PLAYER', '1')
 location: ('CD PLAYER', '1') --> ('BEDROOM', '1'), ('HEADSET', '1') --> ('BEDROOM', '1')
-is_off: ('CD PLAYER', '1') --> 
-plugged: ('CD PLAYER', '1') --> 
-unplugged: ('CD PLAYER', '1') --> 
 Listen to music
 Find player and switch on to headphones
 
 
 [StandUp]
-[Walk] <BEDROOM> (1)
-[Walk] <CD PLAYER> (1)
-[Find] <CD PLAYER> (1)
-[Find] <HEADSET> (1)
-[Grab] <HEADSET> (1)
-[PlugIn] <CD PLAYER> (1)
-[SwitchOn] <CD PLAYER> (1)
+[Walk] <bedroom> (1)
+[Walk] <cd_player> (1)
+[Find] <cd_player> (1)
+[Find] <headset> (1)
+[Grab] <headset> (1)
+[PlugIn] <cd_player> (1)
+[SwitchOn] <cd_player> (1)

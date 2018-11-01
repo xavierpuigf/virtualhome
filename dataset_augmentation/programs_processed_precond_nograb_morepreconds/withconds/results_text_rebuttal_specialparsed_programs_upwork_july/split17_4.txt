@@ -1,16 +1,17 @@
-3
+4
+atreach: ('CHAIR', '1') --> ('NEWSPAPER', '1'), ('NEWSPAPER', '1') --> ('CHAIR', '1')
 location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('NEWSPAPER', '1') --> ('HOME OFFICE', '1')
 closed: ('NEWSPAPER', '1') --> 
-atreach: ('CHAIR', '1') --> ('NEWSPAPER', '1'), ('NEWSPAPER', '1') --> ('CHAIR', '1')
+free: ('CHAIR', '1') --> 
 Read newspaper
 Sit in my chair at my desk. Open up newspaper. Read about current events.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <NEWSPAPER> (1)
-[Grab] <NEWSPAPER> (1)
-[Open] <NEWSPAPER> (1)
-[Read] <NEWSPAPER> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <newspaper> (1)
+[Grab] <newspaper> (1)
+[Open] <newspaper> (1)
+[Read] <newspaper> (1)

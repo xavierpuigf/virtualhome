@@ -1,0 +1,20 @@
+Wash monitor
+Clean the grime off of my monitor screen when not in use
+
+
+[WALK] <living_room> (1.243)
+[WALK] <computer> (1.1000)
+[FIND] <computer> (1.1000)
+[TURNTO] <computer> (1.1000)
+[LOOKAT] <computer> (1.1000)
+[SWITCHOFF] <computer> (1.1000)
+[FIND] <brush> (1.1001)
+[TURNTO] <brush> (1.1001)
+[LOOKAT] <brush> (1.1001)
+[GRAB] <brush> (1.1001)
+[WIPE] <computer> (1.1000)
+[DROP] <brush> (1.1001)
+[FIND] <napkin> (1.1002)
+[GRAB] <napkin> (1.1002)
+[WASH] <napkin> (1.1002)
+[WIPE] <computer> (1.1000)

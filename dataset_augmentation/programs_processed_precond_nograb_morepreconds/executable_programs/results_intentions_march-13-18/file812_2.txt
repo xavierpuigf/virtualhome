@@ -1,0 +1,12 @@
+Read book
+I read a book in my office
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <desk> (1.1000)
+[FIND] <chair> (1.1001)
+[SIT] <chair> (1.1001)
+[FIND] <book> (1.1002)
+[GRAB] <book> (1.1002)
+[READ] <book> (1.1002)

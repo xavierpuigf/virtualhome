@@ -3,12 +3,12 @@ GOING TO BE IN BEDROOM
 
 
 [StandUp]
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <BEDROOM> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Find] <SLIPPERS> (1)
-[Grab] <SLIPPERS> (1)
-[Find] <LIGHTING> (1)
-[TurnTo] <LIGHTING> (1)
-[Drop] <SLIPPERS> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <bedroom> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Find] <slippers> (1)
+[Grab] <slippers> (1)
+[Find] <lighting> (1)
+[TurnTo] <lighting> (1)
+[Drop] <slippers> (1)

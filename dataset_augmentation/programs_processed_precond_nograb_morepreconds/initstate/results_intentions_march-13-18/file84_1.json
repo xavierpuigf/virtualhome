@@ -1,1 +1,1 @@
-[{"location": [["TABLE", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["TABLE", "1"], ["TABLE", "1"]]}]
+[{"atreach": [["table", "1"], ["table", "1"]]}, {"location": [["table", "1"], ["entrance_hall", "1"]]}]

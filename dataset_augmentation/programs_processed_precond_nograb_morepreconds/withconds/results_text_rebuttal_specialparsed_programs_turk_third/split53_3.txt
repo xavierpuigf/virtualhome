@@ -1,17 +1,19 @@
-3
+5
 is_off: ('LIGHT', '1') --> 
-location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('LAMP', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
-atreach: ('BOOK', '1') --> ('LAMP', '1'), ('LIGHT', '1') --> ('LAMP', '1'), ('COUCH', '1') --> ('LAMP', '1')
+plugged: ('LIGHT', '1') --> 
+atreach: ('LIGHT', '1') --> ('LAMP', '1'), ('BOOK', '1') --> ('LAMP', '1'), ('COUCH', '1') --> ('LAMP', '1')
+location: ('LAMP', '1') --> ('LIVING ROOM', '1'), ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Read book
 Turn on reading light. Bring book to couch. Sit on couch. Fluff pillow. Put pillow behind my back. Read my book.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LAMP> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Read] <BOOK> (1)
+[Walk] <living_room> (1)
+[Walk] <lamp> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Read] <book> (1)

@@ -3,13 +3,13 @@ stand up, walk to living room, find computer, walk to computer, switch on comput
 
 
 [StandUp]
-[Walk] <LIVING ROOM> (1)
-[Walk] <COMPUTER> (1)
-[Find] <COMPUTER> (1)
-[Walk] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <MOUSE> (1)
-[Grab] <MOUSE> (1)
-[Find] <BUTTON> (1)
-[TurnTo] <BUTTON> (1)
-[LookAt] <BUTTON> (1)
+[Walk] <living_room> (1)
+[Walk] <computer> (1)
+[Find] <computer> (1)
+[Walk] <computer> (1)
+[SwitchOn] <computer> (1)
+[Find] <mouse> (1)
+[Grab] <mouse> (1)
+[Find] <button> (1)
+[TurnTo] <button> (1)
+[LookAt] <button> (1)

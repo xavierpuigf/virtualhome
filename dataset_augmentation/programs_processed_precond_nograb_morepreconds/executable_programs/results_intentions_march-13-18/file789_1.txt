@@ -1,0 +1,11 @@
+Read book
+Walk to bookcase in office. Take book from desk. Take book over to chair. Sit down in the chair. Open book and then read book.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <book> (1.1001)
+[GRAB] <book> (1.1001)
+[WALK] <chair> (1.1002)
+[SIT] <chair> (1.1002)
+[READ] <book> (1.1001)

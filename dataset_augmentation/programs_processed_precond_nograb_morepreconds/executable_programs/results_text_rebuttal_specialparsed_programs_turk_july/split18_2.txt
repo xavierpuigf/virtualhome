@@ -1,0 +1,11 @@
+Pick up cat hair
+Pick up the large balls of cat hair under the bed and in random places around the room.
+
+
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[POINTAT] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[PUSH] <cat> (1.1000)
+[RUN] <bedroom> (1.62)

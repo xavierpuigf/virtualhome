@@ -1,0 +1,9 @@
+Turn night light on
+I walk to the dresser and in the middle Io to small battery operated lamp and switch it on
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <dresser> (1.281)
+[FIND] <lamp> (1.1000)
+[TURNTO] <lamp> (1.1000)
+[SWITCHON] <lamp> (1.1000)

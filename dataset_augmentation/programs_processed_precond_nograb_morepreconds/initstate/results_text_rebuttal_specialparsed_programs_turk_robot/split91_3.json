@@ -1,1 +1,1 @@
-[{"location": [["RAG", "1"], ["LIVING ROOM", "1"]]}, {"location": [["WALL", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["RAG", "1"], ["RAG", "1"]]}]
+[{"atreach": [["rag", "1"], ["rag", "1"]]}, {"location": [["rag", "1"], ["living_room", "1"]]}, {"location": [["wall", "1"], ["living_room", "1"]]}]

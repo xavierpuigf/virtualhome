@@ -1,0 +1,12 @@
+Go to toilet
+Walking towards Toilet room, And dispose of human waste. Cleaning your hands with tissue paper or water.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <paper_towel> (1.1000)
+[FIND] <paper_towel> (1.1000)
+[TURNTO] <paper_towel> (1.1000)
+[LOOKAT] <paper_towel> (1.1000)
+[GRAB] <paper_towel> (1.1000)
+[FIND] <hands_both> (1.1001)
+[WIPE] <hands_both> (1.1001)

@@ -1,0 +1,8 @@
+Pick up phone
+Picking up incoming telephone call in home office
+
+
+[FIND] <telephone> (1.1000)
+[WALK] <living_room> (1.243)
+[WALK] <telephone> (1.1000)
+[GRAB] <telephone> (1.1000)

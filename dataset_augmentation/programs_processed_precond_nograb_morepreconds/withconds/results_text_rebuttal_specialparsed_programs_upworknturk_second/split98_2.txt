@@ -1,26 +1,27 @@
-4
-inside: ('BOARD GAME', '1') --> ('CABINET', '1')
-location: ('CABINET', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('MAN', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1')
+5
+atreach: ('CHAIR', '1') --> ('TABLE', '1'), ('MAN', '1') --> ('MAN', '1'), ('CABINET', '1') --> ('MAN', '1'), ('BOARD GAME', '1') --> ('MAN', '1')
+location: ('MAN', '1') --> ('DINING ROOM', '1'), ('CABINET', '1') --> ('DINING ROOM', '1'), ('BOARD GAME', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1')
 closed: ('CABINET', '1') --> 
-atreach: ('CHAIR', '1') --> ('TABLE', '1'), ('CABINET', '1') --> ('MAN', '1'), ('MAN', '1') --> ('MAN', '1'), ('BOARD GAME', '1') --> ('MAN', '1')
+inside: ('BOARD GAME', '1') --> ('CABINET', '1')
+free: ('CHAIR', '1') --> 
 Play games
 Place board game on table, Open board game. Set board game pieces on table. Sit at table. Play game at table.
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <MAN> (1)
-[Find] <MAN> (1)
-[Greet] <MAN> (1)
-[Find] <CABINET> (1)
-[Open] <CABINET> (1)
-[Find] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Close] <CABINET> (1)
-[Walk] <TABLE> (1)
-[PutBack] <BOARD GAME> (1) <TABLE> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Uncover] <BOARD GAME> (1)
-[TurnTo] <MAN> (1)
-[LookAt] <MAN> (1)
-[Play] <BOARD GAME> (1)
+[Walk] <dining_room> (1)
+[Walk] <man> (1)
+[Find] <man> (1)
+[Greet] <man> (1)
+[Find] <cabinet> (1)
+[Open] <cabinet> (1)
+[Find] <board_game> (1)
+[Grab] <board_game> (1)
+[Close] <cabinet> (1)
+[Walk] <table> (1)
+[PutBack] <board_game> (1) <table> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Uncover] <board_game> (1)
+[TurnTo] <man> (1)
+[LookAt] <man> (1)
+[Play] <board_game> (1)

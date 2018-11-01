@@ -1,0 +1,15 @@
+Study
+Study norwegian
+
+
+[WALK] <living_room> (1.243)
+[WALK] <desk> (1.1000)
+[FIND] <notebook> (1.1001)
+[GRAB] <notebook> (1.1001)
+[FIND] <chair> (1.1002)
+[SIT] <chair> (1.1002)
+[TURNTO] <notebook> (1.1001)
+[LOOKAT] <notebook> (1.1001)
+[FIND] <notes> (1.1003)
+[GRAB] <notes> (1.1003)
+[READ] <notes> (1.1003)

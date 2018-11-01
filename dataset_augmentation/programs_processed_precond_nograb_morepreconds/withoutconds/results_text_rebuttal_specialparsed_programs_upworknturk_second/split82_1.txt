@@ -2,12 +2,12 @@ Hang pictures
 Take pictures and use nails and hanging mechanisms to secure pictures to walls.  Center pictures on wall with level and tape measure.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <PAINTING> (1)
-[Find] <PAINTING> (1)
-[Grab] <PAINTING> (1)
-[Find] <WALL> (1)
-[PutBack] <PAINTING> (1) <WALL> (1)
-[Find] <PAINTING> (2)
-[Grab] <PAINTING> (2)
-[PutBack] <PAINTING> (2) <WALL> (1)
+[Walk] <living_room> (1)
+[Walk] <painting> (1)
+[Find] <painting> (1)
+[Grab] <painting> (1)
+[Find] <wall> (1)
+[PutBack] <painting> (1) <wall> (1)
+[Find] <painting> (2)
+[Grab] <painting> (2)
+[PutBack] <painting> (2) <wall> (1)

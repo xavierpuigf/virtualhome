@@ -1,1 +1,1 @@
-[{"location": [["NOVEL", "1"], ["BEDROOM", "1"]]}, {"location": [["BED", "1"], ["BEDROOM", "1"]]}, {"atreach": [["NOVEL", "1"], ["NOVEL", "1"]]}, {"atreach": [["BED", "1"], ["BED", "1"]]}]
+[{"atreach": [["novel", "1"], ["novel", "1"]]}, {"atreach": [["bed", "1"], ["bed", "1"]]}, {"location": [["novel", "1"], ["bedroom", "1"]]}, {"location": [["bed", "1"], ["bedroom", "1"]]}, {"free": ["bed", "1"]}]

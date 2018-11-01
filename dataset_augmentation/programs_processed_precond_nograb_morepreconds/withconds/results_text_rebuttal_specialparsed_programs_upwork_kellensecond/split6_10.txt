@@ -1,21 +1,22 @@
-4
-inside: ('BEER', '1') --> ('FRIDGE', '1')
-location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('FRIDGE', '1') --> ('KITCHEN', '1')
+5
+atreach: ('FRIDGE', '1') --> ('FRIDGE', '1'), ('BEER', '1') --> ('FRIDGE', '1'), ('COUCH', '1') --> ('COUCH', '1')
+location: ('FRIDGE', '1') --> ('KITCHEN', '1'), ('BEER', '1') --> ('KITCHEN', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
 closed: ('FRIDGE', '1') --> 
-atreach: ('BEER', '1') --> ('FRIDGE', '1'), ('COUCH', '1') --> ('COUCH', '1'), ('FRIDGE', '1') --> ('FRIDGE', '1')
+inside: ('BEER', '1') --> ('FRIDGE', '1')
+free: ('COUCH', '1') --> 
 Drink
 Get a can of beer, open it, sit on couch, relax
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <FRIDGE> (1)
-[Find] <FRIDGE> (1)
-[Open] <FRIDGE> (1)
-[Find] <BEER> (1)
-[Grab] <BEER> (1)
-[Close] <FRIDGE> (1)
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Drink] <BEER> (1)
+[Walk] <kitchen> (1)
+[Walk] <fridge> (1)
+[Find] <fridge> (1)
+[Open] <fridge> (1)
+[Find] <beer> (1)
+[Grab] <beer> (1)
+[Close] <fridge> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Drink] <beer> (1)

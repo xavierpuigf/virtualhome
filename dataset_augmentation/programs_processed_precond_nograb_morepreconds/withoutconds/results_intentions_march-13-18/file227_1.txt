@@ -2,10 +2,10 @@ Work
 Go to the office and sit on the chair, then work on the computer
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <LAPTOP> (1)
-[TurnTo] <LAPTOP> (1)
-[LookAt] <LAPTOP> (1)
+[Walk] <home_office> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <laptop> (1)
+[TurnTo] <laptop> (1)
+[LookAt] <laptop> (1)

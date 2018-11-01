@@ -1,19 +1,19 @@
 2
-location: ('DISH SOAP', '1') --> ('DINING ROOM', '1'), ('CHEF KNIFE', '1') --> ('DINING ROOM', '1'), ('BOWL', '1') --> ('DINING ROOM', '1')
-atreach: ('DISH SOAP', '1') --> ('DISH SOAP', '1'), ('CHEF KNIFE', '1') --> ('BOWL', '1'), ('BOWL', '1') --> ('BOWL', '1')
+atreach: ('BOWL', '1') --> ('BOWL', '1'), ('CHEF KNIFE', '1') --> ('BOWL', '1'), ('DISH SOAP', '1') --> ('DISH SOAP', '1')
+location: ('BOWL', '1') --> ('DINING ROOM', '1'), ('CHEF KNIFE', '1') --> ('DINING ROOM', '1'), ('DISH SOAP', '1') --> ('DINING ROOM', '1')
 Wash dishes by hand
 clean the vessels already used
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <BOWL> (1)
-[Find] <BOWL> (1)
-[Grab] <BOWL> (1)
-[Find] <CHEF KNIFE> (1)
-[Grab] <CHEF KNIFE> (1)
-[Walk] <DISH SOAP> (1)
-[Find] <DISH SOAP> (1)
-[Grab] <DISH SOAP> (1)
-[Pour] <DISH SOAP> (1) <BOWL> (1)
-[Wash] <BOWL> (1)
-[Wash] <CHEF KNIFE> (1)
+[Walk] <dining_room> (1)
+[Walk] <bowl> (1)
+[Find] <bowl> (1)
+[Grab] <bowl> (1)
+[Find] <chef_knife> (1)
+[Grab] <chef_knife> (1)
+[Walk] <dish_soap> (1)
+[Find] <dish_soap> (1)
+[Grab] <dish_soap> (1)
+[Pour] <dish_soap> (1) <bowl> (1)
+[Wash] <bowl> (1)
+[Wash] <chef_knife> (1)

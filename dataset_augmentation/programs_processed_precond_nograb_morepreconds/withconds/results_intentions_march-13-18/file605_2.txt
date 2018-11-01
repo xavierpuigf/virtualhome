@@ -1,23 +1,24 @@
-2
-location: ('TOILET', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
+3
 atreach: ('TOILET', '1') --> ('TOILET PAPER', '1'), ('TOILET PAPER', '1') --> ('TOILET', '1')
+location: ('TOILET', '1') --> ('BATHROOM', '1'), ('TOILET PAPER', '1') --> ('BATHROOM', '1')
+free: ('TOILET', '1') --> 
 Go to toilet
 "walk to entrance" "walk to bathroom" "look for toilet" "find toilet" "go to toilet" "look for toilet paper" "find toilet paper" "pull toilet paper" "put toilet paper in toilet" "look for toilet button" "find toilet button" "push toilet button"
 
 
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
-[TurnTo] <TOILET> (1)
-[LookAt] <TOILET> (1)
-[Find] <TOILET> (1)
-[Sit] <TOILET> (1)
-[Find] <TOILET PAPER> (1)
-[TurnTo] <TOILET PAPER> (1)
-[LookAt] <TOILET PAPER> (1)
-[Find] <TOILET PAPER> (1)
-[Grab] <TOILET PAPER> (1)
-[Pull] <TOILET PAPER> (1)
-[PutBack] <TOILET PAPER> (1) <TOILET> (1)
-[Flush] <TOILET> (1)
+[Walk] <entrance_hall> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)
+[TurnTo] <toilet> (1)
+[LookAt] <toilet> (1)
+[Find] <toilet> (1)
+[Sit] <toilet> (1)
+[Find] <toilet_paper> (1)
+[TurnTo] <toilet_paper> (1)
+[LookAt] <toilet_paper> (1)
+[Find] <toilet_paper> (1)
+[Grab] <toilet_paper> (1)
+[Pull] <toilet_paper> (1)
+[PutBack] <toilet_paper> (1) <toilet> (1)
+[Flush] <toilet> (1)

@@ -1,1 +1,1 @@
-[{"is_off": ["TELEVISION", "1"]}, {"atreach": [["LOVE SEAT", "1"], ["REMOTE CONTROL", "1"]]}]
+[{"is_off": ["television", "1"]}, {"plugged": ["television", "1"]}, {"atreach": [["love_seat", "1"], ["remote_control", "1"]]}, {"facing": [["love_seat", "1"], ["television", "1"]]}]

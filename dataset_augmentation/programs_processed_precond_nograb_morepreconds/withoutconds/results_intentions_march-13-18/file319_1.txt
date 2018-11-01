@@ -2,13 +2,13 @@ Wash hands
 Walk to bathroom counter, rinse hands, put on soap, wash hands, rinse hands, and dry hands by towel
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <BATHROOM COUNTER> (1)
-[Find] <HANDS_BOTH> (1)
-[Rinse] <HANDS_BOTH> (1)
-[Find] <SOAP> (1)
-[Spread] <SOAP> (1) <HANDS_BOTH> (1)
-[Wash] <HANDS_BOTH> (1)
-[Rinse] <HANDS_BOTH> (1)
-[Find] <TOWEL> (1)
-[Wipe] <TOWEL> (1)
+[Walk] <bathroom> (1)
+[Walk] <bathroom_counter> (1)
+[Find] <hands_both> (1)
+[Rinse] <hands_both> (1)
+[Find] <soap> (1)
+[Spread] <soap> (1) <hands_both> (1)
+[Wash] <hands_both> (1)
+[Rinse] <hands_both> (1)
+[Find] <towel> (1)
+[Wipe] <towel> (1)

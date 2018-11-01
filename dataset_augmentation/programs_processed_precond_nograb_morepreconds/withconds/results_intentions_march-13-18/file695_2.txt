@@ -1,19 +1,19 @@
 4
 is_off: ('DISHWASHER', '2') --> 
-location: ('DISHRACK', '3') --> ('KITCHEN', '1'), ('DISHWASHER', '2') --> ('KITCHEN', '1'), ('DISHRACK', '1') --> ('KITCHEN', '1'), ('DISHWASHER', '1') --> ('KITCHEN', '1')
+atreach: ('DISHRACK', '3') --> ('DISHWASHER', '2'), ('DISHRACK', '1') --> ('DISHWASHER', '2'), ('DISHWASHER', '1') --> ('DISHWASHER', '2'), ('DISHWASHER', '2') --> ('DISHWASHER', '2')
+location: ('DISHWASHER', '2') --> ('KITCHEN', '1'), ('DISHRACK', '3') --> ('KITCHEN', '1'), ('DISHRACK', '1') --> ('KITCHEN', '1'), ('DISHWASHER', '1') --> ('KITCHEN', '1')
 closed: ('DISHWASHER', '1') --> 
-atreach: ('DISHWASHER', '1') --> ('DISHWASHER', '2'), ('DISHWASHER', '2') --> ('DISHWASHER', '2'), ('DISHRACK', '3') --> ('DISHWASHER', '2'), ('DISHRACK', '1') --> ('DISHWASHER', '2')
 Wash dishes by hand
 walk to kitchen , find dish washer , wash the dishe rack , put dishes in dish washer , switch on dish washer
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <DISHWASHER> (2)
-[Find] <DISHWASHER> (2)
-[Find] <DISHRACK> (3)
-[Find] <DISHRACK> (1)
-[Grab] <DISHRACK> (1)
-[Find] <DISHWASHER> (1)
-[Open] <DISHWASHER> (1)
-[PutBack] <DISHRACK> (1) <DISHWASHER> (1)
-[SwitchOn] <DISHWASHER> (2)
+[Walk] <kitchen> (1)
+[Walk] <dishwasher> (2)
+[Find] <dishwasher> (2)
+[Find] <dishrack> (3)
+[Find] <dishrack> (1)
+[Grab] <dishrack> (1)
+[Find] <dishwasher> (1)
+[Open] <dishwasher> (1)
+[PutBack] <dishrack> (1) <dishwasher> (1)
+[SwitchOn] <dishwasher> (2)

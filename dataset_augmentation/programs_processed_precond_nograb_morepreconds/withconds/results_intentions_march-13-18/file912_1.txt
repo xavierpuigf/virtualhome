@@ -1,27 +1,28 @@
-4
+5
 is_off: ('OVEN', '1') --> 
-location: ('BOOK', '1') --> ('KITCHEN', '1'), ('OVEN', '1') --> ('KITCHEN', '1'), ('FOOD_VEGETABLE', '1') --> ('KITCHEN', '1'), ('FOOD_EGG', '1') --> ('KITCHEN', '1'), ('FRYINGPAN', '1') --> ('KITCHEN', '1'), ('FOOD_TURKEY', '1') --> ('KITCHEN', '1')
+plugged: ('OVEN', '1') --> 
+atreach: ('BOOK', '1') --> ('BOOK', '1'), ('FOOD_EGG', '1') --> ('BOOK', '1'), ('FOOD_TURKEY', '1') --> ('BOOK', '1'), ('FOOD_VEGETABLE', '1') --> ('BOOK', '1'), ('FRYINGPAN', '1') --> ('BOOK', '1'), ('OVEN', '1') --> ('BOOK', '1')
+location: ('BOOK', '1') --> ('KITCHEN', '1'), ('FOOD_EGG', '1') --> ('KITCHEN', '1'), ('FOOD_TURKEY', '1') --> ('KITCHEN', '1'), ('FOOD_VEGETABLE', '1') --> ('KITCHEN', '1'), ('FRYINGPAN', '1') --> ('KITCHEN', '1'), ('OVEN', '1') --> ('KITCHEN', '1')
 closed: ('OVEN', '1') --> 
-atreach: ('BOOK', '1') --> ('BOOK', '1'), ('OVEN', '1') --> ('BOOK', '1'), ('FOOD_VEGETABLE', '1') --> ('BOOK', '1'), ('FOOD_EGG', '1') --> ('BOOK', '1'), ('FRYINGPAN', '1') --> ('BOOK', '1'), ('FOOD_TURKEY', '1') --> ('BOOK', '1')
 Cook some food
 In the kitchen, I read th recipe in the book for a omelette. Then I find and grab the egg, turkey and vegetable. I cut the vegetable and turkey, I also break the egg in the bowl, mix the bowl. I put in mix a pan, put the pan on the oven, turn on the oven and wait.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <BOOK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
-[Find] <FOOD_EGG> (1)
-[Break] <FOOD_EGG> (1)
-[Find] <FOOD_TURKEY> (1)
-[Cut] <FOOD_TURKEY> (1)
-[Find] <FOOD_VEGETABLE> (1)
-[Cut] <FOOD_VEGETABLE> (1)
-[Find] <FRYINGPAN> (1)
-[Grab] <FRYINGPAN> (1)
-[Find] <OVEN> (1)
-[Open] <OVEN> (1)
-[PutBack] <FRYINGPAN> (1) <OVEN> (1)
-[Find] <OVEN> (1)
-[SwitchOn] <OVEN> (1)
+[Walk] <kitchen> (1)
+[Walk] <book> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)
+[Find] <food_egg> (1)
+[Break] <food_egg> (1)
+[Find] <food_turkey> (1)
+[Cut] <food_turkey> (1)
+[Find] <food_vegetable> (1)
+[Cut] <food_vegetable> (1)
+[Find] <fryingpan> (1)
+[Grab] <fryingpan> (1)
+[Find] <oven> (1)
+[Open] <oven> (1)
+[PutBack] <fryingpan> (1) <oven> (1)
+[Find] <oven> (1)
+[SwitchOn] <oven> (1)

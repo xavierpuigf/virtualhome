@@ -1,0 +1,12 @@
+Shave
+I go into the bathroom, cut the tub water on, then wet my legs. I then open the shaving cream and apply it to my legs. I grab the razor off of the shelf and start shaving my legs until they are hairless and smooth.
+
+
+[FIND] <razor> (1.1000)
+[TURNTO] <razor> (1.1000)
+[POINTAT] <razor> (1.1000)
+[WASH] <razor> (1.1000)
+[TURNTO] <razor> (1.1000)
+[LOOKAT] <razor> (1.1000)
+[GRAB] <razor> (1.1000)
+[WALK] <bathroom> (1.1)

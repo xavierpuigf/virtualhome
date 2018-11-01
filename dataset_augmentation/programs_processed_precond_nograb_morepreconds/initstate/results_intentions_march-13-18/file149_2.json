@@ -1,1 +1,1 @@
-[{"atreach": [["CHAIR", "1"], ["CHAIR", "1"]]}, {"sitting": ["Character", 1]}]
+[{"sitting": ["character", 1]}, {"atreach": [["chair", "1"], ["chair", "1"]]}, {"free": ["chair", "1"]}]

@@ -1,0 +1,7 @@
+Relax on sofa
+walk to living room, go to sofa. Sit down and relax closing your eyes.
+
+
+[WALK] <sofa> (1.1000)
+[SIT] <sofa> (1.1000)
+[SLEEP]

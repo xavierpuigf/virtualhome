@@ -1,1 +1,1 @@
-[{"is_off": ["DISHWASHER", "1"]}, {"inside": [["DETERGENT", "1"], ["DISHWASHER", "1"]]}, {"in": [["FORK", "1"], ["SINK", "1"]]}, {"closed": ["DISHWASHER", "1"]}, {"atreach": [["DISHWASHER", "1"], ["DISHWASHER", "1"]]}, {"atreach": [["DETERGENT", "1"], ["DISHWASHER", "1"]]}]
+[{"is_off": ["dishwasher", "1"]}, {"atreach": [["dishwasher", "1"], ["dishwasher", "1"]]}, {"atreach": [["detergent", "1"], ["dishwasher", "1"]]}, {"closed": ["dishwasher", "1"]}, {"inside": [["detergent", "1"], ["dishwasher", "1"]]}, {"in": [["fork", "1"], ["sink", "1"]]}]

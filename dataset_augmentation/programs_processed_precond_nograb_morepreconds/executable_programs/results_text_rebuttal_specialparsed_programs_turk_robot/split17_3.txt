@@ -1,0 +1,27 @@
+Vacuum
+Robot has a vacuum underneath its feat/body that will allow it to clean the surface of the floor.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cabinet> (1.1000)
+[OPEN] <cabinet> (1.1000)
+[FIND] <vacuum_cleaner> (1.1001)
+[GRAB] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PLUGIN] <vacuum_cleaner> (1.1001)
+[SWITCHON] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[WALK] <dining_room> (1.161)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[PULL] <vacuum_cleaner> (1.1001)
+[PUSH] <vacuum_cleaner> (1.1001)
+[WALK] <living_room> (1.243)
+[SWITCHOFF] <vacuum_cleaner> (1.1001)
+[PLUGOUT] <vacuum_cleaner> (1.1001)
+[WALK] <cabinet> (1.1000)
+[PUTBACK] <vacuum_cleaner> (1.1001) <cabinet> (1.1000)
+[CLOSE] <cabinet> (1.1000)

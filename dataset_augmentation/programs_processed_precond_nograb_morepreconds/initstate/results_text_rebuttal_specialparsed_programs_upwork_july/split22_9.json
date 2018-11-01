@@ -1,1 +1,1 @@
-[{"location": [["NEWSPAPER", "1"], ["LIVING ROOM", "1"]]}, {"location": [["COUCH", "1"], ["LIVING ROOM", "1"]]}, {"atreach": [["NEWSPAPER", "1"], ["NEWSPAPER", "1"]]}, {"atreach": [["COUCH", "1"], ["NEWSPAPER", "1"]]}]
+[{"atreach": [["newspaper", "1"], ["newspaper", "1"]]}, {"atreach": [["couch", "1"], ["newspaper", "1"]]}, {"location": [["newspaper", "1"], ["living_room", "1"]]}, {"location": [["couch", "1"], ["living_room", "1"]]}, {"free": ["couch", "1"]}]

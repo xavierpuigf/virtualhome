@@ -2,13 +2,13 @@ Let baby learn how to walk
 The baby tries to stand up and balances on the couch and there are no sharp edges so it's safe.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHILD> (1)
-[Find] <CHILD> (1)
-[Touch] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <COUCH> (1)
-[TurnTo] <COUCH> (1)
-[PointAt] <COUCH> (1)
-[TurnTo] <CHILD> (1)
-[LookAt] <CHILD> (1)
+[Walk] <living_room> (1)
+[Walk] <child> (1)
+[Find] <child> (1)
+[Touch] <child> (1)
+[Greet] <child> (1)
+[Find] <couch> (1)
+[TurnTo] <couch> (1)
+[PointAt] <couch> (1)
+[TurnTo] <child> (1)
+[LookAt] <child> (1)

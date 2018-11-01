@@ -1,18 +1,19 @@
-2
-location: ('CHAIR', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('SCRABBLE', '1') --> ('DINING ROOM', '1')
-atreach: ('CHAIR', '1') --> ('CHAIR', '1'), ('TABLE', '1') --> ('SCRABBLE', '1'), ('SCRABBLE', '1') --> ('SCRABBLE', '1')
+3
+atreach: ('CHAIR', '1') --> ('CHAIR', '1'), ('SCRABBLE', '1') --> ('SCRABBLE', '1'), ('TABLE', '1') --> ('SCRABBLE', '1')
+location: ('SCRABBLE', '1') --> ('DINING ROOM', '1'), ('TABLE', '1') --> ('DINING ROOM', '1'), ('CHAIR', '1') --> ('DINING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Play games
 Place the Scrabble board on the table, follow the directions to set up and play the game, enjoy time together, put game away when complete
 
 
-[Walk] <DINING ROOM> (1)
-[Walk] <SCRABBLE> (1)
-[Find] <SCRABBLE> (1)
-[Grab] <SCRABBLE> (1)
-[Find] <TABLE> (1)
-[PutBack] <SCRABBLE> (1) <TABLE> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Walk] <dining_room> (1)
+[Walk] <scrabble> (1)
+[Find] <scrabble> (1)
+[Grab] <scrabble> (1)
+[Find] <table> (1)
+[PutBack] <scrabble> (1) <table> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
 [Play]
-[Grab] <SCRABBLE> (1)
-[PutObjBack] <SCRABBLE> (1)
+[Grab] <scrabble> (1)
+[PutObjBack] <scrabble> (1)

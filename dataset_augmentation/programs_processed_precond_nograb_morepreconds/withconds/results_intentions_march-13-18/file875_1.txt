@@ -1,18 +1,19 @@
-2
-location: ('BED', '1') --> ('BEDROOM', '1'), ('PILLOW', '1') --> ('BEDROOM', '1')
-atreach: ('BED', '1') --> ('PILLOW', '1'), ('PILLOW', '1') --> ('PILLOW', '1')
+3
+atreach: ('BED', '1') --> ('BED', '1'), ('PILLOW', '1') --> ('PILLOW', '1')
+location: ('PILLOW', '1') --> ('BEDROOM', '1'), ('BED', '1') --> ('BEDROOM', '1')
+free: ('BED', '1') --> 
 Go to sleep
 walk to bedroom, look at the pillow, put pillow into bed, lie down in bed, sleep well
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <PILLOW> (1)
-[Find] <PILLOW> (1)
-[Grab] <PILLOW> (1)
-[TurnTo] <PILLOW> (1)
-[LookAt] <PILLOW> (1)
-[Find] <BED> (1)
-[PutBack] <PILLOW> (1) <BED> (1)
-[Find] <BED> (1)
-[Lie] <BED> (1)
+[Walk] <bedroom> (1)
+[Walk] <pillow> (1)
+[Find] <pillow> (1)
+[Grab] <pillow> (1)
+[TurnTo] <pillow> (1)
+[LookAt] <pillow> (1)
+[Find] <bed> (1)
+[PutBack] <pillow> (1) <bed> (1)
+[Find] <bed> (1)
+[Lie] <bed> (1)
 [Sleep]

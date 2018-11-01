@@ -2,9 +2,9 @@ Dust
 Using soft brush, carefully dust both Indonesian wedding doll statues.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <BRUSH> (1)
-[Grab] <BRUSH> (1)
-[Close] <CLOSET> (1)
+[Walk] <home_office> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Find] <brush> (1)
+[Grab] <brush> (1)
+[Close] <closet> (1)

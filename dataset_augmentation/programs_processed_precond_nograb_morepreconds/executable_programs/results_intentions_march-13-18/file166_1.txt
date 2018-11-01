@@ -1,0 +1,21 @@
+Wash dishes with dishwasher
+first i will take all the dishes to the dish washer and with the help of dishwasher and water i will clean all the dishes
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <dishwasher> (1.1000)
+[FIND] <dishwasher> (1.1000)
+[OPEN] <dishwasher> (1.1000)
+[FIND] <fork> (1.1001)
+[GRAB] <fork> (1.1001)
+[PUTBACK] <fork> (1.1001) <dishwasher> (1.1000)
+[FIND] <plate> (1.1002)
+[GRAB] <plate> (1.1002)
+[PUTBACK] <plate> (1.1002) <dishwasher> (1.1000)
+[FIND] <spoon> (1.1003)
+[GRAB] <spoon> (1.1003)
+[PUTBACK] <spoon> (1.1003) <dishwasher> (1.1000)
+[FIND] <water> (1.1004)
+[TURNTO] <water> (1.1004)
+[CLOSE] <dishwasher> (1.1000)
+[SWITCHON] <dishwasher> (1.1000)

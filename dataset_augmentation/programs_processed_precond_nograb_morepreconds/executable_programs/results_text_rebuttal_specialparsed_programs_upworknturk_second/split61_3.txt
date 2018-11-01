@@ -1,0 +1,22 @@
+Shop
+find computer, find shopping website, pick items, get credit card, make a purchase
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.1000)
+[FIND] <chair> (1.1000)
+[SIT] <chair> (1.1000)
+[FIND] <computer> (1.1001)
+[SWITCHON] <computer> (1.1001)
+[TURNTO] <computer> (1.1001)
+[LOOKAT] <computer> (1.1001)
+[FIND] <keyboard> (1.1002)
+[TYPE] <keyboard> (1.1002)
+[FIND] <creditcard> (1.1003)
+[GRAB] <creditcard> (1.1003)
+[TURNTO] <creditcard> (1.1003)
+[LOOKAT] <creditcard> (1.1003)
+[FIND] <desk> (1.1004)
+[OPEN] <desk> (1.1004)
+[PUTBACK] <creditcard> (1.1003) <desk> (1.1004)
+[TYPE] <keyboard> (1.1002)

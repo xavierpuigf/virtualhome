@@ -1,20 +1,21 @@
-2
-closed: ('DESK', '1') --> 
+3
 atreach: ('CHAIR', '1') --> ('BOOK', '1')
+closed: ('DESK', '1') --> 
+free: ('CHAIR', '1') --> 
 Read book
 Sit down in a comfortable chair with a lamp for lighting. Open the book to your last read page. Follow the words in the book from one sentence to the next. Turn the page when you are ready for the next set of words.
 
 
-[Find] <LAMP> (1)
-[Touch] <LAMP> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <BOOKMARK> (1)
-[Grab] <BOOKMARK> (1)
-[Find] <DESK> (1)
-[Open] <DESK> (1)
-[PutBack] <BOOKMARK> (1) <DESK> (1)
-[Read] <BOOK> (1)
-[Fold] <BOOK> (1)
+[Find] <lamp> (1)
+[Touch] <lamp> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <bookmark> (1)
+[Grab] <bookmark> (1)
+[Find] <desk> (1)
+[Open] <desk> (1)
+[PutBack] <bookmark> (1) <desk> (1)
+[Read] <book> (1)
+[Fold] <book> (1)

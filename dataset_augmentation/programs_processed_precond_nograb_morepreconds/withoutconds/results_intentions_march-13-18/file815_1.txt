@@ -2,13 +2,13 @@ Go to sleep
 I go into my room, walk to my bed then I remove the blanket. After that, I climb into my bed, put the blanket over me, grab my pillow and sleep.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <BED> (1)
-[Find] <BLANKET> (1)
-[Grab] <BLANKET> (1)
-[Pull] <BLANKET> (1)
-[Climb] <BED> (1)
-[PutBack] <BLANKET> (1) <BED> (1)
-[Find] <PILLOW> (1)
-[Grab] <PILLOW> (1)
+[Walk] <bedroom> (1)
+[Walk] <bed> (1)
+[Find] <blanket> (1)
+[Grab] <blanket> (1)
+[Pull] <blanket> (1)
+[Climb] <bed> (1)
+[PutBack] <blanket> (1) <bed> (1)
+[Find] <pillow> (1)
+[Grab] <pillow> (1)
 [Sleep]

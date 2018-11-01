@@ -2,12 +2,12 @@ Put new books in shelves
 Put new books in shelves next to bed, stand, and lamp.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <DESK> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Find] <BOOK> (2)
-[Grab] <BOOK> (2)
-[Walk] <BOOKSHELF> (1)
-[PutBack] <BOOK> (1) <BOOKSHELF> (1)
-[PutBack] <BOOK> (2) <BOOKSHELF> (1)
+[Walk] <bedroom> (1)
+[Walk] <desk> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Find] <book> (2)
+[Grab] <book> (2)
+[Walk] <bookshelf> (1)
+[PutBack] <book> (1) <bookshelf> (1)
+[PutBack] <book> (2) <bookshelf> (1)

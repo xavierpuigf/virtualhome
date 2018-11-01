@@ -1,1 +1,1 @@
-[{"inside": [["FOOD_EGG", "1"], ["FRIDGE", "1"]]}, {"inside": [["FOOD_FISH", "1"], ["FRIDGE", "1"]]}, {"closed": ["FRIDGE", "1"]}]
+[{"closed": ["fridge", "1"]}, {"inside": [["food_egg", "1"], ["fridge", "1"]]}, {"inside": [["food_fish", "1"], ["fridge", "1"]]}]

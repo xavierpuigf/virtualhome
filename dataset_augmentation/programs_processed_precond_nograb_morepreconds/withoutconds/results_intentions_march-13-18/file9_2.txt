@@ -2,12 +2,12 @@ Work
 I walk to the office. I push the on button on the computer. I sit down in the chair. I work on the computer.
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <BUTTON> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COMPUTER> (1)
-[TurnTo] <COMPUTER> (1)
-[LookAt] <COMPUTER> (1)
+[Walk] <home_office> (1)
+[Walk] <button> (1)
+[Find] <button> (1)
+[Push] <button> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <computer> (1)
+[TurnTo] <computer> (1)
+[LookAt] <computer> (1)

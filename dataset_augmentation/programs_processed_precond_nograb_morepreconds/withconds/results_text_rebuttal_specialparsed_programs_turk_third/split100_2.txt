@@ -1,23 +1,23 @@
 4
-inside: ('BOARD GAME', '1') --> ('CABINET', '1')
-location: ('TABLE', '1') --> ('LIVING ROOM', '1'), ('CABINET', '1') --> ('LIVING ROOM', '1')
-closed: ('CABINET', '1') --> , ('BOARD GAME', '1') --> 
 atreach: ('CABINET', '1') --> ('CABINET', '1'), ('BOARD GAME', '1') --> ('CABINET', '1')
+location: ('CABINET', '1') --> ('LIVING ROOM', '1'), ('BOARD GAME', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
+closed: ('CABINET', '1') --> , ('BOARD GAME', '1') --> 
+inside: ('BOARD GAME', '1') --> ('CABINET', '1')
 Play games
 Get out the game. Spread out the tiles. Follow the rules of the game. Congratulate the person who won.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CABINET> (1)
-[Open] <CABINET> (1)
-[Find] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Walk] <TABLE> (1)
-[PutBack] <BOARD GAME> (1) <TABLE> (1)
-[Open] <BOARD GAME> (1)
-[Play] <BOARD GAME> (1)
-[Close] <BOARD GAME> (1)
-[Grab] <BOARD GAME> (1)
-[Walk] <CABINET> (1)
-[PutBack] <BOARD GAME> (1) <CABINET> (1)
-[Close] <CABINET> (1)
+[Walk] <living_room> (1)
+[Walk] <cabinet> (1)
+[Open] <cabinet> (1)
+[Find] <board_game> (1)
+[Grab] <board_game> (1)
+[Walk] <table> (1)
+[PutBack] <board_game> (1) <table> (1)
+[Open] <board_game> (1)
+[Play] <board_game> (1)
+[Close] <board_game> (1)
+[Grab] <board_game> (1)
+[Walk] <cabinet> (1)
+[PutBack] <board_game> (1) <cabinet> (1)
+[Close] <cabinet> (1)

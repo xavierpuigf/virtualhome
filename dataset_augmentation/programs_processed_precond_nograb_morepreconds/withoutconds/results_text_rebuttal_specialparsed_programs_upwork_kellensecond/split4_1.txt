@@ -2,9 +2,9 @@ Put down bags
 When walking into the house, putting down the things i am carrying
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <GROCERIES> (1)
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[Find] <TABLE> (1)
-[PutBack] <GROCERIES> (1) <TABLE> (1)
+[Walk] <kitchen> (1)
+[Walk] <groceries> (1)
+[Find] <groceries> (1)
+[Grab] <groceries> (1)
+[Find] <table> (1)
+[PutBack] <groceries> (1) <table> (1)

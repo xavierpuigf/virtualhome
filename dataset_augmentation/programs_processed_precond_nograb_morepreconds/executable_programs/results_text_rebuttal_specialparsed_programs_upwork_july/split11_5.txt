@@ -1,0 +1,11 @@
+Read book
+I lie on my bed and read a book.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <book> (1.1000)
+[FIND] <book> (1.1000)
+[GRAB] <book> (1.1000)
+[WALK] <bed> (1.1001)
+[LIE] <bed> (1.1001)
+[READ] <book> (1.1000)

@@ -1,18 +1,19 @@
-2
-location: ('KEYBOARD', '1') --> ('LIVING ROOM', '1'), ('CELLPHONE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
-atreach: ('KEYBOARD', '1') --> ('COUCH', '1'), ('CELLPHONE', '1') --> ('COUCH', '1'), ('COUCH', '1') --> ('CELLPHONE', '1')
+3
+atreach: ('COUCH', '1') --> ('CELLPHONE', '1'), ('CELLPHONE', '1') --> ('COUCH', '1'), ('KEYBOARD', '1') --> ('COUCH', '1')
+location: ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CELLPHONE', '1') --> ('LIVING ROOM', '1'), ('KEYBOARD', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Text friends while sitting on couch
 Text while sitting
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <COUCH> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[TurnTo] <CELLPHONE> (1)
-[LookAt] <CELLPHONE> (1)
-[Find] <KEYBOARD> (1)
-[Touch] <KEYBOARD> (1)
-[Type] <KEYBOARD> (1)
+[Walk] <living_room> (1)
+[Walk] <couch> (1)
+[Find] <couch> (1)
+[Sit] <couch> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[TurnTo] <cellphone> (1)
+[LookAt] <cellphone> (1)
+[Find] <keyboard> (1)
+[Touch] <keyboard> (1)
+[Type] <keyboard> (1)

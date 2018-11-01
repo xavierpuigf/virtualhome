@@ -1,28 +1,29 @@
-6
-sitting: ('Character', 1) --> 
-inside: ('FOOD_FOOD', '1') --> ('CUPBOARD', '1')
-atreach: ('FOOD_FOOD', '1') --> ('CUPBOARD', '1'), ('MICROWAVE', '1') --> ('MICROWAVE', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
-location: ('MICROWAVE', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
-closed: ('MICROWAVE', '1') --> , ('CUPBOARD', '1') --> 
+7
 is_off: ('MICROWAVE', '1') --> 
+plugged: ('MICROWAVE', '1') --> 
+sitting: ('Character', 1) --> 
+atreach: ('CUPBOARD', '1') --> ('CUPBOARD', '1'), ('FOOD_FOOD', '1') --> ('CUPBOARD', '1'), ('MICROWAVE', '1') --> ('MICROWAVE', '1')
+location: ('CUPBOARD', '1') --> ('KITCHEN', '1'), ('FOOD_FOOD', '1') --> ('KITCHEN', '1'), ('MICROWAVE', '1') --> ('KITCHEN', '1')
+closed: ('CUPBOARD', '1') --> , ('MICROWAVE', '1') --> 
+inside: ('FOOD_FOOD', '1') --> ('CUPBOARD', '1')
 Cook some food
 Unwrap a bag of microwave popcorn. Place it into the microwave. Set the timer for three minutes. Remove the bag from the microwave.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CUPBOARD> (1)
-[Open] <CUPBOARD> (1)
-[Find] <FOOD_FOOD> (1)
-[Grab] <FOOD_FOOD> (1)
-[Close] <CUPBOARD> (1)
-[Walk] <MICROWAVE> (1)
-[Open] <MICROWAVE> (1)
-[PutBack] <FOOD_FOOD> (1) <MICROWAVE> (1)
-[Close] <MICROWAVE> (1)
-[SwitchOn] <MICROWAVE> (1)
+[Walk] <kitchen> (1)
+[Walk] <cupboard> (1)
+[Open] <cupboard> (1)
+[Find] <food_food> (1)
+[Grab] <food_food> (1)
+[Close] <cupboard> (1)
+[Walk] <microwave> (1)
+[Open] <microwave> (1)
+[PutBack] <food_food> (1) <microwave> (1)
+[Close] <microwave> (1)
+[SwitchOn] <microwave> (1)
 [Sleep]
 [WakeUp]
-[Open] <MICROWAVE> (1)
-[Find] <FOOD_FOOD> (1)
-[Grab] <FOOD_FOOD> (1)
-[Close] <MICROWAVE> (1)
+[Open] <microwave> (1)
+[Find] <food_food> (1)
+[Grab] <food_food> (1)
+[Close] <microwave> (1)

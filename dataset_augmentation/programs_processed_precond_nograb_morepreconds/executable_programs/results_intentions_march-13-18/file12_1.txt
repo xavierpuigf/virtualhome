@@ -1,0 +1,16 @@
+Make coffee
+You walk into the kitchen and turn to the coffee maker. You grab the coffee filter and put into the coffee machine, you also grab the ground coffee and put it into the coffee machine. You turn on the coffee machine.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <coffe_maker> (1.1000)
+[FIND] <coffe_maker> (1.1000)
+[TURNTO] <coffe_maker> (1.1000)
+[FIND] <coffee_filter> (1.1001)
+[GRAB] <coffee_filter> (1.1001)
+[OPEN] <coffe_maker> (1.1000)
+[PUTBACK] <coffee_filter> (1.1001) <coffe_maker> (1.1000)
+[FIND] <ground_coffee> (1.1002)
+[GRAB] <ground_coffee> (1.1002)
+[PUTBACK] <ground_coffee> (1.1002) <coffe_maker> (1.1000)
+[SWITCHON] <coffe_maker> (1.1000)

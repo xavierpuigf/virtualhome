@@ -1,0 +1,6 @@
+Turn on light
+walk to living room. switch on lights.
+
+
+[FIND] <lamp> (1.1000)
+[SWITCHON] <lamp> (1.1000)

@@ -1,14 +1,14 @@
 3
-in: ('BOOK', '1') --> ('BOOKSHELF', '1')
-location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1'), ('BOOKSHELF', '1') --> ('LIVING ROOM', '1')
 atreach: ('BOOK', '1') --> ('BOOKSHELF', '1')
+location: ('BOOKSHELF', '1') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1'), ('TABLE', '1') --> ('LIVING ROOM', '1')
+in: ('BOOK', '1') --> ('BOOKSHELF', '1')
 Bring me red cookbook
 Look at the bookshelf. Find the red cookbook. Bring it to me.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <BOOKSHELF> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Walk] <TABLE> (1)
-[PutBack] <BOOK> (1) <TABLE> (1)
+[Walk] <living_room> (1)
+[Walk] <bookshelf> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Walk] <table> (1)
+[PutBack] <book> (1) <table> (1)

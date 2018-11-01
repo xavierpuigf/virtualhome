@@ -1,19 +1,20 @@
-2
-location: ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('TRASHCAN', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('PAPER TOWEL', '1') --> ('HOME OFFICE', '1')
-atreach: ('CHAIR', '1') --> ('DESK', '1'), ('DESK', '1') --> ('DESK', '1'), ('FILING CABINET', '1') --> ('DESK', '1'), ('PAPER TOWEL', '1') --> ('PAPER TOWEL', '1')
+3
+atreach: ('PAPER TOWEL', '1') --> ('PAPER TOWEL', '1'), ('DESK', '1') --> ('DESK', '1'), ('CHAIR', '1') --> ('DESK', '1'), ('FILING CABINET', '1') --> ('DESK', '1')
+location: ('PAPER TOWEL', '1') --> ('HOME OFFICE', '1'), ('DESK', '1') --> ('HOME OFFICE', '1'), ('CHAIR', '1') --> ('HOME OFFICE', '1'), ('FILING CABINET', '1') --> ('HOME OFFICE', '1'), ('TRASHCAN', '1') --> ('HOME OFFICE', '1')
+free: ('CHAIR', '1') --> 
 Dust
 Dust the home office furniture
 
 
-[Walk] <HOME OFFICE> (1)
-[Walk] <PAPER TOWEL> (1)
-[Find] <PAPER TOWEL> (1)
-[Grab] <PAPER TOWEL> (1)
-[Walk] <DESK> (1)
-[Wipe] <DESK> (1)
-[Find] <CHAIR> (1)
-[Wipe] <CHAIR> (1)
-[Find] <FILING CABINET> (1)
-[Wipe] <FILING CABINET> (1)
-[Walk] <TRASHCAN> (1)
-[PutBack] <PAPER TOWEL> (1) <TRASHCAN> (1)
+[Walk] <home_office> (1)
+[Walk] <paper_towel> (1)
+[Find] <paper_towel> (1)
+[Grab] <paper_towel> (1)
+[Walk] <desk> (1)
+[Wipe] <desk> (1)
+[Find] <chair> (1)
+[Wipe] <chair> (1)
+[Find] <filing_cabinet> (1)
+[Wipe] <filing_cabinet> (1)
+[Walk] <trashcan> (1)
+[PutBack] <paper_towel> (1) <trashcan> (1)

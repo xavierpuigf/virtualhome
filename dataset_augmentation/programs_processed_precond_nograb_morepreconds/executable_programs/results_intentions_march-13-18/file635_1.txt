@@ -1,0 +1,14 @@
+Make coffee
+Open coffee maker. Put filter in main basket, put ground coffee in filter, fill reservoir with water, turn on coffee maker.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <coffe_maker> (1.1000)
+[FIND] <coffe_maker> (1.1000)
+[OPEN] <coffe_maker> (1.1000)
+[FIND] <coffee_filter> (1.1001)
+[GRAB] <coffee_filter> (1.1001)
+[PUTBACK] <coffee_filter> (1.1001) <coffe_maker> (1.1000)
+[FIND] <coffee> (1.1002)
+[GRAB] <coffee> (1.1002)
+[PUTBACK] <coffee> (1.1002) <coffe_maker> (1.1000)

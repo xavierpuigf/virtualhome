@@ -1,16 +1,17 @@
-2
-location: ('CHAIR', '1') --> ('KIDS BEDROOM', '1'), ('CHILD', '1') --> ('KIDS BEDROOM', '1')
+3
 atreach: ('CHAIR', '1') --> ('CHILD', '1'), ('CHILD', '1') --> ('CHILD', '1')
+location: ('CHILD', '1') --> ('KIDS BEDROOM', '1'), ('CHAIR', '1') --> ('KIDS BEDROOM', '1')
+free: ('CHAIR', '1') --> 
 Talk with your child about their day
 You and your child have a seat in their room and ask talk to them about their day. How was school?, What did you learn?.
 
 
-[Walk] <KIDS BEDROOM> (1)
-[Walk] <CHILD> (1)
-[Find] <CHILD> (1)
-[Greet] <CHILD> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[TurnTo] <CHILD> (1)
-[LookAt] <CHILD> (1)
-[Talk] <CHILD> (1)
+[Walk] <kids_bedroom> (1)
+[Walk] <child> (1)
+[Find] <child> (1)
+[Greet] <child> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[TurnTo] <child> (1)
+[LookAt] <child> (1)
+[Talk] <child> (1)

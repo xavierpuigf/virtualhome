@@ -1,17 +1,17 @@
 3
+atreach: ('RAG', '1') --> ('RAG', '1'), ('FAUCET', '1') --> ('SINK', '1'), ('SINK', '1') --> ('SINK', '1')
+location: ('RAG', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1'), ('FAUCET', '1') --> ('BATHROOM', '1')
 in: ('FAUCET', '1') --> ('SINK', '1')
-location: ('FAUCET', '1') --> ('BATHROOM', '1'), ('RAG', '1') --> ('BATHROOM', '1'), ('SINK', '1') --> ('BATHROOM', '1')
-atreach: ('FAUCET', '1') --> ('SINK', '1'), ('RAG', '1') --> ('RAG', '1'), ('SINK', '1') --> ('SINK', '1')
 Clean sink
 Take a premoistened cleaning wipe and wipe down top of sink and faucet.  Next clean the sink bowl.  Let air dry.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <RAG> (1)
-[Find] <RAG> (1)
-[Grab] <RAG> (1)
-[Walk] <SINK> (1)
-[Find] <FAUCET> (1)
-[Wipe] <FAUCET> (1)
-[Wipe] <SINK> (1)
-[PutObjBack] <RAG> (1)
+[Walk] <bathroom> (1)
+[Walk] <rag> (1)
+[Find] <rag> (1)
+[Grab] <rag> (1)
+[Walk] <sink> (1)
+[Find] <faucet> (1)
+[Wipe] <faucet> (1)
+[Wipe] <sink> (1)
+[PutObjBack] <rag> (1)

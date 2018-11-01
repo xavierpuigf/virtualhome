@@ -1,0 +1,15 @@
+Wash clothes
+put clothes and soap in the washing machine, turn it on
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <washing_machine> (1.1000)
+[FIND] <washing_machine> (1.1000)
+[FIND] <basket_for_clothes> (1.1001)
+[OPEN] <basket_for_clothes> (1.1001)
+[FIND] <soap> (1.1002)
+[GRAB] <soap> (1.1002)
+[OPEN] <washing_machine> (1.1000)
+[PUTBACK] <soap> (1.1002) <washing_machine> (1.1000)
+[CLOSE] <washing_machine> (1.1000)
+[SWITCHON] <washing_machine> (1.1000)

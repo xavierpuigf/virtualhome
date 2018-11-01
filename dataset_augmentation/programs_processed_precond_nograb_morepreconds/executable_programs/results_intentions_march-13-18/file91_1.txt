@@ -1,0 +1,10 @@
+Pet cat
+I go looking for the cat in the living room where he usually sleeps. Once I find the cat I just pet him for a few minutes.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <cat> (1.1000)
+[FIND] <cat> (1.1000)
+[TURNTO] <cat> (1.1000)
+[LOOKAT] <cat> (1.1000)
+[TOUCH] <cat> (1.1000)

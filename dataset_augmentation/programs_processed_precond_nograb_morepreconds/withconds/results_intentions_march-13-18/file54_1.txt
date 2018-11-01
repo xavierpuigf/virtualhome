@@ -1,22 +1,22 @@
 6
-inside: ('DRINKING GLASS', '1') --> ('CUPBOARD', '1')
-atreach: ('FAUCET', '1') --> ('SINK', '1'), ('DRINKING GLASS', '1') --> ('CUPBOARD', '1'), ('CUPBOARD', '1') --> ('CUPBOARD', '1')
-location: ('FAUCET', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('CUPBOARD', '1') --> ('KITCHEN', '1')
-closed: ('CUPBOARD', '1') --> 
-in: ('FAUCET', '1') --> ('SINK', '1')
 is_off: ('FAUCET', '1') --> 
+atreach: ('CUPBOARD', '1') --> ('CUPBOARD', '1'), ('DRINKING GLASS', '1') --> ('CUPBOARD', '1'), ('FAUCET', '1') --> ('SINK', '1')
+location: ('CUPBOARD', '1') --> ('KITCHEN', '1'), ('DRINKING GLASS', '1') --> ('KITCHEN', '1'), ('SINK', '1') --> ('KITCHEN', '1'), ('FAUCET', '1') --> ('KITCHEN', '1')
+closed: ('CUPBOARD', '1') --> 
+inside: ('DRINKING GLASS', '1') --> ('CUPBOARD', '1')
+in: ('FAUCET', '1') --> ('SINK', '1')
 Drink
 First I go into the kitchen, open the cupboard and find a glass.Then I close the cupboard. Then I go to the sink, turn the faucet on fill the glass under the faucet. I turn off the faucet and then I drink.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CUPBOARD> (1)
-[Find] <CUPBOARD> (1)
-[Open] <CUPBOARD> (1)
-[Find] <DRINKING GLASS> (1)
-[Grab] <DRINKING GLASS> (1)
-[Walk] <SINK> (1)
-[Find] <FAUCET> (1)
-[SwitchOn] <FAUCET> (1)
-[PutBack] <DRINKING GLASS> (1) <SINK> (1)
-[Drink] <DRINKING GLASS> (1)
+[Walk] <kitchen> (1)
+[Walk] <cupboard> (1)
+[Find] <cupboard> (1)
+[Open] <cupboard> (1)
+[Find] <drinking_glass> (1)
+[Grab] <drinking_glass> (1)
+[Walk] <sink> (1)
+[Find] <faucet> (1)
+[SwitchOn] <faucet> (1)
+[PutBack] <drinking_glass> (1) <sink> (1)
+[Drink] <drinking_glass> (1)

@@ -1,1 +1,1 @@
-[{"in": [["CLOTHES_JACKET", "1"], ["Character", 1]]}, {"location": [["HANGER", "1"], ["ENTRANCE HALL", "1"]]}, {"location": [["CLOTHES_JACKET", "1"], ["ENTRANCE HALL", "1"]]}, {"atreach": [["CLOTHES_JACKET", "1"], ["HANGER", "1"]]}]
+[{"atreach": [["clothes_jacket", "1"], ["hanger", "1"]]}, {"in": [["clothes_jacket", "1"], ["character", 1]]}, {"location": [["clothes_jacket", "1"], ["entrance_hall", "1"]]}, {"location": [["hanger", "1"], ["entrance_hall", "1"]]}]

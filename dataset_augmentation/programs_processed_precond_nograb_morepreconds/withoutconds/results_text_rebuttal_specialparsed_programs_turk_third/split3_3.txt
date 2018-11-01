@@ -2,8 +2,8 @@ Read newspaper
 I go outside to get the newspaper.I come back inside and sit down at the dining room table and read it.
 
 
-[Find] <CHAIR> (1)
-[TurnTo] <CHAIR> (1)
-[PointAt] <CHAIR> (1)
-[Wash] <CHAIR> (1)
-[Sit] <CHAIR> (1)
+[Find] <chair> (1)
+[TurnTo] <chair> (1)
+[PointAt] <chair> (1)
+[Wash] <chair> (1)
+[Sit] <chair> (1)

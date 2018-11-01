@@ -2,11 +2,11 @@ Turn on light
 Flip switch and turn on overhead light. Turn on lamps in the corner. Turn on lamps on the shelves. Flip switch to turn on lights in the china cabinet.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <LAMP> (1)
-[SwitchOn] <LAMP> (1)
-[Walk] <FLOOR LAMP> (1)
-[SwitchOn] <FLOOR LAMP> (1)
+[Walk] <living_room> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <lamp> (1)
+[SwitchOn] <lamp> (1)
+[Walk] <floor_lamp> (1)
+[SwitchOn] <floor_lamp> (1)

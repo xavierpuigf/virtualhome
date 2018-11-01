@@ -1,0 +1,23 @@
+Make coffee
+Walk into the kitchen. Put the coffee liner in the coffee machine. Add the coffee in the coffee machine. Put water into the coffee machine. Put coffee pot under the coffee machine. Turn on coffee machine.
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <coffee_filter> (1.1000)
+[FIND] <coffee_filter> (1.1000)
+[GRAB] <coffee_filter> (1.1000)
+[FIND] <coffe_maker> (1.1001)
+[OPEN] <coffe_maker> (1.1001)
+[PUTBACK] <coffee_filter> (1.1000) <coffe_maker> (1.1001)
+[FIND] <coffee> (1.1002)
+[GRAB] <coffee> (1.1002)
+[PUTBACK] <coffee> (1.1002) <coffe_maker> (1.1001)
+[WALK] <water> (1.1003)
+[FIND] <water> (1.1003)
+[GRAB] <water> (1.1003)
+[POUR] <water> (1.1003) <coffe_maker> (1.1001)
+[FIND] <coffee_pot> (1.1004)
+[GRAB] <coffee_pot> (1.1004)
+[PUTBACK] <coffee_pot> (1.1004) <coffe_maker> (1.1001)
+[FIND] <coffe_maker> (1.1001)
+[SWITCHON] <coffe_maker> (1.1001)

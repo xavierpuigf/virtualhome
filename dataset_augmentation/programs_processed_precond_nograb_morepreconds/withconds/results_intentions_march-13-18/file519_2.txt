@@ -1,18 +1,20 @@
-3
+5
 is_off: ('LIGHT', '1') --> 
-location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1'), ('CELLPHONE', '1') --> ('LIVING ROOM', '1')
-atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('COUCH', '1') --> ('COUCH', '1'), ('CELLPHONE', '1') --> ('LIGHT', '1')
+plugged: ('LIGHT', '1') --> 
+atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('CELLPHONE', '1') --> ('LIGHT', '1'), ('COUCH', '1') --> ('COUCH', '1')
+location: ('LIGHT', '1') --> ('LIVING ROOM', '1'), ('CELLPHONE', '1') --> ('LIVING ROOM', '1'), ('COUCH', '1') --> ('LIVING ROOM', '1')
+free: ('COUCH', '1') --> 
 Pick up phone
 My friend is calling and I want to pick up the phone and chat with him for a little while on the couch.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[Walk] <COUCH> (1)
-[Sit] <COUCH> (1)
-[Lie] <COUCH> (1)
-[Type] <CELLPHONE> (1)
+[Walk] <living_room> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <cellphone> (1)
+[Grab] <cellphone> (1)
+[Walk] <couch> (1)
+[Sit] <couch> (1)
+[Lie] <couch> (1)
+[Type] <cellphone> (1)

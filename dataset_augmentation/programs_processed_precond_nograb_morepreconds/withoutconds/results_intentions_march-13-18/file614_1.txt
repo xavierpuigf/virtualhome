@@ -2,9 +2,9 @@ Take shower
 go to the bathroom and take a shower
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <FAUCET> (1)
-[Find] <FAUCET> (1)
-[SwitchOn] <FAUCET> (1)
-[Find] <SHOWER> (1)
-[Enter] <SHOWER> (1)
+[Walk] <bathroom> (1)
+[Walk] <faucet> (1)
+[Find] <faucet> (1)
+[SwitchOn] <faucet> (1)
+[Find] <shower> (1)
+[Enter] <shower> (1)

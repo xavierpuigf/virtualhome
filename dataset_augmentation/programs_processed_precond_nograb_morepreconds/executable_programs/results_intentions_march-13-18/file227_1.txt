@@ -1,0 +1,11 @@
+Work
+Go to the office and sit on the chair, then work on the computer
+
+
+[WALK] <living_room> (1.243)
+[WALK] <chair> (1.94)
+[FIND] <chair> (1.94)
+[SIT] <chair> (1.94)
+[FIND] <laptop> (1.1000)
+[TURNTO] <laptop> (1.1000)
+[LOOKAT] <laptop> (1.1000)

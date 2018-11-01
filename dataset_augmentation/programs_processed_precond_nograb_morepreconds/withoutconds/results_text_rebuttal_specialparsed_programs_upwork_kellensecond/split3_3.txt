@@ -2,6 +2,6 @@ Turn off TV
 Walk over to tv and press power button
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (1)
-[SwitchOff] <TELEVISION> (1)
+[Walk] <living_room> (1)
+[Walk] <television> (1)
+[SwitchOff] <television> (1)

@@ -4,12 +4,12 @@ Cook some food
 find vegetable ,grab vegetable, wash vegetable, switch on the stove, put the bowl on stove, put the vegetable, switch off stove
 
 
-[Find] <FOOD_VEGETABLE> (1)
-[Find] <BOWL> (1)
-[Grab] <BOWL> (1)
-[Wash] <FOOD_VEGETABLE> (1)
-[Find] <STOVE> (1)
-[SwitchOn] <STOVE> (1)
-[PutBack] <BOWL> (1) <STOVE> (1)
-[Push] <FOOD_VEGETABLE> (1)
-[SwitchOff] <STOVE> (1)
+[Find] <food_vegetable> (1)
+[Find] <bowl> (1)
+[Grab] <bowl> (1)
+[Wash] <food_vegetable> (1)
+[Find] <stove> (1)
+[SwitchOn] <stove> (1)
+[PutBack] <bowl> (1) <stove> (1)
+[Push] <food_vegetable> (1)
+[SwitchOff] <stove> (1)

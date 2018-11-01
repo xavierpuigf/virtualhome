@@ -1,0 +1,12 @@
+Work
+Find Computer and in the chair in from of him. Switch on the computer and look at it and work, tying text with the keyboard when needed.
+
+
+[FIND] <computer> (1.318)
+[FIND] <chair> (1.280)
+[SIT] <chair> (1.280)
+[SWITCHON] <computer> (1.318)
+[TURNTO] <computer> (1.318)
+[LOOKAT] <computer> (1.318)
+[FIND] <keyboard> (1.319)
+[TYPE] <keyboard> (1.319)

@@ -1,18 +1,20 @@
-4
+6
 is_off: ('LIGHT', '1') --> 
+plugged: ('LIGHT', '1') --> 
+atreach: ('TOILET', '1') --> ('TOILET', '1'), ('LIGHT', '1') --> ('LIGHT', '1')
 location: ('LIGHT', '1') --> ('BATHROOM', '1'), ('TOILET', '1') --> ('BATHROOM', '1')
 closed: ('TOILET', '1') --> 
-atreach: ('TOILET', '1') --> ('TOILET', '1'), ('LIGHT', '1') --> ('LIGHT', '1')
+free: ('TOILET', '1') --> 
 Go to toilet
 walk to bathroom, turn on light, walk to toilet, open toilet lid, sit on toilet, use toilet, flush toilet, close toilet lid.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Walk] <TOILET> (1)
-[Open] <TOILET> (1)
-[Sit] <TOILET> (1)
-[Flush] <TOILET> (1)
-[Close] <TOILET> (1)
+[Walk] <bathroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Walk] <toilet> (1)
+[Open] <toilet> (1)
+[Sit] <toilet> (1)
+[Flush] <toilet> (1)
+[Close] <toilet> (1)

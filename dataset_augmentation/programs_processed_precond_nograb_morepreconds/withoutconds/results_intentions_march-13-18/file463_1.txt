@@ -2,12 +2,12 @@ Wash dishes with dishwasher
 I walk to the kitchen. I take plate. I open the dishwasher. I put plate in the dishwasher. I switch on the dishwasher.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <PLATE> (1)
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[Walk] <DISHWASHER> (1)
-[Open] <DISHWASHER> (1)
-[PutBack] <PLATE> (1) <DISHWASHER> (1)
-[Close] <DISHWASHER> (1)
-[SwitchOn] <DISHWASHER> (1)
+[Walk] <kitchen> (1)
+[Walk] <plate> (1)
+[Find] <plate> (1)
+[Grab] <plate> (1)
+[Walk] <dishwasher> (1)
+[Open] <dishwasher> (1)
+[PutBack] <plate> (1) <dishwasher> (1)
+[Close] <dishwasher> (1)
+[SwitchOn] <dishwasher> (1)

@@ -2,9 +2,9 @@ Go to toilet
 Turn on bathroom light and walk to the toilet. Lift the toilet set and sit down, then grab the toilet paper when done and wipe.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <TOILET> (1)
-[Find] <TOILET> (1)
-[Sit] <TOILET> (1)
-[Find] <TOILET PAPER> (1)
-[Wipe] <TOILET PAPER> (1)
+[Walk] <bathroom> (1)
+[Walk] <toilet> (1)
+[Find] <toilet> (1)
+[Sit] <toilet> (1)
+[Find] <toilet_paper> (1)
+[Wipe] <toilet_paper> (1)

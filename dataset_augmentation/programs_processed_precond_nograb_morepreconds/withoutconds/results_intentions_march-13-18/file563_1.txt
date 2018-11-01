@@ -2,5 +2,5 @@ Relax on sofa
 I walk to the sofa, and lie down on the sofa.
 
 
-[Walk] <SOFA> (1)
-[Lie] <SOFA> (1)
+[Walk] <sofa> (1)
+[Lie] <sofa> (1)

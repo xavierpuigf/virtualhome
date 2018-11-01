@@ -2,11 +2,11 @@ Put alarm clock in bedroom
 Take alarm clock. Sit it on stand, next to bed. Plug in alarm clock. Set time, according to watch. Set alarm, depending on what time you have to get up.
 
 
-[Walk] <BEDROOM> (1)
-[Walk] <ALARM CLOCK> (1)
-[Find] <ALARM CLOCK> (1)
-[Grab] <ALARM CLOCK> (1)
-[Find] <DRESSER> (1)
-[Open] <DRESSER> (1)
-[PutBack] <ALARM CLOCK> (1) <DRESSER> (1)
-[SwitchOn] <ALARM CLOCK> (1)
+[Walk] <bedroom> (1)
+[Walk] <alarm_clock> (1)
+[Find] <alarm_clock> (1)
+[Grab] <alarm_clock> (1)
+[Find] <dresser> (1)
+[Open] <dresser> (1)
+[PutBack] <alarm_clock> (1) <dresser> (1)
+[SwitchOn] <alarm_clock> (1)

@@ -3,12 +3,12 @@ Enter the laundry room to clean your clothes. Bring your dirty clothes with you.
 
 
 [StandUp]
-[Walk] <BATHROOM> (1)
-[Walk] <LAUNDRY DETERGENT> (1)
-[Find] <LAUNDRY DETERGENT> (1)
-[Grab] <LAUNDRY DETERGENT> (1)
-[Find] <WASHING MACHINE> (1)
-[Open] <WASHING MACHINE> (1)
-[Find] <SHEETS> (1)
-[Grab] <SHEETS> (1)
-[PutBack] <SHEETS> (1) <WASHING MACHINE> (1)
+[Walk] <bathroom> (1)
+[Walk] <laundry_detergent> (1)
+[Find] <laundry_detergent> (1)
+[Grab] <laundry_detergent> (1)
+[Find] <washing_machine> (1)
+[Open] <washing_machine> (1)
+[Find] <sheets> (1)
+[Grab] <sheets> (1)
+[PutBack] <sheets> (1) <washing_machine> (1)

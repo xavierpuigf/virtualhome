@@ -1,13 +1,14 @@
-0
+1
+free: ('TOILET', '1') --> 
 Clean toilet
 Take a toilet brush and spray a cleaning disinfectent and spray the inside of the toilet and scrub with the brush.
 
 
-[Find] <TOILET> (1)
-[Find] <BRUSH> (1)
-[Find] <CLEANING SOLUTION> (1)
-[Grab] <BRUSH> (1)
-[Grab] <CLEANING SOLUTION> (1)
-[Pour] <CLEANING SOLUTION> (1) <TOILET> (1)
-[PutBack] <BRUSH> (1) <TOILET> (1)
-[Scrub] <TOILET> (1)
+[Find] <toilet> (1)
+[Find] <brush> (1)
+[Find] <cleaning_solution> (1)
+[Grab] <brush> (1)
+[Grab] <cleaning_solution> (1)
+[Pour] <cleaning_solution> (1) <toilet> (1)
+[PutBack] <brush> (1) <toilet> (1)
+[Scrub] <toilet> (1)

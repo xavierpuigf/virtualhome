@@ -1,0 +1,16 @@
+Vacuum
+Plug vacuum into the wall. Turn on the vacuum. Move vacuum around the floor to clean it. Unplug vacuum.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <vacuum_cleaner> (1.1000)
+[FIND] <vacuum_cleaner> (1.1000)
+[GRAB] <vacuum_cleaner> (1.1000)
+[FIND] <electrical_outlet> (1.1001)
+[PLUGIN] <vacuum_cleaner> (1.1000)
+[SWITCHON] <vacuum_cleaner> (1.1000)
+[PUSH] <vacuum_cleaner> (1.1000)
+[PULL] <vacuum_cleaner> (1.1000)
+[SWITCHOFF] <vacuum_cleaner> (1.1000)
+[PLUGOUT] <vacuum_cleaner> (1.1000)
+[PUTOBJBACK] <vacuum_cleaner> (1.1000)

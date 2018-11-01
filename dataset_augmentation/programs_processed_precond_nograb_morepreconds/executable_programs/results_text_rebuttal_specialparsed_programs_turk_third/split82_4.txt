@@ -1,0 +1,12 @@
+Eat snacks and drink tea
+Sitting in teak deck chair, eat snacks like guacamole and blue corn chips, and drink a cup of tea.
+
+
+[FIND] <chair> (1.94)
+[TURNTO] <chair> (1.94)
+[POINTAT] <chair> (1.94)
+[WASH] <chair> (1.94)
+[TURNTO] <chair> (1.94)
+[LOOKAT] <chair> (1.94)
+[TOUCH] <chair> (1.94)
+[SIT] <chair> (1.94)

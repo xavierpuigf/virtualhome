@@ -1,0 +1,16 @@
+Wash face
+Run warm water. Cleanse my face with soap. Rinse my face with water.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <sink> (1.1000)
+[FIND] <faucet> (1.1001)
+[SWITCHON] <faucet> (1.1001)
+[FIND] <face_soap> (1.1002)
+[GRAB] <face_soap> (1.1002)
+[FIND] <face> (1.1003)
+[SCRUB] <face> (1.1003)
+[PUTOBJBACK] <face_soap> (1.1002)
+[WASH] <face> (1.1003)
+[RINSE] <face> (1.1003)
+[SWITCHOFF] <faucet> (1.1001)

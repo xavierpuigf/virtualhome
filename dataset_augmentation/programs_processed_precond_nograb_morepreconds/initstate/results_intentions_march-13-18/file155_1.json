@@ -1,1 +1,1 @@
-[{"location": [["HANDS_BOTH", "1"], ["BATHROOM", "1"]]}, {"location": [["SOAP", "1"], ["BATHROOM", "1"]]}, {"atreach": [["HANDS_BOTH", "1"], ["SOAP", "1"]]}, {"atreach": [["SOAP", "1"], ["SOAP", "1"]]}]
+[{"atreach": [["soap", "1"], ["soap", "1"]]}, {"atreach": [["hands_both", "1"], ["soap", "1"]]}, {"location": [["soap", "1"], ["bathroom", "1"]]}, {"location": [["hands_both", "1"], ["bathroom", "1"]]}]

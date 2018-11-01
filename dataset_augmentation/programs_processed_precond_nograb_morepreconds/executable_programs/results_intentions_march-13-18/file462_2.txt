@@ -1,0 +1,14 @@
+Listen to music
+I walk to my bedroom.  I locate my stereo and turn it on.  I put on my headphones and sit to listen.
+
+
+[WALK] <bedroom> (1.62)
+[WALK] <stereo> (1.1000)
+[FIND] <stereo> (1.1000)
+[WALK] <stereo> (1.1000)
+[SWITCHON] <stereo> (1.1000)
+[FIND] <headset> (1.1001)
+[GRAB] <headset> (1.1001)
+[PUTON] <headset> (1.1001)
+[FIND] <chair> (1.280)
+[SIT] <chair> (1.280)

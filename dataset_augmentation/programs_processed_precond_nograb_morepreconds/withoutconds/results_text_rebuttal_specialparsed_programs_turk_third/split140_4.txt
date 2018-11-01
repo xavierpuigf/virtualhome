@@ -2,13 +2,13 @@ Do nails
 Take off shoes.  Apply nail polish.  Wait until dry.  Leave the bathroom.
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SHOES> (1)
-[Find] <SHOES> (1)
-[Find] <SHOES> (1)
-[PutOff] <SHOES> (1)
-[Walk] <CLOSET> (1)
-[Open] <CLOSET> (1)
-[Find] <NAIL POLISH> (1)
-[Grab] <NAIL POLISH> (1)
-[Leave] <BATHROOM> (1)
+[Walk] <bathroom> (1)
+[Walk] <shoes> (1)
+[Find] <shoes> (1)
+[Find] <shoes> (1)
+[PutOff] <shoes> (1)
+[Walk] <closet> (1)
+[Open] <closet> (1)
+[Find] <nail_polish> (1)
+[Grab] <nail_polish> (1)
+[Leave] <bathroom> (1)

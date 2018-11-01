@@ -1,0 +1,10 @@
+Pick up phone
+stand up, walk to Entrance Hall, walk to table, lift the phone
+
+
+[STANDUP]
+[WALK] <living_room> (1.243)
+[WALK] <phone> (1.202)
+[FIND] <phone> (1.202)
+[WALK] <table> (1.187)
+[GRAB] <phone> (1.202)

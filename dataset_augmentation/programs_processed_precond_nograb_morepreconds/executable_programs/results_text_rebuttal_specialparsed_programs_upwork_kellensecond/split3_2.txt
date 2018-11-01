@@ -1,0 +1,24 @@
+Pick up dishes
+Grab each individual dish and place them in the sink until the dining room is dish free
+
+
+[WALK] <dining_room> (1.161)
+[WALK] <table> (1.1000)
+[FIND] <plate> (1.1001)
+[GRAB] <plate> (1.1001)
+[FIND] <plate> (2.1002)
+[GRAB] <plate> (2.1002)
+[WALK] <dining_room> (1.161)
+[WALK] <sink> (1.1003)
+[FIND] <sink> (1.1003)
+[PUTBACK] <plate> (1.1001) <sink> (1.1003)
+[PUTBACK] <plate> (2.1002) <sink> (1.1003)
+[WALK] <dining_room> (1.161)
+[WALK] <table> (1.1000)
+[FIND] <glass> (1.1004)
+[GRAB] <glass> (1.1004)
+[FIND] <glass> (2.1005)
+[GRAB] <glass> (2.1005)
+[WALK] <dining_room> (1.161)
+[PUTBACK] <glass> (1.1004) <sink> (1.1003)
+[PUTBACK] <glass> (2.1005) <sink> (1.1003)

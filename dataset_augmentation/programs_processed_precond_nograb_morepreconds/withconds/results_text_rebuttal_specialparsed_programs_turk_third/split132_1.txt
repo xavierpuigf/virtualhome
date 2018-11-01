@@ -1,25 +1,27 @@
-5
+7
 is_off: ('LAPTOP', '1') --> 
-inside: ('COFFEE', '1') --> ('COFFEE POT', '1')
-location: ('CHAIR', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1'), ('LAPTOP', '1') --> ('KITCHEN', '1'), ('COFFEE CUP', '1') --> ('KITCHEN', '1')
+plugged: ('LAPTOP', '1') --> 
+atreach: ('CHAIR', '1') --> ('COFFEE CUP', '1'), ('COFFEE CUP', '1') --> ('CHAIR', '1'), ('COFFEE POT', '1') --> ('CHAIR', '1'), ('COFFEE', '1') --> ('COFFEE', '1'), ('LAPTOP', '1') --> ('COFFEE', '1')
+location: ('CHAIR', '1') --> ('KITCHEN', '1'), ('COFFEE CUP', '1') --> ('KITCHEN', '1'), ('COFFEE POT', '1') --> ('KITCHEN', '1'), ('COFFEE', '1') --> ('KITCHEN', '1'), ('LAPTOP', '1') --> ('KITCHEN', '1')
 closed: ('COFFEE POT', '1') --> 
-atreach: ('CHAIR', '1') --> ('COFFEE CUP', '1'), ('COFFEE POT', '1') --> ('CHAIR', '1'), ('COFFEE', '1') --> ('COFFEE', '1'), ('LAPTOP', '1') --> ('COFFEE', '1'), ('COFFEE CUP', '1') --> ('CHAIR', '1')
+inside: ('COFFEE', '1') --> ('COFFEE POT', '1')
+free: ('CHAIR', '1') --> 
 Drink
 Sitting in my teak deck chair, cup of coffee to my right on Indonesian rice barrel that serves as a table, little coffee pot on the floor so my cats don't knock it over and create a mess, drink coffee slowly, begin working on my laptop and enjoying the view of the sunrise outside my window.
 
 
-[Walk] <KITCHEN> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <COFFEE CUP> (1)
-[Grab] <COFFEE CUP> (1)
-[Find] <COFFEE POT> (1)
-[Open] <COFFEE POT> (1)
-[Walk] <COFFEE> (1)
-[Find] <COFFEE> (1)
-[Grab] <COFFEE> (1)
-[Pour] <COFFEE> (1) <COFFEE CUP> (1)
-[Drink] <COFFEE CUP> (1)
-[Find] <LAPTOP> (1)
-[SwitchOn] <LAPTOP> (1)
+[Walk] <kitchen> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <coffee_cup> (1)
+[Grab] <coffee_cup> (1)
+[Find] <coffee_pot> (1)
+[Open] <coffee_pot> (1)
+[Walk] <coffee> (1)
+[Find] <coffee> (1)
+[Grab] <coffee> (1)
+[Pour] <coffee> (1) <coffee_cup> (1)
+[Drink] <coffee_cup> (1)
+[Find] <laptop> (1)
+[SwitchOn] <laptop> (1)

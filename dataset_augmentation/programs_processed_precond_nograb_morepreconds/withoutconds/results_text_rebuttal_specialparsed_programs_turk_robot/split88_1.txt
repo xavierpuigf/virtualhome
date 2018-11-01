@@ -2,4 +2,4 @@ Close door
 Push the door shut until it latches.
 
 
-[Run] <ENTRANCE HALL> (1)
+[Run] <entrance_hall> (1)

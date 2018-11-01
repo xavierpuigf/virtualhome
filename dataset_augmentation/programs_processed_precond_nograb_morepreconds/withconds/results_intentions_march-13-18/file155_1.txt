@@ -1,15 +1,15 @@
 2
-location: ('HANDS_BOTH', '1') --> ('BATHROOM', '1'), ('SOAP', '1') --> ('BATHROOM', '1')
-atreach: ('HANDS_BOTH', '1') --> ('SOAP', '1'), ('SOAP', '1') --> ('SOAP', '1')
+atreach: ('SOAP', '1') --> ('SOAP', '1'), ('HANDS_BOTH', '1') --> ('SOAP', '1')
+location: ('SOAP', '1') --> ('BATHROOM', '1'), ('HANDS_BOTH', '1') --> ('BATHROOM', '1')
 Wash hands
 Wash hands with soap
 
 
-[Walk] <BATHROOM> (1)
-[Walk] <SOAP> (1)
-[Find] <SOAP> (1)
-[Grab] <SOAP> (1)
-[Find] <HANDS_BOTH> (1)
-[Scrub] <HANDS_BOTH> (1)
-[Wash] <HANDS_BOTH> (1)
-[Rinse] <HANDS_BOTH> (1)
+[Walk] <bathroom> (1)
+[Walk] <soap> (1)
+[Find] <soap> (1)
+[Grab] <soap> (1)
+[Find] <hands_both> (1)
+[Scrub] <hands_both> (1)
+[Wash] <hands_both> (1)
+[Rinse] <hands_both> (1)

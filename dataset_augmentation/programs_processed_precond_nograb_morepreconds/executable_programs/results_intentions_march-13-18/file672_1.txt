@@ -1,0 +1,18 @@
+Wash hands
+I go to the bathroom, open the faucet rinse the hands, wash the hands with soap and rinse again, then wipe with a towel.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <faucet> (1.1000)
+[FIND] <faucet> (1.1000)
+[TURNTO] <faucet> (1.1000)
+[FIND] <hands_both> (1.1001)
+[RINSE] <hands_both> (1.1001)
+[FIND] <soap> (1.1002)
+[GRAB] <soap> (1.1002)
+[WASH] <hands_both> (1.1001)
+[RINSE] <hands_both> (1.1001)
+[TURNTO] <faucet> (1.1000)
+[FIND] <towel> (1.1003)
+[GRAB] <towel> (1.1003)
+[WIPE] <hands_both> (1.1001)

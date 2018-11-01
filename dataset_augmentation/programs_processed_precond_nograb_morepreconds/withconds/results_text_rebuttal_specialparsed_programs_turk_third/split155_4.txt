@@ -1,17 +1,18 @@
-2
-location: ('BOOK', '1') --> ('LIVING ROOM', '1'), ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('NOTE PAD', '1') --> ('LIVING ROOM', '1')
-atreach: ('BOOK', '1') --> ('CHAIR', '1'), ('CHAIR', '1') --> ('BOOK', '1'), ('NOTE PAD', '1') --> ('CHAIR', '1')
+3
+atreach: ('CHAIR', '1') --> ('BOOK', '1'), ('BOOK', '1') --> ('CHAIR', '1'), ('NOTE PAD', '1') --> ('CHAIR', '1')
+location: ('CHAIR', '1') --> ('LIVING ROOM', '1'), ('BOOK', '1') --> ('LIVING ROOM', '1'), ('NOTE PAD', '1') --> ('LIVING ROOM', '1')
+free: ('CHAIR', '1') --> 
 Study bible
 I sit in a chair and open the Bible. I read and write down notes as I read.
 
 
-[Walk] <LIVING ROOM> (1)
-[Walk] <CHAIR> (1)
-[Find] <CHAIR> (1)
-[Sit] <CHAIR> (1)
-[Find] <BOOK> (1)
-[Grab] <BOOK> (1)
-[Read] <BOOK> (1)
-[Find] <NOTE PAD> (1)
-[Grab] <NOTE PAD> (1)
-[Write] <NOTE PAD> (1)
+[Walk] <living_room> (1)
+[Walk] <chair> (1)
+[Find] <chair> (1)
+[Sit] <chair> (1)
+[Find] <book> (1)
+[Grab] <book> (1)
+[Read] <book> (1)
+[Find] <note_pad> (1)
+[Grab] <note_pad> (1)
+[Write] <note_pad> (1)

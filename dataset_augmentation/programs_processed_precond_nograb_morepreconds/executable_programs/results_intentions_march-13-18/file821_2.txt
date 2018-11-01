@@ -1,0 +1,8 @@
+Go to toilet
+I walk to bathroom, I open the door of the bathroom, and sit on the toilet.
+
+
+[WALK] <bathroom> (1.1)
+[WALK] <toilet> (1.1000)
+[FIND] <toilet> (1.1000)
+[SIT] <toilet> (1.1000)

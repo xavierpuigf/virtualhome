@@ -1,0 +1,7 @@
+Grab things
+The robot will need some kind of hands or grabbing device to transport objects.
+
+
+[WALK] <book> (1.1000)
+[TURNTO] <book> (1.1000)
+[GRAB] <book> (1.1000)

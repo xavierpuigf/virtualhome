@@ -1,21 +1,21 @@
 6
-sitting: ('Character', 1) --> 
-atreach: ('STEREO', '1') --> ('LIGHT', '1'), ('LIGHT', '1') --> ('LIGHT', '1')
-location: ('STEREO', '1') --> ('BEDROOM', '1'), ('LIGHT', '1') --> ('BEDROOM', '1')
-is_off: ('STEREO', '1') --> , ('LIGHT', '1') --> 
-plugged: ('STEREO', '1') --> 
 unplugged: ('STEREO', '1') --> 
+is_off: ('LIGHT', '1') --> , ('STEREO', '1') --> 
+plugged: ('LIGHT', '1') --> 
+sitting: ('Character', 1) --> 
+atreach: ('LIGHT', '1') --> ('LIGHT', '1'), ('STEREO', '1') --> ('LIGHT', '1')
+location: ('LIGHT', '1') --> ('BEDROOM', '1'), ('STEREO', '1') --> ('BEDROOM', '1')
 Listen to music
 I am sitting in the living room with nothing to do today. I decide that I want to listen to some music and dance for a little while.
 
 
 [StandUp]
-[Walk] <BEDROOM> (1)
-[Walk] <LIGHT> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)
-[Find] <STEREO> (1)
-[Walk] <STEREO> (1)
-[PlugIn] <STEREO> (1)
-[SwitchOn] <STEREO> (1)
+[Walk] <bedroom> (1)
+[Walk] <light> (1)
+[Find] <light> (1)
+[SwitchOn] <light> (1)
+[Find] <stereo> (1)
+[Walk] <stereo> (1)
+[PlugIn] <stereo> (1)
+[SwitchOn] <stereo> (1)
 [Dance]

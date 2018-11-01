@@ -1,0 +1,8 @@
+Pick up phone
+Go to the living room.  Find the telephone.  Lift up the receiver.
+
+
+[WALK] <living_room> (1.243)
+[WALK] <telephone> (1.1000)
+[FIND] <telephone> (1.1000)
+[GRAB] <telephone> (1.1000)
