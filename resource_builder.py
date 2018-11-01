@@ -88,7 +88,7 @@ def transform_allprefabs_parsed():
             elif end_matcher.match(line):
                 key = None
             elif key is not None:
-                value = line.lower().strip()
+                value = line.strip()
                 result.setdefault(key, []).append(value)
 
     with open('resources/object_prefabs.json', 'w') as f:
