@@ -70,16 +70,20 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success'], json.loads(response['message'])
 
-    def expand_scene(self, new_graph, randomize=False, random_seed=-1):
+    def expand_scene(self, new_graph, randomize=False, random_seed=-1, prefabs_map=None):
         """
         Expands scene with the given graph.
         To use randomization set randomize to True.
         To set random seed set random_seed to a non-negative value >= 0,
         random_seed < 0 means that seed is not set
         """
+        string_params = [json.dumps(new_graph)]
+        int_params = [int(randomize), random_seed]
+        if prefabs_map is not None:
+            string_params.append(json.dumps(prefabs_map))
         response = self.post_command({'id': str(time.time()), 'action': 'expand_scene',
-                                      'stringParams': [json.dumps(new_graph)],
-                                      'intParams': [int(randomize), random_seed]})
+                                      'stringParams': string_params,
+                                      'intParams': int_params})
         return response['success'], json.loads(response['message'])
 
     def point_cloud(self):
