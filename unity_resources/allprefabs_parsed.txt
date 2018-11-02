@@ -1746,4 +1746,6 @@ END<Long_board>
 BEGIN<OvenTray>
    Props/OvenTray_1.prefab
 END<OvenTray>
-
+BEGIN<Washing_machine>
+   Appliances/Dark Grey Washing Machine/Prefabs/Dark Grey Washing Machine.prefab
+END<Washing_machine>
