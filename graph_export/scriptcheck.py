@@ -5,7 +5,8 @@ import io
 import json
 import requests
 from PIL import Image
-
+import cv2
+import numpy as np
 
 class UnityCommunication(object):
 
@@ -93,14 +94,17 @@ class UnityCommunication(object):
 
 def _decode_image(img_string):
     img_bytes = base64.b64decode(img_string)
-    return Image.open(io.BytesIO(img_bytes))
+    if 'PNG' == img_bytes[1:4]:
+        img_file = cv2.imdecode(np.fromstring(img_bytes, np.uint8), cv2.IMREAD_COLOR)
+    else:
+        img_file = cv2.imdecode(np.fromstring(img_bytes, np.uint8), cv2.IMREAD_ANYDEPTH+cv2.IMREAD_ANYCOLOR)
+    return img_file
 
 
 def _decode_image_list(img_string_list):
     image_list = []
     for img_string in img_string_list:
-        img_bytes = base64.b64decode(img_string)
-        image_list.append(Image.open(io.BytesIO(img_bytes)))
+        image_list.append(_decode_image(img_string))
     return image_list
 
 
