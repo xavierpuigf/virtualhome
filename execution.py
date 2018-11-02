@@ -80,10 +80,9 @@ class WalkExecutor(ActionExecutor):
 
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
-            if self.check_walk(state, node, info):
+            node_room = _get_room_node(state, node)
+            if self.check_walk(state, node, info) and node_room is not None:
 
-                node_room = _get_room_node(state, node)
-                assert node_room is not None, ipdb.set_trace()
                 changes = [DeleteEdges(CharacterNode(),
                                        [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                        AnyNode(), delete_reverse=True),
@@ -102,7 +101,7 @@ class WalkExecutor(ActionExecutor):
 
                 for node_in_hands in nodes_in_hands:
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node_in_hands), add_reverse=True))
-                    changes.append(AddEdges(NodeInstance(node_in_hands), Relation.INSIDE, NodeInstance(char_room), add_reverse=True))
+                    changes.append(AddEdges(NodeInstance(node_in_hands), Relation.INSIDE, NodeInstance(char_room)))
 
                 # close to all objects on node
                 if Property.SURFACES in node.properties:
@@ -122,14 +121,11 @@ class WalkExecutor(ActionExecutor):
         doors = state.get_nodes_by_attr('class_name', 'door')
         doorjambs = state.get_nodes_by_attr('class_name', 'doorjamb')
 
-        assert char_room is not None and node_room is not None
         if node in (doors + doorjambs):
             # door that connect the char_room
             if state.evaluate(ExistsRelation(NodeInstance(node), Relation.BETWEEN, NodeInstanceFilter(char_room))) or \
                 state.evaluate(ExistsRelation(NodeInstance(char_room), Relation.BETWEEN, NodeInstanceFilter(node))):
                 return True
-
-        state.get_nodes_by_attr
 
         # the return list is in reverse orders, living room --> door.1 --> dining room --> door.181 --> bathroom --> door.16 --> living room
         # suppose all the doors are closed, the return list would be like [door.16, door.181, door.1]
