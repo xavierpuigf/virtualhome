@@ -310,6 +310,8 @@ def check_executability(string, graph_dict):
         able_to_be_parsed = True
     except ScriptParseException:
         return able_to_be_parsed, able_to_be_executed, None
+    except AttributeError:
+        return able_to_be_parsed, able_to_be_executed, None
 
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
