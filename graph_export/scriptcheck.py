@@ -65,6 +65,10 @@ class UnityCommunication(object):
                                       'intParams': camera_indexes, 'stringParams': [mode]})
         return response['success'], _decode_image_list(response['message_list'])
 
+    def instance_colors(self):
+        response = self.post_command({'id': str(time.time()), 'action': 'instance_colors'})
+        return response['success'], json.loads(response['message'])
+
     def environment_graph(self):
         """
         Returns environment graph
