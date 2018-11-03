@@ -310,14 +310,17 @@ def check_executability(string, graph_dict):
         able_to_be_parsed = True
     except ScriptParseException:
         return able_to_be_parsed, able_to_be_executed, None
-    except AttributeError:
-        return able_to_be_parsed, able_to_be_executed, None
 
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    executable, final_state, _ = executor.execute(script)
-    
+    try:
+        executable, final_state, _ = executor.execute(script)
+    except AttributeError:
+        return able_to_be_parsed, able_to_be_executed, None
+    except:
+        return  print("Unexpected error")
+
     if executable:
         able_to_be_executed = True
         return able_to_be_parsed, able_to_be_executed, final_state.to_dict()
