@@ -28,11 +28,12 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
 
-    def reset(self):
+    def reset(self, scene_index=None):
         """
         Reset scene
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'reset'})
+        response = self.post_command({'id': str(time.time()), 'action': 'reset',
+                                      'intParams': [] if scene_index is None else [scene_index]})
         return response['success']
 
     def camera_count(self):
