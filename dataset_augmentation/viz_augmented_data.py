@@ -78,7 +78,7 @@ def computeLCS(prog1, prog2):
         return len(lcs_set[0])*1./max(n,m), prev_p2[-1][-1] 
 
 program_sim = {}
-names = ['affordance', 'location', 'program_exception']
+names = ['location', 'program_exception']
 sim_file = 'similarity_info.json'
 stats = {'LCS': {}, 'Lengths': {}, 'Distr': {}}
 for name in names + ['initial', 'total']:
