@@ -319,9 +319,17 @@ def check_executability(string, graph_dict):
         executable, final_state, _ = executor.execute(script)
     except AttributeError:
         print("Attribute error")
+        print("Program:")
+        programs = string.split(', ')
+        for p in programs:
+            print(p)
         return able_to_be_parsed, able_to_be_executed, None
     except:
         print("Unexpected error:", sys.exc_info()[0])
+        print("Program:")
+        programs = string.split(', ')
+        for p in programs:
+            print(p)
         return able_to_be_parsed, able_to_be_executed, None
 
     if executable:
