@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import utils
 import glob
@@ -317,9 +318,11 @@ def check_executability(string, graph_dict):
     try:
         executable, final_state, _ = executor.execute(script)
     except AttributeError:
+        print("Attribute error")
         return able_to_be_parsed, able_to_be_executed, None
     except:
-        return  print("Unexpected error")
+        print("Unexpected error:", sys.exc_info()[0])
+        return able_to_be_parsed, able_to_be_executed, None
 
     if executable:
         able_to_be_executed = True
