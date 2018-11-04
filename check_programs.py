@@ -17,7 +17,7 @@ import ipdb
 
 random.seed(123)
 verbose = True
-dump = False
+dump = True
 max_nodes = 300
 
 
