@@ -525,6 +525,14 @@ class graph_dict_helper(object):
             current_state = 'free' if len(occupied_edges) < max(max_occupancy-1, 1) else "occupied"
 
             if current_state != "occupied":
+                rooms_id = [_node["id"] for _node in filter(lambda v: v["category"] == 'Rooms', graph_dict["nodes"])]
+                room_id = None
+                for edge in graph_dict["edges"]:
+                    if edge["relation_type"] == "INSIDE" and edge["from_id"] == node["id"] and edge["to_id"] in rooms_id:
+                        room_id = edge["to_id"]
+                
+                assert room_id is not None, print("{}({}) doesn't exist in any room".format(node["class_name"], node["id"]))
+
                 number_objects_to_add = max_occupancy - len(occupied_edges)
                 if number_objects_to_add < 0:
                     ipdb.set_trace()
@@ -537,6 +545,8 @@ class graph_dict_helper(object):
                     if name in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
                         self._remove_one_random_nodes(graph_dict)
                         self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')
+                        
+                        graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": self.random_objects_id, "to_id": room_id})
                         graph_dict["edges"].append({"relation_type": "ON", "from_id": self.random_objects_id, "to_id": node["id"]})
                         graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": self.random_objects_id, "to_id": node["id"]})
                         graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": node["id"], "to_id": self.random_objects_id})
@@ -567,3 +577,23 @@ class graph_dict_helper(object):
                 graph_dict["edges"].append({"relation_type": "ON", "from_id": obj_id, "to_id": to_id})
                 graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": obj_id, "to_id": to_id})
                 graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": to_id, "to_id": obj_id})
+
+    def check_objs_in_room(self, graph_dict):
+
+        rooms_id = [node["id"] for node in filter(lambda v: v["category"] == 'Rooms', graph_dict["nodes"])]
+        other_id = [node["id"] for node in filter(lambda v: v["category"] != 'Rooms', graph_dict["nodes"])]
+        id2name = {node["id"]: node["class_name"] for node in graph_dict["nodes"]}
+
+        for id in other_id:
+            in_room = []
+            for edge in graph_dict["edges"]:
+                if edge["from_id"] == id and edge["relation_type"] == "INSIDE" and edge["to_id"] in rooms_id:
+                    in_room.append(edge["to_id"])
+                    
+            if len(in_room) > 1:
+                print("src object: {}({})".format(id2name[id], id), "in_rooms:", ', '.join([id2name for i in in_room]))
+                print("exist in more than one room")
+                ipdb.set_trace()
+            elif len(in_room) == 0:
+                print("src object: {}({})".format(id2name[id], id))
+                ipdb.set_trace()

@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import utils
 import glob
@@ -314,8 +315,23 @@ def check_executability(string, graph_dict):
     graph = EnvironmentGraph(graph_dict)
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
-    executable, final_state, _ = executor.execute(script)
-    
+    try:
+        executable, final_state, _ = executor.execute(script)
+    except AttributeError:
+        print("Attribute error")
+        print("Program:")
+        programs = string.split(', ')
+        for p in programs:
+            print(p)
+        return able_to_be_parsed, able_to_be_executed, None
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
+        print("Program:")
+        programs = string.split(', ')
+        for p in programs:
+            print(p)
+        return able_to_be_parsed, able_to_be_executed, None
+
     if executable:
         able_to_be_executed = True
         return able_to_be_parsed, able_to_be_executed, final_state.to_dict()
