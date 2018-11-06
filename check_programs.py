@@ -31,8 +31,13 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
     
+
     if not os.path.exists(new_dir):
-        os.makedirs(new_dir)
+        try:
+            os.makedirs(new_dir)
+        except FileExistsError:
+            pass
+
 
     # read old program
     old_f = open(txt_file, 'r')
@@ -69,7 +74,10 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
     if not os.path.exists(new_dir):
-        os.makedirs(new_dir)
+        try:
+            os.makedirs(new_dir)
+        except FileExistsError:
+            pass
 
     new_f = open(new_path, 'w')
     json.dump({"init_graph": graph_state_list[0], "final_graph": graph_state_list[-1]}, new_f)
@@ -84,7 +92,10 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
     if not os.path.exists(new_dir):
-        os.makedirs(new_dir)
+        try:
+            os.makedirs(new_dir)
+        except FileExistsError:
+            pass
 
     new_f = open(new_path, 'w')
     json.dump({"graph_state_list": graph_state_list}, new_f)
