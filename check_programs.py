@@ -31,11 +31,13 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     new_path = '/'.join(new_path)
     new_dir = os.path.dirname(new_path)
     
+
     if not os.path.exists(new_dir):
         try:
             os.makedirs(new_dir)
-        except:
+        except FileExistsError:
             pass
+
 
     # read old program
     old_f = open(txt_file, 'r')
@@ -74,7 +76,7 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     if not os.path.exists(new_dir):
         try:
             os.makedirs(new_dir)
-        except:
+        except FileExistsError:
             pass
 
     new_f = open(new_path, 'w')
@@ -92,7 +94,7 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     if not os.path.exists(new_dir):
         try:
             os.makedirs(new_dir)
-        except:
+        except FileExistsError:
             pass
 
     new_f = open(new_path, 'w')
