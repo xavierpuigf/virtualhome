@@ -325,7 +325,7 @@ def check_whole_set(dir_path, graph_path):
     info["executable_prog_len"] = executable_program_length
     info["non_executable_prog_len"] = not_executable_program_length
     print("Executable program average length: {:.2f}, not executable program average length: {:.2f}".format(executable_program_length, not_executable_program_length))
-    json.dump(info, open("{}/executable_info.json".format('programs_all_graphs2'), 'w'))
+    json.dump(info, open("{}/executable_info.json".format('programs_all_graphs3'), 'w'))
 
 
 def check_executability(string, graph_dict):
@@ -385,4 +385,4 @@ if __name__ == '__main__':
     #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     translated_path = 'example_graphs/TrimmedTestScene7_graph.json'
     #translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
-    check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('programs_all_graphs2'), graph_path=translated_path)
+    check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('programs_all_graphs3'), graph_path=translated_path)
