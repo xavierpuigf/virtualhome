@@ -208,10 +208,16 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
+        helper.check_binary(graph_dict, id_checker=lambda v: True, verbose=False)
+        random_objects_id = helper.random_objects_id
         helper.prepare_from_precondition(precond, id_mapping, graph_dict)
+
         helper.open_all_doors(graph_dict)
         helper.ensure_light_on(graph_dict, id_checker=lambda v: v not in objects_id_in_script)
-        helper.check_binary(graph_dict)
+        
+        helper.check_binary(graph_dict, id_checker=lambda v: v >= random_objects_id, verbose=False)
+        #helper.check_binary(graph_dict, id_checker=lambda v: True, verbose=False)
+        helper.check_binary(graph_dict, id_checker=lambda v: True, verbose=True)
         
         assert len(graph_dict["nodes"]) <= max_nodes
     
