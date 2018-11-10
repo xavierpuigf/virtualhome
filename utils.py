@@ -63,7 +63,8 @@ class BinaryVariable(object):
     def set_to_default_state(self, node):
         while self.negative in node["states"]:
             node["states"].remove(self.negative)
-        node["states"].append(self.positive)
+        if self.positive not in node["states"]:
+            node["states"].append(self.positive)
 
     def sample_state(self, node):
 
@@ -80,15 +81,22 @@ class BinaryVariable(object):
         
         while remove_state in node["states"]:
             node["states"].remove(remove_state)
-        node["states"].append(node_state)
 
-    def check(self, node):
+        if node_state not in node["states"]:
+            node["states"].append(node_state)
 
-        if self.positive in node["states"] or self.negative in node["states"]:
-            #print("Neither {} nor {} in states".format(self.positive, self.negative), node)
+    def check(self, node, verbose):
+
+        if self.positive not in node["states"] and self.negative not in node["states"]:
+            if verbose:
+                print("Neither {} nor {} in states".format(self.positive, self.negative), node)
             return False
-        if (self.positive in node["states"] and self.negative not in node["states"]) or (self.negative in node["states"] and self.positive not in node["states"]):
+        if not ((self.positive in node["states"] and self.negative not in node["states"]) or (self.positive not in node["states"] and self.negative in node["states"])):
+            if verbose:
+                print("Should exist at least on {}, {}".format(self.positive, self.negative), node)
             return False
+
+        return True
 
 
 class graph_dict_helper(object):
@@ -163,33 +171,34 @@ class graph_dict_helper(object):
         self.script_objects_id = max(script_object_ids) if len(script_object_ids) != 0 else 1000
         self.random_objects_id = max(random_object_ids) if len(random_object_ids) != 0 else 2000
 
-    def check_binary(self, graph_dict):
+    def check_binary(self, graph_dict, id_checker, verbose):
         
         open_closed = self.open_closed
         on_off = self.on_off
         plugged_in_out = self.plugged_in_out
         for node in graph_dict["nodes"]:
 
-            # always set to off, closed, open, clean
-            if "CAN_OPEN" in node["properties"]:
-                if not open_closed.check(node):
-                    open_closed.set_to_default_state(node)
-                    
-            if "HAS_PLUG" in node["properties"]:
-                if not plugged_in_out.check(node):
-                    plugged_in_out.set_to_default_state(node)
+            if id_checker(node["id"]):
+                # always set to off, closed, open, clean
+                if "CAN_OPEN" in node["properties"]:
+                    if not open_closed.check(node, verbose):
+                        open_closed.set_to_default_state(node)
+                        
+                if "HAS_PLUG" in node["properties"]:
+                    if not plugged_in_out.check(node, verbose):
+                        plugged_in_out.set_to_default_state(node)
 
-            if "HAS_SWTICH" in node["properties"]:
-                if not on_off.check(node):
-                    on_off.set_to_default_state(node)
+                if "HAS_SWTICH" in node["properties"]:
+                    if not on_off.check(node, verbose):
+                        on_off.set_to_default_state(node)
 
-            if "light" in node["class_name"] or "lamp" in node["class_name"]:
-                if not on_off.check(node):
-                    on_off.set_node_state(node, "ON")
+                if "light" in node["class_name"] or "lamp" in node["class_name"]:
+                    if not on_off.check(node, verbose):
+                        on_off.set_node_state(node, "ON")
 
-            if node["category"] == "Doors":
-                if not open_closed.check(node):
-                    open_closed.set_node_state(node, "OPEN")
+                if node["category"] == "Doors":
+                    if not open_closed.check(node, verbose):
+                        open_closed.set_node_state(node, "OPEN")
 
 
     def open_all_doors(self, graph_dict):
