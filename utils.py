@@ -61,7 +61,7 @@ class BinaryVariable(object):
             self.default = self.positive
 
     def set_to_default_state(self, node):
-        if self.negative in node["states"]:
+        while self.negative in node["states"]:
             node["states"].remove(self.negative)
         node["states"].append(self.positive)
 
@@ -78,10 +78,17 @@ class BinaryVariable(object):
         else:
             remove_state = self.positive
         
-        if remove_state in node["states"]:
+        while remove_state in node["states"]:
             node["states"].remove(remove_state)
         node["states"].append(node_state)
 
+
+    def check(self, node):
+        assert self.positive in node["states"] or self.negative in node["states"], print("Neither {} nor {} in states".format(self.positive, self.negative), node)
+        
+        assert (self.positive in node["states"] and self.negative not in node["states"]) or (self.negative in node["states"] and self.positive not in node["states"])
+
+import ipdb
 
 class graph_dict_helper(object):
 
@@ -155,11 +162,33 @@ class graph_dict_helper(object):
         self.script_objects_id = max(script_object_ids) if len(script_object_ids) != 0 else 1000
         self.random_objects_id = max(random_object_ids) if len(random_object_ids) != 0 else 2000
 
+    def check_binary(self, graph_dict):
+        
+        open_closed = self.open_closed
+        on_off = self.on_off
+        plugged_in_out = self.plugged_in_out
+        for node in graph_dict["nodes"]:
+
+            # always set to off, closed, open, clean
+            if "CAN_OPEN" in node["properties"]:
+                open_closed.check(node)
+                    
+            if "HAS_PLUG" in node["properties"]:
+                plugged_in_out.check(node)
+            if "HAS_SWTICH" in node["properties"]:
+                on_off.check(node)
+
+            if "light" in node["class_name"] or "lamp" in node["class_name"]:
+                on_off.check(node)
+
+            if node["category"] == "Doors":
+                open_closed.check(node)
+
     def open_all_doors(self, graph_dict):
 
         open_closed = self.open_closed
         for node in graph_dict["nodes"]:
-            if node["class_name"] == "door":
+            if node["category"] == "Doors":
                 open_closed.set_node_state(node, "OPEN")
                 
     def set_to_default_state(self, graph_dict, first_room, id_checker):
@@ -186,7 +215,7 @@ class graph_dict_helper(object):
                     on_off.set_to_default_state(node)
                 clean_dirty.set_to_default_state(node)
 
-                if node["class_name"] == 'character':
+                if node["class_name"] == 'character' and first_room is not None:
                     # character is not sitting, lying, holding, not close to anything
                     graph_dict["edges"] = [e for e in filter(lambda e: e["from_id"] != character_id and e["to_id"] != character_id, graph_dict["edges"])]
 
@@ -196,10 +225,10 @@ class graph_dict_helper(object):
                     node["states"] = []
 
                 if "light" in node["class_name"] or "lamp" in node["class_name"]:
-                    node["states"].append("ON")
+                    on_off.set_node_state(node, "ON")
 
                 if node["category"] == "Doors":
-                    node["states"].append("OPEN")
+                    open_closed.set_node_state(node, "OPEN")
 
                 if any([Property.BODY_PART in node["properties"] for v in body_part]):
                     graph_dict["edges"].append({"relation_type": "CLOSE", "from_id": character_id, "to_id": node["id"]})
@@ -259,14 +288,14 @@ class graph_dict_helper(object):
 
     def ensure_light_on(self, graph_dict, id_checker):
 
+        on_off = self.on_off
         for node in graph_dict["nodes"]:
             if 'light' in node["class_name"] or 'lamp' in node["class_name"]:
                 if id_checker(node["id"]):
                     if "ON" not in node["states"]:
-                        if "OFF" in node["states"]:
+                        while "OFF" in node["states"]:
                             node["states"].remove("OFF")
-                        node["states"].append("ON")
-
+                        on_off.set_node_state(node, "ON")
 
     def add_missing_object_from_script(self, script, precond, graph_dict, id_mapping):
 

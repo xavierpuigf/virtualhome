@@ -192,6 +192,9 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
         ## id mapping can specify the objects that already specify in the graphs
+        helper.set_to_default_state(graph_dict, None, id_checker=lambda v: True)
+
+
         id_mapping, first_room, room_mapping = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
         info = {'room_mapping': room_mapping}
         objects_id_in_script = [v for v in id_mapping.values()]
@@ -201,12 +204,15 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         max_node_to_place = max_nodes - len(graph_dict["nodes"])
         n = random.randint(max_node_to_place - 20, max_node_to_place)
         helper.add_random_objs_graph_dict(graph_dict, n=max(n, 0))
+        helper.set_to_default_state(graph_dict, None, id_checker=lambda v: v >= 2000)
         helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, id_mapping, graph_dict)
         helper.open_all_doors(graph_dict)
         helper.ensure_light_on(graph_dict, id_checker=lambda v: v not in objects_id_in_script)
+        helper.check_binary(graph_dict)
+        
         assert len(graph_dict["nodes"]) <= max_nodes
     
     elif len(id_mapping) != 0:
@@ -263,6 +269,8 @@ def check_whole_set(dir_path, graph_path):
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
     
+    joblib_one_iter(['programs_processed_precond_nograb_morepreconds/withoutconds/results_text_rebuttal_specialparsed_programs_upworknturk_second/split36_1.txt', graph_path[0]])
+
     executable_programs = 0
     not_parsable_programs = 0
     executable_program_length = []
