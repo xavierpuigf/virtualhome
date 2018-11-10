@@ -206,6 +206,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         ## set relation and state from precondition
         helper.prepare_from_precondition(precond, id_mapping, graph_dict)
         helper.open_all_doors(graph_dict)
+        helper.ensure_light_on(graph_dict, id_checker=lambda v: v not in objects_id_in_script)
         assert len(graph_dict["nodes"]) <= max_nodes
     
     elif len(id_mapping) != 0:

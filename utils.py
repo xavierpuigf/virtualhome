@@ -195,7 +195,7 @@ class graph_dict_helper(object):
                     graph_dict["edges"].append({"relation_type": "INSIDE", "from_id": character_id, "to_id": first_room_id})
                     node["states"] = []
 
-                if "light" in node["class_name"]:
+                if "light" in node["class_name"] or "lamp" in node["class_name"]:
                     node["states"].append("ON")
 
                 if node["category"] == "Doors":
@@ -256,6 +256,17 @@ class graph_dict_helper(object):
 
                 assert (parameter.name, parameter.instance) in id_mapping, ipdb.set_trace()
                 parameter.instance = id_mapping[(parameter.name, parameter.instance)]
+
+    def ensure_light_on(self, graph_dict, id_checker):
+
+        for node in graph_dict["nodes"]:
+            if 'light' in node["class_name"] or 'lamp' in node["class_name"]:
+                if id_checker(node["id"]):
+                    if "ON" not in node["states"]:
+                        if "OFF" in node["states"]:
+                            node["states"].remove("OFF")
+                        node["states"].append("ON")
+
 
     def add_missing_object_from_script(self, script, precond, graph_dict, id_mapping):
 

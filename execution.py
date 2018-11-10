@@ -1282,6 +1282,10 @@ class ScriptExecutor(object):
             state = next(self.call_action_method(future_script, state, info), None)
             if state is None:
                 return False, prev_state, graph_state_list
+                
+        if w_graph_list:
+            graph_state_list.append(state.to_dict())
+
         return True, state, graph_state_list
 
     @classmethod
