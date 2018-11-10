@@ -95,6 +95,16 @@ class BinaryVariable(object):
             if verbose:
                 print("Should exist at least on {}, {}".format(self.positive, self.negative), node)
             return False
+        
+        if self.positive in node["states"] and len([s for s in node["states"] if s == self.positive]) != 1:
+            if verbose:
+                print("Too many {} in states".format(self.positive))    
+            self.set_node_state(node, self.positive)
+
+        if self.negative in node["states"] and len([s for s in node["states"] if s == self.negative]) != 1:
+            if verbose:
+                print("Too many {} in states".format(self.negative))    
+            self.set_node_state(node, self.negative)
 
         return True
 
