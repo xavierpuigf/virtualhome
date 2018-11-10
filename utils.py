@@ -82,13 +82,14 @@ class BinaryVariable(object):
             node["states"].remove(remove_state)
         node["states"].append(node_state)
 
-
     def check(self, node):
-        assert self.positive in node["states"] or self.negative in node["states"], print("Neither {} nor {} in states".format(self.positive, self.negative), node)
-        
-        assert (self.positive in node["states"] and self.negative not in node["states"]) or (self.negative in node["states"] and self.positive not in node["states"])
 
-import ipdb
+        if self.positive in node["states"] or self.negative in node["states"]:
+            #print("Neither {} nor {} in states".format(self.positive, self.negative), node)
+            return False
+        if (self.positive in node["states"] and self.negative not in node["states"]) or (self.negative in node["states"] and self.positive not in node["states"]):
+            return False
+
 
 class graph_dict_helper(object):
 
@@ -171,18 +172,25 @@ class graph_dict_helper(object):
 
             # always set to off, closed, open, clean
             if "CAN_OPEN" in node["properties"]:
-                open_closed.check(node)
+                if not open_closed.check(node):
+                    open_closed.set_to_default_state(node)
                     
             if "HAS_PLUG" in node["properties"]:
-                plugged_in_out.check(node)
+                if not plugged_in_out.check(node):
+                    plugged_in_out.set_to_default_state(node)
+
             if "HAS_SWTICH" in node["properties"]:
-                on_off.check(node)
+                if not on_off.check(node):
+                    on_off.set_to_default_state(node)
 
             if "light" in node["class_name"] or "lamp" in node["class_name"]:
-                on_off.check(node)
+                if not on_off.check(node):
+                    on_off.set_node_state(node, "ON")
 
             if node["category"] == "Doors":
-                open_closed.check(node)
+                if not open_closed.check(node):
+                    open_closed.set_node_state(node, "OPEN")
+
 
     def open_all_doors(self, graph_dict):
 
