@@ -390,8 +390,11 @@ def modify_script(script):
 
 
 if __name__ == '__main__':
-
+    cont = sys.argv[1]
+    if int(cont) == 0:
+        translated_path = ['example_graphs/TrimmedTestScene7_graph.json']
+    else:
+        translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
+    print(translated_path)
     #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
-    #translated_path = 'example_graphs/TrimmedTestScene7_graph.json'
-    translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
     check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('programs_all_graphs3'), graph_path=translated_path)
