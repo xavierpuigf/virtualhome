@@ -17,7 +17,7 @@ from environment import EnvironmentGraph, Room
 
 random.seed(123)
 verbose = True
-dump = False
+dump = True
 max_nodes = 300
 
 
@@ -172,9 +172,9 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
     else:
         graph_dict = inp_graph_dict
     message, executable, final_state, graph_state_list, id_mapping, info = check_one_program(
-        helper, script, precond, graph_dict, w_graph_list=False, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
+        helper, script, precond, graph_dict, w_graph_list=True, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
 
-    return message, final_state, graph_dict, id_mapping, info, helper
+    return message, final_state, graph_state_list, graph_dict, id_mapping, info, helper
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
@@ -290,8 +290,8 @@ def check_whole_set(dir_path, graph_path):
             joblib_inputs = [[f, graph_path] for f in txt_files]
         
         print("Running on simulators")
-        #results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
-        results = [joblib_one_iter(inp) for inp in joblib_inputs]
+        results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
+        #results = [joblib_one_iter(inp) for inp in joblib_inputs]
         for k, (input, result) in enumerate(zip(joblib_inputs, results)):
             i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
@@ -326,7 +326,7 @@ def check_whole_set(dir_path, graph_path):
     info["executable_prog_len"] = executable_program_length
     info["non_executable_prog_len"] = not_executable_program_length
     print("Executable program average length: {:.2f}, not executable program average length: {:.2f}".format(executable_program_length, not_executable_program_length))
-    json.dump(info, open("executable_info.json", 'w'))
+    json.dump(info, open("{}/executable_info.json".format('programs_all_graphs'), 'w'))
 
 
 def check_executability(string, graph_dict):
@@ -386,4 +386,4 @@ if __name__ == '__main__':
     #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
     #translated_path = 'example_graphs/TrimmedTestScene7_graph.json'
     translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
-    check_whole_set('programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
+    check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('programs_all_graphs'), graph_path=translated_path)

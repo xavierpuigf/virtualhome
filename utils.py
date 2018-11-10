@@ -320,7 +320,8 @@ class graph_dict_helper(object):
                     objects_in_script[key] = id_mapping[key] if key in id_mapping else None
 
         # set up the first room
-        location_precond = {tuple(i['location'][0]): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
+        #location_precond = {tuple(i['location'][0]): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
+        location_precond = {(i['location'][0][0], int(i['location'][0][1])): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
         rooms_in_precond = list(set([i for i in location_precond.values()]))
         if first_room == None:
             assert len(rooms_in_precond) == 0
