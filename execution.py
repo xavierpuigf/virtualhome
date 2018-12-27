@@ -294,7 +294,7 @@ class GrabExecutor(ActionExecutor):
             if new_relation is not None:
                 char_node = _get_character_node(state)
                 char_room = _get_room_node(state, char_node)
-                changes = [DeleteEdges(NodeInstance(node), [Relation.FACING, Relation.ON, Relation.INSIDE, Relation.CLOSE], AnyNode(), delete_reverse=True),
+                changes = [DeleteEdges(NodeInstance(node), [Relation.ON, Relation.INSIDE, Relation.CLOSE], AnyNode(), delete_reverse=True),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
                            AddEdges(CharacterNode(), new_relation, NodeInstance(node)), 
                            AddEdges(NodeInstance(node), Relation.INSIDE, NodeInstance(char_room))]
@@ -831,6 +831,9 @@ class WatchExecutor(ActionExecutor):
             return False
         if node_room.id != char_room.id:
             info.error('char room {} is not node room {}', char_room, node_room)
+            return False
+        if not _is_character_face_to(state, node):
+            info.error('{} does not face {}', char_node, node)
             return False
         if node.class_name != 'computer' and (State.SITTING in char_node.states or State.LYING in char_node.states) and not state.evaluate(ExistsRelation(CharacterNode(), Relation.FACING, NodeInstanceFilter(node))):
             info.error('{} is not facing {} while sitting', char_node, node)
