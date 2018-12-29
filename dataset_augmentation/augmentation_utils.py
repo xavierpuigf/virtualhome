@@ -127,8 +127,10 @@ def write_precond(ori_path, all_new_preconds):
     sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'initstate', sub_dir, old_name)
-    assert not os.path.exists(new_dir), ipdb.set_trace()
-    os.makedirs(new_dir)
+    try:
+        os.makedirs(new_dir)
+    except:
+        pass
 
     for j, new_precond in enumerate(all_new_preconds):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
@@ -136,10 +138,11 @@ def write_precond(ori_path, all_new_preconds):
         new_f.close()
 
 
-def write_graph(ori_path, graph_init, graph_end, state_list):
+def write_graph(ori_path, graph_init, graph_end, state_list, apt_name):
     sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, 'init_and_final_graphs', sub_dir, old_name)
+    new_dir = os.path.join(augmented_data_dir, 'init_and_final_graphs', apt_name,
+                           sub_dir, old_name)
     try:
         os.makedirs(new_dir)
     except:
@@ -152,12 +155,12 @@ def write_graph(ori_path, graph_init, graph_end, state_list):
         new_f.close()
 
     # state list
-    new_dir = os.path.join(augmented_data_dir, 'state_list', sub_dir, old_name)
-    if not os.path.exists(new_dir):
-        try:
-            os.makedirs(new_dir)
-        except:
-            pass
+    new_dir = os.path.join(augmented_data_dir, 'state_list', apt_name, 
+                           sub_dir, old_name)
+    try:
+        os.makedirs(new_dir)
+    except:
+        pass
     for j in range(len(state_list)):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
 
