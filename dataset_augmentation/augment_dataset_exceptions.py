@@ -27,20 +27,20 @@ np.random.seed(123)
 # Options
 verbose = False
 thres = 300
-write_augment_data = False
+write_augment_data = True
 multi_process = True
-num_processes = 70
+num_processes = os.cpu_count()
 
 # Paths
-path_progs_preconds = '../programs_all_graphs3/'
-augmented_data_dir = 'augmented_program_exception_multiapts_allgraphs'
+augmented_data_dir = 'augment_exception'
 
 if write_augment_data:
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-all_programs_exec = glob.glob('{}/programs_processed_precond_nograb_morepreconds/executable_programs/*/*/*.txt'.format(path_progs_preconds))
+all_programs_exec = glob.glob('original_programs/executable_programs/*/*/*.txt')
 all_programs_exec = [x.split('executable_programs/')[1] for x in all_programs_exec]
+
 
 # Obtain a mapping from program to apartment
 programs_to_apt = {}
@@ -51,6 +51,7 @@ for program in all_programs_exec:
         programs_to_apt[program_name] = []
     programs_to_apt[program_name].append(apt_name)
 
+
 # Pick a single scene by program
 programs_to_apt_single = {}
 for prog, apt_names in programs_to_apt.items():
@@ -59,7 +60,7 @@ for prog, apt_names in programs_to_apt.items():
     programs_to_apt[prog] = apt_single
 
 
-prog_folder = '{}/programs_processed_precond_nograb_morepreconds'.format(path_progs_preconds)
+prog_folder = 'original_programs'
 programs = [('{}/withoutconds/{}'.format(prog_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
 
 
@@ -252,11 +253,11 @@ def augment_dataset(d, programs):
                     #     print('\n'.join(lines_program))
 
         if write_augment_data:
-            augmentation_utils.write_data(program_name, augmented_progs_i)
-            augmentation_utils.write_data(program_name, augmented_progs_i_new_inst, 
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i)
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
                     'executable_programs/{}/'.format(apt_name))
-            augmentation_utils.write_precond(program_name, augmented_preconds_i)
-            augmentation_utils.write_graph(program_name, init_graph_i, end_graph_i, state_list_i,
+            augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
+            augmentation_utils.write_graph(augmented_data_dir, program_name, init_graph_i, end_graph_i, state_list_i,
                     apt_name)
         #print('\n'.join(exceptions_not_found))
 
