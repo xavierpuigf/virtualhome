@@ -1,9 +1,0 @@
-Pick up phone
-Walk to the entrance hall. Find the telephone. Grab the telephone.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <telephone> (1.1000)
-[FIND] <telephone> (1.1000)
-[WALK] <telephone> (1.1000)
-[GRAB] <telephone> (1.1000)

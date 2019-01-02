@@ -1,9 +1,0 @@
-Wipe off shoes
-The person shuffles their feet in their shoes on the hall mat in order to get all of the dirt, moisture, and residue from off of their shoes. This ensures that the carpets don't get dirty.
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <mat> (1)
-[Find] <shoes> (1)
-[Wipe] <shoes> (1)
-[Walk] <living_room> (1)

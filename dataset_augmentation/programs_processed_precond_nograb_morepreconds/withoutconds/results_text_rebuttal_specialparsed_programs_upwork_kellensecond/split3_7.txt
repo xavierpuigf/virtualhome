@@ -1,8 +1,0 @@
-Leave home
-Put on shoes. Put on coat. Open door and exit through it. Lock door behind you.
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <shoes> (1)
-[Find] <shoes> (1)
-[PutOn] <shoes> (1)

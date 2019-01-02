@@ -1,6 +1,0 @@
-Go to toilet
-Travel through the house and locate the bathroom, and proceed to the toilet.
-
-
-[Walk] <BATHROOM> (1)
-[Find] <TOILET> (1)

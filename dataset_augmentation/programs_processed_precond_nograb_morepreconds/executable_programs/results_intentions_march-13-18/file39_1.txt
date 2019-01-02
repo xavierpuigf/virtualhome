@@ -1,6 +1,0 @@
-Pick up phone
-I look for my telephone and grab it.
-
-
-[FIND] <telephone> (1.1000)
-[GRAB] <telephone> (1.1000)

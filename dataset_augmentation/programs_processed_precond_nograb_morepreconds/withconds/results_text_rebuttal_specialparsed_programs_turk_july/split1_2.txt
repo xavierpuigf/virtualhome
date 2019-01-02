@@ -1,9 +1,0 @@
-0
-Scrub bottom of feet
-Scrub the bottom of my feet in the shower while i sit down
-
-
-[Find] <shower> (1)
-[TurnTo] <shower> (1)
-[LookAt] <shower> (1)
-[Enter] <shower> (1)

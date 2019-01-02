@@ -1,6 +1,0 @@
-Pick up phone
-walk over and pick up the phone
-
-
-[Walk] <phone> (1)
-[Grab] <phone> (1)

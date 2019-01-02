@@ -1,8 +1,0 @@
-Pet cat
-Go to the living room where the cat sleeps. Find cat. Proceed to petting cat.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <cat> (1.1000)
-[FIND] <cat> (1.1000)
-[TOUCH] <cat> (1.1000)

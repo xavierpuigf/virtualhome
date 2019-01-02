@@ -1,9 +1,0 @@
-1
-location: ('SHOES', '1') --> ('BEDROOM', '1')
-Get dressed
-I get dressed in my bedroom in the mornings.
-
-
-[Walk] <BEDROOM> (1)
-[Find] <SHOES> (1)
-[PutOn] <SHOES> (1)

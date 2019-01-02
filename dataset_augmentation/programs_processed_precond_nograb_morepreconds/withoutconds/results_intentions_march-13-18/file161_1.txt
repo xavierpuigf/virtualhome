@@ -1,8 +1,0 @@
-Listen to music
-turn radio on, listen to music
-
-
-[Walk] <living_room> (1)
-[Walk] <radio> (1)
-[Find] <radio> (1)
-[SwitchOn] <radio> (1)

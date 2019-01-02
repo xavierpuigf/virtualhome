@@ -1,9 +1,0 @@
-Pet cat
-I would walk into the living room. Then sit on the couch and pet the cat.
-
-
-[Walk] <living_room> (1)
-[Walk] <couch> (1)
-[Sit] <couch> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

@@ -1,8 +1,0 @@
-Use toilet
-Pull my pants down. Sit on toilet. Release contents. Wipe bottom. Flush. Pull up pants
-
-
-[FIND] <toilet> (1.35)
-[WASH] <toilet> (1.35)
-[TURNTO] <toilet> (1.35)
-[LOOKAT] <toilet> (1.35)

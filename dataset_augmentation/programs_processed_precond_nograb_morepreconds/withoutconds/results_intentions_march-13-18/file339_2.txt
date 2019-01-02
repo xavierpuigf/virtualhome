@@ -1,7 +1,0 @@
-Cook some food
-find food and take it out of package and prepare for meal
-
-
-[Find] <food_food> (1)
-[Unwrap] <food_food> (1)
-[Wash] <food_food> (1)

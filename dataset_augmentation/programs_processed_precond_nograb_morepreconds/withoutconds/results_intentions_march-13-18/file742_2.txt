@@ -1,8 +1,0 @@
-Turn on light
-I walk into the kitchen, I find the light switch, and then i switch on the lights in the kitchen.
-
-
-[Walk] <kitchen> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

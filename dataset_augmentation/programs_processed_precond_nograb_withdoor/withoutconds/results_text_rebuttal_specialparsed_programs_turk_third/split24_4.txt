@@ -1,9 +1,0 @@
-Settle in
-Remove shoes, sit down on the couch
-
-
-[Walk] <ENTRANCE HALL> (1)
-[PutOff] <SHOES> (1)
-[Walk] <LIVING ROOM> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)

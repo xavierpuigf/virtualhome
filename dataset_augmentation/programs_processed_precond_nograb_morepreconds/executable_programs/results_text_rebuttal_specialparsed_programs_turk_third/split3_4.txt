@@ -1,9 +1,0 @@
-Read book
-After putting a child in his bed, sit beside him with a picture book, preferably one that is calming and will not stimulate the child too much. Read the book, showing the child the pictures on each page. When the book is finished, tell the child goodnight, turn out the light and leave the room.
-
-
-[FIND] <book> (1.1000)
-[TURNTO] <book> (1.1000)
-[POINTAT] <book> (1.1000)
-[GRAB] <book> (1.1000)
-[READ] <book> (1.1000)

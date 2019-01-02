@@ -1,8 +1,0 @@
-Listen to music
-walk into living room, walk to stereo, turn on stereo, listen to music
-
-
-[Walk] <living_room> (1)
-[Walk] <stereo> (1)
-[Find] <stereo> (1)
-[SwitchOn] <stereo> (1)

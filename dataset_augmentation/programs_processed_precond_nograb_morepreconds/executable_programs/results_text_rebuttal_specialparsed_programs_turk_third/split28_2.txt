@@ -1,9 +1,0 @@
-Read book
-I like to lay in bed with my Kindle Fire Tablet propped up on a pillow and read.
-
-
-[FIND] <bed> (1.97)
-[TURNTO] <bed> (1.97)
-[POINTAT] <bed> (1.97)
-[WASH] <bed> (1.97)
-[SIT] <bed> (1.97)

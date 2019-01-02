@@ -1,8 +1,0 @@
-Pick up phone
-walk to phone, grab phone, pick up phone, put to ear
-
-
-[WALK] <living_room> (1.243)
-[WALK] <telephone> (1.1000)
-[FIND] <telephone> (1.1000)
-[GRAB] <telephone> (1.1000)

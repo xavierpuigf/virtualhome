@@ -1,7 +1,0 @@
-Turn on light
-push any ligth button to turn it on, for example in the living room
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)

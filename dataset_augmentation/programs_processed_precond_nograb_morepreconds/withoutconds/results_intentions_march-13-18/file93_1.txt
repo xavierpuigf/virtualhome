@@ -1,7 +1,0 @@
-Set up table
-Find the table, pick up the table, take table to kitchen, place table face up.
-
-
-[Find] <table> (1)
-[Pull] <table> (1)
-[Walk] <kitchen> (1)

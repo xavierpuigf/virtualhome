@@ -1,9 +1,0 @@
-Movie
-Turn on the TV.  Insert a DVD.  Sit on the floor with the kids.  After watching, take out DVD and leave.
-
-
-[Find] <television> (1)
-[SwitchOn] <television> (1)
-[Find] <cd_player> (1)
-[SwitchOn] <cd_player> (1)
-[SwitchOff] <cd_player> (1)

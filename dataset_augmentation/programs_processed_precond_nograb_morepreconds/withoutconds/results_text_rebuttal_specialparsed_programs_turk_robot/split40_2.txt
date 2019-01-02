@@ -1,9 +1,0 @@
-Fan magazines on coffee table
-Gather magazines. Place in a fan shape on the coffee table.
-
-
-[Find] <coffee> (1)
-[TurnTo] <coffee> (1)
-[PointAt] <coffee> (1)
-[Drink] <coffee> (1)
-[Stir] <coffee> (1)

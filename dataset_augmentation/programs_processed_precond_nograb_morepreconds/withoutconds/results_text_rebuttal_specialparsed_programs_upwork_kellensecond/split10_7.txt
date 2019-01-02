@@ -1,9 +1,0 @@
-Flush toilet
-Close lid of toilet and press down plunger handle until it sinks and toilet makes flushing sound, then release.
-
-
-[Walk] <bathroom> (1)
-[Walk] <toilet> (1)
-[Find] <toilet> (1)
-[Close] <toilet> (1)
-[Flush] <toilet> (1)

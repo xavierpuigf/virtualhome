@@ -1,8 +1,0 @@
-1
-is_off: ('COMPUTER', '1') --> 
-Work
-Find the computer and  turn it on
-
-
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)

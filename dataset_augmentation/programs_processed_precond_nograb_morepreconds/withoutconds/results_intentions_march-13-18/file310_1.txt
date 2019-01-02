@@ -1,8 +1,0 @@
-Turn on light
-I enter the bedroom and find the light. Then I turn it on.
-
-
-[Walk] <bedroom> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

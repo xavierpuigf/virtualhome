@@ -1,8 +1,0 @@
-Pet cat
-Buy a cat from a shop. Give food to cat. Pet the cat.
-
-
-[Find] <cat> (1)
-[TurnTo] <cat> (1)
-[LookAt] <cat> (1)
-[Touch] <cat> (1)

@@ -1,9 +1,0 @@
-1
-location: ('PHONE', '1') --> ('HOME OFFICE', '1')
-Pick up phone
-Enter the Home office, then walk to the phone, pickup the phone.
-
-
-[Walk] <HOME OFFICE> (1)
-[Walk] <PHONE> (1)
-[Grab] <PHONE> (1)

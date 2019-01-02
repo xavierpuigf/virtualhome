@@ -1,9 +1,0 @@
-Drink
-walk to kitchen, look at the water glass, grab that glass, find the water cane, open the water cane tap, drink water
-
-
-[Walk] <KITCHEN> (1)
-[Find] <WATER GLASS> (1)
-[LookAt] <WATER GLASS> (1)
-[Grab] <WATER GLASS> (1)
-[Find] <WATER> (1)

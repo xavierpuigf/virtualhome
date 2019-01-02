@@ -1,9 +1,0 @@
-Read book
-Open a book and understand that content
-
-
-[FIND] <book> (1.1000)
-[TURNTO] <book> (1.1000)
-[LOOKAT] <book> (1.1000)
-[GRAB] <book> (1.1000)
-[READ] <book> (1.1000)

@@ -1,9 +1,0 @@
-Social media  checks
-Logging on to  things like  facebook  and  twitter
-
-
-[Walk] <home_office> (1)
-[Walk] <computer> (1)
-[Find] <chair> (1)
-[Sit] <chair> (1)
-[SwitchOn] <computer> (1)

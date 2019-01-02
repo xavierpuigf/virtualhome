@@ -1,1 +1,0 @@
-[{"atreach": [["bed", "1"], ["pillow", "1"]]}, {"atreach": [["pillow", "1"], ["couch", "1"]]}, {"location": [["couch", "1"], ["bedroom", "1"]]}, {"location": [["pillow", "1"], ["bedroom", "1"]]}, {"location": [["bed", "1"], ["bedroom", "1"]]}, {"free": ["couch", "1"]}, {"free": ["bed", "1"]}]

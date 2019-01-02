@@ -1,9 +1,0 @@
-Make bed
-Every morning the robot would come and out my sheets tidely back in place
-
-
-[Walk] <bedroom> (1)
-[Walk] <bed> (1)
-[Find] <sheets> (1)
-[Grab] <sheets> (1)
-[PutBack] <sheets> (1) <bed> (1)

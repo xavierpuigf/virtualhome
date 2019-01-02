@@ -1,8 +1,0 @@
-Write an email
-I open my laptop and then login to Windows. Then I open Google Chrome, and type gmail.com into the address bar. My email automatically logs in, then I click the Compose button, type in the address of the recipient, then the subject of the email, and then start typing my email
-
-
-[Walk] <laptop> (1)
-[SwitchOn] <laptop> (1)
-[Find] <keyboard> (1)
-[Type] <keyboard> (1)

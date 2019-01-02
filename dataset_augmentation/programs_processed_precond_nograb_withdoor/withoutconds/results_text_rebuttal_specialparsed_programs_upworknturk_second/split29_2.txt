@@ -1,7 +1,0 @@
-Make coffee
-Making coffee
-
-
-[Walk] <KITCHEN> (1)
-[Find] <COFFE MAKER> (1)
-[SwitchOn] <COFFE MAKER> (1)

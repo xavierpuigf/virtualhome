@@ -1,9 +1,0 @@
-Go to toilet
-Walk to the bathroom.  Find the toilet.  Lift the top of the toilet.  Sit on the toilet.
-
-
-[Walk] <bathroom> (1)
-[Walk] <toilet> (1)
-[Find] <toilet> (1)
-[Open] <toilet> (1)
-[Sit] <toilet> (1)

@@ -1,7 +1,0 @@
-Relax on sofa
-I walk to the living room and find the sofa. I sit on the sofa and get comfortable.
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)

@@ -1,1 +1,0 @@
-[{"atreach": [["wall_clock", "1"], ["wall_clock", "1"]]}, {"atreach": [["man", "1"], ["bed", "1"]]}, {"location": [["wall_clock", "1"], ["bedroom", "1"]]}, {"location": [["bed", "1"], ["bedroom", "1"]]}, {"location": [["man", "1"], ["bedroom", "1"]]}, {"in": [["man", "1"], ["bed", "1"]]}, {"free": ["bed", "1"]}]

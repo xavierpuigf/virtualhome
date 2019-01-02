@@ -1,9 +1,0 @@
-Pet dog
-Pet my dog in hall
-
-
-[WALK] <living_room> (1.243)
-[WALK] <dog> (1.1000)
-[TURNTO] <dog> (1.1000)
-[LOOKAT] <dog> (1.1000)
-[TOUCH] <dog> (1.1000)

@@ -1,7 +1,0 @@
-0
-Walk through
-Walk through the entrance hall
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <living_room> (1)

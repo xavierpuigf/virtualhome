@@ -1,9 +1,0 @@
-0
-Pet cat
-I look for my cat and start petting it.
-
-
-[Find] <CAT> (1)
-[LookAt] <CAT> (1)
-[Find] <FACE> (1)
-[Touch] <FACE> (1)

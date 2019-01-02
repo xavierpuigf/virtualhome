@@ -1,1 +1,0 @@
-[{"atreach": [["water", "1"], ["water", "1"]]}, {"atreach": [["button", "1"], ["water", "1"]]}, {"atreach": [["coffe_maker", "1"], ["water", "1"]]}, {"closed": ["coffe_maker", "1"]}, {"inside": [["coffee", "1"], ["coffe_maker", "1"]]}, {"inside": [["water", "1"], ["coffe_maker", "1"]]}]

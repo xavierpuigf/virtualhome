@@ -1,9 +1,0 @@
-1
-location: ('SOFA', '1') --> ('LIVING ROOM', '1')
-Relax on sofa
-walk to living room, walk to sofa, sit on sofa.
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <SOFA> (1)
-[Sit] <SOFA> (1)

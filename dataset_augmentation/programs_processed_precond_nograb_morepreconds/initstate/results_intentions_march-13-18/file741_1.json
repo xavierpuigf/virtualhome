@@ -1,1 +1,0 @@
-[{"is_off": ["faucet", "1"]}, {"atreach": [["faucet", "1"], ["faucet", "1"]]}, {"atreach": [["soap", "1"], ["faucet", "1"]]}, {"atreach": [["hands_both", "1"], ["faucet", "1"]]}, {"location": [["faucet", "1"], ["bathroom", "1"]]}, {"location": [["soap", "1"], ["bathroom", "1"]]}, {"location": [["hands_both", "1"], ["bathroom", "1"]]}]

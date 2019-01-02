@@ -1,8 +1,0 @@
-Turn on light
-Walk into living room. Find wall. Find light button. Switch on light button.
-
-
-[Walk] <living_room> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

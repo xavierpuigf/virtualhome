@@ -1,6 +1,0 @@
-0
-Close door
-Push the door shut until it latches.
-
-
-[Run] <entrance_hall> (1)

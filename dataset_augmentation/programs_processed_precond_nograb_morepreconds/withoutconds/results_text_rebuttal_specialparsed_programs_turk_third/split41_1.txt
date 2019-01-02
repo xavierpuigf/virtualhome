@@ -1,8 +1,0 @@
-Put clothes away
-I take clean clothes and either place them in dresser drawers or hang them in a closet.
-
-
-[Walk] <bedroom> (1)
-[Walk] <cabinet> (1)
-[Open] <cabinet> (1)
-[Close] <cabinet> (1)

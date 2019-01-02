@@ -1,8 +1,0 @@
-Turn light off
-Put the light switch into the down, or off, position.
-
-
-[WALK] <dining_room> (1.161)
-[WALK] <light> (1.1000)
-[FIND] <light> (1.1000)
-[SWITCHOFF] <light> (1.1000)

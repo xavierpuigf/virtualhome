@@ -1,7 +1,0 @@
-Relax on sofa
-Sitting down and relaxing on the sofa
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <COUCH> (1)
-[Sit] <COUCH> (1)

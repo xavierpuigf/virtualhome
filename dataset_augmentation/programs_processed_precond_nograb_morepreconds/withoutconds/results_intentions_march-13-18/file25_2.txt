@@ -1,6 +1,0 @@
-Pick up phone
-I find the phone, lift the receiver to my ear, and say hello.
-
-
-[Find] <telephone> (1)
-[Grab] <telephone> (1)

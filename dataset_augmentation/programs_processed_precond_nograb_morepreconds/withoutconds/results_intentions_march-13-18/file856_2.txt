@@ -1,9 +1,0 @@
-Pet cat
-Walk into bedrrom and to the sofa. Sit on the sofa and touch cat.
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Sit] <sofa> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

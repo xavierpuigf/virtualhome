@@ -1,9 +1,0 @@
-Pet cat
-Walk to living room. Find cat. Walk to cat. Pull cat.
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Walk] <cat> (1)
-[Pull] <cat> (1)

@@ -1,8 +1,0 @@
-Take nap
-Lay down on the bed and nap
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <bed> (1.1000)
-[LIE] <bed> (1.1000)
-[SLEEP]

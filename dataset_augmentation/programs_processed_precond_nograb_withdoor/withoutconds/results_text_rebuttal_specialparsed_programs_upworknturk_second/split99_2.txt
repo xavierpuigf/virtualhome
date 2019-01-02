@@ -1,8 +1,0 @@
-Pet dog
-Pet my dog in hall
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Walk] <DOG> (1)
-[LookAt] <DOG> (1)
-[Touch] <DOG> (1)

@@ -1,8 +1,0 @@
-1
-is_off: ('LIGHTING', '1') --> 
-Turn on light
-Walk over to light switch. Turn on lights.
-
-
-[Walk] <LIGHTING> (1)
-[SwitchOn] <LIGHTING> (1)

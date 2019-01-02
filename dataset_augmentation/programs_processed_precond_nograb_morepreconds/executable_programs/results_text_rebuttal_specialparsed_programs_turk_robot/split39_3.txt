@@ -1,6 +1,0 @@
-Put umbrella away
-Place the umbrella in the umbrella bucket point first.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <mop_bucket> (1.1000)

@@ -1,8 +1,0 @@
-Clean floor
-During dirty weather, the floor would need to be cleaned such as if the shoe has mud on it.
-
-
-[Find] <CLEANING BOTTLE> (1)
-[Wash] <CLEANING BOTTLE> (1)
-[LookAt] <CLEANING BOTTLE> (1)
-[Shake] <CLEANING BOTTLE> (1)

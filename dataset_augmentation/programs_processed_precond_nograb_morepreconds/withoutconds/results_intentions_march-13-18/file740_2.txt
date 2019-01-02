@@ -1,6 +1,0 @@
-Pick up phone
-Find phone, pick up the phone, put phone to ear.
-
-
-[Find] <phone> (1)
-[Grab] <phone> (1)

@@ -1,6 +1,0 @@
-Relax on sofa
-I walk to the sofa, and lie down on the sofa.
-
-
-[WALK] <sofa> (1.1000)
-[LIE] <sofa> (1.1000)

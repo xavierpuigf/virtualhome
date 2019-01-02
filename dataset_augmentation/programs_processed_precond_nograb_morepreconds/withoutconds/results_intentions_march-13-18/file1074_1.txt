@@ -1,8 +1,0 @@
-Watch TV
-Walk into the living room. Sit on the couch. Turn on TV.
-
-
-[Walk] <living_room> (1)
-[Walk] <television> (1)
-[Find] <television> (1)
-[SwitchOn] <television> (1)

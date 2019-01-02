@@ -1,6 +1,0 @@
-Work
-Find the computer and  turn it on
-
-
-[Find] <computer> (1)
-[SwitchOn] <computer> (1)

@@ -1,6 +1,0 @@
-Pet cat
-find the cat, pet the cat
-
-
-[Find] <cat> (1)
-[Touch] <cat> (1)

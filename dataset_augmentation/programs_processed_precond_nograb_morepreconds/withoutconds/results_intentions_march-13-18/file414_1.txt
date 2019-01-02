@@ -1,9 +1,0 @@
-Set up table
-Find the table cloth and grab it to the living room. Find the table on the living room and then unfold the table clot. Put the table cloth on the table.
-
-
-[Find] <table_cloth> (1)
-[Grab] <table_cloth> (1)
-[Find] <table> (1)
-[Unfold] <table_cloth> (1)
-[PutBack] <table_cloth> (1) <table> (1)

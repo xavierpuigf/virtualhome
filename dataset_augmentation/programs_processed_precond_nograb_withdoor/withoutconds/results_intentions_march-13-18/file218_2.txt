@@ -1,8 +1,0 @@
-Watch TV
-Watch TV in the living room.
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Watch] <TELEVISION> (1)

@@ -1,6 +1,0 @@
-Turn on light
-flip the switch and turn on the lights
-
-
-[Walk] <light> (1)
-[SwitchOn] <light> (1)

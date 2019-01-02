@@ -1,9 +1,0 @@
-Watch TV
-I come home and go to the sofa for turn off the tv and relax
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Sit] <sofa> (1)
-[Find] <television> (1)
-[SwitchOn] <television> (1)

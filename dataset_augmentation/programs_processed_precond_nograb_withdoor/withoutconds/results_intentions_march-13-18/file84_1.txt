@@ -1,9 +1,0 @@
-Set up table
-walk to entrance hall. find a table. pull table. walk to living rook. push table.
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Find] <TABLE> (1)
-[Pull] <TABLE> (1)
-[Walk] <LIVING ROOM> (1)
-[Push] <TABLE> (1)

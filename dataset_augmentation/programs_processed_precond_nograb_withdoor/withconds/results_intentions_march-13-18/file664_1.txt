@@ -1,9 +1,0 @@
-0
-Change TV channel
-I take the remote control and press button to change TV channel
-
-
-[Find] <REMOTE CONTROL> (1)
-[PointAt] <REMOTE CONTROL> (1)
-[Find] <BUTTON> (1)
-[Touch] <BUTTON> (1)

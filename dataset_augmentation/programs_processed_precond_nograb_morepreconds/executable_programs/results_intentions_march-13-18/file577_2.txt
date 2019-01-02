@@ -1,8 +1,0 @@
-Browse internet
-OPEN THE BROWSER ON YOUR COMPUTER
-
-
-[FIND] <cabinet> (1.1000)
-[FIND] <computer> (1.318)
-[TURNTO] <computer> (1.318)
-[LOOKAT] <computer> (1.318)

@@ -1,7 +1,0 @@
-Go to toilet
-Walk to bathroom, find toilet.
-
-
-[WALK] <bathroom> (1.1)
-[WALK] <toilet> (1.1000)
-[FIND] <toilet> (1.1000)

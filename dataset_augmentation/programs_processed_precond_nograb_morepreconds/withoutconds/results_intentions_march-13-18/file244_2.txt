@@ -1,8 +1,0 @@
-Go to sleep
-I walk to my room, walk to my bed, lie in my bed, and go to sleep.
-
-
-[Walk] <bedroom> (1)
-[Walk] <bed> (1)
-[Lie] <bed> (1)
-[Sleep]

@@ -1,9 +1,0 @@
-Prepare Dinner
-Get one plate, and a set of eating utensils (one knife, spoon, and fork), a napkin, and a drinking glass for every person that will be dining.  Set the plate at the center of the table nearest to a chair, with the set of utensils at the right of the plate.  Next, set the glass to the upper left of the plate.  Finally, set the napkin either underneath the utensils, or to the right of them.
-
-
-[Find] <plate> (1)
-[TurnTo] <plate> (1)
-[PointAt] <plate> (1)
-[Wash] <plate> (1)
-[Eat] <plate> (1)

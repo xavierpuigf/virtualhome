@@ -1,9 +1,0 @@
-Relax
-Sit on the couch and unwind
-
-
-[Find] <couch> (1)
-[Walk] <couch> (1)
-[Lie] <couch> (1)
-[Find] <legs_both> (1)
-[Stretch] <legs_both> (1)

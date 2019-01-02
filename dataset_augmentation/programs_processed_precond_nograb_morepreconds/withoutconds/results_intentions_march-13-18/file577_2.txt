@@ -1,8 +1,0 @@
-Browse internet
-OPEN THE BROWSER ON YOUR COMPUTER
-
-
-[Find] <cabinet> (1)
-[Find] <computer> (1)
-[TurnTo] <computer> (1)
-[LookAt] <computer> (1)

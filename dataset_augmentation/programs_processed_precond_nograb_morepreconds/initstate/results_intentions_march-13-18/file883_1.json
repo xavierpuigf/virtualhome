@@ -1,1 +1,0 @@
-[{"unplugged": ["cd_player", "1"]}, {"atreach": [["cd_player", "1"], ["cd_player", "1"]]}, {"atreach": [["remote_control", "1"], ["cd_player", "1"]]}, {"atreach": [["button", "1"], ["cd_player", "1"]]}, {"location": [["cd_player", "1"], ["living_room", "1"]]}, {"location": [["remote_control", "1"], ["living_room", "1"]]}, {"location": [["button", "1"], ["living_room", "1"]]}]

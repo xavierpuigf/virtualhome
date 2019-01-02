@@ -1,8 +1,0 @@
-Pet cat
-find the cat, go near the cat and pet the cat
-
-
-[WALK] <living_room> (1.243)
-[WALK] <cat> (1.1000)
-[FIND] <cat> (1.1000)
-[TOUCH] <cat> (1.1000)

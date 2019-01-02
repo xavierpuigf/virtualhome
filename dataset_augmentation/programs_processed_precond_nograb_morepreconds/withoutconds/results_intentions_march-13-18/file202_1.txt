@@ -1,8 +1,0 @@
-Pet cat
-Pet cat No. 2 in the living room.
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (2)
-[Find] <cat> (2)
-[Wipe] <cat> (2)

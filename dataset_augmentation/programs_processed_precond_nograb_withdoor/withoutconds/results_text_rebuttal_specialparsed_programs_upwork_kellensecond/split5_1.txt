@@ -1,8 +1,0 @@
-Open door
-Open the door when leaving or coming in.
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Find] <DOOR> (1)
-[Touch] <DOOR> (1)
-[Open] <DOOR> (1)

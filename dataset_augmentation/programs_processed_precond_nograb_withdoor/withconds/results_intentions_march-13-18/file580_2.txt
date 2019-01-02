@@ -1,9 +1,0 @@
-1
-location: ('CAT', '1') --> ('LIVING ROOM', '1')
-Pet cat
-Go to the living room where the cat sleeps. Find cat. Proceed to petting cat.
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <CAT> (1)
-[Touch] <CAT> (1)

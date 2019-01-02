@@ -1,8 +1,0 @@
-Cook some food
-Go kitchen and make something for eat
-
-
-[Walk] <kitchen> (1)
-[Walk] <fridge> (1)
-[Open] <fridge> (1)
-[Find] <food_food> (1)

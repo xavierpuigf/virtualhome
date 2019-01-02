@@ -1,8 +1,0 @@
-Turn on light
-switching on the light
-
-
-[Walk] <bedroom> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

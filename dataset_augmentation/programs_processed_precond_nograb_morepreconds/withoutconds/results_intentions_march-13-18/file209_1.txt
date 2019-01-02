@@ -1,7 +1,0 @@
-Pick up phone
-Enter living room. Walk to telephone. Pick up from hook.
-
-
-[Walk] <living_room> (1)
-[Walk] <telephone> (1)
-[Grab] <telephone> (1)

@@ -1,6 +1,0 @@
-Pick up phone
-Locate the phone.  Extend arm toward the phone and open hand.  Place hand on phone and close fingers around phone.  Lift phone.
-
-
-[Find] <phone> (1)
-[Grab] <phone> (1)

@@ -1,9 +1,0 @@
-Take nap
-I habitually take naps on my living room couch.
-
-
-[Walk] <living_room> (1)
-[Walk] <couch> (1)
-[Find] <couch> (1)
-[Lie] <couch> (1)
-[Sleep]

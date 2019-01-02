@@ -1,9 +1,0 @@
-Turn on light
-Anything that has been identified as a room light should be turned from the off to the on position.
-
-
-[WakeUp]
-[StandUp]
-[Walk] <kitchen> (1)
-[Walk] <lighting> (1)
-[TurnTo] <lighting> (1)

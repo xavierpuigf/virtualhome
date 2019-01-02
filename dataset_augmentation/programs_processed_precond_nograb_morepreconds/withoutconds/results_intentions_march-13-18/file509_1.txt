@@ -1,8 +1,0 @@
-Relax on sofa
-I walk into the living room and I lie down on the sofa.
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Find] <sofa> (1)
-[Lie] <sofa> (1)

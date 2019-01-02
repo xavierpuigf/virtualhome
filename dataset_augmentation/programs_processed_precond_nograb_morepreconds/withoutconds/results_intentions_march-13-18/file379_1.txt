@@ -1,6 +1,0 @@
-Listen to music
-go to radio. run on radio.
-
-
-[Walk] <radio> (1)
-[SwitchOn] <radio> (1)

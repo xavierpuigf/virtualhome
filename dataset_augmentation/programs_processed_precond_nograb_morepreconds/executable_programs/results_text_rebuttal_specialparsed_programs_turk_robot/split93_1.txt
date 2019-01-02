@@ -1,9 +1,0 @@
-Push in desk chair
-Push the desk chair until it is under the desk.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <desk> (1.1000)
-[FIND] <chair> (1.94)
-[TOUCH] <chair> (1.94)
-[PUSH] <chair> (1.94)

@@ -1,8 +1,0 @@
-1
-location: ('MOP BUCKET', '1') --> ('ENTRANCE HALL', '1')
-Put umbrella away
-Place the umbrella in the umbrella bucket point first.
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <mop_bucket> (1)

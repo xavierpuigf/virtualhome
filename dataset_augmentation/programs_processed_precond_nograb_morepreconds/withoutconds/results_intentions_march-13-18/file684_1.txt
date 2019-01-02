@@ -1,8 +1,0 @@
-Read book
-pick up  the book open the book and read
-
-
-[Walk] <bedroom> (1)
-[Walk] <book> (1)
-[Grab] <book> (1)
-[Read] <book> (1)

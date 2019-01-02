@@ -1,9 +1,0 @@
-Listen to music
-in home walk to the living room find the cd player and switch on it,then play some music to listen.
-
-
-[WakeUp]
-[Walk] <living_room> (1)
-[Walk] <cd_player> (1)
-[Find] <cd_player> (1)
-[SwitchOn] <cd_player> (1)

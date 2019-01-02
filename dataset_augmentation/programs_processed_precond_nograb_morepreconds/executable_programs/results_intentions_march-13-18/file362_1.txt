@@ -1,9 +1,0 @@
-Pick up phone
-A friend told me he would call me the next day to discuss some business matter. The bell started ringing and I walked towards the table and grabbed the phone and discussed the matter.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <table> (1.187)
-[FIND] <telephone> (1.1000)
-[GRAB] <telephone> (1.1000)
-[DROP] <telephone> (1.1000)

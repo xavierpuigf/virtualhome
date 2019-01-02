@@ -1,9 +1,0 @@
-Pick up phone
-walk into living room, look at the phone when it ringing, grab the phone or pickup the phone
-
-
-[Walk] <living_room> (1)
-[Walk] <phone> (1)
-[Find] <phone> (1)
-[TurnTo] <phone> (1)
-[LookAt] <phone> (1)

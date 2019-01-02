@@ -1,9 +1,0 @@
-Look at painting
-Walk to the painting.  Look up at the painting.  Admire it on the wall.
-
-
-[Walk] <living_room> (1)
-[Walk] <painting> (1)
-[Find] <painting> (1)
-[TurnTo] <painting> (1)
-[LookAt] <painting> (1)

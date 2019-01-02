@@ -1,8 +1,0 @@
-Pick up phone
-Listen for ring,lift  phone, click accept button to pick up, Begin talking.
-
-
-[Find] <phone> (1)
-[Grab] <phone> (1)
-[Find] <button> (1)
-[Push] <button> (1)

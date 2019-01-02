@@ -1,1 +1,0 @@
-[{"atreach": [["rag", "1"], ["rag", "1"]]}, {"atreach": [["computer", "1"], ["desk", "1"]]}, {"atreach": [["desk", "1"], ["desk", "1"]]}, {"location": [["rag", "1"], ["home_office", "1"]]}, {"location": [["desk", "1"], ["home_office", "1"]]}, {"location": [["computer", "1"], ["home_office", "1"]]}, {"in": [["computer", "1"], ["desk", "1"]]}]

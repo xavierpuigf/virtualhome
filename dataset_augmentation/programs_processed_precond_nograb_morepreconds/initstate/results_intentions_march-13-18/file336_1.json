@@ -1,1 +1,0 @@
-[{"is_on": ["television", "1"]}, {"is_on": ["light", "1"]}, {"plugged": ["television", "1"]}, {"plugged": ["light", "1"]}, {"is_off": ["floor_lamp", "1"]}, {"closed": ["dresser", "1"]}, {"inside": [["clothes_pants", "1"], ["dresser", "1"]]}, {"inside": [["clothes_shirt", "1"], ["dresser", "1"]]}]

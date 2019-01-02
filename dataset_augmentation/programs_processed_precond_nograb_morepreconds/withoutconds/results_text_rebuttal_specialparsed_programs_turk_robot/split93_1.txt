@@ -1,9 +1,0 @@
-Push in desk chair
-Push the desk chair until it is under the desk.
-
-
-[Walk] <home_office> (1)
-[Walk] <desk> (1)
-[Find] <chair> (1)
-[Touch] <chair> (1)
-[Push] <chair> (1)

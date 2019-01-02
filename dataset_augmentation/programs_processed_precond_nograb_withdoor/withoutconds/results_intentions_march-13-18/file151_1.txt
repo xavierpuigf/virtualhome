@@ -1,8 +1,0 @@
-Browse internet
-go to the office, turn computer on, open an browser or any application to open any website.
-
-
-[Walk] <HOME OFFICE> (1)
-[Find] <COMPUTER> (1)
-[SwitchOn] <COMPUTER> (1)
-[Find] <COMPUTER> (1)

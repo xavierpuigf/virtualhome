@@ -1,8 +1,0 @@
-1
-atreach: ('PHONE', '1') --> ('PHONE', '1')
-Pick up phone
-walk over and pick up the phone
-
-
-[Walk] <phone> (1)
-[Grab] <phone> (1)

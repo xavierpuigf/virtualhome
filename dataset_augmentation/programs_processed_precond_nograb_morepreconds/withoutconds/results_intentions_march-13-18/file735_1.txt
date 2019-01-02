@@ -1,9 +1,0 @@
-Relax on sofa
-I walk to the living room and stand in front of the sofa. Then I turn and sit on the sofa and lean my back against the pillow and my feet on the floor.
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Find] <sofa> (1)
-[TurnTo] <sofa> (1)
-[Sit] <sofa> (1)

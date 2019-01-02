@@ -1,9 +1,0 @@
-Turn on light
-I walk to the living room. I find the electric outlet. I switch on the light.
-
-
-[Walk] <living_room> (1)
-[Walk] <electrical_outlet> (1)
-[Find] <electrical_outlet> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

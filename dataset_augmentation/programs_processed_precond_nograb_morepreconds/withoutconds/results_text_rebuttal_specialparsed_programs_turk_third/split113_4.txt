@@ -1,8 +1,0 @@
-Write  school paper
-Writing  and drafting a paper for  class work
-
-
-[Walk] <home_office> (1)
-[Walk] <computer> (1)
-[SwitchOn] <computer> (1)
-[SwitchOff] <computer> (1)

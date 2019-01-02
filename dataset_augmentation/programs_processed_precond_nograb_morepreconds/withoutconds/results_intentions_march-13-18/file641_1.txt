@@ -1,9 +1,0 @@
-Change TV channel
-Take the remote control and push the button on it.
-
-
-[Find] <remote_control> (1)
-[Grab] <remote_control> (1)
-[Find] <button> (1)
-[Push] <button> (1)
-[PutObjBack] <remote_control> (1)

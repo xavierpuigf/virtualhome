@@ -1,8 +1,0 @@
-Come in and leave home
-When I leave. I get my shoes, walk in and out.
-
-
-[FIND] <shoes> (1.1000)
-[GRAB] <shoes> (1.1000)
-[PUTON] <shoes> (1.1000)
-[WALK] <living_room> (1.243)

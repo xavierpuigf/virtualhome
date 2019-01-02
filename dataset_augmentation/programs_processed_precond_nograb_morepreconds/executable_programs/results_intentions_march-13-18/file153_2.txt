@@ -1,8 +1,0 @@
-Work
-turn computer on, open application to work with
-
-
-[WALK] <living_room> (1.243)
-[WALK] <computer> (1.1000)
-[FIND] <computer> (1.1000)
-[SWITCHON] <computer> (1.1000)

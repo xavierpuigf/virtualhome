@@ -1,9 +1,0 @@
-Wash hands
-put soap on hands, scrub it and rinse with water
-
-
-[Walk] <BATHROOM> (1)
-[Find] <SOAP> (1)
-[Scrub] <SOAP> (1)
-[Find] <WATER> (1)
-[Rinse] <WATER> (1)

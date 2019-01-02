@@ -1,1 +1,0 @@
-[{"is_off": ["stove", "1"]}, {"atreach": [["stove", "1"], ["stove", "1"]]}, {"atreach": [["bowl", "1"], ["stove", "1"]]}, {"atreach": [["groceries", "1"], ["stove", "1"]]}, {"location": [["stove", "1"], ["kitchen", "1"]]}, {"location": [["bowl", "1"], ["kitchen", "1"]]}, {"location": [["groceries", "1"], ["kitchen", "1"]]}]

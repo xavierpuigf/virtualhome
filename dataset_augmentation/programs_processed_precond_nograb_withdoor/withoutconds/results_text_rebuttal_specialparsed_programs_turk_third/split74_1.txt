@@ -1,8 +1,0 @@
-Set mail on table
-Put the mail on the table in a pile. Leave it there.
-
-
-[Find] <MAIL> (1)
-[Grab] <MAIL> (1)
-[Walk] <TABLE> (1)
-[Drop] <MAIL> (1)

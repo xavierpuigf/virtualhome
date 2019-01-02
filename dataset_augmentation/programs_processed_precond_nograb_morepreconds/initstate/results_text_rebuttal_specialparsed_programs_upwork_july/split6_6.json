@@ -1,1 +1,0 @@
-[{"atreach": [["sofa", "1"], ["pen", "1"]]}, {"atreach": [["diary", "1"], ["diary", "1"]]}, {"atreach": [["pen", "1"], ["diary", "1"]]}, {"location": [["diary", "1"], ["bedroom", "1"]]}, {"location": [["sofa", "1"], ["bedroom", "1"]]}, {"location": [["pen", "1"], ["bedroom", "1"]]}, {"closed": ["diary", "1"]}, {"inside": [["pen", "1"], ["diary", "1"]]}, {"free": ["sofa", "1"]}]

@@ -1,9 +1,0 @@
-Pet cat
-First I need to find the cat. Walk to the cat and the pet the cat.
-
-
-[Find] <cat> (1)
-[TurnTo] <cat> (1)
-[LookAt] <cat> (1)
-[Walk] <cat> (1)
-[Touch] <cat> (1)

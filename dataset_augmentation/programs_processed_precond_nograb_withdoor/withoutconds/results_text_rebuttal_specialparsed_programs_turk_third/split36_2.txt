@@ -1,9 +1,0 @@
-Watch youtube
-Grab phone.  Turn on youtube.
-
-
-[Find] <CELLPHONE> (1)
-[Grab] <CELLPHONE> (1)
-[Run] <LIVING ROOM> (1)
-[LookAt] <CELLPHONE> (1)
-[PointAt] <CELLPHONE> (1)

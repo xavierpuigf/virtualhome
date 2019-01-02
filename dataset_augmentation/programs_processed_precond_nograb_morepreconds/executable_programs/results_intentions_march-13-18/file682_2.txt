@@ -1,7 +1,0 @@
-Listen to music
-I walk to the radio.  I switch on the radio and listen
-
-
-[WALK] <living_room> (1.243)
-[WALK] <radio> (1.1000)
-[SWITCHON] <radio> (1.1000)

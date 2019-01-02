@@ -1,9 +1,0 @@
-Watch TV
-Watch TV in the living room.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <television> (1.199)
-[FIND] <television> (1.199)
-[SWITCHON] <television> (1.199)
-[WATCH] <television> (1.199)

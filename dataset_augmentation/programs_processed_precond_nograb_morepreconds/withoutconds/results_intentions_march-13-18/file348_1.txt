@@ -1,7 +1,0 @@
-Pick up phone
-I walk over to the phone. .I reach my arm out. I open my hand. I place my hand on the phone. I close my fingers around the phone. I pick up the phone.
-
-
-[Walk] <phone> (1)
-[Touch] <phone> (1)
-[Grab] <phone> (1)

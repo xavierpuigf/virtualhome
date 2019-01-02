@@ -1,1 +1,0 @@
-[{"atreach": [["child", "1"], ["child", "1"]]}, {"atreach": [["woman", "1"], ["child", "1"]]}, {"atreach": [["chair", "1"], ["child", "1"]]}, {"location": [["child", "1"], ["kitchen", "1"]]}, {"location": [["woman", "1"], ["kitchen", "1"]]}, {"location": [["chair", "1"], ["kitchen", "1"]]}, {"free": ["chair", "1"]}]

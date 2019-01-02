@@ -1,8 +1,0 @@
-Pick up phone
-I walk to the kitchen and find the phone. I pick up the phone. I hold it to my ear.
-
-
-[Walk] <kitchen> (1)
-[Walk] <telephone> (1)
-[Find] <telephone> (1)
-[Grab] <telephone> (1)

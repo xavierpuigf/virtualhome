@@ -1,7 +1,0 @@
-Listen to music
-Walk into the living room. Walk up to the radio. Turn on the radio. Listen to the radio.
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <RADIO> (1)
-[SwitchOn] <RADIO> (1)

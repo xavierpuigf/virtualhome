@@ -1,9 +1,0 @@
-Read book
-I open up my book to where my bookmark is, and then i begin reading to the end of the page. Then I turn the page and read to the end of the next and so on.
-
-
-[Find] <bookmark> (1)
-[Touch] <bookmark> (1)
-[Find] <book> (1)
-[Grab] <book> (1)
-[Read] <book> (1)

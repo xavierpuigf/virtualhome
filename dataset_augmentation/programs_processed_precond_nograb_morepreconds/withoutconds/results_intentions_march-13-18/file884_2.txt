@@ -1,8 +1,0 @@
-Pet cat
-find the cat, go near the cat and pet the cat
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

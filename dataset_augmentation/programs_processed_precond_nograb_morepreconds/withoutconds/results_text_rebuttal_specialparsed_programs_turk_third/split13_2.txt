@@ -1,8 +1,0 @@
-Put on coat and shoes
-Choose a coat from the coat rack.  Put on the coat.  Choose a pair of shoes from the shoe rack.  Put on the shoes.
-
-
-[Find] <shoes> (1)
-[TurnTo] <shoes> (1)
-[PointAt] <shoes> (1)
-[Wash] <shoes> (1)
