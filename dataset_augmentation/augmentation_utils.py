@@ -1,8 +1,10 @@
 ''' Utility functions to augment scripts
 '''
 import pdb
+import os
 import xml.etree.ElementTree as ET
 import json
+
 
 def parseStrBlock(block_str):
     ''' Given a str block [Rinse] <CLEANING SOLUTION> (1)
@@ -24,7 +26,6 @@ def parseStrBlock(block_str):
 
 
 
-
 def hasProperty(obj_name, property_name):
     ''' Check if object obj_name has property '''
     obj_name_corrected = obj_name.lower().replace(' ', '_')
@@ -40,11 +41,14 @@ def insertInstructions(insert_in, contentold):
         acum += 1
     return content
 
+
 def removeInstructions(to_delete, content):
     ''' removes indices to_delete from content '''
     return [x for i, x in enumerate(content) if i not in to_delete]
 
+
 class Precond:
+
     ''' Precondition class, storing the preconditions for a program '''
     def __init__(self):
         self.precond_dict = {}
@@ -103,7 +107,7 @@ class Precond:
         return []
 
 
-def write_data(ori_path, all_new_progs, namedir='withoutconds'):
+def write_data(augmented_data_dir, ori_path, all_new_progs, namedir='withoutconds'):
     
     # make_dirs
     sub_dir = ori_path.split('/')[-2]
@@ -121,7 +125,8 @@ def write_data(ori_path, all_new_progs, namedir='withoutconds'):
             new_f.write(lines)
         new_f.close() 
 
-def write_precond(ori_path, all_new_preconds):
+
+def write_precond(augmented_data_dir, ori_path, all_new_preconds):
     
     # make_dirs
     sub_dir = ori_path.split('/')[-2]
@@ -138,7 +143,8 @@ def write_precond(ori_path, all_new_preconds):
         new_f.close()
 
 
-def write_graph(ori_path, graph_init, graph_end, state_list, apt_name):
+def write_graph(augmented_data_dir, ori_path, graph_init, graph_end, state_list, apt_name):
+
     sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
     new_dir = os.path.join(augmented_data_dir, 'init_and_final_graphs', apt_name,
@@ -176,3 +182,4 @@ def recursiveSelection(cont, it, curr_list):
     for idi in range(cont[it]):
         res += recursiveSelection(cont, it+1, curr_list+[idi])
     return res
+

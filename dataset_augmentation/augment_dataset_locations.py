@@ -1,18 +1,18 @@
 # Augments the dataset by replacing object containers with other containers 
 # where these objects tipically go
+import os
+import sys
 import glob
 import random
-import numpy as np
 import copy
-import os
 import json
+import numpy as np
+import ast
+
+
 from multiprocessing import Process, Manager, current_process
 from tqdm import tqdm
 from scipy.io import *
-import ast
-import ipdb
-import sys
-
 
 import augmentation_utils
 
@@ -20,27 +20,29 @@ sys.path.append('..')
 import check_programs
 import utils
 
+
 random.seed(123)
 np.random.seed(123)
+
 
 # Options
 verbose = True
 thres = 300
-write_augment_data = False
+write_augment_data = True
 multi_process = True
 num_processes = 70
 
 # Paths
-path_progs_preconds = '../programs_all_graphs3/'
 path_object_placing = '../resources/object_script_placing.json'
-augmented_data_dir = 'augmented_location_multiapts_allgraphs'
+augmented_data_dir = 'augment_location'
 
 if write_augment_data:
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-all_programs_exec = glob.glob('{}/programs_processed_precond_nograb_morepreconds/executable_programs/*/*/*.txt'.format(path_progs_preconds))
+all_programs_exec = glob.glob('original_programs/executable_programs/*/*/*.txt')
 all_programs_exec = [x.split('executable_programs/')[1] for x in all_programs_exec]
+
 
 # Obtain a mapping from program to apartment
 programs_to_apt = {}
@@ -51,6 +53,7 @@ for program in all_programs_exec:
         programs_to_apt[program_name] = []
     programs_to_apt[program_name].append(apt_name)
 
+
 # Pick a single scene by program
 programs_to_apt_single = {}
 for prog, apt_names in programs_to_apt.items():
@@ -58,8 +61,9 @@ for prog, apt_names in programs_to_apt.items():
     apt_single = apt_names[index]
     programs_to_apt[prog] = apt_single
 
-prog_folder = '{}/programs_processed_precond_nograb_morepreconds'.format(path_progs_preconds)
+prog_folder = 'original_programs'
 programs = [('{}/withoutconds/{}'.format(prog_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
+
 
 # maps every object, and location to all the possible objects
 with open(path_object_placing, 'r') as f:
@@ -80,12 +84,11 @@ precondtorelation = {
     'inside': 'IN'
 }
 
-
-
  
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
     for program_name, apt_name in tqdm(programs):
+
         augmented_progs_i = []
         augmented_progs_i_new_inst = []
         augmented_preconds_i = []
@@ -214,12 +217,13 @@ def augment_dataset(d, programs):
 
         # The current program
         if write_augment_data:
-            augmentation_utils.write_data(file_name, augmented_progs_i)
-            augmentation_utils.write_data(file_name, augmented_progs_i_new_inst, 
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i)
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
                     'executable_programs/{}/'.format(apt_name))
-            augmentation_utils.write_precond(file_name, augmented_preconds_i)
-            augmentation_utils.write_graph(file_name, init_graph_i, end_graph_i, state_list_i, 
+            augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
+            augmentation_utils.write_graph(augmented_data_dir, program_name, init_graph_i, end_graph_i, state_list_i, 
                     apt_name)
+
 
 processes = []
 if multi_process:
