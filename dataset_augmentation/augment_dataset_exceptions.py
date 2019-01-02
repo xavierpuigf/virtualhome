@@ -252,10 +252,12 @@ def augment_dataset(d, programs):
                     #     print('\n'.join(lines_program))
 
         if write_augment_data:
-            write_data(program_name, augmented_progs_i)
-            write_data(program_name, augmented_progs_i_new_inst, 'executable_programs/{}/'.format(apt_name))
-            write_precond(program_name, augmented_preconds_i)
-            write_graph(program_name, init_graph_i, end_graph_i, state_list_i)
+            augmentation_utils.write_data(program_name, augmented_progs_i)
+            augmentation_utils.write_data(program_name, augmented_progs_i_new_inst, 
+                    'executable_programs/{}/'.format(apt_name))
+            augmentation_utils.write_precond(program_name, augmented_preconds_i)
+            augmentation_utils.write_graph(program_name, init_graph_i, end_graph_i, state_list_i,
+                    apt_name)
         #print('\n'.join(exceptions_not_found))
 
 processes = []

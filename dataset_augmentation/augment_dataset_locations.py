@@ -214,10 +214,12 @@ def augment_dataset(d, programs):
 
         # The current program
         if write_augment_data:
-            write_data(file_name, augmented_progs_i)
-            write_precond(file_name, augmented_preconds_i)
-            write_data(file_name, augmented_progs_i_new_inst, 'executable_programs/{}/'.format(apt_name))
-            write_graph(file_name, init_graph_i, end_graph_i, state_list_i)
+            augmentation_utils.write_data(file_name, augmented_progs_i)
+            augmentation_utils.write_data(file_name, augmented_progs_i_new_inst, 
+                    'executable_programs/{}/'.format(apt_name))
+            augmentation_utils.write_precond(file_name, augmented_preconds_i)
+            augmentation_utils.write_graph(file_name, init_graph_i, end_graph_i, state_list_i, 
+                    apt_name)
 
 processes = []
 if multi_process:
