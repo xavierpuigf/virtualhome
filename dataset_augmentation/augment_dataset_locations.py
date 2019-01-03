@@ -30,7 +30,8 @@ verbose = True
 thres = 300
 write_augment_data = True
 multi_process = True
-num_processes = 70
+num_processes = os.cpu_count() // 2
+
 
 # Paths
 path_object_placing = '../resources/object_script_placing.json'

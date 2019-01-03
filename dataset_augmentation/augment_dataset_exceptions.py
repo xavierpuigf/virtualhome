@@ -29,7 +29,7 @@ verbose = False
 thres = 300
 write_augment_data = True
 multi_process = True
-num_processes = os.cpu_count()
+num_processes = os.cpu_count() // 2
 
 # Paths
 augmented_data_dir = 'augment_exception'
