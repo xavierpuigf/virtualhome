@@ -1,8 +1,0 @@
-Relax on sofa
-walk to living room ,find sofa ,sit on sofa
-
-
-[WALK] <living_room> (1.243)
-[WALK] <sofa> (2.1000)
-[FIND] <sofa> (2.1000)
-[SIT] <sofa> (2.1000)

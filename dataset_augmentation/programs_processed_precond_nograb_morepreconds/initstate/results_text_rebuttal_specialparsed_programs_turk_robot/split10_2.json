@@ -1,1 +1,0 @@
-[{"unplugged": ["vacuum_cleaner", "1"]}, {"is_off": ["vacuum_cleaner", "1"]}, {"atreach": [["closet", "1"], ["closet", "1"]]}, {"atreach": [["vacuum_cleaner", "1"], ["closet", "1"]]}, {"closed": ["closet", "1"]}, {"inside": [["vacuum_cleaner", "1"], ["closet", "1"]]}, {"location": [["vacuum_cleaner", "1"], ["bedroom", "1"]]}, {"location": [["closet", "1"], ["bedroom", "1"]]}]

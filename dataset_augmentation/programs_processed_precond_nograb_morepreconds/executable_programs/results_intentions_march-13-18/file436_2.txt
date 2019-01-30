@@ -1,9 +1,0 @@
-Browse internet
-Go to home office, turn on the computer, open the internet and browse around the internet.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <computer> (1.1000)
-[SWITCHON] <computer> (1.1000)
-[TURNTO] <computer> (1.1000)
-[LOOKAT] <computer> (1.1000)

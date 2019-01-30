@@ -1,7 +1,0 @@
-Pick up phone
-walk to living room , find phone ,pick up phone 3
-
-
-[Walk] <living_room> (1)
-[Walk] <telephone> (2)
-[Find] <telephone> (2)

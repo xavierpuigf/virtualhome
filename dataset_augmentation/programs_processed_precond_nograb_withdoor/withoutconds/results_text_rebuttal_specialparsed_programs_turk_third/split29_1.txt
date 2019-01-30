@@ -1,9 +1,0 @@
-Eat dinner
-You sit in a chair at the dinning room table and you have a plate of food in front of you along with a fork, spoon, and knife and you eat whats on the plate.
-
-
-[Find] <TABLE> (1)
-[PointAt] <TABLE> (1)
-[Wash] <TABLE> (1)
-[Find] <DINING ROOM> (1)
-[Crawl] <DINING ROOM> (1)

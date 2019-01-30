@@ -1,1 +1,0 @@
-[{"is_off": ["stove", "1"]}, {"atreach": [["fridge", "1"], ["fridge", "1"]]}, {"atreach": [["food_food", "1"], ["fridge", "1"]]}, {"atreach": [["fryingpan", "1"], ["fridge", "1"]]}, {"atreach": [["stove", "1"], ["fryingpan", "1"]]}, {"closed": ["fridge", "1"]}, {"inside": [["fryingpan", "1"], ["fridge", "1"]]}]

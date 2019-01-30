@@ -1,9 +1,0 @@
-Change TV channel
-I pull up my online classes on the computer to look at what the assigned reading is. I get my textbook, notebook, and mechanical pencil. As I'm reading, I take notes over important points. I then use those notes to complete the assignment for the week. Frequently that involves writing a post on an online discussion board that answers a question related to things from the reading.
-
-
-[Walk] <living_room> (1)
-[Walk] <remote_control> (1)
-[Grab] <remote_control> (1)
-[TurnTo] <remote_control> (1)
-[PointAt] <remote_control> (1)

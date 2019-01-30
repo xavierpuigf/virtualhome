@@ -1,6 +1,0 @@
-Go to toilet
-walk to bathroom , run to toilet
-
-
-[Walk] <bathroom> (1)
-[Run] <toilet> (2)

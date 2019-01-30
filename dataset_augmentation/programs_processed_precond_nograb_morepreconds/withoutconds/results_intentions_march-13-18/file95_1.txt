@@ -1,9 +1,0 @@
-Turn on light
-Walk to the bedroom and use the button on the wall, next to the door to turn on the lights.
-
-
-[Walk] <bedroom> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)
-[Walk] <living_room> (1)

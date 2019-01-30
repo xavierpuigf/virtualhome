@@ -1,6 +1,0 @@
-Pick up phone
-Walk to living room. Go near telephone. take the receiver and then talk to other person on that side.
-
-
-[Walk] <telephone> (1)
-[Grab] <telephone> (1)

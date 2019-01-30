@@ -1,7 +1,0 @@
-0
-Pet cat
-lift hand, pet cat
-
-
-[Find] <cat> (1)
-[Touch] <cat> (1)

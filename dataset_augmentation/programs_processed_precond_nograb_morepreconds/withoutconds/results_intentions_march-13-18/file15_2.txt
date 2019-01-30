@@ -1,9 +1,0 @@
-Read book
-Open coffee maker. Put filter in main basket, put ground coffee in filter, fill reservoir with water, turn on coffee maker.
-
-
-[Walk] <living_room> (1)
-[Walk] <address_book> (1)
-[Find] <address_book> (1)
-[Grab] <address_book> (1)
-[Read] <address_book> (1)

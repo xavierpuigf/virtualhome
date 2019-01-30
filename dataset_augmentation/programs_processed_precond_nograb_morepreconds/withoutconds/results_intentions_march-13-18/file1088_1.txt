@@ -1,9 +1,0 @@
-Read book
-I go to the book case, I select a book, I go back and sit down, then I read.
-
-
-[Walk] <cabinet> (1)
-[Find] <book> (1)
-[Grab] <book> (1)
-[Walk] <sofa> (1)
-[Read] <book> (1)

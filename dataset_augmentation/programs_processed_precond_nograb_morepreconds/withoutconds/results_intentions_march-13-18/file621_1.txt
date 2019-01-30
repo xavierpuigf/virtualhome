@@ -1,8 +1,0 @@
-Go to sleep
-go t the bedroom and go to sleep
-
-
-[Walk] <bedroom> (1)
-[Walk] <bed> (1)
-[Find] <bed> (1)
-[Lie] <bed> (1)

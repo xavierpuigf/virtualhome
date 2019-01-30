@@ -1,7 +1,0 @@
-Browse internet
-Browsing the internet contains checking the internet on the computer and opening web browser
-
-
-[FIND] <computer> (1.318)
-[TURNTO] <computer> (1.318)
-[LOOKAT] <computer> (1.318)

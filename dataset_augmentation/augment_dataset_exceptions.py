@@ -1,3 +1,4 @@
+# Augments the dataset by removing preconds and correcting
 import glob
 import random
 import numpy as np
@@ -9,9 +10,12 @@ import ipdb
 import re
 from collections import Counter
 from multiprocessing import Process, Manager, current_process
+from tqdm import tqdm
 import sys
-import script_utils
 from termcolor import colored
+
+
+import augmentation_utils
 
 sys.path.append('..')
 import check_programs
@@ -19,28 +23,46 @@ import utils
 
 random.seed(123)
 np.random.seed(123)
-verbose = True
+
+# Options
+verbose = False
 thres = 300
-write_augment_data = False
+write_augment_data = True
 multi_process = True
-num_processes = 100
+num_processes = os.cpu_count() // 2
+
+# Paths
+augmented_data_dir = 'augment_exception'
 
 if write_augment_data:
-    augmented_data_dir = 'augmented_program_exception'
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-prog_folder = '../programs_processed_precond_nograb_morepreconds'
-programs = glob.glob('{}/withoutconds/*/*.txt'.format(prog_folder))
-
-with open('../executable_info.json', 'r') as f:
-    executable_info = json.load(f)
-
-# Select only exec programs
-programs = [x for x in programs if x.replace('../', '') in executable_info and 'Script is executable' in executable_info[x.replace('../', '')]]
+all_programs_exec = glob.glob('original_programs/executable_programs/*/*/*.txt')
+all_programs_exec = [x.split('executable_programs/')[1] for x in all_programs_exec]
 
 
-cont = 0
+# Obtain a mapping from program to apartment
+programs_to_apt = {}
+for program in all_programs_exec:
+    program_name = '/'.join(program.split('/')[1:])
+    apt_name = program.split('/')[0]
+    if program_name not in programs_to_apt:
+        programs_to_apt[program_name] = []
+    programs_to_apt[program_name].append(apt_name)
+
+
+# Pick a single scene by program
+programs_to_apt_single = {}
+for prog, apt_names in programs_to_apt.items():
+    index = np.random.randint(len(apt_names))
+    apt_single = apt_names[index]
+    programs_to_apt[prog] = apt_single
+
+
+prog_folder = 'original_programs'
+programs = [('{}/withoutconds/{}'.format(prog_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
+
 
 objects_occupied = [
     'couch',
@@ -51,50 +73,6 @@ objects_occupied = [
     'toilet',
     'pianobench',
     'bench']
-
-
-def write_data(ori_path, all_new_progs, namedir='withoutconds'):
-    
-    # make_dirs
-    sub_dir = ori_path.split('/')[-2]
-    old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, namedir, sub_dir, old_name)
-    assert not os.path.exists(new_dir), ipdb.set_trace()
-    os.makedirs(new_dir)
-
-    for j, new_progs in enumerate(all_new_progs):
-        new_f = open('{}/{}.txt'.format(new_dir, j), 'w')
-        nnew_progs = [x+'\n' for x in new_progs]
-        for lines in nnew_progs:
-            new_f.write(lines)
-        new_f.close()    
-
-def write_graph(ori_path, graph_init, graph_end):
-    sub_dir = ori_path.split('/')[-2]
-    old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, 'init_and_final_graphs', sub_dir, old_name)
-    assert not os.path.exists(new_dir), ipdb.set_trace()
-    os.makedirs(new_dir)
-    for j in range(len(graph_init)):
-        new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        json.dump(
-                {"init_graph": graph_init[j], 
-                 "final_graph": graph_end[j].to_dict()}, new_f)
-        new_f.close()
-
-def write_precond(ori_path, all_new_preconds):
-    
-    # make_dirs
-    sub_dir = ori_path.split('/')[-2]
-    old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, 'initstate', sub_dir, old_name)
-    assert not os.path.exists(new_dir), ipdb.set_trace()
-    os.makedirs(new_dir)
-
-    for j, new_precond in enumerate(all_new_preconds):
-        new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        json.dump(new_precond, new_f)
-        new_f.close()   
 
 
 def to_hash(precond_list):
@@ -127,36 +105,37 @@ def from_hash(precond_tuple):
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
     exceptions_not_found = []
-    for program_name in programs:
-
+    for program_name, apt_name in tqdm(programs):
         augmented_progs_i = []
         augmented_progs_i_new_inst = []
         augmented_preconds_i = []
         init_graph_i = []
         end_graph_i = []
+        state_list_i = []
         augmented_precond_candidates = []
         if program_name in d.keys(): 
             continue
         if multi_process:
             d[program_name] = str(current_process())
-        if len(d.keys()) % 20 == 0:
+        if len(d.keys()) % 20 == 0 and verbose:
             print(len(d.keys()))
+
         state_file = program_name.replace(
                 'withoutconds', 'initstate').replace('.txt', '.json')
 
         with open(program_name, 'r') as f:
             lines_program = f.readlines()
-            
+            program = lines_program[4:]
+        
         with open(state_file, 'r') as f:
             init_state = json.load(f)
 
         hprev_state = to_hash(init_state.copy())
         
-
-        program = lines_program[4:]
+        # Obtain all the objects in a program
         objects_program = []
         for instr in program:
-            _, objects, indx = script_utils.parseStrBlock(instr.strip())
+            _, objects, indx = augmentation_utils.parseStrBlock(instr.strip())
             for ob, idi in zip(objects, indx):
                 objects_program.append([ob, idi])
         
@@ -193,7 +172,9 @@ def augment_dataset(d, programs):
         
         # back to dict
         augmented_precond_candidates = [from_hash(hp) for hp in augmented_precond_candidates]
-        print('Candidates: {}'.format(len(augmented_precond_candidates)))
+        if verbose:
+            print('Augmented precond candidates: {}'.format(len(augmented_precond_candidates)))
+        
         maximum_iters = 20
         for j, init_state in enumerate(augmented_precond_candidates):
             lines_program = lines_program_orig.copy()
@@ -205,11 +186,11 @@ def augment_dataset(d, programs):
             message_acum = []
             program_acum = []
             while not executable and max_iter < maximum_iters and lines_program is not None:        
-                (message, final_state, input_graph, 
+                (message, final_state, graph_state_list, input_graph, 
                 id_mapping, info, graph_helper) = check_programs.check_script(
                         lines_program, 
                         init_state, 
-                        '../example_graphs/TrimmedTestScene6_graph.json',
+                        '../example_graphs/{}.json'.format(apt_name),
                         input_graph,
                         id_mapping,
                         info)
@@ -220,7 +201,6 @@ def augment_dataset(d, programs):
                     lines_program = None
                     continue
                 if message is None:
-                    ipdb.set_trace()
                     lines_program = None
                     continue
                 lines_program = [x.strip() for x in lines_program]
@@ -236,17 +216,11 @@ def augment_dataset(d, programs):
                     continue
 
 
+            # Save the program
             if executable and max_iter > 0:
-                # if verbose:
-                #if verbose:
-                    #print(colored(
-                    #    'Program modified in {} exceptions'.format(max_iter), 
-                    #    'green'))   
-
-                # Convert the program
                 lines_program_newinst = lines_program[:4]
                 for lp in lines_program[4:]:
-                    action, objects, indx = script_utils.parseStrBlock(lp.strip())
+                    action, objects, indx = augmentation_utils.parseStrBlock(lp.strip())
                     instruction = '[{}]'.format(action)
                     for obj, idis in zip(objects, indx):
                         idi = int(idis)
@@ -254,14 +228,19 @@ def augment_dataset(d, programs):
                         if (obj_name in graph_helper.possible_rooms and 
                             (obj_name, idi) not in id_mapping):
                             obj_name = graph_helper.equivalent_rooms[obj_name]
-                        graphid = id_mapping[(obj_name, idi)]
+                        try:
+                            graphid = id_mapping[(obj_name, idi)]
+                        except:
+                            print(program_name, lp)
                         instruction += ' <{}> ({}.{})'.format(obj_name, idi, graphid)
                     lines_program_newinst.append(instruction)
+                
                 augmented_progs_i_new_inst.append(lines_program_newinst)
-                augmented_preconds_i.append(str(init_state))
+                augmented_preconds_i.append(init_state)
                 augmented_progs_i.append(lines_program)
                 init_graph_i.append(input_graph)
                 end_graph_i.append(final_state)
+                state_list_i.append(graph_state_list)
             
             elif not executable:
                 print(max_iter, program_name)
@@ -274,10 +253,12 @@ def augment_dataset(d, programs):
                     #     print('\n'.join(lines_program))
 
         if write_augment_data:
-            write_data(program_name, augmented_progs_i)
-            write_data(program_name, augmented_progs_i_new_inst, 'executable_programs')
-            write_precond(program_name, augmented_preconds_i)
-            write_graph(program_name, init_graph_i, end_graph_i)
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i)
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
+                    'executable_programs/{}/'.format(apt_name))
+            augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
+            augmentation_utils.write_graph(augmented_data_dir, program_name, init_graph_i, end_graph_i, state_list_i,
+                    apt_name)
         #print('\n'.join(exceptions_not_found))
 
 processes = []

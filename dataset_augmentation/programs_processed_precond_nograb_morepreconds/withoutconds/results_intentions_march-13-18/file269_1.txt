@@ -1,8 +1,0 @@
-Pick up phone
-Go to the living room.  Find the telephone.  Lift up the receiver.
-
-
-[Walk] <living_room> (1)
-[Walk] <telephone> (1)
-[Find] <telephone> (1)
-[Grab] <telephone> (1)

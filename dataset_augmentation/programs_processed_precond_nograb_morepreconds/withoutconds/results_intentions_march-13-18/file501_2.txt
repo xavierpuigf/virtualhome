@@ -1,8 +1,0 @@
-Pet cat
-I go to the living room then go to the cat and touch it.
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

@@ -1,7 +1,0 @@
-0
-Pet cat
-Pick up cat. Rub hand on cat.
-
-
-[Find] <cat> (1)
-[Touch] <cat> (1)

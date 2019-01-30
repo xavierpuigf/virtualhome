@@ -1,8 +1,0 @@
-Listen to music
-First find a device that contains music. Use some audio equipment to connect to your device. Open an program on the device that will play this music. Play the music from the device.
-
-
-[Find] <computer> (1)
-[SwitchOn] <computer> (1)
-[Find] <headset> (1)
-[PutOn] <headset> (1)

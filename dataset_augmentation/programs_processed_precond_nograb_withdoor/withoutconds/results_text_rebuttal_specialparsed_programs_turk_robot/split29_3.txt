@@ -1,8 +1,0 @@
-Flush toilet
-Place hand on the toilet handle. Press downwards.
-
-
-[Walk] <BATHROOM> (1)
-[Find] <TOILET> (1)
-[TurnTo] <TOILET> (1)
-[Flush] <TOILET> (1)

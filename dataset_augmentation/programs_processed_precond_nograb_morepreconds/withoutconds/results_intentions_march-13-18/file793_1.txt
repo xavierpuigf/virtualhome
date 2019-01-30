@@ -1,8 +1,0 @@
-Pet cat
-I walk to my living room, find my cat, scrub it using my hand.
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Scrub] <cat> (1)

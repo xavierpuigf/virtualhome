@@ -1,9 +1,0 @@
-Turn on light
-Turn on lights in Entrance Hall
-
-
-[Find] <LIGHTING> (1)
-[LookAt] <LIGHTING> (1)
-[Find] <LIGHT> (1)
-[Walk] <LIGHT> (1)
-[SwitchOn] <LIGHT> (1)

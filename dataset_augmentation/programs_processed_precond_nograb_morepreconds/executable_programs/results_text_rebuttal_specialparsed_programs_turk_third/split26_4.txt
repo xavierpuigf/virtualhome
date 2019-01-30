@@ -1,7 +1,0 @@
-Relax
-Lie down on the couch.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <couch> (1.1000)
-[LIE] <couch> (1.1000)

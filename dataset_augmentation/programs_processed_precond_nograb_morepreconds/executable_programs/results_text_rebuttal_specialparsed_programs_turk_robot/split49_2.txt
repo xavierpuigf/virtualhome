@@ -1,9 +1,0 @@
-Clean floor
-Make sure there's no dirt or debris being tracked in. If carpet, this requires a vacuum. If hardwood/tile/laminate/etc., this might require a vacuum, or it might require a broom or mop. Detect any dirt, and remove it.
-
-
-[FIND] <vacuum_cleaner> (1.1000)
-[TURNTO] <vacuum_cleaner> (1.1000)
-[LOOKAT] <vacuum_cleaner> (1.1000)
-[PULL] <vacuum_cleaner> (1.1000)
-[PUSH] <vacuum_cleaner> (1.1000)

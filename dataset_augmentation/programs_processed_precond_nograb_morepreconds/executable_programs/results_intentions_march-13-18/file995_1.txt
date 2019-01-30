@@ -1,9 +1,0 @@
-Read book
-Read a book
-
-
-[FIND] <book> (1.1000)
-[GRAB] <book> (1.1000)
-[FIND] <chair> (1.94)
-[SIT] <chair> (1.94)
-[READ] <book> (1.1000)

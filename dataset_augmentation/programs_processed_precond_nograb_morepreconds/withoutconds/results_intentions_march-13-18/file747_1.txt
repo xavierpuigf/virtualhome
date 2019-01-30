@@ -1,9 +1,0 @@
-Read book
-I find a book. I pick up the book. I find a chair. I sit down. I open the book. I read the book.
-
-
-[Find] <book> (1)
-[Grab] <book> (1)
-[Find] <chair> (1)
-[Sit] <chair> (1)
-[Read] <book> (1)

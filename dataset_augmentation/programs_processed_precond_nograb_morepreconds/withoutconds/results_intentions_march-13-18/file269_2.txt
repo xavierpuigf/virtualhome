@@ -1,9 +1,0 @@
-Go to sleep
-Walk to the bedroom.  Find the bed.  Lie down on the bed.  Close your eyes.  Wait.
-
-
-[Walk] <bedroom> (1)
-[Walk] <bed> (1)
-[Find] <bed> (1)
-[Lie] <bed> (1)
-[Sleep]

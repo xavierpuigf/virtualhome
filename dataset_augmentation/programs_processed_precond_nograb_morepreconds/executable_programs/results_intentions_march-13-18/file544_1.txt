@@ -1,8 +1,0 @@
-Read book
-pick up your book and read it
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <book> (1.1000)
-[GRAB] <book> (1.1000)
-[READ] <book> (1.1000)

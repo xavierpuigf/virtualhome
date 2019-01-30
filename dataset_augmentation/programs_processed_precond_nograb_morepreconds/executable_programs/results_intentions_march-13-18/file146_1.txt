@@ -1,7 +1,0 @@
-Drink
-I bring the cup filled with water to my lips. I tilt the cup upwards slowly, so that the water falls into my mouth.
-
-
-[FIND] <water_glass> (1.1000)
-[GRAB] <water_glass> (1.1000)
-[DRINK] <water_glass> (1.1000)

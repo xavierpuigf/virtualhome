@@ -1,8 +1,0 @@
-Write an email
-Find the computer.  Turn on the computer.  Open the e-mail program.  Create a new message.  Write the message.
-
-
-[Walk] <living_room> (1)
-[Walk] <computer> (1)
-[Find] <computer> (1)
-[SwitchOn] <computer> (1)

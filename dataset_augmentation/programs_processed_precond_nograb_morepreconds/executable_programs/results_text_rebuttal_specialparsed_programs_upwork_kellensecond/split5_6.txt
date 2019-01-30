@@ -1,6 +1,0 @@
-Walk to room
-Leave the living room and enter the hall
-
-
-[WALK] <living_room> (1.243)
-[WALK] <living_room> (1.243)

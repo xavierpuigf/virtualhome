@@ -1,8 +1,0 @@
-1
-atreach: ('CAT', '1') --> ('CAT', '1')
-Pet cat
-I walk to my cat, and I pet him
-
-
-[Walk] <cat> (1)
-[Touch] <cat> (1)

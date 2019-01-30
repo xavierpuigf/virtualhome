@@ -1,9 +1,0 @@
-Sit in chair
-I sit in a chair to rest and eat.
-
-
-[Walk] <dining_room> (1)
-[Walk] <chair> (1)
-[Find] <chair> (1)
-[Pull] <chair> (1)
-[Sit] <chair> (1)

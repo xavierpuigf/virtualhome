@@ -1,9 +1,0 @@
-Put down bags
-When walking into the house, putting down the things i am carrying
-
-
-[Walk] <KITCHEN> (1)
-[Find] <GROCERIES> (1)
-[Grab] <GROCERIES> (1)
-[Find] <TABLE> (1)
-[PutBack] <GROCERIES> (1) <TABLE> (1)

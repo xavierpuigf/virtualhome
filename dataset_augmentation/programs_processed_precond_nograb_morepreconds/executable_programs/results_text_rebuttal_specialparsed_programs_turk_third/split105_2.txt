@@ -1,8 +1,0 @@
-Look out window
-I head into my child's room and look out the window to view the neighborhood from a different area in the house.
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <window> (1.1000)
-[TURNTO] <window> (1.1000)
-[LOOKAT] <window> (1.1000)

@@ -1,8 +1,0 @@
-Browse internet
-I walk to the home office and find the computer. I switch on the computer and open the browser. I type in Google and press search.
-
-
-[Find] <computer> (1)
-[SwitchOn] <computer> (1)
-[TurnTo] <computer> (1)
-[LookAt] <computer> (1)

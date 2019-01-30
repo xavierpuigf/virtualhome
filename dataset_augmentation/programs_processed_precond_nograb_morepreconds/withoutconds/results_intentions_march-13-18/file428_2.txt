@@ -1,8 +1,0 @@
-Work
-Open up the laptop and turn on computer, go to worker website and open my work tasks. begin to work on tasks from computer.
-
-
-[Find] <computer> (1)
-[SwitchOn] <computer> (1)
-[TurnTo] <computer> (1)
-[LookAt] <computer> (1)

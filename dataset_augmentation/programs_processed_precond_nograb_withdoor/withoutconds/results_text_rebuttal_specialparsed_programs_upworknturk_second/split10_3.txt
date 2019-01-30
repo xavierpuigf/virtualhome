@@ -1,9 +1,0 @@
-Put out flowers
-Place a flower centrepiece on the entrance hall table.
-
-
-[Walk] <ENTRANCE HALL> (1)
-[Find] <CENTERPIECE> (1)
-[Grab] <CENTERPIECE> (1)
-[Walk] <TABLE> (1)
-[PutBack] <CENTERPIECE> (1) <TABLE> (1)

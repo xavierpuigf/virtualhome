@@ -1,8 +1,0 @@
-Turn on light
-I go home and it's dark so I can not see anything
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <lamp> (1)
-[Find] <lamp> (1)
-[SwitchOn] <lamp> (1)

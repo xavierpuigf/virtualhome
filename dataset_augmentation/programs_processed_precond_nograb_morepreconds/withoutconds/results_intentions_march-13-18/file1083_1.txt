@@ -1,8 +1,0 @@
-Turn on light
-walk to living room ,find electrical outlet , switch on eletrical outlet
-
-
-[Walk] <living_room> (1)
-[Walk] <electrical_outlet> (2)
-[Find] <electrical_outlet> (2)
-[SwitchOn] <electrical_outlet> (2)

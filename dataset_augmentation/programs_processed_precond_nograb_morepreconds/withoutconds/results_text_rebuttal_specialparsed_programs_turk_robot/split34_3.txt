@@ -1,7 +1,0 @@
-Close dresser drawer
-Push the drawer closed until shut all the way.
-
-
-[Walk] <bedroom> (1)
-[Walk] <dresser> (1)
-[Close] <dresser> (1)

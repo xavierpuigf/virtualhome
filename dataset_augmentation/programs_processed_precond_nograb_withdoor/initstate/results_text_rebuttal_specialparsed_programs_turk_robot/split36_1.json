@@ -1,1 +1,0 @@
-[{"is_off": ["VACUUM CLEANER", "1"]}, {"inside": [["TOY", "2"], ["DRESSER", "1"]]}, {"location": [["TOY", "1"], ["BEDROOM", "1"]]}, {"location": [["VACUUM CLEANER", "1"], ["BEDROOM", "1"]]}, {"location": [["DRESSER", "1"], ["BEDROOM", "1"]]}, {"location": [["CLOSET", "1"], ["BEDROOM", "1"]]}, {"in": [["VACUUM CLEANER", "1"], ["CLOSET", "1"]]}]

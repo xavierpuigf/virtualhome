@@ -1,9 +1,0 @@
-Open curtains
-Slide the curtains open. Tie each panel with a tie back.
-
-
-[Walk] <living_room> (1)
-[Walk] <curtain> (1)
-[Open] <curtain> (1)
-[Walk] <curtain> (2)
-[Open] <curtain> (2)

@@ -1,9 +1,0 @@
-2
-is_off: ('LIGHT', '1') --> 
-plugged: ('LIGHT', '1') --> 
-Turn on light
-Find light switch. switch on
-
-
-[Find] <light> (1)
-[SwitchOn] <light> (1)

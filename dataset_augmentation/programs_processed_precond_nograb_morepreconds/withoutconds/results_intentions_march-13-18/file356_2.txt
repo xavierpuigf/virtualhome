@@ -1,7 +1,0 @@
-Pick up phone
-Find the phone.Grab the phone.Touch phone to answer.Say Hello.
-
-
-[Find] <phone> (1)
-[Grab] <phone> (1)
-[Touch] <phone> (1)

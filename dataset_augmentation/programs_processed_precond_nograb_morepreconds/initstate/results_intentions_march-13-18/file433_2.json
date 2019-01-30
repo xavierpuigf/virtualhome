@@ -1,1 +1,0 @@
-[{"is_off": ["washing_machine", "1"]}, {"plugged": ["washing_machine", "1"]}, {"atreach": [["laundry_detergent", "1"], ["laundry_detergent", "1"]]}, {"atreach": [["washing_machine", "1"], ["laundry_detergent", "1"]]}, {"closed": ["washing_machine", "1"]}, {"inside": [["laundry_detergent", "1"], ["washing_machine", "1"]]}]

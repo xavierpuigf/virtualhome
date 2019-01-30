@@ -1,1 +1,0 @@
-[{"is_off": ["dvd_player", "1"]}, {"plugged": ["dvd_player", "1"]}, {"atreach": [["dvd_player", "1"], ["dvd_player", "1"]]}, {"atreach": [["sofa", "1"], ["dvd_player", "1"]]}, {"location": [["dvd_player", "1"], ["living_room", "1"]]}, {"location": [["sofa", "1"], ["living_room", "1"]]}, {"free": ["sofa", "1"]}]

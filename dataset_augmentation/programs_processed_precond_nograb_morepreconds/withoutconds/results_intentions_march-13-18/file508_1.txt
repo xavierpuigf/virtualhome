@@ -1,8 +1,0 @@
-Turn on light
-approach the light switch, raise hand to the switch, flip the switch
-
-
-[Walk] <living_room> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

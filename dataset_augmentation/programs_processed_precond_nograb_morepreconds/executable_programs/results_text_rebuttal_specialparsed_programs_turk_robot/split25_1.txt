@@ -1,9 +1,0 @@
-Vacuum
-Keep my keyboard vacuumed and free of debris.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <computer> (1.1000)
-[FIND] <vacuum_cleaner> (1.1001)
-[SWITCHON] <vacuum_cleaner> (1.1001)
-[SWITCHOFF] <vacuum_cleaner> (1.1001)

@@ -1,9 +1,0 @@
-Read book
-Pick up the book, open to current page, read the words.
-
-
-[Walk] <living_room> (1)
-[Walk] <book> (1)
-[Find] <book> (1)
-[Grab] <book> (1)
-[Read] <book> (1)

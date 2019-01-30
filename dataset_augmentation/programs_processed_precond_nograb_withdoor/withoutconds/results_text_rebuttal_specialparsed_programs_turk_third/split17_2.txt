@@ -1,9 +1,0 @@
-Cook some food
-Get out pot and pan, boil water pour in grit, stir with spoon, fry bacon in the pan, fry egg, put on plate
-
-
-[Find] <PLATE> (1)
-[Grab] <PLATE> (1)
-[PointAt] <PLATE> (1)
-[Wash] <PLATE> (1)
-[Drop] <PLATE> (1)

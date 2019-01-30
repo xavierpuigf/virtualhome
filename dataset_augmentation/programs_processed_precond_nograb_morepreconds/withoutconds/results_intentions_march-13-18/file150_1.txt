@@ -1,8 +1,0 @@
-Change TV channel
-take remote control, push "change channel" button
-
-
-[Walk] <living_room> (1)
-[Walk] <remote_control> (1)
-[Find] <remote_control> (1)
-[Push] <remote_control> (1)

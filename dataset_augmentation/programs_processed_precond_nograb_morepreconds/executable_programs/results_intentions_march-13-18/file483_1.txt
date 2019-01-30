@@ -1,9 +1,0 @@
-Watch TV
-walk to living room ,find television , switch on remote control
-
-
-[WALK] <living_room> (1.243)
-[WALK] <television> (2.199)
-[FIND] <television> (2.199)
-[FIND] <remote_control> (3.1000)
-[SWITCHON] <remote_control> (3.1000)

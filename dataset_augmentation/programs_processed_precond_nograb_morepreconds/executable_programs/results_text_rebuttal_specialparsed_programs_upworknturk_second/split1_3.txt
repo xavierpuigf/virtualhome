@@ -1,8 +1,0 @@
-Sleep
-Relax for the night or during the day, lying on the bed.
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <bed> (1.1000)
-[LIE] <bed> (1.1000)
-[SLEEP]

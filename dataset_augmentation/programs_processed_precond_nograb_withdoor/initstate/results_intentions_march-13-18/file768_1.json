@@ -1,1 +1,0 @@
-[{"is_off": ["OVEN", "1"]}, {"inside": [["PLATE", "1"], ["OVEN", "1"]]}, {"inside": [["FOOD_FISH", "1"], ["FRIDGE", "1"]]}, {"location": [["ALARM CLOCK", "1"], ["KITCHEN", "1"]]}, {"location": [["OVEN", "1"], ["KITCHEN", "1"]]}, {"location": [["OVEN MITTS", "1"], ["KITCHEN", "1"]]}, {"location": [["FRIDGE", "1"], ["KITCHEN", "1"]]}]

@@ -1,7 +1,0 @@
-Take shower
-walk to bathroom , find shower , take a shower
-
-
-[WALK] <bathroom> (1.1)
-[WALK] <shower> (2.1000)
-[FIND] <shower> (2.1000)

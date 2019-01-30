@@ -1,7 +1,0 @@
-Listen to music
-Go to living room. Find CD player. Pick CD. Put CD in CD player. Play music.
-
-
-[Find] <cd_player> (1)
-[Walk] <cd_player> (1)
-[SwitchOn] <cd_player> (1)

@@ -1,8 +1,0 @@
-Pet cat
-Find the cat.  Pet the cat.
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

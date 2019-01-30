@@ -1,8 +1,0 @@
-Listen to music
-Go to the living room. Find the radio. Turn on the radio.
-
-
-[Walk] <living_room> (1)
-[Walk] <radio> (1)
-[Find] <radio> (1)
-[SwitchOn] <radio> (1)

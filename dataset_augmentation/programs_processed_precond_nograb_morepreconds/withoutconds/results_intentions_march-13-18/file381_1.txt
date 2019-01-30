@@ -1,8 +1,0 @@
-Pet cat
-Walk into the living room. Walk up to the cat. Pet the cat with your hand.
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

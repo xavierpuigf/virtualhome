@@ -1,8 +1,0 @@
-Work
-Walk to home office. Walk to computer. Switch on computer. Open the address book.
-
-
-[Walk] <home_office> (1)
-[Walk] <computer> (1)
-[SwitchOn] <computer> (1)
-[Find] <address_book> (1)

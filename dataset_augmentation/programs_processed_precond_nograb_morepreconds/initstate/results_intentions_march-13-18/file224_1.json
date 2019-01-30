@@ -1,1 +1,0 @@
-[{"is_off": ["stove", "1"]}, {"atreach": [["fryingpan", "1"], ["sink", "1"]]}, {"atreach": [["stove", "1"], ["sink", "1"]]}, {"closed": ["freezer", "1"]}, {"inside": [["dry_pasta", "1"], ["freezer", "1"]]}, {"inside": [["fryingpan", "1"], ["freezer", "1"]]}]

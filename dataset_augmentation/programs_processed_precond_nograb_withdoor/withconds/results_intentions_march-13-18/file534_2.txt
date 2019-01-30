@@ -1,9 +1,0 @@
-1
-location: ('PHONE', '1') --> ('HOME OFFICE', '1')
-Pick up phone
-walk into room, grab phone
-
-
-[Walk] <HOME OFFICE> (1)
-[Find] <PHONE> (1)
-[Grab] <PHONE> (1)

@@ -1,7 +1,0 @@
-Change TV channel
-I walk to the living room. I find the TV remote. I change the channel.
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <REMOTE CONTROL> (1)
-[Grab] <REMOTE CONTROL> (1)

@@ -1,9 +1,0 @@
-Turn on light
-When I enter my bedroom I turn on the lamp on my desk.
-
-
-[Walk] <bedroom> (1)
-[Walk] <desk> (1)
-[Find] <desk> (1)
-[Find] <light> (1)
-[PlugIn] <light> (1)

@@ -1,9 +1,0 @@
-Drink
-Drink water
-
-
-[Walk] <kitchen> (1)
-[Walk] <water_glass> (1)
-[Find] <water_glass> (1)
-[Grab] <water_glass> (1)
-[Drink] <water_glass> (1)

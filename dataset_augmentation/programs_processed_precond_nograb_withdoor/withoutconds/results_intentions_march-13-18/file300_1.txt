@@ -1,7 +1,0 @@
-Relax on sofa
-Go to living room.  Find sofa.  Sit on sofa.
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <SOFA> (1)
-[Sit] <SOFA> (1)

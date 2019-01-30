@@ -1,1 +1,0 @@
-[{"is_off": ["faucet", "1"]}, {"atreach": [["faucet", "1"], ["faucet", "1"]]}, {"atreach": [["dish_soap", "1"], ["faucet", "1"]]}, {"atreach": [["plate", "1"], ["faucet", "1"]]}, {"location": [["faucet", "1"], ["kitchen", "1"]]}, {"location": [["dish_soap", "1"], ["kitchen", "1"]]}, {"location": [["plate", "1"], ["kitchen", "1"]]}]

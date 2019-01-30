@@ -8,6 +8,7 @@ from PIL import Image
 import cv2
 import numpy as np
 
+
 class UnityCommunication(object):
 
     def __init__(self, url='127.0.0.1', port='8080'):
@@ -76,25 +77,62 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success'], json.loads(response['message'])
 
-    def expand_scene(self, new_graph, randomize=False, random_seed=-1, prefabs_map=None):
+    def expand_scene(self, new_graph, randomize=False, random_seed=-1,
+                     ignore_placing_obstacles=False, prefabs_map=None):
         """
         Expands scene with the given graph.
         To use randomization set randomize to True.
         To set random seed set random_seed to a non-negative value >= 0,
         random_seed < 0 means that seed is not set
         """
-        string_params = [json.dumps(new_graph)]
+        config = {'randomize': randomize, 'random_seed': random_seed,
+                  'ignore_obstacles': ignore_placing_obstacles}
+        string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
         if prefabs_map is not None:
             string_params.append(json.dumps(prefabs_map))
         response = self.post_command({'id': str(time.time()), 'action': 'expand_scene',
-                                      'stringParams': string_params,
-                                      'intParams': int_params})
-        return response['success'], json.loads(response['message'])
+                                      'stringParams': string_params})
+        try:
+            message = json.loads(response['message'])
+        except ValueError:
+            message = response['message']
+        return response['success'], message
 
     def point_cloud(self):
         response = self.post_command({'id': str(time.time()), 'action': 'point_cloud'})
         return response['success'], json.loads(response['message'])
+
+    def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
+                      skip_execution=False, output_folder='Output/', file_name_prefix = "script",
+                      frame_rate=5, image_synthesis=False, capture_screenshot=False, save_pose_data=False,
+                      save_scene_states=False, character_resource='Chars/Male1'):
+        """
+        :param script: a list of script lines
+        :param randomize_execution: randomly choose elements
+        :param random_seed: random seed to use when randomizing execution, -1 means that the seed is not set
+        :param processing_time_limit: time limit for finding a solution
+        :param skip_execution: skip rendering, only check if a solution exists
+        :param output_folder: folder to output renderings
+        :param file_name_prefix: prefix of created files
+        :param frame_rate: frame rate
+        :param capture_screenshot: save screenshots
+        :param image_synthesis: save depth, segmentation, flow images
+        :param save_pose_data: save pose data
+        :param save_scene_states: save scene states
+        :param character_resource: path to character resource to be used
+        :return: pair success (bool), message: (str)
+        """
+        params = {'randomize_execution': randomize_execution, 'random_seed': random_seed,
+                  'processing_time_limit': processing_time_limit, 'skip_execution': skip_execution,
+                  'output_folder': output_folder, 'file_name_prefix': file_name_prefix,
+                  'frame_rate': frame_rate, 'image_synthesis': image_synthesis,
+                  'capture_screenshot': capture_screenshot,
+                  'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
+                  'character_resource': character_resource}
+        response = self.post_command({'id': str(time.time()), 'action': 'render_script',
+                                      'stringParams': [json.dumps(params)] + script})
+        return response['success'], response['message']
 
 
 def _decode_image(img_string):

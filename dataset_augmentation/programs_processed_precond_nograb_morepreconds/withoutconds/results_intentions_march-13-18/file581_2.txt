@@ -1,8 +1,0 @@
-Pick up phone
-I walk to the home office. I find the telephone. I pick up the telephone handset.
-
-
-[Walk] <home_office> (1)
-[Walk] <telephone> (1)
-[Find] <telephone> (1)
-[Grab] <telephone> (1)

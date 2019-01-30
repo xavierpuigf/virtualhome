@@ -1,8 +1,0 @@
-Go to sleep
-Walk to bedroom, walk to bed, lay down on bed, close eyes, go to sleep.
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <bed> (1.1000)
-[LIE] <bed> (1.1000)
-[SLEEP]

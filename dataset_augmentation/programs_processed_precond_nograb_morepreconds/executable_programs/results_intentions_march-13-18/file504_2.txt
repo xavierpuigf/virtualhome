@@ -1,9 +1,0 @@
-Read book
-I find my favorite book then I sit down open the book and begin reading it
-
-
-[FIND] <desk> (1.1000)
-[FIND] <chair> (1.94)
-[FIND] <book> (1.1001)
-[GRAB] <book> (1.1001)
-[READ] <book> (1.1001)

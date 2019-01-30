@@ -1,9 +1,0 @@
-Relax on sofa
-Find the sofa. Sit on it. Pick the blanket on the sofa and put on yourself. Relax.
-
-
-[Find] <sofa> (1)
-[Sit] <sofa> (1)
-[Find] <blanket> (1)
-[Grab] <blanket> (1)
-[PutBack] <blanket> (1) <sofa> (1)

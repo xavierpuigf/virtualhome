@@ -1,7 +1,0 @@
-Pick up phone
-Enter the Home office, then walk to the phone, pickup the phone.
-
-
-[Walk] <home_office> (1)
-[Walk] <phone> (1)
-[Grab] <phone> (1)

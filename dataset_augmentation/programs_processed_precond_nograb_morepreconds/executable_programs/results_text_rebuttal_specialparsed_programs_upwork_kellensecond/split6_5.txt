@@ -1,9 +1,0 @@
-Come home
-Open the entrance door. Brush dirt off of shoes. Come in through the entrance. Remove shoes and coat. Hang up coat.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <shoes> (1.1000)
-[FIND] <shoes> (1.1000)
-[FIND] <shoes> (1.1000)
-[PUTOFF] <shoes> (1.1000)

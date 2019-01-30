@@ -1,8 +1,0 @@
-Pick up phone
-Walk to home office 1. Walk over to phone 1 on table 1.  Grab phone 1.  lift phone 1.
-
-
-[Walk] <home_office> (1)
-[Walk] <phone> (1)
-[Find] <phone> (1)
-[Grab] <phone> (1)

@@ -1,9 +1,0 @@
-Pet cat
-Find the cat and assess its mood. If it is friendly, gently stroke the cat's fur.
-
-
-[FIND] <cat> (1.1000)
-[TURNTO] <cat> (1.1000)
-[LOOKAT] <cat> (1.1000)
-[TOUCH] <cat> (1.1000)
-[TOUCH] <cat> (1.1000)

@@ -1,9 +1,0 @@
-Prepare Dinner
-Prepare meals for the family
-
-
-[Find] <STOVE> (1)
-[PointAt] <STOVE> (1)
-[Rinse] <STOVE> (1)
-[LookAt] <STOVE> (1)
-[SwitchOff] <STOVE> (1)

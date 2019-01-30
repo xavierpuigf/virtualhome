@@ -1,9 +1,0 @@
-Relax on sofa
-I walk to the living room. I see the couch.  I sit down on the couch, then lie down and put my feet up.
-
-
-[Walk] <living_room> (1)
-[Walk] <couch> (1)
-[Find] <couch> (1)
-[Sit] <couch> (1)
-[Lie] <couch> (1)

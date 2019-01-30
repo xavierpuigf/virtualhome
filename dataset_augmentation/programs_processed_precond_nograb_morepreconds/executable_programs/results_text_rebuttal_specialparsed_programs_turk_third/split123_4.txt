@@ -1,9 +1,0 @@
-Social media  checks
-Logging on to  things like  facebook  and  twitter
-
-
-[WALK] <living_room> (1.243)
-[WALK] <computer> (1.1000)
-[FIND] <chair> (1.1001)
-[SIT] <chair> (1.1001)
-[SWITCHON] <computer> (1.1000)

@@ -1,9 +1,0 @@
-Relax on sofa
-Walk to the living room, turn to the sofa. Sit on the sofa and relax.
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Find] <sofa> (1)
-[TurnTo] <sofa> (1)
-[Sit] <sofa> (1)

@@ -1,9 +1,0 @@
-Turn on light
-Find the light circuit breaker in the kitchen
-
-
-[StandUp]
-[Walk] <kitchen> (1)
-[Walk] <light> (1)
-[Find] <light> (1)
-[SwitchOn] <light> (1)

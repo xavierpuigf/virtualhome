@@ -1,7 +1,0 @@
-Turn on computer
-Push power button.
-
-
-[Walk] <home_office> (1)
-[Walk] <computer> (1)
-[SwitchOn] <computer> (1)

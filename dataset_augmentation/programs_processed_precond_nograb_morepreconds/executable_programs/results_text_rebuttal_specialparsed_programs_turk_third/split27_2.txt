@@ -1,9 +1,0 @@
-Make bed
-Straighten the different sheets on the bed So that they are staight and in line with the frame and mattress
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <bed> (1.1000)
-[FIND] <sheets> (1.1001)
-[GRAB] <sheets> (1.1001)
-[PULL] <sheets> (1.1001)

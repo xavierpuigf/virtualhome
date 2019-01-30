@@ -1,9 +1,0 @@
-Change TV channel
-Find TV. Walk to tv. Turn on tv. Change the channel.
-
-
-[Find] <TELEVISION> (1)
-[Walk] <TELEVISION> (1)
-[SwitchOn] <TELEVISION> (1)
-[Find] <BUTTON> (1)
-[Push] <BUTTON> (1)

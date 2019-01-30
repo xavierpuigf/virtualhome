@@ -1,9 +1,0 @@
-Pick up phone
-find the phone and pick it up
-
-
-[Find] <TABLE> (1)
-[LookAt] <TABLE> (1)
-[Find] <PHONE> (1)
-[LookAt] <PHONE> (1)
-[Grab] <PHONE> (1)

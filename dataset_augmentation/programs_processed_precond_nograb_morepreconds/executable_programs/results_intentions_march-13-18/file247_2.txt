@@ -1,9 +1,0 @@
-Read book
-Walk to living room. Find book. Grab book. Open book. Read book.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <book> (1.1000)
-[FIND] <book> (1.1000)
-[GRAB] <book> (1.1000)
-[READ] <book> (1.1000)

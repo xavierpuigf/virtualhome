@@ -1,9 +1,0 @@
-Relax on sofa
-I go in the living room sit on the sofa and relax.I then I sleep on the sofa because I am so relaxed.
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Find] <sofa> (1)
-[Lie] <sofa> (1)
-[Sleep]

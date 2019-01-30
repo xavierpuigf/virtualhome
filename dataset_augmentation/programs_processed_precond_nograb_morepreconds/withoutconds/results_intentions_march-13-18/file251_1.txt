@@ -1,6 +1,0 @@
-Pick up phone
-When the phone is ringing, find the phone and lift it to pick it up
-
-
-[Find] <phone> (1)
-[Grab] <phone> (1)

@@ -1,8 +1,0 @@
-Relax on sofa
-Walk into the living room. Walk to the sofa and sit on it. Put your feet up on the sofa and lay down.
-
-
-[Walk] <living_room> (1)
-[Walk] <sofa> (1)
-[Sit] <sofa> (1)
-[Lie] <sofa> (1)

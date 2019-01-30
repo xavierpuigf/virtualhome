@@ -1,7 +1,0 @@
-0
-Go to sleep
-Turnoff lights in bedroom,Power down in bed room
-
-
-[Walk] <bedroom> (1)
-[Sleep]

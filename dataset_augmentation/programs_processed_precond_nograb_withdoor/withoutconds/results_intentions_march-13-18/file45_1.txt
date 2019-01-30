@@ -1,8 +1,0 @@
-Read book
-i take a book from my table and open and read it
-
-
-[Find] <ADDRESS BOOK> (1)
-[Find] <NOVEL> (1)
-[Grab] <NOVEL> (1)
-[Read] <NOVEL> (1)

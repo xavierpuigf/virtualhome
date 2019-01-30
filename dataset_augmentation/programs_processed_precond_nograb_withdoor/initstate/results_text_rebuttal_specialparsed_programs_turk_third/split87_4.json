@@ -1,1 +1,0 @@
-[{"inside": [["BOOK", "1"], ["DESK", "1"]]}, {"inside": [["PEN", "1"], ["DESK", "1"]]}, {"inside": [["DOCUMENT", "1"], ["DESK", "1"]]}, {"inside": [["BOOK", "2"], ["DESK", "1"]]}, {"location": [["DESK", "1"], ["BEDROOM", "1"]]}, {"location": [["CHAIR", "1"], ["BEDROOM", "1"]]}, {"atreach": [["CHAIR", "1"], ["DESK", "1"]]}]

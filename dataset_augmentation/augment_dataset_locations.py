@@ -1,28 +1,74 @@
-# Augments the dataset by replacing object containers with other containers where these objects tipically go
+# Augments the dataset by replacing object containers with other containers 
+# where these objects tipically go
+import os
+import sys
+import glob
 import random
 import copy
-import os
-import glob
-import numpy as np
 import json
+import numpy as np
+import ast
 
+
+from multiprocessing import Process, Manager, current_process
 from tqdm import tqdm
 from scipy.io import *
 
-import ipdb
+import augmentation_utils
+
+sys.path.append('..')
+import check_programs
+import utils
 
 
 random.seed(123)
+np.random.seed(123)
+
+
+# Options
+verbose = True
 thres = 300
 write_augment_data = True
+multi_process = True
+num_processes = os.cpu_count() // 2
 
-object_states = {}
-dict_cont = {}
 
-with open('../resources/object_script_placing.json', 'r') as f:
+# Paths
+path_object_placing = '../resources/object_script_placing.json'
+augmented_data_dir = 'augment_location'
+
+if write_augment_data:
+    if not os.path.exists(augmented_data_dir):
+        os.makedirs(augmented_data_dir)
+
+all_programs_exec = glob.glob('original_programs/executable_programs/*/*/*.txt')
+all_programs_exec = [x.split('executable_programs/')[1] for x in all_programs_exec]
+
+
+# Obtain a mapping from program to apartment
+programs_to_apt = {}
+for program in all_programs_exec:
+    program_name = '/'.join(program.split('/')[1:])
+    apt_name = program.split('/')[0]
+    if program_name not in programs_to_apt:
+        programs_to_apt[program_name] = []
+    programs_to_apt[program_name].append(apt_name)
+
+
+# Pick a single scene by program
+programs_to_apt_single = {}
+for prog, apt_names in programs_to_apt.items():
+    index = np.random.randint(len(apt_names))
+    apt_single = apt_names[index]
+    programs_to_apt[prog] = apt_single
+
+prog_folder = 'original_programs'
+programs = [('{}/withoutconds/{}'.format(prog_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
+
+
+# maps every object, and location to all the possible objects
+with open(path_object_placing, 'r') as f:
     info_locations = json.loads(f.read())
-
-# maps every object, and relation to all the possible objects
 merge_dict = {}
 all_conts = 0
 for obj_name in info_locations.keys():
@@ -34,172 +80,166 @@ for obj_name in info_locations.keys():
             merge_dict[(obj_name, relation)] = []
         merge_dict[(obj_name, relation)].append(other_object)
 
-
-def recursiveSelection(cont, it, curr_list):
-    if it == len(cont):
-        return [curr_list]
-    res = []
-    for idi in range(cont[it]):
-        res += recursiveSelection(cont, it+1, curr_list+[idi])
-    return res
-
-
-# For every program, check the objects that can be replaced
-#program_dir = 'programs_processed_precond_nograb_morepreconds'
-#files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
-program_dir = '../programs_processed_precond_nograb_morepreconds'
-files = glob.glob(os.path.join(os.path.join(program_dir, 'withoutconds/*/*.txt')))
-
-print(len(files))
-n_all_progs = 0
-temp = []
 precondtorelation = {
     'in': 'ON',
     'inside': 'IN'
 }
 
+ 
+def augment_dataset(d, programs):
+    programs = np.random.permutation(programs).tolist()
+    for program_name, apt_name in tqdm(programs):
 
-if write_augment_data:
-    augmented_data_dir = 'augmented_location'
-    if not os.path.exists(augmented_data_dir):
-        os.makedirs(augmented_data_dir)
-
-
-def write_data(ori_path, all_new_progs):
-    
-    # make_dirs
-    sub_dir = ori_path.split('/')[-2]
-    old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, 'withoutconds', sub_dir, old_name)
-    assert not os.path.exists(new_dir), ipdb.set_trace()
-    os.makedirs(new_dir)
-
-    for j, new_progs in enumerate(all_new_progs):
-        new_f = open('{}/{}.txt'.format(new_dir, j), 'w')
-        for lines in new_progs:
-            new_f.write(lines)
-        new_f.close()    
-
-
-def write_precond(ori_path, all_new_preconds):
-    
-    # make_dirs
-    sub_dir = ori_path.split('/')[-2]
-    old_name = ori_path.split('/')[-1].split('.')[0]
-    new_dir = os.path.join(augmented_data_dir, 'initstate', sub_dir, old_name)
-    assert not os.path.exists(new_dir), ipdb.set_trace()
-    os.makedirs(new_dir)
-
-    for j, new_precond in enumerate(all_new_preconds):
-        new_f = open('{}/{}.json'.format(new_dir, j), 'w')
-        json.dump(new_precond, new_f)
-        new_f.close()   
-
-
-for file_name in tqdm(files):
-
-    all_cont = 1
-    with open(file_name, 'r') as f:
         augmented_progs_i = []
+        augmented_progs_i_new_inst = []
         augmented_preconds_i = []
-        
-        lines = f.readlines() 
-        prog_orig = lines
-        lines = lines[4:]
-    # Obtain all the object instance of a given program
-    for line in lines:
-        if '<' not in line:
+        init_graph_i = []
+        end_graph_i = []
+        state_list_i = []
+        if program_name in d.keys(): 
             continue
-        content = line.split('<')
+        if multi_process:
+            d[program_name] = str(current_process())
+        if len(d.keys()) % 20 == 0 and verbose:
+            print(len(d.keys()))
 
-    with open(file_name.replace('withoutconds', 'initstate').replace('.txt', '.json'),
-              'r') as fst:
-        state = json.load(fst)
-   
-    # for every object, we list the objects that are inside, on etc.
-    # they will need to be replaced by objects where the others follow the same
-    # property
-    relations_per_object = {}
-    for cstate in state:
-        precond = [k for k in cstate.keys()][0]
-        if precond in ['inside', 'in']:
-            relation = precondtorelation[precond]
-            object1 = cstate[precond][0][0].lower().replace(' ', '_')
-            container = tuple(cstate[precond][1])
-            container = (container[0].lower().replace(' ', '_'), container[1])
-            if container not in relations_per_object.keys():
-                relations_per_object[container] = []
-            relations_per_object[container] += [(object1, relation)]
+        state_file = program_name.replace(
+                'withoutconds', 'initstate').replace('.txt', '.json')
 
-    # Given all the containers, check which objects can go there
-    object_replace_map = {}
-    for container in relations_per_object.keys():
-        replace_candidates = [] 
-        for object_and_relation in relations_per_object[container]:
-            if object_and_relation in merge_dict.keys():
-                replace_candidates.append(merge_dict[object_and_relation])
+        with open(program_name, 'r') as f:
+            lines_program = f.readlines()
+            program = lines_program[4:]
 
-        # do a intersection of all the replace candidates
-        intersection = []
-        #object_replace_map[container] = [container[0]]
-        object_replace_map[container] = []
+        with open(state_file, 'r') as fst:
+            init_state = json.load(fst)
+       
+        # for every object, we list the objects that are inside, on etc.
+        # they will need to be replaced by containers having the same
+        # objects inside and on
+        relations_per_object = {}
+        for cstate in init_state:
+            precond = [k for k in cstate.keys()][0]
+            if precond in precondtorelation.keys():
+                relation = precondtorelation[precond]
+                object1 = cstate[precond][0][0]
+                container = tuple(cstate[precond][1])
+                if container not in relations_per_object.keys():
+                    relations_per_object[container] = []
+                relations_per_object[container] += [(object1, relation)]
+
+        # Given all the containers, check which objects can go there
+        object_replace_map = {}
+        for container in relations_per_object.keys():
+            replace_candidates = [] 
+            for object_and_relation in relations_per_object[container]:
+                if object_and_relation in merge_dict.keys():
+                    replace_candidates.append(merge_dict[object_and_relation])
+
+            # do a intersection of all the replace candidates
+            intersection = []
+            object_replace_map[container] = []
+            # if there are objects we can replace
+            if len(replace_candidates) > 0  and len([l for l in replace_candidates if len(l) == 0]) == 0: 
+                intersection = list(set.intersection(*[set(l) for l in replace_candidates]))
+                candidates = [x for x in intersection if x != container[0]]
+                if len(candidates) > 0:
+                    # How many containers to replace
+                    cont = random.randint(1, min(len(candidates), 5)) 
+                    # sample candidates
+                    if cont > 1:
+                        object_replace = random.sample(candidates, cont-1)
+                        object_replace_map[container] += object_replace
+
+        objects_prog = object_replace_map.keys()
+        npgs = 0
+        # Cont has, for each unique object, the number of objects we will replace it with
+        cont = []
+        for obj_and_id in objects_prog:
+            cont.append(len(object_replace_map[obj_and_id]))
+
+        # We obtain all the permutations given cont
+        ori_precond = init_state
+        recursive_selection = augmentation_utils.recursiveSelection(cont, 0, [])
+
+        # For every permutation, we compute the new program
+        for rec_id in recursive_selection:
+
+            # change program
+            new_lines = program
+            precond_modif = copy.deepcopy(ori_precond)
+            precond_modif = str(precond_modif).replace('\'', '\"')
+
+            for iti, obj_and_id in enumerate(objects_prog):
+                orign_object, idi = obj_and_id
+                object_new = object_replace_map[obj_and_id][rec_id[iti]]
+                new_lines = [x.replace('<{}> ({})'.format(orign_object, idi), 
+                                   '<{}> ({})'.format(object_new.lower().replace(' ', '_'), idi)) for x in new_lines]
+                precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(orign_object, idi), '[\"{}\", \"{}\"]'.format(object_new.lower().replace(' ', '_'), idi))
+
+
+            
+            init_state = ast.literal_eval(precond_modif)
+            (message, final_state, graph_state_list, input_graph, 
+            id_mapping, info, graph_helper) = check_programs.check_script(
+                    new_lines, 
+                    init_state, 
+                    '../example_graphs/{}.json'.format(apt_name),
+                    None,
+                    {},
+                    {})
+
+            # Convert the program
+            lines_program_newinst = new_lines[:4]
+            for lp in new_lines[4:]:
+                action, objects, indx = augmentation_utils.parseStrBlock(lp.strip())
+                instruction = '[{}]'.format(action)
+                for obj, idis in zip(objects, indx):
+                    idi = int(idis)
+                    obj_name = obj
+                    if (obj_name in graph_helper.possible_rooms and 
+                        (obj_name, idi) not in id_mapping):
+                        obj_name = graph_helper.equivalent_rooms[obj_name]
+                    try:
+                        graphid = id_mapping[(obj_name, idi)]
+                    except:
+                        print(program_name, lp)
+                    instruction += ' <{}> ({}.{})'.format(obj_name, idi, graphid)
+                lines_program_newinst.append(instruction)
+
+            augmented_progs_i_new_inst.append(lines_program_newinst)
+            state_list_i.append(graph_state_list)
+            init_graph_i.append(input_graph)
+            end_graph_i.append(final_state)
+            augmented_progs_i.append(new_lines)         
+            augmented_preconds_i.append(init_state)
+            npgs += 1
+            if npgs > thres:
+                break
+
+        # The current program
+        if write_augment_data:
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i)
+            augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
+                    'executable_programs/{}/'.format(apt_name))
+            augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
+            augmentation_utils.write_graph(augmented_data_dir, program_name, init_graph_i, end_graph_i, state_list_i, 
+                    apt_name)
+
+
+processes = []
+if multi_process:
+    manager = Manager()
+    programs_done = manager.dict()
+    for m in range(num_processes):
         
-        if len(replace_candidates) > 0  and len([l for l in replace_candidates if len(l) == 0]) == 0: # if there are objects we can replace
-            intersection = list(set.intersection(*[set(l) for l in replace_candidates]))
-            candidates = list(intersection)
-            candidates = [x for x in candidates if x != container[0]]
-            if len(candidates) > 0:
-                cont = random.randint(1, min(len(candidates), 5)) # always including `container'
-                # sample candidates
-                if cont > 1:
-                    object_replace = random.sample(candidates, cont-1)
-                    object_replace_map[container] += object_replace
-                    all_cont *= cont
-
-    #ipdb.set_trace()
-    objects_prog = object_replace_map.keys()
-    npgs = 0
-    # Cont has, for each unique object, the number of objects we will replace it with
-    cont = []
-    for obj_and_id in objects_prog:
-        cont.append(len(object_replace_map[obj_and_id]))
+        p = Process(target=augment_dataset, args=(programs_done, programs))
+        p.start()
+        processes.append(p)
 
 
-    ori_precond = state
-    # We obtain all the permutations given cont
+    for p in processes:
+        p.join()
 
-    recursive_selection = recursiveSelection(cont, 0, [])
-
-    # For every permutation, we compute the new program
-    for rec_id in recursive_selection:
-
-        # change program
-        new_lines = prog_orig
-        precond_modif = copy.deepcopy(ori_precond)
-        precond_modif = str(precond_modif).replace('\'', '\"')
-
-        for iti, obj_and_id in enumerate(objects_prog):
-            orign_object, idi = obj_and_id
-            object_new = object_replace_map[obj_and_id][rec_id[iti]]
-            new_lines = [x.replace('<{}> ({})'.format(orign_object, idi), 
-                               '<{}> ({})'.format(object_new.lower().replace(' ', '_'), idi)) for x in new_lines]
-            precond_modif = precond_modif.replace('[\"{}\", \"{}\"]'.format(orign_object, idi), '[\"{}\", \"{}\"]'.format(object_new.lower().replace(' ', '_'), idi))
-
-        augmented_progs_i.append(new_lines)         
-        import ast
-        augmented_preconds_i.append(ast.literal_eval(precond_modif))
-        npgs += 1
-        if npgs > thres:
-            break
-
-    n_all_progs += npgs
-
-    # The current program
-    all_conts += all_cont
-
-    if write_augment_data:
-        write_data(file_name, augmented_progs_i)
-        write_precond(file_name, augmented_preconds_i)
-
-print ('Number of programs', all_conts, n_all_progs)
+else:
+    augment_dataset({}, programs)
 

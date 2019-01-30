@@ -1,8 +1,0 @@
-Pick up phone
-Find phone. Walk to phone. Pick up phone. Answer call with a greeting.
-
-
-[Find] <phone> (1)
-[Walk] <living_room> (1)
-[Walk] <phone> (1)
-[Grab] <phone> (1)

@@ -1,8 +1,0 @@
-Write an email
-Sit up and type on the keyboard
-
-
-[Find] <keyboard> (1)
-[Grab] <keyboard> (1)
-[Find] <computer> (1)
-[SwitchOn] <computer> (1)

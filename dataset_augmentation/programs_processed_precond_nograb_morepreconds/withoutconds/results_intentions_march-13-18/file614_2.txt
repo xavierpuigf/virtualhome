@@ -1,9 +1,0 @@
-Go to toilet
-go to the bathroom
-
-
-[Walk] <bathroom> (1)
-[Walk] <toilet> (1)
-[Find] <toilet> (1)
-[Sit] <toilet> (1)
-[Flush] <toilet> (1)

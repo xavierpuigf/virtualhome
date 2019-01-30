@@ -1,7 +1,0 @@
-Read book
-Find a book, pick up the book, open the book, and read it.
-
-
-[Find] <book> (1)
-[Grab] <book> (1)
-[Read] <book> (1)

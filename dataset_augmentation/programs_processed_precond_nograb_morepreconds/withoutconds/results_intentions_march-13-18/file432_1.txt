@@ -1,7 +1,0 @@
-Turn on light
-Walk over to light switch, flip the switch to the on position
-
-
-[Walk] <living_room> (1)
-[Walk] <floor_lamp> (1)
-[SwitchOn] <floor_lamp> (1)

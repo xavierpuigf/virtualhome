@@ -1,7 +1,0 @@
-Turn on light
-walk to living room, find lamp, switch on.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <lamp> (1.1000)
-[FIND] <lamp> (1.1000)

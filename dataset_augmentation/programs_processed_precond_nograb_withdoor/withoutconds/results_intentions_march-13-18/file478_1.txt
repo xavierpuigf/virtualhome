@@ -1,7 +1,0 @@
-Go to toilet
-I walk into the bath room and go to the toilet
-
-
-[Walk] <BATHROOM> (1)
-[Find] <TOILET> (1)
-[Sit] <TOILET> (1)

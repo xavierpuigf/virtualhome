@@ -1,7 +1,0 @@
-Turn off TV
-Walk over to tv and press power button
-
-
-[Walk] <LIVING ROOM> (1)
-[Walk] <TELEVISION> (1)
-[SwitchOff] <TELEVISION> (1)

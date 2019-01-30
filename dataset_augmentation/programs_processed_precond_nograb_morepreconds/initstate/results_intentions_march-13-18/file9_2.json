@@ -1,1 +1,0 @@
-[{"atreach": [["chair", "1"], ["computer", "1"]]}, {"atreach": [["button", "1"], ["button", "1"]]}, {"atreach": [["computer", "1"], ["button", "1"]]}, {"location": [["button", "1"], ["home_office", "1"]]}, {"location": [["chair", "1"], ["home_office", "1"]]}, {"location": [["computer", "1"], ["home_office", "1"]]}, {"free": ["chair", "1"]}]

@@ -1,8 +1,0 @@
-Listen to music
-I reach out arm. I put hand on radio. I turn on radio. I pick a station.
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <radio> (1.1000)
-[TOUCH] <radio> (1.1000)
-[TURNTO] <radio> (1.1000)

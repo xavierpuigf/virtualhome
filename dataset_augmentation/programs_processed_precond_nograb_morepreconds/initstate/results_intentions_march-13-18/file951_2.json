@@ -1,1 +1,0 @@
-[{"unplugged": ["cd_player", "1"]}, {"is_off": ["cd_player", "1"]}, {"atreach": [["cd_player", "1"], ["cd_player", "1"]]}, {"atreach": [["headset", "1"], ["cd_player", "1"]]}, {"location": [["cd_player", "1"], ["living_room", "1"]]}, {"location": [["headset", "1"], ["living_room", "1"]]}]

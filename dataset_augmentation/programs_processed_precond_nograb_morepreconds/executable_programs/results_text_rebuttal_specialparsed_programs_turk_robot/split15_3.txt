@@ -1,9 +1,0 @@
-Turn off light
-Grasp light switch, flip light switch.
-
-
-[WALK] <bedroom> (1.62)
-[WALK] <light> (1.1000)
-[FIND] <light> (1.1000)
-[TURNTO] <light> (1.1000)
-[SWITCHOFF] <light> (1.1000)

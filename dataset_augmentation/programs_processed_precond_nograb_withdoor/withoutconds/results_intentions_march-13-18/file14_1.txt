@@ -1,9 +1,0 @@
-Listen to music
-Walk into living room, look for radio, grab on button
-
-
-[Walk] <LIVING ROOM> (1)
-[Find] <RADIO> (1)
-[LookAt] <RADIO> (1)
-[Find] <BUTTON> (1)
-[Grab] <BUTTON> (1)

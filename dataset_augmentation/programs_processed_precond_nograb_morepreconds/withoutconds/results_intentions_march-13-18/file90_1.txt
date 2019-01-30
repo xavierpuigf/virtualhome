@@ -1,8 +1,0 @@
-Pet cat
-Walk into the living room, sit down by the cat, put out hand, stroke the cat from head to tail
-
-
-[Walk] <living_room> (1)
-[Walk] <cat> (1)
-[Find] <cat> (1)
-[Touch] <cat> (1)

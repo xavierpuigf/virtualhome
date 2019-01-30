@@ -1,6 +1,0 @@
-Pet cat
-Find the cat. Touch the cat with your hands.
-
-
-[Find] <cat> (1)
-[Touch] <cat> (1)

@@ -1,1 +1,0 @@
-[{"sitting": ["character", 1]}, {"atreach": [["kitchen_counter", "1"], ["kitchen_counter", "1"]]}, {"atreach": [["cellphone", "1"], ["kitchen_counter", "1"]]}, {"location": [["kitchen_counter", "1"], ["kitchen", "1"]]}, {"location": [["cellphone", "1"], ["kitchen", "1"]]}, {"in": [["cellphone", "1"], ["kitchen_counter", "1"]]}]

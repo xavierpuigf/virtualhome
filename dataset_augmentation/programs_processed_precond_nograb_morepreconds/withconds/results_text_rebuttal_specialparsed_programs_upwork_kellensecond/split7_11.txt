@@ -1,6 +1,0 @@
-0
-Shut front door
-Close the storm door. Lock the storm door.
-
-
-[Walk] <entrance_hall> (1)

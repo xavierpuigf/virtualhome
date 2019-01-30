@@ -1,6 +1,0 @@
-Pet cat
-stimulate a feline tactily
-
-
-[Find] <cat> (1)
-[Touch] <cat> (1)

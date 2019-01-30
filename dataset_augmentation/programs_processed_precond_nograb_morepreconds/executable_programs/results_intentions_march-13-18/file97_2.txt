@@ -1,9 +1,0 @@
-Pet cat
-Robot touches cat.
-
-
-[FIND] <cat> (1.1000)
-[TURNTO] <cat> (1.1000)
-[LOOKAT] <cat> (1.1000)
-[WALK] <cat> (1.1000)
-[TOUCH] <cat> (1.1000)

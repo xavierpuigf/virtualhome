@@ -1,9 +1,0 @@
-Pick up phone
-I walk into the living room and walk over to the table with the phone. I pick up the phone and put it to my ear.
-
-
-[WALK] <living_room> (1.243)
-[WALK] <table> (1.187)
-[FIND] <table> (1.187)
-[FIND] <phone> (1.202)
-[GRAB] <phone> (1.202)

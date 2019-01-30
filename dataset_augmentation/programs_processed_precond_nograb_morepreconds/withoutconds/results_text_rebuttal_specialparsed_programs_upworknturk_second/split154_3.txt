@@ -1,9 +1,0 @@
-Take shoes off
-Take off your shoes by the door
-
-
-[Walk] <entrance_hall> (1)
-[Walk] <shoes> (1)
-[Find] <shoes> (1)
-[Find] <shoes> (1)
-[PutOff] <shoes> (1)

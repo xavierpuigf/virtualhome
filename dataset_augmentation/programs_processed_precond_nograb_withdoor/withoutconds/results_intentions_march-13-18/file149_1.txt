@@ -1,9 +1,0 @@
-Pick up phone
-stand up, walk to Entrance Hall, walk to table, lift the phone
-
-
-[StandUp]
-[Walk] <ENTRANCE HALL> (1)
-[Find] <PHONE> (1)
-[Walk] <TABLE> (1)
-[Grab] <PHONE> (1)

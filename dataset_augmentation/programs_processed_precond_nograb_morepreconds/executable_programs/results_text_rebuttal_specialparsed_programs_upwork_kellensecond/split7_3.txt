@@ -1,8 +1,0 @@
-Open bathroom window
-Make sure bathroom window is unlocked. Lift up bathroom window so it is open.
-
-
-[WALK] <bathroom> (1.1)
-[WALK] <window> (1.82)
-[FIND] <window> (1.82)
-[OPEN] <window> (1.82)
