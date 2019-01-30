@@ -964,7 +964,7 @@ class PlugExecutor(ActionExecutor):
             info.error('{} is not {}', node, s.name.lower())
             return False
         if not self.plug_in and State.ON in node.states:
-            info.error('{} is still on')
+            info.error('{} is still on', node)
         return True
     
 
