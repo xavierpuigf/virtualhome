@@ -77,7 +77,7 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success'], json.loads(response['message'])
 
-    def expand_scene(self, new_graph, randomize=False, random_seed=-1,
+    def expand_scene(self, new_graph, randomize=False, random_seed=-1, animate_character=False,
                      ignore_placing_obstacles=False, prefabs_map=None):
         """
         Expands scene with the given graph.
@@ -85,7 +85,7 @@ class UnityCommunication(object):
         To set random seed set random_seed to a non-negative value >= 0,
         random_seed < 0 means that seed is not set
         """
-        config = {'randomize': randomize, 'random_seed': random_seed,
+        config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
                   'ignore_obstacles': ignore_placing_obstacles}
         string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
@@ -104,7 +104,7 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
-                      skip_execution=False, output_folder='Output/', file_name_prefix = "script",
+                      skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix = "script",
                       frame_rate=5, image_synthesis=False, capture_screenshot=False, save_pose_data=False,
                       save_scene_states=False, character_resource='Chars/Male1'):
         """
@@ -127,7 +127,7 @@ class UnityCommunication(object):
                   'processing_time_limit': processing_time_limit, 'skip_execution': skip_execution,
                   'output_folder': output_folder, 'file_name_prefix': file_name_prefix,
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis,
-                  'capture_screenshot': capture_screenshot,
+                  'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
                   'character_resource': character_resource}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
