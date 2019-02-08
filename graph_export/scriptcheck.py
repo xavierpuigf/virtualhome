@@ -106,7 +106,7 @@ class UnityCommunication(object):
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix = "script",
                       frame_rate=5, image_synthesis=False, capture_screenshot=False, save_pose_data=False,
-                      save_scene_states=False, character_resource='Chars/Male1'):
+                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
@@ -121,6 +121,8 @@ class UnityCommunication(object):
         :param save_pose_data: save pose data
         :param save_scene_states: save scene states
         :param character_resource: path to character resource to be used
+        :param camera_mode: automatic (AUTO), first person (FIRST_PERSON), top (PERSON_TOP),
+            front person view (PERSON_FRONT)
         :return: pair success (bool), message: (str)
         """
         params = {'randomize_execution': randomize_execution, 'random_seed': random_seed,
@@ -129,7 +131,7 @@ class UnityCommunication(object):
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis,
                   'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
-                  'character_resource': character_resource}
+                  'character_resource': character_resource, 'camera_mode': camera_mode}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
         return response['success'], response['message']
