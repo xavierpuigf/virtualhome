@@ -104,13 +104,14 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
-                      skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix = "script",
+                      skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=False, capture_screenshot=False, save_pose_data=False,
                       save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
         :param random_seed: random seed to use when randomizing execution, -1 means that the seed is not set
+        :param find_solution: find solution (True) or use graph ids to determine object instances (False)
         :param processing_time_limit: time limit for finding a solution
         :param skip_execution: skip rendering, only check if a solution exists
         :param output_folder: folder to output renderings
