@@ -1507,7 +1507,8 @@
         "MOVABLE"
     ], 
     "lightswitch": [
-        "HAS_SWITCH" 
+        "HAS_SWITCH",
+        "HAS_PLUG"
     ], 
     "lighting": [
         "HAS_SWITCH", 
