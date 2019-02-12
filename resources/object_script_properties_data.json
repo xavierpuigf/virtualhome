@@ -1506,6 +1506,9 @@
         "HAS_PAPER", 
         "MOVABLE"
     ], 
+    "lightswitch": [
+        "HAS_SWITCH" 
+    ], 
     "lighting": [
         "HAS_SWITCH", 
         "HAS_PLUG"
