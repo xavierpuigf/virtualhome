@@ -1511,7 +1511,7 @@
         "HAS_PLUG"
     ], 
     "lighting": [
-        "HAS_SWITCH", 
+        "HAS_SWITCH",
         "HAS_PLUG"
     ], 
     "measuring_cup": [

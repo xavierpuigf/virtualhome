@@ -501,6 +501,9 @@
 		"HAS_SWITCH",
 		"HAS_PLUG"
 	],
+	"lightswitch": ["HAS_SWITCH",
+		"HAS_PLUG"
+	],
 	"lighting": ["HAS_SWITCH",
 		"HAS_PLUG"
 	],
