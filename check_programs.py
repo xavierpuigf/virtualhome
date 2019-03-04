@@ -1,4 +1,5 @@
 import os
+import ipdb
 import sys
 import json
 import utils
@@ -116,9 +117,10 @@ def translate_graph_dict(path):
                         'bench', 'kitchen_counter', 'sink', 'power_socket', 'tv', 'clock', 'wall_phone', 
                         'cutting_board', 'stove', 'oventray', 'toaster', 'fridge', 'coffeemaker', 'microwave', 
                         'livingroom', 'sofa', 'coffee_table', 'desk', 'cabinet', 'standing_mirror', 'globe', 
-                        'mouse', 'mousemat', 'cpu_screen', 'cpu_case', 'keyboard', 'ceilingfan', 
+                        'mouse', 'mousemat', 'cpu_screen', 'computer', 'cpu_case', 'keyboard', 'ceilingfan', 
                         'kitchen_cabinets', 'dishwasher', 'cookingpot', 'wallpictureframe', 'vase', 'knifeblock', 
-                        'stovefan', 'orchid', 'long_board', 'garbage_can', 'photoframe', 'balance_ball', 'closet_drawer']
+                        'stovefan', 'orchid', 'long_board', 'garbage_can', 'photoframe', 'balance_ball', 'closet_drawer', 'faucet']
+    static_objects = static_objects + [x.replace('_', '') for x in static_objects]
 
     new_nodes = [i for i in filter(lambda v: v["class_name"] in static_objects, graph_dict['nodes'])]
     trimmed_nodes = [i for i in filter(lambda v: v["class_name"] not in static_objects, graph_dict['nodes'])]
@@ -129,11 +131,7 @@ def translate_graph_dict(path):
 
     # change the object name 
     script_object2unity_object = utils.load_name_equivalence()
-    unity_object2script_object = {}
-    for k, vs in script_object2unity_object.items():
-        unity_object2script_object[k] = k
-        for v in vs:
-            unity_object2script_object[v] = k
+    unity_object2script_object = build_unity2object_script(script_object2unity_object)
 
     new_nodes_script_object = []
     for node in new_nodes:
@@ -148,7 +146,7 @@ def translate_graph_dict(path):
         })
     
     translated_path = path.replace('TestScene', 'TrimmedTestScene')
-    json.dump({"nodes": new_nodes_script_object, "edges": new_edges, "trimmed_nodes": trimmed_nodes}, open(translated_path, 'w'))
+    json.dump({"nodes": new_nodes_script_object, "edges": new_edges, "trimmed_nodes": trimmed_nodes}, open(translated_path, 'w+'))
     return translated_path
 
 
@@ -171,6 +169,8 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
         graph_dict = utils.load_graph_dict(graph_path)
     else:
         graph_dict = inp_graph_dict
+
+    script, precond = modify_objects_unity2script(script, precond)
     message, executable, final_state, graph_state_list, id_mapping, info = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=True, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
 
@@ -179,21 +179,11 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
 
-    for p in precond:
-        for k, vs in p.items():
-            if isinstance(vs[0], list): 
-                for v in vs:
-                    v[0] = v[0].lower().replace(' ', '_')
-            else:
-                v = vs
-                v[0] = v[0].lower().replace(' ', '_')
-
     helper.initialize(graph_dict)
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
         ## id mapping can specify the objects that already specify in the graphs
         helper.set_to_default_state(graph_dict, None, id_checker=lambda v: True)
-
 
         id_mapping, first_room, room_mapping = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
         info = {'room_mapping': room_mapping}
@@ -260,12 +250,78 @@ def joblib_one_iter(inp):
     graph_dict = utils.load_graph_dict(graph_path)
 
     precond = json.load(open(precond_path))
+    
+    # Modify script and preconds
+    script, precond = modify_objects_unity2script(script, precond)
+
+
     message, executable, _, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
     if executable and dump:
         dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path)
 
     return script, message, executable, graph_state_list, id_mapping
 
+def build_unity2object_script(script_object2unity_object):
+    # builds mapping from Unity 2 Script objects. It works by creating connected
+    # components between objects: A: [C, D], B: [F, E]. Since they share 
+    # one object, A, B, C, D, F, E should be merged
+    unity_object2script_object = {}
+    object_script_merge = {}
+    for k, vs in script_object2unity_object.items():
+        vs = [x.lower().replace('_', '') for x in vs]
+        kmod = k.lower().replace('_', '')
+        object_script_merge[k] = [kmod] + vs
+        if kmod in unity_object2script_object:
+            prev_parent = unity_object2script_object[kmod]
+            dest_parent = prev_parent
+            source_parent = k
+            if len(k) < len(prev_parent) and prev_parent != 'computer':
+                dest_parent = k
+                source_parent = prev_parent
+            children_source = object_script_merge[source_parent]
+            object_script_merge[dest_parent] += children_source
+            for child in children_source: unity_object2script_object[child] = dest_parent 
+            
+        else:
+            unity_object2script_object[kmod] = k
+        for v in vs:
+            if v in unity_object2script_object:
+                prev_parent = unity_object2script_object[v]
+                dest_parent = prev_parent
+                source_parent = k
+                if len(k) < len(prev_parent) and prev_parent != 'computer':
+                    dest_parent = k
+                    source_parent = prev_parent
+                children_source = object_script_merge[source_parent]
+                object_script_merge[dest_parent] += children_source
+                for child in children_source: unity_object2script_object[child] = dest_parent 
+            else:
+                unity_object2script_object[v] = k
+
+    return unity_object2script_object
+    
+def modify_objects_unity2script(script, precond):
+    script_object2unity_object = utils.load_name_equivalence()
+    unity_object2script_object = build_unity2object_script(script_object2unity_object)
+    for script_line in script:
+        for param in script_line.parameters:
+            if param.name in unity_object2script_object:
+                param.name = unity_object2script_object[param.name]
+
+    for p in precond:
+        for k, vs in p.items():
+            if isinstance(vs[0], list): 
+                for v in vs:
+                    v[0] = v[0].lower().replace(' ', '_')
+                    if v[0] in unity_object2script_object:
+                        v[0] = unity_object2script_object[v[0]]
+            else:
+                v = vs
+                v[0] = v[0].lower().replace(' ', '_')
+                if v[0] in unity_object2script_object:
+                    v[0] = unity_object2script_object[v[0]]
+            
+    return script, precond
 
 def check_whole_set(dir_path, graph_path):
 
@@ -274,9 +330,33 @@ def check_whole_set(dir_path, graph_path):
 
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
-    
-    joblib_one_iter(['programs_processed_precond_nograb_morepreconds/withoutconds/results_text_rebuttal_specialparsed_programs_upworknturk_second/split36_1.txt', graph_path[0]])
 
+    #with open('generated_scripts.txt', 'r') as f:
+    #    scripts_missing = f.readlines()
+    #    scripts_missing = [x.strip() for x in scripts_missing]
+    #    scripts_missing = ['input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds/withoutconds/{}'.format(x) for x in scripts_missing]
+
+    with open('executable_info.json', 'r') as f:
+        scripts_info = json.load(f)
+    #scripts_left = []
+    #for key, elem in scripts_info.items():
+    #    try:
+    #        if elem[0]['message'] != 'Script is executable' and key in scripts_missing:
+    #            scripts_left.append(key)
+    #    except:
+    #        print(key)
+    #program_txt_files = scripts_left
+    with open('scripts_correct_programs/missing.txt', 'r') as f:
+        files_missing = f.readlines()
+        files_missing = [x.strip() for x in files_missing]
+        files_missing = [x.replace('TrimmedTestScene7_graph_', '').replace('/', '_') for x in files_missing if x[0] != '!']
+    program_txt_files = [x for x in program_txt_files if '_'.join(x.split('/')[-2:]) in files_missing]
+    ipdb.set_trace()
+
+    #print(len(program_txt_files))
+    #for prog in program_txt_files: 
+    #    res = joblib_one_iter([prog, graph_path[0]])
+    
     executable_programs = 0
     not_parsable_programs = 0
     executable_program_length = []
@@ -288,9 +368,10 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
-
+    info = scripts_info 
     joblib_inputs = []
     n = len(program_txt_files) // 30
+    n = max(n, 1)
     program_txt_files = np.array(program_txt_files)
     for txt_files in np.array_split(program_txt_files, n):
         
@@ -305,7 +386,7 @@ def check_whole_set(dir_path, graph_path):
         
         print("Running on simulators")
         results = Parallel(n_jobs=os.cpu_count())(delayed(joblib_one_iter)(inp) for inp in joblib_inputs)
-        #results = [joblib_one_iter(inp) for inp in joblib_inputs]
+        # results = [joblib_one_iter(inp) for inp in joblib_inputs]
         for k, (input, result) in enumerate(zip(joblib_inputs, results)):
             i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
@@ -340,7 +421,7 @@ def check_whole_set(dir_path, graph_path):
     info["executable_prog_len"] = executable_program_length
     info["non_executable_prog_len"] = not_executable_program_length
     print("Executable program average length: {:.2f}, not executable program average length: {:.2f}".format(executable_program_length, not_executable_program_length))
-    json.dump(info, open("{}/executable_info.json".format('programs_all_graphs3'), 'w'))
+    json.dump(info, open("executable_info.json", 'w'))
 
 
 def check_executability(string, graph_dict):
@@ -398,9 +479,10 @@ def modify_script(script):
 if __name__ == '__main__':
     cont = sys.argv[1]
     if int(cont) == 0:
+        translated_path = translate_graph_dict(path='example_graphs/TestScene7_graph.json')
         translated_path = ['example_graphs/TrimmedTestScene7_graph.json']
     else:
+        translated_path = [translate_graph_dict(path='example_graphs/TestScene{}_graph.json'.format(i+1)) for i in range(6)]
         translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
-    print(translated_path)
     #translated_path = translate_graph_dict(path='example_graphs/TestScene6_graph.json')
-    check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('programs_all_graphs3'), graph_path=translated_path)
+    check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('input_scripts_preconds_release'), graph_path=translated_path)
