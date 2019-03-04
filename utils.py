@@ -338,11 +338,14 @@ class graph_dict_helper(object):
         # create room mapping
         room_mapping = {}
         for room in possible_rooms:
-            if room not in available_rooms_in_graph:
-                assert room in equivalent_rooms, "Not pre-specified mapping for room: {}".format(room)
-                room_mapping[room] = equivalent_rooms[room]
-            else:
-                room_mapping[room] = room
+            nroom = room
+            rooms_tried = []
+            while nroom not in available_rooms_in_graph and nroom not in rooms_tried:
+                rooms_tried.append(nroom)
+                assert nroom in equivalent_rooms, "Not pre-specified mapping for room: {}".format(nroom)
+                nroom = equivalent_rooms[nroom]    
+            assert nroom in available_rooms_in_graph, "No equivalent room in graph"
+            room_mapping[room] = nroom
         
         # use room mapping to change the precond (in-place opetation)
         for precond_i in precond:

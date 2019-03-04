@@ -20,7 +20,7 @@ def transform_name_equivalence():
                         equiv.append(value)
 
                 if len(equiv) > 0:
-                    result[key] = equiv
+                    result[key.replace(' ', '_')] = equiv
 
     with open('resources/class_name_equivalence.json', 'w') as f:
         f.write(json.dumps(result))
@@ -62,7 +62,7 @@ def transform_properties_data():
     result = {}
     with open('unity_resources/properties_data.json') as f:
         u_dict = json.load(f)
-    objects = [o.lower().replace(' ', '') for o in u_dict['objects']]
+    objects = [o.lower().replace(' ', '_') for o in u_dict['objects']]
     properties = [p.upper() for p in u_dict['properties']]
     property_matrix = u_dict['property_matrix']
     for i, o in enumerate(objects):
@@ -96,7 +96,7 @@ def transform_allprefabs_parsed():
 
 
 if __name__ == '__main__':
-    # transform_name_equivalence()
-    # transform_object_placing()
-    # transform_properties_data()
-    transform_allprefabs_parsed()
+    #transform_name_equivalence()
+    #transform_object_placing()
+    transform_properties_data()
+    #transform_allprefabs_parsed()
