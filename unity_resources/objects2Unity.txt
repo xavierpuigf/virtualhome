@@ -192,8 +192,8 @@ KITCHEN
 KITCHEN CABINET -> Kitchen_cabinets
 KITCHEN COUNTER -> Kitchen_counter
 KNIFE -> Cutlery_Knife, ChefKnife
-LAMP -> LightSwitch, light_switch
-LAPTOP -> CPU_case
+LAMP -> Lamp
+LAPTOP
 LASER POINTER
 LAUNDRY DETERGENT
 LEGS_BOTH
