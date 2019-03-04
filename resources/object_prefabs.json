@@ -474,7 +474,7 @@
         "Props/Kitchen/CookingPots/CookingPot_2.prefab",
         "ExtraObjects/CookingPot_1/mH_CookingPot01.prefab"
     ],
-    "cpu_case": [
+    "computer": [
         "Complete_Home_Interior_Pack/CHIP_Prefabs/PRE_Electronics/PRE_ELE_CPU_cases/PRE_ELE_CPU_case_01.prefab",
         "Complete_Home_Interior_Pack/CHIP_Prefabs/PRE_Electronics/PRE_ELE_CPU_cases/PRE_ELE_CPU_case_02.prefab",
         "Complete_Home_Interior_Pack/CHIP_Prefabs/PRE_Electronics/PRE_ELE_CPU_cases/PRE_ELE_CPU_case_03.prefab"
