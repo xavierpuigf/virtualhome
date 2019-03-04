@@ -1,25 +1,5 @@
 # VirtualHome
-VirtualHome is a platform to simulate complex household activities via Programs. Given an initial environment describing an apartment and a program depicting a sequence of actions, VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
 
-Check out more details of the environmnent and platform in [virtualhome.org]. VirtualHome has been used in:
-
-- VirtualHome: Simulating HouseHold Activities via Programs
-- Synthesizing Environment-Aware Activities via Activity Sketches
-
-# QuickStart
-Clone the repository and download the simulator
-```
-git clone https://xavierpuigf@bitbucket.org/mboben/virtualhome.git
-instructions to copy the executable
-```
-Run `sh run_example.sh` to generate an example video. You can check more examples in.
-
-
-
-## Contents
-
-
-## Dependencies
 
 ## Dataset generation
 
