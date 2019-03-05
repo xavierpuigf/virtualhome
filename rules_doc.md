@@ -1,9 +1,9 @@
-# Document for the rules of the transition
+# Supported actions and environment relations
 
-## Preliminaries
+## Environment
+List of supported node states, edge relations and object properties in the graphs representing the environment.
 
-### Possible relations
-
+### Relations
 Possible relations (edge labels) are:
 
 - **on**
@@ -17,7 +17,7 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
 - **holds_rh**  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
 - **holds_lh**  _analogue of holds_rh for left hand_
 
-### Properties
+### Object Properties
 
 - surfaces
 - grabbable
@@ -43,7 +43,7 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
 - movable
 - cream
 
-### States
+### Object States
 
 - closed
 - open
@@ -56,9 +56,33 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
 - plugged_in
 - plugged_out
 
-## Template
 
-### ExampleExecutor
+
+## Preconditions
+List of preconditions that can be specified in the programs. The preconditions specify constrains in the environment where the program will be executed.
+###Unary preconditions
+- `object` is_on: `object` in `on` state.
+- `object` is_off: `object` in `off` state.
+- `object` plugged: `object` in `plugged_in` state.
+- `object` unplugged: `object` in `plugged_out` state.
+- `object` open: `object` in `open` state.
+- `object` closed: `object` in `closed` state.
+- `object` occupied: `object` has too many `on` edges to sit or lie in it.
+- `object` free: `object` has no objects attached with `on` edges.
+- `character` sit: `character` must have state `sitting` and edge `on` between character and an `object`.
+- `character` lying: `character` must have state `lying` and edge `on` between character and an `object`.
+
+###Binary preconditions
+- `object` in `character`: `character` is wearing `object`. Edge `on` between `object` and `character`.  
+- `object1` in `object2`:  Edge `on` between `object1` and `object2`.
+- `object1` inside `object2`: edge `inside` between `object1` and `object2`.
+- `object1` location `room`: edge `inside` between `object1` and `room`.
+- `object1` facing `object2`: edge `inside` between `object1` and `object2`
+- `object1` atreach `object`: edge `inside` between `close` and `object2`
+ 
+## Actions
+
+### TemplateExecutor
 - script: action object1 object2
 - Pre-condition: 
 - Post-condition:
@@ -66,6 +90,8 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
     - remove/add directed edges:
     - state changes:
 
+___
+    
 ### FindExecutor
 - script: find `object`
 - cases:
@@ -350,7 +376,7 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
 	- exist edge `chatectore` holds_rh `any_object` with 'knife' in name or no edge `character` holds_lh `any_object` with 'knife' in name
 
 
-### EatEXecutor
+### EatExecutor
 - script: eat `object`
 - Pre-condition:
 	- `object` property is eatable
