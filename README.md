@@ -28,36 +28,41 @@ Run `sh run_example.sh` to generate an example activity video. You can find the 
 
 
 ## Examples
-
 For how to use the code, see `example.py` file.
 Example scripts are located in `example_scripts` folder
 
 ## Environment
 VirtualHome is composed of 7 apartments where activities can be executed. Each apartment is encoded in a json file containing a node for every object and edges between them representing relationships. Each apartment can be modified through the corresponding json file. The files representing each apartment can be found in `example_graphs`. Check `example_scripts/` for examples on how to read and update graphs.
 
-## Data
-We collected a dataset of programs to execute in the environment. You can download the programs in [link to programs](). The videos generated from these programs can be found in [link to videos](). 
+## Programs
+Activities in VirtualHome are executed through programs. Each program is a sequence of instructions representing atomic actions that the agent will execute. Each instruction has the format `[ACTION_NAME] arg1 arg2`, where each argument has the format `<OBJECT_NAME> (ID_OBJECT)`. The number of arguments depends on the action type. The programs can also have a precondition file, specifying the state of the objects before the program is executed.
 
-The data follows the following structure:
+You can view the supported actions, objects and preconditions in [Resources]()
+
+We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
+
+<!--The videos generated from these programs can be found in [link to videos](). 
+-->
+Move the downloaded programs into the `data` folder. The data should follow the following structure:
 
 ```
-programs_processed_precond_nograb_morepreconds/
-|── initstate
-├── withoutconds
-├── executable_programs
-   	├── TrimmedTestScene7_graph
-	├── ...
-└── state_list
-	├── TrimmedTestScene7_graph
-     ├── ...
-
+data
+└── programs_processed_precond_nograb_morepreconds
+	|── initstate
+	├── withoutconds
+	├── executable_programs
+	|   ├── TrimmedTestScene7_graph
+	|	└── ...
+	└── state_list
+		├── TrimmedTestScene7_graph
+	   	└── ...	
 ```
 
 Where `withoutconds` and `initstate` contain the original programs and pre-conditions. 
 
-To check a script executed in an enviornment, check `executable_programs/{environment}/{program_name}.txt`. 
+To view a script executed in an enviornment, check `executable_programs/{environment}/{script_name}.txt`. 
 
-To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{program_name}.json`.
+To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
 ### Script generation
 To obtain the executable script given a program with conditions
