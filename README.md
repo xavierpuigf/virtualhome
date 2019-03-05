@@ -6,6 +6,9 @@ Check out more details of the environmnent and platform in [virtualhome.org](). 
 - VirtualHome: Simulating HouseHold Activities via Programs
 - Synthesizing Environment-Aware Activities via Activity Sketches
 
+
+PUT HERE A GIF?
+
 # Dependencies
 
 ```
@@ -24,19 +27,18 @@ Run `sh run_example.sh` to generate an example activity video. You can find the 
 
 
 
-## Contents
-### Examples
+## Examples
 
 For how to use the code, see `example.py` file.
 Example scripts are located in `example_scripts` folder
 
-### Environment
+## Environment
 VirtualHome is composed of 7 apartments where activities can be executed. Each apartment is encoded in a json file containing a node for every object and edges between them representing relationships. Each apartment can be modified through the corresponding json file. The files representing each apartment can be found in `example_graphs`. Check `example_scripts/` for examples on how to read and update graphs.
 
-### Data
+## Data
 We collected a dataset of programs to execute in the environment. You can download the programs in [link to programs](). The videos generated from these programs can be found in [link to videos](). 
 
-The data follows the following structure
+The data follows the following structure:
 
 ```
 programs_processed_precond_nograb_morepreconds/
@@ -51,14 +53,18 @@ programs_processed_precond_nograb_morepreconds/
 
 ```
 
-Where `withoutconds` and `initstate` contain the original programs and pre-conditions. Each program is executed in one environment.  `state_list` contains the environment state throughout the execution of the program.
+Where `withoutconds` and `initstate` contain the original programs and pre-conditions. 
 
-#### Script generation
-Each program is executed differently depending on the initial environment. 
+To check a script executed in an enviornment, check `executable_programs/{environment}/{program_name}.txt`. 
+
+To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{program_name}.json`.
+
+### Script generation
+To obtain the executable script given a program with conditions
 
 
 
-#### Script augmentation
+### Script augmentation
 
 The original programs can be extended by replacing objects or perturbating the environment. You can find more details about how it is extended in [our paper](). To augment the dataset run.
 
@@ -70,38 +76,19 @@ python augment_dataset_locations.py
 ```  
 
 
-### Videos
-The generated videos will be saved in the folder. Each video has the following contents
+## Videos and Frames
+VirtualHome allows generating videos corresponding to an activity and frames corresponding to a snapshot of the environment state.
 
-```
-programs_processed_precond_nograb_morepreconds/
-|── initstate
-├── withconds
-└── withoutconds
-```
+### Generating videos
 
-### Rules
-In `rules_doc`, you can find the currently implemented actions, their preconditions and post-conditions.   
+The following files will be generated
 
+Check [examples](#Examples) for more details
 
-## Dataset generation
-
-### dataset structure
-
-programs_processed_precond_nograb_morepreconds/
-├── initstate
-├── withconds
-└── withoutconds
-
-- go to dataset_augmentation/ and run `python augment_dataset_affordances.py`
-- run `python augment_dataset_locations.py`
-- go to root dir, and run `python check_programs.py` with check_2('dataset_augmentation/augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
-- got o dataset_augmentation/ and run `python perturbate_dataset.py`
-- go to root dir, and run `python check_programs.py` with check_2('dataset_augmentation/perturb_augmented_location_augmented_affordance_programs_processed_precond_nograb_morepreconds', graph_path=translated_path)
-
+### Frames
  
 
-### Resources
+## Resources
 Contains resource files used to initialize the environment, set properties of objects and generate videos given the scripts. Check the folder for a description of its contents.
 
 Folder `resources` contains json files with information about:
