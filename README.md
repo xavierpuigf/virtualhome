@@ -9,13 +9,13 @@ Check out more details of the environmnent and platform in [virtualhome.org](). 
 
 PUT HERE A GIF?
 
-# Dependencies
+## Dependencies
 
 ```
 Write here the dependencies
 ```
 
-# QuickStart
+## QuickStart
 Clone the repository and download the simulator
 
 ```
@@ -90,6 +90,4 @@ Check [examples](#Examples) for more details
 
 ## Resources
 Contains resource files used to initialize the environment, set properties of objects and generate videos given the scripts. Check the folder for a description of its contents.
-
-Folder `resources` contains json files with information about:
 
