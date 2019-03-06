@@ -30,15 +30,18 @@ thres = 300
 write_augment_data = True
 multi_process = True
 num_processes = os.cpu_count() // 2
+prob_modif = 0.7
+maximum_iters = 20
 
 # Paths
-augmented_data_dir = 'augment_exception'
+augmented_data_dir = '../data/augment_exception'
+original_program_folder = '../data/programs_processed_precond_nograb_morepreconds/'
 
 if write_augment_data:
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-all_programs_exec = glob.glob('original_programs/executable_programs/*/*/*.txt')
+all_programs_exec = glob.glob('{}/executable_programs/*/*/*.txt'.format(original_program_folder))
 all_programs_exec = [x.split('executable_programs/')[1] for x in all_programs_exec]
 
 
@@ -60,8 +63,7 @@ for prog, apt_names in programs_to_apt.items():
     programs_to_apt[prog] = apt_single
 
 
-prog_folder = 'original_programs'
-programs = [('{}/withoutconds/{}'.format(prog_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
+programs = [('{}/withoutconds/{}'.format(original_program_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
 
 
 objects_occupied = [
@@ -139,7 +141,6 @@ def augment_dataset(d, programs):
             for ob, idi in zip(objects, indx):
                 objects_program.append([ob, idi])
         
-        prob_modif = 0.7
         for _ in range(thres):
             modified_state = init_state.copy()
             # Remove sitting
@@ -175,7 +176,6 @@ def augment_dataset(d, programs):
         if verbose:
             print('Augmented precond candidates: {}'.format(len(augmented_precond_candidates)))
         
-        maximum_iters = 20
         for j, init_state in enumerate(augmented_precond_candidates):
             lines_program = lines_program_orig.copy()
             executable = False

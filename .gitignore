@@ -167,3 +167,4 @@ fabric.properties
 # Project-specific stuff
 test*/
 test*.py
+data/*

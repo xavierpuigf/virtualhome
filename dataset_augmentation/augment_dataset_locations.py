@@ -4,6 +4,7 @@ import os
 import sys
 import glob
 import random
+import ipdb
 import copy
 import json
 import numpy as np
@@ -29,19 +30,20 @@ np.random.seed(123)
 verbose = True
 thres = 300
 write_augment_data = True
-multi_process = True
+multi_process = False
 num_processes = os.cpu_count() // 2
 
 
 # Paths
 path_object_placing = '../resources/object_script_placing.json'
-augmented_data_dir = 'augment_location'
+augmented_data_dir = '../data/augment_location'
+original_program_folder = '../data/programs_processed_precond_nograb_morepreconds/'
 
 if write_augment_data:
     if not os.path.exists(augmented_data_dir):
         os.makedirs(augmented_data_dir)
 
-all_programs_exec = glob.glob('original_programs/executable_programs/*/*/*.txt')
+all_programs_exec = glob.glob('{}/executable_programs/*/*/*.txt'.format(original_program_folder))
 all_programs_exec = [x.split('executable_programs/')[1] for x in all_programs_exec]
 
 
@@ -62,8 +64,7 @@ for prog, apt_names in programs_to_apt.items():
     apt_single = apt_names[index]
     programs_to_apt[prog] = apt_single
 
-prog_folder = 'original_programs'
-programs = [('{}/withoutconds/{}'.format(prog_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
+programs = [('{}/withoutconds/{}'.format(original_program_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
 
 
 # maps every object, and location to all the possible objects
@@ -202,6 +203,7 @@ def augment_dataset(d, programs):
                     try:
                         graphid = id_mapping[(obj_name, idi)]
                     except:
+                        ipdb.set_trace()
                         print(program_name, lp)
                     instruction += ' <{}> ({}.{})'.format(obj_name, idi, graphid)
                 lines_program_newinst.append(instruction)
