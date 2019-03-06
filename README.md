@@ -32,11 +32,16 @@ For how to use the code, see `example.py` file.
 Example scripts are located in `example_scripts` folder
 
 ## Environment
-VirtualHome is composed of 7 apartments where activities can be executed. Each apartment is encoded in a .json file containing a node for every object and edges between them representing relationships. Each apartment can be modified through the corresponding json file. 
+VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a .json file containing a node for every object and edges between them representing relationships. They can be modified through the corresponding json file. 
 
 The files representing each apartment can be found in `example_graphs`. 
 
 Check `example_scripts/` for examples on how to read and update graphs.
+
+| Scene 1   | Scene 2   | Scene 3   | Scene 4   | Scene 5   | Scene 6   | Scene 7  |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |
+| ![img](media/scene0rot.png) | ![img](media/scene0rot.png)| ![img](media/scene2rot.png)| ![img](media/scene3rot.png)| ![img](media/scene4rot.png)| ![img](media/scene4rot.png)| ![img](media/scene6rot.png)
+
 
 ## Programs
 Activities in VirtualHome are executed through programs. Each program is a sequence of instructions representing atomic actions that the agent will execute. Each program is stored in a .txt file with the following format. 
@@ -54,6 +59,8 @@ Where each argument has the format `<OBJECT_NAME> (ID_OBJECT)`. The number of ar
 
 You can view the supported actions, objects and preconditions in [Resources]().
 
+
+### Dataset
 We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
 Once downloaded, move programs into the `data` folder. The data should follow the following structure:
 
@@ -77,7 +84,11 @@ To view a script executed in an enviornment, check `executable_programs/{environ
 To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
 ### Script generation
-To obtain the executable script given a program with conditions
+A program can be executed in multiple scenes. Depending on the scene where the script is executed, it will be matched to different objects and generate a different sequence of graphs. To execute a script in a given scene, run:
+
+```
+
+```
 
 
 
