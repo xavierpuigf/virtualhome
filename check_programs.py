@@ -330,33 +330,7 @@ def check_whole_set(dir_path, graph_path):
 
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
-
-    #with open('generated_scripts.txt', 'r') as f:
-    #    scripts_missing = f.readlines()
-    #    scripts_missing = [x.strip() for x in scripts_missing]
-    #    scripts_missing = ['input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds/withoutconds/{}'.format(x) for x in scripts_missing]
-
-    with open('executable_info.json', 'r') as f:
-        scripts_info = json.load(f)
-    #scripts_left = []
-    #for key, elem in scripts_info.items():
-    #    try:
-    #        if elem[0]['message'] != 'Script is executable' and key in scripts_missing:
-    #            scripts_left.append(key)
-    #    except:
-    #        print(key)
-    #program_txt_files = scripts_left
-    with open('scripts_correct_programs/missing.txt', 'r') as f:
-        files_missing = f.readlines()
-        files_missing = [x.strip() for x in files_missing]
-        files_missing = [x.replace('TrimmedTestScene7_graph_', '').replace('/', '_') for x in files_missing if x[0] != '!']
-    program_txt_files = [x for x in program_txt_files if '_'.join(x.split('/')[-2:]) in files_missing]
-    ipdb.set_trace()
-
-    #print(len(program_txt_files))
-    #for prog in program_txt_files: 
-    #    res = joblib_one_iter([prog, graph_path[0]])
-    
+       
     executable_programs = 0
     not_parsable_programs = 0
     executable_program_length = []
@@ -368,7 +342,6 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
-    info = scripts_info 
     joblib_inputs = []
     n = len(program_txt_files) // 30
     n = max(n, 1)

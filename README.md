@@ -32,18 +32,30 @@ For how to use the code, see `example.py` file.
 Example scripts are located in `example_scripts` folder
 
 ## Environment
-VirtualHome is composed of 7 apartments where activities can be executed. Each apartment is encoded in a json file containing a node for every object and edges between them representing relationships. Each apartment can be modified through the corresponding json file. The files representing each apartment can be found in `example_graphs`. Check `example_scripts/` for examples on how to read and update graphs.
+VirtualHome is composed of 7 apartments where activities can be executed. Each apartment is encoded in a .json file containing a node for every object and edges between them representing relationships. Each apartment can be modified through the corresponding json file. 
+
+The files representing each apartment can be found in `example_graphs`. 
+
+Check `example_scripts/` for examples on how to read and update graphs.
 
 ## Programs
-Activities in VirtualHome are executed through programs. Each program is a sequence of instructions representing atomic actions that the agent will execute. Each instruction has the format `[ACTION_NAME] arg1 arg2`, where each argument has the format `<OBJECT_NAME> (ID_OBJECT)`. The number of arguments depends on the action type. The programs can also have a precondition file, specifying the state of the objects before the program is executed.
+Activities in VirtualHome are executed through programs. Each program is a sequence of instructions representing atomic actions that the agent will execute. Each program is stored in a .txt file with the following format. 
 
-You can view the supported actions, objects and preconditions in [Resources]()
+```
+Program title
+Program description
+
+
+[ACTION_NAME] arg1 arg2
+[ACTION_NAME] arg1 arg2
+...
+```
+Where each argument has the format `<OBJECT_NAME> (ID_OBJECT)`. The number of arguments depends on the action type. The programs can also have a precondition file, specifying the state of the objects before the program is executed.
+
+You can view the supported actions, objects and preconditions in [Resources]().
 
 We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
-
-<!--The videos generated from these programs can be found in [link to videos](). 
--->
-Move the downloaded programs into the `data` folder. The data should follow the following structure:
+Once downloaded, move programs into the `data` folder. The data should follow the following structure:
 
 ```
 data
