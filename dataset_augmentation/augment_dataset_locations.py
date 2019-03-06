@@ -205,6 +205,7 @@ def augment_dataset(d, programs):
                                                               '<{}> ({}.{})'.format(obj_name, obj_number, id))
                 lines_program_newinst.append(script_line_str)
             
+            print(apt_name)
             ipdb.set_trace()
             augmented_progs_i_new_inst.append(lines_program_newinst)
             state_list_i.append(graph_state_list)
