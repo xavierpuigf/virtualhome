@@ -170,15 +170,15 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
     else:
         graph_dict = inp_graph_dict
 
-    script, precond = modify_objects_unity2script(script, precond)
-    message, executable, final_state, graph_state_list, id_mapping, info = check_one_program(
+    
+    message, executable, final_state, graph_state_list, id_mapping, info, modif_script = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=True, modify_graph=(inp_graph_dict is None), id_mapping=id_mapping, **info)
 
-    return message, final_state, graph_state_list, graph_dict, id_mapping, info, helper
+    return message, final_state, graph_state_list, graph_dict, id_mapping, info, helper, modif_script
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
-
+    script, precond = modify_objects_unity2script(script, precond)
     helper.initialize(graph_dict)
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
@@ -226,7 +226,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     else:
         message = 'Script is not executable, since {}'.format(executor.info.get_error_string())
 
-    return message, executable, final_state, graph_state_list, id_mapping, info
+    return message, executable, final_state, graph_state_list, id_mapping, info, script
 
 
 def joblib_one_iter(inp):
@@ -251,11 +251,8 @@ def joblib_one_iter(inp):
 
     precond = json.load(open(precond_path))
     
-    # Modify script and preconds
-    script, precond = modify_objects_unity2script(script, precond)
 
-
-    message, executable, _, graph_state_list, id_mapping, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
+    message, executable, _, graph_state_list, id_mapping, _, _ = check_one_program(helper, script, precond, graph_dict, w_graph_list=True)
     if executable and dump:
         dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path)
 

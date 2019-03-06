@@ -181,7 +181,7 @@ def augment_dataset(d, programs):
             
             init_state = ast.literal_eval(precond_modif)
             (message, final_state, graph_state_list, input_graph, 
-            id_mapping, info, graph_helper) = check_programs.check_script(
+            id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
                     new_lines, 
                     init_state, 
                     '../example_graphs/{}.json'.format(apt_name),
@@ -190,24 +190,22 @@ def augment_dataset(d, programs):
                     {})
 
             # Convert the program
-            lines_program_newinst = new_lines[:4]
-            for lp in new_lines[4:]:
-                action, objects, indx = augmentation_utils.parseStrBlock(lp.strip())
-                instruction = '[{}]'.format(action)
-                for obj, idis in zip(objects, indx):
-                    idi = int(idis)
-                    obj_name = obj
-                    if (obj_name in graph_helper.possible_rooms and 
-                        (obj_name, idi) not in id_mapping):
-                        obj_name = graph_helper.equivalent_rooms[obj_name]
-                    try:
-                        graphid = id_mapping[(obj_name, idi)]
-                    except:
-                        ipdb.set_trace()
-                        print(program_name, lp)
-                    instruction += ' <{}> ({}.{})'.format(obj_name, idi, graphid)
-                lines_program_newinst.append(instruction)
+            lines_program_newinst = []
+            for script_line in modified_script:
+                script_line_str = '[{}]'.format(script_line.action.name)
+                if script_line.object():
+                    script_line_str += ' <{}> ({})'.format(script_line.object().name, script_line.object().instance)
+                if script_line.subject():
+                    script_line_str += ' <{}> ({})'.format(script_line.subject().name, script_line.subject().instance)
 
+                for k, v in id_mapping.items():
+                    obj_name, obj_number = k
+                    id = v
+                    script_line_str = script_line_str.replace('<{}> ({})'.format(obj_name, id), 
+                                                              '<{}> ({}.{})'.format(obj_name, obj_number, id))
+                lines_program_newinst.append(script_line_str)
+            
+            ipdb.set_trace()
             augmented_progs_i_new_inst.append(lines_program_newinst)
             state_list_i.append(graph_state_list)
             init_graph_i.append(input_graph)
