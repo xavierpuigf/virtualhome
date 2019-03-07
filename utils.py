@@ -39,6 +39,47 @@ def load_properties_data(file_name='resources/properties_data.json'):
         return {key: [Property[p] for p in props] for (key, props) in pd_dict.items()}
 
 
+def build_unity2object_script(script_object2unity_object):
+    """Builds mapping from Unity 2 Script objects. It works by creating connected
+      components between objects: A: [C, D], B: [F, E]. Since they share
+      one object, A, B, C, D, F, E should be merged
+    """
+    unity_object2script_object = {}
+    object_script_merge = {}
+    for k, vs in script_object2unity_object.items():
+        vs = [x.lower().replace('_', '') for x in vs]
+        kmod = k.lower().replace('_', '')
+        object_script_merge[k] = [kmod] + vs
+        if kmod in unity_object2script_object:
+            prev_parent = unity_object2script_object[kmod]
+            dest_parent = prev_parent
+            source_parent = k
+            if len(k) < len(prev_parent) and prev_parent != 'computer':
+                dest_parent = k
+                source_parent = prev_parent
+            children_source = object_script_merge[source_parent]
+            object_script_merge[dest_parent] += children_source
+            for child in children_source: unity_object2script_object[child] = dest_parent
+
+        else:
+            unity_object2script_object[kmod] = k
+        for v in vs:
+            if v in unity_object2script_object:
+                prev_parent = unity_object2script_object[v]
+                dest_parent = prev_parent
+                source_parent = k
+                if len(k) < len(prev_parent) and prev_parent != 'computer':
+                    dest_parent = k
+                    source_parent = prev_parent
+                children_source = object_script_merge[source_parent]
+                object_script_merge[dest_parent] += children_source
+                for child in children_source: unity_object2script_object[child] = dest_parent
+            else:
+                unity_object2script_object[v] = k
+
+    return unity_object2script_object
+
+
 class BinaryVariable(object):
 
     def __init__(self, v_list, default):

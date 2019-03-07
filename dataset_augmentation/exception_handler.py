@@ -4,7 +4,7 @@ import augmentation_utils
 from termcolor import colored
 import ipdb
 import random
-actions_2_object =  ['PUTBACK', 'POUR', 'THROW', 'COVER', 'WRAP', 'SOAK', 'SPREAD']
+actions_2_object = ['PUTBACK', 'POUR', 'THROW', 'COVER', 'WRAP', 'SOAK', 'SPREAD']
 
 
 class ProgramException(Enum):
@@ -19,11 +19,12 @@ class ProgramException(Enum):
     NOT_ON = 9
     NOT_PLUGGED_OUT = 10
     OCCUPIED = 11
-    UNPLUGGED = 12 # need to check
+    UNPLUGGED = 12
     STILL_ON = 13
     DOOR_CLOSED = 14
     INSIDE_CLOSED = 15
     FREE_HAND = 16
+
 
 message_to_exception = {
     'is not closed': ProgramException.NOT_CLOSED,
@@ -46,6 +47,7 @@ message_to_exception = {
     'does not have a free hand': ProgramException.FREE_HAND
 }
 
+
 def printProgramWithLine(program, lines=[]):
     for it, elem in enumerate(program):
         if it in lines:
@@ -53,6 +55,7 @@ def printProgramWithLine(program, lines=[]):
         else:
             char = ' '
         print('{}  {}'.format(char, elem))
+
 
 def parseException(exception_str, verbose=True):
     split_exception = exception_str.replace('> (', '>(').split(',')
@@ -89,6 +92,7 @@ def parseException(exception_str, verbose=True):
 
     return None
 
+
 def getidperobject(object_name, id_env, id_mapping):
     # Given an object name and an id in the environment returns a script id
     object_name = object_name.lower().replace(' ex', '_')
@@ -106,8 +110,8 @@ def getidperobject(object_name, id_env, id_mapping):
     id_mapping[(object_name, id_object)] = int(id_env)
     return id_object
 
+
 def correctedProgram(input_program, init_state, final_state, exception_str, verbose=True, id_mapping={}):
-    #print('Correct exception {}'.format(exception_str))
     instructions_program = input_program[4:]
     program_header = input_program[:4]
     try:
@@ -117,9 +121,7 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         if verbose:
             printProgramWithLine(instructions_program)
         return (None, exception_str)
-    
 
-    
     corrected_instructions = instructions_program
     insert_in = []
     action, objects, ids = augmentation_utils.parseStrBlock(instructions_program[line_exception])
@@ -175,8 +177,6 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         else:
             insert_in.append([line_exception, '[StandUp]'])      
             corrected_instructions = augmentation_utils.insertInstructions(insert_in, instructions_program)
-        
-        #printProgramWithLine(corrected_instructions)     
 
     if exception == ProgramException.NOT_ON:
         if action.upper() != 'SWITCHOFF':
@@ -217,8 +217,6 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
             corrected_instructions = augmentation_utils.insertInstructions(insert_in, instructions_program)
 
     if exception == ProgramException.DOOR_CLOSED:
-        # get the latests door
-        
         door_argument = [arg for arg in argument_exception if arg[0] == 'door']
         id_object_env = door_argument[-1][1]
         object_name = 'door'
@@ -227,13 +225,13 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         except:
             print('Door used')
             print('Previous program')
-        # print(id_object_env, id_object, 'door')
+
         insert_in.append([line_exception, '[Walk] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
         insert_in.append([line_exception, '[Open] <{}> ({})'.format(object_name, id_object)])
         corrected_instructions = augmentation_utils.insertInstructions(insert_in, instructions_program)
+
     if exception == ProgramException.OCCUPIED:
-       
         node_state_dict = final_state.to_dict()['nodes']
         edge_state_dict = final_state.to_dict()['edges']
         edge_interest = [edge_graph['from_id'] for edge_graph in edge_state_dict 
@@ -254,8 +252,7 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
             if object_name == 'character':
                 continue
             id_object_env = object_occupied['id']
-            id_object = getidperobject(object_name, id_object_env,id_mapping) 
-            # TODO: we may want to pick objects with 2 hands
+            id_object = getidperobject(object_name, id_object_env,id_mapping)
             insert_in.append([line_exception, '[Find] <{}> ({})'.format(object_name, id_object)])
             insert_in.append([line_exception, '[Grab] <{}> ({})'.format(object_name, id_object)])
             insert_in.append([line_exception, '[Release] <{}> ({})'.format(object_name, id_object)])
@@ -271,7 +268,6 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
         
         node_interest = [node_graph for node_graph in node_state_dict if node_graph['id'] in edge_interest]
         return (None, exception_str)
-
 
     if exception == ProgramException.FREE_HAND:
         if action.upper() != 'GRAB':
@@ -290,8 +286,6 @@ def correctedProgram(input_program, init_state, final_state, exception_str, verb
             corrected_instructions = augmentation_utils.insertInstructions(insert_in, instructions_program)
         else:
             return (None, exception_str)
-    #print('\n')
-    #print(colored('Corrected', 'green'))
-    #printProgramWithLine(corrected_instructions)
+
     output_program = program_header + corrected_instructions
     return output_program

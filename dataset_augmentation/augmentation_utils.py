@@ -1,14 +1,14 @@
-''' Utility functions to augment scripts
-'''
+""" Utility functions to augment scripts
+"""
 import pdb
 import os
 import json
 
 
 def parseStrBlock(block_str):
-    ''' Given a str block [Rinse] <CLEANING SOLUTION> (1)
+    """ Given a str block [Rinse] <CLEANING SOLUTION> (1)
         parses the block, returning Action, List Obj, List Instance
-    '''
+    """
     action = block_str[1:block_str.find(']')]
     block_str = block_str[block_str.find(']')+3:-1]
     block_split = block_str.split(') <') # each element is name_obj> (num
@@ -26,7 +26,7 @@ def parseStrBlock(block_str):
 
 
 def hasProperty(obj_name, property_name):
-    ''' Check if object obj_name has property '''
+    """ Check if object obj_name has property """
     obj_name_corrected = obj_name.lower().replace(' ', '_')
     return property_name in object_properties[obj_name_corrected]
 
@@ -42,13 +42,13 @@ def insertInstructions(insert_in, contentold):
 
 
 def removeInstructions(to_delete, content):
-    ''' removes indices to_delete from content '''
+    """ removes indices to_delete from content """
     return [x for i, x in enumerate(content) if i not in to_delete]
 
 
 class Precond:
 
-    ''' Precondition class, storing the preconditions for a program '''
+    """ Precondition class, storing the preconditions for a program """
     def __init__(self):
         self.precond_dict = {}
 
@@ -142,7 +142,7 @@ def write_precond(augmented_data_dir, ori_path, all_new_preconds):
         new_f.close()
 
 
-def write_graph(augmented_data_dir, ori_path, graph_init, graph_end, state_list, apt_name):
+def write_graph(augmented_data_dir, ori_path, state_list, apt_name):
 
     sub_dir = ori_path.split('/')[-2]
     old_name = ori_path.split('/')[-1].split('.')[0]
@@ -152,11 +152,11 @@ def write_graph(augmented_data_dir, ori_path, graph_init, graph_end, state_list,
         os.makedirs(new_dir)
     except:
         pass
-    for j in range(len(graph_init)):
+    for j in range(len(state_list)):
         new_f = open('{}/{}.json'.format(new_dir, j), 'w')
         json.dump(
-                {"init_graph": graph_init[j], 
-                 "final_graph": graph_end[j].to_dict()}, new_f)
+                {"init_graph": state_list[j][0],
+                 "final_graph": state_list[j][-1]}, new_f)
         new_f.close()
 
     # state list

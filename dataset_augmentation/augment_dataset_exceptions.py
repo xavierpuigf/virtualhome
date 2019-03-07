@@ -106,13 +106,10 @@ def from_hash(precond_tuple):
 
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
-    exceptions_not_found = []
     for program_name, apt_name in tqdm(programs):
         augmented_progs_i = []
         augmented_progs_i_new_inst = []
         augmented_preconds_i = []
-        init_graph_i = []
-        end_graph_i = []
         state_list_i = []
         augmented_precond_candidates = []
         if program_name in d.keys(): 
@@ -122,8 +119,7 @@ def augment_dataset(d, programs):
         if len(d.keys()) % 20 == 0 and verbose:
             print(len(d.keys()))
 
-        state_file = program_name.replace(
-                'withoutconds', 'initstate').replace('.txt', '.json')
+        state_file = program_name.replace('withoutconds', 'initstate').replace('.txt', '.json')
 
         with open(program_name, 'r') as f:
             lines_program = f.readlines()
@@ -156,7 +152,7 @@ def augment_dataset(d, programs):
             # Swap is_off
             modified_state = [x if list(x)[0] != 'is_off' or random.random() > prob_modif else {'is_on': x[list(x)[0]]} for x in modified_state]
             # Swap open
-            modified_state = [x  if list(x)[0] != 'open' or random.random() > prob_modif else {'closed': x[list(x)[0]]} for x in modified_state]
+            modified_state = [x if list(x)[0] != 'open' or random.random() > prob_modif else {'closed': x[list(x)[0]]} for x in modified_state]
             # Swap is_closed
             modified_state = [x if list(x)[0] != 'closed' or random.random() > prob_modif else {'open': x[list(x)[0]]} for x in modified_state ]
             # Swap is free
@@ -237,8 +233,6 @@ def augment_dataset(d, programs):
                 augmented_progs_i_new_inst.append(lines_program_newinst)
                 augmented_preconds_i.append(init_state)
                 augmented_progs_i.append(lines_program)
-                init_graph_i.append(input_graph)
-                end_graph_i.append(final_state)
                 state_list_i.append(graph_state_list)
             
             elif not executable:
@@ -246,19 +240,13 @@ def augment_dataset(d, programs):
                 if verbose:
                     print(colored('Program not solved, {} iterations tried'.format(max_iter), 'red'))
                     print('\n'.join(message_acum))
-                    # if lines_program:
-                    #     print(''.join(lines_program_orig))
-                    #     print('---')
-                    #     print('\n'.join(lines_program))
 
         if write_augment_data:
             augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i)
             augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
                     'executable_programs/{}/'.format(apt_name))
             augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
-            augmentation_utils.write_graph(augmented_data_dir, program_name, init_graph_i, end_graph_i, state_list_i,
-                    apt_name)
-        #print('\n'.join(exceptions_not_found))
+            augmentation_utils.write_graph(augmented_data_dir, program_name, state_list_i, apt_name)
 
 processes = []
 if multi_process:

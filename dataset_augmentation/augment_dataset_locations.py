@@ -94,8 +94,6 @@ def augment_dataset(d, programs):
         augmented_progs_i = []
         augmented_progs_i_new_inst = []
         augmented_preconds_i = []
-        init_graph_i = []
-        end_graph_i = []
         state_list_i = []
         if program_name in d.keys(): 
             continue
@@ -204,13 +202,10 @@ def augment_dataset(d, programs):
                     script_line_str = script_line_str.replace('<{}> ({})'.format(obj_name, id), 
                                                               '<{}> ({}.{})'.format(obj_name, obj_number, id))
                 lines_program_newinst.append(script_line_str)
-            
-            print(apt_name)
+
             ipdb.set_trace()
             augmented_progs_i_new_inst.append(lines_program_newinst)
             state_list_i.append(graph_state_list)
-            init_graph_i.append(input_graph)
-            end_graph_i.append(final_state)
             augmented_progs_i.append(new_lines)         
             augmented_preconds_i.append(init_state)
             npgs += 1
@@ -223,8 +218,7 @@ def augment_dataset(d, programs):
             augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
                     'executable_programs/{}/'.format(apt_name))
             augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
-            augmentation_utils.write_graph(augmented_data_dir, program_name, init_graph_i, end_graph_i, state_list_i, 
-                    apt_name)
+            augmentation_utils.write_graph(augmented_data_dir, program_name, state_list_i, apt_name)
 
 
 processes = []
@@ -236,7 +230,6 @@ if multi_process:
         p = Process(target=augment_dataset, args=(programs_done, programs))
         p.start()
         processes.append(p)
-
 
     for p in processes:
         p.join()
