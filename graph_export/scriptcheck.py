@@ -55,15 +55,17 @@ class UnityCommunication(object):
                                       'intParams': camera_indexes})
         return response['success'], json.loads(response['message'])
 
-    def camera_image(self, camera_indexes, mode='normal'):
+    def camera_image(self, camera_indexes, mode='normal', image_width=640, image_height=480):
         """
         Returns a list of renderings of cameras given in camera_indexes.
         Possible modes are: 'normal', 'seg_inst', 'seg_class', 'depth', 'flow'
         """
         if not isinstance(camera_indexes, collections.Iterable):
             camera_indexes = [camera_indexes]
+
+        params = {'mode': mode, 'image_width': image_width, 'image_height': image_height}
         response = self.post_command({'id': str(time.time()), 'action': 'camera_image',
-                                      'intParams': camera_indexes, 'stringParams': [mode]})
+                                      'intParams': camera_indexes, 'stringParams': [json.dumps(params)]})
         return response['success'], _decode_image_list(response['message_list'])
 
     def instance_colors(self):
@@ -106,6 +108,7 @@ class UnityCommunication(object):
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=False, capture_screenshot=False, save_pose_data=False,
+                      image_width=640, image_height=480,
                       save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
         """
         :param script: a list of script lines
@@ -123,6 +126,8 @@ class UnityCommunication(object):
         :param save_scene_states: save scene states
         :param character_resource: path to character resource to be used
         :param camera_mode: automatic (AUTO), first person (FIRST_PERSON), top (PERSON_TOP),
+        :param image_width: image_height
+        :param image_height: image_width
             front person view (PERSON_FRONT)
         :return: pair success (bool), message: (str)
         """
@@ -132,7 +137,8 @@ class UnityCommunication(object):
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis,
                   'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
-                  'character_resource': character_resource, 'camera_mode': camera_mode}
+                  'character_resource': character_resource, 'camera_mode': camera_mode,
+                  'image_width': image_width, 'image_height': image_height}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
         return response['success'], response['message']
