@@ -8,7 +8,7 @@ Check `example_scripts/` for examples on how to read and update graphs.
 
 | Scene 1   | Scene 2   | Scene 3   | Scene 4   | Scene 5   | Scene 6   | Scene 7  |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |
-| ![img](media/scene0rot.png) | ![img](media/scene0rot.png)| ![img](media/scene2rot.png)| ![img](media/scene3rot.png)| ![img](media/scene4rot.png)| ![img](media/scene4rot.png)| ![img](media/scene6rot.png)
+| ![img](/assets/scene0rot.png) | ![img](/assets/scene0rot.png)| ![img](/assets/scene2rot.png)| ![img](/assets/scene3rot.png)| ![img](/assets/scene4rot.png)| ![img](/assets/scene4rot.png)| ![img](/assets/scene6rot.png)
 
 
 ## Programs
