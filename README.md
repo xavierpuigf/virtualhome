@@ -1,35 +1,157 @@
 # VirtualHome
-VirtualHome is a platform to simulate complex household activities via Programs. Given an initial environment describing an apartment and a program depicting a sequence of actions, VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
+VirtualHome is a platform to simulate complex household activities via Programs. 
+Given an initial environment describing an apartment and a program depicting a sequence of actions, 
+VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
 
-Check out more details of the environmnent and platform in [virtualhome.org](). VirtualHome has been used in:
+Check out more details of the environmnent and platform in [VirtualHome](http://virtual-home.org). 
 
-- VirtualHome: Simulating HouseHold Activities via Programs
-- Synthesizing Environment-Aware Activities via Activity Sketches
+**PUT A GIF, PROBABLY A VIDEO WITH A MAN WATCHING TV WITH A CUTE CAT**
+![intro](/assets/vh_intro.gif)
 
 
-PUT HERE A GIF?
+## Cite VirtualHome
 
-## Dependencies
+VirtualHome has been used in:
+
+- VirtualHome: Simulating HouseHold Activities via Programs, CVPR2018
+- Synthesizing Environment-Aware Activities via Activity Sketches, CVPR2019
+
 
 ```
-Write here the dependencies
+@inproceedings{puig2018virtualhome,
+  title={Virtualhome: Simulating household activities via programs},
+  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={8494--8502},
+  year={2018}
+}
 ```
+
+```
+@inproceedings{puig2018virtualhome,
+  title={Virtualhome: Simulating household activities via programs},
+  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={8494--8502},
+  year={2018}
+}
+```
+
+## Contents
+
+- Motivation
+- Dataset 
+- Installation
+- QuickStart
+- Generating Videos/Keyframes
+- Scripts Augmentation
+- Other details
+
+## Motivation
+
+Among lots of simulator aiming at interacting with environments, why does virtualhome stand out? 
+(can be that we focus on high-level action, including watching, ... etc.)
+
+## Dataset
+
+We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
+Once downloaded, move programs into the `data` folder. The data should follow the following structure:
+
+```
+data
+└── programs_processed_precond_nograb_morepreconds
+	|── initstate
+	├── withoutconds
+	├── executable_programs
+	|   ├── TrimmedTestScene7_graph
+	|	└── ...
+	└── state_list
+		├── TrimmedTestScene7_graph
+	   	└── ...	
+```
+
+Where `withoutconds` and `initstate` contain the original programs and pre-conditions. 
+
+To view a script executed in an enviornment, check `executable_programs/{environment}/{script_name}.txt`. 
+
+To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
+
+
+## Installation
+
+How to install the executable or run the code in Unity
+### Step 1
+Download the virtualhome simulator [here]()
+
+### Step 2
+
+Clone this repository
+```bash
+git clone https://mboben@bitbucket.org//virtualhome.git
+# and maybe some basic setup
+# and download the original scripts
+```
+
+### Step 3
+
+
 
 ## QuickStart
-Clone the repository and download the simulator
 
+Run `sh run_example.sh` and you will get an activity video of this [scripts](example_scripts/...). 
+You can check more example activity videos [here]().
+
+For more details, see `example.py` file and there are some example scripts in `example_scripts` folder
+
+
+## Genrating Videos/Keyframes
+
+VirtualHome allows generating videos corresponding to an activity and keyframes corresponding to a snapshot of the environment state.
+
+
+### Generate videos
+
+
+If you want to generate the videos of the given scripts, 
+```bash
 ```
-git clone https://mboben@bitbucket.org//virtualhome.git
-instructions to copy the executable
+
+### Generate keyframes
+
+If you want to generate the keyframes of the given scripts, 
+```bash
+# commands of generating keyframes
 ```
 
-Run `sh run_example.sh` to generate an example activity video. You can find the generated video in `folder_name`. You can check more examples [here]().
+## Scripts Augmentation
 
 
+In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
+we augment the scripts with two knowledge base `KB-RealEnv` and `KB-ExceptonHandler`.
+You can download the augmented scripts [here]().
 
-## Examples
-For how to use the code, see `example.py` file.
-Example scripts are located in `example_scripts` folder
+Here, we provide the code to augment the sripts:
+
+### Augment with `KB-RealEnv`
+
+```bash
+python ????.py --file_path ....
+```
+
+
+### Augment with `KB-ExceptionHandler`
+
+```bash
+python ????.py --file_path ....
+```
+
+## Other Details
+
+We show the explanation of the format of the resources file in [resources/README.md](resources/README.md).
+
+We show ....
+
+
 
 ## Environment
 VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a .json file containing a node for every object and edges between them representing relationships. They can be modified through the corresponding json file. 
@@ -59,29 +181,6 @@ Where each argument has the format `<OBJECT_NAME> (ID_OBJECT)`. The number of ar
 
 You can view the supported actions, objects and preconditions in [Resources]().
 
-
-### Dataset
-We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
-Once downloaded, move programs into the `data` folder. The data should follow the following structure:
-
-```
-data
-└── programs_processed_precond_nograb_morepreconds
-	|── initstate
-	├── withoutconds
-	├── executable_programs
-	|   ├── TrimmedTestScene7_graph
-	|	└── ...
-	└── state_list
-		├── TrimmedTestScene7_graph
-	   	└── ...	
-```
-
-Where `withoutconds` and `initstate` contain the original programs and pre-conditions. 
-
-To view a script executed in an enviornment, check `executable_programs/{environment}/{script_name}.txt`. 
-
-To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
 ### Script generation
 A program can be executed in multiple scenes. Depending on the scene where the script is executed, it will be matched to different objects and generate a different sequence of graphs. To execute a script in a given scene, run:
