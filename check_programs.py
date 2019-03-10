@@ -357,7 +357,14 @@ def check_whole_set(dir_path, graph_path):
     json.dump(info, open("executable_info.json", 'w'))
 
 
-def check_executability(string, graph_dict):
+def check_executability(input):
+
+    script, graph_dict = input
+    if len(script.split(', ')) == 1:
+        final_state = graph_dict
+        return True, True, final_state
+
+    string = modify_script(script)
 
     able_to_be_parsed = False
     able_to_be_executed = False

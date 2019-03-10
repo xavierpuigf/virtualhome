@@ -1,71 +1,64 @@
 # VirtualHome
-VirtualHome is a platform to simulate complex household activities via Programs. Given an initial environment describing an apartment and a program depicting a sequence of actions, VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
+VirtualHome is a platform to simulate complex household activities via Programs. 
+Given an initial environment describing an apartment and a program depicting a sequence of actions, 
+VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
 
-Check out more details of the environmnent and platform in [virtualhome.org](). VirtualHome has been used in:
+Check out more details of the environmnent and platform in [VirtualHome](http://virtual-home.org). 
 
-- VirtualHome: Simulating HouseHold Activities via Programs
-- Synthesizing Environment-Aware Activities via Activity Sketches
+**PUT A GIF, PROBABLY A VIDEO WITH A MAN WATCHING TV WITH A CUTE CAT**
+![intro](/assets/vh_intro.gif)
 
 
-PUT HERE A GIF?
+## Cite VirtualHome
 
-## Dependencies
+VirtualHome has been used in:
+
+- VirtualHome: Simulating HouseHold Activities via Programs, CVPR2018
+- Synthesizing Environment-Aware Activities via Activity Sketches, CVPR2019
+
 
 ```
-Write here the dependencies
+@inproceedings{puig2018virtualhome,
+  title={Virtualhome: Simulating household activities via programs},
+  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={8494--8502},
+  year={2018}
+}
 ```
 
-## QuickStart
-Clone the repository and download the simulator
-
 ```
-git clone https://mboben@bitbucket.org//virtualhome.git
-instructions to copy the executable
+@inproceedings{puig2018virtualhome,
+  title={Virtualhome: Simulating household activities via programs},
+  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={8494--8502},
+  year={2018}
+}
 ```
 
-Run `sh run_example.sh` to generate an example activity video. You can find the generated video in `folder_name`. You can check more examples [here]().
+## Contents
 
+- Motivation
+- Dataset 
+- Installation
+- QuickStart
+- Generating Videos/Keyframes
+- Scripts Augmentation
+- Other details
 
+## Motivation
 
-## Examples
-For how to use the code, see `example.py` file.
-Example scripts are located in `example_scripts` folder
+Among lots of simulator aiming at interacting with environments, why does virtualhome stand out? 
+(can be that we focus on high-level action, including watching, ... etc.)
 
-## Environment
-VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a .json file containing a node for every object and edges between them representing relationships. They can be modified through the corresponding json file. 
+## Dataset
 
-The files representing each apartment can be found in `example_graphs`. 
-
-Check `example_scripts/` for examples on how to read and update graphs.
-
-| Scene 1   | Scene 2   | Scene 3   | Scene 4   | Scene 5   | Scene 6   | Scene 7  |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |
-| ![img](media/scene0rot.png) | ![img](media/scene0rot.png)| ![img](media/scene2rot.png)| ![img](media/scene3rot.png)| ![img](media/scene4rot.png)| ![img](media/scene4rot.png)| ![img](media/scene6rot.png)
-
-
-## Programs
-Activities in VirtualHome are executed through programs. Each program is a sequence of instructions representing atomic actions that the agent will execute. Each program is stored in a .txt file with the following format. 
-
-```
-Program title
-Program description
-
-
-[ACTION_NAME] arg1 arg2
-[ACTION_NAME] arg1 arg2
-...
-```
-Where each argument has the format `<OBJECT_NAME> (ID_OBJECT)`. The number of arguments depends on the action type. The programs can also have a precondition file, specifying the state of the objects before the program is executed.
-
-You can view the supported actions, objects and preconditions in [Resources]().
-
-
-### Dataset
 We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
-Once downloaded, move programs into the `data` folder. The data should follow the following structure:
+Once downloaded, move programs into the `dataset` folder. The dataset should follow the following structure:
 
 ```
-data
+dataset
 └── programs_processed_precond_nograb_morepreconds
 	|── initstate
 	├── withoutconds
@@ -83,39 +76,87 @@ To view a script executed in an enviornment, check `executable_programs/{environ
 
 To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
-### Script generation
-A program can be executed in multiple scenes. Depending on the scene where the script is executed, it will be matched to different objects and generate a different sequence of graphs. To execute a script in a given scene, run:
+To check how the environments and sripts look like, check [dataset/README.md](dataset/README.md) for detailed information.
 
+## Installation
+
+How to install the executable or run the code in Unity
+### Step 1
+Download the virtualhome simulator [here]()
+
+### Step 2
+
+Clone this repository
+```bash
+git clone https://mboben@bitbucket.org//virtualhome.git
+# and maybe some basic setup
+# and download the original scripts
 ```
 
+### Step 3
+
+
+
+## QuickStart
+
+Run `sh run_example.sh` and you will get an activity video of this [scripts](example_scripts/...). 
+You can check more example activity videos [here]().
+
+For more details, see `example.py` file and there are some example scripts in `example_scripts` folder
+
+
+## Genrating Videos/Keyframes
+
+VirtualHome allows generating videos corresponding to an activity and keyframes corresponding to a snapshot of the environment state.
+
+
+### Generate videos
+
+
+If you want to generate the videos of the given scripts, 
+```bash
 ```
 
+### Generate keyframes
 
-
-### Script augmentation
-
-The original programs can be extended by replacing objects or perturbating the environment. You can find more details about how it is extended in [our paper](). To augment the dataset run.
-
+If you want to generate the keyframes of the given scripts, 
+```bash
+# commands of generating keyframes
 ```
+
+## Scripts Augmentation
+
+
+In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
+we augment the scripts with two knowledge base `KB-RealEnv` and `KB-ExceptonHandler`.
+You can download the augmented scripts [here]().
+
+Here, we provide the code to augment the sripts:
+
+### Augment with `KB-Affordance`
+
+```bash
 cd dataset_generation
 python augment_dataset_affordances.py
+```
+Note that this is not used in *Synthesizing Environment-Aware Activities via Activity Sketches*.
+
+### Augment with `KB-RealEnv`
+
+```bash
+cd dataset_generation
 python augment_dataset_locations.py
+```
 
-```  
 
+### Augment with `KB-ExceptionHandler`
 
-## Videos and Frames
-VirtualHome allows generating videos corresponding to an activity and frames corresponding to a snapshot of the environment state.
-
-### Generating videos
-
-The following files will be generated
-
-Check [examples](#Examples) for more details
-
-### Frames
- 
+```bash
+cd dataset_generation
+python augment_dataset_exceptions.py
+```
 
 ## Resources
-Contains resource files used to initialize the environment, set properties of objects and generate videos given the scripts. Check the folder for a description of its contents.
 
+To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
+Check [resources/README.md](resources/README.md) for more details.
