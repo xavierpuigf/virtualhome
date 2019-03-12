@@ -4,7 +4,8 @@ from tqdm import tqdm
 import re
 import glob
 import json
-import ipdb
+
+
 total_cont = 0
 progs_error = []
 state_node = ['is_on', 'is_off', 'plugged', 'unplugged', 'open', 'closed', 'clean', 'dirty', 'sitting', 'lying']
@@ -78,6 +79,7 @@ def check_preconds(graph_path, precon_path, mapping_path, errors):
                           if edge_or['relation_type'] == rel and edge_or['from_id'] == int(id1)]
         if len(edges_original) == 0:
             if rel != 'INSIDE':
+                import ipdb
                 ipdb.set_trace()
             print(graph_path)
             progs_error.append(graph_path)

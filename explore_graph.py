@@ -1,6 +1,7 @@
 import sys
 import json
-import ipdb
+
+
 path_json = sys.argv[1]
 query_help = '''
  Options:
@@ -71,5 +72,4 @@ while(True):
     if query != 'h':
         print(last_results)
         print('type "curr_result" to inspect the last result, the graph is also saved in "graph"\n')
-        ipdb.set_trace()
 
