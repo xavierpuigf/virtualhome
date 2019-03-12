@@ -5,8 +5,6 @@ import common
 from environment import *
 from scripts import Action, ScriptLine, Script
 
-import ipdb
-
 
 # ExecutionInfo
 ###############################################################################

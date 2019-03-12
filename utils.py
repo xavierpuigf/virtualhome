@@ -6,7 +6,7 @@ import copy
 import numpy as np
 from environment import EnvironmentGraph, Property, Room
 from execution import SitExecutor, LieExecutor
-import ipdb
+
 
 random.seed(123)
 
@@ -351,7 +351,7 @@ class graph_dict_helper(object):
                 if parameter.name in self.possible_rooms:
                     parameter.name = room_mapping[parameter.name]
 
-                assert (parameter.name, parameter.instance) in id_mapping, ipdb.set_trace()
+                assert (parameter.name, parameter.instance) in id_mapping
                 parameter.instance = id_mapping[(parameter.name, parameter.instance)]
 
     def ensure_light_on(self, graph_dict, id_checker):
@@ -428,7 +428,7 @@ class graph_dict_helper(object):
             first_room = self._random_pick_a_room_with_objects_name_in_graph(available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict)
         else:
             first_room = self._any_room_except(first_room, available_rooms_in_graph)
-        assert first_room is not None and first_room in available_rooms_in_graph, ipdb.set_trace()
+        assert first_room is not None and first_room in available_rooms_in_graph
 
         # mapping objects
         for obj in objects_in_script.keys():
@@ -647,6 +647,7 @@ class graph_dict_helper(object):
 
                 number_objects_to_add = max_occupancy - len(occupied_edges)
                 if number_objects_to_add < 0:
+                    import ipdb
                     ipdb.set_trace()
                 
                 object_placing = self.object_placing
@@ -705,7 +706,5 @@ class graph_dict_helper(object):
             if len(in_room) > 1:
                 print("src object: {}({})".format(id2name[id], id), "in_rooms:", ', '.join([id2name for i in in_room]))
                 print("exist in more than one room")
-                ipdb.set_trace()
             elif len(in_room) == 0:
                 print("src object: {}({})".format(id2name[id], id))
-                ipdb.set_trace()

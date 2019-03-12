@@ -5,8 +5,6 @@ from typing import List
 
 import common
 
-import ipdb
-
 
 class Action(Enum):
     """
