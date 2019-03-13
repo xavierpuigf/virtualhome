@@ -5,6 +5,7 @@ import utils
 import glob
 import random
 import numpy as np
+from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
 
@@ -293,7 +294,6 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
-    program_txt_files = program_txt_files[:100]
     n = max(len(program_txt_files) // (num_process*4), 1)
     program_txt_files = np.array(program_txt_files)
     pool = Pool(processes=num_process)
@@ -314,7 +314,7 @@ def check_whole_set(dir_path, graph_path):
         else:
             results = [check_original_script(inp) for inp in mp_inputs]
 
-        for k, (input, result) in enumerate(zip(mp_inputs, results)):
+        for input, result in zip(mp_inputs, results):
             i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
             if script is None:
@@ -329,9 +329,11 @@ def check_whole_set(dir_path, graph_path):
             else:
                 not_executable_program_length.append(len(script))
 
-            if verbose:
-                print(k, message)
-
+            if verbose and message != "Script is executable":
+                print(input[0])
+                print(input[1])
+                print(colored(message, "cyan"))
+                
             if i_txt_file not in info:
                 info[i_txt_file] = []
             info[i_txt_file].append({"message": message, "graph_path": i_graph_path})
