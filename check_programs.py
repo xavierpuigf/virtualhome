@@ -5,7 +5,8 @@ import utils
 import glob
 import random
 import numpy as np
-from joblib import Parallel, delayed
+from tqdm import tqdm
+from multiprocessing import Pool
 
 from scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
 from execution import ScriptExecutor
@@ -14,7 +15,7 @@ from environment import EnvironmentGraph
 
 random.seed(123)
 verbose = True
-dump = True
+dump = False
 multi_process = True
 num_process = os.cpu_count()
 max_nodes = 300
@@ -143,7 +144,6 @@ def translate_graph_dict(path):
     translated_path = path.replace('TestScene', 'TrimmedTestScene')
     json.dump({"nodes": new_nodes_script_object, "edges": new_edges, "trimmed_nodes": trimmed_nodes}, open(translated_path, 'w+'))
     return translated_path
-
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
@@ -293,27 +293,28 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
-    n = max(len(program_txt_files) // 30, 1)
+    program_txt_files = program_txt_files[:100]
+    n = max(len(program_txt_files) // (num_process*4), 1)
     program_txt_files = np.array(program_txt_files)
-    for txt_files in np.array_split(program_txt_files, n):
+    pool = Pool(processes=num_process)
+    for txt_files in tqdm(np.array_split(program_txt_files, n)):
         
         if multiple_graphs:
-            # Distribute programs across different graphs. Every program executed by 3 graphs
-            joblib_inputs = []
+            # Distribute programs across different graphs. Every program is executed by 3 graphs
+            mp_inputs = []
             for f in txt_files:
                 random.shuffle(graph_path)
                 for g in graph_path[:3]:
-                    joblib_inputs.append([f, g])
+                    mp_inputs.append([f, g])
         else:
-            joblib_inputs = [[f, graph_path] for f in txt_files]
+            mp_inputs = [[f, graph_path] for f in txt_files]
         
-        print("Running on simulators")
         if multi_process:
-            results = Parallel(n_jobs=num_process)(delayed(check_original_script)(inp) for inp in joblib_inputs)
+            results = pool.map(check_original_script, mp_inputs)
         else:
-            results = [check_original_script(inp) for inp in joblib_inputs]
+            results = [check_original_script(inp) for inp in mp_inputs]
 
-        for k, (input, result) in enumerate(zip(joblib_inputs, results)):
+        for k, (input, result) in enumerate(zip(mp_inputs, results)):
             i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
             if script is None:
