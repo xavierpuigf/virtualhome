@@ -16,7 +16,7 @@ from environment import EnvironmentGraph
 
 random.seed(123)
 verbose = True
-dump = False
+dump = True
 multi_process = True
 num_process = os.cpu_count()
 max_nodes = 300
@@ -148,6 +148,7 @@ def translate_graph_dict(path):
 
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
+
     script, precond = modify_objects_unity2script(script, precond)
     helper.initialize(graph_dict)
     if modify_graph:
