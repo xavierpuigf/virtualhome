@@ -1017,11 +1017,17 @@ class EatExecutor(ActionExecutor):
         if not _is_character_close_to(state, node):
             info.error('{} is not close to {}', _get_character_node(state), node)
             return False
-        if Property.EATABLE not in node.properties:
-            info.error('{} is not eatable', node)
-            return False
+            
+        if Property.EATABLE in node.properties:
+            return True
+        else:
+            nodes_in_objs = _find_nodes_from(state, node, relations=[Relation.ON])
+            if any([Property.EATABLE in node.properties for node in nodes_in_objs]):
+                return True
+            else:
+                info.error('{} is not eatable', node)
+                return False
 
-        return True
 
 
 class SleepExecutor(ActionExecutor):

@@ -283,8 +283,8 @@ def check_whole_set(dir_path, graph_path):
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
        
-    executable_programs = 0
-    not_parsable_programs = 0
+    executable_programs = []
+    not_parsable_programs = []
     executable_program_length = []
     not_executable_program_length = []
     if isinstance(graph_path, list):
@@ -294,6 +294,7 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
+    program_txt_files = ["input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds/withoutconds/results_text_rebuttal_specialparsed_programs_turk_robot/split32_2.txt"]
     n = max(len(program_txt_files) // (num_process*4), 1)
     program_txt_files = np.array(program_txt_files)
     pool = Pool(processes=num_process)
@@ -318,11 +319,11 @@ def check_whole_set(dir_path, graph_path):
             i_txt_file, i_graph_path = input
             script, message, executable, _, _ = result
             if script is None:
-                not_parsable_programs += 1
+                not_parsable_programs.append(i_txt_file)
                 continue
 
             if executable:
-                executable_programs += 1
+                executable_programs.append(i_txt_file)
                 if multiple_graphs:
                     executable_scene_hist[i_graph_path] += 1
                 executable_program_length.append(len(script))
@@ -330,8 +331,8 @@ def check_whole_set(dir_path, graph_path):
                 not_executable_program_length.append(len(script))
 
             if verbose and message != "Script is executable":
-                print(input[0])
-                print(input[1])
+                print(i_txt_file)
+                print(i_graph_path)
                 print(colored(message, "cyan"))
                 
             if i_txt_file not in info:
@@ -342,8 +343,8 @@ def check_whole_set(dir_path, graph_path):
         info['scene_hist'] = executable_scene_hist
         print(executable_scene_hist)
 
-    print("Total programs: {}, executable programs: {}".format(len(program_txt_files), executable_programs))
-    print("{} programs can not be parsed".format(not_parsable_programs))
+    print("Total programs: {}, executable programs: {} (unique: {})".format(len(program_txt_files), len(executable_programs), len(set(executable_programs))))
+    print("Programs that can not be parsed: {} (unique: {})".format(len(not_parsable_programs), len(set(not_parsable_programs))))
     if len(executable_program_length):
         executable_program_length = sum(executable_program_length) / len(executable_program_length)
     else:
