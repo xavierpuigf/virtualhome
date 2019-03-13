@@ -294,7 +294,6 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
-    #program_txt_files = ["input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds/withoutconds/results_intentions_march-13-18/file162_1.txt"]
     n = max(len(program_txt_files) // (num_process*4), 1)
     program_txt_files = np.array(program_txt_files)
     pool = Pool(processes=num_process)

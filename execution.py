@@ -919,7 +919,9 @@ class SqueezeExecutor(ActionExecutor):
             info.error('{} is not close to {}', _get_character_node(state), node)
             return False
 
-        squeezable_objects = ['cleaning_solution', 'tooth_paste', 'shampoo', 'food_peanut_butter', 'dish_soap', 'soap', 'towel', 'rag', 'paper']
+        squeezable_objects = ['cleaning_solution', 'tooth_paste', 'shampoo', 
+                'food_peanut_butter', 'dish_soap', 'soap', 'towel', 'rag', 'paper', 'sponge', 
+                'food_lemon', 'check']
         if Property.CLOTHES not in node.properties and node.class_name not in squeezable_objects:
             info.error('{} is not clothes', node)
             return False
