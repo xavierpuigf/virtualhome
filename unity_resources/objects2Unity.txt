@@ -65,7 +65,7 @@ COFFEE
 COFFEE CUP -> Mug
 COFFEE FILTER
 COFFEE POT -> Coffee_pot
-COFFEE TABLE -> Coffee_table, CoffeeTable, TVStand, TV_stand
+COFFEE TABLE -> Coffee_table, CoffeeTable
 COIN
 COLANDER
 COMB
@@ -110,8 +110,8 @@ ENTRANCE HALL -> LivingRoom
 ENVELOPE
 EYES_BOTH
 FACE
-FACE SOAP -> BarSoap, Face_cream
-FACIAL CLEANSER -> BarSoap, Face_cream
+FACE SOAP -> BarSoap
+FACIAL CLEANSER -> Face_cream
 FAUCET -> Faucet
 FAX MACHINE -> Printer
 FEET_BOOTH
@@ -134,8 +134,8 @@ FOOD_DESSERT -> Cupcake, Milkshake, Pancake, Pie, PoundCake, Pudding, Sundae, Wa
 FOOD_DONUT
 FOOD_EGG
 FOOD_FISH -> Salmon
-FOOD_FOOD -> Cereal, Potato, BellPepper, Bell_pepper, ChocolateSyrup, CreamyBuns, Crackers, Salmon, WhippedCream, Banana, Bananas, Chicken, Cutlets, Chinesefood
-FOOD_FRUIT -> Watermelon, Apple, Banana
+FOOD_FOOD -> Cereal, Potato, BellPepper, Bell_pepper, ChocolateSyrup, CreamyBuns, Crackers, Salmon, WhippedCream, Banana, Bananas, Chicken, Cutlets, Chinesefood, Pear, Plum, Orange, Cucumber, Tomato, Apple
+FOOD_FRUIT -> Watermelon, Apple, Banana, Pear, Plum, Orange
 FOOD_HAMBURGER -> MincedMeat
 FOOD_ICE CREAM
 FOOD_JAM
@@ -222,7 +222,7 @@ MOUTHWASH
 MUG -> Mug, WaterGlass, WineGlass
 MUSIC STAND
 NAIL POLISH
-NAPKIN -> Napkin
+NAPKIN -> Napkin, PaperTowel
 NEEDLE
 NEWSPAPER -> Magazine
 NIGHTSTAND -> Nightstand
@@ -256,7 +256,7 @@ RAG
 RAZOR
 RECEIPT -> Paper, Notes, !PaperTowel, !ToiletPaper
 REMOTE CONTROL -> Remote_control
-SAUCE -> Condiment_bottle, Condiment
+SAUCE -> Condiment_bottle
 SAUCE PAN -> FryingPan
 SCISSORS
 SCRABBLE
