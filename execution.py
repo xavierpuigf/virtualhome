@@ -1024,13 +1024,15 @@ class EatExecutor(ActionExecutor):
         if Property.EATABLE in node.properties:
             return True
         else:
-            nodes_in_objs = _find_nodes_from(state, node, relations=[Relation.ON])
-            if any([Property.EATABLE in node.properties for node in nodes_in_objs]):
-                return True
-            else:
+            nodes_in_objs = _find_nodes_to(state, node, relations=[Relation.ON])
+            if len(nodes_in_objs) == 0:
                 info.error('{} is not eatable', node)
                 return False
-
+            elif any([Property.EATABLE in node.properties for node in nodes_in_objs]):
+                return True
+            else:
+                info.error('none of object on {} is eatable', node)
+                return False
 
 
 class SleepExecutor(ActionExecutor):
@@ -1097,6 +1099,15 @@ def _get_room_node(state: EnvironmentState, node: Node):
             return n
     return None
 
+
+def _find_nodes_to(state: EnvironmentState, node: Node, relations: List[Relation]):
+    nodes = []
+    for src_node in AnyNode().enumerate(state):
+        for r in relations:
+            nl = state.get_nodes_from(src_node, r)
+            if node in nl:
+                nodes.append(src_node)
+    return nodes
 
 def _find_nodes_from(state: EnvironmentState, node: Node, relations: List[Relation]):
     nodes = []
