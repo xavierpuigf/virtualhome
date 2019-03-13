@@ -2,9 +2,9 @@ import os
 import sys
 import json
 import utils
-import glob
 import random
 import numpy as np
+from glob import glob
 from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
@@ -281,7 +281,7 @@ def check_whole_set(dir_path, graph_path):
     """
 
     program_dir = os.path.join(dir_path, 'withoutconds')
-    program_txt_files = glob.glob(os.path.join(program_dir, '*/*.txt'))
+    program_txt_files = glob(os.path.join(program_dir, '*/*.txt'))
        
     executable_programs = []
     not_parsable_programs = []
@@ -294,7 +294,7 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
-    program_txt_files = ["input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds/withoutconds/results_text_rebuttal_specialparsed_programs_turk_robot/split32_2.txt"]
+    #program_txt_files = ["input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds/withoutconds/results_intentions_march-13-18/file162_1.txt"]
     n = max(len(program_txt_files) // (num_process*4), 1)
     program_txt_files = np.array(program_txt_files)
     pool = Pool(processes=num_process)
@@ -428,4 +428,5 @@ if __name__ == '__main__':
     else:
         translated_path = [translate_graph_dict(path='example_graphs/TestScene{}_graph.json'.format(i+1)) for i in range(6)]
         translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
-    check_whole_set('{}/programs_processed_precond_nograb_morepreconds'.format('input_scripts_preconds_release'), graph_path=translated_path)
+    programs_dir = 'input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds'
+    check_whole_set(programs_dir, graph_path=translated_path)
