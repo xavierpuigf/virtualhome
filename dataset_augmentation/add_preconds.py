@@ -115,10 +115,8 @@ def get_preconds_script(script_lines):
             is_sitting = None
 
         else:
-
             if len(obj_names) > 0:
                 obj_id = (obj_names[0], ins_num[0])
-
 
             if action in ['PutBack', 'PutObjBack', 'PutIn']:
                 if obj_id in object_grabbed.keys():
@@ -129,15 +127,14 @@ def get_preconds_script(script_lines):
                     if obj_id in obj_location.keys():
                         del obj_location[obj_id]
             if is_sitting is not None and obj_id not in object_grabbed.keys() and obj_id != is_sitting:
-                # If you did put the object somewhere, this somewhere should be close to the sit
-                if obj_id in obj_location.keys():
+                # If you did put the object somewhere, this somewhere should be close to the sitting place
+                if obj_id in obj_location.keys() and obj_location[obj_id] != is_sitting:
                     precond_dict.addPrecond('atreach', is_sitting, [obj_location[obj_id]]) 
                 else:
                     precond_dict.addPrecond('atreach', is_sitting, [obj_id])
 
             if action == 'Grab':
                 object_grabbed[obj_id] = True
-
     # If the character's first action is standup (no sitting before), then precond is it
     is_sitting = False
     is_lying = False
@@ -300,7 +297,7 @@ def get_preconds_script(script_lines):
     object_grabbed = {}
 
     # Check for finds that dont have interaction afterwards,
-    # this means that the second object should be nearby hr first
+    # this means that the second object should be nearby the first
     for i in range(len(content)):
         curr_block = content[i]
         action, obj_names, ins_num = parseStrBlock(curr_block)
@@ -316,6 +313,7 @@ def get_preconds_script(script_lines):
                             continue
                         
                         if obj_id not in newobj and str(newobj[0]) not in existing_relations and obj_id[0] not in rooms:
+                            print('HERE')
                             if obj_id[0].upper() in tables_and_surfaces and len(newobj) < 2:
                                 preposition = 'in'
                                 if newobj[0][0].upper() == 'CHAIR':
@@ -381,10 +379,6 @@ def get_preconds_script(script_lines):
 
     return precond_dict
 
-
-path_scripts = '../../data/data_march_12/programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt'
-all_scripts = glob.glob(path_scripts)
-
 def compare_preconds(precond_dict1, precond_dict2):
     def to_hash(precond_list):
         pr_list = precond_list.copy()
@@ -421,19 +415,25 @@ def compare_preconds(precond_dict1, precond_dict2):
         # print('Intersection')
         # print(list(set(l1).intersection(l2)))
         
-        
-        print('Missing')
-        print(list(set(l1) - set(l2)))
-        print(set(l1))
-        print('Extra')
-        print(list(set(l2) - set(l1)))
-        print('\n')
-        return False
+        if len(list(set(l1) - set(l2))) > 0:
+            print('Missing')
+            print(list(set(l1) - set(l2)))
+            print(set(l1))
+            print('Extra')
+            print(list(set(l2) - set(l1)))
+            print('\n')
+            return False
             
         return True
 
     return True
 
+path_scripts = '../../../../data/data_andrew_changed_march_13/programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt'
+#path_scripts = '../../../../data/data_march_12/programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt'
+
+all_scripts = sorted(glob.glob(path_scripts))
+all_scripts = [x for x in all_scripts if '/'.join(x.split('/')[-2:]) == 'results_text_rebuttal_specialparsed_programs_turk_third/split99_4.txt']
+print(len(all_scripts))
 cont_bad = 0
 for script_name in all_scripts:
     precond_dict = Precond()
@@ -447,7 +447,7 @@ for script_name in all_scripts:
     try:
         precond_dict = get_preconds_script(content)
     except ScriptFail as e:
-        print(e, script_name)
+        #print(e, script_name)
         continue
     with open(script_name_out, 'r') as f:
         previous_preconds = json.load(f)
@@ -455,6 +455,7 @@ for script_name in all_scripts:
     #previous_preconds
     new_preconds = precond_dict.printCondsJSON()
     res = compare_preconds(previous_preconds, new_preconds)
+    print(new_preconds)
     if not res:
         cont_bad += 1
         print('\n'.join(content))
@@ -462,7 +463,7 @@ for script_name in all_scripts:
         pass;
         #ipdb.set_trace()
     if dump_preconds:
-        json_file = script_name_out.replace('withoutconds', 'initstate').replace('.txt', '.json')
+        json_file = script_name_out
         if not os.path.isdir(os.path.dirname(json_file)):
             os.makedirs(os.path.dirname(json_file))
         with open(json_file, 'w+') as f:

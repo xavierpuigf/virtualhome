@@ -4,6 +4,8 @@ import pdb
 import os
 import json
 
+with open('../resources/object_script_properties_data.json', 'r') as f:
+    object_properties = json.load(f)
 
 def parseStrBlock(block_str):
     """ Given a str block [Rinse] <CLEANING SOLUTION> (1)
@@ -60,8 +62,8 @@ class Precond:
             self.precond_dict[cond][obj1] = set(obj2)
         else:
             # self.precond_dict[cond][obj1] = set(list(self.precond_dict[cond][obj1])+list(obj2))
-            if len(self.precond_dict[cond][obj1]) == 0:
-                self.precond_dict[cond][obj1] = set(obj2)
+            old_objects = list(self.precond_dict[cond][obj1])
+            self.precond_dict[cond][obj1] = set(old_objects+obj2)
     def printConds(self):
         res = [str(len(self.precond_dict.keys()))]
         for cond in self.precond_dict.keys():
@@ -83,14 +85,12 @@ class Precond:
             if cond != 'nearby':
                 for it in self.precond_dict[cond].keys():
                     it_lowercase = [it[0].lower().replace(' ', '_'), it[1]]
-                    if len(self.precond_dict[cond][it]) > 1:
-                        pdb.set_trace()
                     if len(self.precond_dict[cond][it]) == 0:
                         conds.append({cond: it_lowercase})
                     else:
-                        elements = list(self.precond_dict[cond][it])[0]
-                        elements_lower = [elements[0].lower().replace(' ', '_'), elements[1]]
-                        conds.append({cond: [it_lowercase, elements_lower]})
+                        for elements in list(self.precond_dict[cond][it]):
+                            elements_lower = [elements[0].lower().replace(' ', '_'), elements[1]]
+                            conds.append({cond: [it_lowercase, elements_lower]})
 
         return conds
     def removeCond(self, cond, object_id=None, second=None):
