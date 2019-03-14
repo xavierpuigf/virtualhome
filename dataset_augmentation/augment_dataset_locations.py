@@ -102,8 +102,7 @@ def augment_dataset(d, programs):
         if len(d.keys()) % 20 == 0 and verbose:
             print(len(d.keys()))
 
-        state_file = program_name.replace(
-                'withoutconds', 'initstate').replace('.txt', '.json')
+        state_file = program_name.replace('withoutconds', 'initstate').replace('.txt', '.json')
 
         with open(program_name, 'r') as f:
             lines_program = f.readlines()
@@ -162,7 +161,6 @@ def augment_dataset(d, programs):
 
         # For every permutation, we compute the new program
         for rec_id in recursive_selection:
-
             # change program
             new_lines = program
             precond_modif = copy.deepcopy(ori_precond)
@@ -216,7 +214,7 @@ def augment_dataset(d, programs):
         if write_augment_data:
             augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i)
             augmentation_utils.write_data(augmented_data_dir, program_name, augmented_progs_i_new_inst, 
-                    'executable_programs/{}/'.format(apt_name))
+                                          'executable_programs/{}/'.format(apt_name))
             augmentation_utils.write_precond(augmented_data_dir, program_name, augmented_preconds_i)
             augmentation_utils.write_graph(augmented_data_dir, program_name, state_list_i, apt_name)
 

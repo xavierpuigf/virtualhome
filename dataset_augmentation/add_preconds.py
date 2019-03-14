@@ -7,7 +7,7 @@ import json
 import ipdb
 from augmentation_utils import *
 
-dump_preconds = False
+dump_preconds = True
 rooms = [x.lower() for x in [
         'Kitchen',
         'Bathroom',
@@ -313,7 +313,6 @@ def get_preconds_script(script_lines):
                             continue
                         
                         if obj_id not in newobj and str(newobj[0]) not in existing_relations and obj_id[0] not in rooms:
-                            print('HERE')
                             if obj_id[0].upper() in tables_and_surfaces and len(newobj) < 2:
                                 preposition = 'in'
                                 if newobj[0][0].upper() == 'CHAIR':
@@ -415,13 +414,13 @@ def compare_preconds(precond_dict1, precond_dict2):
         # print('Intersection')
         # print(list(set(l1).intersection(l2)))
         
+        #print('Missing')
+        #print(list(set(l1) - set(l2)))
+        #print(set(l1))
+        #print('Extra')
+        #print(list(set(l2) - set(l1)))
+        #print('\n')
         if len(list(set(l1) - set(l2))) > 0:
-            print('Missing')
-            print(list(set(l1) - set(l2)))
-            print(set(l1))
-            print('Extra')
-            print(list(set(l2) - set(l1)))
-            print('\n')
             return False
             
         return True
@@ -432,7 +431,7 @@ path_scripts = '../../../../data/data_andrew_changed_march_13/programs_processed
 #path_scripts = '../../../../data/data_march_12/programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt'
 
 all_scripts = sorted(glob.glob(path_scripts))
-all_scripts = [x for x in all_scripts if '/'.join(x.split('/')[-2:]) == 'results_text_rebuttal_specialparsed_programs_turk_third/split99_4.txt']
+#all_scripts = [x for x in all_scripts if '/'.join(x.split('/')[-2:]) == 'results_text_rebuttal_specialparsed_programs_turk_third/split99_4.txt']
 print(len(all_scripts))
 cont_bad = 0
 for script_name in all_scripts:
@@ -455,7 +454,6 @@ for script_name in all_scripts:
     #previous_preconds
     new_preconds = precond_dict.printCondsJSON()
     res = compare_preconds(previous_preconds, new_preconds)
-    print(new_preconds)
     if not res:
         cont_bad += 1
         print('\n'.join(content))

@@ -283,7 +283,6 @@ def check_whole_set(dir_path, graph_path):
 
     program_dir = os.path.join(dir_path, 'withoutconds')
     program_txt_files = glob(os.path.join(program_dir, '*/*.txt'))
-       
     executable_programs = []
     not_parsable_programs = []
     executable_program_length = []
@@ -295,6 +294,9 @@ def check_whole_set(dir_path, graph_path):
         multiple_graphs = False
 
     info = {}
+    if os.path.isfile('data/executable_info.json'):
+        with open('data/executable_info.json', 'r') as f:
+            info = json.load(f)
     n = max(len(program_txt_files) // (num_process*4), 1)
     program_txt_files = np.array(program_txt_files)
     pool = Pool(processes=num_process)
@@ -358,7 +360,7 @@ def check_whole_set(dir_path, graph_path):
     info["executable_prog_len"] = executable_program_length
     info["non_executable_prog_len"] = not_executable_program_length
     print("Executable program average length: {:.2f}, not executable program average length: {:.2f}".format(executable_program_length, not_executable_program_length))
-    json.dump(info, open("executable_info.json", 'w'))
+    json.dump(info, open("data/executable_info.json", 'w'))
 
 
 def check_executability(input):
