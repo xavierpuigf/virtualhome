@@ -430,5 +430,5 @@ if __name__ == '__main__':
     else:
         translated_path = [translate_graph_dict(path='example_graphs/TestScene{}_graph.json'.format(i+1)) for i in range(6)]
         translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
-    programs_dir = 'input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds'
+    programs_dir = 'data/input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds'
     check_whole_set(programs_dir, graph_path=translated_path)
