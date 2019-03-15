@@ -64,7 +64,6 @@ for prog, apt_names in programs_to_apt.items():
 
 
 programs = [('{}/withoutconds/{}'.format(original_program_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
-programs = programs[5:]
 
 objects_occupied = [
     'couch',
@@ -111,7 +110,11 @@ def obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script):
     for script_line in modified_script:
         script_line_str = '[{}]'.format(script_line.action.name)
         if script_line.object():
-            script_line_str += ' <{}> ({})'.format(*reverse_id_mapping[script_line.object().instance])
+            try:
+                script_line_str += ' <{}> ({})'.format(*reverse_id_mapping[script_line.object().instance])
+            except:
+                print(id_mapping)
+                print(script_line.object().instance)
         if script_line.subject():
             script_line_str += ' <{}> ({})'.format(*reverse_id_mapping[script_line.subject().instance])
         new_script.append(script_line_str)
@@ -121,7 +124,6 @@ def obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script):
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
     for program_name, apt_name in tqdm(programs):
-        print(program_name)
         augmented_progs_i = []
         augmented_progs_i_new_inst = []
         augmented_preconds_i = []
@@ -197,18 +199,18 @@ def augment_dataset(d, programs):
             message_acum = []
             program_acum = []
             while not executable and max_iter < maximum_iters and lines_program is not None:        
-                print(lines_program)
-                (message, final_state, graph_state_list, input_graph, 
-                    id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
-                            lines_program, 
-                            init_state, 
-                            '../example_graphs/{}.json'.format(apt_name),
-                            input_graph,
-                            id_mapping,
-                            info)
-                #print(message)
+                try:
+                    (message, final_state, graph_state_list, input_graph, 
+                        id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
+                                lines_program, 
+                                init_state, 
+                                '../example_graphs/{}.json'.format(apt_name),
+                                input_graph,
+                                id_mapping,
+                                info)
+                except:
+                    print(program_name)
                 lines_program = obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script)
-
                 message_acum.append(message)
                 program_acum.append(lines_program)
                 if False:
@@ -229,8 +231,6 @@ def augment_dataset(d, programs):
                 if isinstance(lines_program, tuple) and lines_program[0] is None:
                     lines_program = None
                     continue
-                ipdb.set_trace()
-                #lines_program = obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script)
 
 
             # Save the program
