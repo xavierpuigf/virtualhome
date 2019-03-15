@@ -44,7 +44,7 @@ VirtualHome has been used in:
 - Installation
 - QuickStart
 - Generating Videos/Keyframes
-- Scripts Augmentation
+- Script Augmentation
 - Other details
 
 ## Motivation
@@ -82,7 +82,10 @@ To check how the environments and sripts look like, check [dataset/README.md](da
 
 How to install the executable or run the code in Unity
 ### Step 1
-Download the virtualhome simulator [here]()
+Download the virtualhome simulator.
+
+- Download UNIX version [here]()
+- Download MacOS version [here]()
 
 ### Step 2
 
@@ -92,9 +95,6 @@ git clone https://mboben@bitbucket.org//virtualhome.git
 # and maybe some basic setup
 # and download the original scripts
 ```
-
-### Step 3
-
 
 
 ## QuickStart
@@ -124,7 +124,7 @@ If you want to generate the keyframes of the given scripts,
 # commands of generating keyframes
 ```
 
-## Scripts Augmentation
+## Script Augmentation
 
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
