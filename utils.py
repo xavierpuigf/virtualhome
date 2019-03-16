@@ -41,8 +41,8 @@ def load_properties_data(file_name='resources/properties_data.json'):
 
 def build_unity2object_script(script_object2unity_object):
     """Builds mapping from Unity 2 Script objects. It works by creating connected
-      components between objects: A: [C, D], B: [F, E]. Since they share
-      one object, A, B, C, D, F, E should be merged
+      components between objects: A: [c, d], B: [f, e]. Since they share
+      one object, A, B, c, d, f, e should be merged
     """
     unity_object2script_object = {}
     object_script_merge = {}
@@ -165,7 +165,8 @@ class graph_dict_helper(object):
 
         self.body_part = ['face', 'leg', 'arm', 'eye', 'hand', 'feet']
         self.possible_rooms = ['home_office', 'kitchen', 'living_room', 'bathroom', 'dining_room', 'bedroom', 'kids_bedroom', 'entrance_hall']
-        
+        self.script_object2unity_object = load_name_equivalence()
+        self.unity_object2script_object = build_unity2object_script(self.script_object2unity_object)
         self.equivalent_rooms = {
             "kitchen": "dining_room", 
             "dining_room": "kitchen", 
@@ -350,8 +351,13 @@ class graph_dict_helper(object):
             for parameter in script_line.parameters:
                 if parameter.name in self.possible_rooms:
                     parameter.name = room_mapping[parameter.name]
+                try:
+                    assert (parameter.name, parameter.instance) in id_mapping
+                except:
+                    print(parameter.name, parameter.instance)
+                    print(id_mapping)
+                    assert (parameter.name, parameter.instance) in id_mapping
 
-                assert (parameter.name, parameter.instance) in id_mapping
                 parameter.instance = id_mapping[(parameter.name, parameter.instance)]
 
     def ensure_light_on(self, graph_dict, id_checker):
@@ -536,6 +542,15 @@ class graph_dict_helper(object):
                             elif k == 'occupied':
                                 self._change_to_occupied(node, graph_dict, objects_to_place)
                             break
+    
+    def merge_object_name(self, object_name):
+        if object_name in self.script_object2unity_object:
+            unity_name = self.script_object2unity_object[object_name][0].replace('_', '')
+        else:
+            unity_name = object_name.replace('_', '')
+        if unity_name not in self.unity_object2script_object:
+            return object_name
+        return self.unity_object2script_object[unity_name]
 
     def add_random_objs_graph_dict(self, graph_dict, n):
 
@@ -560,9 +575,12 @@ class graph_dict_helper(object):
 
             src_name = random.choice(objects_to_place)
             tgt_names = copy.deepcopy(object_placing[src_name])
+            # Merge object names
+            src_name = self.merge_object_name(src_name)
+            for tgt_name in tgt_names:
+                tgt_name['destination'] = self.merge_object_name(tgt_name['destination']) 
             random.shuffle(tgt_names)
             for tgt_name in tgt_names:
-
                 tgt_nodes = [i for i in filter(lambda v: v["class_name"] == tgt_name['destination'], graph_dict["nodes"])]
                 if len(tgt_nodes) != 0:
 
@@ -655,6 +673,9 @@ class graph_dict_helper(object):
 
                 for src_name in objects_to_place:
                     tgt_names = object_placing[src_name]
+                    src_name = self.merge_object_name(src_name)
+                    for tgt_name in tgt_names:
+                        tgt_name['destination'] = self.merge_object_name(tgt_name['destination']) 
                     if name in [i["destination"] for i in filter(lambda v: v["relation"] == 'ON', tgt_names)]:
                         self._remove_one_random_nodes(graph_dict)
                         self._add_missing_node(graph_dict, self.random_objects_id, src_name, 'placable_objects')

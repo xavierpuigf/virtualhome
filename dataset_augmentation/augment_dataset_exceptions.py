@@ -27,8 +27,8 @@ np.random.seed(123)
 # Options
 verbose = False
 thres = 300
-write_augment_data = True
-multi_process = True
+write_augment_data = False
+multi_process = False
 num_processes = os.cpu_count() // 2
 prob_modif = 0.7
 maximum_iters = 20
@@ -64,7 +64,6 @@ for prog, apt_names in programs_to_apt.items():
 
 
 programs = [('{}/withoutconds/{}'.format(original_program_folder, prog_name), apt) for prog_name, apt in programs_to_apt.items()]
-
 
 objects_occupied = [
     'couch',
@@ -103,6 +102,24 @@ def from_hash(precond_tuple):
         precond_list[it] = {key_elem: values}
     return precond_list
 
+def obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script):
+    reverse_id_mapping = {}
+    for object_script, id_sim  in id_mapping.items():
+        reverse_id_mapping[id_sim] = object_script
+    new_script = []
+    for script_line in modified_script:
+        script_line_str = '[{}]'.format(script_line.action.name)
+        if script_line.object():
+            try:
+                script_line_str += ' <{}> ({})'.format(*reverse_id_mapping[script_line.object().instance])
+            except:
+                print(id_mapping)
+                print(script_line.object().instance)
+        if script_line.subject():
+            script_line_str += ' <{}> ({})'.format(*reverse_id_mapping[script_line.subject().instance])
+        new_script.append(script_line_str)
+    lines_program = lines_program[:4] + new_script
+    return lines_program
 
 def augment_dataset(d, programs):
     programs = np.random.permutation(programs).tolist()
@@ -182,14 +199,18 @@ def augment_dataset(d, programs):
             message_acum = []
             program_acum = []
             while not executable and max_iter < maximum_iters and lines_program is not None:        
-                (message, final_state, graph_state_list, input_graph, 
-                id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
-                        lines_program, 
-                        init_state, 
-                        '../example_graphs/{}.json'.format(apt_name),
-                        input_graph,
-                        id_mapping,
-                        info)
+                try:
+                    (message, final_state, graph_state_list, input_graph, 
+                        id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
+                                lines_program, 
+                                init_state, 
+                                '../example_graphs/{}.json'.format(apt_name),
+                                input_graph,
+                                id_mapping,
+                                info)
+                except:
+                    print(program_name)
+                lines_program = obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script)
                 message_acum.append(message)
                 program_acum.append(lines_program)
                 if False:
@@ -253,13 +274,10 @@ processes = []
 if multi_process:
     manager = Manager()
     programs_done = manager.dict()
-    for m in range(num_processes):
-        
+    for m in range(num_processes):    
         p = Process(target=augment_dataset, args=(programs_done, programs))
         p.start()
         processes.append(p)
-
-
     for p in processes:
         p.join()
 

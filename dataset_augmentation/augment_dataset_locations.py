@@ -175,15 +175,18 @@ def augment_dataset(d, programs):
 
 
             
-            init_state = ast.literal_eval(precond_modif)
-            (message, final_state, graph_state_list, input_graph, 
-            id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
-                    new_lines, 
-                    init_state, 
-                    '../example_graphs/{}.json'.format(apt_name),
-                    None,
-                    {},
-                    {})
+            try:
+                init_state = ast.literal_eval(precond_modif)
+                (message, final_state, graph_state_list, input_graph, 
+                    id_mapping, info, graph_helper, modified_script) = check_programs.check_script(
+                            new_lines, 
+                            init_state, 
+                            '../example_graphs/{}.json'.format(apt_name),
+                            None,
+                            {},
+                            {})
+            except:
+                ipdb.set_trace()
 
             # Convert the program
             lines_program_newinst = []
@@ -201,7 +204,6 @@ def augment_dataset(d, programs):
                                                               '<{}> ({}.{})'.format(obj_name, obj_number, id))
                 lines_program_newinst.append(script_line_str)
 
-            ipdb.set_trace()
             augmented_progs_i_new_inst.append(lines_program_newinst)
             state_list_i.append(graph_state_list)
             augmented_progs_i.append(new_lines)         

@@ -1,3 +1,4 @@
+import ipdb
 import os
 import sys
 import json
@@ -149,8 +150,8 @@ def translate_graph_dict(path):
 
 def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
 
-    script, precond = modify_objects_unity2script(script, precond)
     helper.initialize(graph_dict)
+    script, precond = modify_objects_unity2script(helper, script, precond)
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
         ## id mapping can specify the objects that already specify in the graphs
@@ -186,7 +187,6 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         helper.modify_script_with_specified_id(script, id_mapping, **info)
 
     graph = EnvironmentGraph(graph_dict)
-
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
     executable, final_state, graph_state_list = executor.execute(script, w_graph_list=w_graph_list)
@@ -215,7 +215,6 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
         graph_dict = utils.load_graph_dict(graph_path)
     else:
         graph_dict = inp_graph_dict
-
     message, executable, final_state, graph_state_list, id_mapping, info, modif_script = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=True, modify_graph=(inp_graph_dict is None),
         id_mapping=id_mapping, **info)
@@ -250,28 +249,26 @@ def check_original_script(inp):
     return script, message, executable, graph_state_list, id_mapping
 
 
-def modify_objects_unity2script(script, precond):
+def modify_objects_unity2script(helper, script, precond):
     """Convert the script and precond's objects to match unity programs
     """
-    script_object2unity_object = utils.load_name_equivalence()
-    unity_object2script_object = utils.build_unity2object_script(script_object2unity_object)
     for script_line in script:
         for param in script_line.parameters:
-            if param.name in unity_object2script_object:
-                param.name = unity_object2script_object[param.name]
+            if param.name in helper.unity_object2script_object:
+                param.name = helper.unity_object2script_object[param.name]
 
     for p in precond:
         for k, vs in p.items():
             if isinstance(vs[0], list): 
                 for v in vs:
                     v[0] = v[0].lower().replace(' ', '_')
-                    if v[0] in unity_object2script_object:
-                        v[0] = unity_object2script_object[v[0]]
+                    if v[0] in helper.unity_object2script_object:
+                        v[0] = helper.unity_object2script_object[v[0]]
             else:
                 v = vs
                 v[0] = v[0].lower().replace(' ', '_')
-                if v[0] in unity_object2script_object:
-                    v[0] = unity_object2script_object[v[0]]
+                if v[0] in helper.unity_object2script_object:
+                    v[0] = helper.unity_object2script_object[v[0]]
             
     return script, precond
 
@@ -430,5 +427,5 @@ if __name__ == '__main__':
     else:
         translated_path = [translate_graph_dict(path='example_graphs/TestScene{}_graph.json'.format(i+1)) for i in range(6)]
         translated_path = ['example_graphs/TrimmedTestScene{}_graph.json'.format(i+1) for i in range(6)]
-    programs_dir = 'input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds'
+    programs_dir = 'data/input_scripts_preconds_release/programs_processed_precond_nograb_morepreconds'
     check_whole_set(programs_dir, graph_path=translated_path)
