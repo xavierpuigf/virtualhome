@@ -116,6 +116,7 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+COPY ./run_sim.sh /
 
 RUN apt-get update && apt-get -y upgrade
 
@@ -126,6 +127,4 @@ RUN apt-get install -y xvfb
 # port 8080 is the port used in in Editor training.
 EXPOSE 8080
 
-ENTRYPOINT xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" \
-	/unity_vol/executable_march14/synvid.x86_64 -batchmode -screen-width=84 \
-	-screen-height=84 -http-port=8080
+ENTRYPOINT ["./run_sim.sh"]i
