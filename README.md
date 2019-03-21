@@ -162,5 +162,5 @@ Check [resources/README.md](resources/README.md) for more details.
 
 
 ## Docker
-You can also run VirtualHome using Docker. You can find how to set it up [here](#Docker)
+You can also run VirtualHome using Docker. You can find how to set it up [here](Docker)
 

@@ -1,6 +1,7 @@
 import ipdb
 import os
 import sys
+sys.path.append('..')
 import json
 import utils
 import random
@@ -10,9 +11,9 @@ from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
 
-from scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
-from execution import ScriptExecutor
-from environment import EnvironmentGraph
+from evolving_graph.scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
+from evolving_graph.execution import ScriptExecutor
+from evolving_graph.environment import EnvironmentGraph
 
 
 random.seed(123)

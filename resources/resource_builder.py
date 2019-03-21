@@ -22,7 +22,7 @@ def transform_name_equivalence():
                 if len(equiv) > 0:
                     result[key.replace(' ', '_')] = equiv
 
-    with open('resources/class_name_equivalence.json', 'w') as f:
+    with open('graph_resources/class_name_equivalence.json', 'w') as f:
         f.write(json.dumps(result))
 
 
@@ -54,7 +54,7 @@ def transform_object_placing():
                     placings = result.setdefault(key, [])
                     placings.append({'destination': value, 'relation': 'ON', 'room': room})
 
-    with open('resources/object_placing.json', 'w') as f:
+    with open('graph_resources/object_placing.json', 'w') as f:
         f.write(json.dumps(result))
 
 
@@ -69,7 +69,7 @@ def transform_properties_data():
         for j, p in enumerate(properties):
             if property_matrix[i][j] == 1:
                 result.setdefault(o, []).append(p)
-    with open('resources/properties_data.json', 'w') as f:
+    with open('graph_resources/properties_data.json', 'w') as f:
         f.write(json.dumps(result))
 
 
@@ -91,7 +91,7 @@ def transform_allprefabs_parsed():
                 value = line.strip()
                 result.setdefault(key, []).append(value)
 
-    with open('resources/object_prefabs.json', 'w') as f:
+    with open('graph_resources/object_prefabs.json', 'w') as f:
         f.write(json.dumps(result, sort_keys=True, indent=4))
 
 

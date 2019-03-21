@@ -17,7 +17,6 @@ from scipy.io import *
 
 import augmentation_utils
 
-sys.path.append('..')
 import check_programs
 import utils
 

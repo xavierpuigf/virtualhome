@@ -10,7 +10,7 @@ import IPython.display
 import PIL
 import os
 os.chdir('../')
-from graph_export.scriptcheck import UnityCommunication
+from comm_unity import UnityCommunication
 comm = UnityCommunication()
 
 

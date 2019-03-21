@@ -17,7 +17,6 @@ from termcolor import colored
 
 import augmentation_utils
 
-sys.path.append('..')
 import check_programs
 import utils
 
