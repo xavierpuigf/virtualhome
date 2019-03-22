@@ -1,5 +1,5 @@
 # VirtualHome
-VirtualHome is a platform to simulate complex household activities via Programs. 
+VirtualHome is a platform to simulate complex household activities via programs. 
 Given an initial environment describing an apartment and a program depicting a sequence of actions, 
 VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
 
@@ -39,6 +39,7 @@ VirtualHome has been used in:
 ## Contents
 
 - Motivation
+- Overview
 - Dataset 
 - Installation
 - QuickStart
@@ -51,10 +52,20 @@ VirtualHome has been used in:
 Among lots of simulator aiming at interacting with environments, why does virtualhome stand out? 
 (can be that we focus on high-level action, including watching, ... etc.)
 
+## Overview
+Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the Unity simulator and EvolvingGraph.
+
+### Unity Simulator 
+This simulator is built in Unity and allows to generate videos of activities. To use this simulator you will need to download the appropiate executable and run the `comm_unity.py` API.
+
+### Evolving Graph
+This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [evolving_graph](evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator
+
+
 ## Dataset
 
-We collected a dataset of programs to execute in the environment. You can download them in [link to programs](). 
-Once downloaded, move programs into the `dataset` folder. The dataset should follow the following structure:
+We collected a dataset of programs and augmented them with graphs after executing them in our environments. You can download them [here - GET LINK](). 
+Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
 
 ```
 dataset
@@ -75,7 +86,8 @@ To view a script executed in an enviornment, check `executable_programs/{environ
 
 To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
-To check how the environments and sripts look like, check [dataset/README.md](dataset/README.md) for detailed information.
+You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md). 
+
 
 ## Installation
 
