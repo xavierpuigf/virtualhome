@@ -95,8 +95,8 @@ How to install the executable or run the code in Unity
 ### Step 1
 Download the virtualhome simulator.
 
-- [Download]() UNIX version
-- [Download]() MacOSX version.
+- [Download]() Linux x86-64 version.
+- [Download]() Mac OS X version.
 
 ### Step 2
 
