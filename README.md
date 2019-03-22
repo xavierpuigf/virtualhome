@@ -95,8 +95,6 @@ How to install the executable or run the code in Unity
 ### Clone repository and install dependencies
 ```bash
 git clone https://mboben@bitbucket.org//virtualhome.git
-# and maybe some basic setup
-# and download the original scripts
 ```
 
 ### Download UnitySimulator
@@ -124,15 +122,11 @@ VirtualHome UnitySimulator allows generating videos corresponding to household a
 
 ### Generate videos
 
-Open the simulator as indicated in [Test simulator](###Test simulator). And go to directory `simulation/unity_simulator/`. Then run:
+Open the simulator as indicated in [Test simulator](###Test simulator) and run:
 
 ```bash
-from comm_unity import UnityCommunication
-script = ['[Walk] <sofa> (1)', '[Sit] <sofa> (1)'] # Add here your script
-comm = UnityCommunication()
-comm.reset()
-comm.render_script(script, capture_screenshot=True)
-
+cd demo/
+python generate_video.py
 ```
 The video frames will be generated in a folder called `output`. You can check more options in the [demo](demo/unity_demo.ipynb).
 
@@ -142,14 +136,16 @@ The video frames will be generated in a folder called `output`. You can check mo
 To generate snapshots. Open the simulator as indicated in [Test simulator](###Test simulator).
 
 ```bash
-# commands of generating keyframes
+cd demo/
+python generate_snapshots.py
 ```
+A grid of snapshots for the given script will be generated.
 
 ## Script Augmentation
 
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
-we augment the scripts with two knowledge base `KB-RealEnv` and `KB-ExceptonHandler`.
+we augment the scripts with two knowledges: base `KB-RealEnv` and `KB-ExceptonHandler`.
 You can download the augmented scripts [here]().
 
 Here, we provide the code to augment the sripts:

@@ -4,10 +4,9 @@ import glob
 import numpy as np
 import os
 import json
-import ipdb
 from augmentation_utils import *
 
-dump_preconds = True
+dump_preconds = False
 rooms = [x.lower() for x in [
         'Kitchen',
         'Bathroom',
@@ -43,6 +42,7 @@ class ScriptFail(BaseException):
         return self.message
 
 def get_preconds_script(script_lines):
+    precond_dict = Precond()
     content = script_lines
     # Plugget_out precond
     is_plugged = {}
@@ -357,88 +357,21 @@ def get_preconds_script(script_lines):
             if obj_name in objects_occupied:
                 precond_dict.addPrecond('free', (obj_name, idi), [])
 
-    # inside = {}
-    # to_keep = []
-    # if 'inside' in precond_dict.keys():
-    #     for elem in precond_dict['inside']:
-    #         obj = elem.split(' --> ')[0]
-    #         if obj not in inside.keys():
-    #             inside[obj] = True
-    #         else:
-    #             continue
-    #         to_keep.append(elem)
-    # if 'inside' in precond_dict.keys(): precond_dict['inside'] = to_keep
-    # for cond in ['location', 'nearby']:
-    #    for elem in list(precond_dict.obtainCond(cond)):
-    #        if elem in precond_dict.obtainCond('inside'):
-    #             precond_dict.removeCond(cond, elem)
 
 
     
 
     return precond_dict
 
-def compare_preconds(precond_dict1, precond_dict2):
-    def to_hash(precond_list):
-        pr_list = precond_list.copy()
-        for it, elem in enumerate(pr_list):
-            # dictionary of lists
-            key_elem = list(elem)[0]
-            values = elem[key_elem]
-            for v_id, v in enumerate(values):
-                if isinstance(v, list):
-                    values[v_id] = tuple(v)
-           
-            values = tuple(values)
-            tuple_dict = (key_elem, values)
-            pr_list[it] = tuple_dict
-        
-        # All at reach should be intercheanchable
-        to_add = []
-        pr_list = [x for x in pr_list if not (x[0] == 'atreach' and x[1][0] == x[1][1])]
-        # for item in pr_list:
-        #     if item[0] == 'atreach':
-        #         reversed_at_reach = (item[0], (item[1][1], item[1][0]))
-        #         if reversed_at_reach not in pr_list:
-        #             to_add.append(reversed_at_reach)
-        # pr_list += to_add
-        return sorted(pr_list)
 
-    l1 = to_hash(precond_dict1)
-    l2 = to_hash(precond_dict2)
-    inter = len(set(l1).intersection(set(l2)))
-    union = len(set(l1).union(set(l2)))
-    
-    if inter != union:
-        # print('Intersection {} Union {}'.format(inter, union))
-        # print('Intersection')
-        # print(list(set(l1).intersection(l2)))
-        
-        #print('Missing')
-        #print(list(set(l1) - set(l2)))
-        #print(set(l1))
-        #print('Extra')
-        #print(list(set(l2) - set(l1)))
-        #print('\n')
-        if len(list(set(l1) - set(l2))) > 0:
-            return False
-            
-        return True
-
-    return True
-
-path_scripts = '../../../../data/data_andrew_changed_march_13/programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt'
-#path_scripts = '../../../../data/data_march_12/programs_processed_precond_nograb_morepreconds/withoutconds/*/*.txt'
+path_input = 'SET YOUR PATH HERE'
+path_scripts = '{}/withoutconds/*/*.txt'.format(path_input)
 
 all_scripts = sorted(glob.glob(path_scripts))
-#all_scripts = [x for x in all_scripts if '/'.join(x.split('/')[-2:]) == 'results_text_rebuttal_specialparsed_programs_turk_third/split99_4.txt']
-print(len(all_scripts))
 cont_bad = 0
 for script_name in all_scripts:
-    precond_dict = Precond()
     script_name_in = script_name
     script_name_out = script_name.replace('withoutconds', 'initstate').replace('.txt', '.json')
-
 
     with open(script_name_in, 'r') as f:
         content = f.readlines()[4:]
@@ -446,20 +379,10 @@ for script_name in all_scripts:
     try:
         precond_dict = get_preconds_script(content)
     except ScriptFail as e:
-        #print(e, script_name)
         continue
     with open(script_name_out, 'r') as f:
         previous_preconds = json.load(f)
 
-    #previous_preconds
-    new_preconds = precond_dict.printCondsJSON()
-    res = compare_preconds(previous_preconds, new_preconds)
-    if not res:
-        cont_bad += 1
-        print('\n'.join(content))
-        print('\n')
-        pass;
-        #ipdb.set_trace()
     if dump_preconds:
         json_file = script_name_out
         if not os.path.isdir(os.path.dirname(json_file)):
@@ -467,4 +390,3 @@ for script_name in all_scripts:
         with open(json_file, 'w+') as f:
             f.write(json.dumps(precond_dict.printCondsJSON()))
 
-print(cont_bad, len(all_scripts))

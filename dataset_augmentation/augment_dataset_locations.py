@@ -17,6 +17,8 @@ from scipy.io import *
 
 import augmentation_utils
 
+import sys
+sys.path.insert('../simulation/evolving_graph/')
 import check_programs
 import utils
 
@@ -182,6 +184,7 @@ def augment_dataset(d, programs):
                             init_state, 
                             '../example_graphs/{}.json'.format(apt_name),
                             None,
+                            False,
                             {},
                             {})
             except:

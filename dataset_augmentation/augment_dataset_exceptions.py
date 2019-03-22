@@ -205,6 +205,7 @@ def augment_dataset(d, programs):
                                 init_state, 
                                 '../example_graphs/{}.json'.format(apt_name),
                                 input_graph,
+                                (input_graph is None),
                                 id_mapping,
                                 info)
                 except:

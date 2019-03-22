@@ -1,11 +1,11 @@
 import json
-import utils
 
-from execution import Relation, State
-from scripts import read_script, read_precond
-from execution import ScriptExecutor
-from environment import EnvironmentGraph
-from preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates, \
+import evolving_graph.utils as utils
+from evolving_graph.execution import Relation, State
+from evolving_graph.scripts import read_script, read_precond
+from evolving_graph.execution import ScriptExecutor
+from evolving_graph.environment import EnvironmentGraph
+from evolving_graph.preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates, \
     StatePrepare, AddObject, ChangeState, Destination
 
 

@@ -1,9 +1,6 @@
-import ipdb
 import os
 import sys
-sys.path.append('..')
 import json
-import utils
 import random
 import numpy as np
 from glob import glob
@@ -11,6 +8,7 @@ from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
 
+import evolving_graph.utils as utils
 from evolving_graph.scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
 from evolving_graph.execution import ScriptExecutor
 from evolving_graph.environment import EnvironmentGraph
@@ -105,7 +103,9 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
 def translate_graph_dict(path):
 
     graph_dict = utils.load_graph_dict(path)
-    properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
+    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_name = os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_properties_data.json')
+    properties_data = utils.load_properties_data(file_name=file_name)
 
     static_objects = ['bathroom', 'floor', 'wall', 'ceiling', 'rug', 'curtains', 'ceiling_lamp', 'wall_lamp', 
                         'bathroom_counter', 'bathtub', 'towel_rack', 'wall_shelf', 'stall', 'bathroom_cabinet', 
@@ -200,10 +200,11 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     return message, executable, final_state, graph_state_list, id_mapping, info, script
 
 
-def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mapping={}, info={}):
-    properties_data = utils.load_properties_data(file_name='../resources/object_script_properties_data.json')
-    object_states = json.load(open('../resources/object_states.json'))
-    object_placing = json.load(open('../resources/object_script_placing.json'))
+def check_script(program_str, precond, graph_path, inp_graph_dict=None, modify_graph=True, id_mapping={}, info={}):
+    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_properties_data.json'))
+    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_states.json'), 'r'))
+    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_placing.json'), 'r'))
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
 
@@ -217,7 +218,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
     else:
         graph_dict = inp_graph_dict
     message, executable, final_state, graph_state_list, id_mapping, info, modif_script = check_one_program(
-        helper, script, precond, graph_dict, w_graph_list=True, modify_graph=(inp_graph_dict is None),
+        helper, script, precond, graph_dict, w_graph_list=True, modify_graph=modify_graph,
         id_mapping=id_mapping, **info)
 
     return message, final_state, graph_state_list, graph_dict, id_mapping, info, helper, modif_script
@@ -226,9 +227,11 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, id_mappi
 def check_original_script(inp):
 
     txt_file, graph_path = inp
-    properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
-    object_states = json.load(open('resources/object_states.json'))
-    object_placing = json.load(open('resources/object_script_placing.json'))
+    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_properties_data.json'))
+    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_states.json'), 'r'))
+    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_placing.json'), 'r'))
+
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
     

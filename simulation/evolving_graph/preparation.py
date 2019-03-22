@@ -1,7 +1,9 @@
 import random
-from environment import *
-from common import Error, TimeMeasurement
 from typing import Iterable
+
+from evolving_graph.environment import *
+from evolving_graph.common import Error, TimeMeasurement
+
 
 
 class StatePrepare(StateChanger):

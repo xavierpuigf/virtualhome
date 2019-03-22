@@ -18,6 +18,9 @@ script = ['[Walk] <television> (1)', '[SwitchOn] <television> (1)',
           '[Walk] <sofa> (1)', '[Find] <controller> (1)',
           '[Grab] <controller> (1)']
 
+script = ['[Walk] <fridge> (1)', '[Open] <fridge> (1)', '[Find] <beer> (1)'
+          '[Grab] <beer> (1)']
+
 graph_input = '../example_graphs/TrimmedTestScene1_graph.json'
 
 cameras_ids = [-6, -5, -1]

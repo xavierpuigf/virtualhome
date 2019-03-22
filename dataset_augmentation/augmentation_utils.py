@@ -4,7 +4,8 @@ import pdb
 import os
 import json
 
-with open('../resources/object_script_properties_data.json', 'r') as f:
+curr_dirname = os.path.dirname(__file__)
+with open('{}/../resources/graph_resources/object_script_properties_data.json'.format(curr_dirname), 'r') as f:
     object_properties = json.load(f)
 
 def parseStrBlock(block_str):
