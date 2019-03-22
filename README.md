@@ -41,8 +41,7 @@ VirtualHome has been used in:
 - Motivation
 - Overview
 - Dataset 
-- Installation
-- QuickStart
+- Set Up
 - Generating Videos/Keyframes
 - Script Augmentation
 - Other details
@@ -55,16 +54,16 @@ Among lots of simulator aiming at interacting with environments, why does virtua
 ## Overview
 Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the Unity simulator and EvolvingGraph.
 
-### Unity Simulator 
-This simulator is built in Unity and allows to generate videos of activities. To use this simulator you will need to download the appropiate executable and run the `comm_unity.py` API.
+#### Unity Simulator 
+This simulator is built in Unity and allows to generate videos of activities. To use this simulator you will need to download the appropiate executable and run the [simulation/unity_simulator/comm_unity.py](simulation/unity_simulator/comm_unity.py) API.
 
-### Evolving Graph
-This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [evolving_graph](evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator
+#### Evolving Graph
+This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
 
 
 ## Dataset
 
-We collected a dataset of programs and augmented them with graphs after executing them in our environments. You can download them [here - GET LINK](). 
+We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here - GET LINK](). 
 Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
 
 ```
@@ -80,57 +79,68 @@ dataset
 	   	└── ...	
 ```
 
-Where `withoutconds` and `initstate` contain the original programs and pre-conditions. 
+The folders `withoutconds` and `initstate` contain the original programs and pre-conditions. 
 
-To view a script executed in an enviornment, check `executable_programs/{environment}/{script_name}.txt`. 
+When a script is executed in an environment, the script changes by aligning the original objects with instances in the environment. You can view the resulting script in `executable_programs/{environment}/{script_name}.txt`.
 
-To view the graph of the environment throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
+To view the graph of the environment, and how it changes throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
 You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md). 
 
 
-## Installation
+## Set Up
 
 How to install the executable or run the code in Unity
-### Step 1
-Download the virtualhome simulator.
 
-- [Download]() Linux x86-64 version.
-- [Download]() Mac OS X version.
-
-### Step 2
-
-Clone this repository
+### Clone repository and install dependencies
 ```bash
 git clone https://mboben@bitbucket.org//virtualhome.git
 # and maybe some basic setup
 # and download the original scripts
 ```
 
+### Download UnitySimulator
+Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
-## QuickStart
-
-Run `sh run_example.sh` and you will get an activity video of this [scripts](example_scripts/...). 
-You can check more example activity videos [here]().
-
-For more details, see `example.py` file and there are some example scripts in `example_scripts` folder
+- [Download]() Linux x86-64 version.
+- [Download]() Mac OS X version.
 
 
-## Genrating Videos/Keyframes
+### Test simulator
 
-VirtualHome allows generating videos corresponding to an activity and keyframes corresponding to a snapshot of the environment state.
+To test the UnitySimulator, double click the executable and select a resolution and screen size. Then, run the `sh run_example.sh` and you will get an activity video of this [scripts](example_scripts/...). 
+You can further check the UnitySimulator by running the demo notebook in `demo/unity_demo.ipynb`.
+
+You can also test the EvolvingGraph simulator in `link`. Note that this simulator does not require opening any executable.
+
+### Docker
+You can also run UnitySimulator using Docker. You can find how to set it up [here](Docker).
+
+
+## Generating Videos and Snapshots
+
+VirtualHome UnitySimulator allows generating videos corresponding to household activities. In addition, it is possible to use EvolvingGraph simulator to obtain the environment for each execution step and use UnitySimulator to generate snapshots of the environment at each step.
 
 
 ### Generate videos
 
+Open the simulator as indicated in [Test simulator](###Test simulator). And go to directory `simulation/unity_simulator/`. Then run:
 
-If you want to generate the videos of the given scripts, 
 ```bash
+from comm_unity import UnityCommunication
+script = ['[Walk] <sofa> (1)', '[Sit] <sofa> (1)'] # Add here your script
+comm = UnityCommunication()
+comm.reset()
+comm.render_script(script, capture_screenshot=True)
+
 ```
+The video frames will be generated in a folder called `output`. You can check more options in the [demo](demo/unity_demo.ipynb).
 
-### Generate keyframes
 
-If you want to generate the keyframes of the given scripts, 
+### Generate snapshots
+
+To generate snapshots. Open the simulator as indicated in [Test simulator](###Test simulator).
+
 ```bash
 # commands of generating keyframes
 ```
@@ -173,6 +183,5 @@ To do the above generation and augmentation, some valuable resource files are us
 Check [resources/README.md](resources/README.md) for more details.
 
 
-## Docker
-You can also run VirtualHome using Docker. You can find how to set it up [here](Docker)
+
 
