@@ -21,20 +21,20 @@ def load_graph_dict(file_name):
         data = json.load(f)
     return data
 
-def load_name_equivalence(file_name='../../resources/graph_resources/class_name_equivalence.json'):
+def load_name_equivalence(file_name='../../resources/class_name_equivalence.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
     file_name = os.path.join(abs_dir_path, file_name)
     with open(file_name) as f:
         return json.load(f)
 
 
-def load_object_placing(file_name='../../resources/graph_resources/object_placing.json'):
+def load_object_placing(file_name='../../resources/object_script_placing.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
     with open(file_name) as f:
         return json.load(f)
 
 
-def load_properties_data(file_name='../../resources/graph_resources/properties_data.json'):
+def load_properties_data(file_name='../../resources/properties_data.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
     with open(file_name) as f:
         pd_dict = json.load(f)

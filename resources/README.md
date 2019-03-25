@@ -28,8 +28,8 @@ supported properties. Example:
 This file contains a dictionary from object names to a list of their possible placings. A placing is defined as a dictionary with keys 
 
 * `destination`: specifies a destination object
-* `relation`: either "ON" or "INSIDE" (will be supporded soon)
-* `room`: room name where the desination object must occur (or null for object in any room) (will be supporded soon)
+* `relation`: either "ON" or "INSIDE"
+* `room`: room name where the desination object must occur (or null for object in any room) 
 
 Example
 

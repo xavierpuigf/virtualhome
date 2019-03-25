@@ -104,7 +104,7 @@ def translate_graph_dict(path):
 
     graph_dict = utils.load_graph_dict(path)
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    file_name = os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_properties_data.json')
+    file_name = os.path.join(abs_dir_path, '../../resources/object_script_properties_data.json')
     properties_data = utils.load_properties_data(file_name=file_name)
 
     static_objects = ['bathroom', 'floor', 'wall', 'ceiling', 'rug', 'curtains', 'ceiling_lamp', 'wall_lamp', 
@@ -202,9 +202,9 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
 
 def check_script(program_str, precond, graph_path, inp_graph_dict=None, modify_graph=True, id_mapping={}, info={}):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_properties_data.json'))
-    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_states.json'), 'r'))
-    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_placing.json'), 'r'))
+    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/object_script_properties_data.json'))
+    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/object_states.json'), 'r'))
+    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/object_script_placing.json'), 'r'))
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
 
@@ -228,9 +228,9 @@ def check_original_script(inp):
 
     txt_file, graph_path = inp
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_properties_data.json'))
-    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_states.json'), 'r'))
-    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/graph_resources/object_script_placing.json'), 'r'))
+    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/object_script_properties_data.json'))
+    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/object_states.json'), 'r'))
+    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/object_script_placing.json'), 'r'))
 
 
     helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
