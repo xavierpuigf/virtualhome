@@ -8,6 +8,7 @@ This directory contains the *Unity Simulator* and *Evolving Graph* simulator API
     - Object States
 - Preconditions
 - Actions
+	- Supported in Unity Simulator
 
 
 ## Environment
@@ -94,7 +95,7 @@ List of preconditions that can be specified in the programs. The preconditions s
  
 ## Actions
 
-### TemplateExecutor `Supported Unity Simulator`
+### TemplateExecutor
 - script: action object1 object2
 - Pre-condition: 
 - Post-condition:
@@ -194,6 +195,17 @@ ___
 	- exists edge `character` close `object`
 - Post-condition:
     - state changes: `object` state is closed
+       
+### PutBackExecutor
+- script: putback `object1` `object2` // means put object on
+- Pre-condition: 
+	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
+	- exists edge `character` close `object2`
+- Post-condition:
+    - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
+    - add undirected edges: `character` close `object2`, `object1` close `object2`
+    - add directed edges: `object1` on `object2`
+
 
 ### PutExecutor
 - script: putback `object1` `object2` // means put object on
@@ -215,6 +227,16 @@ ___
     - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
     - add undirected edges: `character` close `object2`
     - add directed edges: `object1` inside `object2`
+
+### PutExecutor
+- script: putback `object1` `object2` // means put object on
+- Pre-condition: 
+	- exists edge `character` holds_lh `object1` or `character` holds_rh `object1`
+	- exists edge `character` close `object2`
+- Post-condition:
+    - remove directed edges: `character` holds_lr `object1` or `character` holds_lr `object2`
+    - add undirected edges: `character` close `object2`, `object1` close `object2`
+    - add directed edges: `object1` on `object2`
 
 ### SwitchOnExecutor
 - script: switchon `object`
@@ -418,3 +440,46 @@ ___
 - script: wakeup
 - Pre-condition:
 	- `character` is lying or sitting
+
+
+## Supported in Unity Simulator
+Here is the list with Executors currently supported in the Unity Simulator. The rest are only supported in Graph Evolve simulator.
+
+Action Executor | Supported Unity
+------------ | -------------
+FindExecutor  | :white_check_mark:
+WalkExecutor | :white_check_mark:
+RunExecutor | :white_check_mark:
+SitExecutor | :white_check_mark:
+StandUpExecutor | :white_check_mark:
+GrabExecutor | :white_check_mark:
+OpenExecutor | :white_check_mark:
+CloseExecutor | :white_check_mark:
+PutBackExecutor | :white_check_mark:
+PutExecutor | :white_check_mark:
+PutInExecutor | :white_check_mark:
+SwitchOnExecutor | :white_check_mark:
+SwitchOffExecutor | :white_check_mark:
+DrinkExecutor | :white_check_mark:
+TurnToExecutor | :white_check_mark:
+LookAtExecutor | :white_check_mark:
+WipeExecutor |
+PutOnExecutor |
+PutOffExecutor |
+GreetExecutor |
+DropExecutor |
+ReadExecutor |
+TouchExecutor | :white_check_mark:
+LieExecutor |
+PourExecutor |
+TypeExecutor |
+WatchExecutor |
+MoveExecutor |
+WashExecutor |
+SqueezeExecutor |
+PlugInExecutor |
+PlugOutExecutor |
+CutExecutor |
+EatExecutor |
+SleepExecutor |
+WakeUpExecutor |
