@@ -15,6 +15,7 @@ VirtualHome has been used in:
 - VirtualHome: Simulating HouseHold Activities via Programs, CVPR2018
 - Synthesizing Environment-Aware Activities via Activity Sketches, CVPR2019
 
+If you plan to use the simulator, please consider citing them.
 
 ```
 @inproceedings{puig2018virtualhome,
@@ -52,18 +53,18 @@ Among lots of simulator aiming at interacting with environments, why does virtua
 (can be that we focus on high-level action, including watching, ... etc.)
 
 ## Overview
-Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the Unity simulator and EvolvingGraph.
+Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the *Unity Simulator* and *Evolving Graph*.
 
 #### Unity Simulator 
-This simulator is built in Unity and allows to generate videos of activities. To use this simulator you will need to download the appropiate executable and run the [simulation/unity_simulator/comm_unity.py](simulation/unity_simulator/comm_unity.py) API.
+This simulator is built in Unity and allows to generate videos of activities. To use this simulator you will need to download the appropiate executable and run it with the [Python API](simulation/unity_simulator/) .
 
 #### Evolving Graph
-This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
+This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
 
 
 ## Dataset
 
-We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here - GET LINK](). 
+We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
 Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
 
 ```
@@ -97,7 +98,7 @@ How to install the executable or run the code in Unity
 git clone https://mboben@bitbucket.org//virtualhome.git
 ```
 
-### Download UnitySimulator
+### Download Unity Simulator
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
 - [Download]() Linux x86-64 version.
@@ -106,18 +107,17 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 
 ### Test simulator
 
-To test the UnitySimulator, double click the executable and select a resolution and screen size. Then, run the `sh run_example.sh` and you will get an activity video of this [scripts](example_scripts/...). 
-You can further check the UnitySimulator by running the demo notebook in `demo/unity_demo.ipynb`.
+Double click the executable and select a resolution and screen size. Then, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb).
 
-You can also test the EvolvingGraph simulator in `link`. Note that this simulator does not require opening any executable.
+You can also test the Evolving Graph simulator in `link`. Note that this simulator does not require opening any executable if you do not plan to generate images.
 
 ### Docker
-You can also run UnitySimulator using Docker. You can find how to set it up [here](Docker).
+You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).
 
 
 ## Generating Videos and Snapshots
 
-VirtualHome UnitySimulator allows generating videos corresponding to household activities. In addition, it is possible to use EvolvingGraph simulator to obtain the environment for each execution step and use UnitySimulator to generate snapshots of the environment at each step.
+VirtualHome Unity Simulator allows generating videos corresponding to household activities. In addition, it is possible to use Evolving Graph simulator to obtain the environment for each execution step and use UnitySimulator to generate snapshots of the environment at each step.
 
 
 ### Generate videos
@@ -128,12 +128,11 @@ Open the simulator as indicated in [Test simulator](###Test simulator) and run:
 cd demo/
 python generate_video.py
 ```
-The video frames will be generated in a folder called `output`. You can check more options in the [demo](demo/unity_demo.ipynb).
 
 
 ### Generate snapshots
 
-To generate snapshots. Open the simulator as indicated in [Test simulator](###Test simulator).
+Open the simulator as indicated in [Test simulator](###Test simulator).
 
 ```bash
 cd demo/
@@ -145,18 +144,10 @@ A grid of snapshots for the given script will be generated.
 
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
-we augment the scripts with two knowledges: base `KB-RealEnv` and `KB-ExceptonHandler`.
-You can download the augmented scripts [here]().
+we augment the scripts with two knowledge bases: `KB-RealEnv` and `KB-ExceptonHandler`.
+You can download the augmented scripts in [KB-RealEnv](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_exception.zip) and [KB-ExceptionHandler](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_exception.zip).
 
 Here, we provide the code to augment the sripts:
-
-### Augment with `KB-Affordance`
-
-```bash
-cd dataset_generation
-python augment_dataset_affordances.py
-```
-Note that this is not used in *Synthesizing Environment-Aware Activities via Activity Sketches*.
 
 ### Augment with `KB-RealEnv`
 
