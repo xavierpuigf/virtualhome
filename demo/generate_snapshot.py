@@ -18,9 +18,6 @@ script = ['[Walk] <television> (1)', '[SwitchOn] <television> (1)',
           '[Walk] <sofa> (1)', '[Find] <controller> (1)',
           '[Grab] <controller> (1)']
 
-script = ['[Walk] <fridge> (1)', '[Open] <fridge> (1)', '[Find] <beer> (1)'
-          '[Grab] <beer> (1)']
-
 graph_input = '../example_graphs/TrimmedTestScene1_graph.json'
 
 cameras_ids = [-6, -5, -1]
@@ -44,6 +41,7 @@ def obtain_snapshots(graph_state_list, reference_graph, comm):
         comm.reset(0)
         message = comm.expand_scene(graph_state, randomize=True, random_seed=seed)
         messages_expand.append(message)
+        _ = comm.camera_image(cameras_select, mode='normal', image_height=480,  image_width=640)
         ok, imgs = comm.camera_image(cameras_select, mode='normal', image_height=480,  image_width=640)
         images.append(imgs)
 
@@ -61,6 +59,7 @@ with open(graph_input, 'r') as f:
     graph_input = json.load(f)
 
 print('Executing script')
+print(script)
 info = check_programs.check_script(
         script, preconds, graph_path=None, inp_graph_dict=graph_input)
 

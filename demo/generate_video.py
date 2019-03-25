@@ -1,7 +1,7 @@
 # Generate video for a program. Make sure you have the executable open
 import sys
 sys.path.append('../simulation/')
-from unity_simulator_simulator.comm_unity import UnityCommunication
+from unity_simulator.comm_unity import UnityCommunication
 script = ['[Walk] <sofa> (1)', '[Sit] <sofa> (1)'] # Add here your script
 print('Starting Unity...')
 comm = UnityCommunication()

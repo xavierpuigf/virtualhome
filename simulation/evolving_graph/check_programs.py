@@ -211,7 +211,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, modify_g
     try:
         script = read_script_from_list_string(program_str)
     except ScriptParseException:
-        return None, None, None, None, None
+        return None, None, None, None, None, None, None, None
 
     if inp_graph_dict is None:
         graph_dict = utils.load_graph_dict(graph_path)
