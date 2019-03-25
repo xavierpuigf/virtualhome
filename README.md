@@ -1,12 +1,11 @@
 # VirtualHome
 VirtualHome is a platform to simulate complex household activities via programs. 
 Given an initial environment describing an apartment and a program depicting a sequence of actions, 
-VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning.
+VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning. Check out more details of the environmnent and platform in [VirtualHome](http://virtual-home.org). 
 
-Check out more details of the environmnent and platform in [VirtualHome](http://virtual-home.org). 
-
-![intro](/assets/vh_intro.gif)
-
+<p align="center">
+  <img width="460" height="300" src="assets/vh_intro.gif">
+</p>
 
 ## Cite VirtualHome
 
