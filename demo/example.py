@@ -1,8 +1,9 @@
 import json
-
+import sys
+sys.path.append('../simulation')
 import evolving_graph.utils as utils
 from evolving_graph.execution import Relation, State
-from evolving_graph.scripts import read_script, read_precond
+from evolving_graph.scripts import read_script
 from evolving_graph.execution import ScriptExecutor
 from evolving_graph.environment import EnvironmentGraph
 from evolving_graph.preparation import AddMissingScriptObjects, AddRandomObjects, ChangeObjectStates, \
@@ -17,7 +18,7 @@ def print_node_names(n_list):
 def example_1():
     print('Example 1')
     print('---------')
-    graph = utils.load_graph('example_graphs/TestScene6_graph.json')
+    graph = utils.load_graph('../example_graphs/TestScene6_graph.json')
     name_equivalence = utils.load_name_equivalence()
     script = read_script('example_scripts/example_script_1.txt')
     executor = ScriptExecutor(graph, name_equivalence)
@@ -47,7 +48,7 @@ def example_2():
     print()
     print('Example 2')
     print('---------')
-    graph = utils.load_graph('example_graphs/TestScene6_graph.json')
+    graph = utils.load_graph('../example_graphs/TestScene6_graph.json')
     script = read_script('example_scripts/example_script_2.txt')
     name_equivalence = utils.load_name_equivalence()
     object_placing = utils.load_object_placing()
@@ -78,7 +79,7 @@ def example_3():
     print()
     print('Example 3')
     print('---------')
-    graph = utils.load_graph('example_graphs/TestScene6_graph.json')
+    graph = utils.load_graph('../example_graphs/TestScene6_graph.json')
     script = read_script('example_scripts/example_script_2.txt')
     name_equivalence = utils.load_name_equivalence()
     properties_data = utils.load_properties_data()
@@ -101,7 +102,7 @@ def example_4():
     print()
     print('Example 4')
     print('---------')
-    graph = utils.load_graph('example_graphs/TestScene6_graph.json')
+    graph = utils.load_graph('../example_graphs/TestScene6_graph.json')
     script = read_script('example_scripts/example_script_3.txt')
     name_equivalence = utils.load_name_equivalence()
     executor = ScriptExecutor(graph, name_equivalence)
@@ -114,19 +115,45 @@ def example_4():
 
 def example_5():
 
+    properties_data = utils.load_properties_data()
+    object_states = utils.load_object_states()
+    object_placing = utils.load_object_placing()
+    graph_dict = {
+            'nodes': [
+                {"id": 1, 'class_name': "kitchen", "category": "Rooms", "properties": [], "states": []},
+                {"id": 2, 'class_name': "bedroom", "category": "Rooms", "properties": [], "states": []},
+                {"id": 3, 'class_name': "home_office", "category": "Rooms", "properties": [], "states": []},
+                {"id": 4, 'class_name': "bathroom", "category": "Rooms", "properties": [], "states": []},
+                {"id": 5, 'class_name': "character", "category": "", "properties": [], "states": []},
+                {"id": 6, 'class_name': "door", "category": "", "properties": ["CAN_OPEN"], "states": ["OPEN"]},
+                {"id": 7, 'class_name': "door", "category": "", "properties": ["CAN_OPEN"], "states": ["OPEN"]},
+                {"id": 8, 'class_name': "door", "category": "", "properties": ["CAN_OPEN"], "states": ["OPEN"]},
+            ],
+            'edges': [
+                {"from_id": 5, "to_id": 2, "relation_type": "INSIDE"},
+                {"from_id": 6, "to_id": 1, "relation_type": "BETWEEN"},
+                {"from_id": 6, "to_id": 2, "relation_type": "BETWEEN"},
+                {"from_id": 7, "to_id": 1, "relation_type": "BETWEEN"},
+                {"from_id": 7, "to_id": 3, "relation_type": "BETWEEN"},
+                {"from_id": 8, "to_id": 3, "relation_type": "BETWEEN"},
+                {"from_id": 8, "to_id": 4, "relation_type": "BETWEEN"},
+            ]}
+
+    helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes=15)
+    helper.initialize(graph_dict)
+
     print()
     print('Example 5')
     print('---------')
     script = read_script('example_scripts/example_script_4.txt')
-    precond = read_precond('example_scripts/example_precond_script_4.txt')
+    with open('example_scripts/example_precond_script_4.json', 'r') as f:
+        precond = json.load(f)
 
-    properties_data = utils.load_properties_data(file_name='resources/object_script_properties_data.json')
-    graph_dict = utils.create_graph_dict_from_precond(script, precond, properties_data)
+    id_mapping = {}
+    id_mapping, first_room, room_mapping = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
+    print(id_mapping)
 
-    # load object placing
-    object_placing = utils.load_object_placing(file_name='resources/object_script_placing.json')
     # add random objects
-    utils.perturb_graph_dict(graph_dict, object_placing, properties_data, n=10)
     graph = EnvironmentGraph(graph_dict)
 
     name_equivalence = utils.load_name_equivalence()
@@ -139,8 +166,8 @@ def example_5():
     
 
 if __name__ == '__main__':
-    #example_1()
-    #example_2()
-    #example_3()
+    example_1()
+    example_2()
+    example_3()
     example_4()
-    #example_5()
+    example_5()

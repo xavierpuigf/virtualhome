@@ -178,7 +178,6 @@ class FindExecutor(ActionExecutor):
         current_line = script[0]
         info.set_current_line(current_line)
         current_obj = current_line.object()
-
         for node in state.select_nodes(current_obj):
             char_node = _get_character_node(state)
 
@@ -192,6 +191,7 @@ class FindExecutor(ActionExecutor):
                 return _only_find_executor.execute(script, state, info)
             else:
                 return _walk_find_executor.execute(script, state, info)
+        info.error('Could not find object {}'.format(current_obj.name))
 
 
 class GreetExecutor(ActionExecutor):
@@ -1282,11 +1282,13 @@ class ScriptExecutor(object):
         if script_index >= len(script):
             yield state
         future_script = script.from_index(script_index)
-        for next_state in self.call_action_method(future_script, state, self.info):
-            for rec_state_list in self.find_solutions_rec(script, script_index + 1, next_state):
-                yield rec_state_list
-            if time.time() > self.processing_limit:
-                break
+        next_states = self.call_action_method(future_script, state, self.info)
+        if next_states is not None:
+            for next_state in next_states:
+                for rec_state_list in self.find_solutions_rec(script, script_index + 1, next_state):
+                    yield rec_state_list
+                if time.time() > self.processing_limit:
+                    break
 
     def execute(self, script: Script, init_changers: List[StateChanger]=None, w_graph_list: bool=True):
 

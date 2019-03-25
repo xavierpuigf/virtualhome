@@ -23,20 +23,28 @@ def load_graph_dict(file_name):
 
 def load_name_equivalence(file_name='../../resources/class_name_equivalence.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    file_name = os.path.join(abs_dir_path, file_name)
-    with open(file_name) as f:
+    file_name_all = os.path.join(abs_dir_path, file_name)
+    with open(file_name_all, 'r') as f:
         return json.load(f)
 
 
+def load_object_states(file_name='../../resources/object_states.json'):
+    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_name_all = os.path.join(abs_dir_path, file_name)
+    with open(file_name_all, 'r') as f:
+        return json.load(f)
+
 def load_object_placing(file_name='../../resources/object_script_placing.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    with open(file_name) as f:
+    file_name_all = os.path.join(abs_dir_path, file_name)
+    with open(file_name_all, 'r') as f:
         return json.load(f)
 
 
 def load_properties_data(file_name='../../resources/properties_data.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    with open(file_name) as f:
+    file_name_all = os.path.join(abs_dir_path, file_name)
+    with open(file_name_all, 'r') as f:
         pd_dict = json.load(f)
         return {key: [Property[p] for p in props] for (key, props) in pd_dict.items()}
 
@@ -393,7 +401,7 @@ class graph_dict_helper(object):
                 rooms_tried.append(nroom)
                 assert nroom in equivalent_rooms, "Not pre-specified mapping for room: {}".format(nroom)
                 nroom = equivalent_rooms[nroom]    
-            assert nroom in available_rooms_in_graph, "No equivalent room in graph"
+            assert nroom in available_rooms_in_graph, "No equivalent room in graph for room: {}".format(nroom)
             room_mapping[room] = nroom
         
         # use room mapping to change the precond (in-place opetation)

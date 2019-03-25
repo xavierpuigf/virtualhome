@@ -109,7 +109,7 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 
 Double click the executable and select a resolution and screen size. Then, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb).
 
-You can also test the Evolving Graph simulator in `link`. Note that this simulator does not require opening any executable if you do not plan to generate images.
+You can also test the Evolving Graph simulator in [demo/example.py](demo/example.py). Note that this simulator does not require opening any executable if you do not plan to generate images.
 
 ### Docker
 You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).

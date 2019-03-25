@@ -2,6 +2,7 @@ import random
 from typing import Iterable
 
 from evolving_graph.environment import *
+from evolving_graph.execution import _get_room_node
 from evolving_graph.common import Error, TimeMeasurement
 
 
@@ -180,9 +181,11 @@ def _create_node(class_name: str, properties, states=None):
 
 def _add_edges(state: EnvironmentState, new_node: GraphNode, relation: Relation, dest_node: Node,
                add_changers: List[StateChanger]):
+
+    room_node = _get_room_node(state, dest_node)
     changers = [AddNode(new_node),
                 AddEdges(NodeInstance(new_node), relation, NodeInstance(dest_node)),
                 AddEdges(NodeInstance(new_node), Relation.CLOSE, NodeInstance(dest_node), add_reverse=True),
-                AddEdges(NodeInstance(new_node), Relation.INSIDE, RoomNode(dest_node))]
+                AddEdges(NodeInstance(new_node), Relation.INSIDE, NodeInstance(room_node))]
     changers.extend(add_changers)
     state.apply_changes(changers)

@@ -1,0 +1,3 @@
+[{"inside": [["laundry_detergent", "2"], ["washing_machine", "1"]]},
+ {"is_off":  ["washing_machine", "1"]},
+ {"closed":  ["washing_machine", "1"]}]

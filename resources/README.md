@@ -18,10 +18,16 @@ since this is done automatically.
 
 ### Object properties (`object_properties.json`)
 
-This file contains a dictionary mapping from object names to their properties, see `environment.Property` enum class for a list of all
+This file contains a dictionary mapping from object names to their properties, see [../simulation/README.md](../simulation/README.md) enum class for a list of all
 supported properties. Example:
 
 `"oven": ["CAN_OPEN", HAS_SWITCH", CONTAINERS", HAS_PLUG"]`
+
+### Object properties (`object_properties.json`)
+
+This file contains a dictionary mapping from object names to states they can have, see [../simulation/README.md](../simulation/README.md) enum class for a list of all
+supported states.
+
 
 ### Object placing (`object_script_placing.json`)
 
