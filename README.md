@@ -95,14 +95,15 @@ How to install the executable or run the code in Unity
 
 ### Clone repository and install dependencies
 ```bash
-git clone https://mboben@bitbucket.org//virtualhome.git
+pip install -r requirements.txt
+git clone https://github.com/xavierpuigf/virtualhome.git
 ```
 
 ### Download Unity Simulator
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
-- [Download]() Linux x86-64 version.
-- [Download]() Mac OS X version.
+- [Download](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/simulator/linux_sim.zip) Linux x86-64 version.
+- [Download](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/simulator/mac_sim.zip) Mac OS X version.
 
 
 ### Test simulator
