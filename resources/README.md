@@ -23,7 +23,7 @@ supported properties. Example:
 
 `"oven": ["CAN_OPEN", HAS_SWITCH", CONTAINERS", HAS_PLUG"]`
 
-### Object placing (`object_placing.json`)
+### Object placing (`object_script_placing.json`)
 
 This file contains a dictionary from object names to a list of their possible placings. A placing is defined as a dictionary with keys 
 
