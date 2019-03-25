@@ -1,7 +1,19 @@
-# Supported actions and environment relations
+# Simulation
+This directory contains the *Unity Simulator* and *Evolving Graph* simulator API's. Remember that in order to run the Unity Simulator, you need to run the appropiate executable. Following, we provide documentation of the Environment settings and Actions currently supported. 
+
+## Contents
+- Environment
+    - Relations
+    - Object Properties
+    - Object States
+- Preconditions
+- Actions
+
 
 ## Environment
-List of supported node states, edge relations and object properties in the graphs representing the environment.
+List of supported node states, edge relations and object properties in the graphs representing the environment. 
+
+*Note that this documentation holds for both Unity Simulator and Evolving Graph*.
 
 ### Relations
 Possible relations (edge labels) are:
@@ -60,7 +72,7 @@ distance between the centers is < 5 units (~meters). If `object1` is a sofa or a
 
 ## Preconditions
 List of preconditions that can be specified in the programs. The preconditions specify constrains in the environment where the program will be executed.
-###Unary preconditions
+### Unary preconditions
 - `object` is_on: `object` in `on` state.
 - `object` is_off: `object` in `off` state.
 - `object` plugged: `object` in `plugged_in` state.
@@ -72,7 +84,7 @@ List of preconditions that can be specified in the programs. The preconditions s
 - `character` sit: `character` must have state `sitting` and edge `on` between character and an `object`.
 - `character` lying: `character` must have state `lying` and edge `on` between character and an `object`.
 
-###Binary preconditions
+### Binary preconditions
 - `object` in `character`: `character` is wearing `object`. Edge `on` between `object` and `character`.  
 - `object1` in `object2`:  Edge `on` between `object1` and `object2`.
 - `object1` inside `object2`: edge `inside` between `object1` and `object2`.
@@ -82,7 +94,7 @@ List of preconditions that can be specified in the programs. The preconditions s
  
 ## Actions
 
-### TemplateExecutor
+### TemplateExecutor `Supported Unity Simulator`
 - script: action object1 object2
 - Pre-condition: 
 - Post-condition:
@@ -110,6 +122,19 @@ ___
 
 ### WalkExecutor
 - script: walk `object`
+- Pre-condition: 
+	- `character` state is not sitting
+- Post-condition:
+    - remove undirected edges: `character` inside `any_node`, `character` close `any_node`, `character` faces `any_node`
+    - add undirected edges: `character` close to object_contain(`object`)
+	- add undirected edges: `character` close to object with properties BODY_PART
+	- add undirected edges: `character` close to object in hands
+    - add directed edges: `character` inside room_of(`object`)
+    - add undirected edges: `character` close `object`
+	- add undirected edges: `character` close all objects on `object`
+
+### RunExecutor
+- script: Run `object`
 - Pre-condition: 
 	- `character` state is not sitting
 - Post-condition:
