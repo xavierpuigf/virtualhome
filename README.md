@@ -1,7 +1,7 @@
 # VirtualHome
 VirtualHome is a platform to simulate complex household activities via programs. 
 Given an initial environment describing an apartment and a program depicting a sequence of actions, 
-VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning. Check out more details of the environmnent and platform in [VirtualHome](http://virtual-home.org). 
+VirtualHome executes the program generating a video of the activity together with useful data for activity understanding or planning. Check out more details of the environmnent and platform in [www.virtual-home.org](http://virtual-home.org). 
 
 <p align="center">
   <img width="460" height="300" src="assets/vh_intro.gif">
@@ -50,42 +50,15 @@ If you plan to use the simulator, please consider citing them.
 Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the *Unity Simulator* and *Evolving Graph*.
 
 #### Unity Simulator 
-This simulator is built in Unity and allows to generate videos of activities. To use this simulator you will need to download the appropiate executable and run it with the [Python API](simulation/unity_simulator/).
+This simulator is built in Unity and allows generating videos of activities. To use this simulator, you will need to download the appropiate executable and run it with the [Python API](simulation/unity_simulator/).
 
 #### Evolving Graph
 This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
 
 
-## Dataset
-
-We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
-Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
-
-```
-dataset
-└── programs_processed_precond_nograb_morepreconds
-	|── initstate
-	├── withoutconds
-	├── executable_programs
-	|   ├── TrimmedTestScene7_graph
-	|	└── ...
-	└── state_list
-		├── TrimmedTestScene7_graph
-	   	└── ...	
-```
-
-The folders `withoutconds` and `initstate` contain the original programs and pre-conditions. 
-
-When a script is executed in an environment, the script changes by aligning the original objects with instances in the environment. You can view the resulting script in `executable_programs/{environment}/{script_name}.txt`.
-
-To view the graph of the environment, and how it changes throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
-
-You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md). 
-
-
 ## Set Up
 
-How to install the executable or run the code in Unity
+How to run each of the simulators.
 
 ### Clone repository and install dependencies
 ```bash
@@ -112,7 +85,7 @@ You can also run Unity Simulator using Docker. You can find how to set it up [he
 
 ## Generating Videos and Snapshots
 
-VirtualHome Unity Simulator allows generating videos corresponding to household activities. In addition, it is possible to use Evolving Graph simulator to obtain the environment for each execution step and use UnitySimulator to generate snapshots of the environment at each step.
+VirtualHome *Unity Simulator* allows generating videos corresponding to household activities. In addition, it is possible to use *Evolving Graph* simulator to obtain the environment for each execution step and use UnitySimulator to generate snapshots of the environment at each step.
 
 
 ### Generate videos
@@ -134,6 +107,32 @@ cd demo/
 python generate_snapshots.py
 ```
 A grid of snapshots for the given script will be generated.
+
+## Dataset
+
+We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
+Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
+
+```
+dataset
+└── programs_processed_precond_nograb_morepreconds
+	|── initstate
+	├── withoutconds
+	├── executable_programs
+	|   ├── TrimmedTestScene7_graph
+	|	└── ...
+	└── state_list
+		├── TrimmedTestScene7_graph
+	   	└── ...	
+```
+
+The folders `withoutconds` and `initstate` contain the original programs and pre-conditions. 
+
+When a script is executed in an environment, the script changes by aligning the original objects with instances in the environment. You can view the resulting script in `executable_programs/{environment}/{script_name}.txt`.
+
+To view the graph of the environment, and how it changes throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
+
+You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md).
 
 ## Script Augmentation
 
