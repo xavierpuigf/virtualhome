@@ -90,7 +90,7 @@ VirtualHome *Unity Simulator* allows generating videos corresponding to househol
 
 ### Generate videos
 
-Open the simulator as indicated in [Test simulator](### Test simulator) and run:
+Open the simulator and run:
 
 ```bash
 cd demo/
@@ -100,7 +100,7 @@ python generate_video.py
 
 ### Generate snapshots
 
-Open the simulator as indicated in [Test simulator](### Test simulator).
+Open the simulator and run:
 
 ```bash
 cd demo/
