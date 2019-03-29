@@ -90,7 +90,7 @@ VirtualHome *Unity Simulator* allows generating videos corresponding to househol
 
 ### Generate videos
 
-Open the simulator as indicated in [Test simulator](###Test simulator) and run:
+Open the simulator as indicated in [Test simulator](### Test simulator) and run:
 
 ```bash
 cd demo/
@@ -100,7 +100,7 @@ python generate_video.py
 
 ### Generate snapshots
 
-Open the simulator as indicated in [Test simulator](###Test simulator).
+Open the simulator as indicated in [Test simulator](### Test simulator).
 
 ```bash
 cd demo/
@@ -139,7 +139,7 @@ You can find more details of the programs and environment graphs in [dataset/REA
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
 we augment the scripts with two knowledge bases: `KB-RealEnv` and `KB-ExceptonHandler`.
-You can download the augmented scripts in [KB-RealEnv](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_exception.zip) and [KB-ExceptionHandler](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_exception.zip).
+You can download the augmented scripts in [KB-RealEnv](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_location.zip) and [KB-ExceptionHandler](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_exception.zip).
 
 Here, we provide the code to augment the sripts:
 
