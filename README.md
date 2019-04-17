@@ -69,8 +69,8 @@ git clone https://github.com/xavierpuigf/virtualhome.git
 ### Download Unity Simulator
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
-- [Download](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/simulator/linux_sim.zip) Linux x86-64 version.
-- [Download](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/simulator/mac_sim.zip) Mac OS X version.
+- [Download](virtual-home.org/release/simulator/linux_sim.zip) Linux x86-64 version.
+- [Download](virtual-home.org/release/simulator/mac_sim.zip) Mac OS X version.
 
 
 ### Test simulator
@@ -110,7 +110,7 @@ A grid of snapshots for the given script will be generated.
 
 ## Dataset
 
-We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
+We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](virtual-home.org/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
 Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
 
 ```
@@ -139,7 +139,7 @@ You can find more details of the programs and environment graphs in [dataset/REA
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
 we augment the scripts with two knowledge bases: `KB-RealEnv` and `KB-ExceptonHandler`.
-You can download the augmented scripts in [KB-RealEnv](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_location.zip) and [KB-ExceptionHandler](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/programs/augment_exception.zip).
+You can download the augmented scripts in [KB-RealEnv](virtual-home.org/release/programs/augment_location.zip) and [KB-ExceptionHandler](virtual-home.org/release/programs/augment_exception.zip).
 
 Here, we provide the code to augment the sripts:
 
