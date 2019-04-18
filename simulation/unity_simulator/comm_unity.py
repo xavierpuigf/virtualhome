@@ -107,7 +107,7 @@ class UnityCommunication(object):
 
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
-                      frame_rate=5, image_synthesis=False, capture_screenshot=False, save_pose_data=False,
+                      frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
                       image_width=640, image_height=480,
                       save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
         """
@@ -134,7 +134,7 @@ class UnityCommunication(object):
         params = {'randomize_execution': randomize_execution, 'random_seed': random_seed,
                   'processing_time_limit': processing_time_limit, 'skip_execution': skip_execution,
                   'output_folder': output_folder, 'file_name_prefix': file_name_prefix,
-                  'frame_rate': frame_rate, 'image_synthesis': image_synthesis,
+                  'frame_rate': frame_rate, 'image_synthesis': image_synthesis, 
                   'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
                   'character_resource': character_resource, 'camera_mode': camera_mode,
