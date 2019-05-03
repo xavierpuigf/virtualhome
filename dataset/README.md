@@ -1,3 +1,5 @@
+# Dataset
+Move here the dataset of programs and environments representing activities.
 
 ## Environment
 VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a `.json` file containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding `.json` file. 

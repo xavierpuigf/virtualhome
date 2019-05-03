@@ -1,75 +1,36 @@
 # Simulation
-This directory contains the *Unity Simulator* and *Evolving Graph* simulator API's. Remember that in order to run the Unity Simulator, you need to run the appropiate executable. Following, we provide documentation of the Environment settings and Actions currently supported. 
+This directory contains the *Unity Simulator* and *Evolving Graph* simulator API's. Remember that in order to run the Unity Simulator, you need to download and execute the appropiate unity executable. The *Evolving Graph* simulator does not require any unity executable. 
+
+VirtualHome simulation works through 2 components:
+
+- Programs: A sequence of actions representing an activity. Each action is formed by one verb and up to 2 object arguments (e.g. `[PutBack] <glass> (1) <table> (1)`).
+- Environment: the environment where the programs will be executed. Each environment is represented as a graph, where correspond to objects with properties and `(e.g. CLOSED/ON)` and edges contain relationships between objects. 
+
+Following, we provide documentation of the Environment settings and Actions currently supported. 
 
 ## Contents
+- Programs
+	- Preconditions
+	- Actions
+		- Supported in Unity Simulator
 - Environment
     - Relations
     - Object Properties
     - Object States
-- Preconditions
-- Actions
-	- Supported in Unity Simulator
 
 
-## Environment
-List of supported node states, edge relations and object properties in the graphs representing the environment. 
-
-*Note that this documentation holds for both Unity Simulator and Evolving Graph*.
-
-### Relations
-Possible relations (edge labels) are:
-
-- **on**
-- **inside**
-- **between**  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
-- **close** edge `object1` close `object2` denotes that the distance between center of `object1` (`object2`) to the bounding 
-box of `object2` (`object1`) is < 1.5 units (~meters)  
-- **facing** there is an edge `object1` facing `object2` if `object2` is lookable, is visible from `object1`, and the 
-distance between the centers is < 5 units (~meters). If `object1` is a sofa or a chair
- it should also be turned towards `object2`
-- **holds_rh**  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
-- **holds_lh**  _analogue of holds_rh for left hand_
-
-### Object Properties
-
-- surfaces
-- grabbable
-- sittable
-- lieable
-- hangable
-- drinkable
-- eatable
-- recipient
-- cuttable
-- pourable
-- can_open
-- has_switch
-- readable
-- lookable
-- containers
-- clothes
-- person
-- body_part
-- cover_object
-- has_plug
-- has_paper
-- movable
-- cream
-
-### Object States
-
-- closed
-- open
-- on
-- off
-- sitting
-- dirty
-- clean
-- lying
-- plugged_in
-- plugged_out
 
 
+# Programs
+The programs allow executing activities in VirtualHome a program is composed by a sequence of instructions of the form `[Action_name] <Object_name> (Object_id)`.
+
+For example:
+
+```python
+program = ['[Walk] <chair> (1)', '[Sit] <chair> (1)']
+```
+
+Programs can also have preconditions, describing how should the environment be in order to execute the program. Following we show documentation of the preconditions and actions supported.
 
 ## Preconditions
 List of preconditions that can be specified in the programs. The preconditions specify constrains in the environment where the program will be executed.
@@ -483,3 +444,75 @@ CutExecutor |
 EatExecutor |
 SleepExecutor |
 WakeUpExecutor |
+
+
+
+# Environment
+VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a `.json` file containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding `.json` file. 
+
+The files representing each apartment can be found in [example_graphs](../example_graphs/) as `TestScene{apt_id}_graph.json`. Each graph has a Trimmed version, which is used for the Evolving Graph simulator.
+
+You can check in the [demo](../demo/unity_demo.ipynb) examples on how to read and update graphs.
+
+| Scene 1   | Scene 2   | Scene 3   | Scene 4   | Scene 5   | Scene 6   | Scene 7  |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)| ![img](../assets/scene6rot.png)| ![img](../assets/scene7rot.png)
+
+You can check here the list of supported node states, edge relations and object properties in the graphs representing the environment. 
+
+*Note that this documentation holds for both Unity Simulator and Evolving Graph*.
+
+## Relations
+Possible relations (edge labels) are:
+
+- **on**
+- **inside**
+- **between**  _used for door object, if door is between kitchen and livingroom, we have edges `door` between `livingroom` and `door` between `kitchen`_
+- **close** edge `object1` close `object2` denotes that the distance between center of `object1` (`object2`) to the bounding 
+box of `object2` (`object1`) is < 1.5 units (~meters)  
+- **facing** there is an edge `object1` facing `object2` if `object2` is lookable, is visible from `object1`, and the 
+distance between the centers is < 5 units (~meters). If `object1` is a sofa or a chair
+ it should also be turned towards `object2`
+- **holds_rh**  _edge `character` holds_rh `object` is used to indicate that character holds an object in its right hand_
+- **holds_lh**  _analogue of holds_rh for left hand_
+
+## Object Properties
+
+- surfaces
+- grabbable
+- sittable
+- lieable
+- hangable
+- drinkable
+- eatable
+- recipient
+- cuttable
+- pourable
+- can_open
+- has_switch
+- readable
+- lookable
+- containers
+- clothes
+- person
+- body_part
+- cover_object
+- has_plug
+- has_paper
+- movable
+- cream
+
+## Object States
+
+- closed
+- open
+- on
+- off
+- sitting
+- dirty
+- clean
+- lying
+- plugged_in
+- plugged_out
+
+
