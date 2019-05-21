@@ -23,7 +23,9 @@ max_nodes = 300
 
 
 def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
-
+    """
+        Writes the graphs into files
+    """
     new_path = txt_file.replace('withoutconds', 'executable_programs')
     graph_sub_dir = graph_path.split('/')[-1].replace('.json', '')
     new_path = new_path.split('/')
@@ -101,7 +103,10 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
 
 
 def translate_graph_dict(path):
-
+    """
+        Changes the object names and properties of an environment graph so that 
+        they match with the names in the scripts. 
+    """
     graph_dict = utils.load_graph_dict(path)
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
     file_name = os.path.join(abs_dir_path, '../../resources/properties_data.json')
@@ -200,13 +205,10 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
     return message, executable, final_state, graph_state_list, id_mapping, info, script
 
 
-def check_script(program_str, precond, graph_path, inp_graph_dict=None, modify_graph=True, id_mapping={}, info={}):
-    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/properties_data.json'))
-    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/object_states.json'), 'r'))
-    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/object_script_placing.json'), 'r'))
+def check_script(program_str, precond, graph_path, inp_graph_dict=None, 
+                 modify_graph=True, id_mapping={}, info={}):
 
-    helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
+    helper = utils.graph_dict_helper(max_nodes=max_nodes)
 
     try:
         script = read_script_from_list_string(program_str)
@@ -225,15 +227,15 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None, modify_g
 
 
 def check_original_script(inp):
-
+    """ 
+    Checks if a script is executable in a graph environment
+    Given a script and a graph. Infers script preconditions modifies the graph
+    and checks whether the script can be executed.
+    :param inp. Script path and Graph path where the script will be executed
+    """
     txt_file, graph_path = inp
-    abs_dir_path = os.path.dirname(os.path.abspath(__file__))
-    properties_data = utils.load_properties_data(file_name=os.path.join(abs_dir_path, '../../resources/properties_data.json'))
-    object_states = json.load(open(os.path.join(abs_dir_path, '../../resources/object_states.json'), 'r'))
-    object_placing = json.load(open(os.path.join(abs_dir_path, '../../resources/object_script_placing.json'), 'r'))
 
-
-    helper = utils.graph_dict_helper(properties_data, object_placing, object_states, max_nodes)
+    helper = utils.graph_dict_helper(max_nodes=max_nodes)
     
     try:
         script = read_script(txt_file)
@@ -253,7 +255,7 @@ def check_original_script(inp):
     return script, message, executable, graph_state_list, id_mapping
 
 
-def modify_objects_unity2script(helper, script, precond):
+def modify_objects_unity2script(helper, script=[], precond=[]):
     """Convert the script and precond's objects to match unity programs
     """
     for script_line in script:

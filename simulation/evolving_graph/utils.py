@@ -162,7 +162,14 @@ class BinaryVariable(object):
 
 class graph_dict_helper(object):
 
-    def __init__(self, properties_data, object_placing, object_states, max_nodes):
+    def __init__(self, properties_data=None, object_placing=None, object_states=None, max_nodes=300):
+        if properties_data is None:
+            properties_data = utils.load_properties_data()
+        if object_placing is None:
+            object_placing = utils.load_object_placing()
+        if object_states is None:
+            object_states = utils.load_object_states()
+
         self.properties_data = properties_data
         self.object_placing = object_placing
         self.object_states = object_states
