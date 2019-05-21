@@ -39,9 +39,9 @@ If you plan to use the simulator, please consider citing them.
 ## Contents
 
 - Overview
-- Dataset 
 - Set Up
 - Generating Videos/Keyframes
+- Dataset 
 - Script Augmentation
 - Other details
 
