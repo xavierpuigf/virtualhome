@@ -97,6 +97,13 @@ class Script(object):
     def __getitem__(self, item):
         return self._script_lines[item]
 
+    def obtain_objects(self):
+        list_objects = []
+        for script_line in self._script_lines:
+            for parameter in script_line.parameters:
+                list_objects.append((parameter.name, parameter.instance))
+        return list(set(list_objects))
+
     def from_index(self, index):
         return Script(self._script_lines[index:])
 
@@ -133,6 +140,20 @@ def parse_script_line(string, index):
                                    action.name, len(params), action.value[1])
 
     return ScriptLine(action, params, index)
+
+
+def script_to_list_string(script):
+    list_string = []
+    for script_line in script:
+        st = str(script_line)
+        st = ' '.join(st.split()[:-1])
+        list_string.append(st)
+    return list_string
+
+
+def script_to_string(script):
+    list_string = print_script_to_list_string(script)
+    return ', ',join(list_string)
 
 
 def read_script(file_name):

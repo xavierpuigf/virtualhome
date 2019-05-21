@@ -436,11 +436,9 @@ class graph_dict_helper(object):
         key = ('character', 1)
         objects_in_script[key] = id_mapping[key] if key in id_mapping else character_id
 
-        for script_line in script:
-            for parameter in script_line.parameters:
-                key = (parameter.name, parameter.instance)
-                if key not in objects_in_script:
-                    objects_in_script[key] = id_mapping[key] if key in id_mapping else None
+        for key in script.obtain_objects():
+            if key not in objects_in_script:
+                objects_in_script[key] = id_mapping[key] if key in id_mapping else None
 
         # set up the first room
         #location_precond = {tuple(i['location'][0]): i['location'][1][0] for i in filter(lambda v: 'location' in v, precond)}
