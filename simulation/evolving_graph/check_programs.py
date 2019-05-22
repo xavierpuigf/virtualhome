@@ -154,7 +154,7 @@ def translate_graph_dict(path):
     return translated_path
 
 
-def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, id_mapping={}, **info):
+def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_graph=True, place_other_objects=True, id_mapping={}, **info):
 
     helper.initialize(graph_dict)
     script, precond = modify_objects_unity2script(helper, script, precond)
@@ -169,11 +169,12 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
 
         ## place the random objects (id from 2000)
-        max_node_to_place = max_nodes - len(graph_dict["nodes"])
-        n = random.randint(max_node_to_place - 20, max_node_to_place)
-        helper.add_random_objs_graph_dict(graph_dict, n=max(n, 0))
-        helper.set_to_default_state(graph_dict, None, id_checker=lambda v: v >= 2000)
-        helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
+        if place_other_objects:
+            max_node_to_place = max_nodes - len(graph_dict["nodes"])
+            n = random.randint(max_node_to_place - 20, max_node_to_place)
+            helper.add_random_objs_graph_dict(graph_dict, n=max(n, 0))
+            helper.set_to_default_state(graph_dict, None, id_checker=lambda v: v >= 2000)
+            helper.random_change_object_state(id_mapping, graph_dict, id_checker=lambda v: v not in objects_id_in_script)
 
         ## set relation and state from precondition
         helper.check_binary(graph_dict, id_checker=lambda v: True, verbose=False)
@@ -221,7 +222,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None,
         graph_dict = inp_graph_dict
     message, executable, final_state, graph_state_list, id_mapping, info, modif_script = check_one_program(
         helper, script, precond, graph_dict, w_graph_list=True, modify_graph=modify_graph,
-        id_mapping=id_mapping, **info)
+        id_mapping=id_mapping, place_other_objects=True, **info)
 
     return message, final_state, graph_state_list, graph_dict, id_mapping, info, helper, modif_script
 
