@@ -74,7 +74,7 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 
 ### Test simulator
 
-Double click the executable and select a resolution and screen size. Then, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). If you do not have a Monitor, you can either use Docker or use an X server. Following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639). When running the executable, use -batchmode. 
+To test the simulator in the local machine, double click the executable and select a resolution and screen size. Then, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). If you do not have a Monitor or want to test remotely, you can either use [Docker](docker) or use an X server (following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable, use -batchmode. 
 
 You can also test the Evolving Graph simulator in [demo/example.py](demo/example.py). This simulator does not require opening any executable if you do not plan to generate images.
 
