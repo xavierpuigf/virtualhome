@@ -59,10 +59,11 @@ This simulator runs fully in python and allows to generate a sequence of graphs 
 ## Set Up
 
 
-### Clone repository and install dependencies
+### Clone repository and install the dependencies
+Note that this code base is based on Python 3
 ```bash
-pip install -r requirements.txt
 git clone https://github.com/xavierpuigf/virtualhome.git
+pip install -r requirements.txt
 ```
 
 ### Download Unity Simulator
