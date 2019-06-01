@@ -11,7 +11,7 @@ VirtualHome executes the program generating a video of the activity together wit
 
 VirtualHome has been used in:
 
-- VirtualHome: Simulating HouseHold Activities via Programs, CVPR2018
+- VirtualHome: Simulating HouseHold Activities via Programs, CVPR2018. [PDF](https://arxiv.org/pdf/1806.07011.pdf)
 - Synthesizing Environment-Aware Activities via Activity Sketches, CVPR2019
 
 If you plan to use the simulator, please consider citing them.
@@ -72,10 +72,24 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 - [Download](http://virtual-home.org/release/simulator/linux_sim.zip) Linux x86-64 version.
 - [Download](http://virtual-home.org/release/simulator/mac_sim.zip) Mac OS X version.
 
+You can also download the simulator, unzip it and move it under the `simulation` folder by running
+
+```
+./helper_scripts/download_sim.sh
+```
+
 
 ### Test simulator
 
-To test the simulator in the local machine, double click the executable and select a resolution and screen size. Then, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). If you do not have a Monitor or want to test remotely, you can either use [Docker](docker) or use an X server (following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable, use -batchmode. 
+To test the simulator in the local machine, double click the executable, select a resolution and screen size and press `Play!`. Remember to select the option `Windowed` to make sure the simulator does not take the whole screen. The screenshot below shows our recommended configuration.
+
+![img](assets/simulator.png)
+
+
+
+Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
+
+If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server, following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639). When running the executable with an X server, use -batchmode. 
 
 You can also test the Evolving Graph simulator in [demo/example.py](demo/example.py). This simulator does not require opening any executable if you do not plan to generate images.
 
@@ -85,7 +99,7 @@ You can also run Unity Simulator using Docker. You can find how to set it up [he
 
 ## Generating Videos and Snapshots
 
-VirtualHome *Unity Simulator* allows generating videos corresponding to household activities. In addition, it is possible to use *Evolving Graph* simulator to obtain the environment for each execution step and use UnitySimulator to generate snapshots of the environment at each step.
+VirtualHome *Unity Simulator* allows generating videos corresponding to household activities. In addition, it is possible to use *Evolving Graph* simulator to obtain the environment for each execution step and use *UnitySimulator* to generate snapshots of the environment at each step.
 
 
 ### Generate videos
@@ -106,12 +120,16 @@ Open the simulator and run:
 cd demo/
 python generate_snapshots.py
 ```
-A grid of snapshots for the given script will be generated.
+A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](demo/snapshot_test.png).
 
 ## Dataset
 
 We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://virtual-home.org/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
-Once downloaded, move the programs into the `dataset` folder. The dataset should follow the following structure:
+Once downloaded and unzipped, move the programs into the `dataset` folder. You can do all this by executing the script
+```
+./helper_scripts/download_dataset.sh
+```
+The dataset should follow the following structure:
 
 ```
 dataset
@@ -146,7 +164,7 @@ Here, we provide the code to augment the sripts:
 ### Augment with `KB-RealEnv`
 
 ```bash
-cd dataset_generation
+cd dataset_augmentation
 python augment_dataset_locations.py
 ```
 
@@ -154,7 +172,7 @@ python augment_dataset_locations.py
 ### Augment with `KB-ExceptionHandler`
 
 ```bash
-cd dataset_generation
+cd dataset_augmentation
 python augment_dataset_exceptions.py
 ```
 
