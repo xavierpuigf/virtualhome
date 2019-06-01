@@ -65,6 +65,7 @@ Note that this code base is based on Python 3
 git clone https://github.com/xavierpuigf/virtualhome.git
 pip install -r requirements.txt
 ```
+We also provide a [Jupyter](https://jupyter.org/) notebook with a demo and starting code. If you want to run the demo, [install Jupyter](https://jupyter.org/install.html) and run it on your host. If you are new to Jupyter, see [Running the Jupyter Notebook](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html) for a walkthrough of how to use this tool.
 
 ### Download Unity Simulator
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
@@ -74,7 +75,7 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 
 You can also download the simulator, unzip it and move it under the `simulation` folder by running
 
-```
+```bash
 ./helper_scripts/download_sim.sh
 ```
 
@@ -125,7 +126,7 @@ A grid of snapshots for the given script will be generated and saved in [demo/sn
 
 We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://virtual-home.org/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
 Once downloaded and unzipped, move the programs into the `dataset` folder. You can do all this by executing the script
-```
+```bash
 ./helper_scripts/download_dataset.sh
 ```
 The dataset should follow the following structure:
