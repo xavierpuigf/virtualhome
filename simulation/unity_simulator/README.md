@@ -2,7 +2,7 @@
 ## Quickstart
 To start running the simulator, make sure the Unity Executable is running (use the desktop version or docker). If using the desktop version, make sure you select windowed and run **Play!** as shown in the screenshot.
 
-![img](../../assets/simulator.png)
+<img src="../../assets/simulator.png" width=70%>
 
 You can now run the simulator with the python API. Start the communication with the executable:
 

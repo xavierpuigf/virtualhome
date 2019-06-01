@@ -83,8 +83,7 @@ You can also download the simulator, unzip it and move it under the `simulation`
 
 To test the simulator in the local machine, double click the executable, select a resolution and screen size and press `Play!`. Remember to select the option `Windowed` to make sure the simulator does not take the whole screen. The screenshot below shows our recommended configuration.
 
-![img](assets/simulator.png)
-
+<img src="assets/simulator.png" width=70%>
 
 
 Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
