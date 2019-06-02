@@ -5,20 +5,21 @@ import numpy as np
 import shutil
 import os
 import json
-import exception_handler
-import ipdb
+import pdb
 import re
 from collections import Counter
 from multiprocessing import Process, Manager, current_process
 from tqdm import tqdm
 import sys
+sys.path.append('../simulation/')
 from termcolor import colored
 
 
 import augmentation_utils
 
-import check_programs
-import utils
+import exception_handler
+import evolving_graph.check_programs as check_programs
+import evolving_graph.utils as utils
 
 random.seed(123)
 np.random.seed(123)
@@ -33,8 +34,8 @@ prob_modif = 0.7
 maximum_iters = 20
 
 # Paths
-augmented_data_dir = '../data/augment_exception'
-original_program_folder = '../data/programs_processed_precond_nograb_morepreconds/'
+augmented_data_dir = '../dataset/augment_exception'
+original_program_folder = '../dataset/programs_processed_precond_nograb_morepreconds/'
 
 if write_augment_data:
     if not os.path.exists(augmented_data_dir):

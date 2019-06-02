@@ -4,7 +4,7 @@ import os
 import sys
 import glob
 import random
-import ipdb
+import pdb
 import copy
 import json
 import numpy as np
@@ -18,9 +18,9 @@ from scipy.io import *
 import augmentation_utils
 
 import sys
-sys.path.insert('../simulation/evolving_graph/')
-import check_programs
-import utils
+sys.path.append('../simulation/')
+import evolving_graph.check_programs as check_programs
+import evolving_graph.utils as utils
 
 
 random.seed(123)
@@ -37,8 +37,8 @@ num_processes = os.cpu_count() // 2
 
 # Paths
 path_object_placing = '../resources/object_script_placing.json'
-augmented_data_dir = '../data/augment_location'
-original_program_folder = '../data/programs_processed_precond_nograb_morepreconds/'
+augmented_data_dir = '../dataset/augment_location'
+original_program_folder = '../dataset/programs_processed_precond_nograb_morepreconds/'
 
 if write_augment_data:
     if not os.path.exists(augmented_data_dir):
@@ -188,7 +188,7 @@ def augment_dataset(d, programs):
                             {},
                             {})
             except:
-                ipdb.set_trace()
+                pdb.set_trace()
 
             # Convert the program
             lines_program_newinst = []
