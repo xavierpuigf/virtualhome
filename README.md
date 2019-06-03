@@ -89,7 +89,12 @@ To test the simulator in the local machine, double click the executable, select 
 
 Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
 
-If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server, following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639). When running the executable with an X server, use -batchmode. 
+If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server, following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639). When running the executable with an X server, use -batchmode. For Linux, that would be:
+
+```bash
+sudo /usr/bin/X $display_num &
+DISPLAY=:display_num ./$PATH_SIM/synvid.x86_64 -batchmode
+```
 
 You can also test the Evolving Graph simulator in [demo/example.py](demo/example.py). This simulator does not require opening any executable if you do not plan to generate images.
 
