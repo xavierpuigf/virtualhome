@@ -169,7 +169,7 @@ Here, we provide the code to augment the sripts:
 ### Augment with `KB-RealEnv`
 
 ```bash
-cd dataset_augmentation
+cd dataset_utils
 python augment_dataset_locations.py
 ```
 
@@ -177,7 +177,7 @@ python augment_dataset_locations.py
 ### Augment with `KB-ExceptionHandler`
 
 ```bash
-cd dataset_augmentation
+cd dataset_utils
 python augment_dataset_exceptions.py
 ```
 

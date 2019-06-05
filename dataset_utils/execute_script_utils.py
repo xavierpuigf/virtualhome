@@ -1,0 +1,97 @@
+# Code to execute a script from the dataset using the python simulator
+from tqdm import tqdm
+import re
+import ipdb
+import glob
+import sys
+import os
+import copy
+import requests.exceptions
+import json
+import cv2
+
+curr_dirname = os.path.dirname(__file__)
+sys.path.append('{}/../simulation/'.format(curr_dirname))
+from evolving_graph import scripts
+
+
+# parses a file from the executable folder
+def parse_exec_script_file(file_name):
+    with open(file_name, 'r') as f:
+        content = f.readlines()
+        content = [x.strip() for x in content]
+        title = content[0]
+        description = content[1]
+        script_raw = content[4:]
+
+    script = []
+    for elem in script_raw:
+        script.append(re.sub('[0-9].', '', elem))
+
+    return title, description, script
+
+def obtain_scene_id_from_path(path):
+    scene_name = [x for x in path.split('/') if 'TrimmedTestScene' in x][0]
+    scene_number = int(scene_name.split('TrimmedTestScene')[1].split('_graph')[0])
+    return scene_number
+
+def obtain_objects_from_message(message):
+    objects_missing = []
+    for x in ['unplaced', 'missing_destinations', 'missing_prefabs']:
+        if x in message.keys():
+            objects_missing += message[x]
+    return objects_missing
+
+def render_script_from_path(comm, path_executable_file, path_graph, 
+                            image_syn=None, save_output=None):
+    scene_id = obtain_scene_id_from_path(path_graph)
+    title, description, script = parse_exec_script_file(path_executable_file)
+    with open(path_graph, 'r') as f:
+        content = json.load(f)
+        init_graph = content['init_graph']
+    result = render_script(comm, script, init_graph, scene_id-1, image_syn, save_output)
+    return None
+
+def render_script(comm, script, init_graph, scene_num, image_syn=None, save_output=None):
+    import pdb
+    comm.reset(scene_num)
+    if type(script) == list:
+        script_content = scripts.read_script_from_list_string(script)
+    else:
+        script_content = scripts.read_script_from_string(script)
+    success, message = comm.expand_scene(init_graph)
+
+    if type(message) != dict:
+        comm.reset()
+        return {'success_expand': False, 
+                'message': ('There was an error expanding the scene.', message)}
+    else:
+        objects_missing = obtain_objects_from_message(message)
+        objects_script = [x[0].replace('_', '') for x in script_content.obtain_objects()]
+        intersection_objects = list(set(objects_script).intersection(objects_missing))
+        message_missing = 'Some objects appearing in the script were not properly initialized'
+        if len(intersection_objects) > 0:
+            return {'succes_expand': False, 
+                    'message': (message_missing, intersection_objects)}
+        else:
+            import pdb
+            pdb.set_trace()
+            success, message_exec = comm.render_script(
+                    [script[0]], 
+                    image_synthesis=image_syn,
+                    output_folder=save_output,
+                    find_solution=False, 
+                    randomize_execution=False, 
+                    skip_execution=image_syn is None)
+            
+            if success:
+                return {'success_expand': True, 'success_exec': True}
+            else:
+                return {'success_expand': True, 
+                        'success_exec': False, 
+                        'message': (message_exec, None)}
+
+    
+
+
+
