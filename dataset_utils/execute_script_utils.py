@@ -30,11 +30,14 @@ def parse_exec_script_file(file_name):
 
     return title, description, script
 
+# given a file name of an environment, get an id
 def obtain_scene_id_from_path(path):
     scene_name = [x for x in path.split('/') if 'TrimmedTestScene' in x][0]
     scene_number = int(scene_name.split('TrimmedTestScene')[1].split('_graph')[0])
     return scene_number
 
+# given the message obtained from extending a scene, gets the objects that 
+# could not be expanded
 def obtain_objects_from_message(message):
     objects_missing = []
     for x in ['unplaced', 'missing_destinations', 'missing_prefabs']:
@@ -42,6 +45,7 @@ def obtain_objects_from_message(message):
             objects_missing += message[x]
     return objects_missing
 
+# Given a path from executable_programs, and a graph, executes the script
 def render_script_from_path(comm, path_executable_file, path_graph, 
                             image_syn=None, save_output=None):
     scene_id = obtain_scene_id_from_path(path_graph)
@@ -50,8 +54,9 @@ def render_script_from_path(comm, path_executable_file, path_graph,
         content = json.load(f)
         init_graph = content['init_graph']
     result = render_script(comm, script, init_graph, scene_id-1, image_syn, save_output)
-    return None
+    return result
 
+# Renders a script , given a scene and initial environment
 def render_script(comm, script, init_graph, scene_num, image_syn=None, save_output=None):
     import pdb
     comm.reset(scene_num)
@@ -74,17 +79,17 @@ def render_script(comm, script, init_graph, scene_num, image_syn=None, save_outp
             return {'succes_expand': False, 
                     'message': (message_missing, intersection_objects)}
         else:
-            import pdb
-            pdb.set_trace()
             success, message_exec = comm.render_script(
                     [script[0]], 
                     image_synthesis=image_syn,
-                    output_folder=save_output,
+                    output_folder='Default' if save_output is None else save_output,
                     find_solution=False, 
                     randomize_execution=False, 
                     skip_execution=image_syn is None)
             
             if success:
+                import pdb
+                pdb.set_trace()
                 return {'success_expand': True, 'success_exec': True}
             else:
                 return {'success_expand': True, 
