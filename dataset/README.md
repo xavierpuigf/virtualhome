@@ -98,4 +98,4 @@ comm.expand_scene(first_graph)
 ``` 
 
 ### TLDR;
-Knowing the structure of these folders is useful to understand and use the dataset, but you may get a faster glance by looking at [../demo/generate_snapshot.py](../demo/generate_snapshot.py). We are also developing some functions to read the previously mentioned files, which will go into [../dataset_utils](../dataset_utils).
+Knowing the structure of these folders is useful to understand and use the dataset, but you may get a faster glance by looking at [../demo/generate_snapshot.py](../demo/generate_snapshot.py). Additionally, you can find some utility functions using the dataset in [../dataset_utils/execute_script_utils.py](../dataset_utils/execute_script_utils.py).
