@@ -7,7 +7,7 @@ import requests
 from PIL import Image
 import cv2
 import numpy as np
-
+import glob
 
 class UnityCommunication(object):
 
@@ -108,7 +108,7 @@ class UnityCommunication(object):
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
-                      image_width=640, image_height=480,
+                      image_width=640, image_height=480, gen_vid=True,
                       save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
         """
         :param script: a list of script lines
@@ -141,9 +141,25 @@ class UnityCommunication(object):
                   'image_width': image_width, 'image_height': image_height}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
+        if gen_vid:
+            generate_video(image_synthesis, output_folder, file_name_prefix)
         return response['success'], response['message']
 
-
+def generate_video(image_syn, output_folder, prefix):
+    import os
+    import subprocess
+    
+    curr_folder = os.path.dirname(os.path.realpath(__file__))
+    vid_folder = '{}/../{}/{}/'.format(curr_folder, output_folder, prefix)
+    print('Generating .mp4')
+    
+    for vid_mod in image_syn:
+        subprocess.call(['ffmpeg', '-i', 
+                         '{}/Action_%04d_{}.png'.format(vid_folder, vid_mod), 
+                         '{}/Action_{}.mp4'.format(vid_folder, vid_mod)])
+        files_delete = glob.glob('{}/Action_*_{}.png'.format(vid_folder, vid_mod))
+        for ft in files_delete: os.remove(ft)
+        
 def _decode_image(img_string):
     img_bytes = base64.b64decode(img_string)
     if 'PNG' == img_bytes[1:4]:
