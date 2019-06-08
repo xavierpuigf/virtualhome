@@ -1,7 +1,6 @@
 # Code to execute a script from the dataset using the python simulator
 from tqdm import tqdm
 import re
-import ipdb
 import glob
 import sys
 import os
@@ -57,8 +56,8 @@ def render_script_from_path(comm, path_executable_file, path_graph,
     return result
 
 # Renders a script , given a scene and initial environment
-def render_script(comm, script, init_graph, scene_num, image_syn=None, save_output=None):
-    import pdb
+def render_script(comm, script, init_graph, scene_num, image_syn=None, 
+                  save_output=None, file_name=None):
     comm.reset(scene_num)
     if type(script) == list:
         script_content = scripts.read_script_from_list_string(script)
@@ -80,16 +79,15 @@ def render_script(comm, script, init_graph, scene_num, image_syn=None, save_outp
                     'message': (message_missing, intersection_objects)}
         else:
             success, message_exec = comm.render_script(
-                    [script[0]], 
+                    script, 
                     image_synthesis=image_syn,
-                    output_folder='Default' if save_output is None else save_output,
+                    output_folder='Output' if save_output is None else save_output,
+                    file_name_prefix='script' if file_name is None else file_name,
                     find_solution=False, 
                     randomize_execution=False, 
                     skip_execution=image_syn is None)
             
             if success:
-                import pdb
-                pdb.set_trace()
                 return {'success_expand': True, 'success_exec': True}
             else:
                 return {'success_expand': True, 
