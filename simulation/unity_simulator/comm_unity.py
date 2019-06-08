@@ -141,8 +141,9 @@ class UnityCommunication(object):
                   'image_width': image_width, 'image_height': image_height}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
-        if gen_vid:
-            generate_video(image_synthesis, output_folder, file_name_prefix)
+        if response['success']:
+            if gen_vid and image_synthesis is not None:
+                generate_video(image_synthesis, output_folder, file_name_prefix)
         return response['success'], response['message']
 
 def generate_video(image_syn, output_folder, prefix):
