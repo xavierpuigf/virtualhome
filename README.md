@@ -27,12 +27,12 @@ If you plan to use the simulator, please consider citing them.
 ```
 
 ```
-@inproceedings{puig2018virtualhome,
-  title={Virtualhome: Simulating household activities via programs},
-  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={8494--8502},
-  year={2018}
+@InProceedings{Liao_2019_CVPR,
+author = {Liao, Yuan-Hong and Puig, Xavier and Boben, Marko and Torralba, Antonio and Fidler, Sanja},
+title = {Synthesizing Environment-Aware Activities via Activity Sketches},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2019}
 }
 ```
 
