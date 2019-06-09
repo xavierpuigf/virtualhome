@@ -11,8 +11,9 @@ import cv2
 
 curr_dirname = os.path.dirname(__file__)
 sys.path.append('{}/../simulation/'.format(curr_dirname))
-from evolving_graph import scripts
+from evolving_graph import scripts, check_programs, utils
 
+helper = utils.graph_dict_helper()
 
 # parses a file from the executable folder
 def parse_exec_script_file(file_name):
@@ -62,8 +63,10 @@ def render_script(comm, script, init_graph, scene_num, render_args):
         script_content = scripts.read_script_from_list_string(script)
     else:
         script_content = scripts.read_script_from_string(script)
-    success, message = comm.expand_scene(init_graph)
 
+    script_content, _ = check_programs.modify_objects_unity2script(helper, script_content)
+    success, message = comm.expand_scene(init_graph)
+    
     if type(message) != dict:
         comm.reset()
         return {'success_expand': False, 
