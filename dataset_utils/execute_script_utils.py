@@ -45,19 +45,18 @@ def obtain_objects_from_message(message):
     return objects_missing
 
 # Given a path from executable_programs, and a graph, executes the script
-def render_script_from_path(comm, path_executable_file, path_graph, 
-                            image_syn=None, save_output=None):
+def render_script_from_path(comm, path_executable_file, path_graph, render_args):
     scene_id = obtain_scene_id_from_path(path_graph)
     title, description, script = parse_exec_script_file(path_executable_file)
     with open(path_graph, 'r') as f:
         content = json.load(f)
         init_graph = content['init_graph']
-    result = render_script(comm, script, init_graph, scene_id-1, image_syn, save_output)
+
+    result = render_script(comm, script, init_graph, scene_id-1, render_args)
     return result
 
 # Renders a script , given a scene and initial environment
-def render_script(comm, script, init_graph, scene_num, image_syn=None, 
-                  save_output=None, file_name=None):
+def render_script(comm, script, init_graph, scene_num, render_args):
     comm.reset(scene_num)
     if type(script) == list:
         script_content = scripts.read_script_from_list_string(script)
@@ -78,14 +77,8 @@ def render_script(comm, script, init_graph, scene_num, image_syn=None,
             return {'succes_expand': False, 
                     'message': (message_missing, intersection_objects)}
         else:
-            success, message_exec = comm.render_script(
-                    script, 
-                    image_synthesis=image_syn,
-                    output_folder='Output' if save_output is None else save_output,
-                    file_name_prefix='script' if file_name is None else file_name,
-                    find_solution=False, 
-                    randomize_execution=False, 
-                    skip_execution=image_syn is None)
+            render_args['skip_execution'] = render_args['image_synthesis'] is None
+            success, message_exec = comm.render_script(script, **render_args)
             
             if success:
                 return {'success_expand': True, 'success_exec': True}
