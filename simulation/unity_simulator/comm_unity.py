@@ -143,10 +143,10 @@ class UnityCommunication(object):
                                       'stringParams': [json.dumps(params)] + script})
         if response['success']:
             if gen_vid and image_synthesis is not None:
-                generate_video(image_synthesis, output_folder, file_name_prefix)
+                generate_video(image_synthesis, output_folder, file_name_prefix, frame_rate)
         return response['success'], response['message']
 
-def generate_video(image_syn, output_folder, prefix):
+def generate_video(image_syn, output_folder, prefix, frame_rate):
     import os
     import subprocess
     
@@ -155,8 +155,10 @@ def generate_video(image_syn, output_folder, prefix):
     print('Generating .mp4')
     
     for vid_mod in image_syn:
-        subprocess.call(['ffmpeg', '-i', 
+        subprocess.call(['ffmpeg', '-i',
                          '{}/Action_%04d_{}.png'.format(vid_folder, vid_mod), 
+                         '-framerate', str(frame_rate),
+                         '-pix_fmt', 'yuv420p',
                          '{}/Action_{}.mp4'.format(vid_folder, vid_mod)])
         files_delete = glob.glob('{}/Action_*_{}.png'.format(vid_folder, vid_mod))
         for ft in files_delete: os.remove(ft)
