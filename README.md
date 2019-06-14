@@ -11,8 +11,13 @@ VirtualHome executes the program generating a video of the activity together wit
 
 VirtualHome has been used in:
 
-- VirtualHome: Simulating HouseHold Activities via Programs, CVPR2018. [PDF](https://arxiv.org/pdf/1806.07011.pdf)
-- Synthesizing Environment-Aware Activities via Activity Sketches, CVPR2019
+- VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf)
+X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba 
+CVPR2018.
+
+- Synthesizing Environment-Aware Activities via Activity Sketches.
+A. Liao*, X. Puig*, M. Boben, S. Fidler, A. Torralba.
+CVPR2019.
 
 If you plan to use the simulator, please consider citing them.
 
@@ -186,6 +191,10 @@ python augment_dataset_exceptions.py
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
 Check [resources/README.md](resources/README.md) for more details.
 
-
+## Contributors
+- Marko Boben
+- Xavier Puig
+- Kevin Ra
+- Andrew Liao
 
 
