@@ -11,12 +11,13 @@ VirtualHome executes the program generating a video of the activity together wit
 
 VirtualHome has been used in:
 
-- VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf)
-X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba 
+- VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf) <br/>
+X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba <br/>
 CVPR2018.
 
-- Synthesizing Environment-Aware Activities via Activity Sketches.
-A. Liao*, X. Puig*, M. Boben, S. Fidler, A. Torralba.
+
+- Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
+A. Liao*, X. Puig*, M. Boben, S. Fidler, A. Torralba.<br/>
 CVPR2019.
 
 If you plan to use the simulator, please consider citing them.
