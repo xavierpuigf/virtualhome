@@ -17,7 +17,7 @@ CVPR2018.
 
 
 - Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
-A. Liao*, X. Puig*, M. Boben, S. Fidler, A. Torralba.<br/>
+A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
 CVPR2019.
 
 If you plan to use the simulator, please consider citing them.
