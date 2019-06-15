@@ -12,7 +12,7 @@ VirtualHome executes the program generating a video of the activity together wit
 VirtualHome has been used in:
 
 - VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf) <br/>
-X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba <br/>
+X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba.<br/>
 CVPR2018.
 
 
