@@ -5,11 +5,14 @@ import io
 import os
 import base64
 from IPython.display import HTML
-
+from sys import platform
 
 def setup():
     os.chdir('../simulation/')
-    os.system('open ./exec_mac.app')
+    if platform == 'darwin':
+      os.system('open ./exec_mac.app')
+    else:
+      os.system('./linux_sim.x86_64')
 
     from unity_simulator.comm_unity import UnityCommunication
     comm = UnityCommunication()
