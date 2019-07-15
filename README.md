@@ -76,6 +76,7 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 
 - [Download](http://virtual-home.org/release/simulator/linux_sim.zip) Linux x86-64 version.
 - [Download](http://virtual-home.org/release/simulator/mac_sim.zip) Mac OS X version.
+- [Download](http://virtual-home.org/release/simulator/windows_sim.zip) Windows version.
 
 You can also download the simulator, unzip it and move it under the `simulation` folder by running
 
