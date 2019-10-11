@@ -1322,7 +1322,7 @@ class ScriptExecutor(object):
         return executor.execute(script, state, info)
 
     def execute_one_step(self, script: Script, state: EnvironmentState):
-
+        prev_state = state
         state = next(self.call_action_method(script, state, self.info), None)
         if state is None:
             return False, prev_state
