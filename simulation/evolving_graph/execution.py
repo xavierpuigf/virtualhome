@@ -106,6 +106,7 @@ class WalkExecutor(ActionExecutor):
                     changes.append(AddEdges(CharacterNode(), Relation.CLOSE, ObjectOnNode(node), add_reverse=True))
 
                 yield state.change_state(changes, node, current_obj)
+    
 
     def check_walk(self, state: EnvironmentState, node: GraphNode, info: ExecutionInfo):
         char_node = _get_character_node(state)
@@ -166,6 +167,7 @@ class _FindExecutor(ActionExecutor):
             return False
         
         return True
+
 
 
 _walk_find_executor = JoinedExecutor(WalkExecutor(), _FindExecutor())
@@ -265,6 +267,7 @@ class SitExecutor(ActionExecutor):
         return True
 
 
+
 class StandUpExecutor(ActionExecutor):
 
     def execute(self, script: Script, state: EnvironmentState, info: ExecutionInfo):
@@ -321,6 +324,7 @@ class GrabExecutor(ActionExecutor):
         return new_relation
 
 
+
 class OpenExecutor(ActionExecutor):
 
     def __init__(self, close: bool):
@@ -367,6 +371,7 @@ class OpenExecutor(ActionExecutor):
             info.error('{} is still on'.format(node))
             return False
         return True
+
 
 
 class PutExecutor(ActionExecutor):
