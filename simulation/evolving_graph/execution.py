@@ -1321,6 +1321,13 @@ class ScriptExecutor(object):
         executor = cls._action_executors.get(script[0].action, UnknownExecutor())
         return executor.execute(script, state, info)
 
+    def execute_one_step(self, script: Script, state: EnvironmentState):
+
+        state = next(self.call_action_method(script, state, self.info), None)
+        if state is None:
+            return False, prev_state
+
+        return True, state
 
 def _apply_initial_changers(state: EnvironmentState, script: Script, changers: List[StateChanger]=None):
     if changers is not None:
