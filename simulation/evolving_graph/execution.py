@@ -326,6 +326,11 @@ class GrabExecutor(ActionExecutor):
         if Property.GRABBABLE not in node.properties and node.class_name not in ['water', 'child']:
             info.error('{} is not grabbable', node)
             return None
+
+        (dest_node, relation) = state.executor_data.get((Action.GRAB, node.id), (None, None))
+        if dest_node is not None:
+            info.error('{} already grabbed', node)
+            return None
         if not _is_character_close_to(state, node):
             char_node = _get_character_node(state)
             info.error('{} is not close to {}', char_node, node)
