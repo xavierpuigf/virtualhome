@@ -206,6 +206,7 @@ class EnvironmentGraph(object):
     
     def to_dict(self):
         nodes = self.get_nodes()
+        nodes = [node.to_dict() for node in nodes]
         edges = self.get_edges()
         return {'nodes': nodes, 'edges': edges}
 
