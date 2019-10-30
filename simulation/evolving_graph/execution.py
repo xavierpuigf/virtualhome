@@ -84,11 +84,15 @@ class WalkExecutor(ActionExecutor):
                 changes = [DeleteEdges(CharacterNode(),
                                        [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                        AnyNode(), delete_reverse=True),
+                           AddEdges(CharacterNode(), Relation.INSIDE, NodeInstance(node_room)),
+                     ]
+
+                if node_room != node:
+                    changes += [
                            AddEdges(CharacterNode(), Relation.CLOSE, BoxObjectNode(node), add_reverse=True),
                            AddEdges(CharacterNode(), Relation.CLOSE, BodyNode(), add_reverse=True),
-                           AddEdges(CharacterNode(), Relation.INSIDE, NodeInstance(node_room)),
                            AddEdges(CharacterNode(), Relation.CLOSE, NodeInstance(node), add_reverse=True)
-                     ]
+                    ]
 
                 # close to object in hands
                 char_node = _get_character_node(state)
