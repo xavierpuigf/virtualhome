@@ -222,6 +222,13 @@ class EnvironmentGraph(object):
                 if getattr(node, attr) == value:
                     yield node
 
+    def get_char_node(self, char_index: int):
+        chars = self._class_name_map.get('character', [])
+        chars.sort(key=lambda node : node.id)
+        assert char_index < len(chars), 'Character Index Out of bound! #chars is {}, char index is {}'.format(len(chars), char_index)
+        yield chars[char_index]
+        
+
     def get_node(self, node_id: int):
         return self._node_map.get(node_id, None)
 
@@ -359,6 +366,9 @@ class EnvironmentState(object):
                 result.append(new_node)
         return result
 
+    def get_char_node(self, char_index: int):
+        return self._graph.get_char_node(char_index)
+
     def add_edge(self, from_node: Node, relation: Relation, to_node: Node):
         if (from_node.id, relation) in self._removed_edges_from:
             to_node_ids = self._removed_edges_from[(from_node.id, relation)]
@@ -457,8 +467,11 @@ class RelationFrom(NodeEnumerator):
 
 class CharacterNode(NodeEnumerator):
 
+    def __init__(self, char_index: int):
+        self.char_index = char_index
+
     def enumerate(self, state: EnvironmentState, **kwargs):
-        return state.get_nodes_by_attr('class_name', 'character')
+        return state.get_char_node(self.char_index)
 
 
 class ClassNameNode(NodeEnumerator):
