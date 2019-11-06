@@ -87,7 +87,7 @@ class WalkExecutor(ActionExecutor):
                 changes = [DeleteEdges(CharacterNode(char_index),
                                        [Relation.INSIDE, Relation.CLOSE, Relation.FACING],
                                        AnyNode(), delete_reverse=True),
-                           AddEdges(CharacterNode(), Relation.INSIDE, NodeInstance(node_room)),
+                           AddEdges(CharacterNode(char_index), Relation.INSIDE, NodeInstance(node_room)),
                      ]
 
                 if node_room != node:
