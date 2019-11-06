@@ -10,7 +10,7 @@ class Action(Enum):
     """
     All supported actions, value of each enum is a pair (humanized name, required_number of parameters)
     """
-    CLOSE = ("Close", 1, [['OPENABLE']])
+    CLOSE = ("Close", 1, [['CAN_OPEN']])
     DRINK = ("Drink", 1, [['DRINKABLE', 'RECIPIENT']])
     FIND = ("Find", 1, [[]])
     WALK = ("Walk", 1, [[]])
@@ -19,12 +19,12 @@ class Action(Enum):
     LOOKAT_SHORT = ("Look at short", 1, [[]])
     LOOKAT_MEDIUM = LOOKAT
     LOOKAT_LONG = ("Look at long", 1, [[]])
-    OPEN = ("Open", 1, [['OPENABLE']])
+    OPEN = ("Open", 1, [['CAN_OPEN']])
     POINTAT = ("Point at", 1, [[]])
     PUTBACK = ("Put", 2, [['GRABBABLE'], []])
     #PUT = ("Put", 2)
     #PUTBACK = PUT
-    PUTIN = ("Put in", 2, [['GRABBABLE'], ['OPENABLE']])
+    PUTIN = ("Put in", 2, [['GRABBABLE'], ['CAN_OPEN']])
     PUTOBJBACK = ("Put back", 1, [[]])
     RUN = ("Run", 1, [[]])
     SIT = ("Sit", 1, [['SITTABLE']])
