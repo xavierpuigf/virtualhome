@@ -1214,9 +1214,19 @@ def _get_character_node(state: EnvironmentState, char_index: int):
 def _get_room_node(state: EnvironmentState, node: Node):
     if node.category == 'Rooms':
         return node
-    for n in state.get_nodes_from(node, Relation.INSIDE):
-        if n.category == 'Rooms':
-            return n
+    inside_nodes = state.get_nodes_from(node, Relation.INSIDE) 
+    if len(inside_nodes) > 1:
+        for n in state.get_nodes_from(node, Relation.INSIDE):
+            if n.category == 'Rooms':
+                return n
+    else:
+        while len(inside_nodes) > 0:
+            n = inside_nodes[0]
+            if n.category == 'Rooms':
+                return n
+            else:
+                inside_nodes = state.get_nodes_from(n, Relation.INSIDE)
+
     return None
 
 
