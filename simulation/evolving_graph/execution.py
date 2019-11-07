@@ -112,6 +112,11 @@ class WalkExecutor(ActionExecutor):
                 if Property.SURFACES in node.properties:
                     changes.append(AddEdges(CharacterNode(char_index), Relation.CLOSE, ObjectOnNode(node), add_reverse=True))
 
+                # close to all objects insideo
+                if Property.CAN_OPEN in node.properties:
+                    changes.append(AddEdges(CharacterNode(char_index), Relation.CLOSE, ObjectInsideNode(node), add_reverse=True))
+
+
                 if not modify:
                     yield state
                 else:

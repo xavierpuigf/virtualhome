@@ -482,6 +482,15 @@ class ClassNameNode(NodeEnumerator):
     def enumerate(self, state: EnvironmentState, **kwargs):
         return state.get_nodes_by_attr('class_name', self.class_name)
 
+class ObjectInsideNode(NodeEnumerator):
+
+    def __init__(self, node: Node):
+        self.container_node = node
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        for n in state.get_nodes():
+            if state.evaluate(ExistsRelation(NodeInstance(n), Relation.INSIDE, NodeInstanceFilter(self.container_node))):
+                 yield n
 
 class ObjectOnNode(NodeEnumerator):
 
