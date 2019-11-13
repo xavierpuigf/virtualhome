@@ -180,6 +180,8 @@ class graph_dict_helper(object):
         self.clean_dirty = BinaryVariable(["CLEAN", "DIRTY"], default="CLEAN")
         self.plugged_in_out = BinaryVariable(["PLUGGED_IN", "PLUGGED_OUT"], default="PLUGGED_IN")
 
+        self.binary_variables = [self.open_closed, self.on_off, self.clean_dirty, self.plugged_in_out]
+
         self.body_part = ['face', 'leg', 'arm', 'eye', 'hand', 'feet']
         self.possible_rooms = ['home_office', 'kitchen', 'living_room', 'bathroom', 'dining_room', 'bedroom', 'kids_bedroom', 'entrance_hall']
         self.script_object2unity_object = load_name_equivalence()
@@ -276,6 +278,34 @@ class graph_dict_helper(object):
         for node in graph_dict["nodes"]:
             if node["category"] == "Doors":
                 open_closed.set_node_state(node, "OPEN")
+    
+    def get_object_binary_variables(self, object_name):
+        '''
+        For a given object name, obtains the binary variables
+        '''
+        states = self.object_states[object_name]
+        bin_vars = self.get_binary_variables(states)
+        return bin_vars
+
+    def get_binary_variables(self, possible_states):
+        '''
+        Given a set of possible_states, returns the binary_variables associated
+        '''
+        added_variables = []
+        state_to_bin_var = {}
+        possible_states = []
+        for bin_var in self.binary_variables:
+            state_to_bin_var[bin_var.positive] = (bin_var, bin_var.default)
+            state_to_bin_var[bin_var.negative] = (bin_var, bin_var.default)
+
+        for state in possible_states:
+            bin_var, default_var = state_to_bin_var[state]
+            if default_var not in added_variables:
+                added_variables.append(default_var)
+                possible_states.append(bin_var)
+
+        return possible_states
+            
                 
     def set_to_default_state(self, graph_dict, first_room, id_checker):
         
