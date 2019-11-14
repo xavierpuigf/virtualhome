@@ -3,6 +3,7 @@ from abc import abstractmethod
 from typing import List
 import sys
 import os
+import copy
 from simulation.evolving_graph.common import TimeMeasurement
 from simulation.evolving_graph.scripts import ScriptObject
 
@@ -397,11 +398,11 @@ class EnvironmentState(object):
     def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
 
         new_state = EnvironmentState(self._graph, self._name_equivalence, self.instance_selection)
-        new_state._new_nodes = self._new_nodes.copy()
-        new_state._removed_edges_from = self._removed_edges_from.copy()
-        new_state._new_edges_from = self._new_edges_from.copy()
-        new_state._script_objects = self._script_objects.copy()
-        new_state.executor_data = self.executor_data.copy()
+        new_state._new_nodes = copy.deepcopy(self._new_nodes)
+        new_state._removed_edges_from = copy.deepcopy(self._removed_edges_from)
+        new_state._new_edges_from = copy.deepcopy(self._new_edges_from)
+        new_state._script_objects = copy.deepcopy(self._script_objects)
+        new_state.executor_data = copy.deepcopy(self.executor_data)
         if obj is not None and node is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
         new_state.apply_changes(changers)
