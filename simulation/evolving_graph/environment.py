@@ -511,6 +511,16 @@ class BodyNode(NodeEnumerator):
                 yield n
 
 
+class SurfaceObjectNode(NodeEnumerator):
+    """Find the objects that support `node`
+    """
+    def __init__(self, node: Node):
+        self.node = node
+
+    def enumerate(self, state: EnvironmentState, **kwargs):
+        for n in state.get_nodes_from(self.node, Relation.ON):
+            yield n
+
 class BoxObjectNode(NodeEnumerator):
     """Find the objects that contain `node`
     """

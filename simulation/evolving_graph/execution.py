@@ -109,12 +109,15 @@ class WalkExecutor(ActionExecutor):
                     changes.append(AddEdges(NodeInstance(node_in_hands), Relation.INSIDE, NodeInstance(char_room)))
 
                 # close to all objects on node
-                if Property.SURFACES in node.properties:
-                    changes.append(AddEdges(CharacterNode(char_index), Relation.CLOSE, ObjectOnNode(node), add_reverse=True))
+                # if Property.SURFACES in node.properties:
+                #    changes.append(AddEdges(CharacterNode(char_index), Relation.CLOSE, ObjectOnNode(node), add_reverse=True))
 
-                # close to all objects insideo
+                # close to all objects inside
                 if Property.CAN_OPEN in node.properties:
                     changes.append(AddEdges(CharacterNode(char_index), Relation.CLOSE, ObjectInsideNode(node), add_reverse=True))
+
+                # close to all objects that node is on
+                changes.append(AddEdges(CharacterNode(char_index), Relation.CLOSE, SurfaceObjectNode(node), add_reverse=True))
 
 
                 if not modify:
