@@ -304,7 +304,10 @@ class EnvironmentState(object):
         return self._script_objects.get((name, instance), None)
 
     def get_state_node(self, obj: ScriptObject):
-        node_id = self._script_objects.get((obj.name, obj.instance), -1)
+        if self.instance_selection:
+            return self.get_node(obj.instance)
+        else:
+            node_id = self._script_objects.get((obj.name, obj.instance), -1)
         return None if node_id < 0 else self.get_node(node_id)
 
     def has_edge(self, from_node: Node, relation: Relation, to_node: Node):

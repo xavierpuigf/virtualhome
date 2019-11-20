@@ -1218,6 +1218,7 @@ def _get_room_node(state: EnvironmentState, node: Node):
     if node.category == 'Rooms':
         return node
     inside_nodes = state.get_nodes_from(node, Relation.INSIDE) 
+    # print(node)
     if len(inside_nodes) > 1:
         for n in state.get_nodes_from(node, Relation.INSIDE):
             if n.category == 'Rooms':
