@@ -47,13 +47,13 @@ class UnityCommunication(object):
     
     def add_camera(self, position=[0,1,0], rotation=[0,0,0]):
         cam_dict = {
-            ‘position’: {‘x’: position[0], ‘y’: position[1], ‘z’: position[2]},
-            ‘rotation’: {‘x’: rotation[0], ‘y’: rotation[1], ‘z’: rotation[2]}
+            'position': {'x': position[0], 'y': position[1], 'z': position[2]},
+            'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]}
         }
         response = self.post_command(
-            {‘id’: str(time.time()), ‘action’: ‘add_camera’,
-             ‘stringParams’: [json.dumps(cam_dict)]})
-        return response[‘success’], response[‘message’]
+            {'id': str(time.time()), 'action': 'add_camera',
+             'stringParams': [json.dumps(cam_dict)]})
+        return response['success'], response['message']
     
     def camera_data(self, camera_indexes):
         """
