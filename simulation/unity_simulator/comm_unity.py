@@ -45,6 +45,12 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
         return response['success'], response['value']
     
+    def camera_omni(self, mode=False):
+        response = self.post_command({'id': str(time.time()), 'action': 'camera_mode',
+                                      'intParams': [1] if mode else [0]})
+        return response['success']
+    
+
     def add_camera(self, position=[0,1,0], rotation=[0,0,0]):
         cam_dict = {
             'position': {'x': position[0], 'y': position[1], 'z': position[2]},
