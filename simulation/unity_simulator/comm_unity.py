@@ -125,7 +125,7 @@ class UnityCommunication(object):
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
                       image_width=640, image_height=480, gen_vid=True,
-                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
+                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO', indices=[]):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
@@ -156,7 +156,8 @@ class UnityCommunication(object):
                   'character_resource': character_resource, 'camera_mode': camera_mode,
                   'image_width': image_width, 'image_height': image_height}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
-                                      'stringParams': [json.dumps(params)] + script})
+                                      'stringParams': [json.dumps(params)] + script,
+                                      'intParams': indices})
         if response['success']:
             if gen_vid and len(image_synthesis) > 0:
                 generate_video(image_synthesis, output_folder, file_name_prefix, frame_rate)
