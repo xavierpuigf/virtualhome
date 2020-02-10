@@ -10,25 +10,57 @@ import cv2
 import numpy as np
 import glob
 
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
 class UnityCommunication(object):
 
     def __init__(self, url='127.0.0.1', port='8080'):
         self._address = 'http://' + url + ':' + port
 
+    def requests_retry_session(
+                            self,
+                            retries=5,
+                            backoff_factor=0.5,
+                            status_forcelist=(500, 502, 504),
+                            session=None,
+                        ):
+        session = session or requests.Session()
+        retry = Retry(
+            total=retries,
+            read=retries,
+            connect=retries,
+            backoff_factor=backoff_factor,
+            status_forcelist=status_forcelist,
+        )
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount('http://', adapter)
+    
+        return session
 
-    def add_character(self, character_resource='Chars/Male1'):
-        response = self.post_command(
-            {'id': str(time.time()), 'action': 'add_character', 
-             'stringParams':[json.dumps({'character_resource': character_resource})]})
-
-    def post_command(self, request_dict):
+    def post_command(self, request_dict, repeat=False):
         try:
-            resp = requests.post(self._address, json=request_dict)
+            if repeat:
+                resp = self.requests_retry_session().post(self._address, json=request_dict) 
+            else:
+                resp = requests.post(self._address, json=request_dict)
             if resp.status_code != requests.codes.ok:
                 raise UnityEngineException(resp.status_code, resp.json())
             return resp.json()
         except requests.exceptions.RequestException as e:
             raise UnityCommunicationException(str(e))
+
+    def check_connection(self):
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'idle'}, repeat=True)
+        return response['success']
+
+    def add_character(self, character_resource='Chars/Male1'):
+        response = self.post_command(
+            {'id': str(time.time()), 'action': 'add_character', 
+             'stringParams':[json.dumps({'character_resource': character_resource})]})
+        return response['success']
+
 
     def check(self, script_lines):
         """
@@ -45,7 +77,7 @@ class UnityCommunication(object):
                                       'intParams': [] if scene_index is None else [scene_index]})
         return response['success']
 
-    def fast_reset(self):
+    def fast_reset(self, a):
         """
         Reset scene
         """
