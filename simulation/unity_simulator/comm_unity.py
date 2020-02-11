@@ -21,7 +21,7 @@ class UnityCommunication(object):
     def requests_retry_session(
                             self,
                             retries=5,
-                            backoff_factor=0.5,
+                            backoff_factor=2,
                             status_forcelist=(500, 502, 504),
                             session=None,
                         ):
