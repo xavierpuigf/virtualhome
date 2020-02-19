@@ -1,3 +1,4 @@
+
 import base64
 import collections
 import time
@@ -9,19 +10,57 @@ import cv2
 import numpy as np
 import glob
 
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
 class UnityCommunication(object):
 
     def __init__(self, url='127.0.0.1', port='8080'):
         self._address = 'http://' + url + ':' + port
 
-    def post_command(self, request_dict):
+    def requests_retry_session(
+                            self,
+                            retries=5,
+                            backoff_factor=2,
+                            status_forcelist=(500, 502, 504),
+                            session=None,
+                        ):
+        session = session or requests.Session()
+        retry = Retry(
+            total=retries,
+            read=retries,
+            connect=retries,
+            backoff_factor=backoff_factor,
+            status_forcelist=status_forcelist,
+        )
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount('http://', adapter)
+    
+        return session
+
+    def post_command(self, request_dict, repeat=False):
         try:
-            resp = requests.post(self._address, json=request_dict)
+            if repeat:
+                resp = self.requests_retry_session().post(self._address, json=request_dict) 
+            else:
+                resp = requests.post(self._address, json=request_dict)
             if resp.status_code != requests.codes.ok:
                 raise UnityEngineException(resp.status_code, resp.json())
             return resp.json()
         except requests.exceptions.RequestException as e:
             raise UnityCommunicationException(str(e))
+
+    def check_connection(self):
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'idle'}, repeat=True)
+        return response['success']
+
+    def add_character(self, character_resource='Chars/Male1'):
+        response = self.post_command(
+            {'id': str(time.time()), 'action': 'add_character', 
+             'stringParams':[json.dumps({'character_resource': character_resource})]})
+        return response['success']
+
 
     def check(self, script_lines):
         """
@@ -46,6 +85,14 @@ class UnityCommunication(object):
         """
         response = self.post_command({'id': str(time.time()), 'action': 'reset',
                                       'intParams': [] if scene_index is None else [scene_index]})
+        return response['success']
+
+    def fast_reset(self, a):
+        """
+        Reset scene
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
+                                      'intParams': []})
         return response['success']
 
     def camera_count(self):
@@ -118,7 +165,7 @@ class UnityCommunication(object):
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
-                      image_width=640, image_height=480, gen_vid=True,
+                      image_width=640, image_height=480, gen_vid=True, recording=False,
                       save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
         """
         :param script: a list of script lines
@@ -147,7 +194,7 @@ class UnityCommunication(object):
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis, 
                   'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
-                  'character_resource': character_resource, 'camera_mode': camera_mode,
+                  'character_resource': character_resource, 'camera_mode': camera_mode, 'recording': recording,
                   'image_width': image_width, 'image_height': image_height}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
