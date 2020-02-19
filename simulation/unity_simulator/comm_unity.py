@@ -54,6 +54,11 @@ class UnityCommunication(object):
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'idle'}, repeat=True)
         return response['success']
+    
+    def get_visible_objects(self, camera_index):
+
+        response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': camera_index})
+        return response['success'], json.loads(response['message'])
 
     def add_character(self, character_resource='Chars/Male1'):
         response = self.post_command(
