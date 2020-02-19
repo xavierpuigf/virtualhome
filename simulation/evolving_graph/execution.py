@@ -82,6 +82,7 @@ class WalkExecutor(ActionExecutor):
         # select objects based on current_obj
         for node in state.select_nodes(current_obj):
             node_room = _get_room_node(state, node)
+            #print(state, node)
             if self.check_walk(state, node, info, char_index) and node_room is not None:
 
                 changes = [DeleteEdges(CharacterNode(char_index),
