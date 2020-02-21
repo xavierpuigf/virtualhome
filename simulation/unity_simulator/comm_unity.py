@@ -63,6 +63,7 @@ class UnityCommunication(object):
     def add_character(self, character_resource='Chars/Male1', position=None):
         if position is None:
             random_position = True
+            position = [0, 0, 0]
         else:
             random_position = False
 
