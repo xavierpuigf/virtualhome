@@ -60,10 +60,19 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': camera_index})
         return response['success'], json.loads(response['message'])
 
-    def add_character(self, character_resource='Chars/Male1'):
+    def add_character(self, character_resource='Chars/Male1', position=None):
+        if position is None:
+            random_position = True
+        else:
+            random_position = False
+
         response = self.post_command(
             {'id': str(time.time()), 'action': 'add_character', 
-             'stringParams':[json.dumps({'character_resource': character_resource})]})
+             'stringParams':[json.dumps({
+                'character_resource': character_resource,
+                'random_position': random_position,
+                'character_position': {'x': position[0], 'y': position[1], 'z': position[2]}
+                })]})
         return response['success']
 
 
