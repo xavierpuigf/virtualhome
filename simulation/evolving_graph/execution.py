@@ -1300,6 +1300,7 @@ def _create_walkable_graph(state: EnvironmentState):
 
 
 def _check_closed_doors(state: EnvironmentState, room1: GraphNode, room2: GraphNode):
+    return []
     graph_adj_lists = _create_walkable_graph(state)
     bfs_prev = BFS_check_closed(state, graph_adj_lists, room1.id)
     if room2.id in bfs_prev:
