@@ -9,14 +9,21 @@ from PIL import Image
 import cv2
 import numpy as np
 import glob
+import atexit
+from . import communication
 
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
 class UnityCommunication(object):
 
-    def __init__(self, url='127.0.0.1', port='8080'):
+    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None):
         self._address = 'http://' + url + ':' + port
+        self.port = port
+
+        if file_name is not None:
+            self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display)
+
 
     def requests_retry_session(
                             self,
@@ -37,6 +44,9 @@ class UnityCommunication(object):
         session.mount('http://', adapter)
     
         return session
+
+
+
 
     def post_command(self, request_dict, repeat=False):
         try:
