@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import glob
 import atexit
+import sys
 from . import communication
 
 from requests.adapters import HTTPAdapter
@@ -17,14 +18,24 @@ from requests.packages.urllib3.util.retry import Retry
 
 class UnityCommunication(object):
 
-    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None):
+    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False):
         self._address = 'http://' + url + ':' + port
         self.port = port
-
+        self.launcher = None
         if file_name is not None:
-            self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display)
-
-
+            self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display, no_graphics=no_graphics)
+            print('Getting connection...')
+            succeeded = False
+            tries = 0
+            while tries < 5 and not succeeded:
+                tries += 1
+                try:
+                    self.check_connection()
+                    succeeded = True
+                except:
+                    time.sleep(2)
+            if not succeeded:
+                sys.exit()
     def requests_retry_session(
                             self,
                             retries=5,
@@ -45,7 +56,9 @@ class UnityCommunication(object):
     
         return session
 
-
+    def close(self):
+        if self.launcher is not None:
+            self.launcher.close()
 
 
     def post_command(self, request_dict, repeat=False):

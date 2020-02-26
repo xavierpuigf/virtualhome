@@ -5,12 +5,12 @@ import subprocess
 import glob
 
 class UnityLauncher(object):
-    def __init__(self, port='8080', file_name=None, x_display=None):
+    def __init__(self, port='8080', file_name=None, x_display=None, no_graphics=False):
         self.proc = None
         atexit.register(self.close)
         self.port_number = int(port)
 
-        self.launch_executable(file_name, x_display=x_display)
+        self.launch_executable(file_name, x_display=x_display, no_graphics=no_graphics)
 
     @staticmethod
     def returncode_to_signal_name(returncode: int):
@@ -28,12 +28,16 @@ class UnityLauncher(object):
 
 
     def close(self):
+        #import
+        #pdb.set_trace()
         # if self.proc is not None:
         #     self.proc.kill()
         #     self.proc = None
         # return
+        print('CLOSING PROC')
         if self.proc is not None:
             # Wait a bit for the process to shutdown, but kill it if it takes too long
+            self.proc.kill()
             try:
                 timeout_wait = 3
                 self.proc.wait(timeout=timeout_wait)
@@ -59,7 +63,7 @@ class UnityLauncher(object):
                 assert subprocess.call("xdpyinfo", stdout=dn, env=env, shell=True) == 0, \
                     ("Invalid DISPLAY %s - cannot find X server with xdpyinfo" % x_display)
 
-    def launch_executable(self, file_name, x_display=None, use_docker=False, args=[]):
+    def launch_executable(self, file_name, x_display=None, no_graphics=False, use_docker=False, args=[]):
 
         # based on https://github.com/Unity-Technologies/ml-agents/blob/bf12f063043e5faf4b1df567b978bb18dcb3e716/ml-agents/mlagents/trainers/learn.py
         cwd = os.getcwd()
@@ -78,10 +82,11 @@ class UnityLauncher(object):
         if platform == "linux" or platform == "linux2":
             if x_display:
                 env['DISPLAY'] = ':' + x_display
+                self.check_x_display(env['DISPLAY'])
             elif 'DISPLAY' not in env:
-                env['DISPLAY'] = ':2'
+                env['DISPLAY'] = ''
 
-            self.check_x_display(env['DISPLAY'])
+
 
             candidates = glob.glob(os.path.join(cwd, file_name) + ".x86_64")
             if len(candidates) == 0:
@@ -126,20 +131,29 @@ class UnityLauncher(object):
             )
         else:
             docker_training = False
+
             if not docker_training:
                 subprocess_args = [launch_string]
                 subprocess_args += ["-batchmode"]
-                subprocess_args += ["-http-port=" + str(self.port_number)]
+                if no_graphics:
+                    subprocess_args += ["-nographics"]
+                subprocess_args += ["-http-port=" + str(self.port_number), "-logfile Player.log"]
                 subprocess_args += args
+                f = open('logs.txt', 'w+')
                 try:
                     self.proc = subprocess.Popen(
                         subprocess_args,
                         env=env,
+                        stdout=f,
                         start_new_session=True)
-                    atexit.register(lambda: self.proc.poll() is None and self.proc.kill())
+                    atexit.register(lambda: self.close)
                     ret_val = self.proc.poll()
                 except:
                     raise Exception('Error, environment was found but could not be launched')
+
+                print(subprocess_args)
+                # import pdb
+                # pdb.set_trace()
             else:
                 docker_ls = (
                     f"exec xvfb-run --auto-servernum --server-args='-screen 0 640x480x24'"
