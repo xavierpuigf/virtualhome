@@ -59,7 +59,7 @@ class UnityLauncher(object):
                 assert subprocess.call("xdpyinfo", stdout=dn, env=env, shell=True) == 0, \
                     ("Invalid DISPLAY %s - cannot find X server with xdpyinfo" % x_display)
 
-    def launch_executable(self, file_name, x_display=None, args=[]):
+    def launch_executable(self, file_name, x_display=None, use_docker=False, args=[]):
 
         # based on https://github.com/Unity-Technologies/ml-agents/blob/bf12f063043e5faf4b1df567b978bb18dcb3e716/ml-agents/mlagents/trainers/learn.py
         cwd = os.getcwd()
@@ -141,6 +141,16 @@ class UnityLauncher(object):
                 except:
                     raise Exception('Error, environment was found but could not be launched')
             else:
+                docker_ls = (
+                    f"exec xvfb-run --auto-servernum --server-args='-screen 0 640x480x24'"
+                    f" {launch_string} -http-port {self.port}"
+                )
+                self.proc = subprocess.Popen(
+                    docker_ls,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    shell=True,
+                )
                 raise Exception("Docker training is still not implemented")
 
         pass
