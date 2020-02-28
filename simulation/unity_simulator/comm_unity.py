@@ -11,7 +11,7 @@ import numpy as np
 import glob
 import atexit
 import sys
-from . import communication
+import communication
 
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
@@ -80,8 +80,14 @@ class UnityCommunication(object):
     
     def get_visible_objects(self, camera_index):
 
-        response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': camera_index})
-        return response['success'], json.loads(response['message'])
+        response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': [camera_index]})
+
+        try:
+            msg = json.loads(response['message'])
+        except Exception as e:
+            msg = response['message']
+
+        return response['success'], msg
 
     def add_character(self, character_resource='Chars/Male1', position=None):
         if position is None:
