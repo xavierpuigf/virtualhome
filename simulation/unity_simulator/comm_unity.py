@@ -11,7 +11,7 @@ import numpy as np
 import glob
 import atexit
 import sys
-from . import communication
+import communication
 
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
@@ -82,23 +82,44 @@ class UnityCommunication(object):
     
     def get_visible_objects(self, camera_index):
 
-        response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': camera_index})
-        return response['success'], json.loads(response['message'])
+        response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': [camera_index]})
 
-    def add_character(self, character_resource='Chars/Male1', position=None):
-        if position is None:
-            random_position = True
-            position = [0, 0, 0]
-        else:
-            random_position = False
+        try:
+            msg = json.loads(response['message'])
+        except Exception as e:
+            msg = response['message']
+
+        return response['success'], msg
+
+    def add_character(self, character_resource='Chars/Male1', position=None, initial_room=""):
+        mode = 'random'
+        pos = [0, 0, 0]
+        if position is not None:
+            mode = 'fix_position'
+            pos = position
+        elif not len(initial_room) == 0:
+            assert initial_room in ["kitchen", "bedroom", "livingroom", "bathroom"]
+            mode = 'fix_room'
 
         response = self.post_command(
             {'id': str(time.time()), 'action': 'add_character', 
              'stringParams':[json.dumps({
                 'character_resource': character_resource,
-                'random_position': random_position,
-                'character_position': {'x': position[0], 'y': position[1], 'z': position[2]}
+                'mode': mode,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                'initial_room': initial_room
                 })]})
+        return response['success']
+
+    def move_character(self, char_index, pos):
+        response = self.post_command(
+            {'id': str(time.time()),
+             'action': 'move_character',
+             'stringParams':[json.dumps({
+                'char_index': char_index,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                })]
+            })
         return response['success']
 
 
