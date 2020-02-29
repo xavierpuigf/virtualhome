@@ -1,0 +1,22 @@
+Found path: /data/vision/torralba/frames/data_acquisition/SyntheticStories/MultiAgent/challenge/virtualhome/../executables/execteleport2/exec_linux02.28teleport2.x86_64
+Mono path[0] = '/data/vision/torralba/frames/data_acquisition/SyntheticStories/MultiAgent/challenge/virtualhome/../executables/execteleport2/exec_linux02.28teleport2_Data/Managed'
+Mono config path = '/data/vision/torralba/frames/data_acquisition/SyntheticStories/MultiAgent/challenge/virtualhome/../executables/execteleport2/exec_linux02.28teleport2_Data/MonoBleedingEdge/etc'
+Preloaded 'ScreenSelector.so'
+Display 0 '0': 1280x1024 (primary device).
+Display 1 '1': 1280x1024 (secondary device).
+Display 2 '2': 1280x1024 (secondary device).
+Display 3 '3': 1280x1024 (secondary device).
+Display 4 '4': 1280x1024 (secondary device).
+Display 5 '5': 1280x1024 (secondary device).
+Display 6 '6': 1280x1024 (secondary device).
+Display 7 '7': 1280x1024 (secondary device).
+Can't get home directory!
+ 
+(Filename:  Line: 385)
+
+Unable to synchronize player prefs
+Can't get home directory!
+ 
+(Filename:  Line: 385)
+
+Logging to Player.log

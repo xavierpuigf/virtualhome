@@ -21,6 +21,8 @@ class UnityCommunication(object):
     def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False):
         self._address = 'http://' + url + ':' + port
         self.port = port
+        self.graphics = no_graphics
+        self.x_display = x_display
         self.launcher = None
         if file_name is not None:
             self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display, no_graphics=no_graphics)
@@ -89,20 +91,35 @@ class UnityCommunication(object):
 
         return response['success'], msg
 
-    def add_character(self, character_resource='Chars/Male1', position=None):
-        if position is None:
-            random_position = True
-            position = [0, 0, 0]
-        else:
-            random_position = False
+    def add_character(self, character_resource='Chars/Male1', position=None, initial_room=""):
+        mode = 'random'
+        pos = [0, 0, 0]
+        if position is not None:
+            mode = 'fix_position'
+            pos = position
+        elif not len(initial_room) == 0:
+            assert initial_room in ["kitchen", "bedroom", "livingroom", "bathroom"]
+            mode = 'fix_room'
 
         response = self.post_command(
             {'id': str(time.time()), 'action': 'add_character', 
              'stringParams':[json.dumps({
                 'character_resource': character_resource,
-                'random_position': random_position,
-                'character_position': {'x': position[0], 'y': position[1], 'z': position[2]}
+                'mode': mode,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                'initial_room': initial_room
                 })]})
+        return response['success']
+
+    def move_character(self, char_index, pos):
+        response = self.post_command(
+            {'id': str(time.time()),
+             'action': 'move_character',
+             'stringParams':[json.dumps({
+                'char_index': char_index,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                })]
+            })
         return response['success']
 
 
