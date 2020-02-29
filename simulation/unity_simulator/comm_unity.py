@@ -89,19 +89,23 @@ class UnityCommunication(object):
 
         return response['success'], msg
 
-    def add_character(self, character_resource='Chars/Male1', position=None):
-        if position is None:
-            random_position = True
-            position = [0, 0, 0]
-        else:
-            random_position = False
+    def add_character(self, character_resource='Chars/Male1', position=None, initial_room=""):
+        mode = 'random'
+        pos = [0, 0, 0]
+        if position is not None:
+            mode = 'fix_position'
+            pos = position
+        elif not len(initial_room) == 0:
+            assert initial_room in ["kitchen", "bedroom", "livingroom", "bathroom"]
+            mode = 'fix_room'
 
         response = self.post_command(
             {'id': str(time.time()), 'action': 'add_character', 
              'stringParams':[json.dumps({
                 'character_resource': character_resource,
-                'random_position': random_position,
-                'character_position': {'x': position[0], 'y': position[1], 'z': position[2]}
+                'mode': mode,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                'initial_room': initial_room
                 })]})
         return response['success']
 
