@@ -21,6 +21,8 @@ class UnityCommunication(object):
     def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False):
         self._address = 'http://' + url + ':' + port
         self.port = port
+        self.graphics = no_graphics
+        self.x_display = x_display
         self.launcher = None
         if file_name is not None:
             self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display, no_graphics=no_graphics)
