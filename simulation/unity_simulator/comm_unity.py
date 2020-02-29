@@ -109,6 +109,17 @@ class UnityCommunication(object):
                 })]})
         return response['success']
 
+    def move_character(self, char_index, pos):
+        response = self.post_command(
+            {'id': str(time.time()),
+             'action': 'move_character',
+             'stringParams':[json.dumps({
+                'char_index': char_index,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                })]
+            })
+        return response['success']
+
 
     def check(self, script_lines):
         """
