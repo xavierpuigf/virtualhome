@@ -11,7 +11,7 @@ import numpy as np
 import glob
 import atexit
 import sys
-import communication
+from . import communication
 
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
@@ -210,7 +210,7 @@ class UnityCommunication(object):
                       skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
                       image_width=640, image_height=480, gen_vid=True, recording=False,
-                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
+                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO', time_scale=1.0):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
@@ -239,7 +239,8 @@ class UnityCommunication(object):
                   'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
                   'character_resource': character_resource, 'camera_mode': camera_mode, 'recording': recording,
-                  'image_width': image_width, 'image_height': image_height}
+                  'image_width': image_width, 'image_height': image_height,
+                  'time_scale': time_scale}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
         if response['success']:
