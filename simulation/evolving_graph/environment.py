@@ -40,6 +40,7 @@ class Relation(Enum):
     FACING = 5
     HOLDS_RH = 6
     HOLDS_LH = 7
+    SITTING = 8
 
     @classmethod
     def all(cls):

@@ -11,6 +11,7 @@ import numpy as np
 import glob
 import atexit
 import sys
+import pdb
 from . import communication
 
 from requests.adapters import HTTPAdapter
