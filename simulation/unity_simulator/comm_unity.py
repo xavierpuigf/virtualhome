@@ -199,15 +199,16 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def expand_scene(self, new_graph, randomize=False, random_seed=-1, animate_character=False,
-                     ignore_placing_obstacles=False, prefabs_map=None):
+                     ignore_placing_obstacles=False, prefabs_map=None, transfer_transform=True):
         """
         Expands scene with the given graph.
         To use randomization set randomize to True.
         To set random seed set random_seed to a non-negative value >= 0,
         random_seed < 0 means that seed is not set
+        transfer_transform: whether we want the transforms to appear or not
         """
         config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
-                  'ignore_obstacles': ignore_placing_obstacles}
+                  'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform}
         string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
         if prefabs_map is not None:
