@@ -28,13 +28,12 @@ class UnityLauncher(object):
 
 
     def close(self):
-        #import
-        #pdb.set_trace()
         # if self.proc is not None:
         #     self.proc.kill()
         #     self.proc = None
         # return
         print('CLOSING PROC')
+
         if self.proc is not None:
             # Wait a bit for the process to shutdown, but kill it if it takes too long
             self.proc.kill()
@@ -44,7 +43,7 @@ class UnityLauncher(object):
                 signal_name = self.returncode_to_signal_name(self.proc.returncode)
                 signal_name = f" ({signal_name})" if signal_name else ""
                 return_info = f"Environment shut down with return code {self.proc.returncode}{signal_name}."
-                print(return_info)
+
                 # logger.info(return_info)
             except subprocess.TimeoutExpired:
                 # logger.info("Environment timed out shutting down. Killing...")
@@ -137,7 +136,9 @@ class UnityLauncher(object):
                 subprocess_args += ["-batchmode"]
                 if no_graphics:
                     subprocess_args += ["-nographics"]
-                subprocess_args += ["-http-port=" + str(self.port_number), "-logfile Player.log"]
+
+                file_path = os.getcwd()
+                subprocess_args += ["-http-port=" + str(self.port_number), "-logFile {}/Player_{}.log".format(file_path, str(self.port_number))]
                 subprocess_args += args
                 f = open('logs.txt', 'w+')
                 try:

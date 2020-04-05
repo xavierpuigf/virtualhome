@@ -19,12 +19,13 @@ from requests.packages.urllib3.util.retry import Retry
 
 class UnityCommunication(object):
 
-    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False):
+    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False, timeout_wait=30):
         self._address = 'http://' + url + ':' + port
         self.port = port
         self.graphics = no_graphics
         self.x_display = x_display
         self.launcher = None
+        self.timeout_wait = timeout_wait
         if file_name is not None:
             self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display, no_graphics=no_graphics)
             print('Getting connection...')
@@ -69,7 +70,7 @@ class UnityCommunication(object):
             if repeat:
                 resp = self.requests_retry_session().post(self._address, json=request_dict) 
             else:
-                resp = requests.post(self._address, json=request_dict)
+                resp = requests.post(self._address, json=request_dict, timeout=self.timeout_wait)
             if resp.status_code != requests.codes.ok:
                 raise UnityEngineException(resp.status_code, resp.json())
             return resp.json()
@@ -149,7 +150,7 @@ class UnityCommunication(object):
                                       'intParams': [] if scene_index is None else [scene_index]})
         return response['success']
 
-    def fast_reset(self, a):
+    def fast_reset(self):
         """
         Reset scene
         """
