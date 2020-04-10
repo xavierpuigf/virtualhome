@@ -148,9 +148,7 @@ class UnityLauncher(object):
                         stdout=f,
                         start_new_session=True)
                     atexit.register(lambda: self.close)
-                    returncode = self.proc.wait()
-                    if returncode != 0:
-                        raise Exception("command: %s exited with %s" % (subprocess_args, returncode))
+                    #ret_val = self.proc.poll()
                 except:
                     raise Exception('Error, environment was found but could not be launched')
 
