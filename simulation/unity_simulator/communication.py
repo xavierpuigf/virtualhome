@@ -140,7 +140,7 @@ class UnityLauncher(object):
                 file_path = os.getcwd()
                 subprocess_args += ["-http-port=" + str(self.port_number), "-logFile {}/Player_{}.log".format(file_path, str(self.port_number))]
                 subprocess_args += args
-                f = open('logs.txt', 'w+')
+                f = open('{}/logs_exec/port_{}.txt'.format(file_path, self.port_number), 'w+')
                 try:
                     self.proc = subprocess.Popen(
                         subprocess_args,
@@ -148,7 +148,9 @@ class UnityLauncher(object):
                         stdout=f,
                         start_new_session=True)
                     atexit.register(lambda: self.close)
-                    ret_val = self.proc.poll()
+                    returncode = self.proc.wait()
+                    if returncode != 0:
+                        raise Exception("command: %s exited with %s" % (subprocess_args, returncode))
                 except:
                     raise Exception('Error, environment was found but could not be launched')
 
