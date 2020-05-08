@@ -1,210 +1,287 @@
-from mpl_toolkits import mplot3d
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
-import numpy as np
+import json
+import os
+
+import pdb
+import plotly.graph_objects as go
+
+import plotly.graph_objects as go
+import plotly.io
+import pdb
 import matplotlib.pyplot as plt
-import PIL
-import numpy as np
+from matplotlib.collections import PatchCollection
+from matplotlib.patches import Rectangle
+import plotly.offline
 
-import plotly.plotly as py
-import plotly.graph_objs as go
+dict_info = {
+    "objects_inside": [
+        "toilet", "bathroom_cabinet", "kitchencabinets",
+        "bathroom_counter", "kitchencounterdrawer", "cabinet", "fridge", "oven", "dishwasher", "microwave"],
 
-import networkx as nx
-
-
-
-
-def fake_bb(ax):
-    ax.set_aspect('equal')
-    X = np.array([-10,5])
-    Y = np.array([-10, 5])
-    Z = np.array([-1, 6])
-
-    #scat = ax.scatter(X, Y, Z)
-
-    # Create cubic bounding box to simulate equal aspect ratio
-    max_range = np.array([X.max()-X.min(), Y.max()-Y.min(), Z.max()-Z.min()]).max()
-    Xb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][0].flatten() + 0.5*(X.max()+X.min())
-    Yb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][1].flatten() + 0.5*(Y.max()+Y.min())
-    Zb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][2].flatten() + 0.5*(Z.max()+Z.min())
-    # Comment or uncomment following both lines to test the fake bounding box:
-    for xb, yb, zb in zip(Xb, Yb, Zb):
-       ax.plot([xb], [yb], [zb], 'w')
-
-def cuboid(ax, coords, sides):
-    points = []
-    vertices = [[
-        (coords[0]-sides[0]/2., coords[2]-sides[2]/2., coords[1]-sides[1]/2.),
-        (coords[0]+sides[0]/2., coords[2]-sides[2]/2., coords[1]-sides[1]/2.),
-        (coords[0]+sides[0]/2., coords[2]+sides[2]/2., coords[1]-sides[1]/2.),
-        (coords[0]-sides[0]/2., coords[2]+sides[2]/2., coords[1]-sides[1]/2.),
-
-    ]]
-    # x = [v[0] for v in vertices]
-    # y = [v[1] for v in vertices]
-    # z = [v[2] for v in vertices]
-    
-    faces = Poly3DCollection(vertices, linewidths=0.2, alpha=0.3)
-    face_color = [0.5, 0.5, 1] # alternative: matplotlib.colors.rgb2hex([0.5, 0.5, 1])
-    faces.set_facecolor(face_color)
-    ax.add_collection(faces)
-
-    #ax.add_collection3d(Line3DCollection(vertices, colors='k', linewidths=0.2, linestyles=':'))
-
-    return faces
+    "objects_surface": ["bathroomcabinet",
+                        "bathroomcounter",
+                        "bed",
+                        "bench",
+                        "boardgame",
+                        "bookshelf",
+                        "cabinet",
+                        "chair",
+                        "coffeetable",
+                        "cuttingboard",
+                        "desk",
+                        "fryingpan",
+                        "kitchencabinets",
+                        "kitchencounter",
+                        "kitchentable",
+                        "mousemat",
+                        "nightstand",
+                        "oventray",
+                        "plate",
+                        "radio",
+                        "sofa",
+                        "stove",
+                        "towelrack"],
+    "objects_grab": [
+        "pudding", "juice", "pancake", "apple",
+        "book", "coffeepot", "cupcake", "cutleryfork", "dishbowl", "milk",
+        "milkshake", "plate", "poundcake", "remotecontrol", "waterglass", "wine", "wineglass", "pillow"
+    ]
+}
 
 
+def create_cube(n, color='lightpink', opacity=0.1, cont=False):
+    c, b = n['bounding_box']['center'], n['bounding_box']['size']
 
-def get_xyz_mouse_click(event, ax):
-    """
-    Get coordinates clicked by user
-    """
-    if ax.M is None:
-        return {}
+    if cont:
+        xp = [c[0] - b[0] / 2., c[0] + b[0] / 2.] * 4
+        zp = [c[1] - b[1] / 2.] * 4 + [c[1] + b[1] / 2.] * 4
+        yp = [c[2] - b[2] / 2.] * 2 + [c[2] + b[2] / 2.] * 2 + [c[2] - b[2] / 2.] * 2 + [c[2] + b[2] / 2.] * 2
+        indices = [0, 1, 3, 2, 0, 4, 5, 1, 5, 7, 3, 7, 6, 2, 6, 4]
+        x = [xp[it] for it in indices]
+        y = [yp[it] for it in indices]
+        z = [zp[it] for it in indices]
+        cube_data = go.Scatter3d(x=x, y=y, z=z, showlegend=False, opacity=opacity, mode='lines', hoverinfo='skip',
+                                 marker={'color': color})
+    else:
+        x = [c[0] - b[0] / 2., c[0] + b[0] / 2.] * 4
+        z = [c[1] - b[1] / 2.] * 4 + [c[1] + b[1] / 2.] * 4
+        y = [c[2] - b[2] / 2.] * 2 + [c[2] + b[2] / 2.] * 2 + [c[2] - b[2] / 2.] * 2 + [c[2] + b[2] / 2.] * 2
+        i = [0, 3, 4, 7, 0, 6, 1, 7, 0, 5, 2, 7]
+        j = [1, 2, 5, 6, 2, 4, 3, 5, 4, 1, 6, 3]
+        k = [3, 0, 7, 4, 6, 0, 7, 1, 5, 0, 7, 2]
+        cube_data = go.Mesh3d(x=x, y=y, z=z, i=i, j=j, k=k, color=color, opacity=opacity)
+    return cube_data
 
-    xd, yd = event.xdata, event.ydata
-    p = (xd, yd)
-    edges = ax.tunit_edges()
-    ldists = [(mplot3d.proj3d.line2d_seg_dist(p0, p1, p), i) for \
-                i, (p0, p1) in enumerate(edges)]
-    ldists.sort()
 
-    # nearest edge
-    edgei = ldists[0][1]
+def create_points(nodes, color='red'):
+    centers = [n['bounding_box']['center'] for n in nodes]
+    class_and_ids = ['{}.{}'.format(node['class_name'], node['id']) for node in nodes]
+    x, z, y = zip(*centers)
+    scatter_data = go.Scatter3d(x=x, y=y, z=z, mode='markers', marker={'size': 3, 'color': color},
+                                showlegend=False, hovertext=class_and_ids)
+    return scatter_data
 
-    p0, p1 = edges[edgei]
 
-    # scale the z value to match
-    x0, y0, z0 = p0
-    x1, y1, z1 = p1
-    d0 = np.hypot(x0-xd, y0-yd)
-    d1 = np.hypot(x1-xd, y1-yd)
-    dt = d0+d1
-    z = d1/dt * z0 + d0/dt * z1
+def plot_graph(graph, char_id=1, visible_ids=None, action_ids=None):
+    nodes_interest = [node for node in graph['nodes'] if 'GRABBABLE' in node['properties']]
+    container_surf = dict_info['objects_inside'] + dict_info['objects_surface']
+    container_and_surface = [node for node in graph['nodes'] if node['class_name'] in container_surf]
+    grabbed_obj = [node for node in graph['nodes'] if node['class_name'] in dict_info['objects_grab']]
+    rooms = [node for node in graph['nodes'] if 'Rooms' == node['category']]
 
-    x, y, z = mplot3d.proj3d.inv_transform(xd, yd, z, ax.M)
-    return x, y, z
+    # Character
+    # char_node = [node for node in graph['nodes'] if node['id'] == char_id][0]
 
-def display(graph):
-    nodes = graph['nodes']
-    fig = plt.figure()
-    ax = plt.axes(projection='3d')
-    ax.set_aspect('equal')
-    fake_bb(ax)
-    xdata = []
-    ydata = []
-    colors = []
-    color2id = {}
-    color2points = {}
-    zdata = []
+    room_data = [create_cube(n, color='lightpink', cont=True, opacity=0.9) for n in rooms]
+
+    # containers and surfaces
+    # visible_nodes = [node for node in graph['nodes'] if node['id'] in visible_ids]
+    # action_nodes = [node for node in graph['nodes'] if node['id'] in action_ids]
+
+    goal_nodes = [node for node in graph['nodes'] if node['class_name'] == 'cupcake']
+    object_data2 = [create_cube(n, color='green', cont=True, opacity=0.3) for n in grabbed_obj]
+    object_data = [create_cube(n, color='blue', cont=True, opacity=0.1) for n in container_and_surface]
+    # object_data_vis = [create_cube(n, color='green', cont=True, opacity=0.2) for n in visible_nodes]
+    # object_data_action = create_points(action_nodes, color='pink')
+
+    fig = go.Figure()
+
+    # fig.add_traces(data=create_cube(char_node, color="yellow", opacity=0.8))
+    fig.add_traces(data=object_data)
+    fig.add_traces(data=object_data2)
+    # fig.add_traces(data=object_data_vis)
+    # fig.add_traces(data=object_data_action)
+    fig.add_traces(data=room_data)
+    # fig.add_traces(data=create_points(goal_nodes))
+
+    fig.update_layout(scene_aspectmode='data')
+    return fig
+
+
+def save_graph(graph, char_id=1, visible_ids=None, action_ids=None):
+    fig = plot_graph(graph, char_id, visible_ids, action_ids)
+    html_str = plotly.io.to_html(fig, include_plotlyjs=False, full_html=False)
+    return html_str
+
+#
+# if __name__ == '__main__':
+#     import json
+#
+#     with open('graph_seq2.json', 'r') as f:
+#         graphs = json.load(f)
+#     return_str = save_graph(graphs[0])
+#     pdb.set_trace()
+
+
+
+##### 2D PLOTTING ####
+
+def get_bounds(bounds):
+    minx, maxx = None, None
+    miny, maxy = None, None
+    for bound in bounds:
+        bgx, sx = bound['center'][0] + bound['size'][0] / 2., bound['center'][0] - bound['size'][0] / 2.
+        bgy, sy = bound['center'][2] + bound['size'][2] / 2., bound['center'][2] - bound['size'][2] / 2.
+        minx = sx if minx is None else min(minx, sx)
+        miny = sy if miny is None else min(miny, sy)
+        maxx = bgx if maxx is None else max(maxx, bgx)
+        maxy = bgy if maxy is None else max(maxy, bgy)
+    return (minx, maxx), (miny, maxy)
+
+
+def add_box(nodes, args_rect):
+    rectangles = []
+    centers = [[], []]
     for node in nodes:
-        cat_name = node['category'].lower().strip()
-        
-        if cat_name in ['floor', 'floors', 'ceiling',
-                        'walls', 'windows', 'doors', 'light']:
-            continue
-
-        bbox = node['bounding_box']
-        if node['category'] == 'Rooms':
-            faces = cuboid(ax, bbox['center'], bbox['size'])
-            
-    
-        else:
-            
-            if cat_name not in color2id.keys():
-                color2id[cat_name] = len(color2id)
-                color2points[cat_name] = []
-            ct = bbox['center']
-            color2points[cat_name].append(ct)
-            
-            colors.append(color2id[cat_name])
-
-    for cat_name in color2id.keys():
-        xdata = [x[0] for x in color2points[cat_name]]
-        ydata = [x[2] for x in color2points[cat_name]]
-        zdata = [x[1] for x in color2points[cat_name]]
-        ax.scatter3D(xdata, ydata, zdata, label=cat_name, cmap=plt.cm.jet, picker=True)
-    
-    annot = ax.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
-                    bbox=dict(boxstyle="round", fc="w"),
-                    arrowprops=dict(arrowstyle="->"))
-    annot.set_visible(False)
-    ax.axis('equal')
-    ax.legend()
-    text=ax.text(0,0,0,"", va="bottom", ha="left")
-    def on_press(event):
-        print('EVENT')
-        x,y,z = simple_pick_info.pick_info.get_xyz_mouse_click(event, ax)    
-        text.set_text('aAA')
-
-    cid = fig.canvas.mpl_connect('pick_event', on_press)
+        cx, cy = node['bounding_box']['center'][0], node['bounding_box']['center'][2]
+        w, h = node['bounding_box']['size'][0], node['bounding_box']['size'][2]
+        minx, miny = cx - w / 2., cy - h / 2.
+        centers[0].append(cx)
+        centers[1].append(cy)
+        if args_rect is not None:
+            rectangles.append(
+                Rectangle((minx, miny), w, h, **args_rect)
+            )
+    return rectangles, centers
 
 
-    #fig.canvas.mpl_connect("motion_notify_event", hover)
+def add_boxes(nodes, ax, points=None, rect=None):
+    rectangles = []
+    rectangles_class, center = add_box(nodes, rect)
+    rectangles += rectangles_class
+    if points is not None:
+        ax.scatter(center[0], center[1], **points)
+    if rect is not None:
+        ax.add_patch(rectangles[0])
+        collection = PatchCollection(rectangles, match_original=True)
+        ax.add_collection(collection)
 
 
-# def draw_plot(graph):
-#     G = nx.Graph()
-#     G.add_nodes_from(graph['nodes'])
-
-#     edge_trace = go.Scatter(
-#         x=[],
-#         y=[],
-#         line=dict(width=0.5,color='#888'),
-#         hoverinfo='none',
-#         mode='lines')
-#     for edge in G.edges():
-#         x0, y0 = G.node[edge[0]]['pos']
-#         x1, y1 = G.node[edge[1]]['pos']
-#         edge_trace['x'] += tuple([x0, x1, None])
-#         edge_trace['y'] += tuple([y0, y1, None])
+def plot_graph_2d(graph, char_id, visible_ids, action_ids, goal_ids):
 
 
-#     node_trace = go.Scatter(
-#     x=[],
-#     y=[],
-#     text=[],
-#     mode='markers',
-#     hoverinfo='text',
-#     marker=dict(
-#         showscale=True,
-#         # colorscale options
-#         #'Greys' | 'YlGnBu' | 'Greens' | 'YlOrRd' | 'Bluered' | 'RdBu' |
-#         #'Reds' | 'Blues' | 'Picnic' | 'Rainbow' | 'Portland' | 'Jet' |
-#         #'Hot' | 'Blackbody' | 'Earth' | 'Electric' | 'Viridis' |
-#         colorscale='YlGnBu',
-#         reversescale=True,
-#         color=[],
-#         size=10,
-#         colorbar=dict(
-#             thickness=15,
-#             title='Node Connections',
-#             xanchor='left',
-#             titleside='right'
-#         ),
-#         line=dict(width=2)))
+    #nodes_interest = [node for node in graph['nodes'] if 'GRABBABLE' in node['properties']]
+    goals = [node for node in graph['nodes'] if node['id'] in goal_ids]
+    container_surf = dict_info['objects_inside'] + dict_info['objects_surface']
+    container_and_surface = [node for node in graph['nodes'] if node['class_name'] in container_surf]
 
-#     for node in G.nodes():
-#         x, y = G.node[node]['pos']
-#         node_trace['x'] += tuple([x])
-#         node_trace['y'] += tuple([y])
-#         node_trace['marker']['color']+=([5])
+    #grabbed_obj = [node for node in graph['nodes'] if node['class_name'] in dict_info['objects_grab']]
+    rooms = [node for node in graph['nodes'] if 'Rooms' == node['category']]
 
-    
-#     fig = go.Figure(data=[edge_trace, node_trace],
-#              layout=go.Layout(
-#                 titlefont=dict(size=16),
-#                 showlegend=False,
-#                 hovermode='closest',
-#                 margin=dict(b=20,l=5,r=5,t=40),
-#                 annotations=[ dict(
-#                     text="Python code: <a href='https://plot.ly/ipython-notebooks/network-graphs/'> https://plot.ly/ipython-notebooks/network-graphs/</a>",
-#                     showarrow=False,
-#                     xref="paper", yref="paper",
-#                     x=0.005, y=-0.002 ) ],
-#                 xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-#                 yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)))
 
-#     py.iplot(fig, filename='networkx')
+    # containers and surfaces
+    visible_nodes = [node for node in graph['nodes'] if node['id'] in visible_ids and node['category'] != 'Rooms']
+    action_nodes = [node for node in graph['nodes'] if node['id'] in action_ids and node['category'] != 'Rooms']
 
+    goal_nodes = [node for node in graph['nodes'] if node['class_name'] == 'cupcake']
+
+    # Character
+    char_node = [node for node in graph['nodes'] if node['id'] == char_id][0]
+
+    fig = plt.figure(figsize=(10, 10))
+    ax = plt.axes()
+    add_boxes(rooms, ax, points=None, rect={'alpha': 0.1})
+    add_boxes(container_and_surface, ax, points=None, rect={'fill': False,
+                                                                        'edgecolor': 'blue', 'alpha': 0.3})
+    add_boxes([char_node], ax, points=None, rect={'facecolor': 'yellow', 'edgecolor': 'yellow', 'alpha': 0.7})
+    add_boxes(visible_nodes, ax, points={'s': 2.0, 'alpha': 1.0}, rect={'fill': False,
+                                                                         'edgecolor': 'green', 'alpha': 1.0})
+    add_boxes(goals, ax, points={'s':  100.0, 'alpha': 1.0, 'edgecolors': 'orange', 'facecolors': 'none', 'linewidth': 3.0})
+    add_boxes(action_nodes, ax, points={'s': 3.0, 'alpha': 1.0, 'c': 'red'})
+
+
+    bad_classes = ['character']
+
+    ax.set_aspect('equal')
+    bx, by = get_bounds([room['bounding_box'] for room in rooms])
+
+    maxsize = max(bx[1] - bx[0], by[1] - by[0])
+    gapx = (maxsize - (bx[1] - bx[0])) / 2.
+    gapy = (maxsize - (by[1] - by[0])) / 2.
+
+    ax.set_xlim(bx[0]-gapx, bx[1]+gapx)
+    ax.set_ylim(by[0]-gapy, by[1]+gapy)
+    ax.apply_aspect()
+    return fig
+
+def save_graph_2d(img_name, graph, visible_ids, action_ids, goal_ids, char_id=1):
+    fig = plot_graph_2d(graph, char_id, visible_ids, action_ids, goal_ids)
+    # plt.axis('scaled')
+    fig.tight_layout()
+
+
+    fig.savefig(img_name)
+    plt.close(fig)
+
+
+
+####################
+
+
+def render(el):
+    if el is None:
+        return "None"
+    if type(el) == list:
+        ncontent = [x.replace('<', '&lt').replace('>', '&gt').replace('[', '&lbrack;').replace(']', '&rbrack;') for x in el]
+        return ''.join(['<span style="display:inline-block; width: 150px">'+x+'</span>' for x in ncontent])
+    if type(el) == str:
+        el_html = el.replace('<', '&lt').replace('>', '&gt').replace('[', '&lbrack;').replace(']', '&rbrack;')
+        return el_html
+    if type(el) == dict:
+        visible_ids = el['visible_ids'][0]
+        action_ids = [t for t in el['action_ids'][0] if t in visible_ids]
+
+        return save_graph(el['graph'][0], visible_ids=visible_ids, action_ids=action_ids)
+    else:
+        return el.render()
+
+class html_img:
+    def __init__(self, src):
+        self.src = src
+
+    def render(self):
+        return '<img src="{}" style="height: 600px">'.format(self.src)
+
+def html_table(titles, max_rows, column_info, column_style=None):
+    header = ''.join(['<th>{}</th>'.format(title) for title in titles])
+    table_header = '<tr> {} </tr>'.format(header)
+
+    table_contents = ''
+    widths = column_style
+
+    for row_id in range(max_rows):
+        table_contents += '<tr>'
+        for it in range(len(column_info)):
+            if widths is not None:
+                w = widths[it]
+            else:
+                w = ''
+            if len(column_info[it]) > row_id:
+                el = column_info[it][row_id]
+                table_contents += '<td style="{}"> {} </td>'.format(w, render(el))
+            else:
+                table_contents += '<td style="{}"></td>'.format(w)
+        table_contents += '</tr>'
+    table_ep = '<table style="border-width: 2px; color: black; border-style: solid" > {} {} </table>'.format(table_header, table_contents)
+    return table_ep
 
 
