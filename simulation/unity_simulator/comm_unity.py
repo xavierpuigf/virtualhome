@@ -19,7 +19,8 @@ from requests.packages.urllib3.util.retry import Retry
 
 class UnityCommunication(object):
 
-    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False, timeout_wait=30):
+    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False, logging=True,
+                 timeout_wait=30, docker_enabled=False):
         self._address = 'http://' + url + ':' + port
         self.port = port
         self.graphics = no_graphics
@@ -27,7 +28,9 @@ class UnityCommunication(object):
         self.launcher = None
         self.timeout_wait = timeout_wait
         if file_name is not None:
-            self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display, no_graphics=no_graphics)
+            self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display,
+                                                        no_graphics=no_graphics, logging=logging,
+                                                        docker_enabled=docker_enabled)
             print('Getting connection...')
             succeeded = False
             tries = 0
@@ -227,10 +230,10 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
-                      skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
-                      frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
+                      skip_execution=False, find_solution=False, output_folder='Output/', file_name_prefix="script",
+                      frame_rate=5, image_synthesis=['normal'], save_pose_data=False,
                       image_width=640, image_height=480, gen_vid=True, recording=False,
-                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO', time_scale=1.0, smooth_walk=False):
+                      save_scene_states=False, character_resource='Chars/Male1', camera_mode=['AUTO'], time_scale=1.0, smooth_walk=False):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
@@ -256,7 +259,7 @@ class UnityCommunication(object):
                   'processing_time_limit': processing_time_limit, 'skip_execution': skip_execution,
                   'output_folder': output_folder, 'file_name_prefix': file_name_prefix,
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis, 
-                  'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
+                  'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
                   'character_resource': character_resource, 'camera_mode': camera_mode, 'recording': recording,
                   'image_width': image_width, 'image_height': image_height,

@@ -5,12 +5,12 @@ import subprocess
 import glob
 
 class UnityLauncher(object):
-    def __init__(self, port='8080', file_name=None, x_display=None, no_graphics=False):
+    def __init__(self, port='8080', file_name=None, x_display=None, no_graphics=False, logging=False, docker_enabled=False):
         self.proc = None
         atexit.register(self.close)
         self.port_number = int(port)
 
-        self.launch_executable(file_name, x_display=x_display, no_graphics=no_graphics)
+        self.launch_executable(file_name, x_display=x_display, no_graphics=no_graphics, logging=logging, docker_enabled=docker_enabled)
 
     @staticmethod
     def returncode_to_signal_name(returncode: int):
@@ -62,9 +62,11 @@ class UnityLauncher(object):
                 assert subprocess.call("xdpyinfo", stdout=dn, env=env, shell=True) == 0, \
                     ("Invalid DISPLAY %s - cannot find X server with xdpyinfo" % x_display)
 
-    def launch_executable(self, file_name, x_display=None, no_graphics=False, use_docker=False, args=[]):
-
+    def launch_executable(self, file_name, x_display=None, no_graphics=False, docker_enabled=False, logging=False, args=[]):
+        if docker_enabled:
+            return
         # based on https://github.com/Unity-Technologies/ml-agents/blob/bf12f063043e5faf4b1df567b978bb18dcb3e716/ml-agents/mlagents/trainers/learn.py
+        # https://github.com/allenai/ai2thor/blob/master/ai2thor/controller.py
         cwd = os.getcwd()
         file_name = (
             file_name.strip()
@@ -78,7 +80,7 @@ class UnityLauncher(object):
         print(file_name)
         #logger.debug("The true file name is {}".format(true_filename))
         launch_string = None
-        if platform == "linux" or platform == "linux2":
+        if platform == "linux" or platform == "linux2" and not docker_enabled:
             if x_display:
                 env['DISPLAY'] = ':' + x_display
                 self.check_x_display(env['DISPLAY'])
@@ -130,7 +132,6 @@ class UnityLauncher(object):
             )
         else:
             docker_training = False
-
             if not docker_training:
                 subprocess_args = [launch_string]
                 subprocess_args += ["-batchmode"]
@@ -140,7 +141,11 @@ class UnityLauncher(object):
                 file_path = os.getcwd()
                 subprocess_args += ["-http-port=" + str(self.port_number), "-logFile {}/Player_{}.log".format(file_path, str(self.port_number))]
                 subprocess_args += args
-                f = open('{}/logs_exec/port_{}.txt'.format(file_path, self.port_number), 'w+')
+
+                if logging:
+                    f = open('{}/port_{}.txt'.format(file_path, self.port_number), 'w+')
+                else:
+                    f = subprocess.DEVNULL
                 try:
                     self.proc = subprocess.Popen(
                         subprocess_args,
