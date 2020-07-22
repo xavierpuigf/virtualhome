@@ -42,12 +42,14 @@ year = {2019}
 
 ## Contents
 
-- Overview
-- Set Up
-- Generating Videos/Keyframes
-- Dataset 
-- Script Augmentation
-- Other details
+1. Overview
+2. Set Up
+3. Generating Videos/Keyframes
+4. Dataset 
+5. Script Augmentation
+6. Resources
+7. Modify VirtualHome
+8. Contributors
 
 
 ## Overview
@@ -191,10 +193,18 @@ python augment_dataset_exceptions.py
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
 Check [resources/README.md](resources/README.md) for more details.
 
+
+## Modify VirtualHome
+If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the Unity Source Code. *Link coming soon*.
+
+
 ## Contributors
+The VirtualHome API and code has been developed by the following people.
+
 - Marko Boben
 - Xavier Puig
 - Kevin Ra
 - Andrew Liao
+
 
 
