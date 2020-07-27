@@ -5,10 +5,11 @@ import subprocess
 import glob
 
 class UnityLauncher(object):
-    def __init__(self, port='8080', file_name=None, x_display=None, no_graphics=False, logging=False, docker_enabled=False):
+    def __init__(self, port='8080', file_name=None, batch_mode=False, x_display=None, no_graphics=False, logging=False, docker_enabled=False):
         self.proc = None
         atexit.register(self.close)
         self.port_number = int(port)
+        self.batchmode = batch_mode
 
         self.launch_executable(file_name, x_display=x_display, no_graphics=no_graphics, logging=logging, docker_enabled=docker_enabled)
 
@@ -75,7 +76,7 @@ class UnityLauncher(object):
                 .replace(".x86_64", "")
                 .replace(".x86", "")
         )
-        env = {}
+        env = None
         true_filename = os.path.basename(os.path.normpath(file_name))
         print(file_name)
         #logger.debug("The true file name is {}".format(true_filename))
@@ -134,7 +135,8 @@ class UnityLauncher(object):
             docker_training = False
             if not docker_training:
                 subprocess_args = [launch_string]
-                subprocess_args += ["-batchmode"]
+                if self.batchmode:
+                    subprocess_args += ["-batchmode"]
                 if no_graphics:
                     subprocess_args += ["-nographics"]
 

@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import glob
 import atexit
+from sys import platform
 import sys
 import pdb
 from . import communication
@@ -31,18 +32,20 @@ class UnityCommunication(object):
             self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display,
                                                         no_graphics=no_graphics, logging=logging,
                                                         docker_enabled=docker_enabled)
-            print('Getting connection...')
-            succeeded = False
-            tries = 0
-            while tries < 5 and not succeeded:
-                tries += 1
-                try:
-                    self.check_connection()
-                    succeeded = True
-                except:
-                    time.sleep(2)
-            if not succeeded:
-                sys.exit()
+            
+            if self.launcher.batchmode:
+                print('Getting connection...')
+                succeeded = False
+                tries = 0
+                while tries < 5 and not succeeded:
+                    tries += 1
+                    try:
+                        self.check_connection()
+                        succeeded = True
+                    except:
+                        time.sleep(2)
+                if not succeeded:
+                    sys.exit()
     def requests_retry_session(
                             self,
                             retries=5,
