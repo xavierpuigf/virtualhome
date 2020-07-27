@@ -233,7 +233,7 @@ class UnityCommunication(object):
                       skip_execution=False, find_solution=False, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], save_pose_data=False,
                       image_width=640, image_height=480, gen_vid=True, recording=False,
-                      save_scene_states=False, character_resource='Chars/Male1', camera_mode=['AUTO'], time_scale=1.0, skip_animation=False):
+                      save_scene_states=False, camera_mode=['AUTO'], time_scale=1.0, skip_animation=False):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
@@ -261,7 +261,7 @@ class UnityCommunication(object):
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis, 
                   'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
-                  'character_resource': character_resource, 'camera_mode': camera_mode, 'recording': recording,
+                  'camera_mode': camera_mode, 'recording': recording,
                   'image_width': image_width, 'image_height': image_height,
                   'time_scale': time_scale, 'skip_animation': skip_animation}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
