@@ -1,3 +1,0 @@
-CrashReporter: initialized
-Mono path[0] = '/Users/xavierpuig/Desktop/release_vh_unity/virtualhomeunity_2/executables_v2/exec_mac.app/Contents/Resources/Data/Managed'
-Mono config path = '/Users/xavierpuig/Desktop/release_vh_unity/virtualhomeunity_2/executables_v2/exec_mac.app/Contents/MonoBleedingEdge/etc'

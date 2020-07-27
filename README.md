@@ -5,6 +5,9 @@ VirtualHome is a platform to simulate complex household activities via programs.
   <img width="460" height="300" src="assets/vh_intro.gif">
 </p>
 
+## What is New
+* VirtualHome now support multiple agents and a *skip_animation* mode, to use the environment to train RL models.
+
 ## Cite VirtualHome
 
 VirtualHome has been used in:
@@ -40,8 +43,7 @@ year = {2019}
 }
 ```
 
-## What is New
-* VirtualHome now support multiple agents and a *skip_animation* mode, to use the environment to train RL models.
+
 
 ## Contents
 
