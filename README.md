@@ -18,7 +18,7 @@ CVPR2018.
 A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
 CVPR2019.
 
-If you plan to use the simulator, please consider citing them.
+If you plan to use the simulator, please consider citing this.
 
 ```
 @inproceedings{puig2018virtualhome,
@@ -39,6 +39,9 @@ month = {June},
 year = {2019}
 }
 ```
+
+## What is New
+* VirtualHome now support multiple agents and a *skip_animation* mode, to use the environment to train RL models.
 
 ## Contents
 
@@ -195,7 +198,7 @@ Check [resources/README.md](resources/README.md) for more details.
 
 
 ## Modify VirtualHome
-If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the Unity Source Code. *Link coming soon*.
+If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity).
 
 
 ## Contributors
@@ -204,6 +207,9 @@ The VirtualHome API and code has been developed by the following people.
 - Marko Boben
 - Xavier Puig
 - Kevin Ra
+- Zilin Wang
+- Shuang Li
+- Tianmin Shu
 - Andrew Liao
 
 
