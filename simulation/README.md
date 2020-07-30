@@ -34,8 +34,8 @@ comm.add_character(char_name)
 
 Where `char_name` corresponds to the character you want to add. These are the characters currently available, along with their name.
 
-| Male1   | Female1   | Female2   | Female4   | Male10   | Male2   | 
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |
+| Male1         | Female1       | Female2       | Female4       | Male2         | Male6         |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | ![img](../assets/agents/Male1.png) | ![img](../assets/agents/Female_1.png)| ![img](../assets/agents/Female_2.png)| ![img](../assets/agents/Female_4.png)| ![img](../assets/agents/Male_2.png)| ![img](../assets/agents/Male_6.png)|
 
 # Programs
