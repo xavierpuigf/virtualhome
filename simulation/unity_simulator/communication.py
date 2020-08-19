@@ -5,7 +5,7 @@ import subprocess
 import glob
 
 class UnityLauncher(object):
-    def __init__(self, port='8080', file_name=None, batch_mode=False, x_display=None, no_graphics=False, logging=False, docker_enabled=False):
+    def __init__(self, port='8080', file_name=None, batch_mode=True, x_display=None, no_graphics=False, logging=False, docker_enabled=False):
         self.proc = None
         atexit.register(self.close)
         self.port_number = int(port)
@@ -76,9 +76,8 @@ class UnityLauncher(object):
                 .replace(".x86_64", "")
                 .replace(".x86", "")
         )
-        env = None
+        env = {}
         true_filename = os.path.basename(os.path.normpath(file_name))
-        print(file_name)
         #logger.debug("The true file name is {}".format(true_filename))
         launch_string = None
         if platform == "linux" or platform == "linux2" and not docker_enabled:
