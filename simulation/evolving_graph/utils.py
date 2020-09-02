@@ -4,11 +4,74 @@ import re
 import os
 import copy
 import numpy as np
-from simulation.evolving_graph.environment import EnvironmentGraph, Property, Room
-from simulation.evolving_graph.execution import SitExecutor, LieExecutor
+from evolving_graph.environment import EnvironmentGraph, Property, Room
+from evolving_graph.execution import SitExecutor, LieExecutor
 
 
 random.seed(123)
+
+
+def get_visible_nodes(graph, agent_id):
+    # Obtains partial observation from the perspective of agent_id
+    # That is, objects inside the same room as agent_id and not inside closed containers
+    # NOTE: Assumption is that the graph has an inside transition that is not transitive
+    state = graph
+    print(state)
+    id2node = {node['id']: node for node in state['nodes']}
+    rooms_ids = [node['id'] for node in graph['nodes'] if node['category'] == 'Rooms']
+        
+    character = id2node[agent_id]
+
+    # find character
+    character_id = character["id"]
+    inside_of, is_inside, edge_from = {}, {}, {}
+
+
+    grabbed_ids = []
+    for edge in state['edges']:
+        if edge['relation_type'] == 'INSIDE':
+            
+            if edge['to_id'] not in is_inside.keys():
+                is_inside[edge['to_id']] = []
+            
+            is_inside[edge['to_id']].append(edge['from_id'])
+            inside_of[edge['from_id']] = edge['to_id']
+
+        elif 'HOLDS' in edge['relation_type']:
+            if edge['from_id'] == character['id']:
+                grabbed_ids.append(edge['to_id'])
+
+
+    character_inside_ids = inside_of[character_id]
+    room_id =  character_inside_ids
+
+
+    object_in_room_ids = is_inside[room_id]
+
+    # Some object are not directly in room, but we want to add them
+    curr_objects = list(object_in_room_ids)
+    while len(curr_objects) > 0:
+        objects_inside = []
+        for curr_obj_id in curr_objects:
+            new_inside = is_inside[curr_obj_id] if curr_obj_id in is_inside.keys() else []
+            objects_inside += new_inside
+        
+        object_in_room_ids += list(objects_inside)
+        curr_objects = list(objects_inside)
+    
+    # Only objects that are inside the room and not inside something closed
+    # TODO: this can be probably speed up if we can ensure that all objects are either closed or open
+    object_hidden = lambda ido: inside_of[ido] not in rooms_ids and 'OPEN' not in id2node[inside_of[ido]]['states']
+    observable_object_ids = [object_id for object_id in object_in_room_ids if not object_hidden(object_id)] + rooms_ids
+    observable_object_ids += grabbed_ids
+    
+
+    partilly_observable_state = {
+        "edges": [edge for edge in state['edges'] if edge['from_id'] in observable_object_ids and edge['to_id'] in observable_object_ids],
+        "nodes": [id2node[id_node] for id_node in observable_object_ids]
+    }
+
+    return partilly_observable_state
 
 
 def load_graph(file_name):

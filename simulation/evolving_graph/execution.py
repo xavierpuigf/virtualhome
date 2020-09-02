@@ -1,9 +1,9 @@
 import time
 import queue
 from typing import Optional
-import simulation.evolving_graph.common as common
-from simulation.evolving_graph.environment import *
-from simulation.evolving_graph.scripts import Action, ScriptLine, Script
+import evolving_graph.common as common
+from evolving_graph.environment import *
+from evolving_graph.scripts import Action, ScriptLine, Script
 
 
 # ExecutionInfo

@@ -1,20 +1,20 @@
-from .base_environment import BaseEnvironment
-from utils import utils_environment as utils
+from base_environment import BaseEnvironment
 
 import sys
 import os
-# sys.path.append('../../virtualhome/simulation/')
 # sys.path.append('../../vh_mdp/')
-
-
 curr_dir = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(f'{curr_dir}/../../vh_mdp/')
+sys.path.append(f'{curr_dir}/../')
 
 from unity_simulator import comm_unity as comm_unity
-from vh_graph.envs import belief, vh_env
+import utils as utils_environment
+from evolving_graph import utils
 import atexit
-import pdb
 import random
+import pdb
+import ipdb
+import random
+import json
 import numpy as np
 
 class UnityEnvironment(BaseEnvironment):
@@ -51,6 +51,17 @@ class UnityEnvironment(BaseEnvironment):
 
         self.num_agents = num_agents
         self.max_episode_length = max_episode_length
+        self.actions_available = [
+            'turnleft',
+            'walkforward',
+            'turnright',
+            'walktowards',
+            'open',
+            'close',
+            'put',
+            'grab',
+            'no_action'
+        ]
 
         self.recording_options = recording_options
         self.base_port = base_port
@@ -97,9 +108,10 @@ class UnityEnvironment(BaseEnvironment):
             self.comm = comm_unity.UnityCommunication(port=str(self.port_number), **self.executable_args)
 
         atexit.register(self.close)
-
-        self.env = vh_env.VhGraphEnv(n_chars=self.num_agents)
         self.reset()
+
+
+
 
     def close(self):
         self.comm.close()
@@ -116,7 +128,7 @@ class UnityEnvironment(BaseEnvironment):
         return reward, done, info
 
     def step(self, action_dict):
-        script_list = utils.convert_action(action_dict)
+        script_list = utils_environment.convert_action(action_dict)
         if len(script_list[0]) > 0:
             if self.recording_options['recording']:
                 success, message = self.comm.render_script(script_list,
@@ -140,7 +152,6 @@ class UnityEnvironment(BaseEnvironment):
         reward, done, info = self.reward()
 
         graph = self.get_graph()
-        self.python_graph_reset(graph)
         self.steps += 1
         
         obs = self.get_observations()
@@ -151,37 +162,6 @@ class UnityEnvironment(BaseEnvironment):
         if self.steps == self.max_episode_length:
             done = True
         return obs, reward, done, info
-
-    def python_graph_reset(self, graph):
-        new_graph = utils.inside_not_trans(graph)
-        self.python_graph = new_graph
-        self.env.reset(new_graph, self.task_goal)
-        self.env.to_pomdp()
-
-    def get_goal(self, task_spec, agent_goal):
-        if agent_goal == 'full':
-            pred = [x for x, y in task_spec.items() if y > 0 and x.split('_')[0] in ['on', 'inside']]
-            # object_grab = [pr.split('_')[1] for pr in pred]
-            # predicates_grab = {'holds_{}_1'.format(obj_gr): [1, False, 2] for obj_gr in object_grab}
-            res_dict = {goal_k: [goal_c, True, 2] for goal_k, goal_c in task_spec.items()}
-            # res_dict.update(predicates_grab)
-            return res_dict
-        elif agent_goal == 'grab':
-            candidates = [x.split('_')[1] for x,y in task_spec.items() if y > 0 and x.split('_')[0] in ['on', 'inside']]
-            object_grab = self.rnd.choice(candidates)
-            # print('GOAL', candidates, object_grab)
-            return {'holds_'+object_grab+'_'+'1': [1, True, 10], 'close_'+object_grab+'_'+'1': [1, False, 0.1]}
-        elif agent_goal == 'put':
-            pred = self.rand.choice([x for x, y in task_spec.items() if y > 0 and x.split('_')[0] in ['on', 'inside']])
-            object_grab = pred.split('_')[1]
-            return {
-                pred: [1, True, 60],
-                'holds_' + object_grab + '_' + '1': [1, False, 2],
-                'close_' + object_grab + '_' + '1': [1, False, 0.05]
-
-            }
-        else:
-            raise NotImplementedError
 
     def reset(self, environment_graph=None, environment_id=None, init_rooms=None):
         """
@@ -206,11 +186,11 @@ class UnityEnvironment(BaseEnvironment):
         #print(max_id)
         if environment_graph is not None:
             # TODO: this should be modified to extend well
-            updated_graph = utils.separate_new_ids_graph(environment_graph, max_id)
+            # updated_graph = utils.separate_new_ids_graph(environment_graph, max_id)
+            updated_graph = environment_graph
             success, m = self.comm.expand_scene(updated_graph)
         else:
-            updated_graph = utils.separate_new_ids_graph(env_task['init_graph'], max_id)
-            success, m = self.comm.expand_scene(updated_graph)
+            success = True
 
         if not success:
             print("Error expanding scene")
@@ -218,10 +198,10 @@ class UnityEnvironment(BaseEnvironment):
             return None
         self.num_static_cameras = self.comm.camera_count()[1]
 
-        if self.init_rooms[0] not in ['kitchen', 'bedroom', 'livingroom', 'bathroom']:
+        if init_rooms is None or init_rooms[0] not in ['kitchen', 'bedroom', 'livingroom', 'bathroom']:
             rooms = self.rnd.sample(['kitchen', 'bedroom', 'livingroom', 'bathroom'], 2)
         else:
-            rooms = list(self.init_rooms)
+            rooms = list(init_rooms)
 
         for i in range(self.num_agents):
             if i in self.agent_info:
@@ -234,7 +214,6 @@ class UnityEnvironment(BaseEnvironment):
 
         self.changed_graph = True
         graph = self.get_graph()
-        self.python_graph_reset(graph)
         self.rooms = [(node['class_name'], node['id']) for node in graph['nodes'] if node['category'] == 'Rooms']
         self.id2node = {node['id']: node for node in graph['nodes']}
 
@@ -273,7 +252,8 @@ class UnityEnvironment(BaseEnvironment):
 
     def get_observation(self, agent_id, obs_type, info={}):
         if obs_type == 'partial':
-            return self.env.get_observations(char_index=agent_id)
+            # agent 0 has id (0 + 1)
+            return utils.get_visible_nodes(self.get_graph(), agent_id=(agent_id+1))
 
         elif obs_type == 'full':
             return self.get_graph()
@@ -296,3 +276,18 @@ class UnityEnvironment(BaseEnvironment):
             return images[0]
         else:
             raise NotImplementedError
+
+if __name__ == '__main__':
+    env = UnityEnvironment(use_editor=True)
+    # Load dictionary with restrictions over actions
+    restriction_dict_path = f'{curr_dir}/object_action_info.json'
+    with open(restriction_dict_path, 'r') as f:
+        restriction_dict = json.load(f)
+
+    action_space_ids = env.get_action_space()[0]
+
+    action_name = random.sample(env.actions_available)
+    action_id = random.sample(env.action_space_ids)
+    pdb.set_trace()
+    utils.can_perfom_action(action_name, object_name, object_id, agent_id, curr_graph, object_restrictions)
+    ipdb.set_trace()

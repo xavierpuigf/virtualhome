@@ -3,7 +3,7 @@ import re
 import json
 from typing import List
 
-import simulation.evolving_graph.common as common
+import evolving_graph.common as common
 
 
 class Action(Enum):

@@ -1,0 +1,37 @@
+{
+    "objects_inside": [
+      "bathroomcabinet",
+      "kitchencabinets",
+      "cabinet",
+      "fridge",
+      "stove",
+      "dishwasher",
+      "microwave"],
+    "objects_surface": ["bench",
+                         "cabinet",
+                         "chair",
+                         "coffeetable",
+                         "desk",
+                         "kitchencounter",
+                         "kitchentable",
+                         "nightstand",
+                         "sofa"],
+    "objects_grab": [
+                     "apple",
+                     "book",
+                     "coffeepot",
+                     "cupcake",
+                     "cutleryfork",
+                     "juice",
+                     "pancake",
+                     "plate",
+                     "poundcake",
+                     "pudding",
+                     "remotecontrol",
+                     "waterglass",
+                     "whippedcream",
+                     "wine",
+                     "wineglass"],
+    "others": ["character"]
+
+}
