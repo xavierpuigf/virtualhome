@@ -44,7 +44,7 @@ def args_per_action(action):
     return action_dict[action]
 
 
-def can_perform_action(action, o1, o1_id, agent_id, graph, 
+def can_perform_action(action, o1_id, agent_id, graph, 
                        object_restrictions=None, teleport=True):
     """
     Check whether the current action can be done
@@ -57,6 +57,7 @@ def can_perform_action(action, o1, o1_id, agent_id, graph,
     obj2_str = ''
     obj1_str = ''
     id2node = {node['id']: node for node in graph['nodes']}
+    o1 = id2node[o1_id]['class_name']
     num_args = 0 if o1 is None else 1
     if num_args != args_per_action(action):
         return None

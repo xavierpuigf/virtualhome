@@ -16,7 +16,6 @@ def get_visible_nodes(graph, agent_id):
     # That is, objects inside the same room as agent_id and not inside closed containers
     # NOTE: Assumption is that the graph has an inside transition that is not transitive
     state = graph
-    print(state)
     id2node = {node['id']: node for node in state['nodes']}
     rooms_ids = [node['id'] for node in graph['nodes'] if node['category'] == 'Rooms']
         
