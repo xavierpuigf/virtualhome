@@ -1,7 +1,9 @@
 # Simulation
 This directory contains the *Unity Simulator* and *Evolving Graph* simulator API's. Remember that in order to run the Unity Simulator, you need to download and execute the appropiate unity executable. The *Evolving Graph* simulator does not require any unity executable. 
 
-VirtualHome simulation works through 2 components:
+**[New]** Additionally, we include a class to use VirtualHome as an OpenAI Gym environment. Check out [environment/unity_environment.py](environment/unity_environment.py) for an overview. 
+
+VirtualHome simulation works through 3 components:
 
 - Agents: An agent is a humanoid avatar that can interact with the environment and perform actions. You can add multiple agents on each simulation, interacting at the same time.
 - Programs: A sequence of actions representing an activity. Each action is formed by one subject, one verb and up to 2 object arguments (e.g. `<char0> [PutBack] <glass> (1) <table> (1)`).
