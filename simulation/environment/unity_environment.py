@@ -1,4 +1,4 @@
-from base_environment import BaseEnvironment
+from .base_environment import BaseEnvironment
 
 import sys
 import os
@@ -7,7 +7,7 @@ curr_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(f'{curr_dir}/../')
 
 from unity_simulator import comm_unity as comm_unity
-import utils as utils_environment
+from . import utils as utils_environment
 from evolving_graph import utils
 import atexit
 import random
@@ -23,9 +23,7 @@ class UnityEnvironment(BaseEnvironment):
     def __init__(self,
                  num_agents=2,
                  max_episode_length=200,
-                 env_task_set=None,
                  observation_types=None,
-                 agent_goals=None,
                  use_editor=False,
                  base_port=8080,
                  port_id=0,
@@ -79,18 +77,12 @@ class UnityEnvironment(BaseEnvironment):
         else:
             self.observation_types = ['partial' for _ in range(num_agents)]
 
-        if agent_goals is not None:
-            self.agent_goals = agent_goals
-        else:
-            self.agent_goals = ['full' for _ in range(num_agents)]
         
         self.agent_info = {
             0: 'Chars/Female1',
             1: 'Chars/Male1'
         }
         
-
-        self.task_goal, self.goal_spec = {0: {}, 1: {}}, {0: {}, 1: {}}
 
         self.changed_graph = False
         self.rooms = None
@@ -253,7 +245,8 @@ class UnityEnvironment(BaseEnvironment):
     def get_observation(self, agent_id, obs_type, info={}):
         if obs_type == 'partial':
             # agent 0 has id (0 + 1)
-            return utils.get_visible_nodes(self.get_graph(), agent_id=(agent_id+1))
+            curr_graph = self.get_graph()
+            return utils.get_visible_nodes(curr_graph, agent_id=(agent_id+1))
 
         elif obs_type == 'full':
             return self.get_graph()
@@ -277,23 +270,5 @@ class UnityEnvironment(BaseEnvironment):
         else:
             raise NotImplementedError
 
-if __name__ == '__main__':
-    env = UnityEnvironment(use_editor=True, num_agents=1)
-    # Load dictionary with restrictions over actions
 
-    restriction_dict_path = f'{curr_dir}/object_action_info.json'
-    with open(restriction_dict_path, 'r') as f:
-        restriction_dict = json.load(f)
-
-    obs = env.reset()
-    for steps in range(10):
-        action_space_ids = env.get_action_space()[0]
-        curr_graph = env.get_graph()
-        action_str = None
-        while action_str is None:
-            action_name = random.choice(env.actions_available)
-            object_id = random.choice(action_space_ids)
-            action_str = utils_environment.can_perform_action(action_name, object_id, 0, curr_graph, restriction_dict, teleport=False)
-        print(action_str)
-        obs, reward, done, info = env.step({0: action_str})
         
