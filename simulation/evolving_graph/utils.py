@@ -4,8 +4,8 @@ import re
 import os
 import copy
 import numpy as np
-from evolving_graph.environment import EnvironmentGraph, Property, Room
-from evolving_graph.execution import SitExecutor, LieExecutor
+from .environment import EnvironmentGraph, Property, Room
+from .execution import SitExecutor, LieExecutor
 
 
 random.seed(123)

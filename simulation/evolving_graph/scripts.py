@@ -3,7 +3,7 @@ import re
 import json
 from typing import List
 
-import evolving_graph.common as common
+from . import common
 
 
 class Action(Enum):

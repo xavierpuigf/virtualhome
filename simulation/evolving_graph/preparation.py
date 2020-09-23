@@ -1,9 +1,9 @@
 import random
 from typing import Iterable
 
-from simulation.evolving_graph.environment import *
-from simulation.evolving_graph.execution import _get_room_node
-from simulation.evolving_graph.common import Error, TimeMeasurement
+from .environment import *
+from .execution import _get_room_node
+from .common import Error, TimeMeasurement
 
 
 
