@@ -84,7 +84,7 @@ class UnityEnvironment(BaseEnvironment):
         }
         
 
-        self.changed_graph = False
+        self.changed_graph = True
         self.rooms = None
         self.id2node = None
         self.num_static_cameras = None
@@ -97,6 +97,7 @@ class UnityEnvironment(BaseEnvironment):
         else:
             # Launch the executable
             self.port_number = self.base_port + port_id
+            # ipdb.set_trace()
             self.comm = comm_unity.UnityCommunication(port=str(self.port_number), **self.executable_args)
 
         atexit.register(self.close)

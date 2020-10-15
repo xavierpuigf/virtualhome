@@ -23,7 +23,7 @@ def convert_action(action_dict):
 
         script_list = [x + '|' + y if len(x) > 0 else y for x, y in zip(script_list, current_script)]
 
-    script_list = [x.replace('[walk]', '[walktowards]') for x in script_list]
+    # script_list = [x.replace('[walk]', '[walktowards]') for x in script_list]
     return script_list
 
 

@@ -6,8 +6,10 @@ VirtualHome is a platform to simulate complex household activities via programs.
 </p>
 
 ## What is New
+VirtualHome V2 is out! Here is what is new.
 * VirtualHome now supports multiple agents and a *skip_animation* mode, to use the environment to train RL models.
-* We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out [unity_environment.py](simulation/environment/unity_environment.py)
+* We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
+* API to add characters in the scene and fixed cameras, and record from those cameras
 
 ## Cite VirtualHome
 
