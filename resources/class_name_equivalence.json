@@ -1,1 +1,583 @@
-{"address_book": ["notes"], "after_shave": ["facecream", "face_cream"], "alarm_clock": ["clock"], "basket_for_clothes": ["clothes_pile"], "bathroom_cabinet": ["bathroom_cabinet"], "bathroom_counter": ["bathroom_counter"], "board_game": ["boardgame"], "bowl": ["dish_bowl"], "carpet": ["rug"], "cd_player": ["radio"], "check": ["paper"], "chef_knife": ["chefknife"], "cleaning_bottle": ["dishwashingliquid"], "cleaning_solution": ["dishwashingliquid"], "cloth_napkin": ["napkin", "papertowel"], "clothes_pants": ["pants"], "clothes_shirt": ["shirt"], "coffe_maker": ["coffeemaker"], "coffee_cup": ["mug"], "coffee_pot": ["coffee_pot"], "coffee_table": ["coffee_table", "coffeetable"], "comforter": ["blanket"], "computer": ["cpu_case", "pc"], "controller": ["remote_control"], "cooking_pot": ["cookingpot"], "couch": ["sofa"], "crayon": ["crayons"], "cup": ["mug", "waterglass", "wineglass"], "cupboard": ["kitchen_cabinets"], "curtain": ["curtains"], "cutting_board": ["cutting_board"], "desk": ["cpu_table"], "detergent": ["dishwashingliquid"], "diary": ["journal"], "dining_room": ["kitchen"], "dish_soap": ["dishwashingliquid"], "document": ["notes", "paper"], "drawing": ["wallpictureframe"], "dresser": ["closet"], "drinking_glass": ["waterglass", "water_glass"], "entrance_hall": ["livingroom"], "face_soap": ["barsoap"], "facial_cleanser": ["face_cream"], "fax_machine": ["printer"], "filing_cabinet": ["cabinet"], "floor_lamp": ["lamp"], "food_apple": ["apple"], "food_banana": ["banana"], "food_bread": ["bread", "bread_slice"], "food_carrot": ["carrot"], "food_carrots": ["carrot"], "food_cereal": ["cereal"], "food_chicken": ["chicken"], "food_dessert": ["cupcake", "milkshake", "pancake", "pie", "poundcake", "pudding", "sundae", "watermelon", "creamybuns"], "food_fish": ["salmon"], "food_food": ["cereal", "potato", "bellpepper", "bell_pepper", "chocolatesyrup", "creamybuns", "crackers", "salmon", "whippedcream", "banana", "bananas", "chicken", "cutlets", "chinesefood", "pear", "plum", "orange", "cucumber", "tomato", "apple"], "food_fruit": ["watermelon", "apple", "banana", "pear", "plum", "orange"], "food_hamburger": ["mincedmeat"], "food_lemon": ["lemon"], "food_lime": ["lime"], "food_oatmeal": ["cereal"], "food_potato": ["potato"], "food_salt": ["condiment_shaker"], "food_snack": ["candybar", "crackers", "salt_crackers", "apple", "banana", "poundcake", "cupcake", "chips"], "food_sugar": ["condiment_shaker"], "food_turkey": ["chicken"], "food_vegetable": ["salad", "carrot", "potato", "tomato", "cucumber"], "fork": ["cutlery_fork"], "freezer": ["fridge"], "garbage_can": ["garbage_can"], "glass": ["waterglass", "water_glass", "wineglass"], "groceries": ["banana", "bananas", "bellpepper", "bell_pepper", "potato", "crackers", "salt_crackers", "apple", "orange", "chips", "chicken", "cutlets", "mincedmeat", "salmon", "lime", "cucumber", "watermelon", "plum", "pear", "tomato", "potato", "lemon"], "hanger": ["coatrack"], "highlighter": ["pen"], "home_office": ["livingroom"], "kitchen_cabinet": ["kitchen_cabinets"], "kitchen_counter": ["kitchen_counter"], "knife": ["cutlery_knife", "chefknife"], "light": ["lightswitch", "light_switch"], "lighting": ["lightswitch", "light_switch"], "living_room": ["livingroom"], "love_seat": ["sofa"], "mat": ["rug"], "mechanical_pencil": ["pen"], "mop_bucket": ["bucket"], "mousepad": ["mousemat", "mouse_mat"], "mug": ["waterglass", "wineglass"], "napkin": ["papertowel"], "newspaper": ["magazine"], "note_pad": ["notes"], "notebook": ["notes"], "notes": ["paper"], "novel": ["book"], "oil": ["condiment_bottle"], "oven": ["stove"], "painting": ["wallpictureframe"], "paper": ["notes"], "paper_towel": ["papertowel"], "pencil": ["pen"], "phone": ["wall_phone", "cellphone"], "pot": ["cookingpot", "fryingpan"], "printing_paper": ["paper"], "receipt": ["paper", "notes"], "remote_control": ["remote_control"], "sauce": ["condiment_bottle"], "sauce_pan": ["fryingpan"], "shampoo": ["lotionbottle", "hairproduct"], "sheets": ["blanket"], "shoes": ["slippers"], "shower": ["stall"], "soap": ["barsoap"], "spectacles": ["glasses"], "sponge": ["washing_sponge"], "stereo": ["radio"], "table": ["diningtable", "kitchen_table", "coffee_table"], "table_cloth": ["placemat"], "telephone": ["wall_phone"], "television": ["tv", "walltv"], "textbook": ["book"], "toilet_paper": ["toiletpaper"], "tooth_paste": ["toothpaste"], "towel_rack": ["towel_rack"], "toy": ["sportsball", "teddybear", "globe"], "trashcan": ["garbage_can"], "tray": ["oventray"], "wall_clock": ["clock"], "water": ["bottle_water"], "water_glass": ["waterglass"], "wine_glass": ["wineglass"]}
+{
+    "address_book": [
+        "notes"
+    ],
+    "after_shave": [
+        "facecream",
+        "face_cream"
+    ],
+    "alarm_clock": [
+        "clock"
+    ],
+    "alcohol": [
+        "alcohol"
+    ],
+    "basket_for_clothes": [
+        "clothes_pile"
+    ],
+    "bathroom": [
+        "bathroom"
+    ],
+    "bathroom_cabinet": [
+        "bathroom_cabinet"
+    ],
+    "bathroom_counter": [
+        "bathroom_counter"
+    ],
+    "bathtub": [
+         "bathtub"
+    ],
+    "bed": [
+         "bed"
+    ],
+    "bedroom": [
+         "bedroom"
+    ],
+    "beer": [
+         "beer"
+    ],
+    "bench": [
+         "bench"
+    ],
+    "blanket": [
+         "blanket"
+    ],
+    "board_game": [
+        "boardgame"
+    ],
+    "book": [
+        "book"
+    ],
+    "bookshelf": [
+        "bookshelf"
+    ],
+    "bowl": [
+        "dish_bowl"
+    ],
+    "box": [
+        "box"
+    ],
+    "broom": [
+        "broom"
+    ],
+    "carpet": [
+        "rug"
+    ],
+    "cd_player": [
+        "radio"
+    ],
+    "check": [
+        "paper"
+    ],
+    "chair": [
+        "chair"
+    ],
+    "chef_knife": [
+        "chefknife"
+    ],
+    "cleaning_bottle": [
+        "dishwashingliquid"
+    ],
+    "cleaning_solution": [
+        "dishwashingliquid"
+    ],
+    "cloth_napkin": [
+        "napkin",
+        "papertowel"
+    ],
+    "clothes_pants": [
+        "pants"
+    ],
+    "clothes_shirt": [
+        "shirt"
+    ],
+    "coffe_maker": [
+        "coffeemaker"
+    ],
+    "coffee_cup": [
+        "mug"
+    ],
+    "coffee_pot": [
+        "coffee_pot"
+    ],
+    "coffee_table": [
+        "coffee_table",
+        "coffeetable"
+    ],
+    "comforter": [
+        "blanket"
+    ],
+    "computer": [
+        "cpu_case",
+        "pc"
+    ],
+    "conditioner": [
+        "conditioner"
+    ],
+    "controller": [
+        "remote_control"
+    ],
+    "cooking_pot": [
+        "cookingpot"
+    ],
+    "couch": [
+        "sofa"
+    ],
+    "crayon": [
+        "crayons"
+    ],
+    "cup": [
+        "mug",
+        "waterglass",
+        "wineglass"
+    ],
+    "cupboard": [
+        "kitchen_cabinets"
+    ],
+    "curtain": [
+        "curtains"
+    ],
+    "cutting_board": [
+        "cutting_board"
+    ],
+    "desk": [
+        "cpu_table"
+    ],
+    "detergent": [
+        "dishwashingliquid"
+    ],
+    "diary": [
+        "journal"
+    ],
+    "dining_room": [
+        "kitchen"
+    ],
+    "dish_soap": [
+        "dishwashingliquid"
+    ],
+    "document": [
+        "notes",
+        "paper"
+    ],
+    "drawing": [
+        "wallpictureframe"
+    ],
+    "dresser": [
+        "closet"
+    ],
+    "drinking_glass": [
+        "waterglass",
+        "water_glass"
+    ],
+    "entrance_hall": [
+        "livingroom"
+    ],
+    "face_soap": [
+        "barsoap"
+    ],
+    "facial_cleanser": [
+        "face_cream"
+    ],
+    "faucet": [
+        "faucet"
+    ],
+    "fax_machine": [
+        "printer"
+    ],
+    "filing_cabinet": [
+        "cabinet"
+    ],
+    "floor": [
+        "floor"
+    ],
+    "floor_lamp": [
+        "lamp"
+    ],
+    "folder": [
+        "folder"
+    ],
+    "food_apple": [
+        "apple"
+    ],
+    "food_banana": [
+        "banana"
+    ],
+    "food_bread": [
+        "bread",
+        "bread_slice"
+    ],
+    "food_carrot": [
+        "carrot"
+    ],
+    "food_carrots": [
+        "carrot"
+    ],
+    "food_cereal": [
+        "cereal"
+    ],
+    "food_chicken": [
+        "chicken"
+    ],
+    "food_dessert": [
+        "cupcake",
+        "milkshake",
+        "pancake",
+        "pie",
+        "poundcake",
+        "pudding",
+        "sundae",
+        "watermelon",
+        "creamybuns"
+    ],
+    "food_fish": [
+        "salmon"
+    ],
+    "food_food": [
+        "cereal",
+        "potato",
+        "bellpepper",
+        "bell_pepper",
+        "chocolatesyrup",
+        "creamybuns",
+        "crackers",
+        "salmon",
+        "whippedcream",
+        "banana",
+        "bananas",
+        "chicken",
+        "cutlets",
+        "chinesefood",
+        "pear",
+        "plum",
+        "orange",
+        "cucumber",
+        "tomato",
+        "apple"
+    ],
+    "food_fruit": [
+        "watermelon",
+        "apple",
+        "banana",
+        "pear",
+        "plum",
+        "orange"
+    ],
+    "food_hamburger": [
+        "mincedmeat"
+    ],
+    "food_lemon": [
+        "lemon"
+    ],
+    "food_lime": [
+        "lime"
+    ],
+    "food_oatmeal": [
+        "cereal"
+    ],
+    "food_potato": [
+        "potato"
+    ],
+    "food_salt": [
+        "condiment_shaker"
+    ],
+    "food_snack": [
+        "candybar",
+        "crackers",
+        "salt_crackers",
+        "apple",
+        "banana",
+        "poundcake",
+        "cupcake",
+        "chips"
+    ],
+    "food_sugar": [
+        "condiment_shaker"
+    ],
+    "food_turkey": [
+        "chicken"
+    ],
+    "food_vegetable": [
+        "salad",
+        "carrot",
+        "potato",
+        "tomato",
+        "cucumber"
+    ],
+    "fork": [
+        "cutlery_fork"
+    ],
+    "freezer": [
+        "fridge"
+    ],
+    "garbage_can": [
+        "garbage_can"
+    ],
+    "glass": [
+        "waterglass",
+        "water_glass",
+        "wineglass"
+    ],
+    "groceries": [
+        "banana",
+        "bananas",
+        "bellpepper",
+        "bell_pepper",
+        "potato",
+        "crackers",
+        "salt_crackers",
+        "apple",
+        "orange",
+        "chips",
+        "chicken",
+        "cutlets",
+        "mincedmeat",
+        "salmon",
+        "lime",
+        "cucumber",
+        "watermelon",
+        "plum",
+        "pear",
+        "tomato",
+        "potato",
+        "lemon"
+    ],
+    "hanger": [
+        "coatrack"
+    ],
+    "highlighter": [
+        "pen"
+    ],
+    "home_office": [
+        "livingroom"
+    ],
+    "juice": [
+        "juice"
+    ],
+    "kettle": [
+        "kettle"
+    ],
+    "keyboard": [
+        "keyboard"
+    ],
+    "kitchen_cabinet": [
+        "kitchen_cabinets"
+    ],
+    "kitchen_counter": [
+        "kitchen_counter"
+    ],
+    "knife": [
+        "cutlery_knife",
+        "chefknife"
+    ],
+    "light": [
+        "lightswitch",
+        "light_switch"
+    ],
+    "lighting": [
+        "lightswitch",
+        "light_switch"
+    ],
+    "living_room": [
+        "livingroom"
+    ],
+    "love_seat": [
+        "sofa"
+    ],
+    "magazine": [
+        "magazine"
+    ],
+    "mat": [
+        "rug"
+    ],
+    "mechanical_pencil": [
+        "pen"
+    ],
+    "mop_bucket": [
+        "bucket"
+    ],
+    "mouse": [
+        "mouse"
+    ],
+    "mousepad": [
+        "mousemat",
+        "mouse_mat"
+    ],
+    "mug": [
+        "waterglass",
+        "wineglass"
+    ],
+    "napkin": [
+        "papertowel"
+    ],
+    "newspaper": [
+        "magazine"
+    ],
+    "note_pad": [
+        "notes"
+    ],
+    "notebook": [
+        "notes"
+    ],
+    "notes": [
+        "paper"
+    ],
+    "novel": [
+        "book"
+    ],
+    "oil": [
+        "condiment_bottle"
+    ],
+    "oven": [
+        "stove"
+    ],
+    "painting": [
+        "wallpictureframe"
+    ],
+    "paper": [
+        "notes"
+    ],
+    "paper_towel": [
+        "papertowel"
+    ],
+    "pencil": [
+        "pen"
+    ],
+    "phone": [
+        "wall_phone",
+        "cellphone"
+    ],
+    "pillow": [
+        "pillow"
+    ],
+    "placemat": [
+        "placemat"
+    ],
+    "plate": [
+        "plate"
+    ],
+    "pot": [
+        "cookingpot",
+        "fryingpan"
+    ],
+    "printing_paper": [
+        "paper"
+    ],
+    "receipt": [
+        "paper",
+        "notes"
+    ],
+    "remote_control": [
+        "remote_control"
+    ],
+    "sauce": [
+        "condiment_bottle"
+    ],
+    "sauce_pan": [
+        "fryingpan"
+    ],
+    "shampoo": [
+        "lotionbottle",
+        "hairproduct"
+    ],
+    "sheets": [
+        "blanket"
+    ],
+    "shoes": [
+        "slippers"
+    ],
+    "shower": [
+        "stall"
+    ],
+    "sink": [
+        "sink"
+    ],
+    "soap": [
+        "barsoap"
+    ],
+    "sofa": [
+        "sofa"
+    ],
+    "spectacles": [
+        "glasses"
+    ],
+    "sponge": [
+        "washing_sponge"
+    ],
+    "spoon": [
+        "spoon"
+    ],
+    "stereo": [
+        "radio"
+    ],
+    "table": [
+        "diningtable",
+        "kitchen_table",
+        "coffee_table"
+    ],
+    "table_cloth": [
+        "placemat"
+    ],
+    "telephone": [
+        "wall_phone"
+    ],
+    "television": [
+        "tv",
+        "walltv"
+    ],
+    "textbook": [
+        "book"
+    ],
+    "toaster": [
+        "toaster"
+    ],
+    "toilet": [
+        "toilet"
+    ],
+    "toilet_paper": [
+        "toiletpaper"
+    ],
+    "tooth_paste": [
+        "toothpaste"
+    ],
+    "toothbrush": [
+        "toothbrush"
+    ],
+    "towel": [
+        "towel"
+    ],
+    "towel_rack": [
+        "towel_rack"
+    ],
+    "toy": [
+        "sportsball",
+        "teddybear",
+        "globe"
+    ],
+    "trashcan": [
+        "garbage_can"
+    ],
+    "tray": [
+        "oventray"
+    ],
+    "wall_clock": [
+        "clock"
+    ],
+    "washing_machine": [
+        "washing_machine"
+    ],
+    "water": [
+        "bottle_water"
+    ],
+    "window": [
+        "window"
+    ],
+    "wine": [
+        "wine"
+    ],
+    "water_glass": [
+        "waterglass"
+    ],
+    "wine_glass": [
+        "wineglass"
+    ]
+}

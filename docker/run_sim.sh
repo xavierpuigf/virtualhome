@@ -1,3 +1,4 @@
+#!/bin/bash
 # 640 480 Beautiful
 xvfb-run --auto-servernum --server-args="-screen 0 640x480x24" \
     unity_vol/executable_unix/exec_linux.x86_64 -batchmode \
