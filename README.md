@@ -99,7 +99,7 @@ You can also download the simulator, unzip it and move it under the `simulation`
 
 ### Test simulator
 
-To test the simulator in the local machine, double click the executable, select a resolution and screen size and press `Play!`. Remember to select the option `Windowed` to make sure the simulator does not take the whole screen. The screenshot below shows our recommended configuration.
+To test the simulator in a local machine, double click the executable, select a resolution and screen size and press `Play!`. Remember to select the option `Windowed` to make sure the simulator does not take the whole screen. The screenshot below shows our recommended configuration.
 
 <img src="assets/simulator.png" width=70%>
 
@@ -113,7 +113,11 @@ sudo /usr/bin/X $display_num &
 DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
 ```
 
-You can also test the Evolving Graph simulator in [demo/example.py](demo/example.py). This simulator does not require opening any executable if you do not plan to generate images.
+For Linux, you can also launch the UnityCommunication specifying an executable file. This will directly open the executable on the right sceen. You can do it as follows:
+
+```
+
+```
 
 ### Docker
 You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).
