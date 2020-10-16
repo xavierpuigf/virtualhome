@@ -1,14 +1,18 @@
 # Simulation
 This directory contains the *Unity Simulator* and *Evolving Graph* simulator API's. Remember that in order to run the Unity Simulator, you need to download and execute the appropiate unity executable. The *Evolving Graph* simulator does not require any unity executable. 
 
-VirtualHome simulation works through 2 components:
+**[New]** Additionally, we include a class to use VirtualHome as an OpenAI Gym environment. Check out [environment/unity_environment.py](environment/unity_environment.py) for an overview. 
 
-- Programs: A sequence of actions representing an activity. Each action is formed by one verb and up to 2 object arguments (e.g. `[PutBack] <glass> (1) <table> (1)`).
+VirtualHome simulation works through 3 components:
+
+- Agents: An agent is a humanoid avatar that can interact with the environment and perform actions. You can add multiple agents on each simulation, interacting at the same time.
+- Programs: A sequence of actions representing an activity. Each action is formed by one subject, one verb and up to 2 object arguments (e.g. `<char0> [PutBack] <glass> (1) <table> (1)`).
 - Environment: the environment where the programs will be executed. Each environment is represented as a graph, where correspond to objects with properties and `(e.g. CLOSED/ON)` and edges contain relationships between objects. 
 
 Following, we provide documentation of the Environment settings and Actions currently supported. 
 
 ## Contents
+- Agents
 - Programs
 	- Preconditions
 	- Actions
@@ -19,16 +23,39 @@ Following, we provide documentation of the Environment settings and Actions curr
     - Object States
 
 
+# Agents
+An agent is a humanoid avatar that can interact with the environment and perform actions. 
 
+Agents in VirtualHome have a NavMeshAgent component, that allows them to navigate throughout the environment using shortest-parth planning, avoid obstacles and turning smoothly. They also have inverse kinematics through RootMotion FinalIK, to provide realistic animations when interacting with objects. 
+
+You can add multiple agents on each simulation, interacting at the same time. To add an agent into the environment, call
+
+```python
+comm.add_character(char_name)
+```
+
+Where `char_name` corresponds to the character you want to add. These are the characters currently available, along with their name.
+
+| Male1         | Female1       | Female2       | Female4       | Male10         | Male2         |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/agents/Male1.png) | ![img](../assets/agents/Female_1.png)| ![img](../assets/agents/Female_2.png)| ![img](../assets/agents/Female_4.png)| ![img](../assets/agents/Male_2.png)| ![img](../assets/agents/Male_6.png)|
 
 # Programs
-The programs allow executing activities in VirtualHome a program is composed by a sequence of instructions of the form `[Action_name] <Object_name> (Object_id)`.
+The programs allow executing activities in VirtualHome a program is composed by a sequence of instructions of the form `<char{char_id}> [Action_name] <Object_name> (Object_id)`.
 
 For example:
 
 ```python
-program = ['[Walk] <chair> (1)', '[Sit] <chair> (1)']
+program = [' <char0> [Walk] <chair> (1)', '<char0> [Sit] <chair> (1)']
 ```
+
+You can also run programs for multiple agents at the same time, separating the instructions using a `|`.
+
+```python
+program = [' <char0> [Walk] <chair> (1) | <char1> [Walk] <fridge> (1)', '<char0> [Sit] <chair> (1) | <char1> [Open] <fridge> (1)']
+```
+
+
 
 Programs can also have preconditions, describing how should the environment be in order to execute the program. Following we show documentation of the preconditions and actions supported.
 
@@ -107,6 +134,36 @@ ___
     - add directed edges: `character` inside room_of(`object`)
     - add undirected edges: `character` close `object`
 	- add undirected edges: `character` close all objects on `object`
+
+
+### WalkTowardsExecutor
+  
+Similar to `walk`, but only walks 1 meter towards the desired object.
+- script: walktowards `object`
+- Pre-condition: 
+	- `character` state is not sitting
+- Post-condition:	
+
+### WalkForwardExecutor
+  
+Walks 1 meter forward
+- script: walkforward
+- Pre-condition: 
+- Post-condition:
+
+### TurnLeftExecutor
+  
+Turns 30 degrees counterclockwise
+- script: turnleft
+- Pre-condition: 
+- Post-condition:
+
+### TurnLeftExecutor
+  
+Turns 30 degrees clockwise
+- script: turnright
+- Pre-condition: 
+- Post-condition:
 
 ### SitExecutor
 - script: sit `object`
@@ -411,6 +468,10 @@ Action Executor | Supported Unity
 FindExecutor  | :white_check_mark:
 WalkExecutor | :white_check_mark:
 RunExecutor | :white_check_mark:
+WalkTowardsExecutor | :white_check_mark:
+WalkForwardExecutor | :white_check_mark:
+TurnLeftExecutor | :white_check_mark:
+TurnRightExecutor | :white_check_mark:
 SitExecutor | :white_check_mark:
 StandUpExecutor | :white_check_mark:
 GrabExecutor | :white_check_mark:

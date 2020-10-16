@@ -1460,8 +1460,7 @@
     "stove": [
         "SURFACES",
         "CAN_OPEN",
-        "HAS_SWITCH",
-        "CONTAINERS"
+        "HAS_SWITCH"
     ],
     "table": [
         "SURFACES",

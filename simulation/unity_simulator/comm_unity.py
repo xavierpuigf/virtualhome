@@ -1,3 +1,4 @@
+
 import base64
 import collections
 import time
@@ -8,26 +9,143 @@ from PIL import Image
 import cv2
 import numpy as np
 import glob
+import atexit
+from sys import platform
+import sys
+import pdb
+from . import communication
+
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 class UnityCommunication(object):
 
-    def __init__(self, url='127.0.0.1', port='8080'):
+    def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False, logging=True,
+                 timeout_wait=30, docker_enabled=False):
         self._address = 'http://' + url + ':' + port
+        self.port = port
+        self.graphics = no_graphics
+        self.x_display = x_display
+        self.launcher = None
+        self.timeout_wait = timeout_wait
+        if file_name is not None:
+            self.launcher = communication.UnityLauncher(port=port, file_name=file_name, x_display=x_display,
+                                                        no_graphics=no_graphics, logging=logging,
+                                                        docker_enabled=docker_enabled)
+            
+            if self.launcher.batchmode:
+                print('Getting connection...')
+                succeeded = False
+                tries = 0
+                while tries < 5 and not succeeded:
+                    tries += 1
+                    try:
+                        self.check_connection()
+                        succeeded = True
+                    except:
+                        time.sleep(2)
+                if not succeeded:
+                    sys.exit()
+    def requests_retry_session(
+                            self,
+                            retries=5,
+                            backoff_factor=2,
+                            status_forcelist=(500, 502, 504),
+                            session=None,
+                        ):
+        session = session or requests.Session()
+        retry = Retry(
+            total=retries,
+            read=retries,
+            connect=retries,
+            backoff_factor=backoff_factor,
+            status_forcelist=status_forcelist,
+        )
+        adapter = HTTPAdapter(max_retries=retry)
+        session.mount('http://', adapter)
+    
+        return session
 
-    def post_command(self, request_dict):
+    def close(self):
+        if self.launcher is not None:
+            self.launcher.close()
+
+
+    def post_command(self, request_dict, repeat=False):
         try:
-            resp = requests.post(self._address, json=request_dict)
+            if repeat:
+                resp = self.requests_retry_session().post(self._address, json=request_dict) 
+            else:
+                resp = requests.post(self._address, json=request_dict, timeout=self.timeout_wait)
             if resp.status_code != requests.codes.ok:
                 raise UnityEngineException(resp.status_code, resp.json())
             return resp.json()
         except requests.exceptions.RequestException as e:
             raise UnityCommunicationException(str(e))
 
+    def check_connection(self):
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'idle'}, repeat=True)
+        return response['success']
+    
+    def get_visible_objects(self, camera_index):
+
+        response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': [camera_index]})
+
+        try:
+            msg = json.loads(response['message'])
+        except Exception as e:
+            msg = response['message']
+
+        return response['success'], msg
+
+    def add_character(self, character_resource='Chars/Male1', position=None, initial_room=""):
+        mode = 'random'
+        pos = [0, 0, 0]
+        if position is not None:
+            mode = 'fix_position'
+            pos = position
+        elif not len(initial_room) == 0:
+            assert initial_room in ["kitchen", "bedroom", "livingroom", "bathroom"]
+            mode = 'fix_room'
+
+        response = self.post_command(
+            {'id': str(time.time()), 'action': 'add_character', 
+             'stringParams':[json.dumps({
+                'character_resource': character_resource,
+                'mode': mode,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                'initial_room': initial_room
+                })]})
+        return response['success']
+
+    def move_character(self, char_index, pos):
+        response = self.post_command(
+            {'id': str(time.time()),
+             'action': 'move_character',
+             'stringParams':[json.dumps({
+                'char_index': char_index,
+                'character_position': {'x': pos[0], 'y': pos[1], 'z': pos[2]},
+                })]
+            })
+        return response['success']
+
+
     def check(self, script_lines):
         """
         Returns pair (success, message); message is Null when success == True
         """
         response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
+        return response['success'], response['message']
+
+    def add_camera(self, position=[0,1,0], rotation=[0,0,0]):
+        cam_dict = {
+                'position': {'x': position[0], 'y': position[1], 'z': position[2]},
+                'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]}
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'add_camera',
+                    'stringParams': [json.dumps(cam_dict)]})
         return response['success'], response['message']
 
     def reset(self, scene_index=None):
@@ -38,23 +156,21 @@ class UnityCommunication(object):
                                       'intParams': [] if scene_index is None else [scene_index]})
         return response['success']
 
+    def fast_reset(self):
+        """
+        Reset scene
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
+                                      'intParams': []})
+        return response['success']
+
     def camera_count(self):
         """
         Returns the number of cameras in the scene
         """
         response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
         return response['success'], response['value']
-    
-    def add_camera(self, position=[0,1,0], rotation=[0,0,0]):
-        cam_dict = {
-            'position': {'x': position[0], 'y': position[1], 'z': position[2]},
-            'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]}
-        }
-        response = self.post_command(
-            {'id': str(time.time()), 'action': 'add_camera',
-             'stringParams': [json.dumps(cam_dict)]})
-        return response['success'], response['message']
-    
+
     def camera_data(self, camera_indexes):
         """
         Returns camera data for cameras given in camera_indexes list
@@ -90,15 +206,16 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def expand_scene(self, new_graph, randomize=False, random_seed=-1, animate_character=False,
-                     ignore_placing_obstacles=False, prefabs_map=None):
+                     ignore_placing_obstacles=False, prefabs_map=None, transfer_transform=True):
         """
         Expands scene with the given graph.
         To use randomization set randomize to True.
         To set random seed set random_seed to a non-negative value >= 0,
         random_seed < 0 means that seed is not set
+        transfer_transform: whether we want the transforms to appear or not
         """
         config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
-                  'ignore_obstacles': ignore_placing_obstacles}
+                  'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform}
         string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
         if prefabs_map is not None:
@@ -116,10 +233,10 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
-                      skip_execution=False, find_solution=True, output_folder='Output/', file_name_prefix="script",
-                      frame_rate=5, image_synthesis=['normal'], capture_screenshot=False, save_pose_data=False,
-                      image_width=640, image_height=480, gen_vid=True,
-                      save_scene_states=False, character_resource='Chars/Male1', camera_mode='AUTO'):
+                      skip_execution=False, find_solution=False, output_folder='Output/', file_name_prefix="script",
+                      frame_rate=5, image_synthesis=['normal'], save_pose_data=False,
+                      image_width=640, image_height=480, gen_vid=True, recording=False,
+                      save_scene_states=False, camera_mode=['AUTO'], time_scale=1.0, skip_animation=False):
         """
         :param script: a list of script lines
         :param randomize_execution: randomly choose elements
@@ -145,10 +262,11 @@ class UnityCommunication(object):
                   'processing_time_limit': processing_time_limit, 'skip_execution': skip_execution,
                   'output_folder': output_folder, 'file_name_prefix': file_name_prefix,
                   'frame_rate': frame_rate, 'image_synthesis': image_synthesis, 
-                  'capture_screenshot': capture_screenshot, 'find_solution': find_solution,
+                  'find_solution': find_solution,
                   'save_pose_data': save_pose_data, 'save_scene_states': save_scene_states,
-                  'character_resource': character_resource, 'camera_mode': camera_mode,
-                  'image_width': image_width, 'image_height': image_height}
+                  'camera_mode': camera_mode, 'recording': recording,
+                  'image_width': image_width, 'image_height': image_height,
+                  'time_scale': time_scale, 'skip_animation': skip_animation}
         response = self.post_command({'id': str(time.time()), 'action': 'render_script',
                                       'stringParams': [json.dumps(params)] + script})
         if response['success']:
@@ -161,16 +279,16 @@ def generate_video(image_syn, output_folder, prefix, frame_rate):
     import subprocess
     
     curr_folder = os.path.dirname(os.path.realpath(__file__))
-    vid_folder = '{}/../{}/{}/'.format(curr_folder, output_folder, prefix)
+    vid_folder = '{}/../{}/{}/0/'.format(curr_folder, output_folder, prefix)
     
     for vid_mod in image_syn:
         subprocess.call(['ffmpeg', '-i',
-                         '{}/Action_%04d_{}.png'.format(vid_folder, vid_mod), 
+                         '{}/Action_%04d_0_{}.png'.format(vid_folder, vid_mod), 
                          '-framerate', str(frame_rate),
                          '-pix_fmt', 'yuv420p',
                          '{}/Action_{}.mp4'.format(vid_folder, vid_mod)])
-        files_delete = glob.glob('{}/Action_*_{}.png'.format(vid_folder, vid_mod))
-        for ft in files_delete: os.remove(ft)
+        # files_delete = glob.glob('{}/Action_*_{}.png'.format(vid_folder, vid_mod))
+        # for ft in files_delete: os.remove(ft)
         
 def _decode_image(img_string):
     img_bytes = base64.b64decode(img_string)

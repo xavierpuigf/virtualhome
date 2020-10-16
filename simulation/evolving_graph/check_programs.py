@@ -8,10 +8,10 @@ from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
 
-import evolving_graph.utils as utils
-from evolving_graph.scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
-from evolving_graph.execution import ScriptExecutor
-from evolving_graph.environment import EnvironmentGraph
+import utils
+from .scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
+from .execution import ScriptExecutor
+from .environment import EnvironmentGraph
 
 
 random.seed(123)

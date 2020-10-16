@@ -5,6 +5,12 @@ VirtualHome is a platform to simulate complex household activities via programs.
   <img width="460" height="300" src="assets/vh_intro.gif">
 </p>
 
+## What is New
+The new version of VirtualHome (VH-Social) is out! Here is what is new.
+* VirtualHome now supports multiple agents and a *skip_animation* mode, to use the environment to train RL models.
+* We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
+* API to add characters in the scene and fixed cameras, and record from those cameras
+
 ## Cite VirtualHome
 
 VirtualHome has been used in:
@@ -18,7 +24,7 @@ CVPR2018.
 A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
 CVPR2019.
 
-If you plan to use the simulator, please consider citing them.
+If you plan to use the simulator, please consider citing this.
 
 ```
 @inproceedings{puig2018virtualhome,
@@ -40,14 +46,18 @@ year = {2019}
 }
 ```
 
+
+
 ## Contents
 
-- Overview
-- Set Up
-- Generating Videos/Keyframes
-- Dataset 
-- Script Augmentation
-- Other details
+1. Overview
+2. Set Up
+3. Generating Videos/Keyframes
+4. Dataset 
+5. Script Augmentation
+6. Resources
+7. Modify VirtualHome
+8. Contributors
 
 
 ## Overview
@@ -98,7 +108,7 @@ If you do not have a monitor or want to test the simulator remotely, you can eit
 
 ```bash
 sudo /usr/bin/X $display_num &
-DISPLAY=:display_num ./$PATH_SIM/synvid.x86_64 -batchmode
+DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
 ```
 
 You can also test the Evolving Graph simulator in [demo/example.py](demo/example.py). This simulator does not require opening any executable if you do not plan to generate images.
@@ -191,10 +201,21 @@ python augment_dataset_exceptions.py
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
 Check [resources/README.md](resources/README.md) for more details.
 
+
+## Modify VirtualHome
+If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity).
+
+
 ## Contributors
+The VirtualHome API and code has been developed by the following people.
+
 - Marko Boben
 - Xavier Puig
 - Kevin Ra
+- Zilin Wang
+- Shuang Li
+- Tianmin Shu
 - Andrew Liao
+
 
 
