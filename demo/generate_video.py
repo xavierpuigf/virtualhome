@@ -9,7 +9,5 @@ print('Starting scene...')
 comm.reset()
 comm.add_character('Chars/Female1')
 print('Generating video...')
-
 comm.render_script(script, recording=True, find_solution=True)
-
 print('Generated, find video in simulation/unity_simulator/output/')

@@ -7,11 +7,9 @@ You can also run VirtualHome using Docker, avoiding installing OpenGL and Xvfb. 
 - [Docker](https://www.docker.com/)
 
 ## Setup
-Run 
-```
-sh prepare_docker.sh
-```
-It will download the Unity Simulator and put it in a `unity_vol` folder, where videos will be stored when running the simulator on Docker.
+- [Download](http://wednesday.csail.mit.edu/frames/data_acquisition/SyntheticStories/release/simulator/linux_sim.zip) the VirtualHome exectable for Linux.
+- [Download](https://www.docker.com/) and install Docker if you don't have it setup on your machine.
+- Create a directory `unity_vol` with all write permissions and add the executable inside.
 
 ## Usage
 ### Build the Docker Container

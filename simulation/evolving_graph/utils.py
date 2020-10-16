@@ -345,12 +345,10 @@ class graph_dict_helper(object):
         '''
         For a given object name, obtains the binary variables
         '''
-
         if object_name in self.object_states:
             states = self.object_states[object_name]
         else:
             states = []
-
         bin_vars = self.get_binary_variables(states)
         return bin_vars
 
@@ -361,8 +359,6 @@ class graph_dict_helper(object):
         added_variables = []
         state_to_bin_var = {}
         added_variables_default = []
-
-        possible_states = []
         for bin_var in self.binary_variables:
             state_to_bin_var[bin_var.positive] = (bin_var, bin_var.default)
             state_to_bin_var[bin_var.negative] = (bin_var, bin_var.default)
@@ -375,7 +371,6 @@ class graph_dict_helper(object):
                     added_variables_default.append(default_var)
 
         return added_variables
-
             
                 
     def set_to_default_state(self, graph_dict, first_room, id_checker):

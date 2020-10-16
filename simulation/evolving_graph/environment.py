@@ -205,24 +205,9 @@ class EnvironmentGraph(object):
         for from_id, relation, to_id in edges:
             es = self._edge_map.setdefault((from_id, relation), {})
             es[to_id] = self._node_map[to_id]
-    
-    def to_dict(self):
-        nodes = self.get_nodes()
-        nodes = [node.to_dict() for node in nodes]
-        edges = self.get_edges()
-        return {'nodes': nodes, 'edges': edges}
 
     def get_nodes(self):
         return self._node_map.values()
-    
-    def get_edges(self):
-        edges = []
-        edge_keys = self.get_from_pairs()
-        for edge_k in edge_keys:
-            from_n, r = edge_k
-            for to_n in self.get_node_ids_from(from_n, r):
-                edges.append({'from_id': from_n, 'relation_type': r.name, 'to_id': to_n})
-        return edges
 
     def get_node_ids(self):
         return  self._node_map.keys()
