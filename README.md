@@ -115,9 +115,11 @@ DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
 
 For Linux, you can also launch the UnityCommunication specifying an executable file. This will directly open the executable on the right sceen. You can do it as follows:
 
+```python
+form simulation.unity_simulator import comm_unity
+comm = comm_unity.UnityCommunication(file_name=file_name, port={your_port}, x_display={your_display})
 ```
-
-```
+It will open an executable and create a communication object to render scripts or simulate actvities. You can open multiple executables at the same time, to train models using multiple processes.
 
 ### Docker
 You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).
