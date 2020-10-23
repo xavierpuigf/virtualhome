@@ -26,6 +26,11 @@ CVPR2018.
 A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
 CVPR2019.
 
+
+- Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
+X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.
+
+
 If you plan to use the simulator, please consider citing this.
 
 ```
@@ -48,7 +53,16 @@ year = {2019}
 }
 ```
 
-
+```
+@misc{puig2020watchandhelp,
+      title={Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration}, 
+      author={Xavier Puig and Tianmin Shu and Shuang Li and Zilin Wang and Joshua B. Tenenbaum and Sanja Fidler and Antonio Torralba},
+      year={2020},
+      eprint={2010.09890},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
+}
+```
 
 ## Contents
 
