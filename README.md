@@ -27,7 +27,7 @@ A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
 CVPR2019.
 
 
-- Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
+- Watch-and-Help: A Challenge for Social Perception and Human-AI Collaboration.<br/>
 X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.
 
 
