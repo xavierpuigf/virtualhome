@@ -114,8 +114,14 @@ To test the simulator in a local machine, double click the executable, select a 
 
 Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
 
-If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server, following [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639). When running the executable with an X server, use -batchmode. For Linux, that would be:
+If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server (find the installation instructions in [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable with an X server, use -batchmode. For Linux, you would do:
 
+First run the X server on a terminal
+```bash
+sudo /usr/bin/X :$display_num &
+```
+
+On a separate terminal, launch the executable
 ```bash
 sudo /usr/bin/X $display_num &
 DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
@@ -123,11 +129,12 @@ DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
 
 For Linux, you can also launch the UnityCommunication specifying an executable file. This will directly open the executable on the right sceen. You can do it as follows:
 
+After running the X server, run:
 ```python
 from simulation.unity_simulator import comm_unity
 comm = comm_unity.UnityCommunication(file_name=file_name, port={your_port}, x_display={your_display})
 ```
-It will open an executable and create a communication object to render scripts or simulate actvities. You can open multiple executables at the same time, to train models using multiple processes.
+It will open an executable and create a communication object to render scripts or simulate actvities. You can open multiple executables at the same time, to train models or generate data using multiple processes.
 
 ### Docker
 You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).
