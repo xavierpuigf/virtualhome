@@ -70,10 +70,8 @@ year = {2019}
 2. Set Up
 3. Generating Videos/Keyframes
 4. Dataset 
-5. Script Augmentation
-6. Resources
-7. Modify VirtualHome
-8. Contributors
+5. Modify VirtualHome
+6. Contributors
 
 
 ## Overview
@@ -195,7 +193,7 @@ To view the graph of the environment, and how it changes throughout the script e
 
 You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md).
 
-## Script Augmentation
+### Script Augmentation
 
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
@@ -204,7 +202,7 @@ You can download the augmented scripts in [KB-RealEnv](http://virtual-home.org/r
 
 Here, we provide the code to augment the sripts:
 
-### Augment with `KB-RealEnv`
+#### Augment with `KB-RealEnv`
 
 ```bash
 cd dataset_utils
@@ -212,21 +210,21 @@ python augment_dataset_locations.py
 ```
 
 
-### Augment with `KB-ExceptionHandler`
+#### Augment with `KB-ExceptionHandler`
 
 ```bash
 cd dataset_utils
 python augment_dataset_exceptions.py
 ```
 
-## Resources
+### Resources
 
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
 Check [resources/README.md](resources/README.md) for more details.
 
 
 ## Modify VirtualHome
-If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity).
+If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity). You will need to download the Unity Editor and build your own executable after having made the updates.
 
 
 ## Contributors
