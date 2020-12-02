@@ -1,7 +1,7 @@
 # VirtualHome
-VirtualHome is a platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents.
+**VirtualHome** is a platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents.
 
-Check out more details of the environmnent and platform in [www.virtual-home.org](http://virtual-home.org). 
+Check out more details of the environmnent and platform at [**virtual-home.org**](http://virtual-home.org). 
 
 <p align="center">
   <img width="460" height="300" src="assets/vh_intro.gif">
@@ -13,56 +13,7 @@ The new version of VirtualHome (VH-Social) is out! Here is what is new.
 * We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
 * API to add characters in the scene and fixed cameras, and record from those cameras
 
-## Cite VirtualHome
 
-VirtualHome has been used in:
-
-- VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf) <br/>
-X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba.<br/>
-CVPR2018.
-
-
-- Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
-A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
-CVPR2019.
-
-
-- Watch-and-Help: A Challenge for Social Perception and Human-AI Collaboration.<br/>
-X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.
-
-
-If you plan to use the simulator, please consider citing this.
-
-```
-@inproceedings{puig2018virtualhome,
-  title={Virtualhome: Simulating household activities via programs},
-  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={8494--8502},
-  year={2018}
-}
-```
-
-```
-@InProceedings{Liao_2019_CVPR,
-author = {Liao, Yuan-Hong and Puig, Xavier and Boben, Marko and Torralba, Antonio and Fidler, Sanja},
-title = {Synthesizing Environment-Aware Activities via Activity Sketches},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2019}
-}
-```
-
-```
-@misc{puig2020watchandhelp,
-      title={Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration}, 
-      author={Xavier Puig and Tianmin Shu and Shuang Li and Zilin Wang and Joshua B. Tenenbaum and Sanja Fidler and Antonio Torralba},
-      year={2020},
-      eprint={2010.09890},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI}
-}
-```
 
 ## Contents
 
@@ -71,7 +22,8 @@ year = {2019}
 3. Generating Videos/Keyframes
 4. Dataset 
 5. Modify VirtualHome
-6. Contributors
+6. Citation
+7. Contributors
 
 
 ## Overview
@@ -227,6 +179,55 @@ Check [resources/README.md](resources/README.md) for more details.
 If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity). You will need to download the Unity Editor and build your own executable after having made the updates.
 
 
+## Citation
+VirtualHome has been used in:
+
+- VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf) <br/>
+X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba.<br/>
+CVPR2018.
+
+
+- Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
+A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
+CVPR2019.
+
+
+- Watch-and-Help: A Challenge for Social Perception and Human-AI Collaboration.<br/>
+X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.
+
+
+If you plan to use the simulator, please consider citing this.
+
+```
+@inproceedings{puig2018virtualhome,
+  title={Virtualhome: Simulating household activities via programs},
+  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={8494--8502},
+  year={2018}
+}
+```
+
+```
+@InProceedings{Liao_2019_CVPR,
+author = {Liao, Yuan-Hong and Puig, Xavier and Boben, Marko and Torralba, Antonio and Fidler, Sanja},
+title = {Synthesizing Environment-Aware Activities via Activity Sketches},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2019}
+}
+```
+
+```
+@misc{puig2020watchandhelp,
+      title={Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration}, 
+      author={Xavier Puig and Tianmin Shu and Shuang Li and Zilin Wang and Joshua B. Tenenbaum and Sanja Fidler and Antonio Torralba},
+      year={2020},
+      eprint={2010.09890},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
+}
+```
 ## Contributors
 The VirtualHome API and code has been developed by the following people.
 
