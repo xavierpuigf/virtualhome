@@ -66,9 +66,9 @@ Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unit
 
 If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server (find the installation instructions in [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable with an X server, use -batchmode. For Linux, you would do:
 
-First run the X server on a terminal
+First run the X server on a terminal. You will have to specify which display you want to use, and on which GPUs. By default it will use all the gpus available
 ```bash
-sudo /usr/bin/X :$display_num &
+sudo python helper_scripts/startx.py $display_num
 ```
 
 On a separate terminal, launch the executable
