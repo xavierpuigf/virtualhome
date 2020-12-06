@@ -1,4 +1,6 @@
 # Dataset
+This section contains the description of the dataset used for [Synthesizing Environment-Aware Activities via Activity Sketches](https://openaccess.thecvf.com/content_CVPR_2019/papers/Liao_Synthesizing_Environment-Aware_Activities_via_Activity_Sketches_CVPR_2019_paper.pdf). Note that you need to use version v1.0.0 of the simulator to use this dataset.
+
 Move the dataset of programs and environments representing activities in this folder. The dataset should have the following structure:
 
 ```
@@ -18,7 +20,15 @@ Following, we describe the meaning of each folder, but first, let's introduce Vi
 ## Environments
 VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a `.json` file containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding `.json` file. 
 
-The files representing each apartment can be found in [example_graphs](../example_graphs/) as `TestScene{apt_id}_graph.json`. Each graph has a `Trimmed` version, which is used for the Evolving Graph simulator.
+You can generate a graph for a given apartment by using unity simulator.
+
+```python
+scene_id = 0 # Scenes go from 0 - 6
+comm = UnityCommunication()
+comm.reset(scene_id)
+s, graph = comm.environment_graph()
+```
+
 
 You can check in the [demo](../demo/unity_demo.ipynb) examples on how to read and update graphs.
 
