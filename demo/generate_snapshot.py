@@ -18,7 +18,6 @@ script = ['[Walk] <television> (1)', '[SwitchOn] <television> (1)',
           '[Walk] <sofa> (1)', '[Find] <controller> (1)',
           '[Grab] <controller> (1)']
 
-graph_input = '../example_graphs/TrimmedTestScene1_graph.json'
 
 cameras_ids = [-6, -5, -1]
 
@@ -55,9 +54,8 @@ preconds = add_preconds.get_preconds_script(script).printCondsJSON()
 print(preconds)
 
 print('Loading graph')
-with open(graph_input, 'r') as f:
-    graph_input = json.load(f)
-
+comm.reset(0)
+_, graph_input = comm.environment_graph()
 print('Executing script')
 print(script)
 info = check_programs.check_script(
