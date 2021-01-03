@@ -272,7 +272,13 @@ class UnityCommunication(object):
         if response['success']:
             if gen_vid and len(image_synthesis) > 0:
                 generate_video(image_synthesis, output_folder, file_name_prefix, frame_rate)
-        return response['success'], response['message']
+
+        try:
+            message = json.loads(response['message'])
+        except ValueError:
+            message = response['message']
+        
+        return response['success'], message
 
 def generate_video(image_syn, output_folder, prefix, frame_rate):
     import os
