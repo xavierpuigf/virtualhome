@@ -267,7 +267,7 @@ class UnityEnvironment(BaseEnvironment):
                 current_mode = info['mode']
             else:
                 current_mode = 'normal'
-            s, images = self.comm.camera_image(camera_ids, mode=obs_type, image_width=image_width, image_height=image_height)
+            s, images = self.comm.camera_image(camera_ids, mode=current_mode, image_width=image_width, image_height=image_height)
             if not s:
                 pdb.set_trace()
             return images[0]
