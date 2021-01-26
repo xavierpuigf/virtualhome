@@ -263,7 +263,10 @@ class UnityEnvironment(BaseEnvironment):
                 image_height = info['image_height']
             else:
                 image_width, image_height = self.default_image_width, self.default_image_height
-
+            if 'mode' in info:
+                current_mode = info['mode']
+            else:
+                current_mode = 'normal'
             s, images = self.comm.camera_image(camera_ids, mode=obs_type, image_width=image_width, image_height=image_height)
             if not s:
                 pdb.set_trace()
