@@ -158,7 +158,7 @@ Turns 30 degrees counterclockwise
 - Pre-condition: 
 - Post-condition:
 
-### TurnLeftExecutor
+### TurnRightExecutor
   
 Turns 30 degrees clockwise
 - script: turnright
