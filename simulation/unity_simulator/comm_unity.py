@@ -148,6 +148,17 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(cam_dict)]})
         return response['success'], response['message']
 
+    def add_character_camera(self, position=[0,1,0], rotation=[0,0,0], name="new_camera"):
+        cam_dict = {
+                'position': {'x': position[0], 'y': position[1], 'z': position[2]},
+                'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
+                'camera_name': name
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'add_character_camera',
+                    'stringParams': [json.dumps(cam_dict)]})
+        return response['success'], response['message']
+
     def reset(self, scene_index=None):
         """
         Reset scene
@@ -170,6 +181,13 @@ class UnityCommunication(object):
         """
         response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
         return response['success'], response['value']
+
+    def character_cameras(self):
+        """
+        Returns the number of cameras in the scene
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'character_cameras'})
+        return response['success'], response['message']
 
     def camera_data(self, camera_indexes):
         """
@@ -235,7 +253,7 @@ class UnityCommunication(object):
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=False, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], save_pose_data=False,
-                      image_width=640, image_height=480, gen_vid=True, recording=False,
+                      image_width=640, image_height=480, gen_vid=False, recording=False,
                       save_scene_states=False, camera_mode=['AUTO'], time_scale=1.0, skip_animation=False):
         """
         :param script: a list of script lines
