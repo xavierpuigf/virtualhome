@@ -94,7 +94,12 @@ def load_object_states(file_name='../../resources/object_states.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
     file_name_all = os.path.join(abs_dir_path, file_name)
     with open(file_name_all, 'r') as f:
-        return json.load(f)
+        file_content = json.load(f)
+
+    obj_keys = list(file_content.keys())
+    for name in obj_keys:
+        file_content[name.replace('_', '')] = file_content[name]
+    return file_content
 
 def load_object_placing(file_name='../../resources/object_script_placing.json'):
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
