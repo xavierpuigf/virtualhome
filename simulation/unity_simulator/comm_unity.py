@@ -90,7 +90,13 @@ class UnityCommunication(object):
         return response['success']
     
     def get_visible_objects(self, camera_index):
+        """
+        Obtain visible objects accoding to a given camera
 
+        :param int camera_index: the camera for which you want to check the objects. Between 0 and `camera_count-1`
+        :return: pair success (bool), msg: the object indices visible according to the camera
+
+        """
         response = self.post_command({'id': str(time.time()), 'action': 'observation', 'intParams': [camera_index]})
 
         try:
@@ -101,6 +107,16 @@ class UnityCommunication(object):
         return response['success'], msg
 
     def add_character(self, character_resource='Chars/Male1', position=None, initial_room=""):
+        """
+        Add a character in the scene. 
+
+        :param str character_resource: which game object to use for the character
+        :param int char_index: the index of the character you want to move
+        :param list position: the position where you want to place the character
+        :param str initial_room: the room where you want to put the character, 
+        if positon is not specified. If this is not specified, it places character in random location
+        :return: succes (bool)
+        """
         mode = 'random'
         pos = [0, 0, 0]
         if position is not None:
@@ -121,6 +137,14 @@ class UnityCommunication(object):
         return response['success']
 
     def move_character(self, char_index, pos):
+        """
+        Move the character `char_index` to a new position
+
+
+        :param int char_index: the index of the character you want to move
+        :param list pos: the position where you want to place the character
+        :return: succes (bool)
+        """
         response = self.post_command(
             {'id': str(time.time()),
              'action': 'move_character',
@@ -133,13 +157,18 @@ class UnityCommunication(object):
 
 
     def check(self, script_lines):
-        """
-        Returns pair (success, message); message is Null when success == True
-        """
         response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
 
     def add_camera(self, position=[0,1,0], rotation=[0,0,0]):
+        """
+        Add a new scene camera. The camera will be static in the scene.
+
+
+        :param list position: the position of the camera, with respect to the agent
+        :param list rotation: the rotation of the camera, with respect to the agent
+        :return: succes (bool)
+        """
         cam_dict = {
                 'position': {'x': position[0], 'y': position[1], 'z': position[2]},
                 'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]}
@@ -150,6 +179,16 @@ class UnityCommunication(object):
         return response['success'], response['message']
 
     def add_character_camera(self, position=[0,1,0], rotation=[0,0,0], name="new_camera"):
+        """
+        Add a new character camera. The camera will be added to every character you include in the scene, and it will move with 
+        the character. This must be called before adding any character.
+
+
+        :param list position: the position of the camera, with respect to the agent
+        :param list rotation: the rotation of the camera, with respect to the agent
+        :name: the name of the camera, used for recording when calling render script
+        :return: succes (bool)
+        """
         cam_dict = {
                 'position': {'x': position[0], 'y': position[1], 'z': position[2]},
                 'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
@@ -173,9 +212,6 @@ class UnityCommunication(object):
         return response['success']
 
     def fast_reset(self):
-        """
-        Reset scene
-        """
         response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
                                       'intParams': []})
         return response['success']
@@ -202,7 +238,7 @@ class UnityCommunication(object):
         """
         Returns camera data for cameras given in camera_indexes list
 
-        :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count`
+        :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count-1`
         :return: pair success (bool), cam_data: (list): for every camera, the matrices with the camera parameters
 
 
@@ -217,8 +253,8 @@ class UnityCommunication(object):
         """
         Returns a list of renderings of cameras given in camera_indexes.
 
-        :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count`
-        :param str mode: what kind of camera rendering to return. Possible modes are: 'normal', 'seg_inst', 'seg_class', 'depth', 'flow'
+        :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count-1`
+        :param str mode: what kind of camera rendering to return. Possible modes are: "normal", "seg_inst", "seg_class", "depth", "flow", "albedo", "illumination", "surf_normals"
         :param str image_width: width of the returned images
         :param str image_heigth: height of the returned iamges
         :return: pair success (bool), images: (list) a list of images according to the camera rendering mode
@@ -284,27 +320,31 @@ class UnityCommunication(object):
     def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
                       skip_execution=False, find_solution=False, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], save_pose_data=False,
-                      image_width=640, image_height=480, gen_vid=False, recording=False,
+                      image_width=640, image_height=480, recording=False,
                       save_scene_states=False, camera_mode=['AUTO'], time_scale=1.0, skip_animation=False):
         """
-        :param script: a list of script lines
-        :param randomize_execution: randomly choose elements
-        :param random_seed: random seed to use when randomizing execution, -1 means that the seed is not set
-        :param find_solution: find solution (True) or use graph ids to determine object instances (False)
-        :param processing_time_limit: time limit for finding a solution
-        :param skip_execution: skip rendering, only check if a solution exists
-        :param output_folder: folder to output renderings
-        :param file_name_prefix: prefix of created files
-        :param frame_rate: frame rate
-        :param capture_screenshot: save screenshots
-        :param image_synthesis: save depth, segmentation, flow images
-        :param save_pose_data: save pose data
-        :param save_scene_states: save scene states
-        :param character_resource: path to character resource to be used
-        :param camera_mode: automatic (AUTO), first person (FIRST_PERSON), top (PERSON_TOP),
-        :param image_width: image_height
-        :param image_height: image_width
-            front person view (PERSON_FRONT)
+        Executes a script in the simulator. The script can be single or multi agent, 
+        and can be used to generate a video, or just to change the state of the environment
+        :param list script: a list of script lines, of the form `['<char{id}> [{Action}] <{object_name}> ({object_id})']`
+        :param bool randomize_execution: randomly choose elements
+        :param int random_seed: random seed to use when randomizing execution, -1 means that the seed is not set
+        :param bool find_solution: find solution (True) or use graph ids to determine object instances (False)
+        :param int processing_time_limit: time limit for finding a solution in seconds
+        :param int skip_execution: skip rendering, only check if a solution exists
+        :param str output_folder: folder to output renderings
+        :param str file_name_prefix: prefix of created files
+        :param int frame_rate: frame rate at which to generate the video
+        :param str image_synthesis: what information to save. Can be multiple at the same time. Modes are: "normal", "seg_inst", "seg_class", 
+        "depth", "flow", "albedo", "illumination", "surf_normals". Leave empty if you don't want to generate anythign
+        :param bool save_pose_data: save pose data, a skeleton for every agent and frame
+        :param int image_width: image_height for the generated frames
+        :param int image_height: image_height for the generated frames
+        :param bool recoring: whether to record data with cameras
+        :param bool save_scene_states: save scene states (this will be unused soon)
+        :param list camera_mode: list with cameras used to render data. Can be a str(i) with i being a scene camera index or one of the cameras from `character_cameras`
+        :param int time_scale: accelerate time at which actions happen
+        :param bool skip_animation: whether agent should teleport/do actions without animation (True), or perform the animations (False) 
+
         :return: pair success (bool), message: (str)
         """
         params = {'randomize_execution': randomize_execution, 'random_seed': random_seed,
