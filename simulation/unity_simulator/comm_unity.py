@@ -24,8 +24,7 @@ class UnityCommunication(object):
 
     :param str url: which url to use to communicate
     :param str port: which port to use to communicate
-    :param str file_name: location of the Unity executable. If provided, it will open the executable, 
-    if `None`, it wil assume that the executable is already running
+    :param str file_name: location of the Unity executable. If provided, it will open the executable, if `None`, it wil assume that the executable is already running
     :param str x_display: if using a headless server, display to use for rendering
     :param bool no_graphics: whether to run the simualtor without graphics
     :param bool logging: log simulator data
@@ -348,8 +347,7 @@ class UnityCommunication(object):
         :param str output_folder: folder to output renderings
         :param str file_name_prefix: prefix of created files
         :param int frame_rate: frame rate at which to generate the video
-        :param str image_synthesis: what information to save. Can be multiple at the same time. Modes are: "normal", "seg_inst", "seg_class", 
-        "depth", "flow", "albedo", "illumination", "surf_normals". Leave empty if you don't want to generate anythign
+        :param str image_synthesis: what information to save. Can be multiple at the same time. Modes are: "normal", "seg_inst", "seg_class", "depth", "flow", "albedo", "illumination", "surf_normals". Leave empty if you don't want to generate anythign
         :param bool save_pose_data: save pose data, a skeleton for every agent and frame
         :param int image_width: image_height for the generated frames
         :param int image_height: image_height for the generated frames
