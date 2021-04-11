@@ -509,9 +509,7 @@ WakeUpExecutor |
 
 
 # Environment
-VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a `.json` file containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding `.json` file. 
-
-The files representing each apartment can be found in [example_graphs](../example_graphs/) as `TestScene{apt_id}_graph.json`. Each graph has a Trimmed version, which is used for the Evolving Graph simulator.
+VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a dictionary containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding  dictionary. 
 
 You can check in the [demo](../demo/unity_demo.ipynb) examples on how to read and update graphs.
 
