@@ -19,6 +19,19 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
 class UnityCommunication(object):
+    """
+    Class to communicate with the Unity simulator and generate videos or agent behaviors
+
+    :param str url: which url to use to communicate
+    :param str port: which port to use to communicate
+    :param str file_name: location of the Unity executable. If provided, it will open the executable, 
+    if `None`, it wil assume that the executable is already running
+    :param str x_display: if using a headless server, display to use for rendering
+    :param bool no_graphics: whether to run the simualtor without graphics
+    :param bool logging: log simulator data
+    :param int timeout_wait: how long to wait until connection with the simulator is called unsuccessful
+    :param bool docker_enabled: whether the simulator is running in a docker container
+    """
 
     def __init__(self, url='127.0.0.1', port='8080', file_name=None, x_display=None, no_graphics=False, logging=True,
                  timeout_wait=30, docker_enabled=False):
@@ -325,6 +338,7 @@ class UnityCommunication(object):
         """
         Executes a script in the simulator. The script can be single or multi agent, 
         and can be used to generate a video, or just to change the state of the environment
+
         :param list script: a list of script lines, of the form `['<char{id}> [{Action}] <{object_name}> ({object_id})']`
         :param bool randomize_execution: randomly choose elements
         :param int random_seed: random seed to use when randomizing execution, -1 means that the seed is not set
