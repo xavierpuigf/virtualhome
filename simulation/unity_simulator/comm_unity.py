@@ -46,6 +46,7 @@ class UnityCommunication(object):
                         time.sleep(2)
                 if not succeeded:
                     sys.exit()
+
     def requests_retry_session(
                             self,
                             retries=5,
@@ -161,7 +162,11 @@ class UnityCommunication(object):
 
     def reset(self, scene_index=None):
         """
-        Reset scene
+        Reset scene. Deletes characters and scene chnages, and loads the scene in scene_index
+
+
+        :param int scene_index: integer between 0 and 6, corresponding to the apartment we want to load
+        :return: succes (bool)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'reset',
                                       'intParams': [] if scene_index is None else [scene_index]})
@@ -177,7 +182,9 @@ class UnityCommunication(object):
 
     def camera_count(self):
         """
-        Returns the number of cameras in the scene
+        Returns the number of cameras in the scene, including static cameras, and cameras for each character
+
+        :return: pair success (bool), num_cameras (int)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
         return response['success'], response['value']
@@ -185,6 +192,8 @@ class UnityCommunication(object):
     def character_cameras(self):
         """
         Returns the number of cameras in the scene
+
+        :return: pair success (bool), camera_names: (list): the names of the cameras defined fo rthe characters
         """
         response = self.post_command({'id': str(time.time()), 'action': 'character_cameras'})
         return response['success'], response['message']
@@ -192,6 +201,11 @@ class UnityCommunication(object):
     def camera_data(self, camera_indexes):
         """
         Returns camera data for cameras given in camera_indexes list
+
+        :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count`
+        :return: pair success (bool), cam_data: (list): for every camera, the matrices with the camera parameters
+
+
         """
         if not isinstance(camera_indexes, collections.Iterable):
             camera_indexes = [camera_indexes]
@@ -202,7 +216,12 @@ class UnityCommunication(object):
     def camera_image(self, camera_indexes, mode='normal', image_width=640, image_height=480):
         """
         Returns a list of renderings of cameras given in camera_indexes.
-        Possible modes are: 'normal', 'seg_inst', 'seg_class', 'depth', 'flow'
+
+        :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count`
+        :param str mode: what kind of camera rendering to return. Possible modes are: 'normal', 'seg_inst', 'seg_class', 'depth', 'flow'
+        :param str image_width: width of the returned images
+        :param str image_heigth: height of the returned iamges
+        :return: pair success (bool), images: (list) a list of images according to the camera rendering mode
         """
         if not isinstance(camera_indexes, collections.Iterable):
             camera_indexes = [camera_indexes]
@@ -213,12 +232,19 @@ class UnityCommunication(object):
         return response['success'], _decode_image_list(response['message_list'])
 
     def instance_colors(self):
+        """
+        Return a mapping from rgb colors, shown on `seg_inst` to object `id`, specified in the environment graph.
+
+        :return: pair success (bool), mapping: (dictionary)
+        """
         response = self.post_command({'id': str(time.time()), 'action': 'instance_colors'})
         return response['success'], json.loads(response['message'])
 
     def environment_graph(self):
         """
-        Returns environment graph
+        Returns environment graph, at the current state
+
+        :return: pair success (bool), graph: (dictionary)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success'], json.loads(response['message'])
@@ -226,11 +252,16 @@ class UnityCommunication(object):
     def expand_scene(self, new_graph, randomize=False, random_seed=-1, animate_character=False,
                      ignore_placing_obstacles=False, prefabs_map=None, transfer_transform=True):
         """
-        Expands scene with the given graph.
-        To use randomization set randomize to True.
-        To set random seed set random_seed to a non-negative value >= 0,
-        random_seed < 0 means that seed is not set
-        transfer_transform: whether we want the transforms to appear or not
+        Expands scene with the given graph. Given a starting scene without characters, it updates the scene according to new_graph, which contains a modified description of the scene. Can be used to add, move, or remove objects or change their state or size.
+
+        :param dict new_graph: a dictionary corresponding to the new graph of the form `{'nodes': ..., 'edges': ...}`
+        :param int bool randomize: a boolean indicating if the new positioni/types of objects should be random
+        :param int random_seed: seed to use for randomize. random_seed < 0 means that seed is not set
+        :param bool animate_character: boolean indicating if the added character should be frozen or not.
+        :param bool ignore_placing_obstacles: when adding new objects, if the transform is not specified, whether to consider if it collides with existing objects
+        :param dict prefabs_map: dictionary to specify which Unity game objects should be used when creating new objects
+        :param bool transfer_transform: boolean indicating if we should set the exact position of new added objects or not
+        :return: pair success (bool), message: (str)
         """
         config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
                   'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform}
