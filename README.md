@@ -1,3 +1,5 @@
+[![docs](https://img.shields.io/badge/docs-automated-brightgreen)](http://virtual-home.org/documentation/)
+
 # VirtualHome
 **VirtualHome** is a platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents.
 
@@ -9,6 +11,7 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 
 ## What is New
 The new version of VirtualHome (VH-Social) is out! Here is what is new.
+* [April 11th] We added new documentation! Check it out at http://virtual-home.org/documentation
 * VirtualHome now supports multiple agents and a *skip_animation* mode, to use the environment to train RL models.
 * We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
 * API to add characters in the scene and fixed cameras, and record from those cameras
