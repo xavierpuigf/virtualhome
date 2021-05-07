@@ -63,6 +63,27 @@ class UnityLauncher(object):
                 assert subprocess.call("xdpyinfo", stdout=dn, env=env, shell=True) == 0, \
                     ("Invalid DISPLAY %s - cannot find X server with xdpyinfo" % x_display)
 
+    def check_port(self, port_number):
+        """
+        Attempts to bind to the requested communicator port, checking if it is already in use.
+        """
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        if platform == "linux" or platform == "linux2":
+            # On linux, the port remains unusable for TIME_WAIT=60 seconds after closing
+            # SO_REUSEADDR frees the port right after closing the environment
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            s.bind(("localhost", port_number))
+        except OSError:
+            raise Exception(
+                "Couldn't launch the environment. "
+                "The port {0} is already being used.".format(
+                    port_number
+                )
+            )
+        finally:
+            s.close()
+
     def launch_executable(self, file_name, x_display=None, no_graphics=False, docker_enabled=False, logging=False, args=[]):
         if docker_enabled:
             return
@@ -88,6 +109,7 @@ class UnityLauncher(object):
                 env['DISPLAY'] = ''
 
 
+            self.check_port(self.port_number)
 
             candidates = glob.glob(os.path.join(cwd, file_name) + ".x86_64")
             if len(candidates) == 0:
@@ -98,7 +120,6 @@ class UnityLauncher(object):
                 candidates = glob.glob(file_name + ".x86")
             if len(candidates) > 0:
                 launch_string = candidates[0]
-
 
 
         elif platform == "darwin":
@@ -164,7 +185,7 @@ class UnityLauncher(object):
             else:
                 docker_ls = (
                     f"exec xvfb-run --auto-servernum --server-args='-screen 0 640x480x24'"
-                    f" {launch_string} -http-port {self.port}"
+                    f" {launch_string} -http-port {self.port_number}"
                 )
                 self.proc = subprocess.Popen(
                     docker_ls,
