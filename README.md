@@ -76,7 +76,6 @@ sudo python helper_scripts/startx.py $display_num
 
 On a separate terminal, launch the executable
 ```bash
-sudo /usr/bin/X $display_num &
 DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
 ```
 
