@@ -2,6 +2,7 @@ import os
 import atexit
 from sys import platform
 import subprocess
+import socket
 import glob
 
 class UnityLauncher(object):
