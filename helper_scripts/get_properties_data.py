@@ -28,7 +28,7 @@ for name_e in cname_equiv:
 prop_data_all = {}
 for pname in tqdm(prop_data):
 	properties = prop_data[pname]
-	classname = pname.lower()
+	classname = pname.lower().replace("_", "")
 	prop_data_all[classname] = properties
 	cnamered = classname.replace(" ", "")
 	synonims = get_syn(classname, nameequiv)
