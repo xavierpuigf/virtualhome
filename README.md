@@ -170,6 +170,11 @@ python augment_dataset_locations.py
 cd dataset_utils
 python augment_dataset_exceptions.py
 ```
+### Original Collected and Scripted Programs
+We originally collected a set of programs to predict from language descriptions, and generated a larger of programs via a scripted language. Those programs are described [here](http://virtual-home.org/paper/virtualhome.pdf) as VirtualHome Activity (collected programs) ActivityPrograms (scripted programs). You can download them here:
+
+- [Download](http://virtual-home.org/release/programs/virtualhome_cvpr18/real.zip) VirtualHome Activity.
+- [Download](http://virtual-home.org/release/programs/virtualhome_cvpr18/synthetic.zip) ActivityPrograms.
 
 ### Resources
 
