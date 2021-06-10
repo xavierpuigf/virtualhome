@@ -508,8 +508,12 @@ class graph_dict_helper(object):
             while nroom not in available_rooms_in_graph and nroom not in rooms_tried:
                 rooms_tried.append(nroom)
                 assert nroom in equivalent_rooms, "Not pre-specified mapping for room: {}".format(nroom)
-                nroom = equivalent_rooms[nroom]    
-            assert nroom in available_rooms_in_graph, "No equivalent room in graph for room: {}".format(nroom)
+                nroom = equivalent_rooms[nroom]
+            # nroom = nroom.replace('_', '')
+            try:
+                assert nroom in available_rooms_in_graph, "No equivalent room in graph for room: {}".format(nroom)
+            except:
+                print(nroom, rooms_tried, available_rooms_in_graph)
             room_mapping[room] = nroom
         
         # use room mapping to change the precond (in-place opetation)
@@ -553,6 +557,7 @@ class graph_dict_helper(object):
         assert first_room is not None and first_room in available_rooms_in_graph
 
         # mapping objects
+
         for obj in objects_in_script.keys():
             # objects that are specified already
             if objects_in_script[obj] is not None:

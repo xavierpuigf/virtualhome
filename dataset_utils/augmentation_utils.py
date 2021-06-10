@@ -5,7 +5,7 @@ import os
 import json
 
 curr_dirname = os.path.dirname(__file__)
-with open('{}/../resources/properties_data.json'.format(curr_dirname), 'r') as f:
+with open('{}/../resources/properties_data_all.json'.format(curr_dirname), 'r') as f:
     object_properties = json.load(f)
 
 def parseStrBlock(block_str):

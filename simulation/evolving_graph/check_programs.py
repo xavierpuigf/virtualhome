@@ -8,7 +8,7 @@ from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
 
-import utils
+from . import utils
 from .scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
 from .execution import ScriptExecutor
 from .environment import EnvironmentGraph
@@ -19,7 +19,7 @@ verbose = True
 dump = True
 multi_process = True
 num_process = os.cpu_count()
-max_nodes = 300
+max_nodes = 500
 
 
 def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
@@ -102,13 +102,10 @@ def dump_one_data(txt_file, script, graph_state_list, id_mapping, graph_path):
     new_f.close()
 
 
-def translate_graph_dict(path):
-    """
-        Changes the object names and properties of an environment graph so that 
-        they match with the names in the scripts. 
-    """
-    graph_dict = utils.load_graph_dict(path)
+def translate_graph_dict_nofile(graph_dict):
+
     abs_dir_path = os.path.dirname(os.path.abspath(__file__))
+
     file_name = os.path.join(abs_dir_path, '../../resources/properties_data.json')
     properties_data = utils.load_properties_data(file_name=file_name)
 
@@ -148,9 +145,17 @@ def translate_graph_dict(path):
             "category": node["category"], 
             "class_name": class_name
         })
-    
+    return {"nodes": new_nodes_script_object, "edges": new_edges, 'trimmed_nodes': trimmed_nodes}
+
+def translate_graph_dict(path):
+    """
+        Changes the object names and properties of an environment graph so that 
+        they match with the names in the scripts. 
+    """
+    graph_dict = utils.load_graph_dict(path)
+    trimmed_graph = translate_graph_dict_nofile(graph_dict)
     translated_path = path.replace('TestScene', 'TrimmedTestScene')
-    json.dump({"nodes": new_nodes_script_object, "edges": new_edges, "trimmed_nodes": trimmed_nodes}, open(translated_path, 'w+'))
+    json.dump(trimmed_graph, open(translated_path, 'w+'))
     return translated_path
 
 
@@ -158,12 +163,13 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
 
     helper.initialize(graph_dict)
     script, precond = modify_objects_unity2script(helper, script, precond)
+
     if modify_graph:
         ## add missing object from scripts (id from 1000) and set them to default setting
         ## id mapping can specify the objects that already specify in the graphs
         helper.set_to_default_state(graph_dict, None, id_checker=lambda v: True)
-
         id_mapping, first_room, room_mapping = helper.add_missing_object_from_script(script, precond, graph_dict, id_mapping)
+        
         info = {'room_mapping': room_mapping}
         objects_id_in_script = [v for v in id_mapping.values()]
         helper.set_to_default_state(graph_dict, first_room, id_checker=lambda v: v in objects_id_in_script)
@@ -187,7 +193,7 @@ def check_one_program(helper, script, precond, graph_dict, w_graph_list, modify_
         helper.check_binary(graph_dict, id_checker=lambda v: v >= random_objects_id, verbose=False)
         helper.check_binary(graph_dict, id_checker=lambda v: True, verbose=True)
         
-        assert len(graph_dict["nodes"]) <= max_nodes
+        assert len(graph_dict["nodes"]) <= max_nodes, 'Max nodes: {}. Current Nodes {}'.format(len(graph_dict['nodes']), max_nodes)
     
     elif len(id_mapping) != 0:
         # Assume that object mapping specify all the objects in the scripts
@@ -210,7 +216,7 @@ def check_script(program_str, precond, graph_path, inp_graph_dict=None,
                  modify_graph=True, id_mapping={}, info={}):
 
     helper = utils.graph_dict_helper(max_nodes=max_nodes)
-
+    
     try:
         script = read_script_from_list_string(program_str)
     except ScriptParseException:

@@ -38,8 +38,11 @@ def obtain_snapshots(graph_state_list, reference_graph, comm):
     messages_expand, images = [], []
     for graph_state in tqdm(graph_state_list):
         comm.reset(0)
+        comm.add_character()
+
         message = comm.expand_scene(graph_state, randomize=True, random_seed=seed)
         messages_expand.append(message)
+        print(message)
         _ = comm.camera_image(cameras_select, mode='normal', image_height=480,  image_width=640)
         ok, imgs = comm.camera_image(cameras_select, mode='normal', image_height=480,  image_width=640)
         images.append(imgs)
@@ -55,9 +58,11 @@ print(preconds)
 
 print('Loading graph')
 comm.reset(0)
+comm.add_character()
 _, graph_input = comm.environment_graph()
 print('Executing script')
 print(script)
+graph_input = check_programs.translate_graph_dict_nofile(graph_input)
 info = check_programs.check_script(
         script, preconds, graph_path=None, inp_graph_dict=graph_input)
 

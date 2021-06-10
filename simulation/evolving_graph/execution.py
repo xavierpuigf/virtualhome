@@ -213,15 +213,15 @@ class FindExecutor(ActionExecutor):
             char_node = _get_character_node(state, char_index)
 
             if state.evaluate(ExistsRelation(NodeInstance(node), Relation.ON, NodeInstanceFilter(char_node))):
-                return _only_find_executor.execute(script, state, info, modify)
+                return _only_find_executor.execute(script, state, info, char_index, modify)
             elif Property.BODY_PART in node.properties:
-                return _only_find_executor.execute(script, state, info, modify)
+                return _only_find_executor.execute(script, state, info, char_index, modify)
             elif _is_character_close_to(state, node, char_index):
-                return _only_find_executor.execute(script, state, info, modify)
+                return _only_find_executor.execute(script, state, info, char_index, modify)
             elif State.SITTING in char_node.states or State.LYING in char_node.states:
-                return _only_find_executor.execute(script, state, info, modify)
+                return _only_find_executor.execute(script, state, info, char_index, modify)
             else:
-                return _walk_find_executor.execute(script, state, info, modify)
+                return _walk_find_executor.execute(script, state, info, char_index, modify)
         info.error('Could not find object {}'.format(current_obj.name))
 
 
@@ -1401,7 +1401,7 @@ class ScriptExecutor(object):
         Action.RELEASE: DropExecutor()
     }
 
-    def __init__(self, graph: EnvironmentGraph, name_equivalence, char_index: int):
+    def __init__(self, graph: EnvironmentGraph, name_equivalence, char_index: int=0):
         self.graph = graph
         self.name_equivalence = name_equivalence
         self.processing_time_limit = 10  # 10 seconds
