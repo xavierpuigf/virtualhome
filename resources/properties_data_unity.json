@@ -1,4 +1,8 @@
 {
+    "kitchencabinet": [
+        "CAN_OPEN",
+        "CONTAINERS"
+    ],
     "amplifier": [
         "GRABBABLE"
     ],
@@ -49,7 +53,6 @@
         "SURFACES"
     ],
     "box": [
-        "CONTAINERS",
         "GRABBABLE"
     ],
     "bread": [
@@ -125,7 +128,6 @@
         "GRABBABLE"
     ],
     "clothespile": [
-        "CONTAINERS",
         "GRABBABLE"
     ],
     "clothesshirt": [
@@ -218,7 +220,6 @@
         "GRABBABLE"
     ],
     "folder": [
-        "CONTAINERS",
         "GRABBABLE"
     ],
     "fridge": [
@@ -315,7 +316,6 @@
         "GRABBABLE"
     ],
     "nightstand": [
-        "CONTAINERS",
         "SURFACES"
     ],
     "notes": [
@@ -371,9 +371,7 @@
         "GRABBABLE"
     ],
     "powersocket": [],
-    "printer": [
-        "CONTAINERS"
-    ],
+    "printer": [],
     "projector": [],
     "pudding": [
         "GRABBABLE"
@@ -446,7 +444,6 @@
     ],
     "toilet": [
         "CAN_OPEN",
-        "CONTAINERS",
         "SITTABLE"
     ],
     "toiletpaper": [
@@ -521,7 +518,5 @@
     "longboard": [
         "GRABBABLE"
     ],
-    "washingmachine": [
-        "CONTAINERS"
-    ]
+    "washingmachine": []
 }
