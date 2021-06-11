@@ -3,6 +3,9 @@
         "CAN_OPEN",
         "CONTAINERS"
     ],
+    "faucet": [
+        "HAS_SWITCH"
+    ],
     "amplifier": [
         "GRABBABLE"
     ],
