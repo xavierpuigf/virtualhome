@@ -1,0 +1,527 @@
+{
+    "amplifier": [
+        "GRABBABLE"
+    ],
+    "apple": [
+        "GRABBABLE"
+    ],
+    "sportsball": [
+        "GRABBABLE"
+    ],
+    "bananas": [
+        "GRABBABLE"
+    ],
+    "barsoap": [
+        "GRABBABLE"
+    ],
+    "bathroomcabinet": [
+        "CAN_OPEN",
+        "CONTAINERS",
+        "SURFACES"
+    ],
+    "bathroomcounter": [
+        "SURFACES"
+    ],
+    "bathtub": [],
+    "bed": [
+        "SITTABLE",
+        "SURFACES"
+    ],
+    "bellpepper": [
+        "GRABBABLE"
+    ],
+    "bench": [
+        "SITTABLE",
+        "SURFACES"
+    ],
+    "board": [
+        "GRABBABLE"
+    ],
+    "boardgame": [
+        "GRABBABLE",
+        "SURFACES"
+    ],
+    "book": [
+        "GRABBABLE"
+    ],
+    "bookshelf": [
+        "CONTAINERS",
+        "SURFACES"
+    ],
+    "box": [
+        "CONTAINERS",
+        "GRABBABLE"
+    ],
+    "bread": [
+        "GRABBABLE"
+    ],
+    "breadslice": [
+        "GRABBABLE"
+    ],
+    "broom": [
+        "GRABBABLE"
+    ],
+    "bucket": [
+        "GRABBABLE"
+    ],
+    "carrot": [
+        "GRABBABLE"
+    ],
+    "cat": [
+        "GRABBABLE"
+    ],
+    "cards": [
+        "GRABBABLE"
+    ],
+    "cellphone": [
+        "GRABBABLE"
+    ],
+    "chinesefood": [
+        "GRABBABLE"
+    ],
+    "coffeepot": [
+        "CAN_OPEN",
+        "GRABBABLE"
+    ],
+    "crayons": [
+        "GRABBABLE"
+    ],
+    "chair": [
+        "GRABBABLE",
+        "SITTABLE",
+        "SURFACES"
+    ],
+    "cabinet": [
+        "CAN_OPEN",
+        "CONTAINERS",
+        "SURFACES"
+    ],
+    "candle": [
+        "GRABBABLE"
+    ],
+    "ceilingfan": [
+        "GRABBABLE"
+    ],
+    "ceilinglamp": [
+        "GRABBABLE"
+    ],
+    "chefknife": [
+        "GRABBABLE"
+    ],
+    "chicken": [
+        "GRABBABLE"
+    ],
+    "chocolatesyrup": [
+        "GRABBABLE"
+    ],
+    "clock": [
+        "GRABBABLE"
+    ],
+    "closet": [
+        "CONTAINERS"
+    ],
+    "closetdrawer": [],
+    "clothespants": [
+        "GRABBABLE"
+    ],
+    "clothespile": [
+        "CONTAINERS",
+        "GRABBABLE"
+    ],
+    "clothesshirt": [
+        "GRABBABLE"
+    ],
+    "coffeetable": [
+        "SURFACES"
+    ],
+    "coffeemaker": [
+        "CONTAINERS",
+        "HAS_SWITCH"
+    ],
+    "condimentbottle": [
+        "GRABBABLE"
+    ],
+    "condimentshaker": [
+        "GRABBABLE"
+    ],
+    "cookingpot": [
+        "GRABBABLE"
+    ],
+    "candybar": [
+        "GRABBABLE"
+    ],
+    "crackers": [
+        "GRABBABLE"
+    ],
+    "cereal": [
+        "GRABBABLE"
+    ],
+    "creamybuns": [
+        "GRABBABLE"
+    ],
+    "chips": [
+        "GRABBABLE"
+    ],
+    "cucumber": [
+        "GRABBABLE"
+    ],
+    "cupcake": [
+        "GRABBABLE"
+    ],
+    "curtains": [],
+    "cutleryknife": [
+        "GRABBABLE"
+    ],
+    "cutleryfork": [
+        "GRABBABLE"
+    ],
+    "cutlets": [
+        "GRABBABLE"
+    ],
+    "cuttingboard": [
+        "GRABBABLE",
+        "SURFACES"
+    ],
+    "deodorant": [
+        "GRABBABLE"
+    ],
+    "desk": [
+        "SURFACES"
+    ],
+    "diningtable": [
+        "SURFACES"
+    ],
+    "dishwashingliquid": [
+        "GRABBABLE"
+    ],
+    "dishbowl": [
+        "GRABBABLE"
+    ],
+    "plate": [
+        "GRABBABLE",
+        "SURFACES"
+    ],
+    "dishwasher": [
+        "CAN_OPEN",
+        "CONTAINERS",
+        "HAS_SWITCH"
+    ],
+    "door": [],
+    "doorjamb": [],
+    "donut": [
+        "GRABBABLE"
+    ],
+    "dustpan": [
+        "GRABBABLE"
+    ],
+    "facecream": [
+        "GRABBABLE"
+    ],
+    "folder": [
+        "CONTAINERS",
+        "GRABBABLE"
+    ],
+    "fridge": [
+        "CAN_OPEN",
+        "CONTAINERS"
+    ],
+    "fryingpan": [
+        "CONTAINERS",
+        "GRABBABLE",
+        "SURFACES"
+    ],
+    "game": [
+        "GRABBABLE"
+    ],
+    "globe": [
+        "GRABBABLE"
+    ],
+    "garbagecan": [
+        "CONTAINERS"
+    ],
+    "glasses": [
+        "GRABBABLE"
+    ],
+    "guitar": [
+        "GRABBABLE"
+    ],
+    "hairproduct": [
+        "GRABBABLE"
+    ],
+    "hanger": [
+        "GRABBABLE"
+    ],
+    "jacuzzi": [],
+    "juice": [
+        "DRINKABLE",
+        "GRABBABLE"
+    ],
+    "journal": [
+        "GRABBABLE"
+    ],
+    "keyboard": [
+        "GRABBABLE"
+    ],
+    "kitchencounter": [
+        "SURFACES"
+    ],
+    "kitchentable": [
+        "SURFACES"
+    ],
+    "knifeblock": [],
+    "lemon": [
+        "GRABBABLE"
+    ],
+    "lightswitch": [
+        "HAS_SWITCH"
+    ],
+    "lime": [
+        "GRABBABLE"
+    ],
+    "lotionbottle": [
+        "GRABBABLE"
+    ],
+    "kettle": [
+        "GRABBABLE"
+    ],
+    "magazine": [
+        "GRABBABLE"
+    ],
+    "microwave": [
+        "CAN_OPEN",
+        "CONTAINERS",
+        "HAS_SWITCH"
+    ],
+    "milk": [
+        "DRINKABLE",
+        "GRABBABLE"
+    ],
+    "milkshake": [
+        "GRABBABLE"
+    ],
+    "mincedmeat": [
+        "GRABBABLE"
+    ],
+    "mouse": [
+        "GRABBABLE"
+    ],
+    "mousemat": [
+        "SURFACES"
+    ],
+    "mug": [
+        "GRABBABLE"
+    ],
+    "napkin": [
+        "GRABBABLE"
+    ],
+    "nightstand": [
+        "CONTAINERS",
+        "SURFACES"
+    ],
+    "notes": [
+        "GRABBABLE"
+    ],
+    "orange": [
+        "GRABBABLE"
+    ],
+    "orchid": [
+        "GRABBABLE"
+    ],
+    "pc": [],
+    "painkillers": [
+        "GRABBABLE"
+    ],
+    "pancake": [
+        "GRABBABLE"
+    ],
+    "paper": [
+        "GRABBABLE"
+    ],
+    "papertowel": [
+        "GRABBABLE"
+    ],
+    "peach": [
+        "GRABBABLE"
+    ],
+    "pear": [
+        "GRABBABLE"
+    ],
+    "pen": [
+        "GRABBABLE"
+    ],
+    "perfume": [
+        "GRABBABLE"
+    ],
+    "photoframe": [
+        "GRABBABLE"
+    ],
+    "pie": [
+        "GRABBABLE"
+    ],
+    "pillow": [
+        "GRABBABLE"
+    ],
+    "plum": [
+        "GRABBABLE"
+    ],
+    "potato": [
+        "GRABBABLE"
+    ],
+    "poundcake": [
+        "GRABBABLE"
+    ],
+    "powersocket": [],
+    "printer": [
+        "CONTAINERS"
+    ],
+    "projector": [],
+    "pudding": [
+        "GRABBABLE"
+    ],
+    "radio": [
+        "GRABBABLE",
+        "HAS_SWITCH",
+        "SURFACES"
+    ],
+    "remotecontrol": [
+        "GRABBABLE"
+    ],
+    "rug": [
+        "GRABBABLE",
+        "SURFACES"
+    ],
+    "salad": [
+        "GRABBABLE"
+    ],
+    "salmon": [
+        "GRABBABLE"
+    ],
+    "shelf": [],
+    "shelfsoapset": [],
+    "stall": [],
+    "sink": [
+        "CONTAINERS"
+    ],
+    "slippers": [
+        "GRABBABLE"
+    ],
+    "soapset": [],
+    "sofa": [
+        "SITTABLE",
+        "SURFACES"
+    ],
+    "speaker": [],
+    "washingsponge": [
+        "GRABBABLE"
+    ],
+    "spoon": [
+        "GRABBABLE"
+    ],
+    "stove": [
+        "CAN_OPEN",
+        "CONTAINERS",
+        "HAS_SWITCH",
+        "SURFACES"
+    ],
+    "stovefan": [],
+    "sundae": [
+        "GRABBABLE"
+    ],
+    "teddybear": [
+        "GRABBABLE"
+    ],
+    "toy": [
+        "GRABBABLE"
+    ],
+    "tv": [
+        "HAS_SWITCH"
+    ],
+    "tvstand": [],
+    "tablelamp": [
+        "HAS_SWITCH"
+    ],
+    "toaster": [
+        "CONTAINERS",
+        "HAS_SWITCH"
+    ],
+    "toilet": [
+        "CAN_OPEN",
+        "CONTAINERS",
+        "SITTABLE"
+    ],
+    "toiletpaper": [
+        "GRABBABLE"
+    ],
+    "tomato": [
+        "GRABBABLE"
+    ],
+    "toothbrush": [
+        "GRABBABLE"
+    ],
+    "toothpaste": [
+        "GRABBABLE"
+    ],
+    "towel": [
+        "GRABBABLE"
+    ],
+    "towelrack": [
+        "GRABBABLE",
+        "SURFACES"
+    ],
+    "wallpictureframe": [
+        "GRABBABLE"
+    ],
+    "walltv": [],
+    "walllamp": [],
+    "wallphone": [
+        "GRABBABLE"
+    ],
+    "waterglass": [
+        "GRABBABLE"
+    ],
+    "watermelon": [
+        "GRABBABLE"
+    ],
+    "whippedcream": [
+        "GRABBABLE"
+    ],
+    "wineglass": [
+        "GRABBABLE"
+    ],
+    "computer": [
+        "HAS_SWITCH"
+    ],
+    "cpuscreen": [],
+    "alcohol": [
+        "DRINKABLE",
+        "GRABBABLE"
+    ],
+    "beer": [
+        "DRINKABLE",
+        "GRABBABLE"
+    ],
+    "bottlewater": [
+        "DRINKABLE"
+    ],
+    "wine": [
+        "DRINKABLE",
+        "GRABBABLE"
+    ],
+    "papertray": [
+        "GRABBABLE"
+    ],
+    "wallshelf": [],
+    "standingmirror": [],
+    "vase": [
+        "GRABBABLE"
+    ],
+    "balanceball": [
+        "GRABBABLE"
+    ],
+    "longboard": [
+        "GRABBABLE"
+    ],
+    "washingmachine": [
+        "CONTAINERS"
+    ]
+}
