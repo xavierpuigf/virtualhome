@@ -10,9 +10,10 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 </p>
 
 ## What is New
-The new version of VirtualHome (VH-Social) is out! Here is what is new.
+The new version of VirtualHome (VH-Social) is out! Here are the latest updates:
+* [August 27th] Added RL Environment Demo, and example to combine Environments with Ray. 
 * [April 11th] We added new documentation! Check it out at http://virtual-home.org/documentation
-* VirtualHome now supports multiple agents and a *skip_animation* mode, to use the environment to train RL models.
+* VirtualHome now supports multiple agents and a `skip_animation` mode, to use the environment to train RL models.
 * We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
 * API to add characters in the scene and fixed cameras, and record from those cameras
 
