@@ -23,6 +23,7 @@ The new version of VirtualHome (VH-Social) is out! Here is what is new.
 1. Overview
 2. Set Up
 3. Generating Videos/Keyframes
+4. VirtualHome RL Env
 5. Dataset 
 6. Modify VirtualHome
 7. Citation
@@ -120,6 +121,21 @@ A grid of snapshots for the given script will be generated and saved in [demo/sn
 
 
 
+## VirtualHome RL Env
+
+VirtualHome can be used as an environment for Reinforcement Learning. We provide a base class `UnityEnvironment` in [simulation/environment/unity_environment.py](simulation/environment/unity_environment.py). You can check test how the `UnityEnvironment` class works by running
+
+```bash
+cd demo
+python test_unity_environment.py
+```
+
+The provided environment can be combined with [Ray](https://github.com/ray-project/ray), to run multiple environments in parallel, allowing to scale your Reinforcement Learning algorithms. You can test parallel environments by running:
+
+```bash
+cd demo
+python test_unity_environment_mp.py
+```
 
 ## Dataset
 

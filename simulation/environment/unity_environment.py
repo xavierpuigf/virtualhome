@@ -1,8 +1,7 @@
 from .base_environment import BaseEnvironment
-
 import sys
 import os
-# sys.path.append('../../vh_mdp/')
+
 curr_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(f'{curr_dir}/../')
 
@@ -126,7 +125,6 @@ class UnityEnvironment(BaseEnvironment):
             if self.recording_options['recording']:
                 success, message = self.comm.render_script(script_list,
                                                            recording=True,
-                                                           gen_vid=False,
                                                            skip_animation=False,
                                                            camera_mode=self.recording_options['cameras'],
                                                            file_name_prefix='task_{}'.format(self.task_id),
@@ -134,7 +132,6 @@ class UnityEnvironment(BaseEnvironment):
             else:
                 success, message = self.comm.render_script(script_list,
                                                            recording=False,
-                                                           gen_vid=False,
                                                            skip_animation=True)
             if not success:
                 print(message)

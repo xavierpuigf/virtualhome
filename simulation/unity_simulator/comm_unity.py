@@ -91,6 +91,7 @@ class UnityCommunication(object):
             else:
                 resp = requests.post(self._address, json=request_dict, timeout=self.timeout_wait)
             if resp.status_code != requests.codes.ok:
+                print(resp)
                 raise UnityEngineException(resp.status_code, resp.json())
             return resp.json()
         except requests.exceptions.RequestException as e:
