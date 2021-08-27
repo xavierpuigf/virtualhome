@@ -23,14 +23,14 @@ The new version of VirtualHome (VH-Social) is out! Here is what is new.
 1. Overview
 2. Set Up
 3. Generating Videos/Keyframes
-4. Dataset 
-5. Modify VirtualHome
-6. Citation
-7. Contributors
+5. Dataset 
+6. Modify VirtualHome
+7. Citation
+8. Contributors
 
 
 ## Overview
-Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the *Unity Simulator* and *Evolving Graph*.
+Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the *Unity Simulator* and *Evolving Graph*. You can find a more complete documentation with examples and the different executables at http://virtual-home.org/documentation.
 
 #### Unity Simulator 
 This simulator is built in Unity and allows generating videos of activities. To use this simulator, you will need to download the appropiate executable and run it with the [Python API](simulation/unity_simulator/). You can check a demo of the simulator in [demo/unity_demo.ipynb](demo/unity_demo.ipynb)
@@ -60,12 +60,13 @@ Download the VirtualHome UnitySimulator executable and move it under `simulation
 
 ### Test simulator
 
-To test the simulator in a local machine, double click the executable, select a resolution and screen size and press `Play!`. Remember to select the option `Windowed` to make sure the simulator does not take the whole screen. The screenshot below shows our recommended configuration.
+To test the simulator in a local machine, double click the executable, or run it via terminal. When running it via the temrinal, we recommend setting windowed mode (so that the simulator does not take the full screen), as such:
 
-<img src="assets/simulator.png" width=70%>
+```bash
+./path_to_exec -screen-fullscreen 0 -screen-quality 4 
+```
 
-
-Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
+Once the simulator has started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
 
 If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server (find the installation instructions in [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable with an X server, use -batchmode. For Linux, you would do:
 
@@ -116,6 +117,9 @@ cd demo/
 python generate_snapshots.py
 ```
 A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](demo/snapshot_test.png).
+
+
+
 
 ## Dataset
 
