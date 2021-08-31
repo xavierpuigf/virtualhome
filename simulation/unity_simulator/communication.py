@@ -143,6 +143,13 @@ class UnityLauncher(object):
                 )
             if len(candidates) > 0:
                 launch_string = candidates[0]
+                
+                
+        elif platform == "windows":
+            candidates = glob.glob(os.path.join(cwd, file_name)  + ".exe")
+            
+            if len(candidates) > 0:
+                launch_string = candidates[0]
 
         if launch_string is None:
             self.close()
