@@ -126,7 +126,7 @@ A grid of snapshots for the given script will be generated and saved in [demo/sn
 
 ## VirtualHome RL Env
 
-VirtualHome can be used as an environment for Reinforcement Learning. We provide a base class `UnityEnvironment` in [simulation/environment/unity_environment.py](simulation/environment/unity_environment.py). You can check test how the `UnityEnvironment` class works by running
+VirtualHome can be used as an environment for Reinforcement Learning. We provide a base class `UnityEnvironment` in [simulation/environment/unity_environment.py](simulation/environment/unity_environment.py). You can test how the class works by running
 
 ```bash
 cd demo
