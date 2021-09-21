@@ -299,7 +299,7 @@ class UnityCommunication(object):
         return response['success'], json.loads(response['message'])
 
     def expand_scene(self, new_graph, randomize=False, random_seed=-1, animate_character=False,
-                     ignore_placing_obstacles=False, prefabs_map=None, transfer_transform=True, expand_with_ids=True):
+                     ignore_placing_obstacles=False, prefabs_map=None, transfer_transform=True):
         """
         Expands scene with the given graph. Given a starting scene without characters, it updates the scene according to new_graph, which contains a modified description of the scene. Can be used to add, move, or remove objects or change their state or size.
 
@@ -310,11 +310,10 @@ class UnityCommunication(object):
         :param bool ignore_placing_obstacles: when adding new objects, if the transform is not specified, whether to consider if it collides with existing objects
         :param dict prefabs_map: dictionary to specify which Unity game objects should be used when creating new objects
         :param bool transfer_transform: boolean indicating if we should set the exact position of new added objects or not
-        :param bool expand_with_ids: boolean indicating whether we should match the objects in the input and current graph via ids or via class name. If False, it uses edit distance to match objects between the 2 graphs.
         :return: pair success (bool), message: (str)
         """
         config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
-                  'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform, 'exact_expand': expand_with_ids}
+                  'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform}
         string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
         if prefabs_map is not None:
