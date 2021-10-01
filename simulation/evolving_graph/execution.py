@@ -332,7 +332,7 @@ class GrabExecutor(ActionExecutor):
             if new_relation is not None:
                 char_node = _get_character_node(state, char_index)
                 char_room = _get_room_node(state, char_node)
-                changes = [DeleteEdges(NodeInstance(node), [Relation.ON, Relation.INSIDE, Relation.CLOSE], AnyNode(), delete_reverse=True),
+                changes = [DeleteEdges(NodeInstance(node), [Relation.ON, Relation.INSIDE, Relation.CLOSE, Relation.HOLDS_LH, Relation.HOLDS_RH], AnyNode(), delete_reverse=True),
                            AddEdges(CharacterNode(char_index), Relation.CLOSE, NodeInstance(node), add_reverse=True), 
                            AddEdges(CharacterNode(char_index), new_relation, NodeInstance(node)), 
                            AddEdges(NodeInstance(node), Relation.INSIDE, NodeInstance(char_room))]
