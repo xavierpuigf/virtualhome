@@ -399,14 +399,22 @@ class EnvironmentState(object):
         node.id = self._max_node_id
         self._new_nodes[node.id] = node
 
-    def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None):
+    def change_state(self, changers: List['StateChanger'], node: Node = None, obj: ScriptObject = None, in_place = False):
 
         new_state = EnvironmentState(self._graph, self._name_equivalence, self.instance_selection)
-        new_state._new_nodes = copy.deepcopy(self._new_nodes)
-        new_state._removed_edges_from = copy.deepcopy(self._removed_edges_from)
-        new_state._new_edges_from = copy.deepcopy(self._new_edges_from)
-        new_state._script_objects = copy.deepcopy(self._script_objects)
-        new_state.executor_data = copy.deepcopy(self.executor_data)
+        if in_place:
+            new_state._new_nodes = self._new_nodes
+            new_state._removed_edges_from = self._removed_edges_from
+            new_state._new_edges_from = self._new_edges_from
+            new_state._script_objects = self._script_objects
+            new_state.executor_data = self.executor_data
+        else:
+            new_state._new_nodes = copy.deepcopy(self._new_nodes)
+            new_state._removed_edges_from = copy.deepcopy(self._removed_edges_from)
+            new_state._new_edges_from = copy.deepcopy(self._new_edges_from)
+            new_state._script_objects = copy.deepcopy(self._script_objects)
+            new_state.executor_data = copy.deepcopy(self.executor_data)
+
         if obj is not None and node is not None:
             new_state._script_objects[(obj.name, obj.instance)] = node.id
         new_state.apply_changes(changers)
