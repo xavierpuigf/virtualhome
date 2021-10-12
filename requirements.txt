@@ -2,7 +2,7 @@ certifi==2019.3.9
 chardet==3.0.4
 idna==2.8
 numpy==1.16.2
-opencv-python==4.0.0.21
+opencv-python==4.1.1.26
 pillow>=7.1.0
 requests==2.21.0
 termcolor==1.1.0
