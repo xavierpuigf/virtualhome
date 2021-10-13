@@ -217,7 +217,7 @@ class UnityCommunication(object):
         Reset scene. Deletes characters and scene chnages, and loads the scene in scene_index
 
 
-        :param int scene_index: integer between 0 and 6, corresponding to the apartment we want to load
+        :param int scene_index: integer between 0 and 49, corresponding to the apartment we want to load
         :return: succes (bool)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'reset',
@@ -378,6 +378,17 @@ class UnityCommunication(object):
             message = response['message']
         
         return response['success'], message
+
+    def procedural_generation(self, scene_index=None):
+        """
+        Enables procedural scene generation 
+
+        :return: succes (bool)
+        """
+        scene_index = 50
+        response = self.post_command({'id': str(time.time()), 'action': 'reset',
+                                      'intParams': [scene_index]})
+        return response['success']
 
         
 def _decode_image(img_string):
