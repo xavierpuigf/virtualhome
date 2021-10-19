@@ -2,6 +2,7 @@ certifi==2019.3.9
 chardet==3.0.4
 cupy==9.5.0
 idna==2.8
+matplotlib>=3.4.2
 networkx==2.3
 numpy>=1.19.3
 opencv-python==4.5.1.48
