@@ -8,12 +8,17 @@ import requests
 from PIL import Image
 import cv2
 import numpy as np
+import torch
 import glob
 import atexit
 from sys import platform
 import sys
 import pdb
 from . import communication
+
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
@@ -394,9 +399,18 @@ class UnityCommunication(object):
 def _decode_image(img_string):
     img_bytes = base64.b64decode(img_string)
     if 'PNG' == img_bytes[1:4]:
-        img_file = cv2.imdecode(np.fromstring(img_bytes, np.uint8), cv2.IMREAD_COLOR)
+        if (gpu_flag==True):
+            img_file = cv2.imdecode(cp.fromstring(img_bytes, cp.uint8), cv2.IMREAD_COLOR)
+            cp.cuda.Stream.null.synchronize()
+        else:
+            img_file = cv2.imdecode(np.fromstring(img_bytes, np.uint8), cv2.IMREAD_COLOR)
     else:
-        img_file = cv2.imdecode(np.fromstring(img_bytes, np.uint8), cv2.IMREAD_ANYDEPTH+cv2.IMREAD_ANYCOLOR)
+        if (gpu_flag==True):
+            img_file = cv2.imdecode(cp.fromstring(img_bytes, cp.uint8), cv2.IMREAD_ANYDEPTH+cv2.IMREAD_ANYCOLOR)
+            cp.cuda.Stream.null.synchronize()
+        else:
+            img_file = cv2.imdecode(np.fromstring(img_bytes, np.uint8), cv2.IMREAD_ANYDEPTH+cv2.IMREAD_ANYCOLOR)
+
     return img_file
 
 

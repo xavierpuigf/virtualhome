@@ -15,6 +15,11 @@ import ipdb
 import random
 import json
 import numpy as np
+import torch
+
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 class UnityEnvironment(BaseEnvironment):
 
@@ -38,7 +43,12 @@ class UnityEnvironment(BaseEnvironment):
         self.seed = seed
         self.prev_reward = 0.
         self.rnd = random.Random(seed)
-        np.random.seed(seed)
+
+        if (gpu_flag==True):
+            cp.random.seed(seed)
+            cp.cuda.Stream.null.synchronize()
+        else:
+            np.random.seed(seed)
 
 
         self.steps = 0

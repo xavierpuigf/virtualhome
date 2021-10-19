@@ -1,31 +1,52 @@
 from mpl_toolkits import mplot3d
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
-import numpy as np
 import matplotlib.pyplot as plt
 import PIL
 import numpy as np
+import torch
 
 import plotly.plotly as py
 import plotly.graph_objs as go
 
 import networkx as nx
 
-
-
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 def fake_bb(ax):
     ax.set_aspect('equal')
-    X = np.array([-10,5])
-    Y = np.array([-10, 5])
-    Z = np.array([-1, 6])
+
+    if (gpu_flag==True):
+        X = cp.array([-10,5])
+        cp.cuda.Stream.null.synchronize()
+        Y = cp.array([-10, 5])
+        cp.cuda.Stream.null.synchronize()
+        Z = cp.array([-1, 6])
+        cp.cuda.Stream.null.synchronize()
+    else:    
+        X = np.array([-10,5])
+        Y = np.array([-10, 5])
+        Z = np.array([-1, 6])
 
     #scat = ax.scatter(X, Y, Z)
 
     # Create cubic bounding box to simulate equal aspect ratio
-    max_range = np.array([X.max()-X.min(), Y.max()-Y.min(), Z.max()-Z.min()]).max()
-    Xb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][0].flatten() + 0.5*(X.max()+X.min())
-    Yb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][1].flatten() + 0.5*(Y.max()+Y.min())
-    Zb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][2].flatten() + 0.5*(Z.max()+Z.min())
+
+    if (gpu_flag==True):
+        max_range = cp.array([X.max()-X.min(), Y.max()-Y.min(), Z.max()-Z.min()]).max()
+        cp.cuda.Stream.null.synchronize()
+        Xb = 0.5*max_range*cp.mgrid[-1:2:2,-1:2:2,-1:2:2][0].flatten() + 0.5*(X.max()+X.min())
+        cp.cuda.Stream.null.synchronize()
+        Yb = 0.5*max_range*cp.mgrid[-1:2:2,-1:2:2,-1:2:2][1].flatten() + 0.5*(Y.max()+Y.min())
+        cp.cuda.Stream.null.synchronize()
+        Zb = 0.5*max_range*cp.mgrid[-1:2:2,-1:2:2,-1:2:2][2].flatten() + 0.5*(Z.max()+Z.min())
+        cp.cuda.Stream.null.synchronize()
+    else:
+        max_range = np.array([X.max()-X.min(), Y.max()-Y.min(), Z.max()-Z.min()]).max()
+        Xb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][0].flatten() + 0.5*(X.max()+X.min())
+        Yb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][1].flatten() + 0.5*(Y.max()+Y.min())
+        Zb = 0.5*max_range*np.mgrid[-1:2:2,-1:2:2,-1:2:2][2].flatten() + 0.5*(Z.max()+Z.min())
     # Comment or uncomment following both lines to test the fake bounding box:
     for xb, yb, zb in zip(Xb, Yb, Zb):
        ax.plot([xb], [yb], [zb], 'w')
@@ -76,8 +97,16 @@ def get_xyz_mouse_click(event, ax):
     # scale the z value to match
     x0, y0, z0 = p0
     x1, y1, z1 = p1
-    d0 = np.hypot(x0-xd, y0-yd)
-    d1 = np.hypot(x1-xd, y1-yd)
+
+    if (gpu_flag==True):
+        d0 = cp.hypot(x0-xd, y0-yd)
+        cp.cuda.Stream.null.synchronize()
+        d1 = cp.hypot(x1-xd, y1-yd)
+        cp.cuda.Stream.null.synchronize()
+    else:
+        d0 = np.hypot(x0-xd, y0-yd)
+        d1 = np.hypot(x1-xd, y1-yd)
+
     dt = d0+d1
     z = d1/dt * z0 + d0/dt * z1
 

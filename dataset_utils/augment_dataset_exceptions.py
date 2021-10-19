@@ -2,6 +2,7 @@
 import glob
 import random
 import numpy as np
+import torch
 import shutil
 import os
 import json
@@ -14,6 +15,9 @@ import sys
 sys.path.append('../simulation/')
 from termcolor import colored
 
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 import augmentation_utils
 
@@ -22,7 +26,11 @@ import evolving_graph.check_programs as check_programs
 import evolving_graph.utils as utils
 
 random.seed(123)
-np.random.seed(123)
+if (gpu_flag==True):
+    cp.random.seed(123)
+    cp.cuda.Stream.null.synchronize()
+else:
+    np.random.seed(123)
 
 # Options
 verbose = False
@@ -58,7 +66,11 @@ for program in all_programs_exec:
 # Pick a single scene by program
 programs_to_apt_single = {}
 for prog, apt_names in programs_to_apt.items():
-    index = np.random.randint(len(apt_names))
+    if (gpu_flag==True):
+        index = cp.random.randint(len(apt_names))
+        cp.cuda.Stream.null.synchronize()
+    else:
+        index = np.random.randint(len(apt_names))
     apt_single = apt_names[index]
     programs_to_apt[prog] = apt_single
 
@@ -122,7 +134,12 @@ def obtain_script_grounded_in_graph(lines_program, id_mapping, modified_script):
     return lines_program
 
 def augment_dataset(d, programs):
-    programs = np.random.permutation(programs).tolist()
+    if (gpu_flag==True):
+        programs = cp.random.permutation(programs).tolist()
+        cp.cuda.Stream.null.synchronize()
+    else:
+        programs = np.random.permutation(programs).tolist()
+
     for program_name, apt_name in tqdm(programs):
         augmented_progs_i = []
         augmented_progs_i_new_inst = []

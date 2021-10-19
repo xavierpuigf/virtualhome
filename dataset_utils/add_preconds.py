@@ -2,9 +2,14 @@
 # Same as the backup version but without grabbed precond
 import glob
 import numpy as np
+import torch
 import os
 import json
 from augmentation_utils import *
+
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 dump_preconds = False
 rooms = [x.lower() for x in [

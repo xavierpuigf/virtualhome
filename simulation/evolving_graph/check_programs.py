@@ -3,10 +3,15 @@ import sys
 import json
 import random
 import numpy as np
+import torch
 from glob import glob
 from termcolor import colored
 from tqdm import tqdm
 from multiprocessing import Pool
+
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 from . import utils
 from .scripts import read_script, read_script_from_string, read_script_from_list_string, ScriptParseException
@@ -308,48 +313,97 @@ def check_whole_set(dir_path, graph_path):
         with open('data/executable_info.json', 'r') as f:
             info = json.load(f)
     n = max(len(program_txt_files) // (num_process*4), 1)
-    program_txt_files = np.array(program_txt_files)
+
+    if (gpu_flag==True):
+        program_txt_files = cp.array(program_txt_files)
+        cp.cuda.Stream.null.synchronize()
+    else:
+        program_txt_files = np.array(program_txt_files)
+
     pool = Pool(processes=num_process)
-    for txt_files in tqdm(np.array_split(program_txt_files, n)):
-        
-        if multiple_graphs:
-            # Distribute programs across different graphs. Every program is executed by 3 graphs
-            mp_inputs = []
-            for f in txt_files:
-                random.shuffle(graph_path)
-                for g in graph_path[:3]:
-                    mp_inputs.append([f, g])
-        else:
-            mp_inputs = [[f, graph_path] for f in txt_files]
-        
-        if multi_process:
-            results = pool.map(check_original_script, mp_inputs)
-        else:
-            results = [check_original_script(inp) for inp in mp_inputs]
 
-        for input, result in zip(mp_inputs, results):
-            i_txt_file, i_graph_path = input
-            script, message, executable, _, _ = result
-            if script is None:
-                not_parsable_programs.append(i_txt_file)
-                continue
-
-            if executable:
-                executable_programs.append(i_txt_file)
-                if multiple_graphs:
-                    executable_scene_hist[i_graph_path] += 1
-                executable_program_length.append(len(script))
+    if (gpu_flag==True):
+        for txt_files in tqdm(cp.array_split(program_txt_files, n)):
+            cp.cuda.Stream.null.synchronize()
+            if multiple_graphs:
+                # Distribute programs across different graphs. Every program is executed by 3 graphs
+                mp_inputs = []
+                for f in txt_files:
+                    random.shuffle(graph_path)
+                    for g in graph_path[:3]:
+                        mp_inputs.append([f, g])
             else:
-                not_executable_program_length.append(len(script))
+                mp_inputs = [[f, graph_path] for f in txt_files]
+            
+            if multi_process:
+                results = pool.map(check_original_script, mp_inputs)
+            else:
+                results = [check_original_script(inp) for inp in mp_inputs]
 
-            if verbose and message != "Script is executable":
-                print(i_txt_file)
-                print(i_graph_path)
-                print(colored(message, "cyan"))
-                
-            if i_txt_file not in info:
-                info[i_txt_file] = []
-            info[i_txt_file].append({"message": message, "graph_path": i_graph_path})
+            for input, result in zip(mp_inputs, results):
+                i_txt_file, i_graph_path = input
+                script, message, executable, _, _ = result
+                if script is None:
+                    not_parsable_programs.append(i_txt_file)
+                    continue
+
+                if executable:
+                    executable_programs.append(i_txt_file)
+                    if multiple_graphs:
+                        executable_scene_hist[i_graph_path] += 1
+                    executable_program_length.append(len(script))
+                else:
+                    not_executable_program_length.append(len(script))
+
+                if verbose and message != "Script is executable":
+                    print(i_txt_file)
+                    print(i_graph_path)
+                    print(colored(message, "cyan"))
+                    
+                if i_txt_file not in info:
+                    info[i_txt_file] = []
+                info[i_txt_file].append({"message": message, "graph_path": i_graph_path})
+    else:
+        for txt_files in tqdm(np.array_split(program_txt_files, n)):
+            
+            if multiple_graphs:
+                # Distribute programs across different graphs. Every program is executed by 3 graphs
+                mp_inputs = []
+                for f in txt_files:
+                    random.shuffle(graph_path)
+                    for g in graph_path[:3]:
+                        mp_inputs.append([f, g])
+            else:
+                mp_inputs = [[f, graph_path] for f in txt_files]
+            
+            if multi_process:
+                results = pool.map(check_original_script, mp_inputs)
+            else:
+                results = [check_original_script(inp) for inp in mp_inputs]
+
+            for input, result in zip(mp_inputs, results):
+                i_txt_file, i_graph_path = input
+                script, message, executable, _, _ = result
+                if script is None:
+                    not_parsable_programs.append(i_txt_file)
+                    continue
+
+                if executable:
+                    executable_programs.append(i_txt_file)
+                    if multiple_graphs:
+                        executable_scene_hist[i_graph_path] += 1
+                    executable_program_length.append(len(script))
+                else:
+                    not_executable_program_length.append(len(script))
+
+                if verbose and message != "Script is executable":
+                    print(i_txt_file)
+                    print(i_graph_path)
+                    print(colored(message, "cyan"))
+                    
+                if i_txt_file not in info:
+                    info[i_txt_file] = []
+                info[i_txt_file].append({"message": message, "graph_path": i_graph_path})
 
     if multiple_graphs:
         info['scene_hist'] = executable_scene_hist

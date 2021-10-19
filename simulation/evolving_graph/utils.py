@@ -4,9 +4,13 @@ import re
 import os
 import copy
 import numpy as np
+import torch
 from .environment import EnvironmentGraph, Property, Room
 from .execution import SitExecutor, LieExecutor
 
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 random.seed(123)
 
@@ -434,7 +438,12 @@ class graph_dict_helper(object):
     def _random_pick_a_room_with_objects_name_in_graph(self, available_rooms_in_graph, available_rooms_in_graph_id, objects_in_script, available_nodes, graph_dict):
 
         # Room is not specified in this program, assign one to it
-        hist = np.zeros(len(available_rooms_in_graph_id))
+        if (gpu_flag==True):
+            hist = cp.zeros(len(available_rooms_in_graph_id))
+            cp.cuda.Stream.null.synchronize()
+        else:
+            hist = np.zeros(len(available_rooms_in_graph_id))
+
         for obj in objects_in_script:
             obj_name = obj[0]
             if obj_name == 'character':
@@ -452,7 +461,11 @@ class graph_dict_helper(object):
         if hist.std() < 1e-5:
             room_name = random.choice(available_rooms_in_graph)
         else:
-            idx = np.argmax(hist)
+            if (gpu_flag==True):
+                idx = cp.argmax(hist)
+                cp.cuda.Stream.null.synchronize()
+            else:
+                idx = np.argmax(hist)
             room_name = available_rooms_in_graph[idx]
 
         return room_name
@@ -763,7 +776,11 @@ class graph_dict_helper(object):
         random_nodes_ids = [node["id"] for node in filter(lambda v: v["id"] >= start_id, graph_dict["nodes"])]
         
         if len(random_nodes_ids) != 0:
-            remove_id = np.min(random_nodes_ids)
+            if (gpu_flag==True):
+                remove_id = cp.min(random_nodes_ids)
+                cp.cuda.Stream.null.synchronize()
+            else:
+                remove_id = np.min(random_nodes_ids)
             graph_dict["nodes"] = [node for node in filter(lambda v: v["id"] != remove_id, graph_dict["nodes"])]
             graph_dict["edges"] = [edge for edge in filter(lambda v: v["from_id"] != remove_id and v["to_id"] != remove_id, graph_dict["edges"])]
 

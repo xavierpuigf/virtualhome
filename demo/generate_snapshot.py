@@ -2,8 +2,13 @@
 import json
 import sys
 import numpy as np
+import torch
 import random
 import cv2
+
+if (torch.cuda.is_available()==True):
+    import cupy as cp
+    gpu_flag = True
 
 sys.path.append('../simulation')
 sys.path.append('../dataset_utils/')
@@ -23,10 +28,21 @@ cameras_ids = [-6, -5, -1]
 
 def build_grid_images(images):
     image_steps = []
+    
     for image_step in images:
-        img_step_cameras = np.concatenate(image_step, 1)
+        if (gpu_flag==True):
+            img_step_cameras = cp.concatenate(image_step, 1)
+            cp.cuda.Stream.null.synchronize()
+        else:
+            img_step_cameras = np.concatenate(image_step, 1)
         image_steps.append(img_step_cameras)
-    final_image = np.concatenate(image_steps, 0)
+
+    if (gpu_flag==True):
+        final_image = cp.concatenate(image_steps, 0)
+        cp.cuda.Stream.null.synchronize()
+    else:
+        final_image = np.concatenate(image_steps, 0)
+
     return final_image
 
 def obtain_snapshots(graph_state_list, reference_graph, comm):
