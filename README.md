@@ -60,6 +60,7 @@ pip install -r requirements.txt
 ```
 We also provide a [Jupyter](https://jupyter.org/) notebook with a demo and starting code. If you want to run the demo, [install Jupyter](https://jupyter.org/install.html) and run it on your host. If you are new to Jupyter, see [Running the Jupyter Notebook](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html) for a walkthrough of how to use this tool.
 
+
 ### Download Unity Simulator
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
@@ -129,7 +130,6 @@ python generate_snapshots.py
 A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](demo/snapshot_test.png).
 
 
-
 ## VirtualHome RL Env
 
 VirtualHome can be used as an environment for Reinforcement Learning. We provide a base class `UnityEnvironment` in [simulation/environment/unity_environment.py](simulation/environment/unity_environment.py). You can test how the class works by running
@@ -145,6 +145,7 @@ The provided environment can be combined with [Ray](https://github.com/ray-proje
 cd demo
 python test_unity_environment_mp.py
 ```
+
 
 ## Dataset
 
@@ -176,14 +177,15 @@ To view the graph of the environment, and how it changes throughout the script e
 
 You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md).
 
-### Script Augmentation
 
+### Script Augmentation
 
 In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
 we augment the scripts with two knowledge bases: `KB-RealEnv` and `KB-ExceptonHandler`.
 You can download the augmented scripts in [KB-RealEnv](http://virtual-home.org/release/programs/augment_location.zip) and [KB-ExceptionHandler](http://virtual-home.org/release/programs/augment_exception.zip).
 
 Here, we provide the code to augment the sripts:
+
 
 #### Augment with `KB-RealEnv`
 
@@ -199,11 +201,15 @@ python augment_dataset_locations.py
 cd dataset_utils
 python augment_dataset_exceptions.py
 ```
+
+
 ### Original Collected and Scripted Programs
+
 We originally collected a set of programs to predict from language descriptions, and generated a larger of programs via a scripted language. Those programs are described [here](http://virtual-home.org/paper/virtualhome.pdf) as VirtualHome Activity (collected programs) ActivityPrograms (scripted programs). You can download them here:
 
 - [Download](http://virtual-home.org/release/programs/virtualhome_cvpr18/real.zip) VirtualHome Activity.
 - [Download](http://virtual-home.org/release/programs/virtualhome_cvpr18/synthetic.zip) ActivityPrograms.
+
 
 ### Resources
 
@@ -212,10 +218,16 @@ Check [resources/README.md](resources/README.md) for more details.
 
 
 ## Modify VirtualHome
+
 If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity). You will need to download the Unity Editor and build your own executable after having made the updates.
+
+<p align="center">
+  <img width="300" height="300" src="assets/vh_overview.gif">
+</p>
 
 
 ## Citation
+
 VirtualHome has been used in:
 
 - VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf) <br/>
@@ -264,7 +276,10 @@ year = {2019}
       primaryClass={cs.AI}
 }
 ```
+
+
 ## Contributors
+
 The VirtualHome API and code has been developed by the following people.
 
 - Marko Boben
