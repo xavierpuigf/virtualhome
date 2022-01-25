@@ -1,5 +1,4 @@
 [![docs](https://img.shields.io/badge/docs-updated-brightgreen)](http://virtual-home.org/documentation/)
-[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/fcaNnwY4)
 
 
 # VirtualHome
@@ -12,13 +11,21 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 </p>
 
 ## What is New
-The new version of VirtualHome (VH-Social) is out! Here are the latest updates:
-* [August 27th] Added RL Environment Demo, and example to combine Environments with Ray. 
-* [April 11th] We added new documentation! Check it out at http://virtual-home.org/documentation
-* VirtualHome now supports multiple agents and a `skip_animation` mode, to use the environment to train RL models.
-* We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
-* API to add characters in the scene and fixed cameras, and record from those cameras
+The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates:
 
+* Added Procedural Generation Capabilities to allow agents to explore a infinite possibility of unique environments!  
+* We added more custom designed environments!
+* Enhanced simulated physics with the environments
+* Significant performance enhancements, asset optimizations, stability improvements
+* Updated documentation
+* General bug fixes for existing environments
+
+
+## Currently in Development
+* Enhancements for Procedural Generation Capabilities
+* Photorealism capabilities  
+* More actions and object interactions
+* Adding keyboard support for agent controls
 
 
 ## Contents
@@ -44,7 +51,6 @@ This simulator runs fully in python and allows to generate a sequence of graphs 
 
 
 ## Set Up
-
 
 ### Clone repository and install the dependencies
 Note that this code base is based on Python 3

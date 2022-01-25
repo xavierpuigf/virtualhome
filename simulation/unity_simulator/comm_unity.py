@@ -177,7 +177,6 @@ class UnityCommunication(object):
         """
         Add a new scene camera. The camera will be static in the scene.
 
-
         :param list position: the position of the camera, with respect to the agent
         :param list rotation: the rotation of the camera, with respect to the agent
         :return: succes (bool)
@@ -196,7 +195,6 @@ class UnityCommunication(object):
         Add a new character camera. The camera will be added to every character you include in the scene, and it will move with 
         the character. This must be called before adding any character.
 
-
         :param list position: the position of the camera, with respect to the agent
         :param list rotation: the rotation of the camera, with respect to the agent
         :name: the name of the camera, used for recording when calling render script
@@ -214,8 +212,7 @@ class UnityCommunication(object):
 
     def reset(self, scene_index=None):
         """
-        Reset scene. Deletes characters and scene chnages, and loads the scene in scene_index
-
+        Reset scene. Deletes characters and scene changes, and loads the scene in scene_index
 
         :param int scene_index: integer between 0 and 6, corresponding to the apartment we want to load
         :return: succes (bool)
@@ -225,8 +222,24 @@ class UnityCommunication(object):
         return response['success']
 
     def fast_reset(self):
+        """
+        Fast scene. Deletes characters and scene changes
+
+        :return: success (bool)
+        """
         response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
                                       'intParams': []})
+        return response['success']
+
+    def procedural_generation(self, scene_index=None):
+        """
+        Generates new scene through procedural generation logic. Deletes characters and scene changes, and loads the generated scene
+
+        :return: success (bool)
+        """
+        scene_index = 50
+        response = self.post_command({'id': str(time.time()), 'action': 'reset',
+                                      'intParams': [] if scene_index is None else [scene_index]})
         return response['success']
 
     def camera_count(self):
