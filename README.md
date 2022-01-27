@@ -1,7 +1,8 @@
 [![docs](https://img.shields.io/badge/docs-updated-brightgreen)](http://virtual-home.org/documentation/)
-
+[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JmzDYF3)
 
 # VirtualHome
+
 **VirtualHome** is an interactive platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents fro embodied AI tasks.
 
 Check out more details of the environmnent and platform at [**virtual-home.org**](http://virtual-home.org). 
@@ -11,6 +12,7 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 </p>
 
 ## What is New
+
 The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates:
 
 * Added Procedural Generation Capabilities to allow agents to explore a infinite possibility of unique environments!  
@@ -22,6 +24,7 @@ The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates
 
 
 ## Currently in Development
+
 * Enhancements for Procedural Generation Capabilities
 * Photorealism capabilities  
 * More actions and object interactions
@@ -41,18 +44,22 @@ The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates
 
 
 ## Overview
+
 Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the *Unity Simulator* and *Evolving Graph*. You can find a more complete documentation with examples and the different executables at http://virtual-home.org/documentation.
 
 #### Unity Simulator 
+
 This simulator is built in Unity and allows generating videos of activities. To use this simulator, you will need to download the appropiate executable and run it with the [Python API](simulation/unity_simulator/). You can check a demo of the simulator in [demo/unity_demo.ipynb](demo/unity_demo.ipynb)
 
 #### Evolving Graph
+
 This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
 
 
 ## Set Up
 
 ### Clone repository and install the dependencies
+
 Note that this code base is based on Python 3
 ```bash
 git clone https://github.com/xavierpuigf/virtualhome.git
@@ -62,6 +69,7 @@ We also provide a [Jupyter](https://jupyter.org/) notebook with a demo and start
 
 
 ### Download Unity Simulator
+
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
 - [Download](http://virtual-home.org/release/simulator/last_release/linux_exec.zip) Linux x86-64 version.

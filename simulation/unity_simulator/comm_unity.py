@@ -214,7 +214,7 @@ class UnityCommunication(object):
         """
         Reset scene. Deletes characters and scene changes, and loads the scene in scene_index
 
-        :param int scene_index: integer between 0 and 6, corresponding to the apartment we want to load
+        :param int scene_index: integer between 0 and 49, corresponding to the apartment we want to load
         :return: succes (bool)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'reset',
@@ -231,16 +231,16 @@ class UnityCommunication(object):
                                       'intParams': []})
         return response['success']
 
-    def procedural_generation(self, scene_index=None):
+    def procedural_generation(self, seed=None):
         """
         Generates new scene through procedural generation logic. Deletes characters and scene changes, and loads the generated scene
 
-        :return: success (bool)
+        :param int seed: integer corresponding to the seed given during generation
+        :return: success (bool), seed: (integer)
         """
-        scene_index = 50
-        response = self.post_command({'id': str(time.time()), 'action': 'reset',
-                                      'intParams': [] if scene_index is None else [scene_index]})
-        return response['success']
+
+        response = self.post_command({'id': str(time.time()), 'action': 'reset'})
+        return response['success'], response['message']
 
     def camera_count(self):
         """
@@ -338,6 +338,15 @@ class UnityCommunication(object):
         except ValueError:
             message = response['message']
         return response['success'], message
+
+    def activate_physics(self):
+        """
+        Activates gravity and realistic collisions in the environment
+
+        :return: success (bool)
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
+        return response['success'], response['value']
 
     def point_cloud(self):
         response = self.post_command({'id': str(time.time()), 'action': 'point_cloud'})
