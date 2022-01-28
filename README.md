@@ -260,9 +260,10 @@ year = {2019}
 ```
 ## Contributors
 The VirtualHome API and code has been developed by the following people.
-
-- Marko Boben
 - Xavier Puig
+- Marko Boben
+- Kabir Swain
+- Jordan Ren
 - Kevin Ra
 - Zilin Wang
 - Shuang Li
