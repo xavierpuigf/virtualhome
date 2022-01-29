@@ -173,17 +173,19 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
 
-    def add_camera(self, position=[0,1,0], rotation=[0,0,0]):
+    def add_camera(self, position=[0,1,0], rotation=[0,0,0], focal_length=None):
         """
         Add a new scene camera. The camera will be static in the scene.
 
         :param list position: the position of the camera, with respect to the agent
         :param list rotation: the rotation of the camera, with respect to the agent
+        :param list focal_length: the focal length of the camera
         :return: succes (bool)
         """
         cam_dict = {
                 'position': {'x': position[0], 'y': position[1], 'z': position[2]},
-                'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]}
+                'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
+                'focal_length': focal_length
         }
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'add_camera',
