@@ -214,6 +214,7 @@ class UnityCommunication(object):
 
     def reset(self, scene_index=None):
         """
+        Deprecated.
         Reset scene. Deletes characters and scene changes, and loads the scene in scene_index
 
         :param int scene_index: integer between 0 and 49, corresponding to the apartment we want to load
@@ -225,6 +226,7 @@ class UnityCommunication(object):
 
     def fast_reset(self):
         """
+        Deprecated.
         Fast scene. Deletes characters and scene changes
 
         :return: success (bool)
@@ -233,14 +235,34 @@ class UnityCommunication(object):
                                       'intParams': []})
         return response['success']
 
+    def clear(self):
+        """
+        Clear scene. Deletes characters, objects, and environments
+
+        :return: success (bool)
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'clear',
+                                      'intParams': []})
+        return response['success']
+
+    def environment(self, environment=None):
+        """
+        Add environment. Loads the environment
+
+        :param int environment: integer between 0 and 49, corresponding to the environment we want to load
+        :return: succes (bool)
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'environment',
+                                      'intParams': [] if environment is None else [environment]})
+        return response['success']
+
     def procedural_generation(self, seed=None):
         """
-        Generates new scene through procedural generation logic. Deletes characters and scene changes, and loads the generated scene
+        Generates new environments through procedural generation logic.
 
         :param int seed: integer corresponding to the seed given during generation
         :return: success (bool), seed: (integer)
         """
-
         response = self.post_command({'id': str(time.time()), 'action': 'reset'})
         return response['success'], response['message']
 
@@ -268,8 +290,6 @@ class UnityCommunication(object):
 
         :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count-1`
         :return: pair success (bool), cam_data: (list): for every camera, the matrices with the camera parameters
-
-
         """
         if not isinstance(camera_indexes, collections.Iterable):
             camera_indexes = [camera_indexes]
