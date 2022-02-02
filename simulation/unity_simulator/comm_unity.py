@@ -107,6 +107,7 @@ class UnityCommunication(object):
         Obtain visible objects accoding to a given camera
 
         :param int camera_index: the camera for which you want to check the objects. Between 0 and `camera_count-1`
+
         :return: pair success (bool), msg: the object indices visible according to the camera
 
         """
@@ -128,6 +129,7 @@ class UnityCommunication(object):
         :param list position: the position where you want to place the character
         :param str initial_room: the room where you want to put the character, 
         if positon is not specified. If this is not specified, it places character in random location
+
         :return: succes (bool)
         """
         mode = 'random'
@@ -153,9 +155,9 @@ class UnityCommunication(object):
         """
         Move the character `char_index` to a new position
 
-
         :param int char_index: the index of the character you want to move
         :param list pos: the position where you want to place the character
+
         :return: succes (bool)
         """
         response = self.post_command(
@@ -180,6 +182,7 @@ class UnityCommunication(object):
         :param list position: the position of the camera, with respect to the agent
         :param list rotation: the rotation of the camera, with respect to the agent
         :param list focal_length: the focal length of the camera
+
         :return: succes (bool)
         """
         cam_dict = {
@@ -200,6 +203,7 @@ class UnityCommunication(object):
         :param list position: the position of the camera, with respect to the agent
         :param list rotation: the rotation of the camera, with respect to the agent
         :name: the name of the camera, used for recording when calling render script
+
         :return: succes (bool)
         """
         cam_dict = {
@@ -219,12 +223,13 @@ class UnityCommunication(object):
         :param int scene_index: integer between 0 and 49, corresponding to the apartment we want to load
         :return: succes (bool)
         """
-
         response = self.post_command({'id': str(time.time()), 'action': 'clear',
                                       'intParams': []})
 
         response = self.post_command({'id': str(time.time()), 'action': 'environment',
                                       'intParams': [] if environment is None else [environment]})
+
+        response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success']
 
     def fast_reset(self):
@@ -287,6 +292,7 @@ class UnityCommunication(object):
         :param str mode: what kind of camera rendering to return. Possible modes are: "normal", "seg_inst", "seg_class", "depth", "flow", "albedo", "illumination", "surf_normals"
         :param str image_width: width of the returned images
         :param str image_heigth: height of the returned iamges
+
         :return: pair success (bool), images: (list) a list of images according to the camera rendering mode
         """
         if not isinstance(camera_indexes, collections.Iterable):
@@ -327,12 +333,14 @@ class UnityCommunication(object):
         :param bool ignore_placing_obstacles: when adding new objects, if the transform is not specified, whether to consider if it collides with existing objects
         :param dict prefabs_map: dictionary to specify which Unity game objects should be used when creating new objects
         :param bool transfer_transform: boolean indicating if we should set the exact position of new added objects or not
+
         :return: pair success (bool), message: (str)
         """
         config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
                   'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform}
         string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
+
         if prefabs_map is not None:
             string_params.append(json.dumps(prefabs_map))
         response = self.post_command({'id': str(time.time()), 'action': 'expand_scene',
@@ -342,6 +350,22 @@ class UnityCommunication(object):
         except ValueError:
             message = response['message']
         return response['success'], message
+
+    def set_time(self, hour=0, minute=0, second=0):
+        """
+        Set the time in the environment
+
+        :return: success (bool)
+        """
+        time_dict = {
+                'hour': hour,
+                'minute': minute,
+                'second': second
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'set_time',
+                    'stringParams': [json.dumps(time_dict)]})
+        return response['success'], response['message']
 
     def activate_physics(self):
         """
