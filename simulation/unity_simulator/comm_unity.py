@@ -251,7 +251,9 @@ class UnityCommunication(object):
         """
         response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation',
                                       'intParams': [] if seed is None else [seed]})
-        return response['success'], response['message']
+        
+        response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
+        return response['success']
 
     def camera_count(self):
         """
