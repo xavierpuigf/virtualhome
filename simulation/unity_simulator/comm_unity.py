@@ -228,8 +228,6 @@ class UnityCommunication(object):
 
         response = self.post_command({'id': str(time.time()), 'action': 'environment',
                                       'intParams': [] if environment is None else [environment]})
-
-        response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success']
 
     def fast_reset(self):
