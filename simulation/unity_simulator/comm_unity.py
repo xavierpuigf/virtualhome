@@ -104,7 +104,7 @@ class UnityCommunication(object):
     
     def get_visible_objects(self, camera_index):
         """
-        Obtain visible objects accoding to a given camera
+        Obtain visible objects according to a given camera
 
         :param int camera_index: the camera for which you want to check the objects. Between 0 and `camera_count-1`
 
@@ -125,12 +125,12 @@ class UnityCommunication(object):
         Add a character in the scene. 
 
         :param str character_resource: which game object to use for the character
-        :param int char_index: the index of the character you want to move
+        # :param int char_index: the index of the character you want to move
         :param list position: the position where you want to place the character
         :param str initial_room: the room where you want to put the character, 
-        if positon is not specified. If this is not specified, it places character in random location
+        if position is not specified. If this is not specified, it places character in random location
 
-        :return: succes (bool)
+        :return: success (bool)
         """
         mode = 'random'
         pos = [0, 0, 0]
@@ -220,7 +220,7 @@ class UnityCommunication(object):
         """
         Reset scene. Deletes characters and scene changes, and loads the scene in scene_index
 
-        :param int scene_index: integer between 0 and 49, corresponding to the apartment we want to load
+        :param int environment: integer between 0 and 49, corresponding to the apartment we want to load
         :return: succes (bool)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'clear',
@@ -266,7 +266,7 @@ class UnityCommunication(object):
         """
         Returns the number of cameras in the scene
 
-        :return: pair success (bool), camera_names: (list): the names of the cameras defined fo rthe characters
+        :return: pair success (bool), camera_names: (list): the names of the cameras defined fo the characters
         """
         response = self.post_command({'id': str(time.time()), 'action': 'character_cameras'})
         return response['success'], response['message']
@@ -290,8 +290,8 @@ class UnityCommunication(object):
 
         :param list camera_indexes: the list of cameras to return, can go from 0 to `camera_count-1`
         :param str mode: what kind of camera rendering to return. Possible modes are: "normal", "seg_inst", "seg_class", "depth", "flow", "albedo", "illumination", "surf_normals"
-        :param str image_width: width of the returned images
-        :param str image_heigth: height of the returned iamges
+        :param int image_width: width of the returned images
+        :param int image_height: height of the returned iamges
 
         :return: pair success (bool), images: (list) a list of images according to the camera rendering mode
         """
@@ -402,7 +402,7 @@ class UnityCommunication(object):
         :param bool save_pose_data: save pose data, a skeleton for every agent and frame
         :param int image_width: image_height for the generated frames
         :param int image_height: image_height for the generated frames
-        :param bool recoring: whether to record data with cameras
+        :param bool recording: whether to record data with cameras
         :param bool save_scene_states: save scene states (this will be unused soon)
         :param list camera_mode: list with cameras used to render data. Can be a str(i) with i being a scene camera index or one of the cameras from `character_cameras`
         :param int time_scale: accelerate time at which actions happen
