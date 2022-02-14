@@ -34,11 +34,7 @@ You can add multiple agents on each simulation, interacting at the same time. To
 comm.add_character(char_name)
 ```
 
-Where `char_name` corresponds to the character you want to add. These are the characters currently available, along with their name.
-
-|     <p align="center">Male1     |     <p align="center">Female1     |     <p align="center">Female2     |     <p align="center">Female4     |     <p align="center">Male10         |     <p align="center">Male2     |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| ![img](../assets/agents/Male1.png) | ![img](../assets/agents/Female_1.png)| ![img](../assets/agents/Female_2.png)| ![img](../assets/agents/Female_4.png)| ![img](../assets/agents/Male_2.png)| ![img](../assets/agents/Male_6.png)|
+Where `char_name` corresponds to the character you want to add. 
 
 # Programs
 The programs allow executing activities in VirtualHome a program is composed by a sequence of instructions of the form `<char{char_id}> [Action_name] <Object_name> (Object_id)`.
