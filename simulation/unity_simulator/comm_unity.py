@@ -175,7 +175,7 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
 
-    def add_camera(self, position=[0,1,0], rotation=[0,0,0], focal_length=None):
+    def add_camera(self, position=[0,1,0], rotation=[0,0,0], focal_length=30):
         """
         Add a new scene camera. The camera will be static in the scene.
 
@@ -248,8 +248,9 @@ class UnityCommunication(object):
         :param int seed: integer corresponding to the seed given during generation
         :return: success (bool), seed: (integer)
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation',
-                                      'intParams': [] if seed is None else [seed]})
+        response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation'})
+
+        response = self.post_command({'id': str(time.time()), 'action': 'process'})
         
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
         return response['success']
@@ -368,13 +369,15 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(time_dict)]})
         return response['success'], response['message']
 
-    def activate_physics(self):
+    def activate_physics(self, gravity=True):
         """
         Activates gravity and realistic collisions in the environment
 
+        :param bool gravity: boolean if gravity should be activated or deactivated
+
         :return: success (bool)
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'camera_count'})
+        response = self.post_command({'id': str(time.time()), 'action': 'activate_physics'})
         return response['success'], response['value']
 
     def point_cloud(self):

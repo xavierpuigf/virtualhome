@@ -4,8 +4,19 @@ import numpy as np
 import io
 import os
 import base64
+import IPython
 from IPython.display import HTML
+from IPython.display import Image
+from IPython.display import display
+from tqdm import tqdm
 from sys import platform
+import sys
+
+sys.path.append('../simulation')
+from unity_simulator.comm_unity import UnityCommunication
+from unity_simulator import utils_viz
+
+comm = UnityCommunication()
 
 def setup():
     os.chdir('../simulation/')
@@ -33,9 +44,6 @@ def find_edges_from(graph, id):
     return [(rel, find_nodes(graph, id=n_id)[0]) for (rel, n_id) in nb_list]
 
 def clean_graph(graph):
-    """
-    Remove bounds to reflect real input by Andrew & Xavier
-    """
     new_nodes = []
     for n in graph['nodes']:
         nc = dict(n)
@@ -43,7 +51,6 @@ def clean_graph(graph):
             del nc['bounding_box']
         new_nodes.append(nc)
     return {'nodes': new_nodes, 'edges': list(graph['edges'])}
-    
 
 def remove_edges(graph, n, fr=True, to=True):
     n_id = n['id']
@@ -63,9 +70,6 @@ def add_edge(graph, fr_id, rel, to_id):
     graph['edges'].append({'from_id': fr_id, 'relation_type': rel, 'to_id': to_id})
     
 def clean_graph(graph):
-    """
-    Remove bounds to reflect real input by Andrew & Xavier
-    """
     new_nodes = []
     for n in graph['nodes']:
         nc = dict(n)
@@ -73,7 +77,6 @@ def clean_graph(graph):
             del nc['bounding_box']
         new_nodes.append(nc)
     return {'nodes': new_nodes, 'edges': list(graph['edges'])}
-
 
 def add_cat(graph):
     graph_1 = clean_graph(graph)
@@ -104,8 +107,13 @@ def add_beer(graph):
     add_node(graph_1, {'class_name': 'beer', 'id': 1001, 'properties': [], 'states': []})
     add_edge(graph_1, 1001, 'INSIDE', fridge['id'])
     return graph_1
-
-
+    
+def set_tv(graph):
+    tv_node = [x for x in graph['nodes'] if x['class_name'] == 'tv'][0]
+    tv_node['states'] = ['ON']
+    light_node = [x for x in graph['nodes'] if x['class_name'] == 'lightswitch'][0]
+    light_node['states'] = ['OFF']
+    return graph
 
 
 ### utils_images
@@ -126,7 +134,6 @@ def display_grid_img(images_old, nrows=1):
     img_final = PIL.Image.fromarray(img_final[:,:,::-1])
     return img_final
 
-
 def get_scene_cameras(comm, ids, mode='normal'):
     _, ncameras = comm.camera_count()
     cameras_select = list(range(ncameras))
@@ -137,7 +144,6 @@ def get_scene_cameras(comm, ids, mode='normal'):
 def display_scene_cameras(comm, ids, nrows=1, mode='normal'):
     imgs = get_scene_cameras(comm, ids, mode)
     return display_grid_img(imgs, nrows=nrows)
-    
 
 def display_scene_modalities(
     comm, ids, modalities=['normal', 'seg_class', 'seg_inst', 'depth'], nrows=1):
@@ -153,10 +159,24 @@ def display_scene_modalities(
     img_final = display_grid_img(imgs_modality, nrows=nrows)
     return img_final
 
-def get_img_apts():
-    img = PIL.Image.open('../assets/img_apts.png')
-    return img
 
+### Show environments
+def show_environments():
+    img={}
+    for i in tqdm(range(5)):
+        comm.reset(i)
+        indices = [-1]
+        img_final = display_scene_cameras(comm, indices, nrows=1)
+        img[i]=img_final
+    for i in range(50):
+        IPython.display.display(img[i])
+
+def show_procedural_generation():
+    comm.procedural_generation()
+    indices = [-1]
+    img_final = display_scene_cameras(comm, indices, nrows=1)
+    IPython.display.display(img_final)
+    
 
 ## Utils video
 def run_program(comm, prog, name):
@@ -169,11 +189,3 @@ def display_vid(vid_path):
     encoded = base64.b64encode(video)
     return HTML(data='''<video alt="test" controls>
     <source src="data:video/mp4;base64,{0}" type="video/mp4" /> </video>'''.format(encoded.decode('ascii')))
-
-
-def set_tv(graph):
-    tv_node = [x for x in graph['nodes'] if x['class_name'] == 'tv'][0]
-    tv_node['states'] = ['ON']
-    light_node = [x for x in graph['nodes'] if x['class_name'] == 'lightswitch'][0]
-    light_node['states'] = ['OFF']
-    return graph
