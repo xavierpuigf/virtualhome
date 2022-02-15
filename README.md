@@ -28,7 +28,7 @@ The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates
 * Enhancements for Procedural Generation Capabilities
 * Photorealism capabilities  
 * More actions and object interactions
-* Adding keyboard support for agent controls
+* Human interaction
 
 
 ## Contents
@@ -223,6 +223,11 @@ We originally collected a set of programs to predict from language descriptions,
 
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
 Check [resources/README.md](resources/README.md) for more details.
+
+
+## Documentation
+
+To learn more about VirtualHome, please check out [VirtualHome Docs](http://virtual-home.org/documentation/).
 
 
 ## Modify VirtualHome

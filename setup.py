@@ -4,7 +4,7 @@ setup(
       name = 'VirtualHome',
       packages = find_packages(),
       include_package_data = True,
-      version = '3.0',
+      version = '2.3',
       license='Creative Commons',
       description = 'VirtualHome',
       author = 'Xavier Puig',
@@ -13,6 +13,7 @@ setup(
       keywords = [
       'artificial intelligence',
       'reinforcement learning',
+      'computer vision',
       'simulator',
       'language-control'
       ],
@@ -32,11 +33,11 @@ setup(
             'urllib3'
       ],
       classifiers=[
-            'Development Status :: 3.0.3 - Beta',
+            'Development Status :: 2.3 - Release',
             'Intended Audience :: Researchers',
             'Topic :: Scientific/Engineering :: Artificial Intelligence', 'Machine Learning', 'Computer Vision', 'Reinforcement Learning',
             'License :: OSI Approved :: Creative Commons License',
-            'Programming Language :: Python :: 3.6',
+            'Programming Language :: Python :: 3.8',
       ],
 )
 
