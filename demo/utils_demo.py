@@ -163,7 +163,7 @@ def display_scene_modalities(
 ### Show environments
 def show_environments():
     img={}
-    for i in tqdm(range(5)):
+    for i in tqdm(range(50)):
         comm.reset(i)
         indices = [-1]
         img_final = display_scene_cameras(comm, indices, nrows=1)

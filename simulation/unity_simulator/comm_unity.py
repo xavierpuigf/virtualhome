@@ -170,7 +170,6 @@ class UnityCommunication(object):
             })
         return response['success']
 
-
     def check(self, script_lines):
         response = self.post_command({'id': str(time.time()), 'action': 'check_script', 'stringParams': script_lines})
         return response['success'], response['message']
@@ -369,16 +368,21 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(time_dict)]})
         return response['success'], response['message']
 
-    def activate_physics(self, gravity=True):
+    def activate_physics(self, gravity=1):
         """
         Activates gravity and realistic collisions in the environment
 
-        :param bool gravity: boolean if gravity should be activated or deactivated
+        :param list gravity: int of gravity value experienced in the environment
 
         :return: success (bool)
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'activate_physics'})
-        return response['success'], response['value']
+        physics_dict = {
+                'gravity': gravity
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'activate_physics',
+                    'stringParams': [json.dumps(physics_dict)]})
+        return response['success'], response['message']
 
     def point_cloud(self):
         response = self.post_command({'id': str(time.time()), 'action': 'point_cloud'})
