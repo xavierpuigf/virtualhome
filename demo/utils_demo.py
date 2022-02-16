@@ -8,6 +8,7 @@ import IPython
 from IPython.display import HTML
 from IPython.display import Image
 from IPython.display import display
+import matplotlib.pyplot as plt
 from tqdm import tqdm
 from sys import platform
 import sys
@@ -28,7 +29,6 @@ def setup():
     from unity_simulator.comm_unity import UnityCommunication
     comm = UnityCommunication()
     return comm
-
 
 
 ### Utils nodes
@@ -167,15 +167,22 @@ def show_environments():
         comm.reset(i)
         indices = [-1]
         img_final = display_scene_cameras(comm, indices, nrows=1)
-        img[i]=img_final
+        img[i] = img_final
     for i in range(8):
         IPython.display.display(img[i])
 
 def show_procedural_generation():
-    comm.procedural_generation()
-    indices = [-1]
+    img={}
+    for i in tqdm(range(3)):
+        comm.procedural_generation()
+        indices = [-1]
+        img_final = display_scene_cameras(comm, indices, nrows=1)
+        img[i] = img_final
     img_final = display_scene_cameras(comm, indices, nrows=1)
-    IPython.display.display(img_final)
+
+    for i in range(3):
+        IPython.display.display(img[i])
+  
     
 
 ## Utils video

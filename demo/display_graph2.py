@@ -12,6 +12,7 @@ from matplotlib.collections import PatchCollection
 from matplotlib.patches import Rectangle
 import plotly.offline
 
+
 dict_info = {
     "objects_inside": [
         "toilet", "bathroom_cabinet", "kitchencabinets",
