@@ -223,7 +223,7 @@ class UnityCommunication(object):
         :return: succes (bool)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'clear',
-                                      'intParams': []})
+                                      'intParams': [] if environment is None else [environment]})
 
         response = self.post_command({'id': str(time.time()), 'action': 'environment',
                                       'intParams': [] if environment is None else [environment]})

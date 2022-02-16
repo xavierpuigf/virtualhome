@@ -163,12 +163,12 @@ def display_scene_modalities(
 ### Show environments
 def show_environments():
     img={}
-    for i in tqdm(range(50)):
+    for i in tqdm(range(8)):
         comm.reset(i)
         indices = [-1]
         img_final = display_scene_cameras(comm, indices, nrows=1)
         img[i]=img_final
-    for i in range(50):
+    for i in range(8):
         IPython.display.display(img[i])
 
 def show_procedural_generation():
