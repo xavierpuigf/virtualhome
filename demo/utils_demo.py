@@ -8,7 +8,6 @@ import IPython
 from IPython.display import HTML
 from IPython.display import Image
 from IPython.display import display
-import matplotlib.pyplot as plt
 from tqdm import tqdm
 from sys import platform
 import sys
