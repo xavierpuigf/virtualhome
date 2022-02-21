@@ -8,7 +8,6 @@ import IPython
 from IPython.display import HTML
 from IPython.display import Image
 from IPython.display import display
-from tqdm import tqdm
 from sys import platform
 import sys
 
@@ -161,27 +160,37 @@ def display_scene_modalities(
 
 ### Show environments
 def show_environments():
-    img={}
-    for i in tqdm(range(8)):
-        comm.reset(i)
-        indices = [-1]
-        img_final = display_scene_cameras(comm, indices, nrows=1)
-        img[i] = img_final
-    for i in range(8):
-        IPython.display.display(img[i])
+    comm.reset(0)
+    img_0 = get_scene_cameras(comm, [-1])
+    comm.reset(1)
+    img_1 = get_scene_cameras(comm, [-1])
+    comm.reset(2)
+    img_2 = get_scene_cameras(comm, [-1])
+    comm.reset(3)
+    img_3 = get_scene_cameras(comm, [-1])
+    comm.reset(4)
+    img_4 = get_scene_cameras(comm, [-1])
+    comm.reset(5)
+    img_5 = get_scene_cameras(comm, [-1])
+    comm.reset(6)
+    img_6 = get_scene_cameras(comm, [-1])
+    comm.reset(7)
+    img_7 = get_scene_cameras(comm, [-1])
+    comm.reset(8)
+    img_8 = get_scene_cameras(comm, [-1])
+    comm.reset(9)
+    img_9 = get_scene_cameras(comm, [-1])
+    IPython.display.display(display_grid_img(img_0 + img_1  + img_2 + img_3  + img_4 + img_5  + img_6 + img_7  + img_8 + img_9, nrows=2))
 
 def show_procedural_generation():
-    img={}
-    for i in tqdm(range(3)):
-        comm.procedural_generation()
-        indices = [-1]
-        img_final = display_scene_cameras(comm, indices, nrows=1)
-        img[i] = img_final
-    img_final = display_scene_cameras(comm, indices, nrows=1)
+    comm.procedural_generation()
+    img_0 = get_scene_cameras(comm, [-1])
+    comm.procedural_generation()
+    img_1 = get_scene_cameras(comm, [-1])
+    comm.procedural_generation()
+    img_2 = get_scene_cameras(comm, [-1])
+    IPython.display.display(display_grid_img(img_0 + img_1  + img_2, nrows=1))
 
-    for i in range(3):
-        IPython.display.display(img[i])
-  
     
 
 ## Utils video
