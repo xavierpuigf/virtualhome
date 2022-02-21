@@ -385,7 +385,7 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(time_dict)]})
         return response['success'], response['message']
 
-    def activate_physics(self, gravity=1):
+    def activate_physics(self, gravity=-1):
         """
         Activates gravity and realistic collisions in the environment
 
