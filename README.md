@@ -13,7 +13,7 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 
 ## What is New
 
-The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates:
+VirtualHome 2.4 is out! Here are the latest updates:
 
 * Added Procedural Generation Capabilities to allow agents to explore a infinite possibility of unique environments!  
 * We added more custom designed environments!
@@ -22,8 +22,14 @@ The new version of VirtualHome (VH-Infinity) is out! Here are the latest updates
 * Updated documentation
 * General bug fixes for existing environments
 
+### Past updates
+* [August 2020] Added RL Environment Demo, and example to combine Environments with Ray.
+* [April 2020] We added new documentation! Check it out at http://virtual-home.org/documentation
+* We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the unity_environment.py class.
+* API to add characters in the scene and fixed cameras, and record from those cameras
 
-## Currently in Development
+
+### Currently in Development
 
 * Enhancements for Procedural Generation Capabilities
 * Photorealism capabilities  
