@@ -158,38 +158,6 @@ def display_scene_modalities(
     return img_final
 
 
-### Show environments
-def show_environments():
-    comm.reset(0)
-    img_0 = get_scene_cameras(comm, [-1])
-    comm.reset(1)
-    img_1 = get_scene_cameras(comm, [-1])
-    comm.reset(2)
-    img_2 = get_scene_cameras(comm, [-1])
-    comm.reset(3)
-    img_3 = get_scene_cameras(comm, [-1])
-    comm.reset(4)
-    img_4 = get_scene_cameras(comm, [-1])
-    comm.reset(5)
-    img_5 = get_scene_cameras(comm, [-1])
-    comm.reset(6)
-    img_6 = get_scene_cameras(comm, [-1])
-    comm.reset(7)
-    img_7 = get_scene_cameras(comm, [-1])
-    comm.reset(8)
-    img_8 = get_scene_cameras(comm, [-1])
-    comm.reset(9)
-    img_9 = get_scene_cameras(comm, [-1])
-    IPython.display.display(display_grid_img(img_0 + img_1  + img_2 + img_3  + img_4 + img_5  + img_6 + img_7  + img_8 + img_9, nrows=2))
-
-def show_procedural_generation():
-    comm.procedural_generation()
-    img_0 = get_scene_cameras(comm, [-1])
-    comm.procedural_generation()
-    img_1 = get_scene_cameras(comm, [-1])
-    comm.procedural_generation()
-    img_2 = get_scene_cameras(comm, [-1])
-    IPython.display.display(display_grid_img(img_0 + img_1  + img_2, nrows=1))
 
     
 
