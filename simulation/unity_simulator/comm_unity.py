@@ -222,21 +222,13 @@ class UnityCommunication(object):
         :param int environment: integer between 0 and 49, corresponding to the apartment we want to load
         :return: succes (bool)
         """
-        # Todo remove try/except without causing a UnityEngineException error for the intial reset()
-        try:
-            response = self.post_command({'id': str(time.time()), 'action': 'clear',
-                                      'intParams': [] if environment is None else [environment]})
-            response = self.post_command({'id': str(time.time()), 'action': 'environment',
-                                        'intParams': [] if environment is None else [environment]})
-            response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
-        except UnityEngineException:
-            response = self.post_command({'id': str(time.time()), 'action': 'clear',
-                                      'intParams': [] if environment is None else [environment]})
-            response = self.post_command({'id': str(time.time()), 'action': 'environment',
-                                        'intParams': [] if environment is None else [environment]})
-            response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
-            # pass
+        response = self.post_command({'id': str(time.time()), 'action': 'clear',
+                                  'intParams': [] if environment is None else [environment]})
+        response = self.post_command({'id': str(time.time()), 'action': 'environment',
+                                    'intParams': [] if environment is None else [environment]})
+        response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
 
+        
         return response['success']
         
         # response = self.post_command({'id': str(time.time()), 'action': 'clear',
