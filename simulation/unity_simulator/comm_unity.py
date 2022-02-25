@@ -227,17 +227,7 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'environment',
                                     'intParams': [] if environment is None else [environment]})
         response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
-
-        
         return response['success']
-        
-        # response = self.post_command({'id': str(time.time()), 'action': 'clear',
-        #                               'intParams': [] if environment is None else [environment]})
-
-        # response = self.post_command({'id': str(time.time()), 'action': 'environment',
-        #                               'intParams': [] if environment is None else [environment]})
-        # response = self.post_command({'id': str(time.time()), 'action': 'environment_graph'})
-        # return response['success']
 
     def fast_reset(self):
         """
@@ -377,7 +367,7 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(time_dict)]})
         return response['success'], response['message']
 
-    def activate_physics(self, gravity=-1):
+    def activate_physics(self, gravity=-10):
         """
         Activates gravity and realistic collisions in the environment
 
