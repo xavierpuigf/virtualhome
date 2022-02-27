@@ -136,7 +136,7 @@ def get_scene_cameras(comm, ids, mode='normal'):
     _, ncameras = comm.camera_count()
     cameras_select = list(range(ncameras))
     cameras_select = [cameras_select[x] for x in ids]
-    (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode, image_width=480, image_height=374)
+    (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode, image_width=1280, image_height=720)
     return imgs
 
 def display_scene_cameras(comm, ids, nrows=1, mode='normal'):
@@ -150,7 +150,7 @@ def display_scene_modalities(
     cameras_select = [cameras_select[x] for x in ids]
     imgs_modality = []
     for mode_name in modalities:
-        (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode_name, image_width=480, image_height=374)
+        (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode_name, image_width=1280, image_height=720)
         if mode_name == 'depth':
             imgs = [((x/np.max(x))*255.).astype(np.uint8) for x in imgs]
         imgs_modality += imgs
