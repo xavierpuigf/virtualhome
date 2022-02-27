@@ -247,7 +247,13 @@ class UnityCommunication(object):
         """
         response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation'})
 
-        return response['success']
+        procgen_dict = {
+                'seed': seed
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'procedural_generation',
+                    'stringParams': [json.dumps(procgen_dict)]})
+        return response['success'], response['message']
 
     def camera_count(self):
         """
@@ -361,7 +367,7 @@ class UnityCommunication(object):
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'set_time',
                     'stringParams': [json.dumps(time_dict)]})
-        return response['success'], response['message']
+        return response['success']
 
     def activate_physics(self, gravity=-10):
         """
