@@ -385,6 +385,16 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(physics_dict)]})
         return response['success'], response['message']
 
+    def remove_terrain(self):
+        """
+        remove_terrain. Deletes terrain
+
+        :return: success (bool)
+        """
+        response = self.post_command({'id': str(time.time()), 'action': 'remove_terrain',
+                                      'intParams': []})
+        return response['success']
+
     def point_cloud(self):
         response = self.post_command({'id': str(time.time()), 'action': 'point_cloud'})
         return response['success'], json.loads(response['message'])
