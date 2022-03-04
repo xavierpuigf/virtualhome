@@ -245,14 +245,10 @@ class UnityCommunication(object):
         :param int seed: integer corresponding to the seed given during generation
         :return: success (bool), seed: (integer)
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation'})
-
-        procgen_dict = {
-                'seed': seed
-        }
-        response = self.post_command(
-                {'id': str(time.time()), 'action': 'procedural_generation',
-                    'stringParams': [json.dumps(procgen_dict)]})
+        # response = self.post_command({'id': str(time.time()), 'action': 'clear_procedural',
+        #                               'intParams': []})
+        response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation',
+                                  'intParams': [] if seed is None else [seed]})
         return response['success'], response['message']
 
     def camera_count(self):
@@ -338,8 +334,13 @@ class UnityCommunication(object):
 
         :return: pair success (bool), message: (str)
         """
-        config = {'randomize': randomize, 'random_seed': random_seed, 'animate_character': animate_character,
-                  'ignore_obstacles': ignore_placing_obstacles, 'transfer_transform': transfer_transform}
+        config = {
+            'randomize': randomize, 
+            'random_seed': random_seed, 
+            'animate_character': animate_character,
+            'ignore_obstacles': ignore_placing_obstacles, 
+            'transfer_transform': transfer_transform
+        }
         string_params = [json.dumps(config), json.dumps(new_graph)]
         int_params = [int(randomize), random_seed]
 
@@ -353,16 +354,16 @@ class UnityCommunication(object):
             message = response['message']
         return response['success'], message
 
-    def set_time(self, hour=0, minute=0, second=0):
+    def set_time(self, hours=0, minutes=0, seconds=0):
         """
         Set the time in the environment
 
         :return: success (bool)
         """
         time_dict = {
-                'hour': hour,
-                'minute': minute,
-                'second': second
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
         }
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'set_time',
