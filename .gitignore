@@ -169,3 +169,4 @@ fabric.properties
 test*/
 test*.py
 data/*
+.vscode/
