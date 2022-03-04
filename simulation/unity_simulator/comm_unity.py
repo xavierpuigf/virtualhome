@@ -245,8 +245,8 @@ class UnityCommunication(object):
         :param int seed: integer corresponding to the seed given during generation
         :return: success (bool), seed: (integer)
         """
-        # response = self.post_command({'id': str(time.time()), 'action': 'clear_procedural',
-        #                               'intParams': []})
+        response = self.post_command({'id': str(time.time()), 'action': 'clear_procedural',
+                                      'intParams': []})
         response = self.post_command({'id': str(time.time()), 'action': 'procedural_generation',
                                   'intParams': [] if seed is None else [seed]})
         return response['success'], response['message']
