@@ -13,7 +13,7 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 
 ## What is New
 
-VirtualHome 2.4 is out! Here are the latest updates:
+VirtualHome 2.3 is out! Here are the latest updates:
 
 * Added Procedural Generation Capabilities to allow agents to explore a infinite possibility of unique environments!  
 * We added more custom designed environments!
