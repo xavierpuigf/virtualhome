@@ -194,6 +194,29 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(cam_dict)]})
         return response['success'], response['message']
 
+    def update_camera(self, camera_index, position=[0,1,0], rotation=[0,0,0], field_view=40):
+        """
+        Updates an existing camera, identified by index.
+        :param int camera_index: the index of the camera you want to update
+        :param list position: the position of the camera, with respect to the agent
+        :param list rotation: the rotation of the camera, with respect to the agent
+        :param list field_view: the field of view of the camera
+
+        :return: succes (bool)
+        """
+        cam_dict = {
+
+                'position': {'x': position[0], 'y': position[1], 'z': position[2]},
+                'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
+                'field_view': field_view
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'update_camera',
+                    'intParams': [camera_index],
+                    'stringParams': [json.dumps(cam_dict)]})
+        return response['success'], response['message']
+
+
     def add_character_camera(self, position=[0,1,0], rotation=[0,0,0], name="new_camera"):
         """
         Add a new character camera. The camera will be added to every character you include in the scene, and it will move with 
@@ -212,6 +235,26 @@ class UnityCommunication(object):
         }
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'add_character_camera',
+                    'stringParams': [json.dumps(cam_dict)]})
+        return response['success'], response['message']
+
+    def update_character_camera(self, position=[0,1,0], rotation=[0,0,0], name="PERSON_FRONT"):
+        """
+        Update character camera specified by name. This must be called before adding any character.
+
+        :param list position: the position of the camera, with respect to the agent
+        :param list rotation: the rotation of the camera, with respect to the agent
+        :name: the name of the camera, used for recording when calling render script
+
+        :return: succes (bool)
+        """
+        cam_dict = {
+                'position': {'x': position[0], 'y': position[1], 'z': position[2]},
+                'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
+                'camera_name': name
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'update_character_camera',
                     'stringParams': [json.dumps(cam_dict)]})
         return response['success'], response['message']
 
