@@ -280,9 +280,6 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
                                   'intParams': [] if environment is None else [environment]})
         return response['success']
-        # response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
-        #                               'intParams': []})
-        # return response['success']
 
     def procedural_generation(self, seed=None):
         """
