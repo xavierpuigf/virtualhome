@@ -271,15 +271,18 @@ class UnityCommunication(object):
                                     'intParams': [] if environment is None else [environment]})
         return response['success']
 
-    def fast_reset(self):
+    def fast_reset(self, environment=None):
         """
         Fast scene. Deletes characters and scene changes
 
         :return: success (bool)
         """
         response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
-                                      'intParams': []})
+                                  'intParams': [] if environment is None else [environment]})
         return response['success']
+        # response = self.post_command({'id': str(time.time()), 'action': 'fast_reset',
+        #                               'intParams': []})
+        # return response['success']
 
     def procedural_generation(self, seed=None):
         """
