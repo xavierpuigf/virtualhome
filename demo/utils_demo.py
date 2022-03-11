@@ -1,13 +1,9 @@
-from mpl_toolkits import mplot3d
 import PIL
 import numpy as np
 import io
 import os
 import base64
 import IPython
-from IPython.display import HTML
-from IPython.display import Image
-from IPython.display import display
 from sys import platform
 import sys
 
