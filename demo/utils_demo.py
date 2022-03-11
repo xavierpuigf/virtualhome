@@ -152,8 +152,6 @@ def display_scene_modalities(
     for mode_name in modalities:
         (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode_name, image_width=640, image_height=320)
         if mode_name == 'depth':
-            print("here")
-            print(imgs[0].max())
             imgs = [(x*255./np.max(x)).astype(np.uint8) for x in imgs]
 
         imgs_modality += imgs
