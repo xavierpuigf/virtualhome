@@ -397,16 +397,22 @@ class UnityCommunication(object):
             message = response['message']
         return response['success'], message
 
-    def set_time(self, hours=0, minutes=0, seconds=0):
+    def set_time(self, hours=0, minutes=0, seconds=0, scaler=1):
         """
         Set the time in the environment
+
+        :param int hours: hours in 24-hour time
+        :param int minutes: minutes in 24-hour time
+        :param int seconds: seconds in 24-hour time
+        :param int scaler: scaler is a multipler that increase/decreases time step
 
         :return: success (bool)
         """
         time_dict = {
                 'hours': hours,
                 'minutes': minutes,
-                'seconds': seconds
+                'seconds': seconds,
+                'scaler': scaler
         }
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'set_time',
