@@ -433,7 +433,7 @@ class UnityCommunication(object):
         response = self.post_command(
                 {'id': str(time.time()), 'action': 'activate_physics',
                     'stringParams': [json.dumps(physics_dict)]})
-        return response['success'], response['message']
+        return response['success']
 
     def remove_terrain(self):
         """
