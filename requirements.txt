@@ -11,6 +11,7 @@ numpy>=1.21
 opencv-python>=4.2.0.32
 pillow>=7.1.0
 requests==2.21.0
+ipdb==0.13.9
 termcolor==1.1.0
 tqdm==4.31.1
 urllib3>=1.24.3
