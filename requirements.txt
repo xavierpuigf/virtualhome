@@ -8,6 +8,7 @@ opencv-python==4.5.1.48
 pillow>=8.3.1
 plotly==3.10.0
 requests==2.21.0
+ipdb==0.13.9
 termcolor==1.1.0
 tqdm==4.31.1
 urllib3>=1.24.3
