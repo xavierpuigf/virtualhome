@@ -5,6 +5,8 @@ import os
 import base64
 import IPython
 from sys import platform
+from IPython.core.display import HTML
+
 import sys
 
 sys.path.append('../simulation')
