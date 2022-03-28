@@ -34,11 +34,7 @@ You can add multiple agents on each simulation, interacting at the same time. To
 comm.add_character(char_name)
 ```
 
-Where `char_name` corresponds to the character you want to add. These are the characters currently available, along with their name.
-
-| Male1         | Female1       | Female2       | Female4       | Male10         | Male2         |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| ![img](../assets/agents/Male1.png) | ![img](../assets/agents/Female_1.png)| ![img](../assets/agents/Female_2.png)| ![img](../assets/agents/Female_4.png)| ![img](../assets/agents/Male_2.png)| ![img](../assets/agents/Male_6.png)|
+Where `char_name` corresponds to the character you want to add. 
 
 # Programs
 The programs allow executing activities in VirtualHome a program is composed by a sequence of instructions of the form `<char{char_id}> [Action_name] <Object_name> (Object_id)`.
@@ -509,17 +505,61 @@ WakeUpExecutor |
 
 
 # Environment
-VirtualHome is composed of 7 scenes where activities can be executed. Each scene is encoded in a dictionary containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding  dictionary. 
+VirtualHome is composed of 50 custom scenes + procedural generation capabilites to allow a infite versions of new scenes where activities can be executed. Each scene is encoded in a dictionary containing a node for every object and edges between them representing relationships. Each environment can be updated by modifying the corresponding  dictionary. 
 
 You can check in the [demo](../demo/unity_demo.ipynb) examples on how to read and update graphs.
 
-| Scene 1   | Scene 2   | Scene 3   | Scene 4   | Scene 5   | Scene 6   | Scene 7  |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |
-| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)| ![img](../assets/scene6rot.png)| ![img](../assets/scene7rot.png)
+|     <p align="center">Scene 0     |     <p align="center">Scene 1     |     <p align="center">Scene 2     |     <p align="center">Scene 3     |     <p align="center">Scene 4     | 
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+|     <p align="center">Scene 5     |     <p align="center">Scene 6     |     <p align="center">Scene 7     |     <p align="center">Scene 8    |     <p align="center">Scene 9    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+|     <p align="center">Scene 10    |     <p align="center">Scene 11    |     <p align="center">Scene 12    |     <p align="center">Scene 13    |     <p align="center">Scene 14    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+|     <p align="center">Scene 15    |     <p align="center">Scene 16    |     <p align="center">Scene 17    |     <p align="center">Scene 18    |     <p align="center">Scene 19    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+
+|     <p align="center">Scene 20    |     <p align="center">Scene 21    |     <p align="center">Scene 22    |     <p align="center">Scene 23    |     <p align="center">Scene 24    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)| 
+
+|     <p align="center">Scene 25    |     <p align="center">Scene 26    |     <p align="center">Scene 27    |     <p align="center">Scene 28    |     <p align="center">Scene 29    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)| 
+
+|     <p align="center">Scene 30    |     <p align="center">Scene 31    |     <p align="center">Scene 32    |     <p align="center">Scene 33    |     <p align="center">Scene 34    |
+| ------------- | ------------- | ------------- | ------------- | ------------- | 
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+|     <p align="center">Scene 35    |     <p align="center">Scene 36    |     <p align="center">Scene 37    |     <p align="center">Scene 38    |     <p align="center">Scene 39    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+|     <p align="center">Scene 40    |     <p align="center">Scene 41    |     <p align="center">Scene 42    |     <p align="center">Scene 43    |     <p align="center">Scene 44    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+|     <p align="center">Scene 45    |     <p align="center">Scene 46    |     <p align="center">Scene 47    |     <p align="center">Scene 48    |     <p align="center">Scene 49    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![img](../assets/scene1rot.png) | ![img](../assets/scene2rot.png)| ![img](../assets/scene3rot.png)| ![img](../assets/scene4rot.png)| ![img](../assets/scene5rot.png)|
+
+
+
+
+
+
+
 
 You can check here the list of supported node states, edge relations and object properties in the graphs representing the environment. 
 
-*Note that this documentation holds for both Unity Simulator and Evolving Graph*.
+*Please Note that this documentation holds for both Unity Simulator and Evolving Graph*.
 
 ## Relations
 Possible relations (edge labels) are:

@@ -1,11 +1,19 @@
-from mpl_toolkits import mplot3d
 import PIL
 import numpy as np
 import io
 import os
 import base64
-from IPython.display import HTML
+import IPython
 from sys import platform
+from IPython.core.display import HTML
+
+import sys
+
+sys.path.append('../simulation')
+from unity_simulator.comm_unity import UnityCommunication
+from unity_simulator import utils_viz
+
+comm = UnityCommunication()
 
 def setup():
     os.chdir('../simulation/')
@@ -17,7 +25,6 @@ def setup():
     from unity_simulator.comm_unity import UnityCommunication
     comm = UnityCommunication()
     return comm
-
 
 
 ### Utils nodes
@@ -33,9 +40,6 @@ def find_edges_from(graph, id):
     return [(rel, find_nodes(graph, id=n_id)[0]) for (rel, n_id) in nb_list]
 
 def clean_graph(graph):
-    """
-    Remove bounds to reflect real input by Andrew & Xavier
-    """
     new_nodes = []
     for n in graph['nodes']:
         nc = dict(n)
@@ -43,7 +47,6 @@ def clean_graph(graph):
             del nc['bounding_box']
         new_nodes.append(nc)
     return {'nodes': new_nodes, 'edges': list(graph['edges'])}
-    
 
 def remove_edges(graph, n, fr=True, to=True):
     n_id = n['id']
@@ -63,9 +66,6 @@ def add_edge(graph, fr_id, rel, to_id):
     graph['edges'].append({'from_id': fr_id, 'relation_type': rel, 'to_id': to_id})
     
 def clean_graph(graph):
-    """
-    Remove bounds to reflect real input by Andrew & Xavier
-    """
     new_nodes = []
     for n in graph['nodes']:
         nc = dict(n)
@@ -73,7 +73,6 @@ def clean_graph(graph):
             del nc['bounding_box']
         new_nodes.append(nc)
     return {'nodes': new_nodes, 'edges': list(graph['edges'])}
-
 
 def add_cat(graph):
     graph_1 = clean_graph(graph)
@@ -104,8 +103,13 @@ def add_beer(graph):
     add_node(graph_1, {'class_name': 'beer', 'id': 1001, 'properties': [], 'states': []})
     add_edge(graph_1, 1001, 'INSIDE', fridge['id'])
     return graph_1
-
-
+    
+def set_tv(graph):
+    tv_node = [x for x in graph['nodes'] if x['class_name'] == 'tv'][0]
+    tv_node['states'] = ['ON']
+    light_node = [x for x in graph['nodes'] if x['class_name'] == 'lightswitch'][0]
+    light_node['states'] = ['OFF']
+    return graph
 
 
 ### utils_images
@@ -126,18 +130,16 @@ def display_grid_img(images_old, nrows=1):
     img_final = PIL.Image.fromarray(img_final[:,:,::-1])
     return img_final
 
-
 def get_scene_cameras(comm, ids, mode='normal'):
     _, ncameras = comm.camera_count()
     cameras_select = list(range(ncameras))
     cameras_select = [cameras_select[x] for x in ids]
-    (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode, image_width=480, image_height=374)
+    (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode, image_width=640, image_height=360)
     return imgs
 
 def display_scene_cameras(comm, ids, nrows=1, mode='normal'):
     imgs = get_scene_cameras(comm, ids, mode)
     return display_grid_img(imgs, nrows=nrows)
-    
 
 def display_scene_modalities(
     comm, ids, modalities=['normal', 'seg_class', 'seg_inst', 'depth'], nrows=1):
@@ -146,17 +148,17 @@ def display_scene_modalities(
     cameras_select = [cameras_select[x] for x in ids]
     imgs_modality = []
     for mode_name in modalities:
-        (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode_name, image_width=480, image_height=374)
+        (ok_img, imgs) = comm.camera_image(cameras_select, mode=mode_name, image_width=640, image_height=320)
         if mode_name == 'depth':
-            imgs = [((x/np.max(x))*255.).astype(np.uint8) for x in imgs]
+            imgs = [(x*255./np.max(x)).astype(np.uint8) for x in imgs]
+
         imgs_modality += imgs
     img_final = display_grid_img(imgs_modality, nrows=nrows)
     return img_final
 
-def get_img_apts():
-    img = PIL.Image.open('../assets/img_apts.png')
-    return img
 
+
+    
 
 ## Utils video
 def run_program(comm, prog, name):
@@ -169,11 +171,3 @@ def display_vid(vid_path):
     encoded = base64.b64encode(video)
     return HTML(data='''<video alt="test" controls>
     <source src="data:video/mp4;base64,{0}" type="video/mp4" /> </video>'''.format(encoded.decode('ascii')))
-
-
-def set_tv(graph):
-    tv_node = [x for x in graph['nodes'] if x['class_name'] == 'tv'][0]
-    tv_node['states'] = ['ON']
-    light_node = [x for x in graph['nodes'] if x['class_name'] == 'lightswitch'][0]
-    light_node['states'] = ['OFF']
-    return graph
