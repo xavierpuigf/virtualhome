@@ -20,6 +20,10 @@ VirtualHome 2.3 is out! Here are the latest updates:
 * Added Procedural Generation Capabilities to allow agents to explore a infinite possibility of unique environments!  
 * We added more custom designed environments!
 * Enhanced simulated physics with the environments
+* Time management system with synchronized day/night
+* New outdoor terrain with accurate sunlight/shadows
+* Improved indoor realtime lighting
+* More realistic rooms
 * Significant performance enhancements, asset optimizations, stability improvements
 * Updated documentation
 * General bug fixes for existing environments
