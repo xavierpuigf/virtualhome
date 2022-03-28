@@ -1,6 +1,6 @@
 [![docs](https://img.shields.io/badge/docs-updated-brightgreen)](http://virtual-home.org/documentation/)
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JmzDYF3)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xavierpuigf/virtualhome/blob/procedural_generation/demo/unity_demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xavierpuigf/virtualhome/blob/master/demo/unity_demo.ipynb)
 
 
 # VirtualHome
