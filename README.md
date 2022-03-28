@@ -266,8 +266,8 @@ CVPR2019.
 
 
 - Watch-and-Help: A Challenge for Social Perception and Human-AI Collaboration.<br/>
-X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.
-ICLR2021, spotlight.
+X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.<br/>
+ICLR2021, spotlight.<br/>
 NeurIPS Cooperative AI Workshop 2020, Best Paper Award.
 
 
