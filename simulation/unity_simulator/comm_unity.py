@@ -217,7 +217,7 @@ class UnityCommunication(object):
         return response['success'], response['message']
 
 
-    def add_character_camera(self, position=[0,1,0], rotation=[0,0,0], name="new_camera"):
+    def add_character_camera(self, position=[0,1,0], rotation=[0,0,0], field_view=60, name="new_camera"):
         """
         Add a new character camera. The camera will be added to every character you include in the scene, and it will move with 
         the character. This must be called before adding any character.
@@ -231,6 +231,7 @@ class UnityCommunication(object):
         cam_dict = {
                 'position': {'x': position[0], 'y': position[1], 'z': position[2]},
                 'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
+                'field_view': field_view,
                 'camera_name': name
         }
         response = self.post_command(
@@ -238,7 +239,7 @@ class UnityCommunication(object):
                     'stringParams': [json.dumps(cam_dict)]})
         return response['success'], response['message']
 
-    def update_character_camera(self, position=[0,1,0], rotation=[0,0,0], name="PERSON_FRONT"):
+    def update_character_camera(self, position=[0,1,0], rotation=[0,0,0], field_view=60, name="PERSON_FRONT"):
         """
         Update character camera specified by name. This must be called before adding any character.
 
@@ -251,6 +252,7 @@ class UnityCommunication(object):
         cam_dict = {
                 'position': {'x': position[0], 'y': position[1], 'z': position[2]},
                 'rotation': {'x': rotation[0], 'y': rotation[1], 'z': rotation[2]},
+                'field_view': field_view,
                 'camera_name': name
         }
         response = self.post_command(
