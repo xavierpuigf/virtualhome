@@ -84,9 +84,9 @@ We also provide a [Jupyter](https://jupyter.org/) notebook with a demo and start
 
 Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
 
-- [Download](http://virtual-home.org/release/simulator/last_release/linux_exec.zip) Linux x86-64 version.
-- [Download](http://virtual-home.org/release/simulator/last_release//macos_exec.zip) Mac OS X version.
-- [Download](http://virtual-home.org/release/simulator/last_release/windows_exec.zip) Windows version.
+- [Download](http://virtual-home.org//release/simulator/v2.0/v2.3.0/linux_exec.zip) Linux x86-64 version.
+- [Download](http://virtual-home.org/release/simulator/v2.0/v2.3.0/macos_exec.zip) Mac OS X version.
+- [Download](http://virtual-home.org//release/simulator/v2.0/v2.3.0/windows_exec.zip) Windows version.
 
 
 ### Test simulator
