@@ -267,8 +267,6 @@ class UnityCommunication(object):
         :param int environment: integer between 0 and 49, corresponding to the apartment we want to load
         :return: succes (bool)
         """
-        response = self.post_command({'id': str(time.time()), 'action': 'clear',
-                                  'intParams': [] if environment is None else [environment]})
         response = self.post_command({'id': str(time.time()), 'action': 'environment',
                                     'intParams': [] if environment is None else [environment]})
         return response['success']
