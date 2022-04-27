@@ -1,7 +1,7 @@
 # Generate video for a program. Make sure you have the executable open
 import sys
 
-sys.path.append('../simulation/')
+sys.path.append('../simulation')
 from unity_simulator.comm_unity import UnityCommunication
 
 

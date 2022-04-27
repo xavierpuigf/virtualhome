@@ -70,13 +70,12 @@ This simulator runs fully in python and allows to generate a sequence of graphs 
 
 ## Set Up
 
-### Clone repository and install the dependencies
+### Install
 
-Note that this code base is based on Python 3
 ```bash
-git clone https://github.com/xavierpuigf/virtualhome.git
-pip install -r requirements.txt
+$ pip install virtualhome
 ```
+
 We also provide a [Jupyter](https://jupyter.org/) notebook with a demo and starting code. If you want to run the demo, [install Jupyter](https://jupyter.org/install.html) and run it on your host. If you are new to Jupyter, see [Running the Jupyter Notebook](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html) for a walkthrough of how to use this tool.
 
 

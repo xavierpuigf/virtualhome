@@ -6,7 +6,7 @@ import random
 import cv2
 
 sys.path.append('../simulation')
-sys.path.append('../dataset_utils/')
+sys.path.append('../dataset_utils')
 
 from tqdm import tqdm
 from unity_simulator.comm_unity import UnityCommunication
