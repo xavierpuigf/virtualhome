@@ -100,7 +100,6 @@ class UnityEnvironment(BaseEnvironment):
             self.comm = comm_unity.UnityCommunication(port=str(self.port_number), **self.executable_args)
 
         atexit.register(self.close)
-        self.reset()
 
 
 
