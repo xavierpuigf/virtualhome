@@ -419,6 +419,22 @@ class UnityCommunication(object):
                 {'id': str(time.time()), 'action': 'set_time',
                     'stringParams': [json.dumps(time_dict)]})
         return response['success']
+    
+    def idle_time(self, idle_time=0):
+        """
+        Set the amount of seconds for the idle animation
+
+        :param int idle_time: time in seconds for idle animation
+
+        :return: success (bool)
+        """
+        idle_time = {
+                'idle_time': idle_time
+        }
+        response = self.post_command(
+                {'id': str(time.time()), 'action': 'set_time',
+                    'stringParams': [json.dumps(idle_time)]})
+        return response['success']
 
     def activate_physics(self, gravity=-10):
         """
