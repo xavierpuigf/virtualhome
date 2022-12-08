@@ -269,7 +269,7 @@ X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.<br/>
 ICLR2021, spotlight.<br/>
 NeurIPS Cooperative AI Workshop 2020, Best Paper Award.
 
-- Pre-Trained Language Models for Interactive Decision-Making
+- Pre-Trained Language Models for Interactive Decision-Making.<br/>
 S. Li, X. Puig, C. Paxton, Y. Du, C. Wang, L. Fan, T. Chen, D. Huang, E. Akyürek, A. Anandkumar, J. Andreas, I. Mordatch, A. Torralba, Y. Zhu.<br/>
 NeurIPS 2022, Oral.<br/>
 
