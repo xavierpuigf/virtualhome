@@ -303,6 +303,15 @@ year = {2019}
 }
 ```
 
+```
+@article{li2022pre,
+  title={Pre-trained language models for interactive decision-making},
+  author={Li, Shuang and Puig, Xavier and Du, Yilun and Wang, Clinton and Akyurek, Ekin and Torralba, Antonio and Andreas, Jacob and Mordatch, Igor},
+  journal={arXiv preprint arXiv:2202.01771},
+  year={2022}
+}
+```
+
 
 ## Contributors
 
