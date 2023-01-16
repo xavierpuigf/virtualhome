@@ -22,7 +22,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        'certifi==2019.3.9',
+        'certifi==2022.12.7',
         'chardet==3.0.4',
         'idna==2.8',
         'matplotlib>=3.4.2',
