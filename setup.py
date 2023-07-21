@@ -13,8 +13,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/xavierpuigf/virtualhome",
     project_urls={
-        "Documentation": "https://virtualcity.readthedocs.io/en/latest/",
-        "Bug Tracker": "https://github.com/ShuangLI59/virtualcity-python-api"
+        "Documentation": "http://virtual-home.org/docs/",
+        "Bug Tracker": "https://github.com/xavierpuigf/virtualhome/issues"
     },
     classifiers=[
         "Programming Language :: Python :: 3",

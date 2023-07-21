@@ -61,11 +61,11 @@ Activities in VirtualHome are represented through two components: *programs* rep
 
 #### Unity Simulator 
 
-This simulator is built in Unity and allows generating videos of activities. To use this simulator, you will need to download the appropiate executable and run it with the [Python API](src/virtualhome/simulation/unity_simulator/). You can check a demo of the simulator in [demo/unity_demo.ipynb](src/virtualhome/demo/unity_demo.ipynb)
+This simulator is built in Unity and allows generating videos of activities. To use this simulator, you will need to download the appropiate executable and run it with the [Python API](virtualhome/simulation/unity_simulator/). You can check a demo of the simulator in [demo/unity_demo.ipynb](virtualhome/demo/unity_demo.ipynb)
 
 #### Evolving Graph
 
-This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](src/virtualhome/simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
+This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](virtualhome/simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
 
 
 ## Set Up
@@ -96,7 +96,7 @@ To test the simulator in a local machine, double click the executable, or run it
 ./path_to_exec -screen-fullscreen 0 -screen-quality 4 
 ```
 
-Once the simulator has started, run the demo in [demo/unity_demo.ipynb](src/virtualhome/demo/unity_demo.ipynb). 
+Once the simulator has started, run the demo in [demo/unity_demo.ipynb](virtualhome/demo/unity_demo.ipynb). 
 
 If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server (find the installation instructions in [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable with an X server, use -batchmode. For Linux, you would do:
 
@@ -146,12 +146,12 @@ Open the simulator and run:
 cd demo/
 python generate_snapshots.py
 ```
-A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](src/virtualhome/demo/snapshot_test.png).
+A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](virtualhome/demo/snapshot_test.png).
 
 
 ## VirtualHome RL Env
 
-VirtualHome can be used as an environment for Reinforcement Learning. We provide a base class `UnityEnvironment` in [simulation/environment/unity_environment.py](src/virtualhome/simulation/environment/unity_environment.py). You can test how the class works by running
+VirtualHome can be used as an environment for Reinforcement Learning. We provide a base class `UnityEnvironment` in [simulation/environment/unity_environment.py](virtualhome/simulation/environment/unity_environment.py). You can test how the class works by running
 
 ```bash
 cd demo
@@ -194,7 +194,7 @@ When a script is executed in an environment, the script changes by aligning the 
 
 To view the graph of the environment, and how it changes throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
 
-You can find more details of the programs and environment graphs in [dataset/README.md](src/virtualhome/dataset/README.md).
+You can find more details of the programs and environment graphs in [dataset/README.md](virtualhome/dataset/README.md).
 
 
 ### Script Augmentation
@@ -233,7 +233,7 @@ We originally collected a set of programs to predict from language descriptions,
 ### Resources
 
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
-Check [resources/README.md](src/virtualhome/resources/README.md) for more details.
+Check [resources/README.md](virtualhome/resources/README.md) for more details.
 
 
 ## Documentation
