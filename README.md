@@ -1,3 +1,5 @@
+<div align="center">
+
 [![docs](https://img.shields.io/badge/docs-updated-brightgreen)](http://virtual-home.org/documentation/)
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JmzDYF3)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xavierpuigf/virtualhome/blob/master/demo/unity_demo.ipynb)
@@ -5,13 +7,18 @@
 
 # VirtualHome
 
-**VirtualHome** is an interactive platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents fro embodied AI tasks.
+**VirtualHome** is an interactive platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents for embodied AI tasks.
 
 Check out more details of the environmnent and platform at [**virtual-home.org**](http://virtual-home.org). 
 
 <p align="center">
   <img width="460" height="300" src="assets/vh_intro.gif">
 </p>
+
+</div>
+
+
+______________________________________________________________________
 
 ## What is New
 
@@ -43,6 +50,8 @@ VirtualHome 2.3 is out! Here are the latest updates:
 * Human interaction
 
 
+____________________________________________________________
+
 ## Contents
 
 1. Overview
@@ -54,6 +63,7 @@ VirtualHome 2.3 is out! Here are the latest updates:
 7. Citation
 8. Contributors
 
+______________________________________________________________________
 
 ## Overview
 
@@ -67,6 +77,7 @@ This simulator is built in Unity and allows generating videos of activities. To 
 
 This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](virtualhome/simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
 
+______________________________________________________________________
 
 ## Set Up
 
@@ -122,6 +133,7 @@ It will open an executable and create a communication object to render scripts o
 ### Docker
 You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).
 
+______________________________________________________________________
 
 ## Generating Videos and Snapshots
 
@@ -165,6 +177,7 @@ cd demo
 python test_unity_environment_mp.py
 ```
 
+______________________________________________________________________
 
 ## Dataset
 
@@ -235,10 +248,13 @@ We originally collected a set of programs to predict from language descriptions,
 To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
 Check [resources/README.md](virtualhome/resources/README.md) for more details.
 
+______________________________________________________________________
 
 ## Documentation
 
 To learn more about VirtualHome, please check out [VirtualHome Docs](http://virtual-home.org/documentation/).
+
+______________________________________________________________________
 
 
 ## Modify VirtualHome
@@ -249,6 +265,7 @@ If you would like to contribute to VirtualHome, or modify the simulator for your
   <img width="300" height="300" src="assets/vh_overview.gif">
 </p>
 
+______________________________________________________________________
 
 ## Citation
 
@@ -314,6 +331,7 @@ year = {2019}
   year={2022}
 }
 ```
+______________________________________________________________________
 
 
 ## Contributors
@@ -329,5 +347,4 @@ The VirtualHome API and code has been developed by the following people.
 - Tianmin Shu
 - Andrew Liao
 
-
-
+______________________________________________________________________
