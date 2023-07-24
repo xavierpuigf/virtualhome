@@ -17,7 +17,6 @@ Check out more details of the environmnent and platform at [**virtual-home.org**
 
 </div>
 
-
 ______________________________________________________________________
 
 ## What is New
@@ -48,7 +47,6 @@ VirtualHome 2.3 is out! Here are the latest updates:
 * Photorealism capabilities  
 * More actions and object interactions
 * Human interaction
-
 
 ____________________________________________________________
 
@@ -160,6 +158,7 @@ python generate_snapshots.py
 ```
 A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](virtualhome/demo/snapshot_test.png).
 
+______________________________________________________________________
 
 ## VirtualHome RL Env
 
