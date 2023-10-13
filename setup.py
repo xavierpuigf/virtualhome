@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="virtualhome",
-    version="2.3.0",
+    version="2.3.0.11",
     author="Xavier Puig",
     author_email="xavierpuig@csail.mit.edu",
     description="Python API to communicate with the VirtualHome environment",
@@ -27,8 +27,8 @@ setuptools.setup(
         'idna==2.8',
         'matplotlib>=3.4.2',
         'networkx==2.3',
-        'numpy>=1.19.3',
-        'opencv-python==4.5.1.48',
+        'numpy==1.26.0',
+        'opencv-python==4.8.1.78',
         'pillow>=8.3.1',
         'plotly==3.10.0',
         'requests>=1.21.0',
@@ -39,6 +39,6 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
-    python_requires=">=3.10",
+    python_requires=">=3.11",
 )
 
