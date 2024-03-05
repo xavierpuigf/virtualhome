@@ -289,7 +289,7 @@ NeurIPS Cooperative AI Workshop 2020, Best Paper Award.
 S. Li, X. Puig, C. Paxton, Y. Du, C. Wang, L. Fan, T. Chen, D. Huang, E. Akyürek, A. Anandkumar, J. Andreas, I. Mordatch, A. Torralba, Y. Zhu.<br/>
 NeurIPS 2022, Oral.<br/>
 
-If you plan to use the simulator, please consider citing this.
+If you plan to use the simulator, please cite both of the following papers (the first one introduced v1.0 and the second introduced v2.0, aka VirutalHome-Social):
 
 ```
 @inproceedings{puig2018virtualhome,
@@ -301,15 +301,6 @@ If you plan to use the simulator, please consider citing this.
 }
 ```
 
-```
-@InProceedings{Liao_2019_CVPR,
-author = {Liao, Yuan-Hong and Puig, Xavier and Boben, Marko and Torralba, Antonio and Fidler, Sanja},
-title = {Synthesizing Environment-Aware Activities via Activity Sketches},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2019}
-}
-```
 
 ```
 @misc{puig2020watchandhelp,
@@ -321,21 +312,12 @@ year = {2019}
       primaryClass={cs.AI}
 }
 ```
-
-```
-@article{li2022pre,
-  title={Pre-trained language models for interactive decision-making},
-  author={Li, Shuang and Puig, Xavier and Du, Yilun and Wang, Clinton and Akyurek, Ekin and Torralba, Antonio and Andreas, Jacob and Mordatch, Igor},
-  journal={arXiv preprint arXiv:2202.01771},
-  year={2022}
-}
-```
 ______________________________________________________________________
 
 
 ## Contributors
 
-The VirtualHome API and code has been developed by the following people.
+The VirtualHome API and code have been developed by the following people.
 - Xavier Puig
 - Marko Boben
 - Kabir Swain
