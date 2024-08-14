@@ -58,6 +58,10 @@ class UnityCommunication(object):
                         time.sleep(2)
                 if not succeeded:
                     sys.exit()
+                    
+        # collections.Iterable was depreciated in Python 3.10, ensure compatability with current Python versions
+        if not hasattr(collections, 'Iterable'):
+            collections.Iterable = collections.abc.Iterable
 
     def requests_retry_session(
                             self,
