@@ -28,7 +28,7 @@ setuptools.setup(
         'matplotlib>=3.4.2',
         'networkx==2.3',
         'numpy>=1.19.3',
-        'opencv-python==4.5.1.48',
+        'opencv-python==4.8.1.78',
         'pillow>=8.3.1',
         'plotly==3.10.0',
         'requests>=1.21.0',
