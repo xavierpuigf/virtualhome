@@ -37,8 +37,8 @@ setuptools.setup(
         'tqdm==4.31.1',
         'urllib3>=1.24.3'
     ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    package_dir={"": "."},
+    packages=setuptools.find_packages(where="."),
     python_requires=">=3.10",
 )
 
