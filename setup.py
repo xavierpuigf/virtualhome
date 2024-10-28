@@ -34,7 +34,7 @@ setuptools.setup(
         'requests>=1.21.0',
         'ipdb==0.13.9',
         'termcolor==1.1.0',
-        'tqdm==4.31.1',
+        'tqdm==4.66.3',
         'urllib3>=1.24.3'
     ],
     package_dir={"": "."},
